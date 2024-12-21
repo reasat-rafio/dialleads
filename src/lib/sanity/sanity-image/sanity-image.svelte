@@ -12,23 +12,36 @@
     isSanityImageWithLqip,
   } from './fns';
   import type { AutoWidths, SanityImageProps } from './types';
-  import { cn } from '$lib/utils/helpers';
-
-  type $$Props = SanityImageProps &
-    Omit<HTMLImgAttributes, 'src'> & { fadeInAnimation?: boolean };
+  import { cn } from '$lib/utils';
 
   //Max default allows for 1920px width @ 2x
   const defaults = (globalThis.sanityImageDefaults ??=
     defaultSanityImageDefaults);
 
-  export let imageUrlBuilder: ImageUrlBuilder | undefined =
-    defaults.imageUrlBuilder;
-  export let src: SanityImageSource;
-  export let widths: number[] | AutoWidths = defaults.autoWidths;
-  export let lqip: boolean = defaults.lqip;
-  export let options: Partial<ImageUrlBuilderOptionsWithAliases> = {};
-  export let autoFormat: boolean = defaults.autoFormat;
-  export let fadeInAnimation = true;
+  interface Props {
+    class?: string;
+    imageUrlBuilder?: ImageUrlBuilder;
+    src: SanityImageSource;
+    widths?: number[] | AutoWidths;
+    lqip?: boolean;
+    options?: Partial<ImageUrlBuilderOptionsWithAliases>;
+    autoFormat?: boolean;
+    fadeInAnimation?: boolean;
+  }
+
+  let {
+    class: className,
+    imageUrlBuilder,
+    src,
+    widths,
+    lqip,
+    options,
+    autoFormat,
+    fadeInAnimation,
+    ...rest
+  }: Props &
+    SanityImageProps &
+    Omit<HTMLImgAttributes, 'src'> & { fadeInAnimation?: boolean } = $props();
 
   function imgProps() {
     const builder = imageUrlBuilder
@@ -67,37 +80,37 @@
         ? `url(${src.asset.metadata.lqip}) no-repeat`
         : undefined
     }; background-size: cover; `;
-    let style = (lqip ? lqipStyle : '') + ($$restProps.style ?? '');
+    let style = (lqip ? lqipStyle : '') + (rest.style ?? '');
 
     return { builder, determinedLqip, width, height, srcset, style };
   }
 
-  let img: HTMLImageElement | undefined;
-  let imgWrapper: HTMLDivElement | undefined;
-  let props = imgProps();
-  let isLoaded = false;
+  let img = $state<HTMLImageElement>();
+  let imgWrapper = $state<HTMLDivElement>();
+  let _imgProps = imgProps();
+  let isLoaded = $state(false);
 
-  $: if (img) {
-    if (img.complete) isLoaded = true;
-    else img.addEventListener('load', () => (isLoaded = true));
-  }
+  $effect(() => {
+    if (img) {
+      if (img.complete) isLoaded = true;
+      else img.addEventListener('load', () => (isLoaded = true));
+    }
+  });
 </script>
 
-<!-- alt tag will come from parent -->
-<!-- svelte-ignore a11y-missing-attribute -->
 <div
   bind:this={imgWrapper}
   class:loaded={isLoaded}
-  class={cn('blurred-img relative h-full w-full', $$props.class)}
-  style={props.style}>
+  class={cn('blurred-img relative h-full w-full', className)}
+  style={_imgProps.style}>
   <img
     bind:this={img}
     style="--initial-opacity: {fadeInAnimation && lqip ? 0 : 1}"
-    src={props.builder.url()}
-    srcset={props.srcset}
-    width={props.width}
-    height={props.height}
-    {...$$restProps} />
+    src={_imgProps.builder.url()}
+    srcset={_imgProps.srcset}
+    width={_imgProps.width}
+    height={_imgProps.height}
+    {...rest} />
 </div>
 
 <style>
