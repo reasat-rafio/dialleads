@@ -2,9 +2,13 @@
   import { renderStudio, defineConfig, type StudioProps } from 'sanity';
   import { onMount } from 'svelte';
 
-  export let config: StudioProps['config'];
+  interface Props {
+    config: StudioProps['config'];
+  }
 
-  let studioEl: HTMLDivElement;
+  let { config }: Props = $props();
+
+  let studioEl = $state<HTMLDivElement>(null!);
 
   onMount(() => {
     if (studioEl) {
@@ -24,10 +28,10 @@
 </svelte:head>
 
 <div id="svelte-studio">
-  <div bind:this={studioEl} />
+  <div bind:this={studioEl}></div>
 </div>
 
-<style >
+<style>
   #svelte-studio {
     height: 100vh;
   }
