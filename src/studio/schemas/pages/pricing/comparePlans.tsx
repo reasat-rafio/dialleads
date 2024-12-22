@@ -56,13 +56,13 @@ const comparePlans = {
               name: 'icon',
               title: 'Icon',
               type: 'image',
-              description: 'Icon for the feature.',
+              description: 'Icon for the feature heading.',
             },
             {
-              name: 'title',
-              title: 'Title',
+              name: 'featureHeading',
+              title: 'Feature Heading',
               type: 'string',
-              description: 'Title of the feature.',
+              description: 'Heading of the feature.',
             },
             {
               name: 'featureLists',
@@ -129,6 +129,22 @@ const comparePlans = {
                   preview: {
                     select: {
                       title: 'featureName',
+                      values: 'values', // Select values to display in preview
+                    },
+                    prepare({ title, values }) {
+                      const valueText =
+                        values?.map(
+                          (value) =>
+                            value?.type === 'text'
+                              ? value?.text
+                              : value?.isAvailable
+                              ? '✔'
+                              : '✖'
+                        ) || [];
+                      return {
+                        title: title || 'Feature Name',
+                        subtitle: valueText.join(', ') || 'No values',
+                      };
                     },
                   },
                 },
@@ -147,7 +163,16 @@ const comparePlans = {
     },
   ],
   preview: {
-    prepare: () => ({ title: 'Compare Plans' }),
+    select: {
+      title: 'heading',
+      subtitle: 'subHeading.text',
+    },
+    prepare({ title, subtitle }) {
+      return {
+        title: title || 'Compare Plans',
+        subtitle: subtitle || 'No subheading text',
+      };
+    },
   },
 };
 
