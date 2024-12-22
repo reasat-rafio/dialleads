@@ -1,27 +1,41 @@
-<script>
+<script lang="ts">
   import SanityImage from '$lib/sanity/sanity-image/sanity-image.svelte';
   import { imgBuilder } from '$lib/sanity/sanity-client';
-
   import { ChevronDown, ChevronUp } from 'lucide-svelte';
-  export let nav;
-  export let logo;
   import * as Dialog from '$lib/components/ui/dialog';
-  let showMenu = false;
-  let activeDropdown = null;
-  let timeout;
-  import { Button, buttonVariants } from '$lib/components/ui/button/index.ts';
-  import { Label } from '../ui/label';
-  import { Input } from '../ui/input';
-  let dialogOpen = false;
+  import { Button } from '../ui/button';
+
+  interface Props {
+    nav: any;
+    logo: any;
+  }
   function toggleNavbar() {
     showMenu = !showMenu;
     dialogOpen = !dialogOpen;
   }
-  let expanded = {};
-  function toggleDropdown(item) {
-    expanded[item] = !expanded[item];
+  let expanded: { [key: string]: boolean } = $state({});
+  let dialogOpen = $state(false);
+  let props: Props = $props();
+  let { nav, logo } = props;
+  let showMenu = $state(false);
+  let activeDropdown: string | null = $state(null);
+  let timeout: any;
+  let windowWidth = $state(0);
+
+  function toggleDropdown(item: string) {
+    // Check if the item is already expanded.
+    const isAlreadyExpanded = expanded[item];
+
+    // Reset all expanded states.
+    expanded = {};
+
+    // Set the current item's expanded state to the opposite of its current state
+    // only if it was not already expanded.
+    if (!isAlreadyExpanded) {
+      expanded[item] = true;
+    }
   }
-  function showDropdown(title) {
+  function showDropdown(title: string) {
     clearTimeout(timeout);
     activeDropdown = title;
   }
@@ -29,15 +43,25 @@
   function hideDropdown() {
     timeout = setTimeout(() => {
       activeDropdown = null;
-    }, 500); // Delay of 500ms before hiding
+    }, 500);
   }
 
-  let windowWidth = 0;
-  $: if (windowWidth >= 1024) showMenu = false;
+  $effect(() => {
+    if (windowWidth >= 1024) showMenu = false;
+  });
+
+  function handleFocus(title: string) {
+    // Replicate hover behavior on focus for accessibility
+    showDropdown(title);
+  }
+
+  function handleBlur() {
+    // Replicate mouseout behavior on blur for accessibility
+    hideDropdown();
+  }
 </script>
 
 <svelte:window bind:innerWidth={windowWidth} />
-
 <div class="w-screen">
   <nav
     class="container mx-auto flex items-center justify-between px-2 py-4 lg:px-16">
@@ -53,9 +77,13 @@
     <div class="hidden lg:flex lg:items-center lg:space-x-8">
       {#each nav.menu as { title, href, moreLinks }}
         <div
+          role="button"
+          tabindex="0"
           class="relative flex"
           onmouseover={() => showDropdown(title)}
-          onmouseout={hideDropdown}>
+          onmouseout={hideDropdown}
+          onfocus={() => handleFocus(title)}
+          onblur={handleBlur}>
           <a {href} class="text-gray-500 hover:text-black">{title}</a>
           {#if moreLinks}
             <ChevronDown class="mt-0 text-gray-500" />
