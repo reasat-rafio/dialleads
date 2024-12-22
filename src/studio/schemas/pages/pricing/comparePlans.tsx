@@ -7,102 +7,139 @@ const comparePlans = {
   icon: FaTable,
   fields: [
     {
+      name: 'subHeading',
+      title: 'SubHeading',
+      type: 'object',
+      description: 'Sub heading for the compare plans section with icon.',
+      fields: [
+        {
+          name: 'icon',
+          title: 'Icon',
+          type: 'image',
+          description: 'Icon for the subheading.',
+        },
+        {
+          name: 'text',
+          title: 'Text',
+          type: 'string',
+          description: 'Text for the subheading.',
+        },
+      ],
+    },
+    {
       name: 'heading',
       title: 'Heading',
       type: 'string',
-      description: 'Main heading for the compare plans section.',
+      description: 'Heading for the compare plans section.',
     },
     {
-      name: 'subheading',
-      title: 'Subheading',
-      type: 'string',
-      description: 'Subtitle for the compare plans section.',
+      name: 'subscriptionTypes',
+      title: 'Subscription Types',
+      type: 'array',
+      description: 'Reference to subscription types.',
+      of: [
+        {
+          type: 'reference',
+          to: [{ type: 'subscriptionTypes' }],
+        },
+      ],
     },
     {
-      name: 'columns',
-      title: 'Columns',
+      name: 'features',
+      title: 'Features',
       type: 'array',
       of: [
         {
           type: 'object',
           fields: [
             {
+              name: 'icon',
+              title: 'Icon',
+              type: 'image',
+              description: 'Icon for the feature.',
+            },
+            {
               name: 'title',
               title: 'Title',
               type: 'string',
-              description: 'Title of the column (e.g., plan name).',
+              description: 'Title of the feature.',
             },
             {
-              name: 'subtitle',
-              title: 'Subtitle',
-              type: 'string',
-              description: 'Subtitle for the column.',
-            },
-            {
-              name: 'buttonText',
-              title: 'Button Text',
-              type: 'string',
-              description: 'Text for the button in this column.',
-            },
-            {
-              name: 'rows',
-              title: 'Rows',
+              name: 'featureLists',
+              title: 'Feature Lists',
               type: 'array',
               of: [
                 {
                   type: 'object',
                   fields: [
                     {
-                      name: 'icon',
-                      title: 'Icon',
-                      type: 'image',
-                      description: 'Icon for the row.',
-                    },
-                    {
-                      name: 'title',
-                      title: 'Title',
+                      name: 'featureName',
+                      title: 'Feature Name',
                       type: 'string',
-                      description: 'Title of the row.',
+                      description: 'Name of the feature.',
                     },
                     {
-                      name: 'points',
-                      title: 'Points',
+                      name: 'values',
+                      title: 'Values',
                       type: 'array',
                       of: [
                         {
                           type: 'object',
                           fields: [
                             {
+                              name: 'type',
+                              title: 'Type',
+                              type: 'string',
+                              description: 'Specify the type of value (Text or Checked/Unchecked).',
+                              options: {
+                                list: [
+                                  { title: 'Text', value: 'text' },
+                                  { title: 'Checked/Unchecked', value: 'status' },
+                                ],
+                              },
+                            },
+                            {
                               name: 'text',
                               title: 'Text',
                               type: 'string',
-                              description: 'Point text.',
+                              description: 'Text value for the feature.',
+                              hidden: ({ parent }) => parent?.type !== 'text',
                             },
                             {
-                              name: 'icon',
-                              title: 'Icon',
-                              type: 'image',
-                              description: 'Optional icon for the point.',
+                              name: 'isAvailable',
+                              title: 'Is Available',
+                              type: 'boolean',
+                              description: 'Checked (true) or Unchecked (false) value.',
+                              hidden: ({ parent }) => parent?.type !== 'status',
+                            },
+                            {
+                              name: 'relatedSubscriptionType',
+                              title: 'Related Subscription Type',
+                              type: 'reference',
+                              description: 'Select the subscription type associated with this value.',
+                              to: [{ type: 'subscriptionTypes' }],
                             },
                           ],
+                          description: 'A single value for the feature (text or checked/unchecked) linked to a subscription type.',
                         },
                       ],
-                      description: 'Points under each row.',
+                      description: 'Values associated with this feature (text, checked/unchecked, and linked subscription types).',
                     },
                   ],
                   preview: {
                     select: {
-                      title: 'title',
-                      media: 'icon',
+                      title: 'featureName',
                     },
                   },
                 },
               ],
+              description: 'A list of features, each with multiple associated values (text, checked/unchecked, and linked subscription types).',
             },
           ],
           preview: {
             select: {
               title: 'title',
+              media: 'icon',
             },
           },
         },
