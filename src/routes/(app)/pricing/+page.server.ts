@@ -7,28 +7,62 @@ import type { PricingPageProps } from '../../../types/pricing.types';
 
 const query = groq`
   *[_id == 'pricingPage'][0]{
-    ...,
+    seo,
     sections[]{
-     ...,
-     plans{
-     ...,
-     subHeading{
-     ...,
-     ${asset('icon')},
-     },
-     features{
-     ...,
-     ${asset('icon')},
-     },
-     }
+      ...,
+      plans {
+        heading,
+        subHeading {
+          text,
+          ${asset('icon')}
+        },
+        subscriptionTypes[]-> {
+          _id,
+          title,
+          subtitle,
+          price[] {
+            type,
+            value
+          },
+          buttonText
+        },
+        features[] {
+          icon {
+            ${asset('icon')}
+          },
+          featureHeading,
+          featureLists[] {
+            featureName,
+            values[] {
+              type,
+              text,
+              isAvailable,
+              relatedSubscriptionType-> {
+                _id,
+                title
+              }
+            }
+          }
+        }
+      }
     }
   }
 `;
 
-
 export const load: PageServerLoad = async () => {
-  const data: PricingPageProps = await sanityClient.fetch(query);
-  if (!data) throw error(404, { message: 'Not found' });
+  try {
+    // Fetch data from Sanity
+    const data: PricingPageProps = await sanityClient.fetch(query);
 
-  return { page: data };
+    if (!data) {
+      throw error(404, { message: 'Page not found' });
+    }
+
+    return {
+      page: data,
+    };
+  } catch (err) {
+    console.error('Failed to fetch data:', err);
+    throw error(500, { message: 'Failed to fetch data' });
+  }
 };

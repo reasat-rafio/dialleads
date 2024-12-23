@@ -9,6 +9,7 @@ export interface PricingPageProps {
 type Section  = ComparePlansProps;
 
 export interface ComparePlansProps {
+  _key: string;
   _type: 'pricingPage.comparePlans';
   plans: Plans;
 }
