@@ -14,7 +14,7 @@
 
   $inspect(plans)
 
-  let selectedType: string = $state('monthly');
+  let selectedType: string = $state('annually');
 
   function getSelectedPrice(
     subscriptionType: SubscriptionType,
@@ -40,30 +40,30 @@
       : { message: 'Not Available' };
   }
 </script>
+<div class="mt-8">
+    <div class="bg-white border rounded-full mb-5 w-36 gap-4   mx-auto flex items-center  px-5">
+        <SanityImage
+            lqip
+            class="w-14"
+            src={plans?.subHeading?.icon}
+            imageUrlBuilder={imgBuilder}
+            alt="featureTitleIcon" />
+        <p class="text-center">Comapre Plans</p>
+    </div>
+    <h2 class="text-5xl font-bold text-black text-center">{plans?.heading}</h2>
+</div>
 
 <div class="mt-8">
-    <div class="">
-        <div class="bg-white border rounded-full mb-5 w-36 gap-4   mx-auto flex items-center  px-5">
-            <SanityImage
-                lqip
-                class="w-14"
-                src={plans?.subHeading?.icon}
-                imageUrlBuilder={imgBuilder}
-                alt="featureTitleIcon" />
-            <p class="text-center">Comapre Plans</p>
-        </div>
-        <h2 class="text-5xl font-bold text-black text-center">{plans?.heading}</h2>
-    </div>
     <div class="m-12 border rounded-xl">
         <Table.Root>
           <Table.Header>
             <Table.Row>
               {#each plans.subscriptionTypes as subscriptionType}
-                <Table.Head class="text-center bg-gray-100 py-5 max-w-52">
+                <Table.Head class="text-center bg-gray-100 py-5 max-w-64 border-r h-fit">
                   <h3 class="text-center text-3xl font-bold text-black">
                     {subscriptionType?.title}
                   </h3>
-                  <p class="text-center text-gray-400">
+                  <p class="text-center text-gray-400 text-2xl">
                     {subscriptionType?.subtitle}
                   </p>
                   <div class="mt-2">
