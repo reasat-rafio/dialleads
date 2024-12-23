@@ -1,8 +1,16 @@
 <script lang="ts">
-    export let data;
-    let {page: {sections}} = data;
+  import ComparePlans from '$lib/components/pages/pricing/comparePlans/ComparePlans.svelte';
+
+
+    let {data} = $props();
+    let {page: {sections}} = $derived(data);
+    console.log("section: ", sections);
 </script>
 
 <div>
-    <h1>Somel</h1>
+    {#each sections as props}
+        {#if props._type === 'pricingPage.comparePlans'}
+                <!-- <ComparePlans {props} /> -->
+        {/if}
+    {/each}
 </div>

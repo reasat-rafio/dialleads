@@ -6,50 +6,25 @@ import type { PageServerLoad } from './$types';
 import type { PricingPageProps } from '../../../types/pricing.types';
 
 const query = groq`
-  *[_id == "pricingPage"][0]{
+  *[_id == 'pricingPage'][0]{
     ...,
-    sections[] {
-      ...,
-      comparePlans {
-        ...,
-        heading,
-        subHeading {
-          text,
-          ${asset('icon')}
-        },
-        subscriptionTypes[]-> {
-          _id,
-          title,
-          subtitle,
-          price[] {
-            type,
-            value
-          },
-          buttonText
-        },
-        features[] {
-          ...,
-          ${asset('icon')},
-          featureHeading,
-          featureLists[] {
-            ...,
-            featureName,
-            values[] {
-              ...,
-              type,
-              text,
-              isAvailable,
-              relatedSubscriptionType-> {
-                _id,
-                title
-              }
-            }
-          }
-        }
-      }
+    sections[]{
+     ...,
+     plans{
+     ...,
+     subHeading{
+     ...,
+     ${asset('icon')},
+     },
+     features{
+     ...,
+     ${asset('icon')},
+     },
+     }
     }
   }
 `;
+
 
 export const load: PageServerLoad = async () => {
   const data: PricingPageProps = await sanityClient.fetch(query);
