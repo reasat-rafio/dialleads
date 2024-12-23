@@ -43,6 +43,9 @@
 
 <div class="mt-8">
     <div class="text-center">
+        <div class="bg-white border rounded-full mb-3 w-24 font-medium mx-auto ">
+            <p>Comapre Plans</p>
+        </div>
         <h2 class="text-5xl font-bold text-black">{plans?.heading}</h2>
     </div>
     <div class="m-12 border rounded-xl">
