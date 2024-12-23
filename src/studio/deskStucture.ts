@@ -81,10 +81,8 @@ export const AppStructure: StructureResolver = (S) =>
                 title: 'Pricing',
                 icon: MdOutlinePriceCheck,
               }),
-
             ]),
         ),
-        S.documentTypeListItem('subscriptionTypes').title('Subscription Types'),
-        S.documentTypeListItem('plans').title('Plans'),
+      S.documentTypeListItem('subscriptionTypes').title('Subscription Types'),
+      S.documentTypeListItem('plans').title('Plans'),
     ]);
-

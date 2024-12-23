@@ -27,10 +27,10 @@ const comparePlans = {
                 {
                   name: 'alt',
                   title: 'Alt Text',
-                  type:'string',
+                  type: 'string',
                   description: 'Icon for the subheading.',
-                }
-              ]
+                },
+              ],
             },
             {
               name: 'text',
@@ -46,17 +46,16 @@ const comparePlans = {
           type: 'string',
           description: 'Heading for the compare plans section.',
         },
-        
       ],
     },
   ],
   preview: {
     select: {
-      title: 'plans.heading', 
+      title: 'plans.heading',
     },
     prepare({ title }) {
       return {
-        title: title || 'No Title', 
+        title: title || 'No Title',
       };
     },
   },

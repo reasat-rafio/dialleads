@@ -28,7 +28,8 @@ const subscriptionTypes = {
               name: 'type',
               title: 'Type',
               type: 'string',
-              description: 'Specify whether this price is for Monthly or Annually.',
+              description:
+                'Specify whether this price is for Monthly or Annually.',
               options: {
                 list: [
                   { title: 'Monthly', value: 'monthly' },

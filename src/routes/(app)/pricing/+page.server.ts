@@ -17,7 +17,7 @@ const query = groq`
           ${asset('icon')}
         }
       },
-      "subscriptionTypes": *[_type == "subscriptionTypes"][]{
+      "subscriptionTypes": *[_type == "subscriptionTypes"][]|order(_createdAt asc){
         _id,
         title,
         subtitle,
@@ -27,22 +27,23 @@ const query = groq`
         },
         buttonText
       },
-      "features": *[_type == "feature"][]{
-        _id,
-        featureHeading,
+      "plansDetails": *[_type == "plans"][]|order(_createdAt asc){
+        features[]{
         ${asset('icon')},
-        featureLists[] {
-          featureName,
-          values[] {
-            type,
-            text,
-            isAvailable,
-            relatedSubscriptionType-> {
-              _id,
-              title
-            }
-          }
+        featureHeading,
+        featureLists[]{
+        featureName,
+        values[]{
+        type,
+        text,
+        isAvailable,
+        relatedSubscriptionType {
+          _id,
+          title
+        },
+        },
         }
+        },
       }
     }
   }
