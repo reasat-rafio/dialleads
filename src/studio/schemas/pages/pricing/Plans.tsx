@@ -136,13 +136,13 @@ const plans = {
     ],
     preview: {
       select: {
-        title: 'title',
-        featureCount: 'features.length',
+        title: 'features.0.featureHeading', 
+        icon: 'features.0.icon', 
       },
-      prepare({ title, featureCount }) {
+      prepare({ title, icon }) {
         return {
-          title: title || 'Plans Document',
-          subtitle: `${featureCount || 0} feature${featureCount === 1 ? '' : 's'}`,
+          title: title || 'Plans Document', 
+          media: icon, 
         };
       },
     },
