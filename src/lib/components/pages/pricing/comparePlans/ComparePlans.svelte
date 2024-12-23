@@ -12,7 +12,7 @@
   let { props }: { props: ComparePlansProps } = $props();
   let { plans } = $derived(props);
 
-  $inspect(plans?.features)
+  $inspect(plans)
 
   let selectedType: string = $state('monthly');
 
@@ -42,11 +42,17 @@
 </script>
 
 <div class="mt-8">
-    <div class="text-center">
-        <div class="bg-white border rounded-full mb-3 w-24 font-medium mx-auto ">
-            <p>Comapre Plans</p>
+    <div class="">
+        <div class="bg-white border rounded-full mb-5 w-36 gap-4   mx-auto flex items-center  px-5">
+            <SanityImage
+                lqip
+                class="w-14"
+                src={plans?.subHeading?.icon}
+                imageUrlBuilder={imgBuilder}
+                alt="featureTitleIcon" />
+            <p class="text-center">Comapre Plans</p>
         </div>
-        <h2 class="text-5xl font-bold text-black">{plans?.heading}</h2>
+        <h2 class="text-5xl font-bold text-black text-center">{plans?.heading}</h2>
     </div>
     <div class="m-12 border rounded-xl">
         <Table.Root>
@@ -97,13 +103,24 @@
              <!-- Iterate through features -->
           {#each plans?.features as feature}
           <Table.Row class="border-b-0">
-            <Table.Cell class=" text-black text-2xl">{feature?.featureHeading}</Table.Cell>
+            
+            <Table.Cell class="  flex items-center">
+                <SanityImage
+                lqip
+                class="w-14"
+                src={feature?.icon}
+                imageUrlBuilder={imgBuilder}
+                alt="featureTitleIcon" />
+                <p class="text-black text-2xl mb-3">
+                {feature?.featureHeading}
+                </p>
+            </Table.Cell>
     
           </Table.Row>
           {#each feature?.featureLists as list}
             <Table.Row class="border-b-0">
                
-              <Table.Cell class="text-gray-400">{list.featureName}</Table.Cell>
+              <Table.Cell class="text-gray-400 pl-8">{list.featureName}</Table.Cell>
               <!-- Values for each subscription type -->
               {#each list.values as value}
                 <Table.Cell class="text-center">

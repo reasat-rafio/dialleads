@@ -27,9 +27,8 @@ const query = groq`
           buttonText
         },
         features[] {
-          icon {
-            ${asset('icon')}
-          },
+          
+            ${asset('icon')},
           featureHeading,
           featureLists[] {
             featureName,

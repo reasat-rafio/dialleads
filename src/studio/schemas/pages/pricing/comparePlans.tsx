@@ -19,9 +19,18 @@ const comparePlans = {
           fields: [
             {
               name: 'icon',
-              title: 'Icon',
+              title: 'Sub Heading Icon',
               type: 'image',
+              options: { hotspot: true },
               description: 'Icon for the subheading.',
+              fields: [
+                {
+                  name: 'alt',
+                  title: 'Alt Text',
+                  type:'string',
+                  description: 'Icon for the subheading.',
+                }
+              ]
             },
             {
               name: 'text',
@@ -61,7 +70,16 @@ const comparePlans = {
                   name: 'icon',
                   title: 'Icon',
                   type: 'image',
+                  options: { hotspot: true },
                   description: 'Icon for the feature heading.',
+                  fields: [
+                    {
+                      name: 'alt',
+                      title: 'Alternative Text',
+                      description: 'Icon for the feature heading.',
+                      type: 'string',
+                    },
+                  ],
                 },
                 {
                   name: 'featureHeading',
