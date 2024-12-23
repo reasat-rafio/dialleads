@@ -15,31 +15,31 @@ const query = groq`
         subHeading {
           text,
           ${asset('icon')}
+        }
+      },
+      "subscriptionTypes": *[_type == "subscriptionTypes"][]{
+        _id,
+        title,
+        subtitle,
+        price[] {
+          type,
+          value
         },
-        subscriptionTypes[]-> {
-          _id,
-          title,
-          subtitle,
-          price[] {
+        buttonText
+      },
+      "features": *[_type == "feature"][]{
+        _id,
+        featureHeading,
+        ${asset('icon')},
+        featureLists[] {
+          featureName,
+          values[] {
             type,
-            value
-          },
-          buttonText
-        },
-        features[] {
-          
-            ${asset('icon')},
-          featureHeading,
-          featureLists[] {
-            featureName,
-            values[] {
-              type,
-              text,
-              isAvailable,
-              relatedSubscriptionType-> {
-                _id,
-                title
-              }
+            text,
+            isAvailable,
+            relatedSubscriptionType-> {
+              _id,
+              title
             }
           }
         }
@@ -50,7 +50,6 @@ const query = groq`
 
 export const load: PageServerLoad = async () => {
   try {
-    // Fetch data from Sanity
     const data: PricingPageProps = await sanityClient.fetch(query);
 
     if (!data) {
