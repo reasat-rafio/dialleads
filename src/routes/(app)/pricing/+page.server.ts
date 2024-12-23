@@ -13,20 +13,36 @@ const query = groq`
       comparePlans {
         ...,
         heading,
-        subheading,
-        columns[] {
-          ...,
+        subHeading {
+          text,
+          ${asset('icon')}
+        },
+        subscriptionTypes[]-> {
+          _id,
           title,
           subtitle,
-          buttonText,
-          rows[] {
+          price[] {
+            type,
+            value
+          },
+          buttonText
+        },
+        features[] {
+          ...,
+          ${asset('icon')},
+          featureHeading,
+          featureLists[] {
             ...,
-            ${asset('icon')},
-            title,
-            points[] {
+            featureName,
+            values[] {
               ...,
+              type,
               text,
-              ${asset('icon')}
+              isAvailable,
+              relatedSubscriptionType-> {
+                _id,
+                title
+              }
             }
           }
         }
