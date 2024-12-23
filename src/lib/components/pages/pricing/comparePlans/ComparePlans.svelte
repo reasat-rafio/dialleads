@@ -1,5 +1,8 @@
 <script lang="ts">
   import * as Table from '$lib/components/ui/table/index.js';
+  import { imgBuilder } from '$lib/sanity/sanity-client';
+  import SanityImage from '$lib/sanity/sanity-image/sanity-image.svelte';
+  import { Check } from 'lucide-svelte';
   import type {
     ComparePlansProps,
     SubscriptionType,
@@ -8,6 +11,8 @@
 
   let { props }: { props: ComparePlansProps } = $props();
   let { plans } = $derived(props);
+
+  $inspect(plans?.features)
 
   let selectedType: string = $state('monthly');
 
@@ -71,7 +76,7 @@
                 <div class="mt-4 flex justify-center">
                   <button
                     class="flex justify-center rounded-xl border-2
-                     border-gray-200 bg-white px-4 py-3 text-gray-400"
+                     border-gray-200 bg-white px-4 py-2 text-gray-400"
                   >
                     {subscriptionType?.buttonText}
                   </button>
@@ -82,12 +87,33 @@
         </Table.Row>
       </Table.Header>
       <Table.Body>
-        <Table.Row>
-          <Table.Cell class="font-medium">INV001</Table.Cell>
-          <Table.Cell>Paid</Table.Cell>
-          <Table.Cell>Credit Card</Table.Cell>
-          <Table.Cell class="text-right">$250.00</Table.Cell>
+         <!-- Iterate through features -->
+      {#each plans?.features as feature}
+      <Table.Row class="border-b-0">
+        <Table.Cell class=" text-black text-2xl">{feature?.featureHeading}</Table.Cell>
+
+      </Table.Row>
+      {#each feature?.featureLists as list}
+        <Table.Row class="border-b-0">
+           
+          <Table.Cell class="text-gray-400">{list.featureName}</Table.Cell>
+          <!-- Values for each subscription type -->
+          {#each list.values as value}
+            <Table.Cell class="text-center">
+                {#if value.type === 'text'}
+                    <p>{value.text}</p>
+                {:else if value.type === 'status' }
+                {#if value.isAvailable}
+                <p class="flex justify-center"><Check class="text-purple-600" size={24} /></p>
+                {:else}
+                <p>--</p>
+                {/if}
+                {/if}
+            </Table.Cell>
+          {/each}
         </Table.Row>
+      {/each}
+    {/each}
       </Table.Body>
     </Table.Root>
 </div>
