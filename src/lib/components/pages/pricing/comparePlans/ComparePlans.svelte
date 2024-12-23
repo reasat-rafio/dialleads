@@ -19,7 +19,7 @@
       (p) => p.type === selectedType,
     );
     if (selectedPrice) {
-      return { message: `$${selectedPrice.value}/mo` };
+      return { message: `$${selectedPrice.value}` };
     }
 
     const fallbackType = selectedType === 'monthly' ? 'annually' : 'monthly';
@@ -30,7 +30,7 @@
     return fallbackPrice
       ? {
           message: `Not Available for ${selectedType.charAt(0).toUpperCase() + selectedType.slice(1)}`,
-          fallback: `$${fallbackPrice.value}/mo`,
+          fallback: `$${fallbackPrice.value}`,
         }
       : { message: 'Not Available' };
   }
@@ -41,21 +41,25 @@
       <Table.Header>
         <Table.Row>
           {#each plans.subscriptionTypes as subscriptionType}
-            <Table.Head class="text-center bg-gray-100 py-5 max-h-40">
-              <h3 class="text-center text-2xl font-bold text-black">
+            <Table.Head class="text-center bg-gray-100 py-5 max-w-52">
+              <h3 class="text-center text-3xl font-bold text-black">
                 {subscriptionType?.title}
               </h3>
               <p class="text-center text-gray-400">
                 {subscriptionType?.subtitle}
               </p>
-              <div>
+              <div class="mt-2">
                 {#if subscriptionType?.buttonText.length <= 1}
                   <!-- Display message and fallback price separately -->
                   {#if getSelectedPrice(subscriptionType, selectedType).fallback}
-                    <h1>{getSelectedPrice(subscriptionType, selectedType).message}</h1>
-                    <p>{getSelectedPrice(subscriptionType, selectedType).fallback}</p>
+                    <h3 class="font-bold ">{getSelectedPrice(subscriptionType, selectedType).message}</h3>
+                    <p class="text-xl">{getSelectedPrice(subscriptionType, selectedType).fallback}
+                        /<span class="text-gray-400 font-normal">mo</span>
+                    </p>
                   {:else}
-                    <h1>{getSelectedPrice(subscriptionType, selectedType).message}</h1>
+                    <h1 class="text-xl ">{getSelectedPrice(subscriptionType, selectedType).message}
+                        /<span class="text-gray-400 font-normal">mo</span>
+                    </h1>
                   {/if}
                 {/if}
               </div>
