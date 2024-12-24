@@ -76,12 +76,6 @@ export const AppStructure: StructureResolver = (S, context: ConfigContext) =>
                 title: 'Landing',
                 icon: TbHome,
               }),
-              // pageItem(S, {
-              //   schemaType: 'industryUseCasePage',
-              //   id: 'industryUseCasePage',
-              //   title: 'Industry Use Case',
-              //   icon: TbHome,
-              // }),
             ]),
         ),
       S.divider(),
