@@ -4,6 +4,7 @@ import { FaSitemap } from 'react-icons/fa';
 import { SiCloudflarepages } from 'react-icons/si';
 import type { IconType } from 'react-icons';
 import type { StructureBuilder, StructureResolver } from 'sanity/structure';
+import { MdOutlinePriceCheck } from 'react-icons/md';
 
 interface ListItem {
   title: string;
@@ -74,6 +75,14 @@ export const AppStructure: StructureResolver = (S) =>
                 title: 'Landing',
                 icon: TbHome,
               }),
+              
             ]),
+
         ),
+        pageItem(S, {
+          schemaType: 'pricing',
+          id: 'pricing',
+          title: 'Pricing',
+          icon: MdOutlinePriceCheck,
+        }),
     ]);
