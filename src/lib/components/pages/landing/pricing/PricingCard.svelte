@@ -18,13 +18,16 @@
 
 <div class="rounded-xl border p-8 ">
   <div class="space-y-2 text-center">
-    <SanityImage
-              lqip
-              class="w-6 h-5"
-              src={plan?.icon}
-              sizes="5vw"
-              imageUrlBuilder={imgBuilder}
-              alt="SliderMainImage" />
+    <div class="flex justify-center">
+        <div class="bg-violet-100 rounded-full w-10 h-10 flex justify-center items-center">
+            <SanityImage
+                  class="w-5 h-5"
+                  src={plan?.icon}
+                  sizes="5vw"
+                  imageUrlBuilder={imgBuilder}
+            alt="planIcon" />
+        </div>
+    </div>
     <p class="text-xl font-normal text-violet-600">{plan?.planName}</p>
     <p class="text-5xl font-semibold text-black">
       ${#if selectedSubscriptionType == 'annual'}
