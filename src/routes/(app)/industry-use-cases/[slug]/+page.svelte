@@ -14,15 +14,9 @@
   import Testimonials from '$lib/components/pages/industryUseCases/Testimonials.svelte';
   import TryIt from '$lib/components/pages/industryUseCases/TryIt.svelte';
 
-  // export let data;
-
   let data = $props();
 
-  let { sections } = data?.data?.page;
-
-  // $: ({
-  //   page: { sections },
-  // } = data);
+  let { sections } = $derived(data?.data?.page);
 </script>
 
 <div class="flex max-w-full flex-col items-center justify-center">
