@@ -72,7 +72,7 @@ const pricing = {
               subtitle: 'price',
               media: 'icon',
             },
-            prepare({ title, subtitle, media }) {
+            prepare({ title, subtitle, media }: { title: string; subtitle: number; media: { asset: { _ref: string } } }) {
               return {
                 title: title || 'Untitled Plan',
                 subtitle: subtitle ? `$${subtitle}` : 'No price set',
