@@ -12,14 +12,14 @@
     <button
       onclick={() => (selectedSubscriptionType = 'monthly')}
       class={selectedSubscriptionType === 'monthly'
-        ? 'rounded-lg bg-violet-100 px-9 py-2 transition-colors delay-150 text-base font-semibold text-black'
+        ? 'rounded-lg bg-violet-100 px-9 py-2 transition-colors delay-75 text-base font-semibold text-black'
         : 'px-9 py-2 text-base font-semibold text-black'}>
       Monthly
     </button>
     <button
       onclick={() => (selectedSubscriptionType = 'annual')}
       class={selectedSubscriptionType === 'annual'
-        ? 'rounded-lg bg-violet-100 px-9 py-2 transition-colors delay-150 text-base font-semibold text-black'
+        ? 'rounded-lg bg-violet-100 px-9 py-2 transition-colors delay-75 text-base font-semibold text-black'
         : 'px-9 py-2 text-base font-semibold text-black'}>
       <p>
         Annual
