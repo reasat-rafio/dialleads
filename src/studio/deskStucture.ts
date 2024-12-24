@@ -6,6 +6,7 @@ import type { IconType } from 'react-icons';
 import type { StructureBuilder, StructureResolver } from 'sanity/structure';
 import { orderableDocumentListDeskItem } from '@sanity/orderable-document-list';
 import type { ConfigContext } from 'sanity';
+import { MdOutlinePriceCheck } from 'react-icons/md';
 
 interface ListItem {
   title: string;
@@ -76,7 +77,9 @@ export const AppStructure: StructureResolver = (S, context: ConfigContext) =>
                 title: 'Landing',
                 icon: TbHome,
               }),
+              
             ]),
+
         ),
       S.divider(),
       orderableDocumentListDeskItem({
@@ -93,4 +96,10 @@ export const AppStructure: StructureResolver = (S, context: ConfigContext) =>
         title: 'Testimonials',
         icon: TbHome,
       }),
+        pageItem(S, {
+          schemaType: 'pricing',
+          id: 'pricing',
+          title: 'Pricing',
+          icon: MdOutlinePriceCheck,
+        }),
     ]);
