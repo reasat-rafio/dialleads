@@ -75,14 +75,14 @@ export const AppStructure: StructureResolver = (S) =>
                 title: 'Landing',
                 icon: TbHome,
               }),
-              pageItem(S, {
-                schemaType: 'pricingPage',
-                id: 'pricingPage',
-                title: 'Pricing',
-                icon: MdOutlinePriceCheck,
-              }),
+              
             ]),
+
         ),
-      S.documentTypeListItem('subscriptionTypes').title('Subscription Types'),
-      S.documentTypeListItem('plans').title('Plans'),
+        pageItem(S, {
+          schemaType: 'pricing',
+          id: 'pricing',
+          title: 'Pricing',
+          icon: MdOutlinePriceCheck,
+        }),
     ]);
