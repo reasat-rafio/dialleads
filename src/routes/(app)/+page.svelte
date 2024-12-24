@@ -1,5 +1,10 @@
 <script lang="ts">
-  export let data;
+  // export let data;
+
+  let page = $props();
+
+  console.log('page', page);
+  let { sections } = page;
 
   // $: ({
   //   page: { sections },

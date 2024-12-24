@@ -17,6 +17,7 @@
 		"@portabletext/svelte": "^2.1.11",
 		"@portabletext/types": "^2.0.13",
 		"@sanity/eslint-config-studio": "^5.0.1",
+		"@sanity/orderable-document-list": "^1.2.2",
 		"@sanity/vision": "^3.68.3",
 		"@sveltejs/adapter-auto": "^3.0.0",
 		"@sveltejs/adapter-vercel": "^5.5.2",
@@ -54,6 +55,7 @@
 	"dependencies": {
 		"@sanity/client": "^6.24.1",
 		"@sanity/image-url": "^1.1.0",
-		"@tailwindcss/typography": "^0.5.15"
+		"@tailwindcss/typography": "^0.5.15",
+		"embla-carousel-autoplay": "^8.5.1"
 	}
 }

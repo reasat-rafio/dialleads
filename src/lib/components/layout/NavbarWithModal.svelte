@@ -47,7 +47,7 @@
   }
 
   $effect(() => {
-    if (windowWidth >= 1024) showMenu = false;
+    if (windowWidth >= 1024) dialogOpen = false;
   });
 
   function handleFocus(title: string) {
@@ -95,7 +95,7 @@
               class:opacity-100={activeDropdown === title}>
               {#each moreLinks as { title, href }}
                 <a
-                  {href}
+                  href={`/industry-use-cases${href}`}
                   class="block px-4 py-2 text-sm text-gray-700 hover:bg-[#e4e2e9]">
                   {title}
                 </a>
@@ -128,69 +128,9 @@
   </nav>
 </div>
 
-<!-- {#if showMenu} -->
-<!-- <div class="fixed inset-0 z-10 bg-white lg:hidden">
-    <div class="p-4">
-      <div class="flex items-center justify-between">
-        <SanityImage
-          class="h-6 w-auto"
-          src={logo}
-          sizes="10vw"
-          imageUrlBuilder={imgBuilder} />
-        <button onclick={toggleNavbar} class="text-black">
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            fill="none"
-            viewBox="0 0 24 24"
-            stroke-width="1.5"
-            stroke="currentColor"
-            class="h-6 w-6">
-            <path
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              d="M6 18L18 6M6 6l12 12" />
-          </svg>
-        </button>
-      </div>
-      <div class="mt-8 text-center">
-        {#each nav.menu as { title, href }}
-          <a
-            {href}
-            class="my-4 block text-gray-700 hover:text-black"
-            onclick={toggleNavbar}>
-            {title}
-          </a>
-        {/each}
-      </div>
-    </div>
-  </div> -->
-
 <Dialog.Root bind:open={dialogOpen}>
-  <!-- <Dialog.Trigger class={buttonVariants({ variant: 'outline' })}>
-      Edit Profile
-    </Dialog.Trigger> -->
   <Dialog.Trigger />
-  <Dialog.Content class="sm:max-w-[425px]">
-    <!-- <Dialog.Header>
-      <Dialog.Title>Edit profile</Dialog.Title>
-      <Dialog.Description>
-        Make changes to your profile here. Click save when you're done.
-      </Dialog.Description>
-    </Dialog.Header>
-    <div class="grid gap-4 py-4">
-      <div class="grid grid-cols-4 items-center gap-4">
-        <Label for="name" class="text-right">Name</Label>
-        <Input id="name" value="Pedro Duarte" class="col-span-3" />
-      </div>
-      <div class="grid grid-cols-4 items-center gap-4">
-        <Label for="username" class="text-right">Username</Label>
-        <Input id="username" value="@peduarte" class="col-span-3" />
-      </div>
-    </div>
-    <Dialog.Footer>
-      <Button type="submit">Save changes</Button>
-    </Dialog.Footer> -->
-
+  <Dialog.Content class="min-w-full sm:max-w-[26.563rem]">
     <div class="mt-4">
       {#each nav.menu as { title, href, moreLinks }}
         <div class="block">
@@ -210,7 +150,7 @@
             <div class="pl-4">
               {#each moreLinks as { title, href }}
                 <a
-                  {href}
+                  href={`industry-use-cases/${href}`}
                   class="block px-2 py-1 text-gray-500 hover:bg-[#E4E2E9] hover:text-black"
                   onclick={toggleNavbar}>
                   {title}
@@ -220,6 +160,15 @@
           {/if}
         </div>
       {/each}
+
+      <div class="mt-4 flex justify-between">
+        <Button variant="outline" class="min-w-auto  sm:min-w-[12.5rem]">
+          Login
+        </Button>
+        <Button variant="outline" class="min-w-auto sm:min-w-[12.5rem]">
+          Free Trial
+        </Button>
+      </div>
     </div>
   </Dialog.Content>
 </Dialog.Root>

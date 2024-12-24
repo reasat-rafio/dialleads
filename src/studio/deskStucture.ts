@@ -4,6 +4,8 @@ import { FaSitemap } from 'react-icons/fa';
 import { SiCloudflarepages } from 'react-icons/si';
 import type { IconType } from 'react-icons';
 import type { StructureBuilder, StructureResolver } from 'sanity/structure';
+import { orderableDocumentListDeskItem } from '@sanity/orderable-document-list';
+import type { ConfigContext } from 'sanity';
 
 interface ListItem {
   title: string;
@@ -31,7 +33,7 @@ const singleItem = (
   );
 
 // context: ConfigContext;
-export const AppStructure: StructureResolver = (S) =>
+export const AppStructure: StructureResolver = (S, context: ConfigContext) =>
   S.list()
     .title('Content')
     .id('__root__')
@@ -74,6 +76,27 @@ export const AppStructure: StructureResolver = (S) =>
                 title: 'Landing',
                 icon: TbHome,
               }),
+              // pageItem(S, {
+              //   schemaType: 'industryUseCasePage',
+              //   id: 'industryUseCasePage',
+              //   title: 'Industry Use Case',
+              //   icon: TbHome,
+              // }),
             ]),
         ),
+      S.divider(),
+      orderableDocumentListDeskItem({
+        type: 'industryUseCasePage',
+        S,
+        context,
+        title: 'IndustryPage',
+        icon: TbHome,
+      }),
+      orderableDocumentListDeskItem({
+        type: 'testimonials',
+        S,
+        context,
+        title: 'Testimonials',
+        icon: TbHome,
+      }),
     ]);
