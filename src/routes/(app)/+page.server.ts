@@ -19,9 +19,7 @@ const query = groq`
         "pricing": *[_type == "pricing"][0]{
             saveUpTo,
             plans[]{
-                icon{
-                    ${asset('icon')}
-                },
+                ${asset('icon')},
                 planName,
                 price,
                 features[]{
@@ -40,8 +38,8 @@ const query = groq`
 export default query;
 
 export const load: PageServerLoad = async () => {
-    const data: LandingPageProps = await sanityClient.fetch(query);
-    if (!data) throw error(404, { message: 'Not found' });
-  
-    return { page: data };
-  };
+  const data: LandingPageProps = await sanityClient.fetch(query);
+  if (!data) throw error(404, { message: 'Not found' });
+
+  return { page: data };
+};

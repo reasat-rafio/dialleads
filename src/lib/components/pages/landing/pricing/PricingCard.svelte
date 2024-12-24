@@ -1,4 +1,6 @@
 <script lang="ts">
+  import { imgBuilder } from '$lib/sanity/sanity-client';
+  import SanityImage from '$lib/sanity/sanity-image/sanity-image.svelte';
   import type { Plan } from '../../../../../types/landing.types';
   import { Check } from 'lucide-svelte';
   interface Props {
@@ -12,11 +14,17 @@
     selectedSubscriptionType = $bindable(),
     saveUpTo,
   }: Props = $props();
-  $inspect(plan);
 </script>
 
 <div class="rounded-xl border p-8 ">
   <div class="space-y-2 text-center">
+    <SanityImage
+              lqip
+              class="w-6 h-5"
+              src={plan?.icon}
+              sizes="5vw"
+              imageUrlBuilder={imgBuilder}
+              alt="SliderMainImage" />
     <p class="text-xl font-normal text-violet-600">{plan?.planName}</p>
     <p class="text-5xl font-semibold text-black">
       ${#if selectedSubscriptionType == 'annual'}
