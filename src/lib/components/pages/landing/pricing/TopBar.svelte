@@ -5,7 +5,6 @@
     selectedSubscriptionType: string;
   }
   let { saveUpTo, selectedSubscriptionType = $bindable() }: Props = $props();
-  $inspect(saveUpTo);
 </script>
 
 <div class="flex  justify-between items-center mt-10">
