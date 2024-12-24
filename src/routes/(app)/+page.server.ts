@@ -6,9 +6,10 @@ import type { LandingPageProps } from '../../types/landing.types';
 import { error } from '@sveltejs/kit';
 
 const query = groq`
-    *[_id == "landingPage"][]{
+    *[_id == "landingPage"][0]{
         ...,
         sections[]{
+            ...,
             pricing{
             sectionName,
             ${asset('sectionIcon')},
@@ -28,11 +29,9 @@ const query = groq`
                 }
             },
             enterprisePlan{
+                ...,
                 description,
-                banner{
-                    ${asset('banner')},
-                    alt
-                }
+                ${asset('banner')},
             }
         }
     }
