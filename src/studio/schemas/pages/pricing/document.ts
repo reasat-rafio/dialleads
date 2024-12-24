@@ -3,7 +3,7 @@ import { MdOutlinePriceCheck } from 'react-icons/md';
 const pricing = {
   name: 'pricing',
   title: 'Pricing',
-  type: 'document',
+  type: 'object',
   icon: MdOutlinePriceCheck,
   fields: [
     {
@@ -115,6 +115,17 @@ const pricing = {
       ],
     },
   ],
+  preview: {
+    select: {
+      title: 'title',
+    },
+    prepare(): { title: string; subtitle: string } {
+      return {
+      title: 'Pricing',
+      subtitle: 'Plans',
+      };
+    },
+  },
 };
 
 export default pricing;
