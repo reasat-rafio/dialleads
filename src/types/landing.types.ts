@@ -1,9 +1,11 @@
+import type { SanityImageObject } from '@sanity/image-url/lib/types/types';
 import type { Link, SeoProps } from './common.types';
 import type { PortableTextBlock } from '@portabletext/types';
 
 export interface LandingPageProps {
   seo: SeoProps;
   sections: Section[];
+  pricing: Pricing;
 }
 
 type Section = HeroProps;
@@ -13,4 +15,32 @@ export interface HeroProps {
   title: PortableTextBlock[];
   subtitle: string;
   link: Link;
+}
+
+export interface Pricing {
+  saveUpTo: number;
+  plans: Plan[];
+  enterprisePlan: EnterprisePlan;
+}
+
+export interface Plan {
+  icon: {
+    icon: SanityImageObject
+    alt: string;
+  };
+  planName: string;
+  price: number;
+  features: Feature[];
+}
+
+export interface Feature {
+  featureName: string;
+}
+
+export interface EnterprisePlan {
+  description: string;
+  banner: {
+    banner: SanityImageObject;
+    alt: string;
+  };
 }
