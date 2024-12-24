@@ -4,7 +4,7 @@
     Pricing,
     PricingPageProps,
   } from '../../../../../types/landing.types';
-  import Header from './Header.svelte';
+  import Section from './Section.svelte';
 
   interface Props {
     props: PricingPageProps;
@@ -18,5 +18,5 @@
 </script>
 
 <div>
-    <Header {sectionName} {sectionIcon} {sectionTitle} />
+    <Section {sectionName} {sectionIcon} {sectionTitle} />
 </div>
