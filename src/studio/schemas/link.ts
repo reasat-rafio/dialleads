@@ -14,6 +14,14 @@ const link = defineType({
       validation: (Rule) => Rule.required(),
     }),
     defineField({
+      name: 'icon',
+      type: 'image',
+      description: 'Icon to be displayed with the title in Button',
+      options: {
+        hotspot: true,
+      }
+    }),
+    defineField({
       name: 'type',
       type: 'string',
       initialValue: 'internal',
