@@ -1,38 +1,16 @@
 <script lang="ts">
-  // export let data;
+  import Pricing from '$lib/components/pages/landing/pricing/Pricing.svelte';
 
-  let page = $props();
-
-  console.log('page', page);
-  let { sections } = page;
-
-  // $: ({
-  //   page: { sections },
-  // } = data);
+    let {data} = $props();
+    let {page: {sections, pricing}} = $derived(data);
 </script>
 
-<div class="flex max-w-full flex-col items-center justify-center">
-  Hello From +Page.svelte
-
-  <!-- {#if !!sections?.length}
+<div>
     {#each sections as props}
-      {#if props._type === 'landing.hero'}
-        <Hero {props} />
-      {:else if props._type === 'landing.video'}
-        <Video {props} />
-      {:else if props._type === 'landing.service'}
-        <Service {props} />
-      {:else if props._type === 'landing.featuredProjects'}
-        <FeaturedProjects {props} />
-      {:else if props._type === 'landing.recentStuff'}
-        <RecentStuff {props} />
-      {:else if props._type === 'landing.weWorkWith'}
-        <WeWorkWith {props} />
-      {:else if props._type === 'landing.videoWithText'}
-        <VideoWithText {props} />
-      {:else if props._type === 'landing.feedbacks'}
-        <Feedbacks {props} />
-      {/if}
+        {#if props._type === 'landing.hero'}
+        <div></div>
+        {:else if props._type === 'landing.pricing'}
+            <Pricing {props} pricing={pricing} />
+        {/if}
     {/each}
-  {/if} -->
 </div>

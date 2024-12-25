@@ -1,4 +1,5 @@
+import pricing from './pricing';
 import landingPage from './document';
 import hero from './hero';
 
-export default [landingPage, hero];
+export default [landingPage, hero, pricing];
