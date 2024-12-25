@@ -46,7 +46,7 @@
                 imageUrlBuilder={imgBuilder} />
             </div>
             <div class="text-left">
-              <h2>{testimonial.name}</h2>
+              <h2 class="font-semibold">{testimonial.name}</h2>
 
               <div class="flex items-center">
                 <div class="pr-[0.38rem]">
@@ -62,7 +62,7 @@
                 {#if testimonial.companyName.length > 12}
                   <HoverCard.Root>
                     <HoverCard.Trigger>
-                      <h2 class="max-w-[130px] truncate">
+                      <h2 class="max-w-[130px] truncate text-[#5B6779]">
                         {testimonial.companyName}
                       </h2>
                     </HoverCard.Trigger>
@@ -72,29 +72,30 @@
                     </HoverCard.Content>
                   </HoverCard.Root>
                 {:else}
-                  <h2>{testimonial.companyName}</h2>
+                  <h2 class="text-[#5B6779]">{testimonial.companyName}</h2>
                 {/if}
-                <Dot />
+                <Dot class="text-[#5B6779]" />
 
                 {#if testimonial.position.length > 12}
                   <HoverCard.Root>
                     <HoverCard.Trigger>
-                      <h2 class="max-w-[90px] truncate lg:max-w-[110px]">
+                      <h2
+                        class="max-w-[90px] truncate text-[#5B6779] lg:max-w-[110px]">
                         {testimonial.position}
                       </h2>
                     </HoverCard.Trigger>
                     <HoverCard.Content
-                      class="rounded-lg bg-white p-4 shadow-lg">
+                      class="rounded-lg  bg-white p-4 shadow-lg">
                       <p>{testimonial.position}</p>
                     </HoverCard.Content>
                   </HoverCard.Root>
                 {:else}
-                  <h2>{testimonial.position}</h2>
+                  <h2 class="text-[#5B6779]">{testimonial.position}</h2>
                 {/if}
               </div>
             </div>
           </div>
-          <div class="pt-[1.25rem]">
+          <div class="pt-[1.25rem] text-left text-[#5B6779]">
             <h3>{truncateText(testimonial.review, 20)}</h3>
           </div>
         </div>
@@ -112,7 +113,7 @@
                 imageUrlBuilder={imgBuilder} />
             </div>
             <div class="">
-              <h2>{testimonial.name}</h2>
+              <h2 class="font-semibold">{testimonial.name}</h2>
 
               <div class="flex items-center">
                 <div class="pr-[0.38rem]">
@@ -128,7 +129,7 @@
                 {#if testimonial.companyName.length > 12}
                   <HoverCard.Root>
                     <HoverCard.Trigger>
-                      <h2 class="max-w-[130px] truncate">
+                      <h2 class="max-w-[130px] truncate text-[#5B6779]">
                         {testimonial.companyName}
                       </h2>
                     </HoverCard.Trigger>
@@ -138,14 +139,15 @@
                     </HoverCard.Content>
                   </HoverCard.Root>
                 {:else}
-                  <h2>{testimonial.companyName}</h2>
+                  <h2 class="text-[#5B6779]">{testimonial.companyName}</h2>
                 {/if}
-                <Dot />
+                <Dot class="text-[#5B6779]" />
 
                 {#if testimonial.position.length > 12}
                   <HoverCard.Root>
                     <HoverCard.Trigger>
-                      <h2 class="max-w-[90px] truncate lg:max-w-[110px]">
+                      <h2
+                        class="max-w-[90px] truncate text-[#5B6779] lg:max-w-[110px]">
                         {testimonial.position}
                       </h2>
                     </HoverCard.Trigger>
@@ -155,12 +157,12 @@
                     </HoverCard.Content>
                   </HoverCard.Root>
                 {:else}
-                  <h2>{testimonial.position}</h2>
+                  <h2 class="text-[#5B6779]">{testimonial.position}</h2>
                 {/if}
               </div>
             </div>
           </div>
-          <div class="pt-[1.25rem]">
+          <div class="pt-[1.25rem] text-[#5B6779]">
             <h3>{testimonial.review}</h3>
           </div>
         </div>
