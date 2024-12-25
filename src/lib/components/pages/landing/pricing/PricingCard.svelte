@@ -16,17 +16,18 @@
   }: Props = $props();
 </script>
 
-<div class="rounded-xl border p-8 ">
+<div class="rounded-xl border p-8">
   <div class="space-y-2 text-center">
     <div class="flex justify-center">
-        <div class="bg-violet-100 rounded-full w-10 h-10 flex justify-center items-center">
-            <SanityImage
-                  class="w-5 h-5"
-                  src={plan?.icon}
-                  sizes="5vw"
-                  imageUrlBuilder={imgBuilder}
-            alt="planIcon" />
-        </div>
+      <div
+        class="flex h-10 w-10 items-center justify-center rounded-full bg-violet-100">
+        <SanityImage
+          class="h-5 w-5"
+          src={plan?.icon}
+          sizes="5vw"
+          imageUrlBuilder={imgBuilder}
+          alt="planIcon" />
+      </div>
     </div>
     <p class="text-xl font-normal text-violet-600">{plan?.planName}</p>
     <p class="text-5xl font-semibold text-black">
@@ -55,10 +56,14 @@
       </div>
     {/each}
   </div>
-  <button
-  class="bg-violet-700 text-white text-lg 
-  font-medium py-3 px-5 rounded-xl w-full mt-16"
-  >
-    Get started
-</button>
+  <a
+    href={plan?.cta?.type === 'internal'
+      ? plan?.cta?.internalLink
+      : plan?.cta?.externalLink}>
+    <button
+      class="mt-16 w-full rounded-xl
+  bg-violet-700 px-5 py-3 text-lg font-medium text-white">
+      {plan?.cta?.title}
+    </button>
+  </a>
 </div>

@@ -17,7 +17,7 @@
   let { sectionName, sectionIcon, sectionTitle } = $derived(props);
   let { enterprisePlan, plans, saveUpTo } = $derived(pricing);
   let selectedSubscriptionType = $state('monthly');
-  $inspect(sectionIcon)
+  $inspect(pricing)
 </script>
 
 <div class="max-w-[75rem] mx-auto">
