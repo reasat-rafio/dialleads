@@ -2,8 +2,12 @@
   import * as Accordion from '$lib/components/ui/accordion/index.js';
   import { imgBuilder } from '$lib/sanity/sanity-client';
   import SanityImage from '$lib/sanity/sanity-image/sanity-image.svelte';
+  import type { FaqProps } from '../../../../../types/landing.types';
 
-  let { props } = $props();
+  interface Props {
+    props: FaqProps;
+  }
+  let { props }: Props = $props();
 </script>
 
 <div

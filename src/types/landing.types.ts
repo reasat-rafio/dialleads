@@ -17,14 +17,16 @@ export interface HeroProps {
 
 export interface FaqProps {
   _type: 'landing.faq';
+  _key: string;
   sectionTitle: string;
   sectionIcon: SanityImageWithAlt;
-  title: Link;
+  title: string;
   description: string;
   faq: Faq[];
 }
 
 export interface Faq {
+  _key: string;
   question: string;
   answer: string;
 }

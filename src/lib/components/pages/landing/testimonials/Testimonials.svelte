@@ -5,7 +5,11 @@
   import { Dot } from 'lucide-svelte';
   import { Button, buttonVariants } from '$lib/components/ui/button/index.js';
   import * as Dialog from '$lib/components/ui/dialog/index.js';
-  let { props } = $props();
+  import type { TestimonialsProps } from '../../../../../types/landing.types';
+  interface Props {
+    props: TestimonialsProps;
+  }
+  let { props }: Props = $props();
 
   function truncateText(text: string, maxWords: number) {
     const words = text.split(' ');
