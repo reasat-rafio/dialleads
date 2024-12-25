@@ -39,6 +39,7 @@ export interface Plan {
   planName: string;
   price: number;
   features: Feature[];
+  cta: CTA;
 }
 
 export interface Feature {
@@ -51,4 +52,11 @@ export interface EnterprisePlan {
     banner: SanityImageObject;
     alt: string;
   };
+}
+
+export interface CTA {
+  title: string;
+  type: 'internal' | 'external';
+  internalLink?: string;
+  externalLink?: string;
 }
