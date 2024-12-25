@@ -1,5 +1,5 @@
 import type { SanityImageObject } from '@sanity/image-url/lib/types/types';
-import type { Link, SeoProps } from './common.types';
+import type { Link, SanityImageWithAlt, SeoProps } from './common.types';
 import type { PortableTextBlock } from '@portabletext/types';
 
 export interface LandingPageProps {
@@ -17,12 +17,12 @@ export interface HeroProps {
   link: Link;
 }
 
-export interface PricingPageProps{
+export interface PricingPageProps {
   _key: string;
-  _type: "landing.pricing";
+  _type: 'landing.pricing';
   sectionName: string;
   sectionTitle: string;
-  sectionIcon: SanityImageObject;
+  sectionIcon: SanityImageWithAlt;
 }
 
 export interface Pricing {
@@ -30,12 +30,8 @@ export interface Pricing {
   plans: Plan[];
   enterprisePlan: EnterprisePlan;
 }
-
 export interface Plan {
-  icon: {
-    icon: SanityImageObject
-    alt: string;
-  };
+  icon: SanityImageWithAlt;
   planName: string;
   price: number;
   features: Feature[];
@@ -57,7 +53,7 @@ export interface EnterprisePlan {
 
 export interface CTA {
   title: string;
-  icon: SanityImageObject;
+  icon: SanityImageWithAlt;
   type: 'internal' | 'external';
   internalLink?: string;
   externalLink?: string;
