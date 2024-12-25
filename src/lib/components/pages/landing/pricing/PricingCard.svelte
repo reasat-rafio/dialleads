@@ -26,7 +26,7 @@
           src={plan?.icon}
           sizes="5vw"
           imageUrlBuilder={imgBuilder}
-          alt="planIcon" />
+          alt={plan?.icon?.alt} />
       </div>
     </div>
     <p class="text-xl font-normal text-violet-600">{plan?.planName}</p>

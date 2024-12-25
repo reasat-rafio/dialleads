@@ -19,7 +19,6 @@
   let { sectionName, sectionIcon, sectionTitle } = $derived(props);
   let { enterprisePlan, plans, saveUpTo } = $derived(pricing);
   let selectedSubscriptionType = $state('monthly');
-  $inspect(enterprisePlan);
 </script>
 
 <div class="mx-auto max-w-[75rem]">
@@ -37,7 +36,7 @@
       src={enterprisePlan?.banner}
       sizes="(min-width: 1024px) 100vw, 50vw"
       imageUrlBuilder={imgBuilder}
-      alt="SliderMainImage" />
+      alt={enterprisePlan?.banner?.alt} />
     <div class="absolute left-8 top-8 space-y-5">
       <div
         class="flex w-36 items-center gap-2
@@ -64,7 +63,7 @@
           src={enterprisePlan?.cta?.icon}
           sizes="5vw"
           imageUrlBuilder={imgBuilder}
-          alt="buttonIcon" />
+          alt={enterprisePlan?.banner?.alt} />
       </button>
     </div>
   </div>
