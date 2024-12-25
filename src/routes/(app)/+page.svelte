@@ -1,38 +1,20 @@
 <script lang="ts">
-  // export let data;
+  import Faq from '$lib/components/pages/landing/faq/Faq.svelte';
+  import Testimonials from '$lib/components/pages/landing/testimonials/Testimonials.svelte';
 
-  let page = $props();
+  let data = $props();
 
-  console.log('page', page);
-  let { sections } = page;
-
-  // $: ({
-  //   page: { sections },
-  // } = data);
+  let { sections } = $derived(data?.data?.page);
 </script>
 
 <div class="flex max-w-full flex-col items-center justify-center">
-  Hello From +Page.svelte
-
-  <!-- {#if !!sections?.length}
+  {#if !!sections?.length}
     {#each sections as props}
-      {#if props._type === 'landing.hero'}
-        <Hero {props} />
-      {:else if props._type === 'landing.video'}
-        <Video {props} />
-      {:else if props._type === 'landing.service'}
-        <Service {props} />
-      {:else if props._type === 'landing.featuredProjects'}
-        <FeaturedProjects {props} />
-      {:else if props._type === 'landing.recentStuff'}
-        <RecentStuff {props} />
-      {:else if props._type === 'landing.weWorkWith'}
-        <WeWorkWith {props} />
-      {:else if props._type === 'landing.videoWithText'}
-        <VideoWithText {props} />
-      {:else if props._type === 'landing.feedbacks'}
-        <Feedbacks {props} />
+      {#if props._type === 'landing.testimonials'}
+        <Testimonials {props} />
+      {:else if props._type === 'landing.faq'}
+        <Faq {props} />
       {/if}
     {/each}
-  {/if} -->
+  {/if}
 </div>

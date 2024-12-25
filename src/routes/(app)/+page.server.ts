@@ -1,16 +1,22 @@
 import { sanityClient } from '$lib/sanity/sanity-client';
 import { asset } from '$lib/sanity/sanity-image';
-import type { LandingPageProps } from '$lib/types/landing.types';
+
 import { error } from '@sveltejs/kit';
 import groq from 'groq';
 import type { PageServerLoad } from './$types';
+import type { LandingPageProps } from '../../types/landing.types';
 
 const query = groq`
 	*[_type == "landingPage"][0]{
     
     sections[]{
       ...,
-      
+      testimonials[]-> {
+        ...,
+        ${asset('companyLogo')},
+        ${asset('reviewerImage')},
+        
+      }
     }
     }
 `;
