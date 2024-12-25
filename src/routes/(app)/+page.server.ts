@@ -58,4 +58,5 @@ export const load: PageServerLoad = async () => {
   if (!data) throw error(404, { message: 'Not found' });
 
   return { page: data };
+
 };
