@@ -57,6 +57,7 @@ export interface EnterprisePlan {
 
 export interface CTA {
   title: string;
+  icon: SanityImageObject;
   type: 'internal' | 'external';
   internalLink?: string;
   externalLink?: string;

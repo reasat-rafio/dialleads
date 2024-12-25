@@ -27,6 +27,7 @@ const query = groq`
                 },
                 cta{
                     title,
+                    ${asset('icon')},
                     type,
                     internalLink,
                     externalLink
@@ -39,6 +40,7 @@ const query = groq`
                 description,
                 cta{
                     title,
+                    ${asset('icon')},
                     type,
                     internalLink,
                     externalLink
