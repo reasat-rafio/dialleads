@@ -9,7 +9,6 @@
 <div
   class="mx-5 mt-[5.94rem] grid max-w-[74.8125rem] grid-cols-12 gap-x-[3rem] xl:mx-0">
   <div class="col-span-5">
-    <!-- min-w-[28rem] -->
     <div class="flex flex-col">
       <div
         class="mb-[1.5rem] flex w-fit rounded-full border px-[1.52rem] py-[0.52rem]">

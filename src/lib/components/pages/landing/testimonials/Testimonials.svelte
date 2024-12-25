@@ -6,8 +6,6 @@
 
   let { props } = $props();
 
-  console.log(props);
-
   function truncateText(text: string, maxWords: number) {
     const words = text.split(' ');
     if (words.length > maxWords) {
@@ -35,9 +33,7 @@
   {#each props.testimonials as testimonial}
     <div
       class="col-span-1 rounded-[1rem] border bg-[#F9F9F9] p-4 sm:col-span-1 lg:col-span-1">
-      <!-- max-h-[11.5rem]  min-w-[23.6875rem] -->
       <div class="flex gap-x-[0.5rem]">
-        <!-- // user info  -->
         <div class="h-[3rem] w-[3rem] rounded-full">
           <SanityImage
             class="h-[3rem] w-[3rem] overflow-hidden rounded-full"
@@ -98,16 +94,3 @@
     </div>
   {/each}
 </div>
-
-<!-- <div class="container mx-auto px-4">
-  <div class="columns-1 gap-4 md:columns-2 lg:columns-3">
-    {#each data2 as testimonial}
-      <div class="mb-4 break-inside-avoid rounded-lg bg-white p-4 shadow-lg">
-        <p class="text-sm text-gray-600">{testimonial.review}</p>
-        <h4 class="mt-2 text-sm font-semibold">
-          {testimonial.name}, {testimonial.position} at {testimonial.companyName}
-        </h4>
-      </div>
-    {/each}
-  </div>
-</div> -->
