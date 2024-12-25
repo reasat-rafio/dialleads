@@ -30,7 +30,7 @@
       <PricingCard {plan} bind:selectedSubscriptionType {saveUpTo} />
     {/each}
   </div>
-  <div class="relative rounded-2xl bg-indigo-950 mb-24">
+  <div class="relative mb-24 rounded-2xl bg-indigo-950">
     <SanityImage
       lqip
       class="h-full w-full  rounded-2xl bg-cover bg-center bg-no-repeat object-cover"
@@ -57,9 +57,14 @@
       <button
         class="flex items-center rounded-xl border
       border-purple-700 bg-violet-700 px-6
-      py-2 text-lg font-semibold text-white">
+      py-2 text-lg font-semibold text-white gap-2">
         {enterprisePlan?.cta?.title}
-        
+        <SanityImage
+          class="h-5 w-5"
+          src={enterprisePlan?.cta?.icon}
+          sizes="5vw"
+          imageUrlBuilder={imgBuilder}
+          alt="buttonIcon" />
       </button>
     </div>
   </div>
