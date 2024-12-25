@@ -8,6 +8,14 @@ const banner = defineType({
   icon: BsImage,
   fields: [
     defineField({
+      name: 'sectionOptionIcon',
+      title: 'Section Option Icon',
+      type: 'image',
+      options: {
+        hotspot: true,
+      },
+    }),
+    defineField({
       name: 'sectionOption',
       title: 'Section Option',
       type: 'string',

@@ -11,10 +11,10 @@ const query = groq`
         sections[]{
             ...,
             pricing{
-            sectionName,
-            ${asset('sectionIcon')},
-            sectionTitle,
-        }
+                sectionName,
+                ${asset('sectionIcon')},
+                sectionTitle,
+            }
         },
         "pricing": *[_type == "pricing"][0]{
             saveUpTo,
@@ -25,7 +25,7 @@ const query = groq`
                 features[]{
                     featureName
                 },
-                 cta{
+                cta{
                     title,
                     type,
                     internalLink,
@@ -33,8 +33,16 @@ const query = groq`
                 }
             },
             enterprisePlan{
-                ...,
+                ${asset('sectionOptionIcon')},
+                sectionOption,
+                title,
                 description,
+                cta{
+                    title,
+                    type,
+                    internalLink,
+                    externalLink
+                },
                 ${asset('banner')},
             }
         }

@@ -68,7 +68,7 @@ const pricing = {
             {
               name: 'cta',
               title: 'Call to Action',
-              type: 'link', 
+              type: 'link',
               description: 'A call to action link for the plan.',
             },
           ],
@@ -78,7 +78,15 @@ const pricing = {
               subtitle: 'price',
               media: 'icon',
             },
-            prepare({ title, subtitle, media }: { title: string; subtitle: number; media: { asset: { _ref: string } } }) {
+            prepare({
+              title,
+              subtitle,
+              media,
+            }: {
+              title: string;
+              subtitle: number;
+              media: { asset: { _ref: string } };
+            }) {
               return {
                 title: title || 'Untitled Plan',
                 subtitle: subtitle ? `$${subtitle}` : 'No price set',
@@ -92,34 +100,10 @@ const pricing = {
     {
       name: 'enterprisePlan',
       title: 'Enterprise Plan',
-      type: 'object',
-      fields: [
-        {
-          name: 'description',
-          title: 'Description',
-          type: 'text',
-          description: 'A detailed description of the enterprise plan.',
-        },
-        {
-          name: 'banner',
-          title: 'Banner',
-          type: 'image',
-          description:
-            'Text to display for accessibility or if the banner image fails to load.',
-          options: {
-            hotspot: true,
-          },
-          fields: [
-            {
-              name: 'alt',
-              title: 'Alternative Text',
-              description: 'Important for SEO and accessibility',
-              type: 'string',
-            },
-          ],
-        },
-      ],
+      type: 'banner',
+      description: 'Banner for Enterprise Plan'
     },
+    
   ],
   preview: {
     select: {
@@ -127,8 +111,8 @@ const pricing = {
     },
     prepare(): { title: string; subtitle: string } {
       return {
-      title: 'Pricing',
-      subtitle: 'Plans',
+        title: 'Pricing',
+        subtitle: 'Plans',
       };
     },
   },

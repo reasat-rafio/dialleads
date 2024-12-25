@@ -47,11 +47,12 @@ export interface Feature {
 }
 
 export interface EnterprisePlan {
+  sectionOptionIcon: SanityImageObject;
+  sectionOption: string;
+  title: string;
   description: string;
-  banner: {
-    banner: SanityImageObject;
-    alt: string;
-  };
+  cta: CTA;
+  banner: SanityImageObject;
 }
 
 export interface CTA {

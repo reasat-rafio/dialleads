@@ -32,6 +32,7 @@ const pricing = defineType({
             title: 'Section Title',
             type: 'string',
           }),
+          
     ]
    }
   ],
