@@ -11,7 +11,7 @@
   <div class="col-span-5">
     <div class="flex flex-col">
       <div
-        class="mb-[1.5rem] flex w-fit rounded-full border px-[1.52rem] py-[0.52rem]">
+        class="mb-[1.5rem] flex w-fit gap-x-[0.5rem] rounded-full border px-[1.52rem] py-[0.52rem]">
         <SanityImage
           class="h-[1.25rem] w-[1.25rem]"
           src={props?.sectionIcon}
