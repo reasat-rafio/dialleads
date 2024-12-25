@@ -65,6 +65,12 @@ const pricing = {
                 },
               ],
             },
+            {
+              name: 'cta',
+              title: 'Call to Action',
+              type: 'link', 
+              description: 'A call to action link for the plan.',
+            },
           ],
           preview: {
             select: {

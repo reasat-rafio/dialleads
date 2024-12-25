@@ -24,6 +24,12 @@ const query = groq`
                 price,
                 features[]{
                     featureName
+                },
+                 cta{
+                    title,
+                    type,
+                    internalLink,
+                    externalLink
                 }
             },
             enterprisePlan{
