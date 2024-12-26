@@ -14,7 +14,6 @@
 <div class="mt-24">
     <div class="flex gap-2 justify-center w-28 h-10 mx-auto border rounded-full items-center px-3 py-2">
         <SanityImage
-              lqip
               class="w-6 h-5"
               src={sectionIcon}
               sizes="5vw"

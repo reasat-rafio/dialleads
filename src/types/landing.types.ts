@@ -61,6 +61,11 @@ export interface CTA {
 export interface ComparisonProps {
   _key: string;
   _type: 'landing.comparison';
+  pricing: Pricing;
+  comparison: Comparison;
+}
+
+export interface Comparison {
   sectionName: string;
   sectionIcon: SanityImageWithAlt;
   sectionTitle: string;
