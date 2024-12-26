@@ -1,7 +1,7 @@
 <script lang="ts">
   import type {
     Pricing,
-    PricingPageProps,
+    PricingProps,
   } from '../../../../../types/landing.types';
   import Section from './Section.svelte';
   import TopBar from './TopBar.svelte';
@@ -10,7 +10,7 @@
   import { imgBuilder } from '$lib/sanity/sanity-client';
 
   interface Props {
-    props: PricingPageProps;
+    props: PricingProps;
     pricing: Pricing;
   }
 
