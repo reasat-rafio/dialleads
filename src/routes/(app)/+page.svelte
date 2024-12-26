@@ -25,3 +25,4 @@ import Pricing from '$lib/components/pages/landing/pricing/Pricing.svelte';
     {/each}
   {/if}
 
+</div>
