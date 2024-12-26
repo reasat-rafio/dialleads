@@ -1,5 +1,4 @@
 <script lang="ts">
-  import { SectionIcon } from 'lucide-svelte';
   import type {
     Pricing,
     PricingPageProps,
@@ -21,7 +20,7 @@
   let selectedSubscriptionType = $state('monthly');
 </script>
 
-<div class=" max-w-[75rem] mx-auto">
+<div class=" mx-auto max-w-[75rem]">
   <Section {sectionName} {sectionIcon} {sectionTitle} />
   <TopBar {saveUpTo} bind:selectedSubscriptionType />
   <div class="my-20 mt-7 grid grid-cols-3 gap-7">

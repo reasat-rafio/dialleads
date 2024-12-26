@@ -2,7 +2,6 @@
   import { imgBuilder } from "$lib/sanity/sanity-client";
   import SanityImage from "$lib/sanity/sanity-image/sanity-image.svelte";
   import type { SanityImageObject } from "@sanity/image-url/lib/types/types";
-  import type { Image } from "sanity";
 
     interface Props{
         sectionName: string;

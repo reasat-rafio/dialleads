@@ -16,6 +16,7 @@ const landingPage = defineType({
       of: [
         { type: 'landing.hero' },
         { type: 'landing.pricing' },
+        { type: 'landing.comparison' },
       ],
     }),
   ],
