@@ -73,6 +73,8 @@ export interface Comparison {
 }
 
 export interface ComparisonCard {
+  _key: string;
+  _type: 'comparisonCard';
   cardType: 'AI Phone Agent' | 'Human Phone Agent';
   cardTitle: string;
   icon: SanityImageWithAlt;
