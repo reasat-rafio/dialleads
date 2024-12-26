@@ -14,6 +14,18 @@ const query = groq`
                 sectionName,
                 ${asset('sectionIcon')},
                 sectionTitle,
+            },
+            comparison{
+            ...,
+            ${asset('sectionIcon')},
+            comparisonCards[]{
+              ...,
+              ${asset('icon')},
+              features[]{
+              ...,
+              ${asset('featureIcon')},
+              },
+            }
             }
         },
         "pricing": *[_type == "pricing"][0]{
