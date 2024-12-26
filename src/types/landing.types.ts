@@ -7,13 +7,48 @@ export interface LandingPageProps {
   pricing: Pricing;
 }
 
-type Section = HeroProps | PricingProps | ComparisonProps;
+type Section = HeroProps | FaqProps | TestimonialsProps  | PricingProps | ComparisonProps;
+
 
 export interface HeroProps {
   _type: 'landing.hero';
   title: PortableTextBlock[];
   subtitle: string;
   link: Link;
+}
+
+
+export interface FaqProps {
+  _type: 'landing.faq';
+  _key: string;
+  sectionTitle: string;
+  sectionIcon: SanityImageWithAlt;
+  title: string;
+  description: string;
+  faq: Faq[];
+}
+
+export interface Faq {
+  _key: string;
+  question: string;
+  answer: string;
+}
+
+export interface TestimonialsProps {
+  _type: 'landing.testimonials';
+  sectionTitle: string;
+  sectionIcon: SanityImageWithAlt;
+  title: string;
+  testimonials: Testimonial[];
+}
+
+export interface Testimonial {
+  review: string;
+  reviewerImage: SanityImageWithAlt;
+  name: string;
+  position: string;
+  companyName: string;
+  companyLogo: string;
 }
 
 export interface PricingProps {
@@ -85,3 +120,4 @@ export interface Feature {
   featureName: string;
   featureIcon: SanityImageWithAlt;
 }
+

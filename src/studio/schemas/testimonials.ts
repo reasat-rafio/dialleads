@@ -62,6 +62,23 @@ const testimonials = {
     }),
 
     defineField({
+      name: 'companyLogo',
+      type: 'image',
+      title: 'Company Logo',
+      // validation: (Rule) => Rule.required(),
+      options: { hotspot: true },
+      fields: [
+        {
+          name: 'alt',
+          title: 'Alternative Text',
+          description: 'Important for SEO and accessibility',
+          type: 'string',
+          // validation: (Rule) => Rule.required(),
+        },
+      ],
+    }),
+
+    defineField({
       name: 'slug',
       type: 'slug',
       title: 'Slug',

@@ -1,4 +1,5 @@
 import { asset } from '$lib/sanity/sanity-image';
+
 import groq from 'groq';
 import type { PageServerLoad } from './$types';
 import { sanityClient } from '$lib/sanity/sanity-client';
@@ -10,6 +11,12 @@ const query = groq`
         ...,
         sections[]{
             ...,
+              testimonials[]-> {
+        ...,
+        ${asset('companyLogo')},
+        ${asset('reviewerImage')},
+        
+      }
             pricing{
                 sectionName,
                 ${asset('sectionIcon')},
@@ -60,6 +67,7 @@ const query = groq`
                 ${asset('banner')},
             }
         }
+
     }
 `;
 
@@ -68,6 +76,7 @@ export default query;
 export const load: PageServerLoad = async () => {
   const data: LandingPageProps = await sanityClient.fetch(query);
   if (!data) throw error(404, { message: 'Not found' });
+
 
   return { page: data };
 
