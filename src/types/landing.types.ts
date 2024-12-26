@@ -1,4 +1,3 @@
-import type { SanityImageObject } from '@sanity/image-url/lib/types/types';
 import type { Link, SanityImageWithAlt, SeoProps } from './common.types';
 import type { PortableTextBlock } from '@portabletext/types';
 
@@ -8,7 +7,7 @@ export interface LandingPageProps {
   pricing: Pricing;
 }
 
-type Section = HeroProps | PricingPageProps;
+type Section = HeroProps | PricingProps | ComparisonProps;
 
 export interface HeroProps {
   _type: 'landing.hero';
@@ -17,7 +16,7 @@ export interface HeroProps {
   link: Link;
 }
 
-export interface PricingPageProps {
+export interface PricingProps {
   _key: string;
   _type: 'landing.pricing';
   sectionName: string;
@@ -43,12 +42,12 @@ export interface Feature {
 }
 
 export interface EnterprisePlan {
-  sectionOptionIcon: SanityImageObject;
+  sectionOptionIcon: SanityImageWithAlt;
   sectionOption: string;
   title: string;
   description: string;
   cta: CTA;
-  banner: SanityImageObject;
+  banner: SanityImageWithAlt;
 }
 
 export interface CTA {
@@ -57,4 +56,32 @@ export interface CTA {
   type: 'internal' | 'external';
   internalLink?: string;
   externalLink?: string;
+}
+
+export interface ComparisonProps {
+  _key: string;
+  _type: 'landing.comparison';
+  pricing: Pricing;
+  comparison: Comparison;
+}
+
+export interface Comparison {
+  sectionName: string;
+  sectionIcon: SanityImageWithAlt;
+  sectionTitle: string;
+  comparisonCards: ComparisonCard[];
+}
+
+export interface ComparisonCard {
+  _key: string;
+  _type: 'comparisonCard';
+  cardType: 'AI Phone Agent' | 'Human Phone Agent';
+  cardTitle: string;
+  icon: SanityImageWithAlt;
+  features: Feature[];
+}
+
+export interface Feature {
+  featureName: string;
+  featureIcon: SanityImageWithAlt;
 }
