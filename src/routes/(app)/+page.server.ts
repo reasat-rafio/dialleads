@@ -5,6 +5,16 @@ import { sanityClient } from '$lib/sanity/sanity-client';
 import type { LandingPageProps } from '../../types/landing.types';
 import { error } from '@sveltejs/kit';
 
+// features{
+//     ...,
+//     ${asset('sectionIcon')},
+
+// },
+// features[]-> {
+//     ...,
+//     ${asset('featureIcon')},
+// }
+
 const query = groq`
     *[_id == "landingPage"][0]{
         ...,
@@ -14,7 +24,16 @@ const query = groq`
                 sectionName,
                 ${asset('sectionIcon')},
                 sectionTitle,
+            },
+            features[]{
+            ...,
+            ${asset('sectionIcon')},
+            features[] {
+            ...,
+            ${asset('featureIcon')}
             }
+        }
+            
         },
         "pricing": *[_type == "pricing"][0]{
             saveUpTo,
@@ -55,8 +74,8 @@ export default query;
 
 export const load: PageServerLoad = async () => {
   const data: LandingPageProps = await sanityClient.fetch(query);
+  console.log(data);
   if (!data) throw error(404, { message: 'Not found' });
 
   return { page: data };
-
 };
