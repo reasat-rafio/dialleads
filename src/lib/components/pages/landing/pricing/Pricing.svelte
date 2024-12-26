@@ -21,7 +21,7 @@
   let selectedSubscriptionType = $state('monthly');
 </script>
 
-<div class="mx-auto max-w-[75rem]">
+<div class=" max-w-[75rem] mx-auto">
   <Section {sectionName} {sectionIcon} {sectionTitle} />
   <TopBar {saveUpTo} bind:selectedSubscriptionType />
   <div class="my-20 mt-7 grid grid-cols-3 gap-7">

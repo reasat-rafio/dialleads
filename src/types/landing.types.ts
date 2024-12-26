@@ -1,4 +1,3 @@
-import type { SanityImageObject } from '@sanity/image-url/lib/types/types';
 import type { Link, SanityImageWithAlt, SeoProps } from './common.types';
 import type { PortableTextBlock } from '@portabletext/types';
 
@@ -43,12 +42,12 @@ export interface Feature {
 }
 
 export interface EnterprisePlan {
-  sectionOptionIcon: SanityImageObject;
+  sectionOptionIcon: SanityImageWithAlt;
   sectionOption: string;
   title: string;
   description: string;
   cta: CTA;
-  banner: SanityImageObject;
+  banner: SanityImageWithAlt;
 }
 
 export interface CTA {
