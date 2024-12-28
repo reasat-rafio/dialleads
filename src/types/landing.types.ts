@@ -138,6 +138,9 @@ export interface Feature {
 export interface WhyDialleadsAIProps{
   _key: string;
   _type: 'landing.whyDialleadsAI';
+  whyDialleadsAI: WhyDialleadsAI;
+}
+export interface WhyDialleadsAI{
   sectionName: string;
   sectionIcon: SanityImageWithAlt;
   sectionTitle: string;
