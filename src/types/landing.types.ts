@@ -7,7 +7,7 @@ export interface LandingPageProps {
   pricing: Pricing;
 }
 
-type Section = HeroProps | FaqProps | TestimonialsProps  | PricingProps | ComparisonProps | FeatureProps;
+type Section = HeroProps | FaqProps | TestimonialsProps  | PricingProps | ComparisonProps | FeatureProps | WhyDialleadsAIProps;
 
 export interface HeroProps {
   _type: 'landing.hero';
@@ -135,3 +135,16 @@ export interface Feature {
   featureIcon: SanityImageWithAlt;
 }
 
+export interface WhyDialleadsAIProps{
+  _key: string;
+  _type: 'landing.whyDialleadsAI';
+  sectionName: string;
+  sectionIcon: SanityImageWithAlt;
+  sectionTitle: string;
+  cards: Card[];
+}
+export interface Card{
+  cardTitle: string;
+  cardIcon: SanityImageWithAlt;
+  cardDescription: string;
+}
