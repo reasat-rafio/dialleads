@@ -21,6 +21,7 @@ const landingPage = defineType({
         { type: 'landing.features' },
         { type: 'landing.comparison' },
         { type: 'landing.whyDialleadsAI' },
+        { type: 'landing.whyChooseUs' },
       ],
     }),
   ],

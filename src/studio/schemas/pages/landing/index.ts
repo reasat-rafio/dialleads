@@ -6,6 +6,7 @@ import features from './features';
 import testimonials from './testimonials';
 import faq from './faq';
 import whyDialleadsAI from './whyDialleadsAI';
+import whyChooseUs from './whyChooseUs';
 
-export default [landingPage, hero, testimonials, faq, pricing, comparison, features, whyDialleadsAI];
+export default [landingPage, hero, testimonials, faq, pricing, comparison, features, whyDialleadsAI, whyChooseUs];
 
