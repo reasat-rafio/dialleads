@@ -58,13 +58,13 @@ const whyChooseUs = defineType({
                 {
                   name: 'cardDescription',
                   title: 'Card Description',
-                  type: 'text',
+                  type: 'string',
                   description: 'The description for the card',
                 },
                 {
                   name: 'cardDescriptionFor',
                   title: 'Card Description For',
-                  type: 'text',
+                  type: 'string',
                   description: 'For what the card description need. Like: real estate agencies. etc',
                 },
               ],
