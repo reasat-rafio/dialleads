@@ -40,7 +40,7 @@ const query = groq`
               ...,
               ${asset('featureIcon')},
               },
-            }  
+            }
         },
         whyDialleadsAI{
         ...,
@@ -89,8 +89,6 @@ const query = groq`
 
     }
 `;
-
-export default query;
 
 export const load: PageServerLoad = async () => {
   const data: LandingPageProps = await sanityClient.fetch(query);
