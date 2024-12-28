@@ -4,6 +4,18 @@ import pricing from './pricing';
 import hero from './hero';
 import testimonials from './testimonials';
 import faq from './faq';
+import useCase from './useCase';
+import clients from './clients';
+import testCall from './testCall';
 
-export default [landingPage, hero, testimonials, faq, pricing, comparison];
-
+export default [
+  landingPage,
+  hero,
+  testimonials,
+  faq,
+  pricing,
+  comparison,
+  useCase,
+  clients,
+  testCall,
+];

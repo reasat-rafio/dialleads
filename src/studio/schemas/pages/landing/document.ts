@@ -15,13 +15,13 @@ const landingPage = defineType({
       validation: (Rule) => Rule.required().min(1),
       of: [
         { type: 'landing.hero' },
-
         { type: 'landing.testimonials' },
         { type: 'landing.faq' },
-
         { type: 'landing.pricing' },
         { type: 'landing.comparison' },
-
+        { type: 'landing.useCase' },
+        { type: 'landing.clients' },
+        { type: 'landing.testCall' },
       ],
     }),
   ],
