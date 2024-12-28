@@ -4,7 +4,6 @@
     import Faq from '$lib/components/pages/landing/faq/Faq.svelte';
   import Testimonials from '$lib/components/pages/landing/testimonials/Testimonials.svelte';
 import Comparison from '$lib/components/pages/landing/comparison/Comparison.svelte';
-import Pricing from '$lib/components/pages/landing/pricing/Pricing.svelte';
 
   let { data } = $props();
   let {

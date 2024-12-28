@@ -10,14 +10,8 @@ const query = groq`
     *[_id == "landingPage"][0]{
         ...,
         sections[]{
-            ...,
-              testimonials[]-> {
         ...,
-        ${asset('companyLogo')},
-        ${asset('reviewerImage')},
-        
-      },
-            pricing{
+        pricing{
                 sectionName,
                 ${asset('sectionIcon')},
                 sectionTitle,
@@ -28,8 +22,15 @@ const query = groq`
             features[] {
             ...,
             ${asset('featureIcon')}
-            
-            comparison{
+            }
+        },
+        testimonials[]-> {
+        ...,
+        ${asset('companyLogo')},
+        ${asset('reviewerImage')},
+
+      },
+      comparison{
             ...,
             ${asset('sectionIcon')},
             comparisonCards[]{
@@ -39,10 +40,10 @@ const query = groq`
               ...,
               ${asset('featureIcon')},
               },
-            }
-            }
-        }
-            
+            }  
+        },
+
+
         },
         "pricing": *[_type == "pricing"][0]{
             saveUpTo,
