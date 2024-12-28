@@ -1,6 +1,5 @@
 import { SiHomeadvisor } from 'react-icons/si';
 import { defineArrayMember, defineField, defineType } from 'sanity';
-import { toPlainText } from '@portabletext/svelte';
 
 const features = defineType({
   title: 'Features',
