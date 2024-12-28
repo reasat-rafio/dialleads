@@ -4,6 +4,7 @@
     import Faq from '$lib/components/pages/landing/faq/Faq.svelte';
   import Testimonials from '$lib/components/pages/landing/testimonials/Testimonials.svelte';
 import Comparison from '$lib/components/pages/landing/comparison/Comparison.svelte';
+  import WhyDialleadsAi from '$lib/components/pages/landing/whyDialleadsAI/WhyDialleadsAI.svelte';
 
   let { data } = $props();
   let {
@@ -21,10 +22,12 @@ import Comparison from '$lib/components/pages/landing/comparison/Comparison.svel
       <Features {props} />
       {:else if props._type === 'landing.faq'}
         <Faq {props} />
-       {:else if props._type === 'landing.comparison'}
+      {:else if props._type === 'landing.comparison'}
             <Comparison {props} />
-        {:else if props._type === 'landing.pricing'}
+      {:else if props._type === 'landing.pricing'}
             <Pricing {props} pricing={pricing} />
+      {:else if props._type === 'landing.whyDialleadsAI'}
+            <WhyDialleadsAi {props} />
       {/if}
     {/each}
   {/if}

@@ -42,8 +42,17 @@ const query = groq`
               },
             }  
         },
-
-
+        whyDialleadsAI{
+        ...,
+        ${asset('sectionIcon')},
+        cards[]{
+        ...,
+        card{
+        ...,
+        ${asset('cardIcon')},
+        },
+        },
+        },
         },
         "pricing": *[_type == "pricing"][0]{
             saveUpTo,
