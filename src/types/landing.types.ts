@@ -7,7 +7,7 @@ export interface LandingPageProps {
   pricing: Pricing;
 }
 
-type Section = HeroProps | FaqProps | TestimonialsProps  | PricingProps | ComparisonProps | FeatureProps | WhyDialleadsAIProps;
+type Section = HeroProps | FaqProps | TestimonialsProps  | PricingProps | ComparisonProps | FeatureProps | WhyDialleadsAIProps | WhyChooseUsProps;
 
 export interface HeroProps {
   _type: 'landing.hero';
@@ -150,4 +150,21 @@ export interface Card{
   cardTitle: string;
   cardIcon: SanityImageWithAlt;
   cardDescription: string;
+}
+
+export interface WhyChooseUsProps{
+  _key: string;
+  _type: 'landing.whyChooseUs';
+  whyChooseUs: WhyChooseUs;
+}
+export interface WhyChooseUs{
+  sectionName: string;
+  sectionIcon: SanityImageWithAlt;
+  sectionTitle: string;
+  cards: WhyChooseUsCard[];
+}
+export interface WhyChooseUsCard{
+  cardIcon: SanityImageWithAlt;
+  cardDescription: string;
+  cardDescriptionFor: string;
 }
