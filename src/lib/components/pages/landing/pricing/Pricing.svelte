@@ -1,8 +1,7 @@
 <script lang="ts">
-  import { SectionIcon } from 'lucide-svelte';
   import type {
     Pricing,
-    PricingPageProps,
+    PricingProps,
   } from '../../../../../types/landing.types';
   import Section from './Section.svelte';
   import TopBar from './TopBar.svelte';
@@ -11,7 +10,7 @@
   import { imgBuilder } from '$lib/sanity/sanity-client';
 
   interface Props {
-    props: PricingPageProps;
+    props: PricingProps;
     pricing: Pricing;
   }
 
@@ -21,7 +20,7 @@
   let selectedSubscriptionType = $state('monthly');
 </script>
 
-<div class="mx-auto max-w-[75rem]">
+<div class=" mx-auto max-w-[75rem]">
   <Section {sectionName} {sectionIcon} {sectionTitle} />
   <TopBar {saveUpTo} bind:selectedSubscriptionType />
   <div class="my-20 mt-7 grid grid-cols-3 gap-7">

@@ -1,4 +1,5 @@
 import { asset } from '$lib/sanity/sanity-image';
+
 import groq from 'groq';
 import type { PageServerLoad } from './$types';
 import { sanityClient } from '$lib/sanity/sanity-client';
@@ -10,6 +11,12 @@ const query = groq`
         ...,
         sections[]{
             ...,
+              testimonials[]-> {
+        ...,
+        ${asset('companyLogo')},
+        ${asset('reviewerImage')},
+        
+      },
             pricing{
                 sectionName,
                 ${asset('sectionIcon')},
@@ -21,6 +28,18 @@ const query = groq`
             features[] {
             ...,
             ${asset('featureIcon')}
+            
+            comparison{
+            ...,
+            ${asset('sectionIcon')},
+            comparisonCards[]{
+              ...,
+              ${asset('icon')},
+              features[]{
+              ...,
+              ${asset('featureIcon')},
+              },
+            }
             }
         }
             
@@ -57,6 +76,7 @@ const query = groq`
                 ${asset('banner')},
             }
         }
+
     }
 `;
 

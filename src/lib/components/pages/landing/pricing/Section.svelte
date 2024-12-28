@@ -2,7 +2,6 @@
   import { imgBuilder } from "$lib/sanity/sanity-client";
   import SanityImage from "$lib/sanity/sanity-image/sanity-image.svelte";
   import type { SanityImageObject } from "@sanity/image-url/lib/types/types";
-  import type { Image } from "sanity";
 
     interface Props{
         sectionName: string;
@@ -15,7 +14,6 @@
 <div class="mt-24">
     <div class="flex gap-2 justify-center w-28 h-10 mx-auto border rounded-full items-center px-3 py-2">
         <SanityImage
-              lqip
               class="w-6 h-5"
               src={sectionIcon}
               sizes="5vw"

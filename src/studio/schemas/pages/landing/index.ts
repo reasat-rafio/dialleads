@@ -1,6 +1,10 @@
-import pricing from './pricing';
 import landingPage from './document';
+import comparison from './comparison';
+import pricing from './pricing';
 import hero from './hero';
 import features from './features';
+import testimonials from './testimonials';
+import faq from './faq';
 
-export default [landingPage, hero, pricing, features];
+export default [landingPage, hero, testimonials, faq, pricing, comparison, features];
+

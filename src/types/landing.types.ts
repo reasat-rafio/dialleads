@@ -1,4 +1,3 @@
-import type { SanityImageObject } from '@sanity/image-url/lib/types/types';
 import type { Link, SanityImageWithAlt, SeoProps } from './common.types';
 import type { PortableTextBlock } from '@portabletext/types';
 
@@ -8,7 +7,7 @@ export interface LandingPageProps {
   pricing: Pricing;
 }
 
-type Section = HeroProps | PricingPageProps | FeatureProps;
+type Section = HeroProps | FaqProps | TestimonialsProps  | PricingProps | ComparisonProps | FeatureProps;
 
 export interface HeroProps {
   _type: 'landing.hero';
@@ -17,7 +16,41 @@ export interface HeroProps {
   link: Link;
 }
 
-export interface PricingPageProps {
+
+export interface FaqProps {
+  _type: 'landing.faq';
+  _key: string;
+  sectionTitle: string;
+  sectionIcon: SanityImageWithAlt;
+  title: string;
+  description: string;
+  faq: Faq[];
+}
+
+export interface Faq {
+  _key: string;
+  question: string;
+  answer: string;
+}
+
+export interface TestimonialsProps {
+  _type: 'landing.testimonials';
+  sectionTitle: string;
+  sectionIcon: SanityImageWithAlt;
+  title: string;
+  testimonials: Testimonial[];
+}
+
+export interface Testimonial {
+  review: string;
+  reviewerImage: SanityImageWithAlt;
+  name: string;
+  position: string;
+  companyName: string;
+  companyLogo: string;
+}
+
+export interface PricingProps {
   _key: string;
   _type: 'landing.pricing';
   sectionName: string;
@@ -43,12 +76,12 @@ export interface Feature {
 }
 
 export interface EnterprisePlan {
-  sectionOptionIcon: SanityImageObject;
+  sectionOptionIcon: SanityImageWithAlt;
   sectionOption: string;
   title: string;
   description: string;
   cta: CTA;
-  banner: SanityImageObject;
+  banner: SanityImageWithAlt;
 }
 
 export interface CTA {
@@ -74,3 +107,31 @@ export interface FeatureGroup {
     featureDescription: string;
   }[];
 }
+export interface ComparisonProps {
+  _key: string;
+  _type: 'landing.comparison';
+  pricing: Pricing;
+  comparison: Comparison;
+}
+
+export interface Comparison {
+  sectionName: string;
+  sectionIcon: SanityImageWithAlt;
+  sectionTitle: string;
+  comparisonCards: ComparisonCard[];
+}
+
+export interface ComparisonCard {
+  _key: string;
+  _type: 'comparisonCard';
+  cardType: 'AI Phone Agent' | 'Human Phone Agent';
+  cardTitle: string;
+  icon: SanityImageWithAlt;
+  features: Feature[];
+}
+
+export interface Feature {
+  featureName: string;
+  featureIcon: SanityImageWithAlt;
+}
+
