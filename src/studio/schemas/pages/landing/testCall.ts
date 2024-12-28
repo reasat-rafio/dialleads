@@ -36,6 +36,24 @@ const testCall = defineType({
       type: 'string',
       // validation: (Rule) => Rule.required(),
     }),
+
+    defineField({
+      name: 'backgroundImage',
+      type: 'image',
+      title: 'Background Image',
+      // validation: (Rule) => Rule.required(),
+      options: { hotspot: true },
+      fields: [
+        {
+          name: 'alt',
+          title: 'Alternative Text',
+          description: 'Important for SEO and accessibility',
+          type: 'string',
+          // validation: (Rule) => Rule.required(),
+        },
+      ],
+    }),
+
     defineField({
       name: 'personImage',
       type: 'image',
