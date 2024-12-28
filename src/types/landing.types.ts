@@ -7,8 +7,7 @@ export interface LandingPageProps {
   pricing: Pricing;
 }
 
-type Section = HeroProps | FaqProps | TestimonialsProps  | PricingProps | ComparisonProps;
-
+type Section = HeroProps | FaqProps | TestimonialsProps  | PricingProps | ComparisonProps | FeatureProps;
 
 export interface HeroProps {
   _type: 'landing.hero';
@@ -93,6 +92,21 @@ export interface CTA {
   externalLink?: string;
 }
 
+export interface FeatureProps {
+  _type: 'landing.features';
+  sectionTitle: string;
+  sectionIcon: SanityImageWithAlt;
+  title: string;
+  features: FeatureGroup[];
+}
+export interface FeatureGroup {
+  featureGroupName: string;
+  features: {
+    featureIcon: SanityImageWithAlt;
+    featureTitle: string;
+    featureDescription: string;
+  }[];
+}
 export interface ComparisonProps {
   _key: string;
   _type: 'landing.comparison';
