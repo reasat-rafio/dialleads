@@ -11,15 +11,24 @@
   let { sectionIcon, sectionName, sectionTitle }: Props = $props();
 </script>
 
-<div class="mt-[7.25rem]">
-    <div class="flex gap-2 justify-center w-[21.125rem] h-[2.5rem] mx-auto border rounded-full items-center pl-[1.31rem] pr-[1.13rem] pt-[.7rem] pb-[.67rem]">
-        <SanityImage
-              class="w-[1.125rem] h-[1.125rem] "
-              src={sectionIcon}
-              sizes="5vw"
-              imageUrlBuilder={imgBuilder}
-              alt="SliderMainImage" />
-        <p class="text-[#495568] text-lg font-medium text-nowrap font-geist">{sectionName}</p>
-    </div>
-    <h2 class="text-[#212121] text-xl font-normal text-center mt-6 w-[43.125rem] h-[4.25rem] mx-auto font-geist">{sectionTitle}</h2>
+<div class="mt-[7.25rem] px-2 lg:px-0">
+  <div
+    class="mx-auto flex h-[2.5rem] w-full md:w-[21.125rem] 
+    items-center justify-center gap-2 rounded-full border pb-[.67rem] md:pl-[1.31rem] md:pr-[1.13rem] pt-[.7rem]">
+    <SanityImage
+      class="h-[1.125rem] w-[1.125rem] "
+      src={sectionIcon}
+      sizes="5vw"
+      imageUrlBuilder={imgBuilder}
+      alt="SliderMainImage" />
+    <p class="font-geist text-nowrap text-lg font-medium text-[#495568]">
+      {sectionName}
+    </p>
+  </div>
+  <h2
+    class="font-geist mx-auto mt-6 h-[4.25rem]
+    w-full text-center text-xl
+    font-normal text-[#212121] lg:w-[43.125rem]">
+    {sectionTitle}
+  </h2>
 </div>

@@ -7,8 +7,8 @@
 </script>
 
 <div
-  class="relative h-[30.25rem] w-[31.25rem]
-  rounded-3xl border border-violet-700 bg-violet-700 pl-[4.38rem] pr-[4.19rem]">
+  class="relative h-full lg:h-[30.25rem] w-full lg:w-[31.25rem]
+  rounded-2xl border-4 border-violet-700 bg-violet-700 px-[1.88rem] lg:pl-[4.38rem] lg:pr-[4.19rem]">
   <div
     class="absolute -top-[5.5rem] left-1/2 -translate-x-1/2 rounded-xl p-[0.62rem]">
     <SanityImage
@@ -29,13 +29,13 @@
         {#each card?.features as feature}
           <div class="flex items-center gap-3">
             <SanityImage
-              class="h-5 w-6"
+              class="h-8 w-[2.0625rem] text-green-500"
               src={feature?.featureIcon}
               sizes="5vw"
               imageUrlBuilder={imgBuilder}
               alt={feature?.featureIcon?.alt} />
 
-            <p class="font-geist text-xl font-normal text-white">
+            <p class="font-geist text-xl font-normal text-[#FFF]">
               {feature?.featureName}
             </p>
           </div>
