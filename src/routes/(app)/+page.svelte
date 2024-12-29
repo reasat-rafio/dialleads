@@ -9,11 +9,12 @@
   import { superForm } from 'sveltekit-superforms';
   import { zodClient } from 'sveltekit-superforms/adapters';
   import { formSchema } from '$lib/formValidation.js';
+  import UseCase from '$lib/components/pages/landing/useCase/UseCase.svelte';
 
   let { data } = $props();
 
   let {
-    page: { sections, pricing },
+    page: { sections, pricing, industries },
   } = $derived(data);
 </script>
 
@@ -22,8 +23,10 @@
     {#each sections as props}
       {#if props._type === 'landing.testimonials'}
         <Testimonials {props} />
-      {:else if props._type === 'landing.industries'}
-        <Industries {props} />
+      {:else if props._type === 'landing.useCase'}
+        <UseCase {props} />
+      {:else if props._type === 'landing.industry'}
+        <Industries {props} {industries} />
       {:else if props._type === 'landing.clients'}
         <Clients {props} />
       {:else if props._type === 'landing.testCall'}

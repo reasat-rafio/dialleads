@@ -22,6 +22,7 @@ const landingPage = defineType({
         { type: 'landing.useCase' },
         { type: 'landing.clients' },
         { type: 'landing.testCall' },
+        { type: 'landing.industry' },
       ],
     }),
   ],

@@ -30,6 +30,23 @@ const useCase = defineType({
         },
       ],
     }),
+
+    defineField({
+      name: 'useCaseSectionImage',
+      type: 'image',
+      title: 'Use Case Section Image',
+      // validation: (Rule) => Rule.required(),
+      options: { hotspot: true },
+      fields: [
+        {
+          name: 'alt',
+          title: 'Alternative Text',
+          description: 'Important for SEO and accessibility',
+          type: 'string',
+          // validation: (Rule) => Rule.required(),
+        },
+      ],
+    }),
     defineField({
       name: 'title',
       title: 'Title',

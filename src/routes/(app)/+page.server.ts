@@ -13,12 +13,16 @@ const query = groq`
         ...,
         sections[]{
             ...,
+            ${asset('sectionImage')},
+            ${asset('useCaseSectionImage')},
+            
               testimonials[]-> {
         ...,
         ${asset('companyLogo')},
         ${asset('reviewerImage')},
         
       },
+
             pricing{
                 sectionName,
                 ${asset('sectionIcon')},
@@ -36,6 +40,14 @@ const query = groq`
               },
             }
             }
+        },
+        "industries": *[_type == "industryUseCasePage"]{
+          title,
+          _type,
+          _id,
+          slug,
+          description, 
+          ${asset('useCaseImage')},
         },
         "pricing": *[_type == "pricing"][0]{
             saveUpTo,

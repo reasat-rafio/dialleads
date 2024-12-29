@@ -7,6 +7,7 @@ import faq from './faq';
 import useCase from './useCase';
 import clients from './clients';
 import testCall from './testCall';
+import industry from './industry';
 
 export default [
   landingPage,
@@ -18,4 +19,5 @@ export default [
   useCase,
   clients,
   testCall,
+  industry,
 ];

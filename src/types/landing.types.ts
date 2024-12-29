@@ -1,4 +1,3 @@
-import type Industries from '$lib/components/pages/landing/industries/Industries.svelte';
 import type { Link, SanityImageWithAlt, SeoProps } from './common.types';
 import type { PortableTextBlock } from '@portabletext/types';
 
@@ -6,6 +5,7 @@ export interface LandingPageProps {
   seo: SeoProps;
   sections: Section[];
   pricing: Pricing;
+  industries: Industries[];
 }
 
 type Section =
@@ -16,13 +16,28 @@ type Section =
   | ComparisonProps
   | IndustriesProps
   | ClientProps
-  | TestCallProps;
+  | TestCallProps
+  | UseCaseProps;
 
+export interface UseCaseProps {
+  _type: 'landing.useCase';
+}
 export interface TestCallProps {
   _type: 'landing.testCall';
 }
+export interface Industries {
+  _type: string;
+  slug: object;
+  _id: string;
+  description: string;
+  title: string;
+}
+
 export interface IndustriesProps {
-  _type: 'landing.industries';
+  _type: 'landing.industry';
+  _id: string;
+  description: string;
+  title: string;
 }
 export interface ClientProps {
   _type: 'landing.clients';

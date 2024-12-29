@@ -15,6 +15,30 @@ const industryUseCasePage = defineType({
       validation: (Rule) => Rule.required(),
     }),
     defineField({
+      name: 'description',
+      type: 'string',
+      title: 'Description',
+      validation: (Rule) => Rule.required(),
+    }),
+
+    defineField({
+      name: 'useCaseImage',
+      type: 'image',
+      title: 'Use Case Image',
+      // validation: (Rule) => Rule.required(),
+      options: { hotspot: true },
+      fields: [
+        {
+          name: 'alt',
+          title: 'Alternative Text',
+          description: 'Important for SEO and accessibility',
+          type: 'string',
+          // validation: (Rule) => Rule.required(),
+        },
+      ],
+    }),
+
+    defineField({
       name: 'slug',
       type: 'slug',
       title: 'Slug',
@@ -32,7 +56,7 @@ const industryUseCasePage = defineType({
     defineField({
       name: 'sections',
       type: 'array',
-      validation: (Rule) => Rule.required().min(1),
+      validation: (Rule) => Rule.required().min(0),
       of: [
         { type: 'industryUseCase.details' },
         { type: 'industryUseCase.features' },
