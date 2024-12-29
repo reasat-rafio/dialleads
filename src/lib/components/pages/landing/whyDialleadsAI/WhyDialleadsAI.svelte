@@ -12,9 +12,10 @@
     $derived(whyDialleadsAI);
 </script>
 
-<div>
+<div class="px-2 xl:px-0">
   <Section {sectionIcon} {sectionName} {sectionTitle} />
-  <div class="grid grid-cols-3 gap-[1.87rem] mt-[3.13rem] mb-[6.26rem]">
+  <div
+    class="mb-[6.26rem] mt-[3.13rem] grid grid-cols-1 gap-[1.87rem] md:grid-cols-2 xl:grid-cols-3">
     {#each cards as card}
       <Card {card} />
     {/each}

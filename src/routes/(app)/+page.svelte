@@ -27,7 +27,7 @@
       {:else if props._type === 'landing.pricing'}
         <Pricing {props} {pricing} />
       {:else if props._type === 'landing.whyDialleadsAI'}
-        <!-- <WhyDialleadsAi {props} /> -->
+        <WhyDialleadsAi {props} />
       {:else if props._type === 'landing.whyChooseUs'}
         <!-- <WhyChooseUs {props} /> -->
       {/if}

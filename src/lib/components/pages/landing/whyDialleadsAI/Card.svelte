@@ -6,7 +6,8 @@
   let { card }: { card: Card } = $props();
 </script>
 
-<div class="h-[15.625rem] w-[23.75rem] rounded-2xl border px-7 py-7">
+<div
+  class="h-full w-full rounded-2xl border py-5 pl-[1.87rem] pr-[2.12rem] shadow-md lg:h-[15.625rem] lg:w-[23.75rem]">
   <SanityImage
     lqip
     class="h-10 w-10"
@@ -14,8 +15,14 @@
     sizes="5vw"
     imageUrlBuilder={imgBuilder}
     alt="SliderMainImage" />
-  <div class="mt-6 space-y-2">
-    <h4 class="text-[1.375rem] font-semibold text-black">{card?.cardTitle}</h4>
-    <p class="text-base font-normal text-[#5B6779]">{card?.cardDescription}</p>
+  <div class="space-y-2 md:mt-6">
+    <h4
+      class="text-1.124rem] font-geist text-nowrap font-semibold leading-tight text-black lg:text-[1.375rem]">
+      {card?.cardTitle}
+    </h4>
+    <p
+      class="font-geist text-[0.875rem] font-normal text-[#5B6779] lg:text-base">
+      {card?.cardDescription}
+    </p>
   </div>
 </div>
