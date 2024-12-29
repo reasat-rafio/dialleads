@@ -17,19 +17,19 @@
   {#if !!sections?.length}
     {#each sections as props}
       {#if props._type === 'landing.testimonials'}
-        <Testimonials {props} />
+        <!-- <Testimonials {props} /> -->
       {:else if props._type === 'landing.features'}
-        <Features {props} />
+        <!-- <Features {props} /> -->
       {:else if props._type === 'landing.faq'}
-        <Faq {props} />
+        <!-- <Faq {props} /> -->
       {:else if props._type === 'landing.comparison'}
         <Comparison {props} />
       {:else if props._type === 'landing.pricing'}
-        <Pricing {props} {pricing} />
+        <!-- <Pricing {props} {pricing} /> -->
       {:else if props._type === 'landing.whyDialleadsAI'}
-        <WhyDialleadsAi {props} />
+        <!-- <WhyDialleadsAi {props} /> -->
       {:else if props._type === 'landing.whyChooseUs'}
-        <WhyChooseUs {props} />
+        <!-- <WhyChooseUs {props} /> -->
       {/if}
     {/each}
   {/if}

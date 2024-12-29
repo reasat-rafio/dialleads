@@ -11,15 +11,15 @@
   let { sectionIcon, sectionName, sectionTitle }: Props = $props();
 </script>
 
-<div class="mt-24">
-    <div class="flex gap-2 justify-center w-80 h-10 mx-auto border rounded-full items-center px-3 py-2">
+<div class="mt-[7.25rem]">
+    <div class="flex gap-2 justify-center w-[21.125rem] h-[2.5rem] mx-auto border rounded-full items-center pl-[1.31rem] pr-[1.13rem] pt-[.7rem] pb-[.67rem]">
         <SanityImage
-              class="w-6 h-5"
+              class="w-[1.125rem] h-[1.125rem] "
               src={sectionIcon}
               sizes="5vw"
               imageUrlBuilder={imgBuilder}
               alt="SliderMainImage" />
-        <p class="text-[#495568] text-lg font-medium text-nowrap">{sectionName}</p>
+        <p class="text-[#495568] text-lg font-medium text-nowrap font-geist">{sectionName}</p>
     </div>
-    <h2 class="text-[#212121] text-xl font-normal text-center mt-6 w-[43.125rem] mx-auto">{sectionTitle}</h2>
+    <h2 class="text-[#212121] text-xl font-normal text-center mt-6 w-[43.125rem] h-[4.25rem] mx-auto font-geist">{sectionTitle}</h2>
 </div>

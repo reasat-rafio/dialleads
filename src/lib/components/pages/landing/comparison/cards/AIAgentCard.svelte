@@ -7,12 +7,12 @@
 </script>
 
 <div
-  class="relative rounded-3xl border
-  border-violet-700 bg-violet-700 px-16">
+  class="relative h-[30.25rem] w-[31.25rem]
+  rounded-3xl border border-violet-700 bg-violet-700 pl-[4.38rem] pr-[4.19rem]">
   <div
-    class="absolute -top-11 left-1/2 -translate-x-1/2 rounded-xl p-[0.62rem]">
+    class="absolute -top-[5.5rem] left-1/2 -translate-x-1/2 rounded-xl p-[0.62rem]">
     <SanityImage
-      class="h-[4.25rem] w-[4.25rem]"
+      class="h-[9.3125rem] w-[9.317rem]"
       src={card?.icon}
       sizes="5vw"
       imageUrlBuilder={imgBuilder}
@@ -20,12 +20,12 @@
   </div>
   <div>
     <h3
-      class="mt-10 text-center text-[2.375rem]
-      font-bold leading-tight text-white">
+      class="font-geist mt-[5.5rem] text-center
+      text-[2.375rem] font-bold leading-tight text-white">
       {card?.cardTitle}
     </h3>
     <div>
-      <div class="mb-20 mt-[2.88rem] space-y-4">
+      <div class="mb-20 mt-[2.88rem] space-y-[1.12rem]">
         {#each card?.features as feature}
           <div class="flex items-center gap-3">
             <SanityImage
@@ -35,7 +35,7 @@
               imageUrlBuilder={imgBuilder}
               alt={feature?.featureIcon?.alt} />
 
-            <p class="text-xl font-normal text-white">
+            <p class="font-geist text-xl font-normal text-white">
               {feature?.featureName}
             </p>
           </div>
