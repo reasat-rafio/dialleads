@@ -8,7 +8,7 @@
 
 <div
   class="relative h-full w-full lg:h-[30.27rem] lg:w-[31.25rem]
-rounded-3xl border border-slate-400 bg-slate-100 px-[1.88rem] lg:pl-[4.38rem] lg:pr-[4.19rem]">
+rounded-3xl border border-slate-400 bg-slate-100 px-2 lg:pl-[4.38rem] lg:pr-[4.19rem]">
   <div
     class="absolute -top-11 left-1/2 h-[5.5rem] w-[5.5rem] -translate-x-1/2 rounded-xl bg-stone-200 p-[0.62rem]">
     <SanityImage
@@ -25,7 +25,7 @@ rounded-3xl border border-slate-400 bg-slate-100 px-[1.88rem] lg:pl-[4.38rem] lg
       {card?.cardTitle}
     </h3>
     <div>
-      <div class="mb-20 mt-[2.88rem] space-y-[1.125rem]">
+      <div class="mb-20 mt-[2.88rem] space-y-[1.125rem] ">
         {#each card?.features as feature}
           <div class="flex items-center gap-3">
             <SanityImage

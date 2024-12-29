@@ -7,8 +7,8 @@
 </script>
 
 <div
-  class="relative h-full lg:h-[30.25rem] w-full lg:w-[31.25rem]
-  rounded-2xl border-2 border-violet-400 bg-violet-700 px-[1.88rem] lg:pl-[4.38rem] lg:pr-[4.19rem]">
+  class="relative h-full w-full rounded-2xl border-2
+  border-violet-400 bg-violet-700 px-2 lg:h-[30.25rem] lg:w-[31.25rem] lg:pl-[4.38rem] lg:pr-[4.19rem]">
   <div
     class="absolute -top-[5.5rem] left-1/2 -translate-x-1/2 rounded-xl p-[0.62rem]">
     <SanityImage
