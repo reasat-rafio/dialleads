@@ -11,7 +11,7 @@
       let {sectionName, sectionIcon, sectionTitle}: Props = $props();
   </script>
   
-  <div class="mt-24">
+  <div>
       <div class="flex gap-2 justify-center w-32 h-10 mx-auto border rounded-full items-center px-3 py-2">
           <SanityImage
                 class="w-6 h-5"

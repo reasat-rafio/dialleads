@@ -53,6 +53,17 @@ const query = groq`
         },
         },
         },
+        whyChooseUs{
+        ...,
+        ${asset('sectionIcon')},
+        cards[]{
+        ...,
+        card{
+        ...,
+        ${asset('cardIcon')},
+        },
+        },
+        },
         },
         "pricing": *[_type == "pricing"][0]{
             saveUpTo,
