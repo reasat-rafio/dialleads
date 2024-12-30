@@ -17,8 +17,10 @@ type Section =
   | IndustriesProps
   | ClientProps
   | TestCallProps
-  | UseCaseProps | FeatureProps | WhyDialleadsAIProps | WhyChooseUsProps;
-
+  | UseCaseProps
+  | FeatureProps
+  | WhyDialleadsAIProps
+  | WhyChooseUsProps;
 
 export interface UseCaseProps {
   _type: 'landing.useCase';
@@ -28,8 +30,8 @@ export interface UseCaseProps {
   title: string;
   description: string;
   useCases: UseCases[];
+  clickToPlayImage: SanityImageWithAlt;
 }
-
 
 export interface UseCases {
   useCaseImage: SanityImageWithAlt;
@@ -54,7 +56,6 @@ export interface Industries {
   description: string;
   title: string;
 }
-
 
 export interface IndustriesProps {
   _type: 'landing.industry';
@@ -190,36 +191,35 @@ export interface Feature {
   featureIcon: SanityImageWithAlt;
 }
 
-
-export interface WhyDialleadsAIProps{
+export interface WhyDialleadsAIProps {
   _key: string;
   _type: 'landing.whyDialleadsAI';
   whyDialleadsAI: WhyDialleadsAI;
 }
-export interface WhyDialleadsAI{
+export interface WhyDialleadsAI {
   sectionName: string;
   sectionIcon: SanityImageWithAlt;
   sectionTitle: string;
   cards: Card[];
 }
-export interface Card{
+export interface Card {
   cardTitle: string;
   cardIcon: SanityImageWithAlt;
   cardDescription: string;
 }
 
-export interface WhyChooseUsProps{
+export interface WhyChooseUsProps {
   _key: string;
   _type: 'landing.whyChooseUs';
   whyChooseUs: WhyChooseUs;
 }
-export interface WhyChooseUs{
+export interface WhyChooseUs {
   sectionName: string;
   sectionIcon: SanityImageWithAlt;
   sectionTitle: string;
   cards: WhyChooseUsCard[];
 }
-export interface WhyChooseUsCard{
+export interface WhyChooseUsCard {
   cardIcon: SanityImageWithAlt;
   cardDescription: string;
   cardDescriptionFor: string;

@@ -37,7 +37,8 @@
 </script>
 
 <svelte:window bind:innerWidth={windowWidth} />
-<div class="relative mx-[0.31rem] mb-5 mt-5">
+<div
+  class="relative mx-[0.31rem] mb-5 mt-[2.5rem] h-full w-full lg:mt-[5.06rem]">
   <div class="absolute h-full w-full">
     <SanityImage
       innerClass="h-full  w-full object-cover"
@@ -47,10 +48,12 @@
       imageUrlBuilder={imgBuilder} />
   </div>
 
-  <div class="z-50 mt-[5.13rem] flex flex-col items-center justify-center">
+  <div
+    class="z-50 mt-[2rem] flex flex-col items-center justify-center lg:mt-[5.13rem]">
+    <!--  -->
     <div
       style="background: linear-gradient(242deg, rgba(255, 255, 255, 0.21) 0%, rgba(255, 255, 255, 0.08) 100%);"
-      class="z-50 mb-[1.5rem] flex gap-x-[0.5rem] rounded-full px-[1.52rem] py-[0.52rem]">
+      class="z-50 mb-[0.75rem] flex gap-x-[0.5rem] rounded-full px-[1.52rem] py-[0.52rem] lg:mb-[1.5rem]">
       <SanityImage
         class="z-50 h-[1.25rem] w-[1.25rem] pt-1 "
         src={props?.sectionIcon}
@@ -59,12 +62,19 @@
       <h1 class="z-50 text-white">{props.sectionTitle}</h1>
     </div>
 
+    <div class="absolute">
+      <SanityImage
+        class="bottom-[7rem] left-[25rem] z-50  w-[10rem]  "
+        src={props?.clickToPlayImage}
+        sizes="70vw"
+        imageUrlBuilder={imgBuilder} />
+    </div>
     <h2
-      class="z-50 mb-[0.88rem] text-center text-[1.625rem] font-semibold text-white lg:text-[3rem]">
+      class="z-50 mb-[0.75rem] max-w-[44rem] text-center text-[1.625rem] font-semibold text-white lg:mb-[0.88rem] lg:text-[3rem]">
       {props.title}
     </h2>
     <h3
-      class="z-50 mb-[3.13rem] px-10 text-center text-[1rem] font-normal text-white lg:px-0 lg:text-[1.125rem]">
+      class="z-50 mb-[3.13rem] max-w-[44rem] px-10 text-center text-[1rem] font-normal text-white lg:px-0 lg:text-[1.125rem]">
       {props.description}
     </h3>
 
