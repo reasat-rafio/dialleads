@@ -10,9 +10,11 @@
     $derived(comparison);
 </script>
 
-<div class="mx-auto mb-28 max-w-[75rem]">
+<div class="mx-auto max-w-[75rem]">
   <Section {sectionName} {sectionIcon} {sectionTitle} />
-  <div class="mx-auto mt-[4.26rem] grid max-w-[65rem] grid-cols-2 gap-10">
+  <div class="lg:mx-auto mt-24 md:mt-[4.26rem]   
+  lg:max-w-[65rem] flex flex-col-reverse 
+  lg:flex-row gap-20 lg:gap-10 px-2 xl:px-0">
     {#each comparisonCards as card}
       {#if card.cardType === 'AI Phone Agent'}
         <AiAgentCard {card} />

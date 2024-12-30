@@ -12,14 +12,15 @@
 </script>
 
 <div class="mt-24">
-    <div class="flex gap-2 justify-center w-28 h-10 mx-auto border rounded-full items-center px-3 py-2">
+    <div class="flex gap-2 justify-center w-[7.125rem] h-10 mx-auto border rounded-[20rem]
+     items-center px-3 py-2">
         <SanityImage
-              class="w-6 h-5"
+              class="w-[1.3125rem] h-5 mt-1"
               src={sectionIcon}
               sizes="5vw"
               imageUrlBuilder={imgBuilder}
               alt="SliderMainImage" />
-        <p class="text-black text-lg font-semibold">{sectionName}</p>
+        <p class="text-black text-lg font-semibold font-geist ">{sectionName}</p>
     </div>
-    <h2 class="text-black text-5xl font-semibold text-center mt-6">{sectionTitle}</h2>
+    <h2 class="text-black text-[1.625rem] md:text-5xl font-semibold text-center mt-6 font-geist w-full">{sectionTitle}</h2>
 </div>
