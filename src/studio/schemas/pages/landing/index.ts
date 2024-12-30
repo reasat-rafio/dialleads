@@ -25,5 +25,7 @@ export default [
   clients,
   testCall,
   industry,
-  , features, whyDialleadsAI, whyChooseUs
+  features,
+  whyDialleadsAI,
+  whyChooseUs,
 ];

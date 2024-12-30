@@ -11,6 +11,7 @@
   } from 'sveltekit-superforms';
   import { zodClient } from 'sveltekit-superforms/adapters';
   import type { TestCallProps } from '../../../../../types/landing.types';
+  import * as Select from '$lib/components/ui/select/index.js';
 
   interface Props {
     props: TestCallProps;
@@ -24,6 +25,60 @@
   });
 
   const { form: formData, enhance } = testCallForm;
+
+  const fruits = [
+    { value: 'apple', label: 'Apple' },
+    { value: 'banana', label: 'Banana' },
+    { value: 'blueberry', label: 'Blueberry' },
+    { value: 'grapes', label: 'Grapes' },
+    { value: 'pineapple', label: 'Pineapple' },
+  ];
+
+  const countryCodeToFlag: {
+    [key: string]: string;
+  } = {
+    us: '🇺🇸', // United States
+    ca: '🇨🇦', // Canada
+    bd: '🇧🇩', // Bangladesh
+  };
+
+  const countryCodeToPhoneNum: {
+    [key: string]: string;
+  } = {
+    us: '+12', // United States
+    ca: '+1', // Canada
+    bd: '+88', // Bangladesh
+  };
+
+  let value = $state('');
+
+  const triggerContent = $derived(
+    fruits.find((f) => f.value === value)?.label ?? '🍁',
+  );
+
+  ///////////////////////////////////////////////////////////////////////////
+
+  const countries = [
+    { code: 'us', flag: '🇺🇸', dialCode: '+1', label: 'United States' },
+    { code: 'ca', flag: '🇨🇦', dialCode: '+1', label: 'Canada' },
+    { code: 'bd', flag: '🇧🇩', dialCode: '+880', label: 'Bangladesh' },
+    // ... add more
+  ];
+
+  // from your snippet:
+  let selectedCountry = $state('us'); // default
+  // let $formData: { phoneNumber: string }; // sveltekit-superforms store
+
+  // On each country change, prepend dial code if not present
+  $effect(() => {
+    const dialCode =
+      countries.find((c) => c.code === selectedCountry)?.dialCode || '';
+    if (dialCode && !$formData.phoneNumber.startsWith(dialCode)) {
+      // strip out old code if user changed countries
+      $formData.phoneNumber =
+        dialCode + $formData.phoneNumber.replace(/^\+\d*/, '');
+    }
+  });
 </script>
 
 <div class="flex flex-col items-center justify-center">
@@ -40,11 +95,12 @@
   <h2 class="mb-[3.12rem] text-[3rem] font-semibold">{props.title}</h2>
 </div>
 
-<div class="relative mx-[1.25rem] mb-5 mt-5 h-full w-full lg:w-[60.125rem]">
-  <!-- sm:h-auto sm:w-full md:w-[44.125rem] lg:w-[50.125rem] xl:w-[62.125rem] -->
-  <div class="absolute h-full w-full">
+<div
+  class="relative h-full w-full max-w-[45.125rem] lg:min-w-[50.125rem] xl:min-w-[62.125rem]">
+  <div class="absolute h-full w-full rounded-[1.88rem]">
     <SanityImage
-      class=" h-full w-full overflow-visible rounded-[1.25rem] object-cover  lg:rounded-[2rem]"
+      innerClass="h-full w-full object-cover rounded-[1.88rem]"
+      class=" h-full w-full rounded-[1.88rem] bg-cover object-cover md:h-full  lg:rounded-[1.88rem]"
       src={props?.backgroundImage}
       sizes="100vw"
       imageUrlBuilder={imgBuilder} />
@@ -52,15 +108,14 @@
 
   <div
     class="z-50 flex h-full w-full flex-col items-center justify-center py-[1.13rem] md:py-[3.13rem]">
-    <div
-      class="z-50 flex h-full flex-row justify-center gap-y-[1.5rem] md:flex-col">
+    <div class="z-50 flex h-full flex-col justify-center">
       <div
         class="z-50 flex w-auto justify-center gap-x-[1.12rem] md:gap-x-[0.88rem]">
         <div class="w-[3.875rem]">
           <SanityImage
-            class=" z-50 h-full w-full  md:h-[4.375rem] md:w-[4.375rem] "
+            class="z-50 h-full w-full  md:h-[4.375rem] md:w-[4.375rem] "
             src={props?.personImage}
-            sizes="20vw"
+            sizes="60vw"
             imageUrlBuilder={imgBuilder} />
         </div>
         <div class="">
@@ -153,17 +208,18 @@
               </Form.Field>
             </div>
             <div class="col-span-1">
-              <Form.Field form={testCallForm} name="phoneNumber">
+              <!-- <Form.Field form={testCallForm} name="phoneNumber">
                 <Form.Control>
                   {#snippet children({ props })}
                     <div class="relative">
-                      <Input
-                        {...props}
-                        bind:value={$formData.phoneNumber}
-                        placeholder="Phone number"
-                        class="pl-9" />
-
-                      <div class="absolute bottom-2 left-2">
+                      <div class="">
+                        <Input
+                          {...props}
+                          bind:value={$formData.phoneNumber}
+                          placeholder="                       Phone number"
+                          class=" pl-3" />
+                      </div>
+                      <div class="absolute bottom-2 left-2 flex gap-x-2 border">
                         <svg
                           width="24"
                           height="24"
@@ -179,14 +235,95 @@
                             </g>
                           </g>
                         </svg>
+
+                        <Select.Root
+                          type="single"
+                          name="favoriteFruit"
+                          bind:value>
+                          <Select.Trigger class="w-[40px]">
+                            {triggerContent}
+                          </Select.Trigger>
+                          <Select.Content>
+                            <Select.Group>
+                              <Select.GroupHeading>Fruits</Select.GroupHeading>
+                              {#each fruits as fruit}
+                                <Select.Item
+                                  value={fruit.value}
+                                  label={fruit.label}>
+                                  {fruit.label}
+                                </Select.Item>
+                              {/each}
+                            </Select.Group>
+                          </Select.Content>
+                        </Select.Root>
                       </div>
                     </div>
                   {/snippet}
                 </Form.Control>
-              </Form.Field>
+              </Form.Field> -->
+
+              <div class="relative">
+                <!-- The prefix area (flag & dialCode) as a 'visual' element -->
+                <div class="absolute bottom-2 left-2 flex items-center gap-x-2">
+                  <svg
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <g id="phone 1">
+                      <g id="Icon">
+                        <path
+                          id="Vector"
+                          d="M17.6794 14.5197C17.2495 13.9313 16.6036 13.5377 15.8836 13.4252C15.1636 13.3127 14.4284 13.4905 13.8394 13.9197L12.7094 14.7397C11.084 13.269 9.7801 11.4782 8.87942 9.47972L9.99942 8.65972C10.59 8.22946 10.9859 7.58254 11.1003 6.86082C11.2146 6.1391 11.0381 5.40149 10.6094 4.80972L9.44942 3.19972C9.24012 2.90566 8.97378 2.65672 8.66626 2.46774C8.35874 2.27876 8.01633 2.1536 7.65942 2.09972C6.95436 1.99573 6.23657 2.17159 5.65942 2.58972L3.87942 3.84972C3.31399 4.2578 2.87391 4.81582 2.60885 5.46079C2.34379 6.10576 2.26433 6.81198 2.37942 7.49972C2.88752 10.4609 4.0723 13.2648 5.84148 15.6931C7.61067 18.1214 9.91651 20.1085 12.5794 21.4997C13.1147 21.7747 13.7076 21.9187 14.3094 21.9197C15.101 21.9219 15.8723 21.6695 16.5094 21.1997L18.2494 19.9997C18.8394 19.5713 19.2351 18.9261 19.3494 18.206C19.4638 17.4859 19.2876 16.7499 18.8594 16.1597L17.6794 14.5197ZM17.3694 18.7697L15.6294 19.9997C15.2911 20.245 14.8915 20.3916 14.4749 20.4234C14.0583 20.4551 13.641 20.3708 13.2694 20.1797C10.8022 18.8884 8.66828 17.0422 7.03545 14.7865C5.40263 12.5307 4.31544 9.92684 3.85942 7.17972C3.78989 6.76706 3.83735 6.34316 3.99642 5.95609C4.15549 5.56902 4.41981 5.23425 4.75942 4.98972L6.48942 3.79972C6.7061 3.64664 6.96415 3.56295 7.22942 3.55972H7.41942C7.58232 3.58489 7.73863 3.64202 7.87936 3.72783C8.02009 3.81364 8.14246 3.92643 8.23942 4.05972L9.41942 5.69972C9.61204 5.96793 9.6907 6.30146 9.63824 6.62746C9.58578 6.95347 9.40646 7.24548 9.13942 7.43972L7.51942 8.61972C7.38433 8.71883 7.28631 8.86032 7.241 9.02163C7.19569 9.18293 7.20569 9.35477 7.26942 9.50972C8.32778 12.1312 10.0138 14.4525 12.1794 16.2697C12.3103 16.3736 12.4724 16.4301 12.6394 16.4301C12.8065 16.4301 12.9686 16.3736 13.0994 16.2697L14.7194 15.0997C14.8526 15.0028 15.0035 14.9331 15.1637 14.8947C15.3238 14.8563 15.49 14.85 15.6526 14.876C15.8152 14.902 15.9711 14.9599 16.1113 15.0463C16.2515 15.1328 16.3732 15.2461 16.4694 15.3797L17.6394 16.9997C17.7387 17.1334 17.8105 17.2854 17.8507 17.4469C17.8909 17.6085 17.8986 17.7764 17.8735 17.941C17.8484 18.1056 17.7909 18.2636 17.7044 18.4058C17.6179 18.5481 17.504 18.6717 17.3694 18.7697ZM13.0894 5.90972C13.1223 5.81235 13.1752 5.7229 13.2446 5.64708C13.3139 5.57125 13.3984 5.51071 13.4924 5.46932C13.5865 5.42792 13.6882 5.40658 13.791 5.40665C13.8938 5.40672 13.9954 5.4282 14.0894 5.46972C15.2292 5.8912 16.218 6.64193 16.9302 7.62656C17.6424 8.61119 18.0459 9.78529 18.0894 10.9997C18.0948 11.197 18.0223 11.3884 17.8875 11.5326C17.7528 11.6767 17.5666 11.7619 17.3694 11.7697C17.1756 11.7699 16.9892 11.695 16.8494 11.5608C16.7096 11.4265 16.6272 11.2434 16.6194 11.0497C16.5875 10.1347 16.2857 9.24963 15.7519 8.50582C15.218 7.76202 14.4761 7.19277 13.6194 6.86972C13.5197 6.84463 13.4262 6.79929 13.3447 6.73653C13.2632 6.67376 13.1955 6.59492 13.1458 6.50488C13.0961 6.41485 13.0655 6.31555 13.0558 6.21317C13.0461 6.11078 13.0575 6.00749 13.0894 5.90972ZM21.6694 10.8097C21.6862 11.0083 21.6243 11.2054 21.4971 11.3588C21.37 11.5122 21.1876 11.6095 20.9894 11.6297H20.9194C20.7327 11.6283 20.553 11.5582 20.4147 11.4328C20.2764 11.3074 20.1891 11.1354 20.1694 10.9497C20.0245 9.33129 19.4441 7.78229 18.4898 6.4671C17.5356 5.15191 16.243 4.1196 14.7494 3.47972C14.5664 3.40148 14.422 3.25375 14.3479 3.06903C14.2738 2.88431 14.2762 2.67772 14.3544 2.49472C14.4327 2.31172 14.5804 2.1673 14.7651 2.09322C14.9498 2.01915 15.1564 2.02148 15.3394 2.09972C17.0857 2.84035 18.5974 4.0423 19.7126 5.57671C20.8277 7.11112 21.5042 8.92012 21.6694 10.8097Z"
+                          fill="#495568" />
+                      </g>
+                    </g>
+                  </svg>
+
+                  <!-- Country selector (flag + label in dropdown) -->
+
+                  <Select.Root
+                    type="single"
+                    name="country"
+                    bind:value={selectedCountry}>
+                    <Select.Trigger class="w-[40px] text-xl">
+                      {#if selectedCountry}
+                        {countries.find((c) => c.code === selectedCountry)
+                          ?.flag}
+                      {:else}
+                        🌐
+                      {/if}
+                    </Select.Trigger>
+                    <Select.Content>
+                      <Select.Group>
+                        <Select.GroupHeading>Countries</Select.GroupHeading>
+                        {#each countries as c}
+                          <Select.Item value={c.code} label={c.label}>
+                            {c.flag}
+                            {c.label}
+                          </Select.Item>
+                        {/each}
+                      </Select.Group>
+                    </Select.Content>
+                  </Select.Root>
+
+                  <!-- Show the dial code if we have one -->
+                  <!-- <span>
+                    {countries.find((c) => c.code === selectedCountry)
+                      ?.dialCode}
+                  </span> -->
+                </div>
+
+                <!-- The actual input (part of your superform field) -->
+                <Input
+                  bind:value={$formData.phoneNumber}
+                  placeholder="Phone number"
+                  class="" />
+              </div>
             </div>
+            <Form.Button class="w-fit ">Submit</Form.Button>
           </div>
-          <Form.Button class="w-fit ">Submit</Form.Button>
         </form>
       </div>
     </div>
