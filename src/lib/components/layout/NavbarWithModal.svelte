@@ -21,6 +21,7 @@
   let activeDropdown: string | null = $state(null);
   let timeout: any;
   let windowWidth = $state(0);
+  $inspect(nav)
 
   function toggleDropdown(item: string) {
     // Check if the item is already expanded.

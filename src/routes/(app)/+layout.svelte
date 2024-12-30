@@ -23,7 +23,7 @@
 </svelte:head>
 
 <div class="">
-  <!-- <NavbarWithModal {nav} {logo} /> -->
+  <NavbarWithModal {nav} {logo} />
 </div>
 
 <slot />
