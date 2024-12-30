@@ -12,6 +12,7 @@ const query = groq`
     *[_id == "landingPage"][0]{
         ...,
         sections[]{
+
             ...,
             ${asset('sectionImage')},
             ${asset('useCaseSectionImage')},
@@ -23,12 +24,29 @@ const query = groq`
         
       },
 
-            pricing{
+
+        ...,
+        pricing{
+
                 sectionName,
                 ${asset('sectionIcon')},
                 sectionTitle,
             },
-            comparison{
+            features[]{
+            ...,
+            ${asset('sectionIcon')},
+            features[] {
+            ...,
+            ${asset('featureIcon')}
+            }
+        },
+        testimonials[]-> {
+        ...,
+        ${asset('companyLogo')},
+        ${asset('reviewerImage')},
+
+      },
+      comparison{
             ...,
             ${asset('sectionIcon')},
             comparisonCards[]{
@@ -39,7 +57,29 @@ const query = groq`
               ${asset('featureIcon')},
               },
             }
-            }
+        },
+        whyDialleadsAI{
+        ...,
+        ${asset('sectionIcon')},
+        cards[]{
+        ...,
+        card{
+        ...,
+        ${asset('cardIcon')},
+        },
+        },
+        },
+        whyChooseUs{
+        ...,
+        ${asset('sectionIcon')},
+        cards[]{
+        ...,
+        card{
+        ...,
+        ${asset('cardIcon')},
+        },
+        },
+        },
         },
         "industries": *[_type == "industryUseCasePage"]{
           title,
@@ -85,10 +125,9 @@ const query = groq`
     }
 `;
 
-export default query;
-
 export const load: PageServerLoad = async () => {
   const data: LandingPageProps = await sanityClient.fetch(query);
+
   if (!data) throw error(404, { message: 'Not found' });
 
   return { page: data, testCallForm: await superValidate(zod(formSchema)) };

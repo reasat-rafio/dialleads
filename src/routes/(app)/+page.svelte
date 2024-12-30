@@ -1,4 +1,5 @@
 <script lang="ts">
+
   import Faq from '$lib/components/pages/landing/faq/Faq.svelte';
   import Testimonials from '$lib/components/pages/landing/testimonials/Testimonials.svelte';
   import Comparison from '$lib/components/pages/landing/comparison/Comparison.svelte';
@@ -10,6 +11,9 @@
   import { zodClient } from 'sveltekit-superforms/adapters';
   import { formSchema } from '$lib/formValidation.js';
   import UseCase from '$lib/components/pages/landing/useCase/UseCase.svelte';
+  import Features from '$lib/components/pages/landing/features/Features.svelte';
+  import WhyDialleadsAi from '$lib/components/pages/landing/whyDialleadsAI/WhyDialleadsAI.svelte';
+  import WhyChooseUs from '$lib/components/pages/landing/whyChooseUs/WhyChooseUs.svelte';
 
   let { data } = $props();
 
@@ -23,6 +27,7 @@
     {#each sections as props}
       {#if props._type === 'landing.testimonials'}
         <Testimonials {props} />
+
       {:else if props._type === 'landing.useCase'}
         <UseCase {props} />
       {:else if props._type === 'landing.industry'}
@@ -33,10 +38,20 @@
         <TryIt {props} form={data.testCallForm} />
       {:else if props._type === 'landing.faq'}
         <Faq {props} />
+      
+
+      {:else if props._type === 'landing.features'}
+        <Features {props} />
+      
       {:else if props._type === 'landing.comparison'}
-        <!-- <Comparison {props} /> -->
+        <Comparison {props} />
       {:else if props._type === 'landing.pricing'}
-        <!-- <Pricing {props} {pricing} /> -->
+        <Pricing {props} {pricing} />
+      {:else if props._type === 'landing.whyDialleadsAI'}
+        <WhyDialleadsAi {props} />
+      {:else if props._type === 'landing.whyChooseUs'}
+        <WhyChooseUs {props} />
+
       {/if}
     {/each}
   {/if}
