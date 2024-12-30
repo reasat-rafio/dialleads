@@ -17,11 +17,11 @@
   {#if !!sections?.length}
     {#each sections as props}
       {#if props._type === 'landing.testimonials'}
-        <!-- <Testimonials {props} /> -->
+        <Testimonials {props} />
       {:else if props._type === 'landing.features'}
-        <!-- <Features {props} /> -->
+        <Features {props} />
       {:else if props._type === 'landing.faq'}
-        <!-- <Faq {props} /> -->
+        <Faq {props} />
       {:else if props._type === 'landing.comparison'}
         <Comparison {props} />
       {:else if props._type === 'landing.pricing'}
