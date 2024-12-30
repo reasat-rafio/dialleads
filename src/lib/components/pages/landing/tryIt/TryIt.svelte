@@ -10,9 +10,10 @@
     superForm,
   } from 'sveltekit-superforms';
   import { zodClient } from 'sveltekit-superforms/adapters';
+  import type { TestCallProps } from '../../../../../types/landing.types';
 
   interface Props {
-    props: any;
+    props: TestCallProps;
     form: SuperValidated<Infer<FormSchema>>;
   }
 

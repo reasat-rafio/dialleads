@@ -21,9 +21,29 @@ type Section =
 
 export interface UseCaseProps {
   _type: 'landing.useCase';
+  useCaseSectionImage: SanityImageWithAlt;
+  sectionIcon: SanityImageWithAlt;
+  sectionTitle: string;
+  title: string;
+  description: string;
+  useCases: UseCases[];
 }
+
+export interface UseCases {
+  useCaseImage: SanityImageWithAlt;
+  useCaseTitle: string;
+  useCaseSubTitle: string;
+}
+
 export interface TestCallProps {
   _type: 'landing.testCall';
+  sectionIcon: SanityImageWithAlt;
+  sectionTitle: string;
+  backgroundImage: SanityImageWithAlt;
+  title: string;
+  personImage: SanityImageWithAlt;
+  personName: string;
+  status: string;
 }
 export interface Industries {
   _type: string;

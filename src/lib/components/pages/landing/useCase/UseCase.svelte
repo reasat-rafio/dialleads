@@ -1,6 +1,6 @@
 <script lang="ts">
   interface Props {
-    props: any;
+    props: UseCaseProps;
   }
   let { props }: Props = $props();
 
@@ -9,6 +9,7 @@
   import type { CarouselAPI } from '$lib/components/ui/carousel/context.js';
   import SanityImage from '$lib/sanity/sanity-image/sanity-image.svelte';
   import { imgBuilder } from '$lib/sanity/sanity-client';
+  import type { UseCaseProps } from '../../../../../types/landing.types';
 
   let api = $state<CarouselAPI>();
 
