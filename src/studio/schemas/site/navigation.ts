@@ -13,9 +13,9 @@ const siteNavigation = {
       type: 'array',
       of: [
         {
+          type: 'object',
           name: 'menuItem',
           title: 'Menu Item',
-          type: 'object',
           fields: [
             {
               name: 'link',
@@ -44,15 +44,12 @@ const siteNavigation = {
         };
       }
 
-      const titles = menu.map((item) => {
-        if (!item?.link) {
-          return 'Untitled Link';
-        }
-        return item.link.title || 'Untitled Link';
-      });
+      const titles = menu
+        .map((item) => item?.link?.title || 'Untitled Link')
+        .join(', ');
 
       return {
-        title: titles.join(', '),
+        title: `Menu: ${titles}`,
       };
     },
   },

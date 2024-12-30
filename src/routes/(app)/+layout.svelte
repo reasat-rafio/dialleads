@@ -1,8 +1,6 @@
 <script lang="ts">
+  import Navbar from '$lib/components/layout/Navbar.svelte';
   import { urlFor } from '$lib/sanity/sanity-client';
-
-  import NavbarWithModal from '$lib/components/layout/NavbarWithModal.svelte';
-  import { page } from '$app/stores';
 
   let { data, children } = $props();
 
@@ -26,7 +24,7 @@
 </svelte:head>
 
 <div class="">
-  <NavbarWithModal {nav} {logo} />
+  <Navbar {nav} {logo} />
 </div>
 
 {@render children()};
