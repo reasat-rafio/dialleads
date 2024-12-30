@@ -23,6 +23,7 @@
       align: 'start',
       loop: true,
       dragFree: true,
+      watchDrag: false,
       duration: 8000,
     }}
     plugins={[
@@ -31,20 +32,19 @@
       }),
     ]}
     setApi={(emblaApi) => (api = emblaApi)}
-    class=" min-w-[75rem] ">
-    <!-- max-w-xs  min-w-[75rem] -->
-    <Carousel.Content>
+    class="w-screen  px-[1.5rem] md:px-[3.5rem]  lg:px-[4.5rem] xl:min-w-[65rem] ">
+    <!-- max-w-xs -->
+    <Carousel.Content class=" ">
       {#each props.clients as client}
-        <Carousel.Item class=" basis-1/5  pl-[1rem] md:basis-1/5 lg:basis-1/5">
-          <div class="h-auto max-h-[2.5rem] w-[11.25rem] object-cover">
-            <!-- h-[2.5rem] -->
+        <Carousel.Item class="flex basis-1/3  md:basis-1/3 xl:basis-1/5 ">
+          <div class="h-[1.375rem] w-full object-contain md:min-h-[3rem]">
             <SanityImage
-              class="h-auto max-h-[2.5rem] w-[11.25rem] border   object-cover"
+              class="h-[1.375rem] w-full object-contain  md:min-h-[3rem]"
               src={client.clientImage}
-              sizes="10vw"
+              sizes="15vw"
               imageUrlBuilder={imgBuilder}
               alt="SliderMainImage" />
-            <!-- h-[2.5rem]  -->
+            <!-- h-[2.5rem] w-[11.25rem] -->
             <!-- min-w-[7.1875rem] -->
           </div>
         </Carousel.Item>

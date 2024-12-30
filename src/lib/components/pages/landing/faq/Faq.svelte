@@ -11,9 +11,9 @@
 </script>
 
 <div
-  class="mx-5 mt-[5.94rem] grid max-w-[74.8125rem] grid-cols-12 gap-x-[3rem] xl:mx-0">
-  <div class="col-span-5">
-    <div class="flex flex-col">
+  class="mx-5 mt-[5.94rem] grid max-w-[74.8125rem] grid-cols-1 gap-x-[3rem] gap-y-[1.88rem] md:grid-cols-12 md:gap-y-[0rem] xl:mx-0">
+  <div class="col-span-1 md:col-span-5">
+    <div class="flex flex-col items-center md:items-start">
       <div
         class="mb-[1.5rem] flex w-fit gap-x-[0.5rem] rounded-full border px-[1.52rem] py-[0.52rem]">
         <SanityImage
@@ -24,19 +24,23 @@
         <h1>{props.sectionTitle}</h1>
       </div>
       <h2 class="mb-[3.12rem] text-[3rem] font-semibold">{props.title}</h2>
-      <h2 class="text-[1.125rem]">{props.description}</h2>
+      <h2 class="text-center text-[1.125rem] md:text-left">
+        {props.description}
+      </h2>
     </div>
   </div>
-  <div class="col-span-7 w-full">
-    <Accordion.Root type="single" class="w-full ">
+  <div class="col-span-1 w-full md:col-span-7">
+    <Accordion.Root type="single" class="w-full">
       {#each props.faq as faqItem}
         <Accordion.Item
-          class="mb-[1rem] rounded-[1rem] bg-[#F9FAFB] px-[2rem] py-[1rem]"
+          class="mb-[1rem]  rounded-[1rem] bg-[#F9FAFB] px-[2rem] py-[1rem] "
           value={faqItem._key}>
-          <Accordion.Trigger class="hover:no-underline">
+          <Accordion.Trigger class="text-[1.125rem] hover:no-underline">
             {faqItem.question}
           </Accordion.Trigger>
-          <Accordion.Content>{faqItem.answer}</Accordion.Content>
+          <Accordion.Content class="text-[1rem] text-[#5B6779]">
+            {faqItem.answer}
+          </Accordion.Content>
         </Accordion.Item>
       {/each}
     </Accordion.Root>

@@ -31,11 +31,14 @@
     <h1>{props.sectionTitle}</h1>
   </div>
 
-  <h2 class="mb-[3.12rem] text-[3rem] font-semibold">{props.title}</h2>
+  <h2
+    class="mb-[1.625rem] text-center text-[1.625rem] font-semibold md:mb-[3.12rem] md:text-[3rem]">
+    {props.title}
+  </h2>
 </div>
 
 <div
-  class=" m-5 grid max-w-[74.8125rem] grid-cols-1 gap-[1.88rem] sm:grid-cols-2 lg:grid-cols-3 xl:m-0">
+  class="m-5 grid max-w-[74.8125rem] grid-cols-1 gap-[0.75rem] sm:grid-cols-2 md:gap-[1.88rem] lg:grid-cols-3 xl:m-0">
   {#each props.testimonials as testimonial}
     <Dialog.Root>
       <Dialog.Trigger>
@@ -107,7 +110,7 @@
       <Dialog.Content>
         <!-- class="sm:max-w-[425px]" -->
         <div
-          class="col-span-1 rounded-[1rem] border bg-[#F9F9F9] p-4 sm:col-span-1 lg:col-span-1">
+          class="col-span-1 rounded-[1rem] border bg-[#F9F9F9] p-1 sm:col-span-1 md:p-4 lg:col-span-1">
           <div class="flex gap-x-[0.5rem]">
             <div class="h-[3rem] w-[3rem] rounded-full">
               <SanityImage
