@@ -72,9 +72,29 @@ export interface ClientProps {
 }
 export interface HeroProps {
   _type: 'landing.hero';
+  hero: Hero;
+}
+export interface Hero {
   title: PortableTextBlock[];
   subtitle: string;
+  video: HeroVideo;
+  thumbnail: SanityImageWithAlt;
   link: Link;
+  videoPlayBtnIcon: SanityImageWithAlt;
+}
+export interface HeroVideo {
+  mov: string;
+  webm: string;
+}
+
+export interface FaqProps {
+  _type: 'landing.faq';
+  _key: string;
+  sectionTitle: string;
+  sectionIcon: SanityImageWithAlt;
+  title: string;
+  description: string;
+  faq: Faq[];
 }
 
 export interface FaqProps {

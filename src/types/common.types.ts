@@ -12,6 +12,7 @@ export interface SeoProps {
 
 export interface Link {
   _type: 'link';
+  icon: SanityImageWithAlt;
   title: string;
   type: 'internal' | 'external';
   internalLink?: string;

@@ -1,5 +1,5 @@
 import type { SanityDocument } from '@sanity/client';
-import type { Link, SanityImageWithAlt } from './common.types';
+import type { SanityImageWithAlt } from './common.types';
 
 export interface SiteDataProps {
   logos: {
@@ -18,9 +18,28 @@ export interface Nav {
   _rev: string;
   _type: string;
   _id: string;
-  menu: Link[];
+  menu: LinkMenu[];
   _updatedAt: Date;
   _createdAt: Date;
+}
+export interface LinkMenu {
+  _type: 'link';
+  link: LinkItem;
+  moreLinks: MoreLink[];
+}
+export interface LinkItem{
+  _type: 'link',
+  title: string;
+  type: 'internal' | 'external';
+  internalLink?: string;
+  externalLink?: string;
+}
+export interface MoreLink{
+  _type: 'link',
+  title: string;
+  type: 'internal' | 'external';
+  internalLink?: string;
+  externalLink?: string;
 }
 
 export interface Footer {

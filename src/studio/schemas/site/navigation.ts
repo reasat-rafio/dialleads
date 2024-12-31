@@ -11,13 +11,47 @@ const siteNavigation = {
       name: 'menu',
       title: 'Menu',
       type: 'array',
-      of: [{ type: 'link' }],
+      of: [
+        {
+          type: 'object',
+          name: 'menuItem',
+          title: 'Menu Item',
+          fields: [
+            {
+              name: 'link',
+              title: 'Link',
+              type: 'link',
+            },
+            {
+              name: 'moreLinks',
+              title: 'More Links',
+              type: 'array',
+              of: [{ type: 'link' }],
+            },
+          ],
+        },
+      ],
     },
   ],
   preview: {
-    prepare: () => ({
-      title: 'Navigations',
-    }),
+    select: {
+      menu: 'menu',
+    },
+    prepare({ menu }: { menu: { link?: { title?: string } }[] }) {
+      if (!menu || menu.length === 0) {
+        return {
+          title: 'No Menu Items',
+        };
+      }
+
+      const titles = menu
+        .map((item) => item?.link?.title || 'Untitled Link')
+        .join(', ');
+
+      return {
+        title: `Menu: ${titles}`,
+      };
+    },
   },
 };
 
