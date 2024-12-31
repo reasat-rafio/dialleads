@@ -69,7 +69,7 @@
         border border-violet-600 bg-white shadow-xl">
           <AlertDialog.Root>
             <AlertDialog.Trigger>
-              <Button>
+              <Button class="bg-white">
                 <SanityImage
                   class="h-[1.6rem] w-[1.6rem]"
                   src={hero?.videoPlayBtnIcon}
