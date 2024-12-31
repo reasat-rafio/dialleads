@@ -8,23 +8,18 @@
   $inspect(footer);
 </script>
 
-<div class="relative h-[13.62rem] w-full">
-  <div class="absolute top-[7rem] z-50 h-[13.62rem] w-full">
-    <div class="container">
+<div class=" relative flex max-w-full justify-center pb-[80px] md:h-[32.4rem]">
+  <div class="absolute h-full w-full">
+    <!-- <div class="mx-5">
       <SanityImage
-        class=" h-[13.62rem] w-full overflow-hidden rounded-[1.88rem] bg-black  object-contain"
+        class=" h-[13.62rem] w-full border bg-black  object-cover"
         src={footer?.backgroundOne}
         sizes="100vw"
         imageUrlBuilder={imgBuilder} />
-    </div>
-  </div>
-</div>
-<!-- ///////////////// -->
-<div class="  relative flex max-w-full flex-col justify-center md:h-[32.4rem]">
-  <div class="absolute h-full w-full">
+    </div> -->
     <SanityImage
-      innerClass="h-full w-full object-cover"
-      class=" h-full w-full  bg-black  object-cover"
+      innerClass="h-full  w-full object-cover"
+      class=" h-full w-full bg-black  object-cover"
       src={footer?.backgroundTwo}
       sizes="100vw"
       imageUrlBuilder={imgBuilder} />

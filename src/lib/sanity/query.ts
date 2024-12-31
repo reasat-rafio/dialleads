@@ -9,7 +9,11 @@ export const siteQuery = groq`{
       ${asset('mobileLogo')},
     },
     "nav": *[_id == "siteNav"][0],
-    "footer": *[_id == "siteFooter"][0],
+    "footer": *[_id == "siteFooter"][0]{
+      ...,
+      ${asset('backgroundOne')},
+      ${asset('backgroundTwo')},
+    },
   }`;
 
 export const pageQuery = (query: string) => groq`{
