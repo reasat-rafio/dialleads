@@ -34,7 +34,7 @@
         w-[40.3125rem] text-center text-[1.25rem] font-normal text-white">
       {hero?.subtitle}
     </p>
-    <div class="flex justify-center mt-[1.88rem]">
+    <div class="mt-[1.88rem] flex justify-center">
       <div
         class="animate-shine inline-flex w-full
       max-w-[14.420rem] items-center justify-center rounded-xl border border-white/10
@@ -58,7 +58,7 @@
     </div>
 
     <div
-      class=" relative mx-auto mt-[3.07rem] flex h-[22.5rem] w-[75rem]
+      class=" relative mx-auto mt-[5.5rem] flex h-[22.5rem] w-[75rem]
       justify-center">
       <div>
         <SanityImage
