@@ -23,8 +23,10 @@
   <link rel="icon" type="image/png" href={faviconImage} />
 </svelte:head>
 
-<div class="">
-  <Navbar {nav} {logo} />
-</div>
+<div class="relative">
+  <div class="px-2">
+    <Navbar {nav} {logo} />
+  </div>
 
-{@render children()};
+  {@render children()};
+</div>

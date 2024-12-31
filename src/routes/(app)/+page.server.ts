@@ -11,6 +11,10 @@ const query = groq`
         ...,
         sections[]{
         ...,
+        hero{
+        ...,
+        ${asset('thumbnail')},
+        },
         pricing{
                 sectionName,
                 ${asset('sectionIcon')},

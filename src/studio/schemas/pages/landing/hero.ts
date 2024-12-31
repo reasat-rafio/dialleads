@@ -1,5 +1,5 @@
 import { SiHomeadvisor } from 'react-icons/si';
-import { defineField, defineType } from 'sanity';
+import { defineArrayMember, defineField, defineType } from 'sanity';
 
 const hero = defineType({
   title: 'Hero',
@@ -14,8 +14,9 @@ const hero = defineType({
       fields: [
         defineField({
           name: 'title',
-          type: 'string',
-          description: 'The title of the hero section',
+          type: 'array',
+          validation: (Rule) => Rule.required(),
+          of: [defineArrayMember({ type: 'block' })],
         }),
         defineField({
           name: 'subtitle',
@@ -23,21 +24,11 @@ const hero = defineType({
           description: 'The subtitle of the hero section',
         }),
         defineField({
-          name: 'video_webm',
-          type: 'file',
-          title: 'WebM',
-          options: {
-            accept: 'video/webm,video/x-matroska',
-          },
+          name: 'video',
+          type: 'video',
+          description: 'Video for hero section',
         }),
-        defineField({
-          name: 'video_hevc',
-          type: 'file',
-          title: 'MOV - HEVC',
-          options: {
-            accept: 'video/quicktime,video/mp4',
-          },
-        }),
+
         defineField({
           name: 'thumbnail',
           type: 'image',

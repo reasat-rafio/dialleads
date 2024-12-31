@@ -1,5 +1,5 @@
-import type { Link, SanityImageWithAlt, SeoProps } from './common.types';
-import type { PortableTextBlock } from '@portabletext/types';
+import type { PortableTextBlock } from 'sanity';
+import type { Link, SanityImageWithAlt, SeoProps, Video } from './common.types';
 
 export interface LandingPageProps {
   seo: SeoProps;
@@ -11,8 +11,13 @@ type Section = HeroProps | FaqProps | TestimonialsProps  | PricingProps | Compar
 
 export interface HeroProps {
   _type: 'landing.hero';
+  hero: Hero;
+}
+export interface Hero{
   title: PortableTextBlock[];
-  subtitle: string;
+  subTitle: string;
+  video: Video;
+  thumbnail: SanityImageWithAlt;
   link: Link;
 }
 

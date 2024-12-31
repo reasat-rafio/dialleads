@@ -11,7 +11,6 @@
     logo: SanityImageWithAlt;
   }
   let { nav, logo }: Props = $props();
-  $inspect(nav);
 
   let dialogOpen = $state(false);
   let showMenu = $state(false);
@@ -53,7 +52,8 @@
   }
 </script>
 
-<div class=" mb-[4.94rem] bg-violet-900">
+<div class="h-screen bg-[radial-gradient(113.28%_100%_at_50%_30%,_#000_30%,_rgba(0,0,0,0)_69.79%)] 
+ mb-[4.94rem] bg-violet-900 mt-4 rounded-[1.875rem]">
   <div class="mx-auto max-w-[75rem] py-5">
     <div class="flex justify-between">
       <div class="flex items-center gap-[0.49rem]">
@@ -94,8 +94,10 @@
                 class:opacity-100={activeDropdown === item?.link?.title}>
                 {#each item?.moreLinks as link}
                   <a
-                    href={`/industry-use-cases`}
-                    class="block px-4 py-2 text-sm text-gray-700 hover:bg-[#e4e2e9]">
+                    href={link?.type === 'internal'
+                    ? link?.internalLink
+                    : link?.externalLink}
+                    class="block px-4 py-2 text-sm text-gray-700 ">
                     {link?.title}
                   </a>
                 {/each}
