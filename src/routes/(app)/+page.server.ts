@@ -5,9 +5,9 @@ import type { PageServerLoad } from './$types';
 import { sanityClient } from '$lib/sanity/sanity-client';
 import type { LandingPageProps } from '../../types/landing.types';
 import { error } from '@sveltejs/kit';
-import { message, superValidate } from 'sveltekit-superforms';
 import { formSchema } from '$lib/formValidation';
 import { zod } from 'sveltekit-superforms/adapters';
+import { superValidate } from 'sveltekit-superforms';
 const query = groq`
     *[_id == "landingPage"][0]{
         ...,
@@ -29,6 +29,11 @@ const query = groq`
         hero{
         ...,
         ${asset('thumbnail')},
+        ${asset('videoPlayBtnIcon')},
+         video{
+         "webm": video_webm.asset->url,
+         "mov": video_hevc.asset->url,
+         }
         },
         pricing{
 
