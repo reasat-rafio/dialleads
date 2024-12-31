@@ -26,6 +26,10 @@ const query = groq`
 
 
         ...,
+        hero{
+        ...,
+        ${asset('thumbnail')},
+        },
         pricing{
 
                 sectionName,

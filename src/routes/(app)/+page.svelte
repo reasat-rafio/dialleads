@@ -13,6 +13,7 @@
   import Features from '$lib/components/pages/landing/features/Features.svelte';
   import WhyDialleadsAi from '$lib/components/pages/landing/whyDialleadsAI/WhyDialleadsAI.svelte';
   import WhyChooseUs from '$lib/components/pages/landing/whyChooseUs/WhyChooseUs.svelte';
+  import Hero from '$lib/components/pages/landing/hero/Hero.svelte';
 
   let { data } = $props();
 
@@ -26,6 +27,10 @@
     {#each sections as props}
       {#if props._type === 'landing.testimonials'}
         <Testimonials {props} />
+      {:else if props._type === 'landing.hero'}
+        <Hero {props} />
+      {:else if props._type === 'landing.features'}
+        <Features {props} />
       {:else if props._type === 'landing.useCase'}
         <UseCase {props} />
       {:else if props._type === 'landing.industry'}
