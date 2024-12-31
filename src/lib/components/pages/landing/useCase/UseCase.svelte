@@ -38,11 +38,11 @@
 
 <svelte:window bind:innerWidth={windowWidth} />
 <div
-  class="relative mx-[0.31rem] mb-5 mt-[2.5rem] h-full w-full lg:mt-[5.06rem]">
+  class="relative mb-[2.5rem] mt-[2.5rem] h-full w-full lg:mb-[6.26rem] lg:mt-[5.06rem]">
   <div class="absolute h-full w-full">
     <SanityImage
-      innerClass="h-full  w-full object-cover"
-      class=" h-full w-full overflow-hidden rounded-[1.25rem] bg-black object-cover  lg:rounded-[2rem]"
+      innerClass="h-full w-full object-cover"
+      class="h-full w-full overflow-hidden rounded-[1.25rem] bg-black object-cover  lg:rounded-[2rem]"
       src={props?.useCaseSectionImage}
       sizes="100vw"
       imageUrlBuilder={imgBuilder} />
@@ -50,7 +50,6 @@
 
   <div
     class="z-50 mt-[2rem] flex flex-col items-center justify-center lg:mt-[5.13rem]">
-    <!--  -->
     <div
       style="background: linear-gradient(242deg, rgba(255, 255, 255, 0.21) 0%, rgba(255, 255, 255, 0.08) 100%);"
       class="z-50 mb-[0.75rem] flex gap-x-[0.5rem] rounded-full px-[1.52rem] py-[0.52rem] lg:mb-[1.5rem]">
@@ -62,7 +61,7 @@
       <h1 class="z-50 text-white">{props.sectionTitle}</h1>
     </div>
 
-    <div class="absolute">
+    <div class="absolute hidden lg:flex">
       <SanityImage
         class="bottom-[7rem] left-[25rem] z-50  w-[10rem]  "
         src={props?.clickToPlayImage}
@@ -74,30 +73,36 @@
       {props.title}
     </h2>
     <h3
-      class="z-50 mb-[3.13rem] max-w-[44rem] px-10 text-center text-[1rem] font-normal text-white lg:px-0 lg:text-[1.125rem]">
+      class="z-50 mb-[0.88rem] max-w-[44rem] px-10 text-center text-[1rem] font-normal text-white lg:mb-[3.13rem] lg:px-0 lg:text-[1.125rem]">
       {props.description}
     </h3>
 
-    <div>
-      <Carousel.Root
-        setApi={(emblaApi) => (api = emblaApi)}
-        class="mx-5 w-full max-w-xs  sm:min-w-[40.9rem] md:max-w-[56rem] md:px-[1.56rem]  lg:max-w-[72rem] lg:px-[5.56rem]  xl:max-w-[72rem]">
+    <div class="flex lg:hidden">
+      <SanityImage
+        class=" z-50  w-[6rem]  "
+        src={props?.clickToPlayImage}
+        sizes="70vw"
+        imageUrlBuilder={imgBuilder} />
+    </div>
+
+    <div class="container mx-auto px-[1.5rem] lg:px-[7.5rem]">
+      <Carousel.Root setApi={(emblaApi) => (api = emblaApi)} class="w-full">
         <Carousel.Content>
-          {#each props.useCases as useCase, i}
+          {#each props.useCases as useCase}
             <Carousel.Item
-              class=" w-full basis-full bg-transparent sm:basis-1/2 lg:basis-1/3">
+              class="w-full basis-full bg-transparent sm:basis-1/2 lg:basis-1/3">
               <Card.Root
                 style="background: linear-gradient(242deg, rgba(255, 255, 255, 0.21) 0%, rgba(255, 255, 255, 0.08) 100%);"
-                class="w-full  rounded-[1.38rem] border-[0.342px] border-gray-400 bg-transparent p-[0.75rem]">
+                class="w-full rounded-[1.38rem] border-[0.342px] border-gray-400 bg-transparent p-[0.75rem]">
                 <div
                   class="flex w-full flex-col rounded-[0.88rem] bg-white p-[0.55rem]">
                   <SanityImage
-                    class="h-full  w-full object-cover"
+                    class="h-full w-full object-cover"
                     src={useCase?.useCaseImage}
-                    sizes="100vw"
+                    sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw"
                     imageUrlBuilder={imgBuilder} />
                   <h3
-                    class="mt-[1.38rem] h-fit text-center text-[1.375rem] font-semibold">
+                    class="mt-[1.38rem] text-center text-[1.375rem] font-semibold">
                     {useCase.useCaseTitle}
                   </h3>
                   <h3
@@ -110,6 +115,7 @@
           {/each}
         </Carousel.Content>
       </Carousel.Root>
+
       <div class="z-50 flex justify-center gap-x-2 py-[3.12rem]">
         {#each Array(count) as _, i}
           {#if i === current - 1}
@@ -123,10 +129,3 @@
     </div>
   </div>
 </div>
-
-<!-- <div class="mt-4 w-full">
-                    <audio controls class="w-full outline-none">
-                      <source src={useCase.mp3File} type="audio/mpeg" />
-                      Your browser does not support the audio element.
-                    </audio>
-                  </div> -->

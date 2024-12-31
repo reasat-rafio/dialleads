@@ -10,9 +10,9 @@
   let { props }: Props = $props();
 </script>
 
-<div class="flex flex-col items-center justify-center">
+<div class="mt-[2.4rem] flex flex-col items-center justify-center lg:mt-[5rem]">
   <div
-    class="mb-[1.5rem] flex gap-x-[0.5rem] rounded-full border px-[1.52rem] py-[0.52rem]">
+    class="mb-[1rem] flex gap-x-[0.5rem] rounded-full border px-[1.52rem] py-[0.52rem] lg:mb-[1.5rem]">
     {#if !!props?.sectionIcon}
       <SanityImage
         class="h-[1.25rem] w-[1.25rem] "
@@ -23,7 +23,9 @@
     <h1>{props.sectionTitle}</h1>
   </div>
 
-  <h2 class="mb-[3.12rem] text-[3rem] font-semibold">{props.title}</h2>
+  <h2 class="mb-[3.12rem] text-[1.625rem] font-semibold lg:text-[3rem]">
+    {props.title}
+  </h2>
 </div>
 
 <div class="flex items-center justify-center">

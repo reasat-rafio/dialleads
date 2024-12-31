@@ -31,11 +31,10 @@
       }),
     ]}
     setApi={(emblaApi) => (api = emblaApi)}
-    class="w-screen  px-[1.5rem] md:px-[3.5rem]  lg:px-[4.5rem] xl:min-w-[65rem] ">
-    <!-- max-w-xs -->
+    class="container  w-screen max-w-sm  sm:max-w-xl md:max-w-3xl lg:max-w-5xl xl:max-w-7xl">
     <Carousel.Content class=" ">
       {#each props.clients as client}
-        <Carousel.Item class="flex basis-1/3  md:basis-1/4 xl:basis-1/5 ">
+        <Carousel.Item class="flex basis-1/3  md:basis-1/4 xl:basis-1/4 ">
           <div class="h-[1.375rem] w-full md:min-h-[3rem]">
             <SanityImage
               class="h-[1.375rem] w-fit  object-contain  md:h-auto"

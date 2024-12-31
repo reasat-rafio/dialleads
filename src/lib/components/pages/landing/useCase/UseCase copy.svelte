@@ -1,6 +1,6 @@
 <script lang="ts">
   interface Props {
-    props: any;
+    props: UseCaseProps;
   }
   let { props }: Props = $props();
 
@@ -9,6 +9,7 @@
   import type { CarouselAPI } from '$lib/components/ui/carousel/context.js';
   import SanityImage from '$lib/sanity/sanity-image/sanity-image.svelte';
   import { imgBuilder } from '$lib/sanity/sanity-client';
+  import type { UseCaseProps } from '../../../../../types/landing.types';
 
   let api = $state<CarouselAPI>();
 
@@ -36,42 +37,51 @@
 </script>
 
 <svelte:window bind:innerWidth={windowWidth} />
-<div class="relative mx-[0.31rem] mb-5 mt-5">
+<div
+  class="relative mb-[2.5rem] mt-[2.5rem] h-full w-full lg:mb-[6.26rem] lg:mt-[5.06rem]">
   <div class="absolute h-full w-full">
     <SanityImage
       innerClass="h-full  w-full object-cover"
-      class=" h-full w-full overflow-hidden rounded-[1.25rem] bg-black  object-cover lg:rounded-[2rem]"
+      class=" h-full w-full overflow-hidden rounded-[1.25rem] bg-black object-cover  lg:rounded-[2rem]"
       src={props?.useCaseSectionImage}
       sizes="100vw"
       imageUrlBuilder={imgBuilder} />
   </div>
 
-  <div class="z-50 mt-[5.13rem] flex flex-col items-center justify-center">
+  <div
+    class="z-50 mt-[2rem] flex flex-col items-center justify-center lg:mt-[5.13rem]">
+    <!--  -->
     <div
       style="background: linear-gradient(242deg, rgba(255, 255, 255, 0.21) 0%, rgba(255, 255, 255, 0.08) 100%);"
-      class="z-50 mb-[1.5rem] flex gap-x-[0.5rem] rounded-full border px-[1.52rem] py-[0.52rem]">
+      class="z-50 mb-[0.75rem] flex gap-x-[0.5rem] rounded-full px-[1.52rem] py-[0.52rem] lg:mb-[1.5rem]">
       <SanityImage
-        class="z-50 h-[1.25rem] w-[1.25rem] "
+        class="z-50 h-[1.25rem] w-[1.25rem] pt-1 "
         src={props?.sectionIcon}
         sizes="05vw"
         imageUrlBuilder={imgBuilder} />
       <h1 class="z-50 text-white">{props.sectionTitle}</h1>
     </div>
 
+    <div class="absolute">
+      <SanityImage
+        class="bottom-[7rem] left-[25rem] z-50  w-[10rem]  "
+        src={props?.clickToPlayImage}
+        sizes="70vw"
+        imageUrlBuilder={imgBuilder} />
+    </div>
     <h2
-      class="z-50 mb-[0.88rem] text-center text-[1.625rem] font-semibold text-white lg:text-[3rem]">
+      class="z-50 mb-[0.75rem] max-w-[44rem] text-center text-[1.625rem] font-semibold text-white lg:mb-[0.88rem] lg:text-[3rem]">
       {props.title}
     </h2>
     <h3
-      class="z-50 mb-[3.13rem] px-10 text-center text-[1rem] font-normal text-white lg:px-0 lg:text-[1.125rem]">
+      class="z-50 mb-[3.13rem] max-w-[44rem] px-10 text-center text-[1rem] font-normal text-white lg:px-0 lg:text-[1.125rem]">
       {props.description}
     </h3>
 
     <div>
       <Carousel.Root
         setApi={(emblaApi) => (api = emblaApi)}
-        class="w-full max-w-xs  sm:min-w-[40.9rem] md:min-w-[50.9rem] md:px-[1.56rem]  lg:min-w-[65.9rem] lg:px-[5.56rem]  xl:min-w-[74.9rem]">
-        <!-- opts={{ slidesToScroll: slideToScroll }} -->
+        class="mx-5 w-full max-w-xs  sm:min-w-[40.9rem] md:max-w-[56rem] md:px-[1.56rem]  lg:max-w-[72rem] lg:px-[5.56rem]  xl:max-w-[75rem]">
         <Carousel.Content>
           {#each props.useCases as useCase, i}
             <Carousel.Item
@@ -82,12 +92,12 @@
                 <div
                   class="flex w-full flex-col rounded-[0.88rem] bg-white p-[0.55rem]">
                   <SanityImage
-                    class="h-full  w-full object-cover"
+                    class="h-full w-full object-cover"
                     src={useCase?.useCaseImage}
-                    sizes="35vw"
+                    sizes="100vw"
                     imageUrlBuilder={imgBuilder} />
                   <h3
-                    class="mt-[1.38rem] h-fit border text-center text-[1.375rem] font-semibold">
+                    class="mt-[1.38rem] h-fit text-center text-[1.375rem] font-semibold">
                     {useCase.useCaseTitle}
                   </h3>
                   <h3

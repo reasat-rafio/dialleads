@@ -11,11 +11,11 @@
 </script>
 
 <div
-  class="mx-5 mt-[5.94rem] grid max-w-[74.8125rem] grid-cols-1 gap-x-[3rem] gap-y-[1.88rem] md:grid-cols-12 md:gap-y-[0rem] xl:mx-0">
+  class="mx-5 mt-[2.5rem] grid max-w-[74.8125rem] grid-cols-1 gap-x-[3rem] gap-y-[1.88rem] md:grid-cols-12 md:gap-y-[0rem] lg:mt-[5.94rem] xl:mx-0">
   <div class="col-span-1 md:col-span-5">
     <div class="flex flex-col items-center md:items-start">
       <div
-        class="mb-[1.5rem] flex w-fit gap-x-[0.5rem] rounded-full border px-[1.52rem] py-[0.52rem]">
+        class="mb-[1rem] flex w-fit gap-x-[0.5rem] rounded-full border px-[1.52rem] py-[0.52rem] lg:mb-[1.5rem]">
         <SanityImage
           class="h-[1.25rem] w-[1.25rem]"
           src={props?.sectionIcon}
@@ -23,8 +23,10 @@
           imageUrlBuilder={imgBuilder} />
         <h1>{props.sectionTitle}</h1>
       </div>
-      <h2 class="mb-[3.12rem] text-[3rem] font-semibold">{props.title}</h2>
-      <h2 class="text-center text-[1.125rem] md:text-left">
+      <h2 class="mb-[1rem] text-[3rem] font-semibold lg:mb-[3.12rem]">
+        {props.title}
+      </h2>
+      <h2 class="mb-[1.88rem] text-center text-[1.125rem] md:text-left">
         {props.description}
       </h2>
     </div>

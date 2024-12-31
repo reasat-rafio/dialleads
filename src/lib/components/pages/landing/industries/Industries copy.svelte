@@ -72,10 +72,10 @@
   </div>
 
   <div
-    class="container z-50 mx-auto px-[1.5rem] pb-[0rem] md:pb-[4.21rem] lg:px-[7.5rem]">
-    <Carousel.Root setApi={(emblaApi) => (api = emblaApi)} class="w-full  ">
-      <!-- max-w-xs py-1   md:px-[1.56rem]  lg:px-[7.56rem] -->
-      <!-- min-w-[20.9rem] md:min-w-[54.9rem] lg:min-w-[75rem]  xl:min-w-[75rem] sm:min-w-[40.9rem]-->
+    class="z-50 flex flex-col items-center justify-center pb-[0rem] md:pb-[4.21rem]">
+    <Carousel.Root
+      setApi={(emblaApi) => (api = emblaApi)}
+      class="w-full  min-w-[20.9rem]   max-w-xs py-1 sm:min-w-[40.9rem] md:min-w-[54.9rem] md:px-[1.56rem] lg:min-w-[75rem] lg:px-[7.56rem] xl:min-w-[75rem] ">
       <Carousel.Content class="">
         <!-- px-5 -->
         {#each industries as industry}

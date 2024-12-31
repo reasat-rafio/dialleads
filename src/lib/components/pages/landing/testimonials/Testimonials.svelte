@@ -39,9 +39,9 @@
 </script>
 
 <svelte:window bind:innerWidth={windowWidth} />
-<div class="flex flex-col items-center justify-center">
+<div class="mt-[2.5rem] flex flex-col items-center justify-center lg:mt-[5rem]">
   <div
-    class="mb-[1.5rem] flex gap-x-[0.5rem] rounded-full border px-[1.52rem] py-[0.52rem]">
+    class="mb-[1rem] flex gap-x-[0.5rem] rounded-full border px-[1.52rem] py-[0.52rem] lg:mb-[1.5rem]">
     <SanityImage
       class="h-[1.25rem] w-[1.25rem] "
       src={props?.sectionIcon}
@@ -51,7 +51,7 @@
   </div>
 
   <h2
-    class="mb-[1.625rem] text-center text-[1.625rem] font-semibold md:mb-[3.12rem] md:text-[3rem]">
+    class="mb-[1.625rem] text-center text-[1.625rem] font-semibold md:text-[3rem] lg:mb-[3.12rem]">
     {props.title}
   </h2>
 </div>
