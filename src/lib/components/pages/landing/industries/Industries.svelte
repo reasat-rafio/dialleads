@@ -43,6 +43,7 @@
 <div class="relative mb-0 w-full">
   <div class="absolute h-full w-full">
     <SanityImage
+      lqip
       innerClass="h-full  w-full object-cover"
       class=" h-full w-full bg-black  object-cover"
       src={props?.sectionImage}
