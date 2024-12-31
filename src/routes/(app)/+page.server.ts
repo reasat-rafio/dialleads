@@ -14,6 +14,11 @@ const query = groq`
         hero{
         ...,
         ${asset('thumbnail')},
+        ${asset('videoPlayBtnIcon')},
+         video{
+         "webm": video_webm.asset->url,
+         "mov": video_hevc.asset->url,
+         }
         },
         pricing{
                 sectionName,

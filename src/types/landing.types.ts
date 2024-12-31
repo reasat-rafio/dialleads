@@ -1,5 +1,5 @@
 import type { PortableTextBlock } from 'sanity';
-import type { Link, SanityImageWithAlt, SeoProps, Video } from './common.types';
+import type { Link, SanityImageWithAlt, SeoProps } from './common.types';
 
 export interface LandingPageProps {
   seo: SeoProps;
@@ -7,20 +7,32 @@ export interface LandingPageProps {
   pricing: Pricing;
 }
 
-type Section = HeroProps | FaqProps | TestimonialsProps  | PricingProps | ComparisonProps | FeatureProps | WhyDialleadsAIProps | WhyChooseUsProps;
+type Section =
+  | HeroProps
+  | FaqProps
+  | TestimonialsProps
+  | PricingProps
+  | ComparisonProps
+  | FeatureProps
+  | WhyDialleadsAIProps
+  | WhyChooseUsProps;
 
 export interface HeroProps {
   _type: 'landing.hero';
   hero: Hero;
 }
-export interface Hero{
+export interface Hero {
   title: PortableTextBlock[];
-  subTitle: string;
-  video: Video;
+  subtitle: string;
+  video: HeroVideo;
   thumbnail: SanityImageWithAlt;
   link: Link;
+  videoPlayBtnIcon: SanityImageWithAlt;
 }
-
+export interface HeroVideo {
+  mov: string;
+  webm: string;
+}
 
 export interface FaqProps {
   _type: 'landing.faq';
@@ -140,35 +152,35 @@ export interface Feature {
   featureIcon: SanityImageWithAlt;
 }
 
-export interface WhyDialleadsAIProps{
+export interface WhyDialleadsAIProps {
   _key: string;
   _type: 'landing.whyDialleadsAI';
   whyDialleadsAI: WhyDialleadsAI;
 }
-export interface WhyDialleadsAI{
+export interface WhyDialleadsAI {
   sectionName: string;
   sectionIcon: SanityImageWithAlt;
   sectionTitle: string;
   cards: Card[];
 }
-export interface Card{
+export interface Card {
   cardTitle: string;
   cardIcon: SanityImageWithAlt;
   cardDescription: string;
 }
 
-export interface WhyChooseUsProps{
+export interface WhyChooseUsProps {
   _key: string;
   _type: 'landing.whyChooseUs';
   whyChooseUs: WhyChooseUs;
 }
-export interface WhyChooseUs{
+export interface WhyChooseUs {
   sectionName: string;
   sectionIcon: SanityImageWithAlt;
   sectionTitle: string;
   cards: WhyChooseUsCard[];
 }
-export interface WhyChooseUsCard{
+export interface WhyChooseUsCard {
   cardIcon: SanityImageWithAlt;
   cardDescription: string;
   cardDescriptionFor: string;

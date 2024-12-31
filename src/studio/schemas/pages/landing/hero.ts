@@ -25,8 +25,32 @@ const hero = defineType({
         }),
         defineField({
           name: 'video',
-          type: 'video',
-          description: 'Video for hero section',
+          type: 'object',
+          fields: [
+            {
+              name: 'video_webm',
+              type: 'file',
+              title: 'WebM',
+              options: {
+                accept: 'video/webm,video/x-matroska',
+              },
+            },
+            {
+              name: 'video_hevc',
+              type: 'file',
+              title: 'MOV - HEVC',
+              options: {
+                accept: 'video/quicktime,video/mp4',
+              },
+            },
+          ],
+          validation: (Rule) =>
+            Rule.custom((video) => {
+              if (!video?.video_webm && !video?.video_hevc) {
+                return 'Both WebM and MOV - HEVC videos are required';
+              }
+              return true;
+            }),
         }),
 
         defineField({
@@ -41,6 +65,24 @@ const hero = defineType({
             Rule.required().error('A thumbnail image is required.'),
         }),
         defineField({
+          name: 'videoPlayBtnIcon',
+          type: 'image',
+          title: 'Video Play Button Icon',
+          description: 'Play Button Icon',
+          options: {
+            hotspot: true,
+          },
+          fields: [
+            {
+              name: 'alt',
+              title: 'Alternative Text',
+              type: 'string',
+            },
+          ],
+          validation: (Rule) =>
+            Rule.required().error('A Video Play Icon is required.'),
+        }),
+        defineField({
           name: 'link',
           type: 'link',
         }),
@@ -49,12 +91,11 @@ const hero = defineType({
   ],
   preview: {
     select: {
-      title: 'hero.title',
       subtitle: 'hero.subtitle',
     },
-    prepare({ title, subtitle }) {
+    prepare({ subtitle }) {
       return {
-        title: title || '',
+        title: "Hero",
         subtitle: subtitle || '',
         media: SiHomeadvisor,
       };
