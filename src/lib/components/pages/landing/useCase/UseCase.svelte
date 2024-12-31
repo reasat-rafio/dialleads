@@ -39,7 +39,7 @@
 <svelte:window bind:innerWidth={windowWidth} />
 <!-- <div class="px-5 lg:px-5"> -->
 <div
-  class="relative mb-[2.5rem] mt-[2.5rem] h-full w-full lg:mb-[6.26rem] lg:mt-[5.06rem]">
+  class="relative mb-[2.5rem] mt-[2.5rem] h-full w-full lg:mt-[5.06rem]">
   <div class="absolute h-full w-full">
     <SanityImage
       innerClass="h-full w-full object-cover"

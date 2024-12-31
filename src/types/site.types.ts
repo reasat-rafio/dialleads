@@ -1,5 +1,5 @@
 import type { SanityDocument } from '@sanity/client';
-import type { SanityImageWithAlt } from './common.types';
+import type { Link, SanityImageWithAlt } from './common.types';
 
 export interface SiteDataProps {
   logos: {
