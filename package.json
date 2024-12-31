@@ -57,6 +57,9 @@
 		"@sanity/client": "^6.24.1",
 		"@sanity/image-url": "^1.1.0",
 		"@tailwindcss/typography": "^0.5.15",
-		"embla-carousel-autoplay": "^8.5.1"
+		"embla-carousel-autoplay": "^8.5.1",
+		"formsnap": "^2.0.0",
+		"sveltekit-superforms": "^2.22.1",
+		"zod": "^3.24.1"
 	}
 }
