@@ -43,10 +43,21 @@ export interface MoreLink{
 }
 
 export interface Footer {
+  backgroundOne: SanityImageWithAlt;
+  backgroundTwo: SanityImageWithAlt;
   title: string;
-  subtitle: string;
-  contacts: Contact[];
-  social: SocialProps;
+  getStartedbtnText: string;
+  getStartedbtnLink: string;
+  sideText: string;
+  companyLogo: SanityImageWithAlt;
+  companyName: string;
+  newsLetterText: string;
+  newsLetter2ndText: string;
+  browse: Link[];
+  about: Link[];
+  legal: Link[];
+  subItems: Link[];
+  copyRightText: string;
 }
 
 export interface SocialProps {

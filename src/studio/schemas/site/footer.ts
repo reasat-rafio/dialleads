@@ -9,13 +9,55 @@ const footer = defineType({
   icon: MdOutlineCallToAction,
   fields: [
     defineField({
+      name: 'backgroundOne',
+      type: 'image',
+      title: 'Background One',
+      // validation: (Rule) => Rule.required(),
+      options: { hotspot: true },
+      fields: [
+        {
+          name: 'alt',
+          title: 'Alternative Text',
+          description: 'Important for SEO and accessibility',
+          type: 'string',
+          // validation: (Rule) => Rule.required(),
+        },
+      ],
+    }),
+
+    defineField({
+      name: 'backgroundTwo',
+      type: 'image',
+      title: 'Background Two',
+      // validation: (Rule) => Rule.required(),
+      options: { hotspot: true },
+      fields: [
+        {
+          name: 'alt',
+          title: 'Alternative Text',
+          description: 'Important for SEO and accessibility',
+          type: 'string',
+          // validation: (Rule) => Rule.required(),
+        },
+      ],
+    }),
+
+    defineField({
       name: 'title',
       type: 'string',
       validation: (Rule) => Rule.required(),
     }),
 
     defineField({
-      name: 'btnText',
+      name: 'getStartedbtnText',
+      title: 'Get Started Button Text',
+      type: 'string',
+      validation: (Rule) => Rule.required(),
+    }),
+
+    defineField({
+      name: 'getStartedbtnLink',
+      title: 'Get Started Button Link',
       type: 'string',
       validation: (Rule) => Rule.required(),
     }),
@@ -84,60 +126,21 @@ const footer = defineType({
       of: [{ type: 'link' }],
     },
 
-    // defineField({
-    //   name: 'contacts',
-    //   type: 'array',
-    //   validation: (Rule) => Rule.required().min(1),
-    //   of: [
-    //     {
-    //       name: 'option',
-    //       type: 'object',
-    //       icon: FcBusinessContact,
-    //       fields: [
-    //         {
-    //           name: 'name',
-    //           type: 'string',
-    //           validation: (Rule) => Rule.required(),
-    //         },
-    //         {
-    //           name: 'value',
-    //           type: 'text',
-    //           rows: 2,
-    //           validation: (Rule) => Rule.required(),
-    //         },
-    //         {
-    //           name: 'url',
-    //           type: 'string',
-    //         },
-    //       ],
-    //       preview: {
-    //         select: {
-    //           title: 'name',
-    //           subtitle: 'value',
-    //         },
-    //       },
-    //     },
-    //   ],
-    // }),
+    {
+      name: 'subItems',
+      title: 'Sub Items',
+      type: 'array',
+      of: [{ type: 'link' }],
+    },
 
-    // defineField({
-    //   name: 'social',
-    //   type: 'object',
-    //   fields: [
-    //     defineField({
-    //       name: 'title',
-    //       type: 'string',
-    //       validation: (Rule) => Rule.required(),
-    //     }),
-    //     defineField({
-    //       name: 'socials',
-    //       type: 'array',
-    //       validation: (Rule) => Rule.required().min(1),
-    //       of: [{ type: 'social' }],
-    //     }),
-    //   ],
-    // }),
+    defineField({
+      name: 'copyRightText',
+      type: 'string',
+      title: 'Copy Right Text',
+      validation: (Rule) => Rule.required(),
+    }),
   ],
+
   preview: {
     select: {
       title: 'title',
