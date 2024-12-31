@@ -93,11 +93,12 @@
   </h2>
 </div>
 
-<div class="relative h-full w-full sm:max-w-2xl md:max-w-4xl lg:max-w-6xl">
-  <div class="absolute h-full w-full">
+<div
+  class="relative h-full w-full max-w-[45.125rem] lg:min-w-[50.125rem] xl:min-w-[62.125rem]">
+  <div class="absolute h-full w-full rounded-[1.88rem]">
     <SanityImage
-      innerClass="h-full w-full  "
-      class=" h-full w-full object-cover   "
+      innerClass="h-full w-full object-cover rounded-[1.88rem]"
+      class=" h-full w-full rounded-[1.88rem] bg-cover object-cover md:h-full  lg:rounded-[1.88rem]"
       src={props?.backgroundImage}
       sizes="100vw"
       imageUrlBuilder={imgBuilder} />

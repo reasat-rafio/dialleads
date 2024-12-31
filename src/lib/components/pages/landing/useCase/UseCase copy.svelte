@@ -37,10 +37,10 @@
 </script>
 
 <svelte:window bind:innerWidth={windowWidth} />
-
+<!-- <div class="px-5 lg:px-5"> -->
 <div
-  class="relative mb-[2.5rem] mt-[2.5rem] h-full w-full px-[0.31rem] md:px-5 lg:mb-[6.26rem] lg:mt-[5.06rem]">
-  <!-- <div class="absolute h-full w-full">
+  class="relative mb-[2.5rem] mt-[2.5rem] h-full w-full lg:mb-[6.26rem] lg:mt-[5.06rem]">
+  <div class="absolute h-full w-full">
     <SanityImage
       lqip
       innerClass="h-full w-full object-cover"
@@ -48,93 +48,9 @@
       src={props?.useCaseSectionImage}
       sizes="100vw"
       imageUrlBuilder={imgBuilder} />
-  </div> -->
-
-  <div
-    style="background: radial-gradient(113.28% 100% at 50% 0%, #000 0%, rgba(0, 0, 0, 0.00) 69.79%), linear-gradient(180deg, #000 0%, #5B21B6 46.13%, #7C3AED 73.54%, #A78BFA 100%);"
-    class="h-full w-full rounded-[1.88rem] pt-[2rem] lg:pt-[5.13rem]">
-    <div class="z-50 flex flex-col items-center justify-center">
-      <div
-        style="background: linear-gradient(242deg, rgba(255, 255, 255, 0.21) 0%, rgba(255, 255, 255, 0.08) 100%);"
-        class="z-50 mb-[0.75rem] flex gap-x-[0.5rem] rounded-full px-[1.52rem] py-[0.52rem] lg:mb-[1.5rem]">
-        <SanityImage
-          class="z-50 h-[1.25rem] w-[1.25rem] pt-1 "
-          src={props?.sectionIcon}
-          sizes="05vw"
-          imageUrlBuilder={imgBuilder} />
-        <h1 class="z-50 text-white">{props.sectionTitle}</h1>
-      </div>
-
-      <div class="absolute hidden lg:flex">
-        <SanityImage
-          class="bottom-[7rem] left-[25rem] z-50  w-[10rem]  "
-          src={props?.clickToPlayImage}
-          sizes="70vw"
-          imageUrlBuilder={imgBuilder} />
-      </div>
-      <h2
-        class="z-50 mb-[0.75rem] max-w-[44rem] text-center text-[1.625rem] font-semibold text-white lg:mb-[0.88rem] lg:text-[3rem]">
-        {props.title}
-      </h2>
-      <h3
-        class="z-50 mb-[0.88rem] max-w-[44rem] px-10 text-center text-[1rem] font-normal text-white lg:mb-[3.13rem] lg:px-0 lg:text-[1.125rem]">
-        {props.description}
-      </h3>
-
-      <div class="flex lg:hidden">
-        <SanityImage
-          class=" z-50  w-[6rem]  "
-          src={props?.clickToPlayImage}
-          sizes="70vw"
-          imageUrlBuilder={imgBuilder} />
-      </div>
-
-      <div class="container mx-auto px-[1.5rem] lg:px-[7.5rem]">
-        <Carousel.Root setApi={(emblaApi) => (api = emblaApi)} class="w-full">
-          <Carousel.Content>
-            {#each props.useCases as useCase}
-              <Carousel.Item
-                class="w-full basis-full bg-transparent sm:basis-1/2 lg:basis-1/3">
-                <Card.Root
-                  style="background: linear-gradient(242deg, rgba(255, 255, 255, 0.21) 0%, rgba(255, 255, 255, 0.08) 100%);"
-                  class="w-full rounded-[1.38rem] border-[0.342px] border-gray-400 bg-transparent p-[0.75rem]">
-                  <div
-                    class="flex w-full flex-col rounded-[0.88rem] bg-white p-[0.55rem]">
-                    <SanityImage
-                      class="h-full w-full object-cover"
-                      src={useCase?.useCaseImage}
-                      sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw"
-                      imageUrlBuilder={imgBuilder} />
-                    <h3
-                      class="mt-[1.38rem] text-center text-[1.375rem] font-semibold">
-                      {useCase.useCaseTitle}
-                    </h3>
-                    <h3
-                      class="mb-[1rem] text-center text-[1rem] font-normal text-[#5B6779]">
-                      {useCase.useCaseSubTitle}
-                    </h3>
-                  </div>
-                </Card.Root>
-              </Carousel.Item>
-            {/each}
-          </Carousel.Content>
-        </Carousel.Root>
-
-        <div class="z-50 flex justify-center gap-x-2 py-[3.12rem]">
-          {#each Array(count) as _, i}
-            {#if i === current - 1}
-              <div class="z-50 h-3 w-12 rounded-full bg-[#8B5CF6]"></div>
-            {/if}
-            {#if i < count - 1}
-              <div class="z-50 h-3 w-3 rounded-full bg-[#ad90f0]"></div>
-            {/if}
-          {/each}
-        </div>
-      </div>
-    </div>
   </div>
 
-  <!-- <div
+  <div
     class="z-50 mt-[2rem] flex flex-col items-center justify-center lg:mt-[5.13rem]">
     <div
       style="background: linear-gradient(242deg, rgba(255, 255, 255, 0.21) 0%, rgba(255, 255, 255, 0.08) 100%);"
@@ -172,6 +88,7 @@
     </div>
 
     <div class="container mx-auto px-[1.5rem] lg:px-[7.5rem]">
+      <!-- px-[1.5rem] -->
       <Carousel.Root setApi={(emblaApi) => (api = emblaApi)} class="w-full">
         <Carousel.Content>
           {#each props.useCases as useCase}
@@ -213,5 +130,6 @@
         {/each}
       </div>
     </div>
-  </div> -->
+  </div>
 </div>
+<!-- </div> -->

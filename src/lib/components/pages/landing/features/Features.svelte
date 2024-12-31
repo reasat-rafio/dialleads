@@ -49,12 +49,12 @@
               class="col-span-1 rounded-[1rem] border bg-[#F9F9F9] p-4 sm:col-span-1 lg:col-span-1">
               {#if !!features?.featureIcon}
                 <SanityImage
-                  class="h-[2.5rem] w-[2.5rem] overflow-hidden "
+                  class="h-[2.5rem] w-[2.5rem] overflow-hidden object-contain"
                   src={features?.featureIcon}
-                  sizes="05vw"
+                  sizes="60vw"
                   imageUrlBuilder={imgBuilder} />
               {/if}
-              <h2 class="mb-2 text-[22px] font-semibold">
+              <h2 class="mb-2 mt-[1.5rem] text-[22px] font-semibold">
                 {features.featureTitle}
               </h2>
               <h3 class="text-[16px] font-normal">
