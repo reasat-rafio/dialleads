@@ -57,12 +57,13 @@
     </div>
 
     <div
-      class=" relative mx-auto mt-[5.5rem] flex h-[22.5rem] w-[75rem]
-      justify-center">
-      <div>
+      class=" relative mx-auto mt-[7rem] flex h-[22.5rem] w-[75rem]
+      justify-center
+      ">
+      <div class="bg-gradient-to-t from-violet-900  to-violet-100 rounded-tl-xl rounded-tr-xl">
         <SanityImage
           lqip
-          class="mx-auto h-full w-full  rounded-tl-xl rounded-tr-xl"
+          class="mx-auto h-full w-full  rounded-tl-xl rounded-tr-xl object-cover opacity-50 bg-cover bg-no-repeat"
           src={hero?.thumbnail}
           imageUrlBuilder={imgBuilder}
           alt="" />
@@ -73,7 +74,7 @@
         border border-violet-600 bg-white shadow-xl">
           <AlertDialog.Root>
             <AlertDialog.Trigger>
-              <Button class="bg-white">
+              <Button class="bg-white hover:bg-white">
                 <SanityImage
                   class="h-[1.6rem] w-[1.6rem]"
                   src={hero?.videoPlayBtnIcon}
