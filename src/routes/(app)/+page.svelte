@@ -41,8 +41,6 @@
         <TryIt {props} form={data.testCallForm} />
       {:else if props._type === 'landing.faq'}
         <Faq {props} />
-      {:else if props._type === 'landing.features'}
-        <Features {props} />
       {:else if props._type === 'landing.comparison'}
         <Comparison {props} />
       {:else if props._type === 'landing.pricing'}
