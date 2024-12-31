@@ -197,7 +197,7 @@
       </Dialog.Root>
     {:else}
       <div
-        class="relative col-span-1 rounded-[1rem] border bg-[#F9F9F9] p-4 sm:col-span-1 lg:col-span-1">
+        class="relative col-span-1 rounded-[1rem] border border-b-0 bg-[#F9F9F9] p-4 sm:col-span-1 lg:col-span-1">
         <div class="flex gap-x-[0.5rem]">
           <div class="h-[3rem] w-[3rem] rounded-full">
             <SanityImage
@@ -257,7 +257,7 @@
 
         {#if i === 3}
           <div
-            class="pointer-events-none absolute bottom-0 left-0 right-0 h-full rounded-md bg-gradient-to-t from-white/90 via-white/20 to-white/0">
+            class="pointer-events-none absolute bottom-0 left-0 right-0 h-full rounded-md bg-gradient-to-t from-white/90 via-white/70 to-white/0">
           </div>
         {/if}
 

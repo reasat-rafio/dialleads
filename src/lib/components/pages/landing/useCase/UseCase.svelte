@@ -37,6 +37,7 @@
 </script>
 
 <svelte:window bind:innerWidth={windowWidth} />
+<!-- <div class="px-5 lg:px-5"> -->
 <div
   class="relative mb-[2.5rem] mt-[2.5rem] h-full w-full lg:mb-[6.26rem] lg:mt-[5.06rem]">
   <div class="absolute h-full w-full">
@@ -86,6 +87,7 @@
     </div>
 
     <div class="container mx-auto px-[1.5rem] lg:px-[7.5rem]">
+      <!-- px-[1.5rem] -->
       <Carousel.Root setApi={(emblaApi) => (api = emblaApi)} class="w-full">
         <Carousel.Content>
           {#each props.useCases as useCase}
@@ -129,3 +131,4 @@
     </div>
   </div>
 </div>
+<!-- </div> -->
