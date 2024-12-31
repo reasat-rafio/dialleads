@@ -58,7 +58,7 @@
 
 <div
   class="m-5 grid max-w-[74.8125rem] grid-cols-1 gap-[0.75rem] sm:grid-cols-2 md:gap-[1.88rem] lg:grid-cols-3 xl:m-0">
-  {#each testimonials as testimonial, i}
+  {#each testimonials as testimonial}
     {#if showDialog}
       <Dialog.Root>
         <Dialog.Trigger>
@@ -197,7 +197,7 @@
       </Dialog.Root>
     {:else}
       <div
-        class="relative col-span-1 rounded-[1rem] border bg-[#F9F9F9] p-4 sm:col-span-1 lg:col-span-1">
+        class="col-span-1 rounded-[1rem] border bg-[#F9F9F9] p-4 sm:col-span-1 lg:col-span-1">
         <div class="flex gap-x-[0.5rem]">
           <div class="h-[3rem] w-[3rem] rounded-full">
             <SanityImage
@@ -255,11 +255,9 @@
           </div>
         </div>
 
-        {#if i === 3}
-          <div
-            class="pointer-events-none absolute bottom-0 left-0 right-0 h-full rounded-md bg-gradient-to-t from-white/90 via-white/20 to-white/0">
-          </div>
-        {/if}
+        <!-- <div
+          class="pointer-events-none absolute bottom-0 left-0 right-0 h-full rounded-md bg-gradient-to-t from-white/90 via-white/20 to-white/0">
+        </div> -->
 
         <div class="pt-[1.25rem] text-left text-[#5B6779]">
           <h3>{truncateText(testimonial.review, 200)}</h3>
