@@ -4,7 +4,6 @@
   import SanityImage from '$lib/sanity/sanity-image/sanity-image.svelte';
   import type { Hero, HeroProps } from '../../../../../types/landing.types';
   import Video from './Video.svelte';
-  import * as Popover from '$lib/components/ui/popover/index.js';
   import * as AlertDialog from '$lib/components/ui/alert-dialog/index.js';
   import { X } from 'lucide-svelte';
 
