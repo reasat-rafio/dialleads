@@ -34,22 +34,27 @@
         w-[40.3125rem] text-center text-[1.25rem] font-normal text-white">
       {hero?.subtitle}
     </p>
-    <div
-      class="mx-auto mt-[4.24rem] flex h-[4.66856rem] w-[14.42rem] items-center justify-center rounded-xl border">
-      <Button
-        class="flex h-[3.5rem]  w-[13.5rem] 
+    <div class="flex justify-center mt-[1.88rem]">
+      <div
+        class="animate-shine inline-flex w-full
+      max-w-[14.420rem] items-center justify-center rounded-xl border border-white/10
+      bg-[linear-gradient(110deg,#000103,50%,#1e2631,55%,#000103)] bg-[length:200%_100%] px-4 py-5
+      text-sm transition-colors">
+        <Button
+          class="flex h-[3.5rem]  w-[13.5rem] 
           items-center rounded-lg bg-gradient-to-r from-violet-600 to-violet-400 px-6 
           py-3 font-geist text-lg font-semibold text-white shadow-xl hover:shadow-xl focus:outline-none">
-        <!-- Icon (SanityImage) -->
-        <SanityImage
-          class="h-5 w-5"
-          src={hero?.link?.icon}
-          sizes="5vw"
-          imageUrlBuilder={imgBuilder}
-          alt="" />
-        <!-- Button Text -->
-        <span>{hero?.link?.title}</span>
-      </Button>
+          <!-- Icon (SanityImage) -->
+          <SanityImage
+            class="h-5 w-5"
+            src={hero?.link?.icon}
+            sizes="5vw"
+            imageUrlBuilder={imgBuilder}
+            alt="" />
+          <!-- Button Text -->
+          <span>{hero?.link?.title}</span>
+        </Button>
+      </div>
     </div>
 
     <div
