@@ -27,6 +27,7 @@
     options?: Partial<ImageUrlBuilderOptionsWithAliases>;
     autoFormat?: boolean;
     fadeInAnimation?: boolean;
+    innerClass?: string;
   }
 
   let {
@@ -38,6 +39,7 @@
     options,
     autoFormat,
     fadeInAnimation,
+    innerClass,
     ...rest
   }: Props &
     SanityImageProps &
@@ -110,6 +112,7 @@
     srcset={_imgProps.srcset}
     width={_imgProps.width}
     height={_imgProps.height}
+    class={innerClass}
     {...rest} />
 </div>
 
