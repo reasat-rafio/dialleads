@@ -2,6 +2,7 @@
   import { imgBuilder } from '$lib/sanity/sanity-client';
   import SanityImage from '$lib/sanity/sanity-image/sanity-image.svelte';
   import type { SiteDataProps } from '../../../types/site.types';
+  import Button from '../ui/button/button.svelte';
 
   let { footer }: { footer: SiteDataProps['footer'] } = $props();
 
@@ -10,12 +11,27 @@
 
 <div class="relative h-[13.62rem] w-full">
   <div class="absolute top-[7rem] z-50 h-[13.62rem] w-full">
-    <div class="container">
+    <div class="container relative">
       <SanityImage
         class=" h-[13.62rem] w-full overflow-hidden rounded-[1.88rem] bg-black  object-contain"
         src={footer?.backgroundOne}
         sizes="100vw"
         imageUrlBuilder={imgBuilder} />
+      <div
+        class="absolute left-12 top-0 z-50 flex h-full w-full max-w-[90%] py-[3.12rem] pl-[3.2rem] text-white">
+        <h2 class="text-[2.625rem] font-semibold text-white">
+          {footer.title}
+        </h2>
+        <div class="flex flex-col gap-y-[2rem]">
+          <Button
+            href={footer?.getStartedbtnLink}
+            class=" bg-[#8B5CF6] px-[2.44rem] py-[0.88rem]">
+            {footer?.getStartedbtnText}
+          </Button>
+
+          <span>{footer?.sideText}</span>
+        </div>
+      </div>
     </div>
   </div>
 </div>
