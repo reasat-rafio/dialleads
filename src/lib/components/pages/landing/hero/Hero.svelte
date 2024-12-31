@@ -60,7 +60,7 @@
       class=" relative mx-auto mt-[7rem] flex h-[22.5rem] w-[75rem]
       justify-center
       ">
-      <div class="bg-gradient-to-t from-violet-900  to-violet-100 rounded-tl-xl rounded-tr-xl">
+      <div class="bg-gradient-to-t from-violet-900  to-violet-100 rounded-tl-2xl rounded-tr-2xl">
         <SanityImage
           lqip
           class="mx-auto h-full w-full  rounded-tl-xl rounded-tr-xl object-cover opacity-50 bg-cover bg-no-repeat"
