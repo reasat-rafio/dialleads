@@ -65,6 +65,10 @@ export interface IndustriesProps {
 }
 export interface ClientProps {
   _type: 'landing.clients';
+  title: string;
+  clients: {
+    clientImage: SanityImageWithAlt;
+  }[];
 }
 export interface HeroProps {
   _type: 'landing.hero';

@@ -56,18 +56,13 @@
     fruits.find((f) => f.value === value)?.label ?? '🍁',
   );
 
-  ///////////////////////////////////////////////////////////////////////////
-
   const countries = [
     { code: 'us', flag: '🇺🇸', dialCode: '+1', label: 'United States' },
     { code: 'ca', flag: '🇨🇦', dialCode: '+1', label: 'Canada' },
     { code: 'bd', flag: '🇧🇩', dialCode: '+880', label: 'Bangladesh' },
-    // ... add more
   ];
 
-  // from your snippet:
-  let selectedCountry = $state('us'); // default
-  // let $formData: { phoneNumber: string }; // sveltekit-superforms store
+  let selectedCountry = $state('us');
 
   // On each country change, prepend dial code if not present
   $effect(() => {

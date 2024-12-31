@@ -74,10 +74,7 @@
   <div
     class="container z-50 mx-auto px-[1.5rem] pb-[0rem] md:pb-[4.21rem] lg:px-[7.5rem]">
     <Carousel.Root setApi={(emblaApi) => (api = emblaApi)} class="w-full  ">
-      <!-- max-w-xs py-1   md:px-[1.56rem]  lg:px-[7.56rem] -->
-      <!-- min-w-[20.9rem] md:min-w-[54.9rem] lg:min-w-[75rem]  xl:min-w-[75rem] sm:min-w-[40.9rem]-->
       <Carousel.Content class="">
-        <!-- px-5 -->
         {#each industries as industry}
           <Carousel.Item class="basis-full  md:basis-1/2 lg:basis-1/3">
             <Card.Root
@@ -85,7 +82,6 @@
               class="rounded-[2rem]  border border-[#413e3e] px-1 ">
               <Card.Content
                 class="m-1  flex flex-col items-center justify-center p-6">
-                <!-- aspect-square -->
                 {#if !!industry.useCaseImage}
                   <SanityImage
                     class="mb-[1.25rem] h-[7.5rem] w-[7.5rem]"
