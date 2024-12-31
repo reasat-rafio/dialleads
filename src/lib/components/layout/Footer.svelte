@@ -9,23 +9,27 @@
   $inspect(footer);
 </script>
 
-<div class="relative h-[13.62rem] w-full">
-  <div class="absolute top-[7rem] z-50 h-[13.62rem] w-full">
+<div class="relative h-[27.37rem] w-full md:h-[13.62rem]">
+  <div
+    class="absolute top-[10rem] z-50 h-[27.37rem] w-full md:h-[13.62rem] lg:top-[7rem]">
     <div class="container relative">
       <SanityImage
-        class=" h-[13.62rem] w-full overflow-hidden rounded-[1.88rem] bg-black  object-contain"
+        class="h-[27.37rem] w-full overflow-hidden rounded-[1.88rem] bg-black object-contain  md:h-[13.62rem]"
         src={footer?.backgroundOne}
         sizes="100vw"
         imageUrlBuilder={imgBuilder} />
       <div
-        class="absolute left-12 top-0 z-50 flex h-full w-full max-w-[90%] py-[3.12rem] pl-[3.2rem] text-white">
-        <h2 class="text-[2.625rem] font-semibold text-white">
+        class="absolute left-12 top-0 z-50 grid h-full w-full max-w-[90%] grid-cols-6 gap-x-[3.25rem] py-[3.12rem] pl-[3.2rem] text-white">
+        <!-- border -->
+        <h2
+          class="col-span-6 pr-[3rem] text-[1.625rem] font-semibold text-white md:col-span-4 xl:col-span-5 xl:text-[2.625rem]">
           {footer.title}
         </h2>
-        <div class="flex flex-col gap-y-[2rem]">
+        <div
+          class="col-span-4 flex flex-col gap-y-[2rem] md:col-span-2 xl:col-span-1">
           <Button
             href={footer?.getStartedbtnLink}
-            class=" bg-[#8B5CF6] px-[2.44rem] py-[0.88rem]">
+            class=" border border-[#E4E4E7] bg-[#8B5CF6] px-[2.44rem] py-[0.88rem]">
             {footer?.getStartedbtnText}
           </Button>
 
