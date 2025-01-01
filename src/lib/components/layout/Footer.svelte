@@ -7,16 +7,18 @@
   let { footer }: { footer: SiteDataProps['footer'] } = $props();
 </script>
 
-<div class="relative hidden h-full w-full lg:block">
+<div class="relative mt-[250px] h-full w-full lg:block">
   <div class="absolute top-[-12rem] z-50 w-full lg:top-[-7rem]">
-    <div class="container relative">
+    <div class="relative">
+      <!-- container -->
       <div
-        class="max-h-[27.37rem] overflow-visible rounded-[1.88rem] md:max-h-[13rem] md:overflow-hidden">
+        class=" min-h-[27.37rem] overflow-visible rounded-[1.88rem] md:max-h-[13rem] md:overflow-hidden">
+        <!-- max-h-[27.37rem] h-[27.37rem] -->
         <SanityImage
-          class="  h-[27.37rem] w-full rounded-[1.88rem]  object-cover  lg:h-auto"
+          class="   h-full w-full rounded-[1.88rem]  object-cover  lg:h-auto"
           src={footer?.backgroundOne}
-          sizes="30vw"
           imageUrlBuilder={imgBuilder} />
+        <!-- h-[27.37rem]  -->
       </div>
       <div
         class="absolute left-12 top-0 z-50 grid h-fit w-full max-w-[90%] grid-cols-6 gap-x-[3.25rem] border py-[3.12rem] pl-[3.2rem] text-white">
@@ -39,33 +41,27 @@
   </div>
 </div>
 
-<!-- <div class="relative h-full w-full lg:hidden">
-  <div class="absolute top-[-12rem] z-50 w-full lg:top-[-7rem]">
-    <div class="container relative">
+<!-- <div class="relative mx-5 flex h-full w-full justify-center lg:hidden">
+  
+  <div class="absolute h-full w-full border border-red-600">
+    <SanityImage
+      innerClass="h-[20rem] z-50 w-full object-cover"
+      class=" z-50 h-[20rem] w-full object-cover   "
+      src={footer?.backgroundOne}
+      sizes="100vw"
+      imageUrlBuilder={imgBuilder} />
+  </div>
+  <div
+    class="z-50 flex h-full w-full flex-col items-center justify-center py-[1.13rem] md:py-[3.13rem]">
+    <div class="z-50 flex h-full flex-col justify-center">
       <div
-        class="max-h-[27.37rem] overflow-visible rounded-[1.88rem] md:max-h-[13rem] md:overflow-hidden">
-        <SanityImage
-          class="  h-[27.37rem] w-full rounded-[1.88rem]  object-cover  lg:h-auto"
-          src={footer?.backgroundOne}
-          sizes="30vw"
-          imageUrlBuilder={imgBuilder} />
+        class="z-50 flex w-auto justify-center gap-x-[1.12rem] text-white md:gap-x-[0.88rem]">
+        content
+        
       </div>
-      <div
-        class="absolute left-12 top-0 z-50 grid h-fit w-full max-w-[90%] grid-cols-6 gap-x-[3.25rem] border py-[3.12rem] pl-[3.2rem] text-white">
-        <h2
-          class="col-span-6 h-fit max-w-[11.75rem] border pr-[3rem] text-[1.625rem] font-semibold text-white lg:col-span-4">
-          {footer.title}
-        </h2>
-        <div
-          class="col-span-6 flex flex-col gap-y-[2rem] md:col-span-2 lg:col-span-2 xl:col-span-1">
-          <Button
-            href={footer?.getStartedbtnLink}
-            class="max-w-[11rem] border border-[#E4E4E7] bg-[#8B5CF6] px-[2.44rem] py-[0.88rem]">
-            {footer?.getStartedbtnText}
-          </Button>
-
-          <span>{footer?.sideText}</span>
-        </div>
+      <div class="mt-[1.5rem] h-full w-full text-white md:mt-[2rem]">
+        content
+        
       </div>
     </div>
   </div>
