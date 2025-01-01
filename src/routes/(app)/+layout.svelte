@@ -27,9 +27,13 @@
 </svelte:head>
 
 <div class="relative">
-  <Navbar {nav} {logo} />
+
+  <div class="px-2">
+    <Navbar {nav} {logo} /> 
+  </div>
 
   {@render children()}
 
-  <!-- <Footer {footer} /> -->
+  <Footer {footer} />
+
 </div>

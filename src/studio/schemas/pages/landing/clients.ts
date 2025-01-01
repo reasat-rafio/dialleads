@@ -15,11 +15,35 @@ const clients = defineType({
       // validation: (Rule) => Rule.required(),
     }),
 
+    // defineField({
+    //   name: 'title',
+    //   type: 'string',
+    //   title: 'Title',
+    //   // validation: (Rule) => Rule.required(),
+    // }),
     defineField({
       name: 'title',
-      type: 'string',
       title: 'Title',
-      // validation: (Rule) => Rule.required(),
+      type: 'array',
+      of: [
+        defineArrayMember({
+          type: 'object',
+          fields: [
+            defineField({
+              name: 'title',
+              title: 'Title',
+              type: 'string',
+              // validation: (Rule) => Rule.required(),
+            }),
+          ],
+          preview: {
+            select: {
+              title: 'title',
+              // subtitle: 'link',
+            },
+          },
+        }),
+      ],
     }),
 
     defineField({
