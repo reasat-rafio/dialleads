@@ -13,9 +13,9 @@
   $inspect(hero?.video);
 </script>
 
-<div class="absolute top-[8rem]">
+<div class="absolute top-[7.75rem]">
   <div class="relative">
-    <div class="text-center">
+    <div class="w-[50.6875rem] h-[10.5rem] text-center mx-auto">
       {#if Array.isArray(hero?.title[0]?.children) && Array.isArray(hero?.title[1]?.children)}
         <h2 class="font-geist text-7xl font-bold text-[#FFF]">
           {hero?.title[0]?.children[0]?.text}
@@ -57,13 +57,14 @@
     </div>
 
     <div
-      class=" relative mx-auto mt-[7rem] flex h-[22.5rem] w-[75rem]
+      class=" relative mx-auto mt-[5.7rem] flex h-[22.5rem] w-[75rem]
       justify-center
       ">
-      <div class="bg-gradient-to-t from-violet-900  to-violet-100 rounded-tl-2xl rounded-tr-2xl">
+      <div
+        class="rounded-tl-2xl rounded-tr-2xl bg-gradient-to-t from-violet-900 to-violet-100">
         <SanityImage
           lqip
-          class="mx-auto h-full w-full  rounded-tl-xl rounded-tr-xl object-cover opacity-50 bg-cover bg-no-repeat"
+          class="mx-auto h-full w-full  rounded-tl-xl rounded-tr-xl bg-cover bg-no-repeat object-cover opacity-50"
           src={hero?.thumbnail}
           imageUrlBuilder={imgBuilder}
           alt="" />

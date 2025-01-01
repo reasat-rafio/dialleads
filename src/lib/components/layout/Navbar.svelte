@@ -52,7 +52,8 @@
   }
 </script>
 
-<div class="h-[57.5rem] min-h-[57.5rem] max-h-[57.5rem] bg-[radial-gradient(113.28%_100%_at_50%_30%,_#000_30%,_rgba(0,0,0,0)_69.79%)] 
+<div class="h-[57.5rem] min-h-[57.5rem] max-h-[57.5rem] ml-[1.06rem] mr-[1.13rem]
+bg-[radial-gradient(113.28%_100%_at_50%_30%,_#000_30%,_rgba(0,0,0,0)_69.79%)] 
  mb-[4.94rem] bg-violet-900 mt-4 rounded-[1.875rem]">
   <div class="mx-auto max-w-[75rem] py-5">
     <div class="flex justify-between">
