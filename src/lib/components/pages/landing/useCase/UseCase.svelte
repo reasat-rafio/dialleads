@@ -57,7 +57,7 @@
 
       <div class="absolute hidden lg:flex">
         <SanityImage
-          class="bottom-[7rem] left-[25rem] z-50  w-[10rem]  "
+          class=" bottom-[8.4rem] left-[26rem] z-50  w-[10rem]  "
           src={props?.clickToPlayImage}
           sizes="70vw"
           imageUrlBuilder={imgBuilder} />
