@@ -14,11 +14,11 @@
 </script>
 
 <div class="absolute top-[5rem] px-[0.94rem] lg:top-[7.75rem] xl:px-0">
-  <div class="relative">
-    <div class="mx-auto w-full text-center lg:h-[10.5rem] lg:w-[50.6875rem]">
+  <div class="relative px-2 xl:px-0">
+    <div class="mx-auto w-full text-center lg:h-[10.5rem] lg:w-[50.6875rem] leading-tight">
       {#if Array.isArray(hero?.title[0]?.children) && Array.isArray(hero?.title[1]?.children)}
         <h2
-          class="font-geist text-[1.875rem] font-bold text-[#FFF] lg:text-7xl">
+          class="font-geist text-[1.875rem] font-bold text-[#FFF] lg:text-7xl text-nowrap">
           {hero?.title[0]?.children[0]?.text}
         </h2>
         <h3
@@ -58,7 +58,7 @@
     </div>
 
     <div
-      class=" relative mx-auto mt-[3.6rem] flex h-[17.8rem] w-full justify-center px-4 lg:mt-[5.7rem] lg:h-[22.5rem] lg:px-0
+      class=" relative mx-auto mt-[4.6rem] flex h-[17.8rem] w-full justify-center px-4 lg:mt-[5.7rem] lg:h-[22.5rem] lg:px-0
       xl:w-[75rem]
       ">
       <div
