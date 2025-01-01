@@ -4,7 +4,6 @@
   import SanityImage from '$lib/sanity/sanity-image/sanity-image.svelte';
   import type { Hero, HeroProps } from '../../../../../types/landing.types';
   import Video from './Video.svelte';
-  import * as Popover from '$lib/components/ui/popover/index.js';
   import * as AlertDialog from '$lib/components/ui/alert-dialog/index.js';
   import { X } from 'lucide-svelte';
 
@@ -34,31 +33,37 @@
         w-[40.3125rem] text-center text-[1.25rem] font-normal text-white">
       {hero?.subtitle}
     </p>
-    <div
-      class="mx-auto mt-[4.24rem] flex h-[4.66856rem] w-[14.42rem] items-center justify-center rounded-xl border">
-      <Button
-        class="flex h-[3.5rem]  w-[13.5rem] 
+    <div class="mt-[1.88rem] flex justify-center">
+      <div
+        class="animate-shine inline-flex w-full
+      max-w-[14.420rem] items-center justify-center rounded-xl border border-white/10
+      bg-[linear-gradient(110deg,#000103,50%,#1e2631,55%,#000103)] bg-[length:200%_100%] px-2 py-2
+      text-sm transition-colors">
+        <Button
+          class="flex h-[3.5rem]  w-[13.5rem] 
           items-center rounded-lg bg-gradient-to-r from-violet-600 to-violet-400 px-6 
           py-3 font-geist text-lg font-semibold text-white shadow-xl hover:shadow-xl focus:outline-none">
-        <!-- Icon (SanityImage) -->
-        <SanityImage
-          class="h-5 w-5"
-          src={hero?.link?.icon}
-          sizes="5vw"
-          imageUrlBuilder={imgBuilder}
-          alt="" />
-        <!-- Button Text -->
-        <span>{hero?.link?.title}</span>
-      </Button>
+          <!-- Icon (SanityImage) -->
+          <SanityImage
+            class="h-5 w-5"
+            src={hero?.link?.icon}
+            sizes="5vw"
+            imageUrlBuilder={imgBuilder}
+            alt="" />
+          <!-- Button Text -->
+          <span>{hero?.link?.title}</span>
+        </Button>
+      </div>
     </div>
 
     <div
-      class=" relative mx-auto mt-[3.07rem] flex h-[22.5rem] w-[75rem]
-      justify-center">
-      <div>
+      class=" relative mx-auto mt-[7rem] flex h-[22.5rem] w-[75rem]
+      justify-center
+      ">
+      <div class="bg-gradient-to-t from-violet-900  to-violet-100 rounded-tl-2xl rounded-tr-2xl">
         <SanityImage
           lqip
-          class="mx-auto h-full w-full  rounded-tl-xl rounded-tr-xl"
+          class="mx-auto h-full w-full  rounded-tl-xl rounded-tr-xl object-cover opacity-50 bg-cover bg-no-repeat"
           src={hero?.thumbnail}
           imageUrlBuilder={imgBuilder}
           alt="" />
@@ -69,7 +74,7 @@
         border border-violet-600 bg-white shadow-xl">
           <AlertDialog.Root>
             <AlertDialog.Trigger>
-              <Button class="bg-white">
+              <Button class="bg-white hover:bg-white">
                 <SanityImage
                   class="h-[1.6rem] w-[1.6rem]"
                   src={hero?.videoPlayBtnIcon}
