@@ -13,24 +13,25 @@
   $inspect(hero?.video);
 </script>
 
-<div class="absolute top-[8rem]">
+<div class="absolute top-[5rem] px-[0.94rem] lg:top-[7.75rem] xl:px-0">
   <div class="relative">
-    <div class="text-center">
+    <div class="mx-auto w-full text-center lg:h-[10.5rem] lg:w-[50.6875rem]">
       {#if Array.isArray(hero?.title[0]?.children) && Array.isArray(hero?.title[1]?.children)}
-        <h2 class="font-geist text-7xl font-bold text-[#FFF]">
+        <h2
+          class="font-geist text-[1.875rem] font-bold text-[#FFF] lg:text-7xl">
           {hero?.title[0]?.children[0]?.text}
         </h2>
         <h3
           class="bg-gradient-to-r from-[#731AFF] via-[#731AFF] to-[#FCCEEE]
-                bg-clip-text font-geist text-7xl
-                font-bold text-transparent">
+                bg-clip-text font-geist text-[1.875rem] font-bold
+                text-transparent lg:text-7xl">
           {hero?.title[1]?.children[0]?.text}
         </h3>
       {/if}
     </div>
     <p
       class="mx-auto mt-[0.75rem] h-[3.75rem]
-        w-[40.3125rem] text-center text-[1.25rem] font-normal text-white">
+         w-full text-center text-base font-normal text-white lg:w-[40.3125rem] lg:text-[1.25rem]">
       {hero?.subtitle}
     </p>
     <div class="mt-[1.88rem] flex justify-center">
@@ -57,13 +58,14 @@
     </div>
 
     <div
-      class=" relative mx-auto mt-[7rem] flex h-[22.5rem] w-[75rem]
-      justify-center
+      class=" relative mx-auto mt-[3.6rem] flex h-[17.8rem] w-full justify-center px-4 lg:mt-[5.7rem] lg:h-[22.5rem] lg:px-0
+      xl:w-[75rem]
       ">
-      <div class="bg-gradient-to-t from-violet-900  to-violet-100 rounded-tl-2xl rounded-tr-2xl">
+      <div
+        class="rounded-tl-2xl rounded-tr-2xl bg-gradient-to-t from-violet-900 to-violet-100">
         <SanityImage
           lqip
-          class="mx-auto h-full w-full  rounded-tl-xl rounded-tr-xl object-cover opacity-50 bg-cover bg-no-repeat"
+          class="mx-auto h-full w-full  rounded-tl-xl rounded-tr-xl bg-cover bg-no-repeat object-cover opacity-50"
           src={hero?.thumbnail}
           imageUrlBuilder={imgBuilder}
           alt="" />
@@ -82,7 +84,8 @@
                   alt={hero?.videoPlayBtnIcon?.alt} />
               </Button>
             </AlertDialog.Trigger>
-            <AlertDialog.Content class=" flex max-w-screen-2xl justify-center">
+            <AlertDialog.Content
+              class=" flex justify-center lg:max-w-screen-2xl">
               <Video
                 {isIntersecting}
                 mov={hero?.video?.mov}
