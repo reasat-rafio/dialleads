@@ -59,7 +59,7 @@
   }
 </script>
 
-<div class="mx-2">
+<div class="">
   <div
     class=" mt-2 h-[43.1rem]
     rounded-[1.25rem] bg-violet-900 bg-[radial-gradient(113.28%_100%_at_50%_30%,_#000_30%,_rgba(0,0,0,0)_69.79%)]
