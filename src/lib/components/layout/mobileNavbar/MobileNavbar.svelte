@@ -62,8 +62,8 @@
 <div class="mx-2">
   <div
     class=" mt-2 h-[43.1rem]
-    rounded-[1.875rem] bg-violet-900
-    bg-[radial-gradient(113.28%_100%_at_50%_30%,_#000_30%,_rgba(0,0,0,0)_69.79%)]">
+    rounded-[1.25rem] bg-violet-900 bg-[radial-gradient(113.28%_100%_at_50%_30%,_#000_30%,_rgba(0,0,0,0)_69.79%)]
+    lg:rounded-[1.875rem]">
     <div class="relative mr-[0.94rem] flex justify-end pt-4">
       <Button
         class=" right-0 bg-transparent hover:bg-transparent"
@@ -100,8 +100,8 @@
           <p class="flex items-center gap-2">
             <svg
               xmlns="http://www.w3.org/2000/svg"
-              width="50"
-              height="32"
+              width="100"
+              height="64"
               viewBox="0 0 32 32"
               fill="none">
               <path
@@ -127,10 +127,11 @@
         {/if}
       </Button>
     </div>
-    <div class="px-[2.81rem]">
+    <div class="relative mx-[2rem]">
       {#if isPopupVisible}
         <div
-          class=" mx-auto h-[16.875rem] w-full rounded-[1rem] bg-white pl-[1.88rem] pt-[1.94rem]">
+          class="absolute left-1/2 top-1/2 z-50 w-full -translate-x-1/2 transform rounded-lg bg-white p-6
+            shadow-lg">
           <div class="flex flex-col justify-start gap-5">
             {#each nav?.menu as item}
               <div
