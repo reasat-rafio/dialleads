@@ -26,29 +26,29 @@
   {#if !!sections?.length}
     {#each sections as props}
       {#if props._type === 'landing.testimonials'}
-        <Testimonials {props} />
+        <!-- <Testimonials {props} /> -->
       {:else if props._type === 'landing.hero'}
         <Hero {props} />
       {:else if props._type === 'landing.features'}
-        <Features {props} />
+        <!-- <Features {props} /> -->
       {:else if props._type === 'landing.useCase'}
-        <UseCase {props} />
+        <!-- <UseCase {props} /> -->
       {:else if props._type === 'landing.industry'}
-        <Industries {props} {industries} />
+        <!-- <Industries {props} {industries} /> -->
       {:else if props._type === 'landing.clients'}
-        <Clients {props} />
+        <!-- <Clients {props} /> -->
       {:else if props._type === 'landing.testCall'}
-        <TryIt {props} form={data.testCallForm} />
+        <!-- <TryIt {props} form={data.testCallForm} /> -->
       {:else if props._type === 'landing.faq'}
-        <Faq {props} />
+        <!-- <Faq {props} /> -->
       {:else if props._type === 'landing.comparison'}
-        <Comparison {props} />
+        <!-- <Comparison {props} /> -->
       {:else if props._type === 'landing.pricing'}
-        <Pricing {props} {pricing} />
+        <!-- <Pricing {props} {pricing} /> -->
       {:else if props._type === 'landing.whyDialleadsAI'}
-        <WhyDialleadsAi {props} />
+        <!-- <WhyDialleadsAi {props} /> -->
       {:else if props._type === 'landing.whyChooseUs'}
-        <WhyChooseUs {props} />
+        <!-- <WhyChooseUs {props} /> -->
       {/if}
     {/each}
   {/if}
