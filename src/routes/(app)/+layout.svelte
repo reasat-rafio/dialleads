@@ -1,8 +1,6 @@
 <script lang="ts">
   import Footer from '$lib/components/layout/Footer.svelte';
-
   import Navbar from '$lib/components/layout/Navbar.svelte';
-
   import { urlFor } from '$lib/sanity/sanity-client';
 
   let { data, children } = $props();
@@ -27,13 +25,11 @@
 </svelte:head>
 
 <div class="relative">
-
   <div class="px-2">
-    <Navbar {nav} {logo} /> 
+    <Navbar {nav} {logo} />
   </div>
 
   {@render children()}
 
   <Footer {footer} />
-
 </div>
