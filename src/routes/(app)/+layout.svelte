@@ -1,7 +1,5 @@
 <script lang="ts">
-
   import Footer from '$lib/components/layout/Footer.svelte';
-
 
   import Navbar from '$lib/components/layout/Navbar.svelte';
 
@@ -30,12 +28,10 @@
 
 <div class="relative">
   <div class="px-2">
-
-    <Navbar {nav} {logo} /> 
+    <!-- <Navbar {nav} {logo} /> -->
   </div>
 
   {@render children()}
 
   <Footer {footer} />
-
 </div>

@@ -95,19 +95,42 @@
             {footer?.newsLetterText}
           </h2>
 
-          <div class="mb-[1rem] flex max-w-[31.25rem] gap-x-[0.5rem]">
-            <input
-              type="text"
-              placeholder="Enter your email"
-              class="mt-[0.5rem] h-[2.5rem] w-[19rem] rounded-[2rem] px-[0.5rem]" />
+          <div
+            class="mb-[1rem] grid max-w-[20.8rem] grid-cols-4 gap-x-[0.5rem] md:max-w-[31.25rem]">
+            <div class="col-span-2 lg:col-span-3">
+              <input
+                type="text"
+                placeholder="Enter your email"
+                class=" h-full w-full rounded-[2rem] border border-[#625a5a] bg-[#4F3780] px-[1.25rem] py-[0.5rem] text-white lg:h-full lg:px-[1.25rem]" />
+              <!-- w-[12.24rem]  md:min-w-[16rem] 4F3780         #2B1E42-->
+            </div>
+
+            <!-- mt-[0.5rem] -->
             <button
               style="background: var(--Lini, linear-gradient(90deg, #7C3AED 0%, #A78BFA 100%));"
-              class="mt-[0.5rem] flex h-[2.5rem] w-[7rem] items-center justify-center gap-x-2 rounded-[2.5rem] font-semibold text-white">
+              class="col-span-2 flex h-full w-full basis-1 items-center justify-center gap-x-[0.5rem] rounded-[1.88rem] px-[1.5rem] py-[1rem] font-semibold text-white lg:col-span-1">
               Subscribe
-              <svg
+              <span>
+                <svg
+                  class="mt-1 w-[0.875rem]"
+                  viewBox="0 0 15 13"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg">
+                  <path
+                    id="Vector 1"
+                    d="M14.5303 7.03033C14.8232 6.73744 14.8232 6.26256 14.5303 5.96967L9.75736 1.1967C9.46447 0.903806 8.98959 0.903806 8.6967 1.1967C8.40381 1.48959 8.40381 1.96447 8.6967 2.25736L12.9393 6.5L8.6967 10.7426C8.40381 11.0355 8.40381 11.5104 8.6967 11.8033C8.98959 12.0962 9.46447 12.0962 9.75736 11.8033L14.5303 7.03033ZM0 7.25H14V5.75H0V7.25Z"
+                    fill="white" />
+                </svg>
+              </span>
+            </button>
+
+            <!--
+            
+             style="background: var(--Lini, linear-gradient(90deg, #7C3AED 0%, #A78BFA 100%));"
+            <svg
                 width="15"
                 height="13"
-                class="mt-1"
+                class="mt-1 w-[0.875rem]"
                 viewBox="0 0 15 13"
                 fill="none"
                 xmlns="http://www.w3.org/2000/svg">
@@ -115,8 +138,7 @@
                   id="Vector 1"
                   d="M14.5303 7.03033C14.8232 6.73744 14.8232 6.26256 14.5303 5.96967L9.75736 1.1967C9.46447 0.903806 8.98959 0.903806 8.6967 1.1967C8.40381 1.48959 8.40381 1.96447 8.6967 2.25736L12.9393 6.5L8.6967 10.7426C8.40381 11.0355 8.40381 11.5104 8.6967 11.8033C8.98959 12.0962 9.46447 12.0962 9.75736 11.8033L14.5303 7.03033ZM0 7.25H14V5.75H0V7.25Z"
                   fill="white" />
-              </svg>
-            </button>
+              </svg> -->
           </div>
           <h2 class="max-w-[31.25rem] text-[0.875rem] font-medium text-white">
             {footer?.newsLetter2ndText}
@@ -125,12 +147,12 @@
         <div class="col-span-12 md:col-span-6">
           <div class="grid grid-cols-3 gap-x-[3.75rem]">
             <div
-              class="col-span-3 border-r-[0.1rem] border-[#E4E4E733] md:col-span-1">
+              class="col-span-3 border-r-0 border-[#E4E4E733] md:col-span-1 md:border-r-[0.1rem]">
               <h2
-                class="mb-[2rem] text-[0.9375rem] font-semibold uppercase text-white">
+                class="mb-[2rem] mt-[1.06rem] text-[0.9375rem] font-semibold uppercase text-white lg:mt-[0rem]">
                 Browse
               </h2>
-              <div class="flex flex-col gap-y-[1.125rem]">
+              <div class="flex w-fit flex-col gap-y-[1.125rem]">
                 {#each footer?.browse as link}
                   <a
                     href={link.internalLink}
@@ -138,13 +160,16 @@
                     {link?.title}
                   </a>
                 {/each}
+                <div
+                  class="mt-[1.25rem] h-[0.1rem] w-[5rem] bg-white md:hidden">
+                </div>
               </div>
             </div>
 
             <div
-              class="col-span-3 border-r-[0.1rem] border-[#E4E4E733] md:col-span-1">
+              class="col-span-3 border-r-0 border-[#E4E4E733] md:col-span-1 md:border-r-[0.1rem]">
               <h2
-                class="mb-[2rem] text-[0.9375rem] font-semibold uppercase text-white">
+                class="mb-[2rem] mt-[1.06rem] text-[0.9375rem] font-semibold uppercase text-white lg:mt-[0rem]">
                 About
               </h2>
               <div class="flex flex-col gap-y-[1.125rem]">
@@ -155,12 +180,15 @@
                     {link?.title}
                   </a>
                 {/each}
+                <div
+                  class="mt-[1.25rem] h-[0.1rem] w-[5rem] bg-white md:hidden">
+                </div>
               </div>
             </div>
 
             <div class="col-span-3 md:col-span-1">
               <h2
-                class="mb-[2rem] text-[0.9375rem] font-semibold uppercase text-white">
+                class="mb-[2rem] mt-[1.06rem] text-[0.9375rem] font-semibold uppercase text-white lg:mt-[0rem]">
                 Legal
               </h2>
               <div class="flex flex-col gap-y-[1.125rem]">
@@ -178,11 +206,13 @@
       </div>
 
       <div class="mt-[3.5rem] h-[0.1rem] bg-[#E4E4E733]"></div>
-      <div class="mt-[2rem] flex flex-col justify-between md:flex-row">
+      <div
+        class="mb-[2rem] mt-[2rem] flex flex-col justify-between md:flex-row">
         <span class="text-[1rem] font-light text-white">
           {footer?.copyRightText}
         </span>
-        <div class=" flex gap-x-[1.5rem]">
+        <div
+          class=" gap-x-auto flex justify-between gap-y-[0.75rem] md:gap-x-[1.5rem]">
           {#each footer?.subItems as subItem}
             <a
               href={subItem.internalLink}
