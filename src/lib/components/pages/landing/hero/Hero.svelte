@@ -62,6 +62,7 @@
     <div
       class=" relative mx-auto mt-[4.2rem] flex h-[17.8rem] max-h-[17.8rem] w-full justify-center px-4 lg:mt-[5.7rem] lg:h-[22.5rem] lg:px-0
       xl:w-[75rem]
+      {windowWidth <= 320 ? "h-full mt-[5.95rem]": "h-[17.8rem]"}
       ">
       <div
         class="rounded-tl-2xl rounded-tr-2xl bg-gradient-to-t from-violet-900 to-violet-100">

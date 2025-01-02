@@ -36,7 +36,7 @@
       {:else if props._type === 'landing.industry'}
         <!-- <Industries {props} {industries} /> -->
       {:else if props._type === 'landing.clients'}
-        <!-- <Clients {props} /> -->
+        <Clients {props} />
       {:else if props._type === 'landing.testCall'}
         <!-- <TryIt {props} form={data.testCallForm} /> -->
       {:else if props._type === 'landing.faq'}
