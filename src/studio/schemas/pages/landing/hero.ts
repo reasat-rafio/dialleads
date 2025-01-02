@@ -54,10 +54,21 @@ const hero = defineType({
         }),
 
         defineField({
-          name: 'thumbnail',
+          name: 'thumbnailForMobile',
           type: 'image',
           title: 'Video Thumbnail',
-          description: 'Image to be displayed as the video thumbnail',
+          description: 'Image to be displayed as the video thumbnail for mobile screen',
+          options: {
+            hotspot: true,
+          },
+          validation: (Rule) =>
+            Rule.required().error('A thumbnail image is required.'),
+        }),
+        defineField({
+          name: 'thumbnailForDesktop',
+          type: 'image',
+          title: 'Video Thumbnail',
+          description: 'Image to be displayed as the video thumbnail for desktop screen',
           options: {
             hotspot: true,
           },

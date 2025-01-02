@@ -38,15 +38,15 @@
       {:else if props._type === 'landing.clients'}
         <!-- <Clients {props} /> -->
       {:else if props._type === 'landing.testCall'}
-        <TryIt {props} form={data.testCallForm} />
+        <!-- <TryIt {props} form={data.testCallForm} /> -->
       {:else if props._type === 'landing.faq'}
         <!-- <Faq {props} /> -->
       {:else if props._type === 'landing.comparison'}
-        <Comparison {props} />
+        <!-- <Comparison {props} /> -->
       {:else if props._type === 'landing.pricing'}
         <!-- <Pricing {props} {pricing} /> -->
       {:else if props._type === 'landing.whyDialleadsAI'}
-        <WhyDialleadsAi {props} />
+        <!-- <WhyDialleadsAi {props} /> -->
       {:else if props._type === 'landing.whyChooseUs'}
         <!-- <WhyChooseUs {props} /> -->
       {/if}

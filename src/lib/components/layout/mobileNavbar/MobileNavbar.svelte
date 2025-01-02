@@ -59,12 +59,12 @@
   }
 </script>
 
-<div class="mx-2">
+<div class="mx-[0.31rem]">
   <div
     class=" mt-2 h-[43.1rem]
     rounded-[1.25rem] bg-violet-900 bg-[radial-gradient(113.28%_100%_at_50%_30%,_#000_30%,_rgba(0,0,0,0)_69.79%)]
     lg:rounded-[1.875rem]">
-    <div class="relative mr-[0.94rem] flex justify-end pt-4">
+    <div class="relative mx-[0.94rem] flex justify-end pt-4">
       <Button
         class=" right-0 bg-transparent hover:bg-transparent"
         onclick={togglePopup}>
@@ -97,7 +97,7 @@
           </p>
         {:else}
           <!-- Hamburger Icon -->
-          <p class="flex items-center gap-2">
+          <p class="flex items-center ">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="100"
