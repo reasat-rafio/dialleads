@@ -1,15 +1,19 @@
 <script lang="ts">
-  interface Props {
-    props: UseCaseProps;
-  }
-  let { props }: Props = $props();
-
+  import WaveSurfer from 'wavesurfer.js';
   import * as Card from '$lib/components/ui/card/index.js';
   import * as Carousel from '$lib/components/ui/carousel/index.js';
   import type { CarouselAPI } from '$lib/components/ui/carousel/context.js';
   import SanityImage from '$lib/sanity/sanity-image/sanity-image.svelte';
   import { imgBuilder } from '$lib/sanity/sanity-client';
   import type { UseCaseProps } from '../../../../../types/landing.types';
+  import { onMount } from 'svelte';
+
+  interface Props {
+    props: UseCaseProps;
+  }
+  let { props }: Props = $props();
+
+  $inspect(props);
 
   let api = $state<CarouselAPI>();
 
@@ -33,6 +37,41 @@
         current = api!.selectedScrollSnap() + 1;
       });
     }
+  });
+
+  let waveforms = [];
+
+  function resolveMp3Url(ref: any) {
+    return `https://cdn.sanity.io/files/ttleus4d/production/${ref
+      .replace('file-', '')
+      .replace('-', '.')}`;
+  }
+
+  let waveSurferInstances: WaveSurfer[] = []; // Store WaveSurfer instances here
+
+  // Initialize WaveSurfer instances on mount
+  onMount(() => {
+    props.useCases.forEach((useCase, i) => {
+      const waveformElement: any = document.getElementById(`waveform-${i}`);
+      const mp3FileUrl = resolveMp3Url(useCase.mp3File.asset._ref); // Resolve URL
+
+      const waveSurfer = WaveSurfer.create({
+        container: waveformElement,
+        waveColor: '#d1d5db',
+        progressColor: '#6d28d9',
+        height: 80,
+        barWidth: 4,
+        barRadius: 2,
+        barGap: 4,
+      });
+      waveSurfer.load(mp3FileUrl); // Dynamically load the audio file
+      waveSurferInstances[i] = waveSurfer; // Store the instance
+    });
+
+    return () => {
+      // Cleanup WaveSurfer instances on unmount
+      waveSurferInstances.forEach((waveSurfer) => waveSurfer.destroy());
+    };
   });
 </script>
 
@@ -83,7 +122,7 @@
       <div class="container mx-auto px-[1.5rem] lg:px-[7.5rem]">
         <Carousel.Root setApi={(emblaApi) => (api = emblaApi)} class="w-full">
           <Carousel.Content>
-            {#each props.useCases as useCase}
+            {#each props.useCases as useCase, index}
               <Carousel.Item
                 class="w-full basis-full bg-transparent sm:basis-1/2 lg:basis-1/3">
                 <Card.Root
@@ -104,6 +143,33 @@
                       class="mb-[1rem] text-center text-[1rem] font-normal text-[#5B6779]">
                       {useCase.useCaseSubTitle}
                     </h3>
+                    <hr />
+
+                    <!-- WaveSurfer Audio Player -->
+                    <div
+                      class="mt-[1rem] flex h-[2.4375rem] items-center gap-x-[0.5rem] overflow-hidden">
+                      <button
+                        class="flex min-h-[2.124rem] min-w-[2.124rem] items-center justify-center rounded-full border border-[#6d28d9] bg-[#EDE9FE] text-white"
+                        onclick={() => waveSurferInstances[index]?.playPause()}>
+                        <svg
+                          width="14"
+                          height="14"
+                          viewBox="0 0 14 14"
+                          fill="none"
+                          xmlns="http://www.w3.org/2000/svg">
+                          <g id="SVG">
+                            <path
+                              id="Vector"
+                              d="M12.7019 6.26776L4.17882 1.22898C3.48632 0.819773 2.42578 1.21687 2.42578 2.22899V12.3041C2.42578 13.2121 3.41126 13.7594 4.17882 13.3041L12.7019 8.26778C13.4622 7.81984 13.4646 6.71571 12.7019 6.26776Z"
+                              fill="#8B5CF6" />
+                          </g>
+                        </svg>
+                      </button>
+                      <div
+                        id={`waveform-${index}`}
+                        class="w-full max-w-[90%] overflow-hidden rounded-lg">
+                      </div>
+                    </div>
                   </div>
                 </Card.Root>
               </Carousel.Item>

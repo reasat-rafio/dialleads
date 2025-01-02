@@ -37,6 +37,7 @@ export interface UseCases {
   useCaseImage: SanityImageWithAlt;
   useCaseTitle: string;
   useCaseSubTitle: string;
+  mp3File: any;
 }
 
 export interface TestCallProps {

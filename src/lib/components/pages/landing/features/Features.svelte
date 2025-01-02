@@ -30,10 +30,10 @@
 
 <div class="flex items-center justify-center">
   <Tabs.Root value="Outbound" class="flex flex-col justify-center">
-    <Tabs.List class="mb-[2.2rem] flex gap-x-5 bg-white">
+    <Tabs.List class="mb-[0.6rem] flex gap-x-5 bg-white lg:mb-[2.2rem]">
       {#each props.features as feature}
         <Tabs.Trigger
-          class="text-[#8B5CF6] ring-2 ring-[#8B5CF6] data-[state=active]:ring-0 "
+          class="rounded-[0.75rem]  text-[#8B5CF6] ring-2 ring-[#8B5CF6] data-[state=active]:ring-2 "
           value={feature.featureGroupName}>
           {feature.featureGroupName}
         </Tabs.Trigger>
@@ -46,7 +46,8 @@
           class=" m-5 grid max-w-[74.8125rem] grid-cols-1 gap-[1.88rem] sm:grid-cols-2 lg:grid-cols-3 xl:m-0">
           {#each feature.features as features}
             <div
-              class="col-span-1 rounded-[1rem] border bg-[#F9F9F9] p-4 sm:col-span-1 lg:col-span-1">
+              class="col-span-1 rounded-[1rem] border bg-[#FFFFFF] p-7 sm:col-span-1 lg:col-span-1">
+              <!-- bg-[#F9F9F9] -->
               {#if !!features?.featureIcon}
                 <SanityImage
                   class="h-[2.5rem] w-[2.5rem] overflow-hidden object-contain"
