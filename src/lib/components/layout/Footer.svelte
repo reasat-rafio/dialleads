@@ -167,8 +167,14 @@
  ">
     <div class="flex flex-col lg:flex-row">
       <h3
-        class="mb-[4.375rem] text-center font-semibold text-white lg:w-[47.925rem] lg:text-left lg:text-[2.625rem]">
-        Join more than 225,000+ customers that manage projects better
+        class="mb-[4.375rem] text-center font-geist font-semibold text-white
+        lg:w-[47.925rem]
+         lg:text-left lg:text-[2.625rem]">
+        Join more than <span
+          class="bg-gradient-to-r from-purple-50 to-purple-400 bg-clip-text text-transparent">
+          225,000+
+        </span>
+         customers that manage projects better
       </h3>
       <div class="mt-5 flex flex-col gap-8">
         <Button

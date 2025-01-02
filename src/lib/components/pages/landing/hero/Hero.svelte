@@ -38,13 +38,14 @@
     <div class=" mt-6 flex justify-center lg:mt-[1.88rem]">
       <div
         class="animate-shine inline-flex w-full
-      max-w-[14.420rem] items-center justify-center rounded-xl border border-white/10
+      max-w-[14.420rem] items-center justify-center rounded-xl border border-transparent shadow-xl
       bg-[linear-gradient(110deg,#000103,50%,#1e2631,55%,#000103)] bg-[length:200%_100%] px-2 py-2
       text-sm transition-colors">
         <Button
           class="flex h-[3.5rem]  w-[13.5rem] 
           items-center rounded-lg bg-gradient-to-r from-violet-600 to-violet-400 px-6 
-          py-3 font-geist text-lg font-semibold text-white shadow-xl hover:shadow-xl focus:outline-none">
+          py-3 font-geist text-lg font-semibold text-white shadow-xl hover:shadow-xl focus:outline-none
+">
           <!-- Icon (SanityImage) -->
           <SanityImage
             class="h-5 w-5"
