@@ -45,11 +45,11 @@
       {#each props.clients as client}
         <Carousel.Item
           class="flex basis-1/3 items-center justify-center md:basis-1/4 xl:basis-1/4 ">
-          <div class="h-[1.375rem] w-full md:h-[2.5rem]">
+          <div class=" h-full w-full">
             <SanityImage
               class="h-[1.375rem] w-fit  object-contain md:h-[2.5rem]"
               src={client.clientImage}
-              sizes="15vw"
+              sizes={' (min-width:1024px) 14vw, 16vw'}
               imageUrlBuilder={imgBuilder}
               alt="SliderMainImage" />
           </div>
