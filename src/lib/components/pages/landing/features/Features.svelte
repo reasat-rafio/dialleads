@@ -10,8 +10,7 @@
   let { props }: Props = $props();
 </script>
 
-<div
-  class="mt-[2.4rem] flex flex-col items-center justify-center border lg:mt-[5rem]">
+<div class="mt-[2.4rem] flex flex-col items-center justify-center lg:mt-[5rem]">
   <div
     class="mb-[1rem] flex gap-x-[0.5rem] rounded-full border px-[1.52rem] py-[0.52rem] lg:mb-[1.5rem]">
     {#if !!props?.sectionIcon}
@@ -25,7 +24,7 @@
   </div>
 
   <h2
-    class="mb-[2.5rem] w-[20.5625rem] text-center text-[1.625rem] font-semibold lg:w-full lg:text-[3rem]">
+    class="mb-[1.25rem] w-[20.5625rem] text-center text-[1.625rem] font-semibold lg:mb-[1.3rem] lg:w-full lg:text-[3rem]">
     {props.title}
   </h2>
 </div>
