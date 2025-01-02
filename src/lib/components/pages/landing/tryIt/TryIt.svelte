@@ -88,7 +88,7 @@
   </div>
 
   <h2
-    class="mb-[1.38rem] text-[1.625rem] font-semibold text-black lg:mb-[3.12rem] lg:text-[3rem]">
+    class="mb-[1.38rem] text-[1.625rem] font-semibold text-black lg:text-[3rem]">
     {props.title}
   </h2>
 </div>
@@ -142,11 +142,10 @@
                         {...props}
                         bind:value={$formData.name}
                         placeholder="Your name"
-                        class="pl-8" />
-                      <div class="absolute bottom-2 left-2">
+                        class=" max-w-[17.375rem] pl-8 text-[1.25rem]" />
+                      <div class="absolute bottom-3 left-2 md:bottom-2">
                         <svg
-                          width="22"
-                          height="22"
+                          class="size-[1.125rem] md:size-[1.375rem]"
                           viewBox="0 0 22 22"
                           fill="none"
                           xmlns="http://www.w3.org/2000/svg">
@@ -176,12 +175,11 @@
                         {...props}
                         bind:value={$formData.email}
                         placeholder="Your email"
-                        class=" pl-9" />
+                        class=" max-w-[17.375rem] pl-9 text-[1.25rem]" />
 
-                      <div class="absolute bottom-2 left-2">
+                      <div class="absolute bottom-3 left-2 md:bottom-2">
                         <svg
-                          width="24"
-                          height="24"
+                          class="size-[1.125rem] md:size-[1.5rem]"
                           viewBox="0 0 24 24"
                           fill="none"
                           xmlns="http://www.w3.org/2000/svg">
@@ -210,10 +208,10 @@
                   class=" flex h-full items-center gap-x-2
                    ">
                   <div
-                    class="flex h-full items-center gap-x-2 rounded-md bg-white px-2
+                    class="flex h-full min-w-[15.37rem] items-center gap-x-2 rounded-md bg-white px-2 md:min-w-[13.37rem] lg:min-w-[17.37rem]
                   ">
                     <svg
-                      class=""
+                      class="size-[1.125rem] md:size-[1.5rem]"
                       width="24"
                       height="24"
                       viewBox="0 0 24 24"
@@ -257,16 +255,18 @@
                       {...props}
                       bind:value={$formData.phoneNumber}
                       placeholder="Phone number"
-                      class=" max-w-[120px] rounded-md border-input bg-background px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground
-                      focus-visible:outline-none
-                      md:max-w-[90px] lg:max-w-[115px]" />
+                      class=" max-w-[120px] rounded-md border-input bg-background px-3 py-[0.2rem] text-[1.25rem] text-black ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium
+                      placeholder:text-muted-foreground
+                      focus-visible:outline-none md:max-w-[90px] lg:max-w-[115px]" />
                   </div>
                 </div>
               </div>
             </div>
           </div>
 
-          <Form.Button class="w-fit ">Submit</Form.Button>
+          <Form.Button class="w-fit bg-[#8B5CF6]  px-[5.2rem] md:px-[4.25rem]">
+            Call me now
+          </Form.Button>
         </form>
       </div>
     </div>
