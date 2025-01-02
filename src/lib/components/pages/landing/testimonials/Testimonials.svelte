@@ -3,7 +3,6 @@
   import SanityImage from '$lib/sanity/sanity-image/sanity-image.svelte';
   import * as HoverCard from '$lib/components/ui/hover-card/index.js';
   import { Dot } from 'lucide-svelte';
-  import { Button, buttonVariants } from '$lib/components/ui/button/index.js';
   import * as Dialog from '$lib/components/ui/dialog/index.js';
   import type { TestimonialsProps } from '../../../../../types/landing.types';
   interface Props {
