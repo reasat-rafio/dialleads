@@ -172,7 +172,7 @@
           class="bg-gradient-to-r from-purple-50 to-purple-600 bg-clip-text text-transparent">
           225,000+
         </span>
-         customers that manage projects better
+        customers that manage projects better
       </h3>
       <div class="mt-5 flex flex-col gap-8">
         <Button
@@ -181,7 +181,7 @@
           {footer?.getStartedbtnText}
         </Button>
 
-        <span class="w-full text-center text-[0.875rem] text-white">
+        <span class="w-full text-center text-[0.875rem] text-white text-nowrap opacity-70">
           {footer?.sideText}
         </span>
       </div>
