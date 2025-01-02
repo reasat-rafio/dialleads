@@ -54,10 +54,11 @@
 </script>
 
 <div
-  class=" mb-[4.94rem] ml-[1.06rem] mr-[1.13rem] mt-4 h-[57.5rem]
+  class="  ml-[1.06rem] mr-[1.13rem] mt-4 h-[57.5rem]
 max-h-[57.5rem]
- min-h-[57.5rem] rounded-[1.875rem] bg-violet-900 bg-[radial-gradient(113.28%_100%_at_50%_30%,_#000_30%,_rgba(0,0,0,0)_69.79%)]">
-  <div class="mx-auto max-w-[75rem] py-5">
+ min-h-[57.5rem] rounded-[1.875rem]
+   bg-hero-gradient">
+  <div class="mx-auto max-w-[75rem] pt-[1.81rem]">
     <div class="flex justify-between">
       <div class="flex items-center gap-[0.49rem]">
         <SanityImage

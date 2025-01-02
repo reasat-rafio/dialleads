@@ -15,21 +15,23 @@
   }
 
   let { props, pricing }: Props = $props();
-  let { sectionName, sectionIcon, sectionTitle } = $derived(props);
   let { enterprisePlan, plans, saveUpTo } = $derived(pricing);
   let selectedSubscriptionType = $state('monthly');
 </script>
 
-<div class=" mx-auto max-w-[75rem] px-2 xl:px-0">
-  <Section {sectionName} {sectionIcon} {sectionTitle} />
+<div class=" mx-auto max-w-[75rem] px-5 xl:px-0">
+  <Section {props} />
   <TopBar {saveUpTo} bind:selectedSubscriptionType />
   <div class="my-20 mt-7 grid grid-cols-1 gap-7 md:grid-cols-2 xl:grid-cols-3">
     {#each plans as plan}
       <PricingCard {plan} bind:selectedSubscriptionType {saveUpTo} />
     {/each}
   </div>
-  <div class="relative mb-24 w-full overflow-hidden 
-  rounded-[1.25rem] bg-indigo-950 border border-[#E4E4E7]">
+  <div
+    class="bg-[linear-gradient(98deg, #200B46 0%, #1A0939 100%)]
+  relative mb-10 w-full overflow-hidden
+  rounded-[1.25rem] border border-[#E4E4E7] bg-indigo-950 lg:mb-[5.94rem]
+  ">
     <SanityImage
       lqip
       class="h-[29.3125rem] w-full bg-cover bg-center bg-no-repeat object-cover md:h-[19.76rem]"
@@ -67,9 +69,9 @@
       </p>
       <div class="flex justify-center md:justify-start">
         <button
-          class="font-geist flex items-center gap-2
-      rounded-xl border border-purple-700
-      bg-violet-700 px-6 py-2 text-lg font-semibold text-white">
+          class="flex items-center gap-2 rounded-xl
+      border border-purple-700 bg-violet-700
+      px-6 py-2 font-geist text-lg font-semibold text-white">
           {enterprisePlan?.cta?.title}
           <SanityImage
             class="h-5 w-5"

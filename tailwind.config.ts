@@ -15,6 +15,14 @@ const config: Config = {
       },
     },
     extend: {
+      backgroundImage: {
+        'hero-gradient':
+          'radial-gradient(113.28% 100% at 50% 0%, #000 0%, rgba(0, 0, 0, 0.00) 69.79%), linear-gradient(180deg, #000 0%, #5B21B6 100%, #7C3AED 100%, #A78BFA 100%)',
+        'real-world-gradient': `
+          radial-gradient(113.28% 100% at 50% 0%, #000 0%, rgba(0, 0, 0, 0.00) 69.79%), 
+          linear-gradient(180deg, #000 0%, #5B21B6 100%, #7C3AED 100%, #A78BFA 100%)
+        `,
+      },
       colors: {
         border: 'hsl(var(--border) / <alpha-value>)',
         input: 'hsl(var(--input) / <alpha-value>)',

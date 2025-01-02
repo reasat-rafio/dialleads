@@ -93,7 +93,7 @@
   </h2>
 </div>
 
-<div class="relative h-full w-full sm:max-w-2xl md:max-w-4xl lg:max-w-6xl">
+<div class="relative h-full w-full sm:max-w-2xl md:max-w-4xl lg:max-w-6xl ">
   <div class="absolute h-full w-full">
     <SanityImage
       innerClass="h-full w-full  "

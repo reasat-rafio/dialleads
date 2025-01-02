@@ -28,7 +28,8 @@ const query = groq`
         ...,
         hero{
         ...,
-        ${asset('thumbnail')},
+        ${asset('thumbnailForMobile')},
+        ${asset('thumbnailForDesktop')},
         ${asset('videoPlayBtnIcon')},
          video{
          "webm": video_webm.asset->url,
@@ -41,7 +42,7 @@ const query = groq`
                 ${asset('sectionIcon')},
                 sectionTitle,
             },
-            features[]{
+        features[]{
             ...,
             ${asset('sectionIcon')},
             features[] {

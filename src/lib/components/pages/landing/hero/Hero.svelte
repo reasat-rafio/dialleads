@@ -10,12 +10,13 @@
   let { props }: { props: HeroProps } = $props();
   let { hero }: { hero: Hero } = $derived(props);
   let isIntersecting = true;
-  $inspect(hero?.video);
+  let windowWidth = $state(0);
 </script>
 
-<div class="absolute top-[5rem] px-[0.94rem] lg:top-[7.75rem] xl:px-0">
-  <div class="relative px-2 xl:px-0">
-    <div class="mx-auto w-full text-center lg:h-[10.5rem] lg:w-[50.6875rem] leading-tight">
+<svelte:window bind:innerWidth={windowWidth} />
+<div class="absolute top-[5.41rem] px-[0.94rem] lg:top-[7.75rem] xl:px-0">
+  <div class="relative">
+    <div class="mx-auto w-full text-center lg:h-[10.5rem] lg:w-[50.6875rem]">
       {#if Array.isArray(hero?.title[0]?.children) && Array.isArray(hero?.title[1]?.children)}
         <h2
           class="font-geist text-[1.875rem] font-bold text-[#FFF] lg:text-7xl text-nowrap">
@@ -30,11 +31,11 @@
       {/if}
     </div>
     <p
-      class="mx-auto mt-[0.75rem] h-[3.75rem]
-         w-full text-center text-base font-normal text-white lg:w-[40.3125rem] lg:text-[1.25rem]">
+      class="mx-auto mt-[0.62rem] h-[3.75rem] w-full
+         text-center text-base font-normal text-white lg:mt-[0.75rem] lg:w-[40.3125rem] lg:text-[1.25rem]">
       {hero?.subtitle}
     </p>
-    <div class="mt-[1.88rem] flex justify-center">
+    <div class=" mt-6 flex justify-center lg:mt-[1.88rem]">
       <div
         class="animate-shine inline-flex w-full
       max-w-[14.420rem] items-center justify-center rounded-xl border border-white/10
@@ -58,17 +59,27 @@
     </div>
 
     <div
-      class=" relative mx-auto mt-[4.6rem] flex h-[17.8rem] w-full justify-center px-4 lg:mt-[5.7rem] lg:h-[22.5rem] lg:px-0
+      class=" relative mx-auto mt-[4.2rem] flex h-[17.8rem] max-h-[17.8rem] w-full justify-center px-4 lg:mt-[5.7rem] lg:h-[22.5rem] lg:px-0
       xl:w-[75rem]
+      {windowWidth <= 320 ? 'mt-[5.95rem] h-full' : 'h-[17.8rem]'}
       ">
       <div
         class="rounded-tl-2xl rounded-tr-2xl bg-gradient-to-t from-violet-900 to-violet-100">
-        <SanityImage
-          lqip
-          class="mx-auto h-full w-full  rounded-tl-xl rounded-tr-xl bg-cover bg-no-repeat object-cover opacity-50"
-          src={hero?.thumbnail}
-          imageUrlBuilder={imgBuilder}
-          alt="" />
+        {#if windowWidth > 700}
+          <SanityImage
+            lqip
+            class="mx-auto  h-full w-full  rounded-tl-xl rounded-tr-xl bg-cover bg-no-repeat object-cover opacity-50"
+            src={hero?.thumbnailForDesktop}
+            imageUrlBuilder={imgBuilder}
+            alt="" />
+        {:else}
+          <SanityImage
+            lqip
+            class="mx-auto h-full w-full  rounded-tl-xl rounded-tr-xl bg-cover bg-no-repeat object-cover "
+            src={hero?.thumbnailForMobile}
+            imageUrlBuilder={imgBuilder}
+            alt="" />
+        {/if}
 
         <div
           class="absolute left-1/2 top-1/2 flex

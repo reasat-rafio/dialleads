@@ -81,7 +81,8 @@ export interface Hero {
   title: PortableTextBlock[];
   subtitle: string;
   video: HeroVideo;
-  thumbnail: SanityImageWithAlt;
+  thumbnailForMobile: SanityImageWithAlt;
+  thumbnailForDesktop: SanityImageWithAlt;
   link: Link;
   videoPlayBtnIcon: SanityImageWithAlt;
 }

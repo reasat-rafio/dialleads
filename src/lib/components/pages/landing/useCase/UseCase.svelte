@@ -78,10 +78,11 @@
 <svelte:window bind:innerWidth={windowWidth} />
 
 <div
-  class="relative mb-[2.5rem] mt-[2.5rem] h-full w-full px-[0.31rem] md:px-5 lg:mb-[6.26rem] lg:mt-[5.06rem]">
+  class="relative  mt-[2.5rem] h-full w-full px-[0.31rem] md:px-5 lg:mt-[5.06rem]">
   <div
-    style="background: radial-gradient(113.28% 100% at 50% 0%, #000 0%, rgba(0, 0, 0, 0.00) 69.79%), linear-gradient(180deg, #000 0%, #5B21B6 46.13%, #7C3AED 73.54%, #A78BFA 100%);"
-    class="h-full w-full rounded-[1.88rem] pt-[2rem] lg:pt-[5.13rem]">
+    class="h-full w-full rounded-[1.88rem] pt-[2rem] lg:pt-[5.13rem]
+    bg-real-world-gradient
+    ">
     <div class="z-50 flex flex-col items-center justify-center">
       <div
         style="background: linear-gradient(242deg, rgba(255, 255, 255, 0.21) 0%, rgba(255, 255, 255, 0.08) 100%);"
