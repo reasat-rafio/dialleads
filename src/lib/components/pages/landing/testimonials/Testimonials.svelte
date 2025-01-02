@@ -223,11 +223,12 @@
               {#if testimonial.companyName.length > 12}
                 <HoverCard.Root>
                   <HoverCard.Trigger>
-                    <h2 class="max-w-[130px] truncate text-[#5B6779]">
+                    <h2
+                      class="max-w-[80px] truncate text-[#5B6779] sm:max-w-[120px]">
                       {testimonial.companyName}
                     </h2>
                   </HoverCard.Trigger>
-                  <HoverCard.Content class="rounded-lg bg-white p-4 shadow-lg">
+                  <HoverCard.Content class="rounded-lg  bg-white p-4 shadow-lg">
                     <p>{testimonial.companyName}</p>
                   </HoverCard.Content>
                 </HoverCard.Root>
