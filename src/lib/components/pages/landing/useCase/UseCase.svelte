@@ -78,10 +78,10 @@
 <svelte:window bind:innerWidth={windowWidth} />
 
 <div
-  class="relative  mt-[2.5rem] h-full w-full px-[0.31rem] md:px-5 lg:mt-[5.06rem]">
+  class="relative mt-[2.5rem] h-full w-full px-[0.31rem] md:px-5 lg:mt-[5.06rem]">
   <div
-    class="h-full w-full rounded-[1.88rem] pt-[2rem] lg:pt-[5.13rem]
-    bg-real-world-gradient
+    class="bg-real-world-gradient h-full w-full rounded-[1.88rem] pt-[2rem]
+    lg:pt-[5.13rem]
     ">
     <div class="z-50 flex flex-col items-center justify-center">
       <div
