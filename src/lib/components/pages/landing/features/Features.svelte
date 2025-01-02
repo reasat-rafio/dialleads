@@ -15,12 +15,14 @@
     class="mb-[1rem] flex gap-x-[0.5rem] rounded-full border px-[1.52rem] py-[0.52rem] lg:mb-[1.5rem]">
     {#if !!props?.sectionIcon}
       <SanityImage
-        class="h-[1.25rem] w-[1.25rem] "
+        class="h-[1.25rem] w-[1.25rem] pt-1"
         src={props?.sectionIcon}
         sizes="05vw"
         imageUrlBuilder={imgBuilder} />
     {/if}
-    <h1>{props.sectionTitle}</h1>
+    <h1 class="text-[1rem] font-medium text-[#495568] lg:text-[1.125rem]">
+      {props.sectionTitle}
+    </h1>
   </div>
 
   <h2
@@ -47,7 +49,7 @@
           class=" m-5 grid max-w-[74.8125rem] grid-cols-1 gap-[1.88rem] sm:grid-cols-2 lg:grid-cols-3 xl:m-0">
           {#each feature.features as features}
             <div
-              class="col-span-1 rounded-[1rem] border bg-[#FFFFFF] p-7 sm:col-span-1 lg:col-span-1">
+              class="col-span-1 rounded-[1rem] border bg-[#FFFFFF] p-7 shadow-sm sm:col-span-1 lg:col-span-1">
               <!-- bg-[#F9F9F9] -->
               {#if !!features?.featureIcon}
                 <SanityImage
