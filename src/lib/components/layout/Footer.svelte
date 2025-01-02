@@ -14,7 +14,7 @@
     lg:h-full">
     <div>
       <div
-        class="px-5 pt-[14rem] lg:py-8 lg:pl-[7.56rem] lg:pr-[8.15rem] lg:pt-[9.34rem]">
+        class="container px-5 pt-[14rem] lg:py-8 lg:pl-[7.56rem] lg:pr-[8.15rem] lg:pt-[9.34rem]">
         <div class="grid-cols-12 lg:grid">
           <div class="lg:col-span-6">
             <div class="flex justify-center gap-x-[0.61rem] lg:justify-normal">
@@ -167,11 +167,9 @@
  ">
     <div class="flex flex-col lg:flex-row">
       <h3
-        class="mb-[4.375rem] text-center font-geist font-semibold text-white
-        lg:w-[47.925rem]
-         lg:text-left lg:text-[2.625rem]">
+        class="mb-[4.375rem] text-center font-semibold text-white lg:w-[47.925rem] lg:text-left lg:text-[2.625rem]">
         Join more than <span
-          class="bg-gradient-to-r from-purple-50 to-purple-400 bg-clip-text text-transparent">
+          class="bg-gradient-to-r from-purple-50 to-purple-600 bg-clip-text text-transparent">
           225,000+
         </span>
          customers that manage projects better
