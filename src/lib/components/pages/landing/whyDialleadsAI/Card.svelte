@@ -7,7 +7,8 @@
 </script>
 
 <div
-  class="h-full w-full rounded-2xl border px-5 py-5 shadow-md lg:h-[15.625rem] lg:w-[23.75rem] lg:pl-[1.87rem] lg:pr-[2.12rem]">
+  class="h-full w-full rounded-2xl border px-5 py-5 shadow-md lg:h-[15.625rem] lg:w-[23.75rem]
+   lg:pl-[1.87rem] lg:pr-[2.12rem]">
   <SanityImage
     lqip
     class="h-10 w-10"
@@ -17,7 +18,7 @@
     alt="SliderMainImage" />
   <div class="mt-6 space-y-2">
     <h4
-      class="font-geist text-nowrap text-[1.124rem] font-semibold leading-tight text-black lg:text-[1.375rem]">
+      class="font-geist  text-[1.124rem] font-semibold leading-tight text-black lg:text-[1.375rem]">
       {card?.cardTitle}
     </h4>
     <p

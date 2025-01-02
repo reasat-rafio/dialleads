@@ -7,40 +7,47 @@ const pricing = defineType({
   type: 'object',
   icon: MdOutlinePriceCheck,
   fields: [
-   {
-    name: 'pricing',
-    title: 'Pricing',
-    type: 'object',
-    fields: [
+    {
+      name: 'pricing',
+      title: 'Pricing',
+      type: 'object',
+      fields: [
         defineField({
-            name: 'sectionName',
-            title: 'Section Name',
-            type: 'string',
-          }),
-      
-          defineField({
-            name: 'sectionIcon',
-            title: 'Section Icon',
-            type: 'image',
-            options: {
-              hotspot: true,
+          name: 'sectionName',
+          title: 'Section Name',
+          type: 'string',
+        }),
+
+        defineField({
+          name: 'sectionIcon',
+          title: 'Section Icon',
+          type: 'image',
+          options: {
+            hotspot: true,
+          },
+          fields: [
+            {
+              name: 'alt',
+              title: 'Alternative Text',
+              description: 'Important for SEO and accessibility',
+              type: 'string',
             },
-          }),
-      
-          defineField({
-            name: 'sectionTitle',
-            title: 'Section Title',
-            type: 'string',
-          }),
-          
-    ]
-   }
+          ],
+        }),
+
+        defineField({
+          name: 'sectionTitle',
+          title: 'Section Title',
+          type: 'string',
+        }),
+      ],
+    },
   ],
   preview: {
     select: {
-      title: 'sectionName',
-      subtitle: 'sectionTitle',
-      media: 'sectionIcon',
+      title: 'pricing.sectionName', 
+      subtitle: 'pricing.sectionTitle', 
+      media: 'pricing.sectionIcon', 
     },
     prepare({ title, subtitle, media }) {
       return {

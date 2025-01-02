@@ -10,7 +10,7 @@
     $derived(comparison);
 </script>
 
-<div class="mx-auto max-w-[75rem]">
+<div class="mx-auto max-w-[75rem] px-5 xl:px-0">
   <Section {sectionName} {sectionIcon} {sectionTitle} />
   <div class="lg:mx-auto mt-24 md:mt-[4.26rem]   
   lg:max-w-[65rem] flex flex-col-reverse 

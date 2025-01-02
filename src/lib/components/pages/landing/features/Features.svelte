@@ -23,7 +23,7 @@
     <h1>{props.sectionTitle}</h1>
   </div>
 
-  <h2 class="mb-[3.12rem] text-[1.625rem] font-semibold lg:text-[3rem]">
+  <h2 class="w-[20.5625rem] lg:w-full mb-[3.12rem] text-[1.625rem] font-semibold lg:text-[3rem] text-center">
     {props.title}
   </h2>
 </div>

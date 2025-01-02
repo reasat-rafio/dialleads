@@ -25,7 +25,7 @@
       {card?.cardTitle}
     </h3>
     <div>
-      <div class="mb-20 mt-[2.88rem] space-y-[1.12rem]">
+      <div class="mb-[3.44rem] mt-[2.19rem] lg:mt-[2.88rem] space-y-[1.12rem]">
         {#each card?.features as feature}
           <div class="flex items-center gap-3">
             <SanityImage
@@ -35,7 +35,7 @@
               imageUrlBuilder={imgBuilder}
               alt={feature?.featureIcon?.alt} />
 
-            <p class="font-geist text-xl font-normal text-[#FFF]">
+            <p class="font-geist text-[0.875rem] lg:text-xl font-normal text-[#FFF]">
               {feature?.featureName}
             </p>
           </div>

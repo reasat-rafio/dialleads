@@ -8,7 +8,7 @@
   let { sectionIcon, sectionName, sectionTitle, cards } = $derived(whyChooseUs);
 </script>
 
-<div class="mx-auto max-w-[75rem] px-2 xl:px-0">
+<div class="mx-auto max-w-[75rem] px-5 xl:px-0">
   <Section {sectionIcon} {sectionName} {sectionTitle} />
   <div
     class=" mt-[1.87rem] grid grid-cols-1 gap-[1.88rem] md:grid-cols-2 lg:mt-[3.12rem] lg:grid-cols-3">

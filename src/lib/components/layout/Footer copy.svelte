@@ -5,7 +5,6 @@
 
   let { footer }: { footer: SiteDataProps['footer'] } = $props();
 
-  $inspect(footer);
 </script>
 
 <div class=" relative flex max-w-full justify-center pb-[80px] md:h-[32.4rem]">

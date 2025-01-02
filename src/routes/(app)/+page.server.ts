@@ -42,7 +42,7 @@ const query = groq`
                 ${asset('sectionIcon')},
                 sectionTitle,
             },
-            features[]{
+        features[]{
             ...,
             ${asset('sectionIcon')},
             features[] {
