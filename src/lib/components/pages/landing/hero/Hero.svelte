@@ -19,7 +19,7 @@
     <div class="mx-auto w-full text-center lg:h-[10.5rem] lg:w-[50.6875rem]">
       {#if Array.isArray(hero?.title[0]?.children) && Array.isArray(hero?.title[1]?.children)}
         <h2
-          class="font-geist text-[1.875rem] font-bold text-[#FFF] lg:text-7xl">
+          class="font-geist text-[1.875rem] font-bold text-[#FFF] lg:text-7xl text-nowrap">
           {hero?.title[0]?.children[0]?.text}
         </h2>
         <h3
