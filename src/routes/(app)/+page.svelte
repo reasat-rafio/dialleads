@@ -6,9 +6,6 @@
   import Industries from '$lib/components/pages/landing/industries/Industries.svelte';
   import Clients from '$lib/components/pages/landing/clients/Clients.svelte';
   import TryIt from '$lib/components/pages/landing/tryIt/TryIt.svelte';
-  import { superForm } from 'sveltekit-superforms';
-  import { zodClient } from 'sveltekit-superforms/adapters';
-  import { formSchema } from '$lib/formValidation.js';
   import UseCase from '$lib/components/pages/landing/useCase/UseCase.svelte';
   import Features from '$lib/components/pages/landing/features/Features.svelte';
   import WhyDialleadsAi from '$lib/components/pages/landing/whyDialleadsAI/WhyDialleadsAI.svelte';
