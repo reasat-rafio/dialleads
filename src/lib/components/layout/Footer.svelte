@@ -15,7 +15,7 @@
     <div>
       <div
         class="container px-5 pt-[14rem] lg:py-8 lg:pl-[7.56rem] lg:pr-[8.15rem] lg:pt-[9.34rem]">
-        <div class="grid-cols-12 lg:grid">
+        <div class="grid-cols-12 lg:grid lg:border-b lg:border-gray-700 lg:pb-[3.5rem]">
           <div class="lg:col-span-6">
             <div class="flex justify-center gap-x-[0.61rem] lg:justify-normal">
               <SanityImage
@@ -67,7 +67,7 @@
           </div>
           <div
             class="flex h-[14rem] flex-col justify-between lg:col-span-6 lg:flex-row">
-            <div>
+            <div class="lg:border-gray-700 lg:border-r lg:pr-[5rem]">
               <h2
                 class="mb-[2rem] mt-[1.06rem] text-[0.9375rem] font-semibold uppercase text-white lg:mt-[0rem]">
                 Browse
@@ -82,7 +82,7 @@
                 {/each}
               </div>
             </div>
-            <div>
+            <div class='lg:border-gray-700 lg:border-r lg:pr-[5rem]'>
               <h2
                 class="mb-[2rem] mt-[1.06rem] text-[0.9375rem] font-semibold uppercase text-white lg:mt-[0rem]">
                 ABOUT
@@ -132,7 +132,7 @@
             </div>
           </div>
         </div>
-        <div class="hidden lg:block">
+        <div class="hidden lg:block ">
           <div
             class="mb-[2rem] mt-[5.56rem] flex flex-col justify-between opacity-80 md:flex-row">
             <span class="text-[1rem] font-light text-white">
