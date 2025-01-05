@@ -1,5 +1,5 @@
 import { FcBusinessContact } from 'react-icons/fc';
-import { defineField, defineType } from 'sanity';
+import { defineArrayMember, defineField, defineType } from 'sanity';
 import { MdOutlineCallToAction } from 'react-icons/md';
 
 const footer = defineType({
@@ -47,7 +47,12 @@ const footer = defineType({
       type: 'string',
       validation: (Rule) => Rule.required(),
     }),
-
+    defineField({
+      name: 'joinMoreTitle',
+      type: 'array',
+      validation: (Rule) => Rule.required(),
+      of: [defineArrayMember({ type: 'block' })],
+    }),
     defineField({
       name: 'getStartedbtnText',
       title: 'Get Started Button Text',

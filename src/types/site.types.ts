@@ -1,5 +1,6 @@
 import type { SanityDocument } from '@sanity/client';
 import type { Link, SanityImageWithAlt } from './common.types';
+import type { PortableTextBlock } from 'sanity';
 
 export interface SiteDataProps {
   logos: {
@@ -45,6 +46,7 @@ export interface MoreLink{
 export interface Footer {
   backgroundOne: SanityImageWithAlt;
   backgroundTwo: SanityImageWithAlt;
+  joinMoreTitle: PortableTextBlock[];
   title: string;
   getStartedbtnText: string;
   getStartedbtnLink: string;

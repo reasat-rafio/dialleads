@@ -23,7 +23,7 @@
     <p class="font-geist text-lg font-semibold text-black">{sectionName}</p>
   </div>
   <h2
-    class="font-geist mt-6 text-center text-[1.625rem] font-semibold text-black md:text-5xl">
+    class="font-geist mt-6 text-center text-[1.625rem] font-semibold text-black md:text-5xl lg:text-nowrap">
     {sectionTitle}
   </h2>
 </div>

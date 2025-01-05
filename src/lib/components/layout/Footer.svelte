@@ -9,13 +9,13 @@
 
 <div class="relative">
   <div
-    class="bg-footer-gradient relative mx-auto mt-[15rem] h-[74.2rem]
-    w-full
+    class="relative mx-auto mt-[15rem] h-[74.2rem] w-full
+    bg-footer-gradient
     lg:h-full">
     <div>
       <div
         class="container px-5 pt-[14rem] lg:py-8 lg:pl-[7.56rem] lg:pr-[8.15rem] lg:pt-[9.34rem]">
-        <div class="grid-cols-12 lg:grid">
+        <div class="grid-cols-12 lg:grid lg:border-b lg:border-gray-700 lg:pb-[3.5rem]">
           <div class="lg:col-span-6">
             <div class="flex justify-center gap-x-[0.61rem] lg:justify-normal">
               <SanityImage
@@ -42,7 +42,9 @@
 
               <button
                 style="background: var(--Lini, linear-gradient(90deg, #7C3AED 0%, #A78BFA 100%));"
-                class="col-span-2 flex h-full w-full basis-1 items-center justify-center gap-x-[0.5rem] rounded-[1.88rem] px-[1.5rem] py-[1rem] font-semibold text-white lg:col-span-1">
+                class="col-span-2 flex h-full w-full lg:w-[9rem] lg:h-[3.0625rem] basis-1 
+                items-center justify-center gap-x-[0.5rem] 
+                rounded-[1.88rem] px-[1.5rem] py-[1rem] font-semibold text-white lg:col-span-1">
                 Subscribe
                 <span>
                   <svg
@@ -65,7 +67,7 @@
           </div>
           <div
             class="flex h-[14rem] flex-col justify-between lg:col-span-6 lg:flex-row">
-            <div>
+            <div class="lg:border-gray-700 lg:border-r lg:pr-[5rem]">
               <h2
                 class="mb-[2rem] mt-[1.06rem] text-[0.9375rem] font-semibold uppercase text-white lg:mt-[0rem]">
                 Browse
@@ -80,7 +82,7 @@
                 {/each}
               </div>
             </div>
-            <div>
+            <div class='lg:border-gray-700 lg:border-r lg:pr-[5rem]'>
               <h2
                 class="mb-[2rem] mt-[1.06rem] text-[0.9375rem] font-semibold uppercase text-white lg:mt-[0rem]">
                 ABOUT
@@ -130,7 +132,7 @@
             </div>
           </div>
         </div>
-        <div class="hidden lg:block">
+        <div class="hidden lg:block ">
           <div
             class="mb-[2rem] mt-[5.56rem] flex flex-col justify-between opacity-80 md:flex-row">
             <span class="text-[1rem] font-light text-white">
@@ -155,36 +157,53 @@
   <!-- Join More  -->
   <div
     class="
-    lg:bg-footer-gradient
-    absolute -top-[14rem] left-1/2
-  mx-auto w-[20rem] -translate-x-1/2 rounded-[1.875rem] bg-violet-900
-  bg-gradient-to-t
+    absolute
+    -top-[14rem] left-1/2 mx-auto
+    lg:h-[13.625rem] w-[20rem] -translate-x-1/2 rounded-[1.875rem] bg-violet-900
+    bg-gradient-to-t
   from-violet-500
- to-violet-800 pb-[3.12rem] pl-[6.44rem]
- pr-[6.38rem] pt-[3.12rem]
- lg:-top-[9rem] lg:pb-0
- xl:w-fit
+ to-violet-800 pb-[3.12rem] lg:pl-[6.44rem]
+    lg:pr-[6.38rem] pt-[3.12rem]
+   lg:-top-[9rem] lg:bg-footer-gradient
+   lg:pb-0
+   xl:w-fit
  ">
-    <div class="flex flex-col lg:flex-row">
-      <h3
-        class="mb-[4.375rem] text-center font-semibold text-white lg:w-[47.925rem] lg:text-left lg:text-[2.625rem]">
-        Join more than <span
-          class="bg-gradient-to-r from-purple-50 to-purple-600 bg-clip-text text-transparent">
-          225,000+
-        </span>
-        customers that manage projects better
-      </h3>
-      <div class="mt-5 flex flex-col gap-8">
-        <Button
-          href={footer?.getStartedbtnLink}
-          class="max-w-[11rem] rounded-[0.75rem] border  border-[#E4E4E7] bg-[#8B5CF6] px-[2.44rem] py-[0.88rem] text-[1.125rem]">
-          {footer?.getStartedbtnText}
-        </Button>
+    <div class="flex flex-col lg:flex-row gap-[3.25rem] items-center">
+      {#if Array.isArray(footer?.joinMoreTitle[0]?.children) && Array.isArray(footer?.joinMoreTitle[1]?.children) && Array.isArray(footer?.joinMoreTitle[2]?.children)}
+        <h3
+          class="
+          text-center 
+          lg:text-left
+          lg:h-[7.375rem]
+          w-[12.75rem]
+          h-[11.25rem]
+          lg:w-[47.9375rem]
+          font-geist text-[1.675rem]
+           font-semibold lg:leading-[3.75rem] lg:tracking-[-0.02625rem] text-[#FFF] lg:text-[2.62rem]">
+          {footer?.joinMoreTitle[0]?.children[0]?.text}
+          <span class="bg-gradient-to-r from-purple-50 to-purple-600 bg-clip-text text-transparent">
+            {footer?.joinMoreTitle[1]?.children[0]?.text}
+          </span>
+          {footer?.joinMoreTitle[2]?.children[0]?.text}
+        </h3>
 
-        <span class="w-full text-center text-[0.875rem] text-white text-nowrap opacity-70">
-          {footer?.sideText}
-        </span>
-      </div>
+        <div class="">
+          <Button
+            href={footer?.getStartedbtnLink}
+            class="h-[2.875rem] w-44 rounded-[0.75rem] border border-[#E4E4E7] bg-[#8B5CF6]
+            font-geist text-[1.125rem] font-medium leading-[1.125rem] 
+            ">
+            {footer?.getStartedbtnText}
+          </Button>
+          <p
+            class="text-nowrap text-[0.875rem] font-normal leading-[0.90738rem] text-white
+          [text-edge:cap] text-center
+          mt-8
+          ">
+            {footer?.sideText}
+          </p>
+        </div>
+      {/if}
     </div>
   </div>
 </div>
