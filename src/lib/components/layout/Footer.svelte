@@ -42,7 +42,9 @@
 
               <button
                 style="background: var(--Lini, linear-gradient(90deg, #7C3AED 0%, #A78BFA 100%));"
-                class="col-span-2 flex h-full w-full basis-1 items-center justify-center gap-x-[0.5rem] rounded-[1.88rem] px-[1.5rem] py-[1rem] font-semibold text-white lg:col-span-1">
+                class="col-span-2 flex h-full w-full lg:w-[9rem] lg:h-[3.0625rem] basis-1 
+                items-center justify-center gap-x-[0.5rem] 
+                rounded-[1.88rem] px-[1.5rem] py-[1rem] font-semibold text-white lg:col-span-1">
                 Subscribe
                 <span>
                   <svg
