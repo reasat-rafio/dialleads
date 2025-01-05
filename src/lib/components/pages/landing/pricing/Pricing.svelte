@@ -34,7 +34,7 @@
   ">
     <SanityImage
       lqip
-      class="h-[29.3125rem] w-full bg-cover bg-center bg-no-repeat object-cover md:h-[19.76rem]"
+      class="h-[29.3125rem] w-full bg-cover bg-center bg-no-repeat object-cover md:h-[18rem]"
       src={enterprisePlan?.banner}
       sizes="(min-width: 1024px) 100vw, 50vw"
       imageUrlBuilder={imgBuilder}
@@ -70,7 +70,8 @@
       <div class="flex justify-center md:justify-start">
         <button
           class="flex items-center gap-2 rounded-xl
-      border border-purple-700 bg-violet-700
+          w-[10.98012rem] h-14
+      border border-[#894DEF] bg-[#5211B8]
       px-6 py-2 font-geist text-lg font-semibold text-white">
           {enterprisePlan?.cta?.title}
           <SanityImage
