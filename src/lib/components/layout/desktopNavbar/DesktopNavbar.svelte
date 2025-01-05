@@ -85,12 +85,12 @@ max-h-[57.5rem]
               href={item?.link?.type === 'internal'
                 ? item?.link?.internalLink
                 : item?.link?.externalLink}
-              class="font-geist text-base font-normal text-[#FFF]">
+              class="font-geist text-base font-normal text-[#FFF] opacity-80">
               {item?.link?.title}
             </a>
             {#if item?.moreLinks}
               <ChevronDown
-                class="h-[1.25rem] w-[1.125rem] font-geist text-base font-normal text-[#FFF]" />
+                class="h-[1.25rem] w-[1.125rem] font-geist text-base font-normal text-[#FFF] " />
             {/if}
             {#if item?.moreLinks && activeDropdown === item?.link?.title}
               <div
@@ -116,7 +116,7 @@ max-h-[57.5rem]
           variant="link"
           class="rounded-[0.75rem] 
           bg-[#6D28D9] font-geist text-white w-[8.625rem] 
-          h-[2.875rem] px-5 py-[.88rem] border-violet-600
+          h-[2.875rem] px-5 py-[.88rem] border border-violet-600
           font-medium
           ">
           Get Started
