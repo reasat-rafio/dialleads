@@ -50,7 +50,6 @@
           {#each feature.features as features}
             <div
               class="col-span-1 rounded-[1rem] border bg-[#FFFFFF] p-7 shadow-sm sm:col-span-1 lg:col-span-1">
-              <!-- bg-[#F9F9F9] -->
               {#if !!features?.featureIcon}
                 <SanityImage
                   class="h-[2.5rem] w-[2.5rem] overflow-hidden object-contain"

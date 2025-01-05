@@ -5,7 +5,6 @@
   import { imgBuilder } from '$lib/sanity/sanity-client';
   import Autoplay from 'embla-carousel-autoplay';
   import type { ClientProps } from '../../../../../types/landing.types';
-  import { PortableText } from '@portabletext/svelte';
 
   interface Props {
     props: ClientProps;
@@ -17,8 +16,6 @@
 
 <div class="mb-[2.5rem] mt-[1.88rem] lg:mb-[5.25rem] lg:mt-[4.94rem]">
   <h1 class="mb-[2rem] text-center text-[1.125rem] font-semibold">
-    <!-- {props.title} -->
-
     {#each props.title as title, i}
       {title.title}
       {#if i == 1}
@@ -45,11 +42,12 @@
       {#each props.clients as client}
         <Carousel.Item
           class="flex basis-1/3 items-center justify-center md:basis-1/4 xl:basis-1/4 ">
-          <div class=" h-full w-full">
+          <div
+            class=" h-[1.5rem] w-full sm:h-[2.5rem] md:h-[3rem] lg:h-[3.5rem]">
             <SanityImage
-              class="h-[1.375rem] w-fit  object-contain md:h-[2.5rem]"
+              class="h-[1.375rem] w-fit  object-contain md:h-[1.36rem] lg:h-[2rem]"
               src={client.clientImage}
-              sizes={' (min-width:1024px) 14vw, 16vw'}
+              sizes={' (min-width:1024px) 14vw, 26vw'}
               imageUrlBuilder={imgBuilder}
               alt="SliderMainImage" />
           </div>
