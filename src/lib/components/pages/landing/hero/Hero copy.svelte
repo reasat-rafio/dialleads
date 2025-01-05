@@ -38,12 +38,9 @@
     <div class=" mt-6 flex justify-center lg:mt-[1.88rem]">
       <div
         class="inline-flex w-full max-w-[14.420rem]
-      animate-shine items-center justify-center rounded-xl border-[1px]
-      border-white/10 bg-[linear-gradient(110deg,#2e1065,50%,#7C3AED,55%,#2e1065)]
-      bg-[length:200%_100%] px-2 py-2 text-sm shadow-xl transition-colors">
-        <!-- bg-[linear-gradient(110deg,#2e1065,50%,#5b21b6,55%,#2e1065)] -->
-        <!-- (110deg,#4c1d95,50%,#5b21b6,55%,#2e1065) -->
-        <!-- bg-[linear-gradient(110deg,#000103,50%,#1e2631,55%,#000103)] -->
+      animate-shine items-center justify-center rounded-xl border border-transparent bg-[linear-gradient(110deg,#000103,50%,#1e2631,55%,#000103)]
+      bg-[length:200%_100%] px-2 py-2 text-sm
+      shadow-xl transition-colors">
         <Button
           class="flex h-[3.5rem]  w-[13.5rem] 
           items-center rounded-lg bg-gradient-to-r from-violet-600 to-violet-400 px-6 
@@ -56,7 +53,7 @@
             sizes="5vw"
             imageUrlBuilder={imgBuilder}
             alt="" />
-          <!-- Button Text {hero?.link?.title} -->
+          <!-- Button Text -->
           <span>{hero?.link?.title}</span>
         </Button>
       </div>

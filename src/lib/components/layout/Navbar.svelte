@@ -62,5 +62,3 @@
     <MobileNavbar {nav} {logo} />
   </div>
 </div>
-  
-

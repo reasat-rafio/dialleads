@@ -36,7 +36,7 @@
     <Tabs.List class="mb-[0.6rem] flex gap-x-5 bg-white lg:mb-[2.2rem]">
       {#each props.features as feature}
         <Tabs.Trigger
-          class="rounded-[0.75rem]  text-[#8B5CF6] ring-2 ring-[#8B5CF6] data-[state=active]:ring-2 "
+          class="rounded-[0.75rem]  px-[1.25rem] py-[0.75rem] text-[#8B5CF6]  ring-2 ring-[#8B5CF6] data-[state=active]:ring-2 lg:py-[0.88rem] "
           value={feature.featureGroupName}>
           {feature.featureGroupName}
         </Tabs.Trigger>
@@ -60,7 +60,7 @@
               <h2 class="mb-2 mt-[1.5rem] text-[22px] font-semibold">
                 {features.featureTitle}
               </h2>
-              <h3 class="text-[16px] font-normal">
+              <h3 class="text-[16px] font-normal text-[#5B6779]">
                 {features.featureDescription}
               </h3>
             </div>
