@@ -114,7 +114,11 @@ max-h-[57.5rem]
       <div>
         <Button
           variant="link"
-          class="rounded-[0.75rem] bg-violet-700 font-geist text-white">
+          class="rounded-[0.75rem] 
+          bg-violet-800 font-geist text-white w-[8.625rem] 
+          h-[2.875rem] px-5 py-[.88rem] border-x-violet-600
+          font-medium
+          ">
           Get Started
         </Button>
       </div>
