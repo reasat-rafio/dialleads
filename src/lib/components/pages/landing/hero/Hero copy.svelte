@@ -14,7 +14,7 @@
 </script>
 
 <svelte:window bind:innerWidth={windowWidth} />
-<div class="absolute top-[5.41rem] px-[0.94rem] lg:top-[9.75rem] xl:px-0">
+<div class="absolute top-[5.41rem] px-[0.94rem] lg:top-[7.75rem] xl:px-0">
   <div class="relative">
     <div class="mx-auto w-full text-center lg:h-[10.5rem] lg:w-[50.6875rem]">
       {#if Array.isArray(hero?.title[0]?.children) && Array.isArray(hero?.title[1]?.children)}
@@ -39,7 +39,7 @@
       <div
         class="inline-flex w-full max-w-[14.420rem]
       animate-shine items-center justify-center rounded-xl border-[1px]
-      border-l border-t border-white/30 border-b-white/15 border-r-white/15 bg-[linear-gradient(110deg,#2e1065,50%,#7C3AED,55%,#2e1065)]
+      border-white/10 bg-[linear-gradient(110deg,#2e1065,50%,#7C3AED,55%,#2e1065)]
       bg-[length:200%_100%] px-2 py-2 text-sm shadow-xl transition-colors">
         <Button
           class="flex h-[3.5rem]  w-[13.5rem] 
@@ -60,7 +60,7 @@
     </div>
 
     <div
-      class=" relative mx-auto mt-[4rem] flex h-[17.8rem] max-h-[17.8rem] w-full justify-center px-4 lg:mt-[3.8rem] lg:h-[22.5rem] lg:px-0
+      class=" relative mx-auto mt-[4.2rem] flex h-[17.8rem] max-h-[17.8rem] w-full justify-center px-4 lg:mt-[5.7rem] lg:h-[22.5rem] lg:px-0
       xl:w-[75rem]
       {windowWidth <= 320 ? 'mt-[5.95rem] h-full' : 'h-[17.8rem]'}
       ">
@@ -83,7 +83,7 @@
         {/if}
 
         <div
-          class="absolute left-1/2 top-2/3 flex
+          class="absolute left-1/2 top-1/2 flex
         h-[4.375rem] w-[4.375rem] -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full
         border border-violet-600 bg-white shadow-xl">
           <AlertDialog.Root>

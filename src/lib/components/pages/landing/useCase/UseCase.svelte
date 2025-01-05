@@ -78,7 +78,7 @@
 <div
   class="relative mt-[2.5rem] h-full w-full px-[0.31rem] md:px-5 lg:mt-[5.06rem]">
   <div
-    class="bg-real-world-gradient h-full w-full rounded-[1.88rem] pt-[2rem]
+    class="h-full w-full rounded-[1.88rem] bg-real-world-gradient pt-[2rem]
     lg:pt-[5.13rem]
     ">
     <div class="z-50 flex flex-col items-center justify-center">
@@ -95,13 +95,13 @@
 
       <div class="absolute hidden lg:flex">
         <SanityImage
-          class=" bottom-[8.4rem] left-[26rem] z-50  w-[10rem]  "
+          class=" bottom-[11rem] left-[26rem] z-50  w-[10rem]  "
           src={props?.clickToPlayImage}
           sizes="70vw"
           imageUrlBuilder={imgBuilder} />
       </div>
       <h2
-        class="z-50 mb-[0.75rem] max-w-[44rem] text-center text-[1.625rem] font-semibold text-white lg:mb-[0.88rem] lg:text-[3rem]">
+        class="z-50 mb-[0.75rem] max-w-[44rem] text-center text-[1.625rem] font-semibold text-white lg:mb-[0.88rem] lg:text-[3rem] lg:leading-[3.6rem]">
         {props.title}
       </h2>
       <h3
@@ -109,9 +109,9 @@
         {props.description}
       </h3>
 
-      <div class="flex lg:hidden">
+      <div class="mb-[0.88rem] flex lg:hidden">
         <SanityImage
-          class=" z-50  w-[6rem]  "
+          class=" z-50  w-[6.688rem]  "
           src={props?.clickToPlayImage}
           sizes="70vw"
           imageUrlBuilder={imgBuilder} />
