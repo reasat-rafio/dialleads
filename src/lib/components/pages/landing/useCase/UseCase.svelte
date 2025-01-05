@@ -13,8 +13,6 @@
   }
   let { props }: Props = $props();
 
-  $inspect(props);
-
   let api = $state<CarouselAPI>();
 
   let windowWidth = $state(0);

@@ -1,15 +1,12 @@
 <script lang="ts">
   import { imgBuilder } from "$lib/sanity/sanity-client";
   import SanityImage from "$lib/sanity/sanity-image/sanity-image.svelte";
-  import type { SanityImageObject } from "@sanity/image-url/lib/types/types";
-  import type { SanityImageWithAlt } from "../../../../../types/common.types";
   import type { PricingProps } from "../../../../../types/landing.types";
 
     
     let {props} = $props();
     let {pricing}: {pricing: PricingProps} = $derived(props);
     let {sectionIcon, sectionName, sectionTitle} = $derived(pricing);
-    $inspect(props.pricing);
 </script>
 
 <div class="mt-24">
