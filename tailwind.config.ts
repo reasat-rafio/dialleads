@@ -23,7 +23,7 @@ const config: Config = {
           linear-gradient(180deg, #000 0%, #5B21B6 100%, #7C3AED 100%, #A78BFA 100%)
         `,
         'footer-gradient':
-          'linear-gradient(352deg, #4C1D95 -51.52%, #5B21B6 -5.15%, #010101 68.64%)',
+          'linear-gradient(-363deg, #4C1D95 -51.52%, #5B21B6 -5.15%, #010101 100%)',
       },
       colors: {
         border: 'hsl(var(--border) / <alpha-value>)',
