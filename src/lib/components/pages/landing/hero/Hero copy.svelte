@@ -39,7 +39,7 @@
       <div
         class="inline-flex w-full max-w-[14.420rem]
       animate-shine items-center justify-center rounded-xl border-[1px]
-      border-l border-t border-white/30 border-b-white/15 border-r-white/15 bg-[linear-gradient(110deg,#2e1065,50%,#7C3AED,55%,#2e1065)]
+      border-white/10 bg-[linear-gradient(110deg,#2e1065,50%,#7C3AED,55%,#2e1065)]
       bg-[length:200%_100%] px-2 py-2 text-sm shadow-xl transition-colors">
         <Button
           class="flex h-[3.5rem]  w-[13.5rem] 

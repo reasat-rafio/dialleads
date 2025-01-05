@@ -269,9 +269,9 @@
                         {...props}
                         bind:value={$formData.phoneNumber}
                         placeholder="Phone number"
-                        class=" max-w-[120px] rounded-md border-input bg-background px-3 py-[0.2rem] text-[1.25rem] text-black ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium
+                        class=" max-w-[150px] rounded-md border-input bg-background px-3 py-[0.2rem] text-[1.25rem] text-black ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium
                       placeholder:text-muted-foreground
-                      focus-visible:outline-none md:max-w-[90px] lg:max-w-[115px]" />
+                      focus-visible:outline-none md:max-w-[150px] lg:max-w-[150px]" />
                     </div>
                   </div>
                 </div>
