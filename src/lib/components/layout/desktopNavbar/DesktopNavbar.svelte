@@ -115,7 +115,7 @@ max-h-[57.5rem]
         <Button
           variant="link"
           class="rounded-[0.75rem] 
-          bg-[#6D28D9] font-geist text-white w-[8.625rem] 
+          bg-primary font-geist text-white w-[8.625rem] 
           h-[2.875rem] px-5 py-[.88rem] border border-violet-600
           font-medium
           ">

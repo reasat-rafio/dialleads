@@ -1,5 +1,5 @@
 <script lang="ts">
-  import Footer from '$lib/components/layout/Footer.svelte';
+  import FooterCopy from '$lib/components/layout/mobileNavbar/FooterCopy.svelte';
 
   
   import Navbar from '$lib/components/layout/Navbar.svelte';
@@ -33,5 +33,5 @@
 
   {@render children()}
 
-  <Footer {footer} />
+  <FooterCopy {footer} />
 </div>
