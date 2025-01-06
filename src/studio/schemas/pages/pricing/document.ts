@@ -108,7 +108,10 @@ const pricing = {
       name: 'sections',
       type: 'array',
       description: 'Sections for Pricing Page',
-      of: [{ type: 'pricing.hero' }],
+      of: [
+        { type: 'pricing.hero' },
+        { type: 'pricing.subscriptionDetails' },
+      ],
     },
   ],
   preview: {
