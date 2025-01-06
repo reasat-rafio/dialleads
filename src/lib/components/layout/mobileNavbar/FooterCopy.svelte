@@ -9,7 +9,7 @@
 
 <div class=" relative mt-[20rem] w-full bg-footer-gradient lg:mt-[10.94rem]">
   <div
-    class="container w-full pb-8 pt-[12.27rem] lg:flex-row xl::px-[7.5rem] lg:pt-[9.63rem]">
+    class="container w-full pb-8 pt-[12.27rem] lg:flex-row xl:px-[7.5rem] lg:pt-[9.63rem]">
     <div class="flex flex-col justify-between lg:flex-row">
       <div>
         <div
