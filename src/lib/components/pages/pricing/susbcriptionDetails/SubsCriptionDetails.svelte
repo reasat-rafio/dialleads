@@ -52,7 +52,7 @@
         {#each features as feature}
           <Table.Row class="border-b-0">
             <Table.Cell class=" ">
-              <div class="flex items-center gap-4 pt-10 pl-[1rem]">
+              <div class="flex items-center gap-4 pt-10 pl-[.8rem]">
                 <div
                   class="flex h-10 w-10 items-center justify-center rounded-[0.75rem] bg-[#EDE9FE]">
                   <SanityImage
