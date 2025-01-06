@@ -54,7 +54,7 @@
         class="mt-[0.56rem] text-center font-geist text-xl font-medium text-[#DCDAE0] lg:text-left">
         {enterprisePlan?.description}
       </p>
-      <div class="mt-[2.25rem] flex justify-center md:justify-start">
+      <div class="mt-[2.25rem] flex justify-center lg:justify-start">
         <button
           class="flex h-14 w-[10.98012rem] items-center
         gap-2 rounded-xl
