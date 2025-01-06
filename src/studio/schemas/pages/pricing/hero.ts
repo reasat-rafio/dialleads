@@ -1,4 +1,4 @@
-import { defineType } from 'sanity';
+import { defineArrayMember, defineType } from 'sanity';
 
 const hero = defineType({
   title: 'Hero',
@@ -36,7 +36,9 @@ const hero = defineType({
         {
           name: 'sectionTitle',
           title: 'Section Title',
-          type: 'string',
+          type: 'array',
+          validation: (Rule) => Rule.required(),
+          of: [defineArrayMember({ type: 'block' })],
           description: 'The title for the section',
         },
         {
@@ -56,9 +58,21 @@ const hero = defineType({
     },
     prepare(selection) {
       const { sectionName, sectionTitle, sectionIcon } = selection;
+    interface Child {
+      text: string;
+    }
+
+    interface SectionTitle {
+      children: Child[];
+    }
+
+    const titleText: string = sectionTitle
+      ? (sectionTitle[0] as SectionTitle)?.children?.map((child: Child) => child.text).join(' ') ||
+        'No Title'
+      : 'No Title';
       return {
         title: sectionName || 'Unnamed Section',
-        subtitle: sectionTitle || 'No Title',
+        subtitle: titleText,
         media: sectionIcon,
       };
     },
