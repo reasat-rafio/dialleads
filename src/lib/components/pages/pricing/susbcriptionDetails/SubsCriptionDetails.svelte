@@ -25,7 +25,7 @@
     <Table.Root>
       <Table.Header class="bg-[#F8FAFC]">
         <Table.Row>
-          <Table.Head>
+          <Table.Head class="border-r">
             <div class="pb-[2rem] pt-[1.81rem]">
               <h4
                 class="text-center text-2xl font-semibold leading-[1.5rem] text-black">
@@ -40,8 +40,8 @@
               </div>
             </div>
           </Table.Head>
-          {#each plans as plan}
-            <Table.Head>
+          {#each plans as plan, index}
+            <Table.Head class={index === plans.length - 1 ? '' : 'border-r'}>
               <PricingCard {plan} bind:selectedSubscriptionType {saveUpTo} />
             </Table.Head>
           {/each}
