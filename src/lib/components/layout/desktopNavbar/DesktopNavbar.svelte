@@ -9,9 +9,10 @@
   interface Props {
     nav: Nav;
     logo: SanityImageWithAlt;
+    className: string;
   }
 
-  let { nav, logo }: Props = $props();
+  let { nav, logo, className }: Props = $props();
 
   let dialogOpen = $state(false);
   let showMenu = $state(false);
@@ -54,7 +55,7 @@
 </script>
 
 <div
-  class="  ml-[1.06rem] mr-[1.13rem] mt-4 h-[57.5rem]
+  class="{className}  ml-[1.06rem] mr-[1.13rem] mt-4 h-[57.5rem]
 max-h-[57.5rem]
   rounded-[1.875rem]
    bg-hero-gradient">

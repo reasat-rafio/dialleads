@@ -101,9 +101,16 @@ const pricing = {
       name: 'enterprisePlan',
       title: 'Enterprise Plan',
       type: 'banner',
-      description: 'Banner for Enterprise Plan'
+      description: 'Banner for Enterprise Plan',
     },
-    
+    {
+      name: 'sections',
+      type: 'array',
+      description: 'Sections for Pricing Page',
+      of: [
+        { type: 'pricing.hero' },
+      ],
+    },
   ],
   preview: {
     select: {

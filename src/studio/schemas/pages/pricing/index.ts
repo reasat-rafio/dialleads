@@ -1,2 +1,3 @@
 import pricingPage from "./document";
-export default [pricingPage];
+import hero from "./hero";
+export default [pricingPage, hero];

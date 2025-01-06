@@ -11,8 +11,9 @@
   interface Props {
     nav: Nav;
     logo: SanityImageWithAlt;
+    pathName: string;
   }
-  let { nav, logo }: Props = $props();
+  let { nav, logo, pathName }: Props = $props();
 
   let dialogOpen = $state(false);
   let showMenu = $state(false);
@@ -56,7 +57,25 @@
 
 <div class="">
   <div class="hidden lg:block">
-    <DesktopNavbar {nav} {logo} />
+    {#if pathName == '/contact'}
+      <DesktopNavbar
+        className="h-[38.75rem]
+max-h-[57.5rem]"
+        {nav}
+        {logo} />
+    {:else if pathName == '/pricing'}
+      <DesktopNavbar
+        className="h-[38.75rem]
+max-h-[57.5rem]"
+        {nav}
+        {logo} />
+      
+    {:else}
+      <DesktopNavbar
+        className="h-[57.5rem] max-h-[57.5rem] min-h-[57.5rem]"
+        {nav}
+        {logo} />
+    {/if}
   </div>
   <div class="lg:hidden">
     <MobileNavbar {nav} {logo} />
