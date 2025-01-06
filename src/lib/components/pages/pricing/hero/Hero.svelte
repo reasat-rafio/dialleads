@@ -16,7 +16,7 @@
   $inspect(props);
 </script>
 
-<div class="">
+<div class="max-w-[75rem] mx-auto">
   <div class="absolute left-1/2 top-[15rem] -translate-x-1/2 -translate-y-1/2">
     <Section {hero} />
     <TabBar bind:selectedSubscriptionType {saveUpTo} />

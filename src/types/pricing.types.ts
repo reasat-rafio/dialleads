@@ -24,6 +24,11 @@ export interface Hero {
 }
 
 export interface SubscriptionDetailsProps {
+  _type: 'pricing.subscriptionDetails';
+  subscriptionDetails: SubscriptionDetails;
+}
+
+export interface SubscriptionDetails {
   features: Feature[];
 }
 
