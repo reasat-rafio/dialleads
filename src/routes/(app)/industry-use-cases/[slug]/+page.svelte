@@ -20,8 +20,6 @@
 </script>
 
 <div class="flex max-w-full flex-col items-center justify-center">
-  Hello From Industry Use Case +Page.svelte
-
   {#if !!sections?.length}
     {#each sections as props}
       {#if props._type === 'industryUseCase.details'}
@@ -30,7 +28,7 @@
         <Features {props} />
       {:else if props._type === 'industryUseCase.stat'}
         <Stat {props} />
-      {:else if props._type === 'industryUseCase.offer'}
+        <!-- {:else if props._type === 'industryUseCase.offer'}
         <Offer {props} />
       {:else if props._type === 'industryUseCase.customers'}
         <Customers {props} />
@@ -51,7 +49,7 @@
       {:else if props._type === 'industryUseCase.testimonials'}
         <Testimonials {props} />
       {:else if props._type === 'industryUseCase.faq'}
-        <Faq {props} />
+        <Faq {props} /> -->
       {/if}
     {/each}
   {/if}

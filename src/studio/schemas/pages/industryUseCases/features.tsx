@@ -15,8 +15,9 @@ const features = defineType({
     }),
     defineField({
       name: 'title',
-      type: 'string',
+      type: 'array',
       validation: (Rule) => Rule.required(),
+      of: [defineArrayMember({ type: 'block' })],
     }),
 
     defineField({
@@ -68,7 +69,7 @@ const features = defineType({
   ],
   preview: {
     select: {
-      title: 'title',
+      title: 'sectionName',
       // subtitle: 'subtitle',
     },
   },
