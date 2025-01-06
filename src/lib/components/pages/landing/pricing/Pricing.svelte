@@ -28,28 +28,13 @@
     {/each}
   </div>
   <div
-    class="bg-[linear-gradient(98deg, #200B46 0%, #1A0939 100%)]
-  relative mb-10 w-full overflow-hidden
-  rounded-[1.25rem] border border-[#E4E4E7] bg-indigo-950 lg:mb-[5.94rem]
-  ">
-    <SanityImage
-      lqip
-      class="h-[29.3125rem] w-full bg-cover bg-center bg-no-repeat object-cover md:h-[18rem]"
-      src={enterprisePlan?.banner}
-      sizes="(min-width: 1024px) 100vw, 50vw"
-      imageUrlBuilder={imgBuilder}
-      alt={enterprisePlan?.banner?.alt} />
-    <div
-      class="absolute left-1/2 top-1/2
-    -translate-x-1/2
-    -translate-y-1/2 space-y-5 text-center
-    md:left-8 md:top-8 md:translate-x-0 md:translate-y-0 md:text-left
-    ">
-      <div class="flex justify-center md:justify-start">
+    class="bg-enterpricePlan-gradient h-[29.3125rem] lg:h-[19.75rem] rounded-[1.25rem] border mb-20">
+    <div class="pt-[2.56rem] lg:pl-[3.13rem]">
+      <div class="flex justify-center lg:justify-start">
         <div
           class="flex w-36 items-center gap-2
         rounded-full bg-[#FFFFFF33] px-3
-        py-2 text-white">
+         py-2 text-white">
           <SanityImage
             class="h-5 w-6"
             src={enterprisePlan?.sectionOptionIcon}
@@ -61,18 +46,20 @@
           </p>
         </div>
       </div>
-      <h3 class="font-geist text-5xl font-semibold text-white">
+      <h3
+        class="mt-[1.56rem] text-center font-geist text-5xl font-semibold text-white lg:text-left">
         {enterprisePlan?.title}
       </h3>
-      <p class="font-geist text-xl font-medium text-[#DCDAE0]">
+      <p
+        class="mt-[0.56rem] text-center font-geist text-xl font-medium text-[#DCDAE0] lg:text-left">
         {enterprisePlan?.description}
       </p>
-      <div class="flex justify-center md:justify-start">
+      <div class="mt-[2.25rem] flex justify-center lg:justify-start">
         <button
-          class="flex items-center gap-2 rounded-xl
-          w-[10.98012rem] h-14
-      border border-[#894DEF] bg-[#5211B8]
-      px-6 py-2 font-geist text-lg font-semibold text-white">
+          class="flex h-14 w-[10.98012rem] items-center
+        gap-2 rounded-xl
+        border border-[#894DEF] bg-[#5211B8]
+        px-6 py-2 font-geist text-lg font-semibold text-white">
           {enterprisePlan?.cta?.title}
           <SanityImage
             class="h-5 w-5"
