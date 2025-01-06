@@ -27,6 +27,7 @@ export interface DetailsProps {
     description: string;
     detailsImage: SanityImageWithAlt;
   }[];
+  link: Link;
 }
 export interface FeaturesProps {
   sectionName: string;
