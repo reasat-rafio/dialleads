@@ -9,6 +9,11 @@ const features = defineType({
   icon: SiHomeadvisor,
   fields: [
     defineField({
+      name: 'sectionName',
+      type: 'string',
+      // validation: (Rule) => Rule.required(),
+    }),
+    defineField({
       name: 'title',
       type: 'string',
       validation: (Rule) => Rule.required(),
