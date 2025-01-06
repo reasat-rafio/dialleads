@@ -1,4 +1,4 @@
-import { defineType } from 'sanity';
+import { defineArrayMember, defineType } from 'sanity';
 
 const subsCriptionDetails = defineType({
   title: 'Subscription Details',
@@ -110,6 +110,25 @@ const subsCriptionDetails = defineType({
                     },
                   ],
                 },
+                {
+                  name: 'instructions',
+                  title: 'Instructions',
+                  description: 'Instructions for the feature if any',
+                  type: 'array',
+                  of: [
+                    {
+                      type: 'object',
+                      fields: [
+                        {
+                          name: 'instruction',
+                          title: 'Instruction',
+                          type: 'array',
+                          of: [defineArrayMember({ type: 'block' })],
+                        },
+                      ],
+                    },
+                  ],
+                },
               ],
             },
           ],
@@ -117,6 +136,21 @@ const subsCriptionDetails = defineType({
       ],
     },
   ],
+  preview: {
+    select: {
+      title: 'subscriptionDetails.features.0.featureHeading',
+      subtitle: 'subscriptionDetails.features.0.featureLists.0.featureName',
+      media: 'subscriptionDetails.features.0.featureIcon',
+    },
+    prepare(selection) {
+      const { title, subtitle, media } = selection;
+      return {
+        title: title || 'No feature heading',
+        subtitle: subtitle || 'No feature name',
+        media: media || undefined,
+      };
+    },
+  },
 });
 
 export default subsCriptionDetails;
