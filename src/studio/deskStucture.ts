@@ -77,9 +77,13 @@ export const AppStructure: StructureResolver = (S, context: ConfigContext) =>
                 title: 'Landing',
                 icon: TbHome,
               }),
-              
+              pageItem(S, {
+                schemaType: 'contactPage',
+                id: 'contactPage',
+                title: 'Contact',
+                icon: MdOutlinePriceCheck,
+              }),
             ]),
-
         ),
       S.divider(),
       orderableDocumentListDeskItem({
@@ -96,10 +100,10 @@ export const AppStructure: StructureResolver = (S, context: ConfigContext) =>
         title: 'Testimonials',
         icon: TbHome,
       }),
-        pageItem(S, {
-          schemaType: 'pricing',
-          id: 'pricing',
-          title: 'Pricing',
-          icon: MdOutlinePriceCheck,
-        }),
+      pageItem(S, {
+        schemaType: 'pricing',
+        id: 'pricing',
+        title: 'Pricing',
+        icon: MdOutlinePriceCheck,
+      }),
     ]);

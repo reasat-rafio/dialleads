@@ -7,18 +7,22 @@
   import Button from '../ui/button/button.svelte';
   import DesktopNavbar from './desktopNavbar/DesktopNavbar.svelte';
   import MobileNavbar from './mobileNavbar/MobileNavbar.svelte';
+  import DesktopNavbarForContactPage from './desktopNavbar/DesktopNavbarForContactPage.svelte';
 
   interface Props {
     nav: Nav;
     logo: SanityImageWithAlt;
+    pathName: any;
   }
-  let { nav, logo }: Props = $props();
+  let { nav, logo, pathName }: Props = $props();
 
   let dialogOpen = $state(false);
   let showMenu = $state(false);
   let expanded: { [key: string]: boolean } = $state({});
   let activeDropdown: string | null = $state(null);
   let timeout: any;
+
+  $inspect(pathName);
 
   function toggleNavbar() {
     showMenu = !showMenu;
@@ -56,7 +60,18 @@
 
 <div class="">
   <div class="hidden lg:block">
-    <DesktopNavbar {nav} {logo} />
+    {#if pathName == '/contact'}
+      <DesktopNavbar
+        className="h-[38.75rem]
+max-h-[57.5rem]"
+        {nav}
+        {logo} />
+    {:else}
+      <DesktopNavbar
+        className="h-[57.5rem] max-h-[57.5rem] min-h-[57.5rem]"
+        {nav}
+        {logo} />
+    {/if}
   </div>
   <div class="lg:hidden">
     <MobileNavbar {nav} {logo} />

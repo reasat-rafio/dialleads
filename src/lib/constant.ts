@@ -1,4 +1,7 @@
-export const pages = [{ title: 'Landing', value: '/' }];
+export const pages = [
+  { title: 'Landing', value: '/' },
+  { title: 'contact', value: '/contact' },
+];
 
 export const pagesWithOutSlash = removeSlashFromArray(pages);
 function removeSlashFromArray(arr: typeof pages) {
