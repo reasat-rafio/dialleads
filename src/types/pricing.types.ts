@@ -9,7 +9,7 @@ export interface PricingPageProps {
   sections: Section[];
 }
 
-export type Section = HeroProps;
+export type Section = HeroProps | SubscriptionDetailsProps;
 
 export interface HeroProps {
   _type: 'pricing.hero';
@@ -21,4 +21,36 @@ export interface Hero {
   sectionTitle: PortableTextBlock[];
   sectionDescription: string;
   sectionIcon: SanityImageWithAlt;
+}
+
+export interface SubscriptionDetailsProps {
+  features: Feature[];
+}
+
+export interface Feature {
+  featureHeading: string;
+  featureIcon: SanityImageWithAlt;
+  featureLists: FeatureList[];
+  instructions?: Instruction[];
+}
+
+export interface FeatureList {
+  featureName: string;
+  values: Value[];
+}
+
+export interface Value {
+  type: 'text' | 'status';
+  text?: string; 
+  isAvailable?: boolean;
+  relatedPlan?: PlanReference;
+}
+
+export interface PlanReference {
+  _ref: string;
+  _type: 'reference';
+}
+
+export interface Instruction {
+  instruction: PortableTextBlock[];
 }

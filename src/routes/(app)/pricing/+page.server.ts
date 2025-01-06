@@ -28,6 +28,19 @@ const query = groq`
     },
     sections[]{
         ...,
+        subscriptionDetails{
+        ...,
+        features[]{
+        ...,
+        ${asset('featureIcon')},
+        featureLists[]{
+        ...,
+        values[]{
+        ...,
+        }
+        }
+        }
+        }
     },
     }
 `;
