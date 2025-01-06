@@ -1,5 +1,4 @@
 <script lang="ts">
-  import Button from '$lib/components/ui/button/button.svelte';
   import type { Plan } from '../../../../../types/landing.types';
   interface Props {
     plan: Plan;
@@ -28,11 +27,11 @@
     </span>
   </p>
   <div class="flex justify-center mt-4">
-    <Button
+    <button
       class="h-[2.5rem] w-[7.5rem] rounded-[0.75rem] 
   border border-[#E4E4E7] bg-white
-  text-base font-medium text-[#495568]">
+  text-base font-medium text-[#495568] hover:bg-none">
       Subscribe
-    </Button>
+    </button>
   </div>
 </div>
