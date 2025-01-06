@@ -16,7 +16,8 @@
   }: Props = $props();
 </script>
 
-<div class="h-full w-full rounded-xl border p-8 md:h-[35.8rem] lg:w-[23.75rem] shadow-lg bg-white">
+<div
+  class="h-full w-full rounded-xl border bg-white p-8 shadow-lg md:h-[35.8rem] lg:w-[23.75rem]">
   <div class="space-y-2 text-center">
     <div class="flex justify-center">
       <div
@@ -30,9 +31,9 @@
       </div>
     </div>
     <p class="font-geist text-xl font-normal text-violet-600">
-      {plan?.planName}
+      {plan?.planName?.name}
     </p>
-    <p class="font-geist mt-2 text-5xl font-semibold text-black">
+    <p class="mt-2 font-geist text-5xl font-semibold text-black">
       ${#if selectedSubscriptionType == 'annual'}
         {plan?.price * 12 - plan?.price * 12 * (saveUpTo / 100)}
       {:else}
@@ -63,8 +64,8 @@
       ? plan?.cta?.internalLink
       : plan?.cta?.externalLink}>
     <button
-      class="font-geist mt-16 w-full
-  rounded-xl bg-violet-700 px-5 py-3 text-lg font-medium text-white">
+      class="mt-16 w-full rounded-xl
+  bg-violet-700 px-5 py-3 font-geist text-lg font-medium text-white">
       {plan?.cta?.title}
     </button>
   </a>

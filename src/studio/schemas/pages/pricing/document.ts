@@ -41,7 +41,8 @@ const pricing = {
             {
               name: 'planName',
               title: 'Plan Name',
-              type: 'string',
+              type: 'reference',
+              to: [{ type: 'planName' }], 
             },
             {
               name: 'price',
@@ -74,7 +75,7 @@ const pricing = {
           ],
           preview: {
             select: {
-              title: 'planName',
+              title: 'planName.name', 
               subtitle: 'price',
               media: 'icon',
             },
@@ -107,9 +108,7 @@ const pricing = {
       name: 'sections',
       type: 'array',
       description: 'Sections for Pricing Page',
-      of: [
-        { type: 'pricing.hero' },
-      ],
+      of: [{ type: 'pricing.hero' }],
     },
   ],
   preview: {

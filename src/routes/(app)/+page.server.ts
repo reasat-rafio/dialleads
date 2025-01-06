@@ -103,7 +103,9 @@ const query = groq`
             saveUpTo,
             plans[]{
                 ${asset('icon')},
-                planName,
+                planName->{
+                name
+                },
                 price,
                 features[]{
                     featureName

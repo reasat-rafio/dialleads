@@ -1,3 +1,4 @@
 import pricingPage from "./document";
 import hero from "./hero";
-export default [pricingPage, hero];
+import planName from "./planName";
+export default [pricingPage, hero, planName];
