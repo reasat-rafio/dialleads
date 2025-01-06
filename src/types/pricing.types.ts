@@ -57,5 +57,5 @@ export interface PlanReference {
 }
 
 export interface Instruction {
-  instruction: PortableTextBlock[];
+  instruction?: PortableTextBlock[];
 }

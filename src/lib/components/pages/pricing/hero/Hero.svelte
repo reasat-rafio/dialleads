@@ -13,7 +13,6 @@
   let { props, plans, saveUpTo }: Props = $props();
   let { hero } = $derived(props);
   let selectedSubscriptionType = $state('monthly');
-  $inspect(props);
 </script>
 
 <div class="max-w-[75rem] mx-auto">

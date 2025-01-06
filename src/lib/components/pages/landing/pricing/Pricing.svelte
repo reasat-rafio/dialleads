@@ -17,7 +17,6 @@
   let { props, pricing }: Props = $props();
   let { enterprisePlan, plans, saveUpTo } = $derived(pricing);
   let selectedSubscriptionType = $state('monthly');
-  $inspect(pricing);
 </script>
 
 <div class=" mx-auto max-w-[75rem] px-5 xl:px-0">

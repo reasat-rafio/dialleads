@@ -12,7 +12,6 @@
     selectedSubscriptionType = $bindable(),
     saveUpTo,
   }: Props = $props();
-  $inspect(plan);
 </script>
 
 <div>

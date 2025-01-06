@@ -52,7 +52,7 @@
         {#each features as feature}
           <Table.Row class="border-b-0">
             <Table.Cell class=" ">
-              <div class="flex items-center gap-4">
+              <div class="flex items-center gap-4 pt-10">
                 <div
                   class="flex h-10 w-10 items-center justify-center rounded-[0.75rem] bg-[#EDE9FE]">
                   <SanityImage
@@ -69,7 +69,7 @@
           </Table.Row>
           {#each feature?.featureLists as list}
             <Table.Row class="border-b-0">
-              <Table.Cell class="text-gray-400">
+              <Table.Cell class="text-lg font-normal text-black">
                 {list.featureName}
               </Table.Cell>
               <!-- Values for each subscription type -->
@@ -80,16 +80,63 @@
                   {:else if value.type === 'status'}
                     {#if value.isAvailable}
                       <p class="flex justify-center">
-                        <Check class="text-purple-600" size={24} />
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          width="18"
+                          height="19"
+                          viewBox="0 0 18 19"
+                          fill="none">
+                          <g clip-path="url(#clip0_715_7081)">
+                            <path
+                              d="M5.625 9.50293L7.875 11.7529L12.375 7.25293M16.5 9.50293C16.5 13.6451 13.1421 17.0029 9 17.0029C4.85786 17.0029 1.5 13.6451 1.5 9.50293C1.5 5.36079 4.85786 2.00293 9 2.00293C13.1421 2.00293 16.5 5.36079 16.5 9.50293Z"
+                              stroke="#6D28D9"
+                              stroke-width="2"
+                              stroke-linecap="round"
+                              stroke-linejoin="round" />
+                          </g>
+                          <defs>
+                            <clipPath id="clip0_715_7081">
+                              <rect
+                                width="18"
+                                height="18"
+                                fill="white"
+                                transform="translate(0 0.50293)" />
+                            </clipPath>
+                          </defs>
+                        </svg>
                       </p>
                     {:else}
-                      <p>--</p>
+                      <p
+                        class="mx-auto flex h-[0.125rem] w-[0.875rem] items-center justify-center">
+                        -
+                      </p>
                     {/if}
                   {/if}
                 </Table.Cell>
               {/each}
             </Table.Row>
           {/each}
+          <Table.Row class="border-b border-dashed ">
+            <Table.Cell>
+              {#if Array.isArray(feature.instructions)}
+              <div class="mt-5 flex items-center gap-1 pb-[0.44rem]">
+                <p class="text-red-500">*</p>
+                <h4 class="text-[0.875rem] font-normal text-[#6D28D9]">
+                  {(Array.isArray(feature.instructions) &&
+                    (feature.instructions as any[])[0]?.instruction?.[0]
+                      ?.children?.[0]?.text) ??
+                    ''}
+                </h4>
+                <h4 class="text-[0.875rem] font-normal text-[#212121]">
+                  {(Array.isArray(feature.instructions) &&
+                    (feature.instructions as any[])[0]?.instruction?.[1]
+                      ?.children?.[0]?.text) ??
+                    ''}
+                </h4>
+              </div>
+              {/if}
+            </Table.Cell>
+          </Table.Row>
         {/each}
       </Table.Body>
     </Table.Root>
