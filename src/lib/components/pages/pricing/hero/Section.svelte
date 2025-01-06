@@ -4,9 +4,9 @@
   import type { Hero } from '../../../../../types/pricing.types';
 
   let { hero }: { hero: Hero } = $props();
-  let { sectionIcon, sectionName, sectionTitle, sectionDescription } = $derived(hero);
+  let { sectionIcon, sectionName, sectionTitle, sectionDescription } =
+    $derived(hero);
 
-  $inspect(sectionTitle);
 </script>
 
 <div class="mt-24">
@@ -21,7 +21,7 @@
       alt="SliderMainImage" />
     <p class="font-geist text-lg font-bold text-white">{sectionName}</p>
   </div>
-  <div class="flex items-center gap-5 mt-5 text-center">
+  <div class="mt-5 flex items-center gap-5 text-center">
     {#if Array.isArray(sectionTitle[0]?.children) && Array.isArray(sectionTitle[1]?.children)}
       <h3
         class="leading-[4.495rem text-nowrap font-geist text-[1.875rem] font-bold text-[#FFF] lg:text-[3.875rem]">
@@ -31,10 +31,13 @@
         class="
         text-nowrap bg-gradient-to-r from-[#731AFF] to-[#FCCEEE]
                 bg-clip-text font-geist text-[1.875rem] font-bold
-                text-transparent lg:text-[3.875rem] ">
+                text-transparent lg:text-[3.875rem]">
         {sectionTitle[1]?.children[0]?.text}
       </h3>
     {/if}
   </div>
-  <p class="text-white text-center text-xl font-medium leading-[1.875rem] w-[40.3125rem] mx-auto mt-4">{sectionDescription}</p>
+  <p
+    class="mx-auto mt-4 w-[40.3125rem] text-center text-xl font-medium leading-[1.875rem] text-white">
+    {sectionDescription}
+  </p>
 </div>

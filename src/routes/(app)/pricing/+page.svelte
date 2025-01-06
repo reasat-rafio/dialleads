@@ -12,7 +12,7 @@
   {#if !!sections?.length}
     {#each sections as props}
       {#if props._type === 'pricing.hero'}
-        <Hero {props} {plans} />
+        <Hero {props} {plans} {saveUpTo} />
       {/if}
     {/each}
   {/if}

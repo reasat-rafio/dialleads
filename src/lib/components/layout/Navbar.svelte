@@ -65,8 +65,8 @@ max-h-[57.5rem]"
         {logo} />
     {:else if pathName == '/pricing'}
       <DesktopNavbar
-        className="h-[38.75rem]
-max-h-[57.5rem]"
+        className="h-[38.8rem]
+max-h-[38.8rem]"
         {nav}
         {logo} />
       
