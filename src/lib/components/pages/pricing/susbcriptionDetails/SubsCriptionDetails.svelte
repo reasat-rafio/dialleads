@@ -47,12 +47,12 @@
           {/each}
         </Table.Row>
       </Table.Header>
-      <Table.Body>
+      <Table.Body >
         <!-- Iterate through features -->
         {#each features as feature}
           <Table.Row class="border-b-0">
             <Table.Cell class=" ">
-              <div class="flex items-center gap-4 pt-10">
+              <div class="flex items-center gap-4 pt-10 pl-[1rem]">
                 <div
                   class="flex h-10 w-10 items-center justify-center rounded-[0.75rem] bg-[#EDE9FE]">
                   <SanityImage
@@ -68,8 +68,8 @@
             </Table.Cell>
           </Table.Row>
           {#each feature?.featureLists as list}
-            <Table.Row class="border-b-0">
-              <Table.Cell class="text-lg font-normal text-black">
+            <Table.Row class="border-b-0 ">
+              <Table.Cell class="text-lg font-normal text-black pl-[1.88rem]">
                 {list.featureName}
               </Table.Cell>
               <!-- Values for each subscription type -->
@@ -119,7 +119,7 @@
           <Table.Row class="border-b border-dashed ">
             <Table.Cell>
               {#if Array.isArray(feature.instructions)}
-              <div class="mt-5 flex items-center gap-1 pb-[0.44rem]">
+              <div class="mt-5 flex items-center gap-1 pb-[0.44rem] pl-[1rem]">
                 <p class="text-red-500">*</p>
                 <h4 class="text-[0.875rem] font-normal text-[#6D28D9]">
                   {(Array.isArray(feature.instructions) &&
