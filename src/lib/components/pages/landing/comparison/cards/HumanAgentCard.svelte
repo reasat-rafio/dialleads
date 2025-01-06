@@ -8,7 +8,7 @@
 
 <div
   class="relative h-full w-full rounded-3xl border
-border-slate-400 bg-slate-100 px-2 lg:h-[30.27rem] lg:w-[31.25rem] lg:pl-[4.38rem] lg:pr-[4.19rem]">
+border-slate-400 bg-slate-100 px-2 lg:h-[30.27rem] xl:w-[31.25rem] lg:pl-[4.38rem] lg:pr-[4.19rem]">
   <div
     class="absolute -top-11 left-1/2 h-[5.5rem] w-[5.5rem] -translate-x-1/2 rounded-xl bg-stone-200 p-[0.62rem]">
     <SanityImage

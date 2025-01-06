@@ -60,7 +60,9 @@
     </div>
 
     <div
-      class=" relative mx-auto mt-[4rem] flex h-[17.8rem] max-h-[17.8rem] w-full justify-center px-4 lg:mt-[3.8rem] lg:h-[22.5rem] lg:px-0
+      class=" relative mx-auto mt-[4rem] 
+      flex h-[17.8rem] xl:max-h-[17.8rem] 
+      w-full px-4 md:px-0 md:w-[40rem] lg:w-[50rem]  justify-center  lg:mt-[3.8rem] lg:h-[22.5rem] lg:px-0
       xl:w-[75rem]
       {windowWidth <= 320 ? 'mt-[5.95rem] h-full' : 'h-[17.8rem]'}
       ">
