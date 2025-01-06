@@ -8,7 +8,7 @@
 
 <div class="flex justify-center mt-[1.62rem]">
   <div
-    class="flex  justify-between rounded-xl border border-[#60527A] px-2 pt-1 pb-2 w-[22.4375rem]">
+    class="flex  justify-between rounded-xl border border-[#60527A] px-2 pt-1 pb-2 w-[22.4375rem] bg-[#2B194C]">
     <button
       onclick={() => (selectedSubscriptionType = 'monthly')}
       class={selectedSubscriptionType === 'monthly'
