@@ -20,8 +20,8 @@
   let selectedSubscriptionType = $state('monthly');
 </script>
 
-<div class=" mx-auto max-w-[75rem] px-5 xl:px-0">
-  <div class=" rounded-[1.25rem] border overflow-hidden">
+<div class=" mx-auto max-w-[75rem] px-5 pb-24 xl:px-0">
+  <div class=" overflow-hidden rounded-[1.25rem] border">
     <Table.Root>
       <Table.Header class="bg-[#F8FAFC]">
         <Table.Row>
@@ -47,12 +47,12 @@
           {/each}
         </Table.Row>
       </Table.Header>
-      <Table.Body >
+      <Table.Body>
         <!-- Iterate through features -->
         {#each features as feature}
           <Table.Row class="border-b-0">
             <Table.Cell class=" ">
-              <div class="flex items-center gap-4 pt-10 pl-[.8rem]">
+              <div class="flex items-center gap-4 pl-[.8rem] pt-10">
                 <div
                   class="flex h-10 w-10 items-center justify-center rounded-[0.75rem] bg-[#EDE9FE]">
                   <SanityImage
@@ -69,8 +69,13 @@
           </Table.Row>
           {#each feature?.featureLists as list}
             <Table.Row class="border-b-0 ">
-              <Table.Cell class="text-lg font-normal text-black pl-[1.88rem]">
-                {list.featureName}
+              <Table.Cell class="pl-[1.88rem] text-lg font-normal text-black">
+                {#each list.featureName.split('*') as part, index}
+                  {part}
+                  {#if index < list.featureName.split('*').length - 1}
+                    <span class="text-red-500">*</span>
+                  {/if}
+                {/each}
               </Table.Cell>
               <!-- Values for each subscription type -->
               {#each list.values as value}
@@ -119,21 +124,22 @@
           <Table.Row class="border-b border-dashed ">
             <Table.Cell>
               {#if Array.isArray(feature.instructions)}
-              <div class="mt-5 flex items-center gap-1 pb-[0.44rem] pl-[1rem]">
-                <p class="text-red-500">*</p>
-                <h4 class="text-[0.875rem] font-normal text-[#6D28D9]">
-                  {(Array.isArray(feature.instructions) &&
-                    (feature.instructions as any[])[0]?.instruction?.[0]
-                      ?.children?.[0]?.text) ??
-                    ''}
-                </h4>
-                <h4 class="text-[0.875rem] font-normal text-[#212121]">
-                  {(Array.isArray(feature.instructions) &&
-                    (feature.instructions as any[])[0]?.instruction?.[1]
-                      ?.children?.[0]?.text) ??
-                    ''}
-                </h4>
-              </div>
+                <div
+                  class="mt-5 flex items-center gap-1 pb-[0.44rem] pl-[1rem]">
+                  <p class="text-red-500">*</p>
+                  <h4 class="text-[0.875rem] font-normal text-[#6D28D9]">
+                    {(Array.isArray(feature.instructions) &&
+                      (feature.instructions as any[])[0]?.instruction?.[0]
+                        ?.children?.[0]?.text) ??
+                      ''}
+                  </h4>
+                  <h4 class="text-[0.875rem] font-normal text-[#212121]">
+                    {(Array.isArray(feature.instructions) &&
+                      (feature.instructions as any[])[0]?.instruction?.[1]
+                        ?.children?.[0]?.text) ??
+                      ''}
+                  </h4>
+                </div>
               {/if}
             </Table.Cell>
           </Table.Row>
