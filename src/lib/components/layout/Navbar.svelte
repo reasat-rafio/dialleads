@@ -7,6 +7,7 @@
   import Button from '../ui/button/button.svelte';
   import DesktopNavbar from './desktopNavbar/DesktopNavbar.svelte';
   import MobileNavbar from './mobileNavbar/MobileNavbar.svelte';
+  import DesktopNavbarForContactPage from './desktopNavbar/DesktopNavbarForContactPage.svelte';
 
   interface Props {
     nav: Nav;
