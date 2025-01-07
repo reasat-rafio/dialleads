@@ -13,7 +13,6 @@
   let {
     subscriptionDetails: { features },
   } = $derived(props);
-  let selectedSubscriptionType = $state('monthly');
 </script>
 
 <div>

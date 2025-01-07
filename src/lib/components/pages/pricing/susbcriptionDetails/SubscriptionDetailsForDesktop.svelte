@@ -21,7 +21,7 @@
 </script>
 
 <div class="container mx-auto max-w-[75rem] px-5 pb-24 xl:px-0">
-  <div class=" overflow-hidden rounded-[1.25rem] border">
+  <div class=" overflow-hidden rounded-[1.26rem] border">
     <Table.Root>
       <Table.Header class="bg-[#F8FAFC]">
         <Table.Row>
