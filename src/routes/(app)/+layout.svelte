@@ -1,6 +1,6 @@
 <script lang="ts">
   import FooterCopy from '$lib/components/layout/mobileNavbar/FooterCopy.svelte';
-
+  import { page } from '$app/stores';
   import Navbar from '$lib/components/layout/Navbar.svelte';
   import { urlFor } from '$lib/sanity/sanity-client';
   import { page } from '$app/stores';

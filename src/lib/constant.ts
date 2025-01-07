@@ -2,7 +2,6 @@ export const pages = [
   { title: 'Landing', value: '/' },
   { title: 'Pricing', value: '/pricing' },
   { title: 'Contact', value: '/contact' },
-  
 ];
 
 export const pagesWithOutSlash = removeSlashFromArray(pages);

@@ -9,9 +9,15 @@ const features = defineType({
   icon: SiHomeadvisor,
   fields: [
     defineField({
-      name: 'title',
+      name: 'sectionName',
       type: 'string',
+      // validation: (Rule) => Rule.required(),
+    }),
+    defineField({
+      name: 'title',
+      type: 'array',
       validation: (Rule) => Rule.required(),
+      of: [defineArrayMember({ type: 'block' })],
     }),
 
     defineField({
@@ -63,7 +69,7 @@ const features = defineType({
   ],
   preview: {
     select: {
-      title: 'title',
+      title: 'sectionName',
       // subtitle: 'subtitle',
     },
   },
