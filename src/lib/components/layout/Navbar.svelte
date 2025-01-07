@@ -60,17 +60,13 @@
 
 <div class="">
   <div class="hidden lg:block">
-    {#if pathName == '/contact'}
-      <DesktopNavbar
-        className="h-[38.75rem]
-max-h-[57.5rem]"
-        {nav}
-        {logo} />
-    {:else}
+    {#if pathName == '/'}
       <DesktopNavbar
         className="h-[57.5rem] max-h-[57.5rem] min-h-[57.5rem]"
         {nav}
         {logo} />
+    {:else}
+      <DesktopNavbar className="h-[38.75rem] max-h-[57.5rem]" {nav} {logo} />
     {/if}
   </div>
   <div class="lg:hidden">

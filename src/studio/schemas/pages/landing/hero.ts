@@ -57,7 +57,8 @@ const hero = defineType({
           name: 'thumbnailForMobile',
           type: 'image',
           title: 'Video Thumbnail',
-          description: 'Image to be displayed as the video thumbnail for mobile screen',
+          description:
+            'Image to be displayed as the video thumbnail for mobile screen',
           options: {
             hotspot: true,
           },
@@ -68,7 +69,8 @@ const hero = defineType({
           name: 'thumbnailForDesktop',
           type: 'image',
           title: 'Video Thumbnail',
-          description: 'Image to be displayed as the video thumbnail for desktop screen',
+          description:
+            'Image to be displayed as the video thumbnail for desktop screen',
           options: {
             hotspot: true,
           },
@@ -106,7 +108,7 @@ const hero = defineType({
     },
     prepare({ subtitle }) {
       return {
-        title: "Hero",
+        title: 'Hero',
         subtitle: subtitle || '',
         media: SiHomeadvisor,
       };

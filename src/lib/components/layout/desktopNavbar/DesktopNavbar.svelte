@@ -55,14 +55,12 @@
 </script>
 
 <div
-
   class="{className} ml-[1.06rem] mr-[1.13rem] mt-4
-
   rounded-[1.875rem]
    bg-hero-gradient">
   <!-- max-h-[57.5rem]  h-[57.5rem] min-h-[57.5rem]-->
   <div class="mx-auto max-w-[75rem] pt-[1.81rem]">
-    <div class="flex justify-evenly xl:justify-between">
+    <div class="flex justify-between">
       <div class="flex items-center gap-[0.49rem]">
         <SanityImage
           class="h-[2.63rem] w-[2.63rem]"

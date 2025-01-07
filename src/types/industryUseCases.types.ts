@@ -8,25 +8,47 @@ import type { SanityAsset } from '@sanity/image-url/lib/types/types';
 
 export interface IndustryUseCasesProps {
   seo?: SeoProps;
-
   sections: Section[];
 }
 
-type Section =
-  | DetailsProps
-  | FeaturesProps
-  | StatProps
-  | OfferProps
-  | CustomersProps
-  | TryItProps
-  | FeaturesV2Props
-  | ReviewProps;
+type Section = DetailsProps | FeaturesProps | StatProps;
+// | OfferProps
+// | CustomersProps
+// | TryItProps
+// | FeaturesV2Props
+// | ReviewProps
 
-export interface DetailsProps {}
-export interface FeaturesProps {}
-export interface StatProps {}
-export interface OfferProps {}
-export interface CustomersProps {}
-export interface TryItProps {}
-export interface FeaturesV2Props {}
-export interface ReviewProps {}
+export interface DetailsProps {
+  sectionName: string;
+  title: string;
+  description: string;
+  subDetails: {
+    title: string;
+    description: string;
+    detailsImage: SanityImageWithAlt;
+  }[];
+  link: Link;
+}
+export interface FeaturesProps {
+  sectionName: string;
+  title: PortableTextBlock[];
+  description: string;
+  subDetails: {
+    featureImage: SanityImageWithAlt;
+    title: string;
+  }[];
+}
+export interface StatProps {
+  tagline: string;
+  title: PortableTextBlock[];
+  description: string;
+  stats: {
+    value: string;
+    title: string;
+  }[];
+}
+// export interface OfferProps {}
+// export interface CustomersProps {}
+// export interface TryItProps {}
+// export interface FeaturesV2Props {}
+// export interface ReviewProps {}

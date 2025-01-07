@@ -9,6 +9,12 @@ const stat = defineType({
   icon: SiHomeadvisor,
   fields: [
     defineField({
+      name: 'sectionName',
+      type: 'string',
+      // validation: (Rule) => Rule.required(),
+    }),
+
+    defineField({
       name: 'tagline',
       type: 'string',
       // validation: (Rule) => Rule.required(),
@@ -16,8 +22,9 @@ const stat = defineType({
 
     defineField({
       name: 'title',
-      type: 'string',
-      // validation: (Rule) => Rule.required(),
+      type: 'array',
+      validation: (Rule) => Rule.required(),
+      of: [defineArrayMember({ type: 'block' })],
     }),
 
     defineField({
@@ -59,7 +66,7 @@ const stat = defineType({
   ],
   preview: {
     select: {
-      title: 'title',
+      title: 'sectionName',
     },
   },
 });
