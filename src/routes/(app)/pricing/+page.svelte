@@ -15,7 +15,7 @@
       {#if props._type === 'pricing.hero'}
         <Hero {props} {plans} {saveUpTo} />
       {:else if props._type === 'pricing.subscriptionDetails'}
-      <!-- <SubsCriptionDetails {props} {plans} {saveUpTo}/> -->
+      <SubsCriptionDetails {props} {plans} {saveUpTo}/>
       {/if}
     {/each}
   {/if}

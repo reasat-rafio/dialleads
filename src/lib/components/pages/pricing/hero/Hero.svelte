@@ -13,8 +13,9 @@
   let { props, plans, saveUpTo }: Props = $props();
   let { hero } = $derived(props);
   let selectedSubscriptionType = $state('monthly');
+  let windowWidth = $state(0);
 </script>
-
+<svelte:window bind:innerWidth={windowWidth} />
 <div class="max-w-[75rem] mx-auto">
   <div class="absolute left-1/2 top-[17rem] -translate-x-1/2 -translate-y-1/2">
     <Section {hero} />
@@ -22,7 +23,9 @@
   </div>
 
   <div
-    class="container lg:w-[50rem] xl:w-[75rem] mx-auto 
+    class="
+    {windowWidth < 1024 ? 'container' : ''} 
+    lg:!container-none  lg:w-[50rem] xl:w-[75rem] mx-auto 
     relative -top-[8rem] md:-top-[6rem] grid grid-cols-1 gap-[1.88rem] md:grid-cols-2 xl:grid-cols-3 z-50">
     {#each plans as plan}
       <PricingCard {plan} bind:selectedSubscriptionType {saveUpTo} />
