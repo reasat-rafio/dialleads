@@ -1,6 +1,6 @@
 <script lang="ts">
   import FooterCopy from '$lib/components/layout/mobileNavbar/FooterCopy.svelte';
-  import { page } from '$app/stores';
+  import { page } from '$app/state';
   import Navbar from '$lib/components/layout/Navbar.svelte';
   import { urlFor } from '$lib/sanity/sanity-client';
 
@@ -27,7 +27,7 @@
 
 <div class="relative">
   <div class="px-2">
-    <Navbar pathName={$page.url.pathname} {nav} {logo} />
+    <Navbar pathName={page.url.pathname} {nav} {logo} />
   </div>
 
   {@render children()}
