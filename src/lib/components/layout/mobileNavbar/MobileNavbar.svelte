@@ -59,7 +59,7 @@
   }
 </script>
 
-<div class="mx-[0.31rem]">
+<div class="relative mx-[0.31rem]">
   <div
     class=" mt-2 h-[43.1rem]
     rounded-[1.25rem] 
@@ -67,7 +67,7 @@
     lg:rounded-[1.875rem]">
     <div class="relative mx-[0.94rem] flex justify-end pt-4">
       <Button
-        class=" right-0 bg-transparent hover:bg-transparent"
+        class="z-50 right-0 bg-transparent hover:bg-transparent"
         onclick={togglePopup}>
         {#if isPopupVisible}
           <!-- Close (X) Icon -->
