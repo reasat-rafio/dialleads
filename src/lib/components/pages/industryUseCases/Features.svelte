@@ -13,7 +13,6 @@
       {#if Array.isArray(props?.title[0]?.children) && Array.isArray(props?.title[1]?.children)}
         <h2
           class=" text-center text-[1.625rem] font-semibold leading-[1.95rem] lg:text-left lg:text-[3rem] lg:leading-[3.6rem]">
-          <!-- max-w-[20.70rem] -->
           <span class="text-[#6D28D9]">
             {props?.title[0]?.children[0]?.text}
           </span>

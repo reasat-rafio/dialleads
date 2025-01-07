@@ -3,8 +3,7 @@
   import { imgBuilder } from '$lib/sanity/sanity-client';
   import SanityImage from '$lib/sanity/sanity-image/sanity-image.svelte';
   import { onMount } from 'svelte';
-  import * as AlertDialog from '$lib/components/ui/alert-dialog/index.js';
-  import { X } from 'lucide-svelte';
+
   import type {
     HeroProps,
     IndustryUseCaseProps,
@@ -16,10 +15,7 @@
     industryUseCases,
   }: { props: HeroProps; industryUseCases: IndustryUseCaseProps } = $props();
 
-  let isIntersecting = true;
   let windowWidth = $state(0);
-
-  let waveforms = [];
 
   function resolveMp3Url(ref: string) {
     return `https://cdn.sanity.io/files/ttleus4d/production/${ref
@@ -27,9 +23,9 @@
       .replace('-', '.')}`;
   }
 
-  const mp3FileUrl = resolveMp3Url(industryUseCases?.mp3File.asset._ref); // Resolve the MP3 URL
+  const mp3FileUrl = resolveMp3Url(industryUseCases?.mp3File.asset._ref);
 
-  let waveSurferInstance: WaveSurfer | null = null; // Store WaveSurfer instances here
+  let waveSurferInstance: WaveSurfer | null = null;
 
   // Initialize WaveSurfer instances on mount
 
