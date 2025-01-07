@@ -61,7 +61,7 @@
   <!-- max-h-[57.5rem]  h-[57.5rem] min-h-[57.5rem]-->
   <div class="mx-auto max-w-[75rem] pt-[1.81rem]">
     <div class="flex justify-between">
-      <div class="flex items-center gap-[0.49rem]">
+      <a href="/" class="flex items-center gap-[0.49rem]">
         <SanityImage
           class="h-[2.63rem] w-[2.63rem]"
           src={logo}
@@ -71,7 +71,7 @@
         <h5 class="font-geist text-[1.47656rem] font-semibold text-[#FFF]">
           Dialleads
         </h5>
-      </div>
+      </a>
       <div class="flex items-center gap-5">
         {#each nav?.menu as item}
           <div
