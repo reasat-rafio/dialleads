@@ -149,10 +149,14 @@ export interface Pricing {
 }
 export interface Plan {
   icon: SanityImageWithAlt;
-  planName: string;
+  planName: Name;
   price: number;
   features: Feature[];
   cta: CTA;
+}
+
+export interface Name {
+  name: string;
 }
 
 export interface Feature {

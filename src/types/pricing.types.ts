@@ -1,39 +1,42 @@
-import type { SanityImageObject } from '@sanity/image-url/lib/types/types';
-import type { SeoProps } from './common.types';
+import type { PortableTextBlock } from 'sanity';
+import type { SanityImageWithAlt, SeoProps } from './common.types';
+import type { Plan } from './landing.types';
 
 export interface PricingPageProps {
   seo: SeoProps;
+  plans: Plan[];
+  saveUpTo: number;
   sections: Section[];
 }
 
-export type Section = ComparePlansProps;
+export type Section = HeroProps | SubscriptionDetailsProps;
 
-export interface ComparePlansProps {
-  _key: string;
-  _type: 'pricingPage.comparePlans';
-  plans: Plans;
-  plansDetails: PlansDetails[];
-  subscriptionTypes: SubscriptionType[];
+export interface HeroProps {
+  _type: 'pricing.hero';
+  hero: Hero;
 }
 
-export interface Plans {
-  heading: string;
-  subHeading: SubHeading;
+export interface Hero {
+  sectionName: string;
+  sectionTitle: PortableTextBlock[];
+  sectionDescription: string;
+  sectionIcon: SanityImageWithAlt;
 }
 
-export interface SubHeading {
-  text: string;
-  icon: SanityImageObject;
+export interface SubscriptionDetailsProps {
+  _type: 'pricing.subscriptionDetails';
+  subscriptionDetails: SubscriptionDetails;
 }
 
-export interface PlansDetails {
+export interface SubscriptionDetails {
   features: Feature[];
 }
 
 export interface Feature {
-  icon: SanityImageObject;
   featureHeading: string;
+  featureIcon: SanityImageWithAlt;
   featureLists: FeatureList[];
+  instructions?: Instruction[];
 }
 
 export interface FeatureList {
@@ -43,24 +46,16 @@ export interface FeatureList {
 
 export interface Value {
   type: 'text' | 'status';
-  text?: string;
+  text?: string; 
   isAvailable?: boolean;
-  relatedSubscriptionType?: SubscriptionType;
+  relatedPlan?: PlanReference;
 }
 
-export interface SubscriptionType {
-  _id: string;
-  title: string;
+export interface PlanReference {
+  _ref: string;
+  _type: 'reference';
 }
 
-export interface SubscriptionType {
-  _id: string;
-  title: string;
-  subtitle: string;
-  price: Price[];
-  buttonText: string[];
-}
-export interface Price {
-  type: 'monthly' | 'yearly';
-  value: string;
+export interface Instruction {
+  instruction?: PortableTextBlock[];
 }

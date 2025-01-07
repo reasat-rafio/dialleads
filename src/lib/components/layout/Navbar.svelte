@@ -11,7 +11,7 @@
   interface Props {
     nav: Nav;
     logo: SanityImageWithAlt;
-    pathName: any;
+    pathName: string;
   }
   let { nav, logo, pathName }: Props = $props();
 
