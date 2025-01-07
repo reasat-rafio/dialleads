@@ -62,7 +62,6 @@
         className="h-[57.5rem] max-h-[57.5rem] min-h-[57.5rem]"
         {nav}
         {logo} />
-      <!-- {:else if pathName == '/industry-use-cases/real-estate'} -->
     {:else}
       <DesktopNavbar className="h-[38.75rem] max-h-[57.5rem]" {nav} {logo} />
     {/if}
