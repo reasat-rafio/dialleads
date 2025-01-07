@@ -2,12 +2,17 @@ import { SiHomeadvisor } from 'react-icons/si';
 import { defineArrayMember, defineField, defineType } from 'sanity';
 import { toPlainText } from '@portabletext/svelte';
 
-const discussWithUs = defineType({
-  title: 'discussWithUs',
-  name: 'industryUseCase.discussWithUs',
+const hero = defineType({
+  title: 'hero',
+  name: 'industryUseCase.hero',
   type: 'object',
   icon: SiHomeadvisor,
   fields: [
+    defineField({
+      name: 'sectionName',
+      type: 'string',
+      // validation: (Rule) => Rule.required(),
+    }),
     defineField({
       name: 'title',
       type: 'array',
@@ -16,23 +21,21 @@ const discussWithUs = defineType({
     }),
 
     defineField({
-      name: 'subtitle',
-      type: 'text',
-      validation: (Rule) => Rule.required(),
+      name: 'description',
+      type: 'string',
+      // validation: (Rule) => Rule.required(),
     }),
 
     defineField({
       name: 'link',
       type: 'link',
-      validation: (Rule) => Rule.required(),
     }),
   ],
   preview: {
     select: {
-      title: 'title',
-      subtitle: 'subtitle',
+      title: 'sectionName',
     },
   },
 });
 
-export default discussWithUs;
+export default hero;

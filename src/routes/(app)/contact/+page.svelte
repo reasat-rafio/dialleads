@@ -7,8 +7,6 @@
   let {
     page: { sections },
   } = $derived(data);
-
-  $inspect(sections);
 </script>
 
 <div class="flex max-w-full flex-col items-center justify-center font-geist">

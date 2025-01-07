@@ -13,7 +13,7 @@ export interface HeroProps {
   _type: 'contact.hero';
   sectionTitle: string;
   sectionIcon: SanityImageWithAlt;
-  title: string;
+  title: PortableTextBlock[];
   description: string;
 }
 

@@ -29,12 +29,11 @@ const hero = defineType({
         },
       ],
     }),
-
     defineField({
       name: 'title',
-      title: 'Title',
-      type: 'string',
-      // validation: (Rule) => Rule.required(),
+      type: 'array',
+      validation: (Rule) => Rule.required(),
+      of: [defineArrayMember({ type: 'block' })],
     }),
     defineField({
       name: 'description',

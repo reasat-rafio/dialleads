@@ -9,9 +9,10 @@
   interface Props {
     nav: Nav;
     logo: SanityImageWithAlt;
+    className: string;
   }
 
-  let { nav, logo }: Props = $props();
+  let { nav, logo, className }: Props = $props();
 
   let isPopupVisible = $state(false);
   let dialogOpen = $state(false);
@@ -61,8 +62,8 @@
 
 <div class="mx-[0.31rem]">
   <div
-    class=" mt-2 h-[43.1rem]
-    rounded-[1.25rem] 
+    class=" {className} mt-2
+    rounded-[1.25rem]
     bg-hero-gradient
     lg:rounded-[1.875rem]">
     <div class="relative mx-[0.94rem] flex justify-end pt-4">
@@ -98,7 +99,7 @@
           </p>
         {:else}
           <!-- Hamburger Icon -->
-          <p class="flex items-center ">
+          <p class="flex items-center">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="100"
