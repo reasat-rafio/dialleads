@@ -32,8 +32,8 @@
               {footer?.newsLetterText}
             </h2>
             <div
-              class="mb-[1rem] grid max-w-[20.8rem] grid-cols-4 gap-x-[0.5rem] md:max-w-[31.25rem]">
-              <div class="col-span-2 lg:col-span-3">
+              class="mb-[1rem] grid max-w-[20.8rem]  md:grid-cols-4 gap-x-[0.5rem] md:max-w-[31.25rem]">
+              <div class="col-span-1 md:col-span-2 lg:col-span-3">
                 <input
                   type="text"
                   placeholder="Enter your email"

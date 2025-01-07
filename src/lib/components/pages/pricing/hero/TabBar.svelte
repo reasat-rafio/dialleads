@@ -6,9 +6,9 @@
   let { saveUpTo, selectedSubscriptionType = $bindable() }: Props = $props();
 </script>
 
-<div class="flex justify-center mt-[1.62rem]">
+<div class="mt-[1.62rem] flex justify-center">
   <div
-    class="flex  justify-between rounded-xl border border-[#60527A] px-2 pt-1 pb-2 w-[22.4375rem] bg-[#2B194C]">
+    class="flex w-full justify-between rounded-xl border border-[#60527A] bg-[#2B194C] px-2 pb-2 pt-1 lg:w-[22.4375rem]">
     <button
       onclick={() => (selectedSubscriptionType = 'monthly')}
       class={selectedSubscriptionType === 'monthly'
@@ -23,7 +23,7 @@
         : 'px-2 py-2 font-geist text-base font-semibold text-white md:px-9'}>
       <p class="text-nowrap">
         Annual
-        <span class="text-sm font-semibold text-violet-white">
+        <span class="text-violet-white text-sm font-semibold">
           ( {saveUpTo}% OFF)
         </span>
       </p>
