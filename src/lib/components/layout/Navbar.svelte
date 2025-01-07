@@ -21,8 +21,6 @@
   let activeDropdown: string | null = $state(null);
   let timeout: any;
 
-  $inspect(pathName);
-
   function toggleNavbar() {
     showMenu = !showMenu;
     dialogOpen = !dialogOpen;
