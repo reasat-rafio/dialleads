@@ -8,7 +8,7 @@
     $derived(hero);
 </script>
 
-<div class="mt-24">
+<div class="mt-24 container">
   <div
     class="mx-auto flex h-10 w-[7.125rem] items-center justify-center gap-2 rounded-[20rem]
        border px-3 py-2">
@@ -53,7 +53,7 @@
     {/if}
   </div>
   <p
-    class="mx-auto mt-4 text-center text-xl font-medium leading-[1.875rem] text-white lg:w-[40.3125rem]">
+    class="mx-auto mt-4 text-center text-xl font-medium leading-[1.875rem] text-white w-full lg:w-[40.3125rem]">
     {sectionDescription}
   </p>
 </div>

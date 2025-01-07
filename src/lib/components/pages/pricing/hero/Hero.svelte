@@ -22,9 +22,10 @@
   </div>
 
   <div
-    class="w-[50rem] xl:w-[75rem] mx-auto relative -top-[6rem] grid grid-cols-1 gap-[1.88rem] md:grid-cols-2 xl:grid-cols-3 z-50">
+    class="container lg:w-[50rem] xl:w-[75rem] mx-auto 
+    relative -top-[8rem] md:-top-[6rem] grid grid-cols-1 gap-[1.88rem] md:grid-cols-2 xl:grid-cols-3 z-50">
     {#each plans as plan}
-      <!-- <PricingCard {plan} bind:selectedSubscriptionType {saveUpTo} /> -->
+      <PricingCard {plan} bind:selectedSubscriptionType {saveUpTo} />
     {/each}
   </div>
 </div>
