@@ -54,6 +54,7 @@ export interface Value {
 export interface PlanReference {
   _ref: string;
   _type: 'reference';
+  name: string;
 }
 
 export interface Instruction {

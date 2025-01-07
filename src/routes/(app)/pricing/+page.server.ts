@@ -37,6 +37,9 @@ const query = groq`
         ...,
         values[]{
         ...,
+        relatedPlan->{
+                            name
+                        },
         }
         }
         }
