@@ -7,6 +7,7 @@
   let {
     page: { sections },
   } = $derived(data);
+
 </script>
 
 <div class="flex max-w-full flex-col items-center justify-center font-geist">

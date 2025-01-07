@@ -27,11 +27,11 @@
           class="mb-[1.5rem] mt-[1.13rem] text-[0.875rem] font-medium text-white opacity-80">
           {footer?.newsLetterText}
         </h5>
-        <div class="flex gap-2">
+        <div class="flex flex-col md:flex-row gap-2">
           <input
             type="text"
             placeholder="Enter your email"
-            class=" h-[3rem] w-[12.25rem] rounded-[2rem] border border-[#625a5a]
+            class=" h-[3rem] w-full rounded-[2rem] border border-[#625a5a]
             bg-[#4F3780] px-[1.25rem] py-[0.5rem] text-white lg:h-[3rem] lg:w-[21.75rem] lg:px-[1.25rem]" />
           <button
             style="background: var(--Lini, linear-gradient(90deg, #7C3AED 0%, #A78BFA 100%));"
