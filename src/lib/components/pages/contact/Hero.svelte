@@ -42,10 +42,25 @@
           </h1>
         </div>
 
-        <h1
+        {#if Array.isArray(props?.title[0]?.children) && Array.isArray(props?.title[1]?.children)}
+          <h1 class="mb-[1.62rem] text-[1.625rem] font-semibold lg:text-[3rem]">
+            <!-- text-white -->
+            {props?.title[0]?.children[0]?.text}
+
+            <span
+              class="bg-gradient-to-r from-[#731AFF] to-[#FCCEEE] bg-clip-text text-transparent">
+              {props.title[1].children[0]?.text}
+            </span>
+          </h1>
+          <!-- style="background: var(--Lini, linear-gradient(75deg, #731AFF 31%, #FCCEEE 100%));" -->
+          <!-- class="text-[linear-gradient(75deg, #731AFF 31%, #FCCEEE 100%)]" -->
+          <!-- style="linear-gradient(75deg, #731AFF 31%, #FCCEEE 100%)" -->
+        {/if}
+
+        <!-- <h1
           class="mb-[1.62rem] text-[1.625rem] font-semibold text-white lg:text-[3rem]">
           {props.title}
-        </h1>
+        </h1> -->
 
         <h2
           class="mt-[1.25rem] max-w-[41.1875rem] text-[1.25rem] font-normal leading-[1.875rem] text-white">

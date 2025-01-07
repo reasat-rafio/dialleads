@@ -12,8 +12,14 @@ const query = groq`
     
     sections[]{
       ...,
-      
+    },
+    "industryUseCases": *[_type == "industryUseCases" && slug.current == $slug][0]{
+       ...,
+       ${asset('useCaseImage')},
+       
     }
+
+
     }
 `;
 
@@ -23,6 +29,8 @@ export const load: PageServerLoad = async ({ params }) => {
   const data: IndustryUseCasesProps = await sanityClient.fetch(query, { slug });
 
   // if (!data) throw error(404, { message: 'Page not found' });
+
+  console.log('data 🔔🖼️🖼️🖼️', data);
 
   return {
     page: data,
