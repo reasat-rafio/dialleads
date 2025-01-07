@@ -9,9 +9,10 @@
   interface Props {
     nav: Nav;
     logo: SanityImageWithAlt;
+    className: string;
   }
 
-  let { nav, logo }: Props = $props();
+  let { nav, logo, className }: Props = $props();
 
   let dialogOpen = $state(false);
   let showMenu = $state(false);
@@ -54,10 +55,12 @@
 </script>
 
 <div
-  class="  ml-[1.06rem] mr-[1.13rem] mt-4 h-[57.5rem]
-max-h-[57.5rem]
+
+  class="{className} ml-[1.06rem] mr-[1.13rem] mt-4
+
   rounded-[1.875rem]
    bg-hero-gradient">
+  <!-- max-h-[57.5rem]  h-[57.5rem] min-h-[57.5rem]-->
   <div class="mx-auto max-w-[75rem] pt-[1.81rem]">
     <div class="flex justify-evenly xl:justify-between">
       <div class="flex items-center gap-[0.49rem]">
@@ -114,10 +117,10 @@ max-h-[57.5rem]
       <div>
         <Button
           variant="link"
-          class="rounded-[0.75rem] 
-          bg-primary font-geist text-white w-[8.625rem] 
-          h-[2.875rem] px-5 py-[.88rem] border border-violet-600
-          font-medium
+          class="h-[2.875rem] 
+          w-[8.625rem] rounded-[0.75rem] border border-violet-600 
+          bg-primary px-5 py-[.88rem] font-geist font-medium
+          text-white
           ">
           Get Started
         </Button>
