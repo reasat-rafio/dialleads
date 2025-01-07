@@ -25,12 +25,12 @@
         {props.description}
       </p>
     </div>
-    <div class="col-span-5 lg:col-span-3">
+    <div class="col-span-5 mx-auto lg:col-span-3">
       <div
         class="grid grid-cols-2 justify-center gap-x-[1.81rem] gap-y-[1.81rem]">
         {#each props.subDetails as subDetail}
           <div
-            class="col-span-2 w-fit max-w-fit rounded-[1rem] border p-[1.125rem] shadow-sm md:col-span-1 lg:p-[1.88rem]">
+            class="col-span-2 min-h-[14.56rem] w-fit max-w-fit rounded-[1rem] border p-[1.125rem] shadow-sm md:col-span-1 lg:p-[1.88rem]">
             <SanityImage
               class="h-[3.125rem] w-[3.125rem]"
               src={subDetail.featureImage}

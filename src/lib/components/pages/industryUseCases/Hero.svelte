@@ -70,17 +70,18 @@
     <div
       class={cn(
         'container mx-auto h-full w-full lg:h-[10.5rem]',
-        'max-w-sm sm:max-w-lg md:max-w-3xl lg:max-w-5xl xl:max-w-7xl',
+        'sm:min-w-lg max-w-sm md:max-w-3xl lg:max-w-5xl xl:max-w-7xl',
         'flex  sm:flex-col ',
-        'border border-red-600 text-white',
+        'text-white',
       )}>
-      <div class="grid w-full grid-cols-12 lg:gap-x-[100px]">
-        <div
-          class="col-span-12 w-fit border border-green-800 lg:col-span-6 lg:w-full xl:col-span-8">
-          <div class="flex w-[19.0625rem] flex-col lg:w-[38.4rem]">
+      <div
+        class="grid w-full grid-cols-12 gap-y-[2.52rem] lg:gap-x-[110px] xl:gap-x-[100px]">
+        <div class="col-span-12 w-full lg:col-span-6 lg:w-full xl:col-span-8">
+          <div
+            class="flex w-[19.0625rem] flex-col text-center lg:w-[38.4rem] lg:text-left">
             {#if Array.isArray(props?.title[0]?.children) && Array.isArray(props?.title[1]?.children)}
               <h1
-                class="mb-[1.62rem] w-fit text-left text-[1.625rem] font-semibold lg:max-w-[40.18rem] lg:text-[3rem]">
+                class="mb-[1.62rem] w-fit text-center text-[1.625rem] font-semibold lg:max-w-[40.18rem] lg:text-left lg:text-[3rem]">
                 {props?.title[0]?.children[0]?.text}
 
                 <span
@@ -90,12 +91,12 @@
               </h1>
             {/if}
 
-            <h2 class="text-[1.25rem] font-medium text-white">
+            <h2 class="text-[1.25rem] font-medium text-white lg:pr-5">
               {props.description}
             </h2>
 
             <div
-              class=" mt-6 flex justify-center border lg:mt-[1.88rem] lg:justify-start">
+              class=" mt-6 flex justify-center lg:mt-[1.88rem] lg:justify-start">
               <div
                 class="inline-flex w-full max-w-[14.420rem]
               animate-shine items-center justify-center rounded-xl border-[1px]
@@ -120,10 +121,10 @@
           </div>
         </div>
         <div
-          class="col-span-12 w-fit border border-green-800 lg:col-span-6 xl:col-span-4">
+          class="col-span-12 mr-5 w-fit max-w-[19.75rem] lg:col-span-6 xl:col-span-4">
           <div
             style="background: linear-gradient(242deg, rgba(255, 255, 255, 0.21) 0%, rgba(255, 255, 255, 0.08) 100%);"
-            class="w-[19.75rem] rounded-[1.38rem] border-[0.342px] border-gray-400 bg-transparent p-[0.75rem]">
+            class="w-[19rem] rounded-[1.38rem] border-[0.342px] border-gray-400 bg-transparent p-[0.63rem]">
             <div
               class="flex w-full flex-col rounded-[0.88rem] bg-white p-[0.55rem]">
               <SanityImage
