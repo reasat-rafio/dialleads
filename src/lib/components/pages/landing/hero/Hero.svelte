@@ -14,8 +14,21 @@
 </script>
 
 <svelte:window bind:innerWidth={windowWidth} />
-<div class="absolute top-[5.41rem] px-[0.94rem] lg:top-[9.75rem] xl:px-0">
+<div class="absolute top-[5.41rem] px-[0.94rem] lg:top-[11.49rem] xl:px-0">
   <div class="relative">
+    <div
+      style="background: linear-gradient(242deg, rgba(255, 255, 255, 0.21) 0%, rgba(255, 255, 255, 0.08) 100%);"
+      class="hidden gap-[0.19rem mx-auto mb-[2.12rem] 
+      rounded-[20rem]
+      lg:flex h-10 lg:w-[26.625rem] items-center justify-center">
+      <SanityImage
+        class="h-4 w-4 lg:h-5 lg:w-5"
+        src={hero?.sectionIcon}
+        sizes="5vw"
+        imageUrlBuilder={imgBuilder}
+        alt="" />
+      <p class="text-nowrap text-sm lg:text-lg font-medium text-white">{hero?.sectionName}</p>
+    </div>
     <div class="mx-auto w-full text-center lg:h-[10.5rem] lg:w-[50.6875rem]">
       {#if Array.isArray(hero?.title[0]?.children) && Array.isArray(hero?.title[1]?.children)}
         <h2
@@ -60,9 +73,9 @@
     </div>
 
     <div
-      class=" relative mx-auto mt-[4rem] 
-      flex h-[17.8rem] xl:max-h-[17.8rem] 
-      w-full px-4 md:px-0 md:w-[40rem] lg:w-[50rem]  justify-center  lg:mt-[3.8rem] lg:h-[22.5rem] lg:px-0
+      class=" relative mx-auto mt-[4rem]
+      flex h-[17.8rem] w-full
+      justify-center px-4 md:w-[40rem] md:px-0 lg:mt-[3.4rem] lg:h-[22.5rem] lg:w-[50rem] lg:px-0 xl:max-h-[17.8rem]
       xl:w-[75rem]
       {windowWidth <= 320 ? 'mt-[5.95rem] h-full' : 'h-[17.8rem]'}
       ">
