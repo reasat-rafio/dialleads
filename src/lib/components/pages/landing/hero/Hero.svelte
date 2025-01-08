@@ -18,7 +18,7 @@
   <div class="relative">
     <div
       style="background: linear-gradient(242deg, rgba(255, 255, 255, 0.21) 0%, rgba(255, 255, 255, 0.08) 100%);"
-      class="hidden gap-[0.19rem mx-auto mb-[2.12rem] 
+      class="hidden gap-[0.375rem] mx-auto mb-[2.12rem] 
       rounded-[20rem]
       lg:flex h-10 lg:w-[26.625rem] items-center justify-center">
       <SanityImage
