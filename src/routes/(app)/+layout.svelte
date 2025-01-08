@@ -1,6 +1,6 @@
 <script lang="ts">
-  import FooterCopy from '$lib/components/layout/mobileNavbar/FooterCopy.svelte';
   import { page } from '$app/state';
+  import Footer from '$lib/components/layout/Footer.svelte';
   import Navbar from '$lib/components/layout/Navbar.svelte';
   import { urlFor } from '$lib/sanity/sanity-client';
 
@@ -32,5 +32,5 @@
 
   {@render children()}
 
-  <FooterCopy {footer} />
+  <Footer {footer} />
 </div>

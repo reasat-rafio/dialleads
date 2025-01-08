@@ -1,154 +1,144 @@
 <script lang="ts">
+  import Button from '$lib/components/ui/button/button.svelte';
   import { imgBuilder } from '$lib/sanity/sanity-client';
   import SanityImage from '$lib/sanity/sanity-image/sanity-image.svelte';
   import type { SiteDataProps } from '../../../types/site.types';
-  import Button from '../ui/button/button.svelte';
 
   let { footer }: { footer: SiteDataProps['footer'] } = $props();
 </script>
 
-<div class="relative">
+<div class=" relative mt-[20rem] w-full bg-footer-gradient lg:mt-[10.94rem]">
   <div
-    class="relative mx-auto mt-[15rem] h-[74.2rem] w-full
-    bg-footer-gradient
-    lg:h-full">
-    <div>
-      <div
-        class="container px-5 pt-[14rem] lg:py-8 lg:pl-[7.56rem] lg:pr-[8.15rem] lg:pt-[9.34rem]">
-        <div class="grid-cols-12 lg:grid lg:border-b lg:border-gray-700 lg:pb-[3.5rem]">
-          <div class="lg:col-span-6">
-            <div class="flex justify-center gap-x-[0.61rem] lg:justify-normal">
-              <SanityImage
-                class="h-[3.25rem] w-[3.25rem]"
-                src={footer?.companyLogo}
-                sizes="16vw"
-                imageUrlBuilder={imgBuilder} />
-              <h2 class="text-[1.82813rem] font-semibold text-white">
-                {footer?.companyName}
-              </h2>
-            </div>
-            <h2
-              class="mb-[1.5rem] mt-[1.13rem] text-[0.875rem] font-medium text-white opacity-80">
-              {footer?.newsLetterText}
-            </h2>
-            <div
-              class="mb-[1rem] grid max-w-[20.8rem]  md:grid-cols-4 gap-x-[0.5rem] md:max-w-[31.25rem]">
-              <div class="col-span-1 md:col-span-2 lg:col-span-3">
-                <input
-                  type="text"
-                  placeholder="Enter your email"
-                  class=" h-full w-full rounded-[2rem] border border-[#625a5a] bg-[#4F3780] px-[1.25rem] py-[0.5rem] text-white lg:h-full lg:px-[1.25rem]" />
-              </div>
-
-              <button
-                style="background: var(--Lini, linear-gradient(90deg, #7C3AED 0%, #A78BFA 100%));"
-                class="col-span-2 flex h-full w-full lg:w-[9rem] lg:h-[3.0625rem] basis-1 
-                items-center justify-center gap-x-[0.5rem] 
-                rounded-[1.88rem] px-[1.5rem] py-[1rem] font-semibold text-white lg:col-span-1">
-                Subscribe
-                <span>
-                  <svg
-                    class="mt-1 w-[0.875rem]"
-                    viewBox="0 0 15 13"
-                    fill="none"
-                    xmlns="http://www.w3.org/2000/svg">
-                    <path
-                      id="Vector 1"
-                      d="M14.5303 7.03033C14.8232 6.73744 14.8232 6.26256 14.5303 5.96967L9.75736 1.1967C9.46447 0.903806 8.98959 0.903806 8.6967 1.1967C8.40381 1.48959 8.40381 1.96447 8.6967 2.25736L12.9393 6.5L8.6967 10.7426C8.40381 11.0355 8.40381 11.5104 8.6967 11.8033C8.98959 12.0962 9.46447 12.0962 9.75736 11.8033L14.5303 7.03033ZM0 7.25H14V5.75H0V7.25Z"
-                      fill="white" />
-                  </svg>
-                </span>
-              </button>
-            </div>
-            <h2
-              class="max-w-[31.25rem] text-[0.875rem] font-medium text-white opacity-80">
-              {footer?.newsLetter2ndText}
-            </h2>
-          </div>
-          <div
-            class="flex h-[14rem] flex-col justify-between lg:col-span-6 lg:flex-row">
-            <div class="lg:border-gray-700 lg:border-r lg:pr-[5rem]">
-              <h2
-                class="mb-[2rem] mt-[1.06rem] text-[0.9375rem] font-semibold uppercase text-white lg:mt-[0rem]">
-                Browse
-              </h2>
-              <div class="flex flex-col space-y-4">
-                {#each footer?.about as link}
-                  <a
-                    href={link.internalLink}
-                    class=" text-[0.875rem] font-normal text-white opacity-80">
-                    {link?.title}
-                  </a>
-                {/each}
-              </div>
-            </div>
-            <div class='lg:border-gray-700 lg:border-r lg:pr-[5rem]'>
-              <h2
-                class="mb-[2rem] mt-[1.06rem] text-[0.9375rem] font-semibold uppercase text-white lg:mt-[0rem]">
-                ABOUT
-              </h2>
-              <div class="flex flex-col space-y-4">
-                {#each footer?.browse as link}
-                  <a
-                    href={link.internalLink}
-                    class=" text-[0.875rem] font-normal text-white opacity-80">
-                    {link?.title}
-                  </a>
-                {/each}
-              </div>
-            </div>
-            <div>
-              <h2
-                class="mb-[2rem] mt-[1.06rem] text-[0.9375rem] font-semibold uppercase text-white lg:mt-[0rem]">
-                LEGAL
-              </h2>
-              <div class="flex flex-col space-y-4">
-                {#each footer?.legal as link}
-                  <a
-                    href={link.internalLink}
-                    class=" text-[0.875rem] font-normal text-white opacity-80">
-                    {link?.title}
-                  </a>
-                {/each}
-              </div>
-            </div>
-            <div class="lg:hidden">
-              <div
-                class="mb-[2rem] mt-[5.56rem] flex flex-col justify-between opacity-80 md:flex-row">
-                <span class="text-[1rem] font-light text-white">
-                  {footer?.copyRightText}
-                </span>
-                <div
-                  class=" gap-x-auto mt-2 flex justify-between gap-y-[0.75rem] md:gap-x-[1.5rem]">
-                  {#each footer?.subItems as subItem}
-                    <a
-                      href={subItem.internalLink}
-                      class=" text-[0.875rem] font-normal text-white">
-                      {subItem?.title}
-                    </a>
-                  {/each}
-                </div>
-              </div>
-            </div>
-          </div>
+    class="container w-full pb-8 pt-[12.27rem] lg:flex-row xl:px-[7.5rem] lg:pt-[9.63rem]">
+    <div class="flex flex-col justify-between lg:flex-row">
+      <div>
+        <div
+          class="flex items-center justify-center gap-[0.61rem] lg:justify-normal">
+          <SanityImage
+            class="h-[3.25rem] w-[3.25rem]"
+            src={footer?.companyLogo}
+            sizes="16vw"
+            imageUrlBuilder={imgBuilder} />
+          <h4 class="text-[1.82813rem] font-semibold text-white">
+            {footer?.companyName}
+          </h4>
         </div>
-        <div class="hidden lg:block ">
-          <div
-            class="mb-[2rem] mt-[5.56rem] flex flex-col justify-between opacity-80 md:flex-row">
-            <span class="text-[1rem] font-light text-white">
-              {footer?.copyRightText}
+        <h5
+          class="mb-[1.5rem] mt-[1.13rem] text-[0.875rem] font-medium text-white opacity-80">
+          {footer?.newsLetterText}
+        </h5>
+        <div class="flex flex-col md:flex-row gap-2">
+          <input
+            type="text"
+            placeholder="Enter your email"
+            class=" h-[3rem] w-full rounded-[2rem] border border-[#625a5a]
+            bg-[#4F3780] px-[1.25rem] py-[0.5rem] text-white lg:h-[3rem] lg:w-[21.75rem] lg:px-[1.25rem]" />
+          <button
+            style="background: var(--Lini, linear-gradient(90deg, #7C3AED 0%, #A78BFA 100%));"
+            class="flex h-[3rem] w-[8.1875rem]
+            items-center justify-center gap-x-[0.5rem]
+            rounded-[1.88rem] px-[1.5rem] py-[1rem] font-semibold text-white lg:col-span-1 lg:h-[3.0625rem] lg:w-[9rem]">
+            Subscribe
+            <span>
+              <svg
+                class="mt-1 w-[0.875rem]"
+                viewBox="0 0 15 13"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg">
+                <path
+                  id="Vector 1"
+                  d="M14.5303 7.03033C14.8232 6.73744 14.8232 6.26256 14.5303 5.96967L9.75736 1.1967C9.46447 0.903806 8.98959 0.903806 8.6967 1.1967C8.40381 1.48959 8.40381 1.96447 8.6967 2.25736L12.9393 6.5L8.6967 10.7426C8.40381 11.0355 8.40381 11.5104 8.6967 11.8033C8.98959 12.0962 9.46447 12.0962 9.75736 11.8033L14.5303 7.03033ZM0 7.25H14V5.75H0V7.25Z"
+                  fill="white" />
+              </svg>
             </span>
-            <div
-              class=" gap-x-auto flex justify-between gap-y-[0.75rem] md:gap-x-[1.5rem]">
-              {#each footer?.subItems as subItem}
-                <a
-                  href={subItem.internalLink}
-                  class=" text-[0.875rem] font-normal text-white">
-                  {subItem?.title}
-                </a>
-              {/each}
-            </div>
-          </div>
+          </button>
+        </div>
+        <h4
+          class="mt-[1.06rem] text-[0.875rem] font-medium text-white opacity-80 lg:w-[31.25rem]">
+          {footer?.newsLetter2ndText}
+        </h4>
+      </div>
+      <div
+        class="border-b border-r-0 pb-4 pr-[5rem] lg:border-b-0 lg:border-r lg:border-gray-700 lg:pb-0">
+        <h2
+          class="mb-[2rem] mt-[1.06rem] text-[0.9375rem] font-semibold uppercase text-white lg:mt-[0rem]">
+          Browse
+        </h2>
+        <div class="flex flex-col space-y-4">
+          {#each footer?.browse as link}
+            <a
+              href={link.internalLink}
+              class=" text-[0.875rem] font-normal text-white opacity-80">
+              {link?.title}
+            </a>
+          {/each}
+        </div>
+      </div>
+      <div
+        class="border-b border-r-0 pb-4 pr-[5rem] lg:border-b-0 lg:border-r lg:border-gray-700 lg:pb-0">
+        <h2
+          class="mb-[2rem] mt-[1.06rem] text-[0.9375rem] font-semibold uppercase text-white lg:mt-[0rem]">
+          About
+        </h2>
+        <div class="flex flex-col space-y-4">
+          {#each footer?.about as link}
+            <a
+              href={link.internalLink}
+              class=" text-[0.875rem] font-normal text-white opacity-80">
+              {link?.title}
+            </a>
+          {/each}
+        </div>
+      </div>
+      <div class="">
+        <h2
+          class="mb-[2rem] mt-[1.06rem] text-[0.9375rem] font-semibold uppercase text-white lg:mt-[0rem]">
+          Legal
+        </h2>
+        <div class="flex flex-col space-y-4">
+          {#each footer?.legal as link}
+            <a
+              href={link.internalLink}
+              class=" text-[0.875rem] font-normal text-white opacity-80">
+              {link?.title}
+            </a>
+          {/each}
+        </div>
+      </div>
+    </div>
+    <div class="mt-14 hidden border-t border-gray-700 lg:block">
+      <div
+        class="mb-[2rem] mt-8 flex flex-col justify-between opacity-80 md:flex-row">
+        <span class="text-[1rem] font-light text-white">
+          {footer?.copyRightText}
+        </span>
+        <div
+          class=" gap-x-auto flex justify-between gap-y-[0.75rem] md:gap-x-[1.5rem]">
+          {#each footer?.subItems as subItem}
+            <a
+              href={subItem.internalLink}
+              class=" text-[0.875rem] font-normal text-white">
+              {subItem?.title}
+            </a>
+          {/each}
+        </div>
+      </div>
+    </div>
+    <div class="mt-14 border-t border-gray-700 lg:hidden">
+      <div
+        class="mb-[2rem] mt-[2rem] flex flex-col justify-between opacity-80 md:flex-row">
+        <span class="text-[1rem] font-light text-white">
+          {footer?.copyRightText}
+        </span>
+        <div
+          class=" gap-x-auto mt-2 flex justify-between gap-y-[0.75rem] md:gap-x-[1.5rem]">
+          {#each footer?.subItems as subItem}
+            <a
+              href={subItem.internalLink}
+              class=" text-[0.875rem] font-normal text-white">
+              {subItem?.title}
+            </a>
+          {/each}
         </div>
       </div>
     </div>
@@ -158,30 +148,32 @@
   <div
     class="
     absolute
-    -top-[14rem] left-1/2 mx-auto
-    lg:h-[13.625rem] w-[20rem] -translate-x-1/2 rounded-[1.875rem] bg-violet-900
-    bg-gradient-to-t
-  from-violet-500
- to-violet-800 pb-[3.12rem] lg:pl-[6.44rem]
-    lg:pr-[6.38rem] pt-[3.12rem]
-   lg:-top-[9rem] lg:bg-footer-gradient
-   lg:pb-0
-   xl:w-fit
+    -top-[16rem]
+     left-1/2 mx-auto
+    w-[20rem] -translate-x-1/2 rounded-[1.875rem] bg-violet-900 bg-gradient-to-t
+    from-violet-500
+  to-violet-800
+ pb-[3.12rem] pt-5 xl:pt-[3.12rem] lg:-top-[9rem]
+    lg:h-[13.625rem] lg:w-full xl:w-fit
+   lg:bg-footer-gradient lg:pb-0
+   lg:pl-[6.44rem]
+   lg:pr-[6.38rem]
  ">
-    <div class="flex flex-col lg:flex-row gap-[3.25rem] items-center">
+    <div class="flex flex-col items-center gap-[3.25rem] lg:flex-row">
       {#if Array.isArray(footer?.joinMoreTitle[0]?.children) && Array.isArray(footer?.joinMoreTitle[1]?.children) && Array.isArray(footer?.joinMoreTitle[2]?.children)}
         <h3
           class="
-          text-center 
-          lg:text-left
-          lg:h-[7.375rem]
-          w-[12.75rem]
           h-[11.25rem]
-          lg:w-[47.9375rem]
-          font-geist text-[1.675rem]
-           font-semibold lg:leading-[3.75rem] lg:tracking-[-0.02625rem] text-[#FFF] lg:text-[2.62rem]">
+          w-[12.75rem]
+          text-center
+          font-geist
+          text-[1.675rem]
+          font-semibold
+          text-[#FFF] lg:h-[7.375rem]
+           lg:w-[47.9375rem] lg:text-left lg:text-[2.62rem] lg:leading-[3.75rem] lg:tracking-[-0.02625rem]">
           {footer?.joinMoreTitle[0]?.children[0]?.text}
-          <span class="bg-gradient-to-r from-purple-50 to-purple-600 bg-clip-text text-transparent">
+          <span
+            class="bg-gradient-to-r from-purple-50 to-purple-600 bg-clip-text text-transparent">
             {footer?.joinMoreTitle[1]?.children[0]?.text}
           </span>
           {footer?.joinMoreTitle[2]?.children[0]?.text}
@@ -196,9 +188,9 @@
             {footer?.getStartedbtnText}
           </Button>
           <p
-            class="text-nowrap text-[0.875rem] font-normal leading-[0.90738rem] text-white
-          [text-edge:cap] text-center
-          mt-8
+            class="mt-8 text-nowrap text-center text-[0.875rem] font-normal
+          leading-[0.90738rem] text-white
+          [text-edge:cap]
           ">
             {footer?.sideText}
           </p>
