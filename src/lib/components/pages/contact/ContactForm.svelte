@@ -7,8 +7,8 @@
 </script>
 
 <div
-  class="container mb-10 mt-[7.16rem] grid min-h-[50rem] max-w-[75rem] grid-cols-2 gap-x-[1.88rem] border border-white">
-  <div class="col-span-1">
+  class="container mb-10 mt-[2.5rem] grid min-h-[10rem] max-w-[75rem] grid-cols-2 gap-x-[1.88rem] gap-y-[2.5rem] border border-white lg:mt-[7.16rem] lg:min-h-[40rem]">
+  <div class="col-span-2 md:col-span-1">
     <div class="h-full w-full">
       <SanityImage
         class="h-full w-full "
@@ -17,5 +17,5 @@
         imageUrlBuilder={imgBuilder} />
     </div>
   </div>
-  <div class="col-span-1 border border-black">contact form</div>
+  <div class="col-span-2 border border-black md:col-span-1">contact form</div>
 </div>
