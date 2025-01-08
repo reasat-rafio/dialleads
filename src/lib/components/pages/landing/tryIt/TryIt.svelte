@@ -140,7 +140,7 @@
         </div>
         <div class="mt-[1.5rem] h-full w-full md:mt-[2rem]">
           <form
-            class="flex flex-col items-center justify-center gap-y-[0.75rem] md:gap-y-[1.88rem]"
+            class=" flex flex-col items-center justify-center gap-y-[0.75rem] md:gap-y-[1.88rem]"
             method="POST"
             use:enhance>
             <div
@@ -279,7 +279,7 @@
             </div>
 
             <Form.Button
-              class="min-h-[3.5rem] w-fit min-w-[15rem] rounded-[0.75rem] bg-[#8B5CF6] px-[5.2rem] md:min-h-[3.75rem] md:px-[4.25rem]">
+              class=" min-h-[3.5rem] min-w-[17rem]   rounded-[0.75rem]  bg-[#8B5CF6]  md:min-h-[3.75rem] md:px-[4.25rem]">
               Call me now
             </Form.Button>
           </form>
