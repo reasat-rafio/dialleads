@@ -9,9 +9,10 @@
   interface Props {
     nav: Nav;
     logo: SanityImageWithAlt;
+    className: string;
   }
 
-  let { nav, logo }: Props = $props();
+  let { nav, logo, className }: Props = $props();
 
   let isPopupVisible = $state(false);
   let dialogOpen = $state(false);
@@ -59,15 +60,15 @@
   }
 </script>
 
-<div class="mx-[0.31rem]">
+<div class="relative mx-[0.31rem]">
   <div
-    class=" mt-2 h-[43.1rem]
-  rounded-[1.25rem]
-  bg-hero-gradient
-  lg:rounded-[1.875rem]">
+    class=" {className} mt-2
+    rounded-[1.25rem]
+    bg-hero-gradient
+    lg:rounded-[1.875rem]">
     <div class="relative mx-[0.94rem] flex justify-end pt-4">
       <Button
-        class=" right-0 bg-transparent hover:bg-transparent"
+        class="z-50 right-0 bg-transparent hover:bg-transparent"
         onclick={togglePopup}>
         {#if isPopupVisible}
           <!-- Close (X) Icon -->
@@ -132,7 +133,7 @@
       {#if isPopupVisible}
         <div
           class="absolute left-1/2 top-1/2 z-50 w-full -translate-x-1/2 transform rounded-lg bg-white p-6
-  shadow-lg">
+            shadow-lg">
           <div class="flex flex-col justify-start gap-5">
             {#each nav?.menu as item}
               <div
