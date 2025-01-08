@@ -158,8 +158,6 @@ export const load: PageServerLoad = async ({ setHeaders }) => {
 
 export const actions = {
   create: async ({ request }) => {
-    // const formData = await request.formData();
-
     const form = await superValidate(request, zod(formSchema));
 
     if (!form.valid) {
@@ -168,7 +166,6 @@ export const actions = {
       });
     }
 
-    console.log('form : ⚡  +page.server.ts : ', form.data);
     return message(
       form,
       'validation passed successfully .. form submitted .. 🟢 +page.server.ts',
