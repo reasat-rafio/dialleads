@@ -7,7 +7,7 @@ import type { LandingPageProps } from '../../types/landing.types';
 import { error } from '@sveltejs/kit';
 import { formSchema } from '$lib/formValidation';
 import { zod } from 'sveltekit-superforms/adapters';
-import { superValidate } from 'sveltekit-superforms';
+import { message, superValidate } from 'sveltekit-superforms';
 const query = groq`
     *[_id == "landingPage"][0]{
         ...,
@@ -16,12 +16,12 @@ const query = groq`
             ...,
             ${asset('sectionImage')},
             ${asset('useCaseSectionImage')},
-            
+
               testimonials[]-> {
         ...,
         ${asset('companyLogo')},
         ${asset('reviewerImage')},
-        
+
       },
 
 
@@ -96,7 +96,7 @@ const query = groq`
           _type,
           _id,
           slug,
-          description, 
+          description,
           ${asset('useCaseImage')},
         },
         "pricing": *[_type == "pricing"][0]{
@@ -137,15 +137,17 @@ const query = groq`
     }
 `;
 
-export const load: PageServerLoad = async () => {
+export const load: PageServerLoad = async ({ setHeaders }) => {
   const data: LandingPageProps = await sanityClient.fetch(query);
+  setHeaders({ 'cache-control': 'public, max-age=3600' });
 
   if (!data) throw error(404, { message: 'Not found' });
 
   return { page: data, testCallForm: await superValidate(zod(formSchema)) };
 };
+
 export const actions = {
-  create: async ({ request }: any) => {
+  create: async ({ request }) => {
     // const formData = await request.formData();
 
     const form = await superValidate(request, zod(formSchema));

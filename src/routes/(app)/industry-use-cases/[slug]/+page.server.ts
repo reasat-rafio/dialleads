@@ -9,26 +9,26 @@ import type { IndustryUseCasesProps } from '../../../../types/industryUseCases.t
 
 const query = groq`
 	*[_type == "industryUseCasePage" &&  slug.current == $slug][0]{
-    
+
     sections[]{
       ...,
     },
     "industryUseCases": *[_type == "industryUseCases" && slug.current == $slug][0]{
        ...,
        ${asset('useCaseImage')},
-       
+
     }
 
 
     }
 `;
 
-export const load: PageServerLoad = async ({ params }) => {
+export const load: PageServerLoad = async ({ params, setHeaders }) => {
   const { slug } = params;
 
   const data: IndustryUseCasesProps = await sanityClient.fetch(query, { slug });
-
-  // if (!data) throw error(404, { message: 'Page not found' });
+  setHeaders({ 'cache-control': 'public, max-age=3600' });
+  if (!data) error(404, { message: 'Page not found' });
 
   console.log('data 🔔🖼️🖼️🖼️', data);
 
