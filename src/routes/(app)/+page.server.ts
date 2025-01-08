@@ -1,5 +1,4 @@
 import { asset } from '$lib/sanity/sanity-image';
-
 import groq from 'groq';
 import type { PageServerLoad } from './$types';
 import { sanityClient } from '$lib/sanity/sanity-client';
@@ -7,7 +6,8 @@ import type { LandingPageProps } from '../../types/landing.types';
 import { error } from '@sveltejs/kit';
 import { formSchema } from '$lib/formValidation';
 import { zod } from 'sveltekit-superforms/adapters';
-import { superValidate } from 'sveltekit-superforms';
+import { message, superValidate } from 'sveltekit-superforms';
+
 const query = groq`
     *[_id == "landingPage"][0]{
         ...,
@@ -91,13 +91,14 @@ const query = groq`
         },
         },
         },
+
         "industries": *[_type == "industryUseCasePage"]{
-          title,
+
+
+          ...,
           _type,
-          _id,
-          slug,
-          description, 
           ${asset('useCaseImage')},
+          ${asset('useCaseImageForAI')},
         },
         "pricing": *[_type == "pricing"][0]{
             saveUpTo,

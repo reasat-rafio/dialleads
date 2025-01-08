@@ -47,12 +47,55 @@ const industryUseCasePage = defineType({
         source: 'title',
       },
     }),
+
     // TItle rakhte hobe .. slug generate korte hobe ..
 
     defineField({
       name: 'seo',
       type: 'seo',
     }),
+
+    defineField({
+      name: 'useCaseImageForAI',
+      type: 'image',
+      title: 'Use Case Image For AI',
+      // validation: (Rule) => Rule.required(),
+      options: { hotspot: true },
+      fields: [
+        {
+          name: 'alt',
+          title: 'Alternative Text',
+          description: 'Important for SEO and accessibility',
+          type: 'string',
+          // validation: (Rule) => Rule.required(),
+        },
+      ],
+    }),
+    defineField({
+      name: 'useCaseTitleForAI',
+      title: 'Use Case Title For AI ',
+      type: 'string',
+      // validation: (Rule) => Rule.required(),
+    }),
+
+    defineField({
+      name: 'useCaseSubTitleForAI',
+      title: 'Use Case Sub Title For AI',
+      type: 'string',
+      // validation: (Rule) => Rule.required(),
+    }),
+
+    defineField({
+      name: 'mp3File',
+      title: 'MP3 File',
+      type: 'file',
+      description: 'Upload an MP3 file',
+      options: {
+        accept: 'audio/mpeg',
+      },
+      // validation: (Rule) => Rule.required(),
+    }),
+
     defineField({
       name: 'sections',
       type: 'array',

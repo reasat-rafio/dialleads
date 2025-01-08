@@ -29,7 +29,7 @@
       {:else if props._type === 'landing.features'}
         <Features {props} />
       {:else if props._type === 'landing.useCase'}
-        <UseCase {props} />
+        <UseCase {props} {industries} />
       {:else if props._type === 'landing.industry'}
         <Industries {props} {industries} />
       {:else if props._type === 'landing.clients'}

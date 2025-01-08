@@ -10,24 +10,36 @@ import type { string } from 'zod';
 export interface IndustryUseCasesProps {
   seo?: SeoProps;
   sections: Section[];
-  industryUseCases: IndustryUseCaseProps;
+
+  title: string;
+  description: string;
+  useCaseImageForAI: SanityImageWithAlt;
+  useCaseImage: SanityImageWithAlt;
+
+  slug: any;
+
+  useCaseTitleForAI: string;
+  useCaseSubTitleForAI: string;
+  mp3File: any;
 }
 
 type Section = HeroProps | DetailsProps | FeaturesProps | StatProps;
 
 export interface IndustryUseCaseProps {
-  useCaseTitle: string;
-  useCaseImage: SanityImageWithAlt;
+  useCaseTitleForAI: string;
+  useCaseImageForAI: SanityImageWithAlt;
   slug: string;
+
+  useCaseSubTitleForAI: string;
   mp3File: any;
-  useCaseSubTitle: string;
-  industryName: string;
 }
 export interface HeroProps {
   sectionName: string;
   title: PortableTextBlock[];
   description: string;
   link: Link;
+
+  slug: string;
 }
 
 export interface DetailsProps {
