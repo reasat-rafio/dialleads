@@ -120,7 +120,7 @@
           </div>
         </div>
         <div
-          class="col-span-12 ml-0 mr-5 w-fit max-w-[19.75rem] lg:col-span-6 xl:col-span-4 xl:ml-[2rem]">
+          class="col-span-12 mr-5 w-fit max-w-[19.75rem] lg:col-span-6 xl:col-span-4">
           <div
             style="background: linear-gradient(242deg, rgba(255, 255, 255, 0.21) 0%, rgba(255, 255, 255, 0.08) 100%);"
             class="w-[19rem] rounded-[1.38rem] border-[0.342px] border-gray-400 bg-transparent p-[0.63rem]">
