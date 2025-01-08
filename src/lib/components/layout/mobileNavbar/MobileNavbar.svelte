@@ -62,13 +62,18 @@
 
 <div class="relative mx-[0.31rem]">
   <div
-    class=" {className} mt-2
-    rounded-[1.25rem]
-    bg-hero-gradient
-    lg:rounded-[1.875rem]">
+    class=" {className} relative
+    mt-2
+    overflow-hidden
+    rounded-[1.25rem] bg-hero-gradient lg:rounded-[1.875rem]">
+    <img
+      src="/grid.png"
+      alt="grid overlay"
+      class="pointer-events-none absolute inset-0 h-full w-full opacity-100 mix-blend-overlay" />
+
     <div class="relative mx-[0.94rem] flex justify-end pt-4">
       <Button
-        class="z-50 right-0 bg-transparent hover:bg-transparent"
+        class="right-0 z-50 bg-transparent hover:bg-transparent"
         onclick={togglePopup}>
         {#if isPopupVisible}
           <!-- Close (X) Icon -->

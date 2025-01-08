@@ -74,6 +74,8 @@
       <MobileNavbar className="h-[53.1rem]" {nav} {logo} />
     {:else if pathName == '/pricing'}
       <MobileNavbar className="h-[43.1rem]" {nav} {logo} />
+    {:else}
+      <MobileNavbar className="h-[25.625rem]" {nav} {logo} />
     {/if}
   </div>
 </div>

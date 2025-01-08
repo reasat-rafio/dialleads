@@ -18,7 +18,7 @@
         <div
           class="mb-[0.75rem] flex gap-x-[0.5rem] rounded-full border px-[1.52rem] py-[0.52rem] lg:mb-[1.5rem]">
           <SanityImage
-            class=" h-[1.25rem] w-[1.25rem] "
+            class=" h-[1.25rem] w-[1.25rem]  pt-[0.2rem] lg:pt-[0.1rem]"
             src={props?.sectionIcon}
             sizes="05vw"
             imageUrlBuilder={imgBuilder} />
@@ -28,7 +28,9 @@
         </div>
 
         {#if Array.isArray(props?.title[0]?.children) && Array.isArray(props?.title[1]?.children)}
-          <h1 class="mb-[1.62rem] text-[1.625rem] font-semibold lg:text-[3rem]">
+          <h1
+            class=" text-[1.625rem] font-semibold leading-[1.95rem] lg:text-[3rem] lg:leading-[4.495rem]">
+            <!-- mb-[1.62rem] -->
             {props?.title[0]?.children[0]?.text}
 
             <span
@@ -39,7 +41,7 @@
         {/if}
 
         <h2
-          class="mt-[1.25rem] max-w-[41.1875rem] text-[1.25rem] font-normal leading-[1.875rem] text-white">
+          class="mt-[0.62rem] max-w-[41.1875rem] text-[1rem] font-normal leading-[1.5rem] text-white lg:mt-[1.25rem] lg:text-[1.25rem] lg:leading-[1.875rem]">
           {props.description}
         </h2>
       </div>
