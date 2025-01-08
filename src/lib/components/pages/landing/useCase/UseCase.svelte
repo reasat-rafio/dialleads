@@ -38,7 +38,6 @@
     }
   });
 
-  let showPlayIcon = $state(false);
   let playStates = $state<boolean[]>([]);
 
   let waveforms = [];
@@ -58,7 +57,7 @@
 
   // Initialize WaveSurfer instances on mount
   onMount(() => {
-    props.useCases.forEach((useCase, i) => {
+    industries.forEach((useCase: any, i: any) => {
       const waveformElement: any = document.getElementById(`waveform-${i}`);
       const mp3FileUrl = resolveMp3Url(useCase.mp3File.asset._ref); // Resolve URL
 
@@ -231,9 +230,3 @@
     </div>
   </div>
 </div>
-
-<!-- 
-{
-  showPlayIcon = !showPlayIcon;
-  waveSurferInstances[index]?.playPause();
-} -->
