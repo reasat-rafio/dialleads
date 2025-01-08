@@ -95,7 +95,9 @@
             {/if}
             {#if item?.moreLinks && activeDropdown === item?.link?.title}
               <div
-                class="absolute left-0 top-5 mt-2 w-48 rounded-md bg-white opacity-0 shadow-lg transition-opacity delay-150 duration-500 fade-in"
+                class="absolute left-0 top-5 mt-2 w-48 rounded-md bg-white
+                z-50  
+                shadow-lg transition-opacity delay-150 duration-500 fade-in"
                 class:opacity-100={activeDropdown === item?.link?.title}>
                 {#each item?.moreLinks as link}
                   <a
