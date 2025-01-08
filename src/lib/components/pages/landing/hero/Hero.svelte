@@ -20,6 +20,8 @@
       style="background: linear-gradient(242deg, rgba(255, 255, 255, 0.21) 0%, rgba(255, 255, 255, 0.08) 100%);"
       class="hidden gap-[0.375rem] mx-auto mb-[2.12rem] 
       rounded-[20rem]
+      py-2
+  
       lg:flex h-10 lg:w-[26.625rem] items-center justify-center">
       <SanityImage
         class="h-4 w-4 lg:h-5 lg:w-5"
