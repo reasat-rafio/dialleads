@@ -153,7 +153,7 @@
     w-[20rem] -translate-x-1/2 rounded-[1.875rem] bg-violet-900 bg-gradient-to-t
     from-violet-500
   to-violet-800
- pb-[3.12rem] pt-5 xl:pt-[3.12rem] lg:-top-[9rem]
+ pb-[3.12rem] pt-5 xl:pt-[3.12rem] lg:-top-[7rem]
     lg:h-[13.625rem] lg:w-full xl:w-fit
    lg:bg-footer-gradient lg:pb-0
    lg:pl-[6.44rem]
