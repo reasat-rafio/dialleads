@@ -5,11 +5,13 @@
   import type { SiteDataProps } from '../../../types/site.types';
 
   let { footer }: { footer: SiteDataProps['footer'] } = $props();
+  let windowWidth = $state(0);
 </script>
 
+<svelte:window bind:innerWidth={windowWidth} />
 <div class=" relative mt-[20rem] w-full bg-footer-gradient lg:mt-[10.94rem]">
   <div
-    class="container w-full pb-8 pt-[12.27rem] lg:flex-row xl:px-[7.5rem] lg:pt-[9.63rem]">
+    class="container w-full pb-8 pt-[12.27rem] lg:flex-row lg:pt-[9.63rem] xl:px-[7.5rem]">
     <div class="flex flex-col justify-between lg:flex-row">
       <div>
         <div
@@ -27,12 +29,12 @@
           class="mb-[1.5rem] mt-[1.13rem] text-[0.875rem] font-medium text-white opacity-80">
           {footer?.newsLetterText}
         </h5>
-        <div class="flex flex-col md:flex-row gap-2">
+        <div class="{windowWidth > 320 ? 'flex-row' : 'flex-col'} flex gap-2">
           <input
             type="text"
             placeholder="Enter your email"
-            class=" h-[3rem] w-full rounded-[2rem] border border-[#625a5a]
-            bg-[#4F3780] px-[1.25rem] py-[0.5rem] text-white lg:h-[3rem] lg:w-[21.75rem] lg:px-[1.25rem]" />
+            class=" h-[3rem] w-[12.25rem] rounded-[2rem] border
+            border-[#625a5a] bg-[#4F3780] px-[1.25rem] py-[0.5rem] text-white lg:h-[3rem] lg:w-[21.75rem] lg:px-[1.25rem]" />
           <button
             style="background: var(--Lini, linear-gradient(90deg, #7C3AED 0%, #A78BFA 100%));"
             class="flex h-[3rem] w-[8.1875rem]
@@ -64,7 +66,7 @@
           class="mb-[2rem] mt-[1.06rem] text-[0.9375rem] font-semibold uppercase text-white lg:mt-[0rem]">
           Browse
         </h2>
-        <div class="flex flex-col space-y-4">
+        <div class=" flex flex-col space-y-4">
           {#each footer?.browse as link}
             <a
               href={link.internalLink}
@@ -153,11 +155,11 @@
     w-[20rem] -translate-x-1/2 rounded-[1.875rem] bg-violet-900 bg-gradient-to-t
     from-violet-500
   to-violet-800
- pb-[3.12rem] pt-5 xl:pt-[3.12rem] lg:-top-[7rem]
-    lg:h-[13.625rem] lg:w-full xl:w-fit
-   lg:bg-footer-gradient lg:pb-0
-   lg:pl-[6.44rem]
-   lg:pr-[6.38rem]
+ pb-[3.12rem] pt-5 lg:-top-[7rem] lg:h-[13.625rem]
+    lg:w-full lg:bg-footer-gradient lg:pb-0
+   lg:pl-[6.44rem] lg:pr-[6.38rem]
+   xl:w-fit
+   xl:pt-[3.12rem]
  ">
     <div class="flex flex-col items-center gap-[3.25rem] lg:flex-row">
       {#if Array.isArray(footer?.joinMoreTitle[0]?.children) && Array.isArray(footer?.joinMoreTitle[1]?.children) && Array.isArray(footer?.joinMoreTitle[2]?.children)}
