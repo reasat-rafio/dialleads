@@ -77,7 +77,7 @@
           <div
             role="button"
             tabindex="0"
-            class="relative flex items-center"
+            class="relative flex items-center z-50"
             onmouseover={() => showDropdown(item?.link?.title)}
             onmouseout={hideDropdown}
             onfocus={() => handleFocus(item?.link?.title)}

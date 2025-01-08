@@ -24,7 +24,7 @@
   <div class=" overflow-hidden rounded-[1.26rem] border">
     <Table.Root>
       <Table.Header class="bg-[#F8FAFC]">
-        <Table.Row>
+        <Table.Row class="hover:bg-white">
           <Table.Head class="border-r">
             <div class="pb-[2rem] pt-[1.81rem]">
               <h4
@@ -50,7 +50,7 @@
       <Table.Body>
         <!-- Iterate through features -->
         {#each features as feature}
-          <Table.Row class="border-b-0">
+          <Table.Row class="border-b-0 hover:bg-white">
             <Table.Cell class=" ">
               <div class="flex items-center gap-4 pl-[.8rem] pt-10">
                 <div
@@ -68,7 +68,7 @@
             </Table.Cell>
           </Table.Row>
           {#each feature?.featureLists as list}
-            <Table.Row class="border-b-0 ">
+            <Table.Row class="border-b-0 hover:bg-white">
               <Table.Cell class="pl-[1.88rem] text-lg font-normal text-black">
                 {#each list.featureName.split('*') as part, index}
                   {part}
@@ -121,7 +121,7 @@
               {/each}
             </Table.Row>
           {/each}
-          <Table.Row class="border-b border-dashed ">
+          <Table.Row class="border-b border-dashed hover:bg-white">
             <Table.Cell>
               {#if Array.isArray(feature.instructions)}
                 <div
