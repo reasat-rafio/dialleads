@@ -3,7 +3,6 @@
   import { imgBuilder } from '$lib/sanity/sanity-client';
   import SanityImage from '$lib/sanity/sanity-image/sanity-image.svelte';
   import type { DetailsProps } from '../../../../types/industryUseCases.types';
-
   let { props }: { props: DetailsProps } = $props();
 </script>
 
@@ -14,16 +13,17 @@
       <h1 class="text-[1.625rem] font-semibold lg:text-[2.75rem]">
         {props?.title}
       </h1>
-      <h1 class="mt-[0.62rem] pl-7 text-[1rem] lg:mt-[1rem] lg:text-[1.125rem]">
+      <h1 class="mt-[0.62rem] text-[1rem] lg:mt-[1rem] lg:text-[1.125rem]">
         {props.description}
       </h1>
     </div>
   </div>
 
   <div
-    class="mt-8 grid grid-cols-2 items-center justify-center gap-x-8 gap-y-[2rem]">
+    class=" mt-8 grid grid-cols-2 justify-center gap-x-8 gap-y-[2rem] lg:mt-[5.31rem]">
     {#each props.subDetails as subDetail}
-      <div class="col-span-2 w-full text-center lg:col-span-1">
+      <div
+        class="col-span-2 w-full text-center lg:col-span-1 lg:max-w-[30.5rem]">
         <h1 class=" text-[1rem] font-semibold lg:text-[1.875rem]">
           {subDetail.title}
         </h1>

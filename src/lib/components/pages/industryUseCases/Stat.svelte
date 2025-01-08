@@ -1,13 +1,11 @@
 <script lang="ts">
   import type { StatProps } from '../../../../types/industryUseCases.types';
-
   let { props }: { props: StatProps } = $props();
 </script>
 
 <div
   class="container mx-auto mb-[2.5rem] mt-[7.5rem] lg:mb-[7.5rem] xl:max-w-7xl">
   <div class="grid grid-cols-7 items-center gap-y-[1.88rem] lg:gap-x-[5.81rem]">
-    <!-- gap-x-[5.81rem] -->
     <div class="col-span-7 text-center lg:col-span-3 lg:text-left">
       <h3
         class="mb-[0.63rem] text-[1rem] font-semibold leading-[1.6875rem] text-[#6D28D9] lg:text-[1.125rem]">
