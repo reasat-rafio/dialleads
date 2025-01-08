@@ -68,6 +68,13 @@ const query = groq`
               },
             }
         },
+        dataDriven{
+        ...,
+        sectionDetails{
+        ...,
+        ${asset('sectionIcon')},
+        }
+        },
         whyDialleadsAI{
         ...,
         ${asset('sectionIcon')},

@@ -13,6 +13,7 @@ import industry from './industry';
 
 import whyDialleadsAI from './whyDialleadsAI';
 import whyChooseUs from './whyChooseUs';
+import dataDriven from './dataDriven';
 
 export default [
   landingPage,
@@ -28,4 +29,5 @@ export default [
   features,
   whyDialleadsAI,
   whyChooseUs,
+  dataDriven
 ];
