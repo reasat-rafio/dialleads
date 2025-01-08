@@ -48,8 +48,10 @@ const query = groq`
     }
 `;
 
-export const load: PageServerLoad = async () => {
+export const load: PageServerLoad = async ({ setHeaders }) => {
   const data: PricingPageProps = await sanityClient.fetch(query);
+  setHeaders({ 'cache-control': 'public, max-age=3600' });
+
   if (!data) throw error(404, { message: 'Not found' });
 
   return { page: data };

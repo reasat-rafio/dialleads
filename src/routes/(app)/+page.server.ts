@@ -16,18 +16,19 @@ const query = groq`
             ...,
             ${asset('sectionImage')},
             ${asset('useCaseSectionImage')},
-            
+
               testimonials[]-> {
         ...,
         ${asset('companyLogo')},
         ${asset('reviewerImage')},
-        
+
       },
 
 
         ...,
         hero{
         ...,
+        ${asset('sectionIcon')},
         ${asset('thumbnailForMobile')},
         ${asset('thumbnailForDesktop')},
         ${asset('videoPlayBtnIcon')},
@@ -68,6 +69,13 @@ const query = groq`
               },
             }
         },
+        dataDriven{
+        ...,
+        sectionDetails{
+        ...,
+        ${asset('sectionIcon')},
+        }
+        },
         whyDialleadsAI{
         ...,
         ${asset('sectionIcon')},
@@ -97,6 +105,7 @@ const query = groq`
 
           ...,
           _type,
+
           ${asset('useCaseImage')},
           ${asset('useCaseImageForAI')},
         },
@@ -138,15 +147,17 @@ const query = groq`
     }
 `;
 
-export const load: PageServerLoad = async () => {
+export const load: PageServerLoad = async ({ setHeaders }) => {
   const data: LandingPageProps = await sanityClient.fetch(query);
+  setHeaders({ 'cache-control': 'public, max-age=3600' });
 
   if (!data) throw error(404, { message: 'Not found' });
 
   return { page: data, testCallForm: await superValidate(zod(formSchema)) };
 };
+
 export const actions = {
-  create: async ({ request }: any) => {
+  create: async ({ request }) => {
     // const formData = await request.formData();
 
     const form = await superValidate(request, zod(formSchema));

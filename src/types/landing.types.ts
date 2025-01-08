@@ -20,7 +20,8 @@ type Section =
   | UseCaseProps
   | FeatureProps
   | WhyDialleadsAIProps
-  | WhyChooseUsProps;
+  | WhyChooseUsProps
+  | DataDrivenProps
 
 export interface UseCaseProps {
   _type: 'landing.useCase';
@@ -37,6 +38,7 @@ export interface UseCases {
   useCaseImage: SanityImageWithAlt;
   useCaseTitle: string;
   useCaseSubTitle: string;
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   mp3File: any;
 }
 
@@ -78,6 +80,8 @@ export interface HeroProps {
   hero: Hero;
 }
 export interface Hero {
+  sectionIcon: SanityImageWithAlt;
+  sectionName: string;
   title: PortableTextBlock[];
   subtitle: string;
   video: HeroVideo;
@@ -255,4 +259,21 @@ export interface WhyChooseUsCard {
   cardIcon: SanityImageWithAlt;
   cardDescription: string;
   cardDescriptionFor: string;
+}
+
+export interface DataDrivenProps{
+  _key: string;
+  _type: 'landing.dataDriven';
+  dataDriven: DataDriven;
+}
+export interface DataDriven{
+  title: string;
+  description: string;
+  cta: CTA;
+  text: string;
+  sectionDetails: SectionDetails;
+}
+export interface SectionDetails{
+  sectionName: string;
+  sectionIcon: SanityImageWithAlt;
 }

@@ -26,6 +26,7 @@ const landingPage = defineType({
         { type: 'landing.industry' },
         { type: 'landing.whyDialleadsAI' },
         { type: 'landing.whyChooseUs' },
+        { type: 'landing.dataDriven' },
       ],
     }),
   ],

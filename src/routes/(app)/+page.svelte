@@ -11,6 +11,7 @@
   import WhyDialleadsAi from '$lib/components/pages/landing/whyDialleadsAI/WhyDialleadsAI.svelte';
   import WhyChooseUs from '$lib/components/pages/landing/whyChooseUs/WhyChooseUs.svelte';
   import Hero from '$lib/components/pages/landing/hero/Hero.svelte';
+  import DataDriven from '$lib/components/pages/landing/dataDriven/DataDriven.svelte';
 
   let { data } = $props();
 
@@ -46,6 +47,8 @@
         <WhyDialleadsAi {props} />
       {:else if props._type === 'landing.whyChooseUs'}
         <WhyChooseUs {props} />
+      {:else if props._type === 'landing.dataDriven'}
+        <DataDriven {props} />
       {/if}
     {/each}
   {/if}
