@@ -57,7 +57,17 @@
 <div
   class="{className} px-16 xl:px-0 ml-[1.06rem] mr-[1.13rem] mt-4
   rounded-[1.875rem]
+  relative overflow-hidden
    bg-hero-gradient">
+ 
+
+  <img
+    src="/grid.png"
+    alt="grid overlay"
+    class="pointer-events-none absolute inset-0 h-full w-full opacity-100 mix-blend-overlay" />
+
+
+
   <!-- max-h-[57.5rem]  h-[57.5rem] min-h-[57.5rem]-->
   <div class="mx-auto max-w-[75rem] pt-[1.81rem]">
     <div class="flex justify-between">
@@ -95,8 +105,8 @@
             {/if}
             {#if item?.moreLinks && activeDropdown === item?.link?.title}
               <div
-                class="absolute left-0 top-5 mt-2 w-48 rounded-md bg-white
-                z-50  
+                class="absolute left-0 top-5 z-50 mt-2 w-48 rounded-md
+                bg-white
                 shadow-lg transition-opacity delay-150 duration-500 fade-in"
                 class:opacity-100={activeDropdown === item?.link?.title}>
                 {#each item?.moreLinks as link}
