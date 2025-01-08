@@ -12,6 +12,29 @@ const hero = defineType({
       title: 'Hero',
       type: 'object',
       fields: [
+        {
+          name: 'sectionIcon',
+          title: 'Section Icon',
+          type: 'image',
+          description: 'The icon for the section',
+          options: {
+            hotspot: true,
+          },
+          fields: [
+            {
+              name: 'alt',
+              title: 'Alt Text',
+              type: 'string',
+              description: 'Important for SEO and accessibility',
+            },
+          ]
+        },
+        {
+          name: 'sectionName',
+          title: 'Section Name',
+          type: 'string',
+          description: 'The name of the section',
+        },
         defineField({
           name: 'title',
           type: 'array',
