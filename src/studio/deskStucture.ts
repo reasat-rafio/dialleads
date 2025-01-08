@@ -101,13 +101,13 @@ export const AppStructure: StructureResolver = (S, context: ConfigContext) =>
         icon: TbHome,
       }),
 
-      orderableDocumentListDeskItem({
-        type: 'industryUseCases',
-        S,
-        context,
-        title: 'Industry Use Cases',
-        icon: TbHome,
-      }),
+      // orderableDocumentListDeskItem({
+      //   type: 'industryUseCases',
+      //   S,
+      //   context,
+      //   title: 'Industry Use Cases',
+      //   icon: TbHome,
+      // }),
 
       pageItem(S, {
         schemaType: 'pricing',

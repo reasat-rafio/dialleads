@@ -19,7 +19,7 @@ const link = defineType({
       description: 'Icon to be displayed with the title in Button',
       options: {
         hotspot: true,
-      }
+      },
     }),
     defineField({
       name: 'type',
@@ -37,9 +37,7 @@ const link = defineType({
       name: 'internalLink',
       type: 'string',
       hidden: ({ parent }) => parent?.type !== 'internal',
-      options: {
-        list: [...pages],
-      },
+
       validation: (Rule) =>
         Rule.custom((internalLink, context) =>
           (context?.parent as { type: string })?.type === 'internal' &&
@@ -48,6 +46,11 @@ const link = defineType({
             : true,
         ),
     }),
+
+    // options: {
+    //   list: [...pages],
+    // },
+
     defineField({
       name: 'externalLink',
       type: 'url',

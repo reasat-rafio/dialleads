@@ -12,8 +12,8 @@
   import { cn } from '$lib/utils';
   let {
     props,
-    industryUseCases,
-  }: { props: HeroProps; industryUseCases: IndustryUseCaseProps } = $props();
+    industryUseCase,
+  }: { props: HeroProps; industryUseCase: IndustryUseCaseProps } = $props();
 
   let windowWidth = $state(0);
 
@@ -23,7 +23,7 @@
       .replace('-', '.')}`;
   }
 
-  const mp3FileUrl = resolveMp3Url(industryUseCases?.mp3File.asset._ref);
+  const mp3FileUrl = resolveMp3Url(industryUseCase?.mp3File.asset._ref);
 
   let waveSurferInstance: WaveSurfer | null = null;
 
@@ -128,20 +128,19 @@
               class="flex w-full flex-col rounded-[0.88rem] bg-white p-[0.55rem]">
               <SanityImage
                 class="h-full w-full object-cover"
-                src={industryUseCases?.useCaseImage}
+                src={industryUseCase?.useCaseImageForAI}
                 sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw"
                 imageUrlBuilder={imgBuilder} />
               <h3
                 class="mt-[1.38rem] text-center text-[1.375rem] font-semibold text-black">
-                {industryUseCases.useCaseTitle}
+                {industryUseCase.useCaseTitleForAI}
               </h3>
               <h3
                 class="mb-[1rem] text-center text-[1rem] font-normal text-[#5B6779]">
-                {industryUseCases.useCaseSubTitle}
+                {industryUseCase.useCaseSubTitleForAI}
               </h3>
               <hr />
 
-              <!-- WaveSurfer Audio Player -->
               <div
                 class="mt-[1rem] flex h-[2.4375rem] items-center gap-x-[0.5rem] overflow-hidden">
                 <button

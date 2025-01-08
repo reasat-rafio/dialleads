@@ -6,10 +6,8 @@ import site from './site';
 import testimonials from './testimonials';
 import banner from './banner';
 import video from './video';
-import industryUseCases from './industryUseCases';
 
 export const schemaTypes = [
-  industryUseCases,
   social,
   seo,
   link,

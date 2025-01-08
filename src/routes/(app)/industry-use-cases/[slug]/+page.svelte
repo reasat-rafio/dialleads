@@ -6,7 +6,15 @@
 
   let data = $props();
 
-  let { sections, industryUseCases } = $derived(data?.data?.page);
+  let { sections } = $derived(data?.data?.page);
+
+  const industryUseCase = {
+    useCaseImageForAI: data.data.page.useCaseImageForAI,
+    useCaseSubTitleForAI: data.data.page.useCaseSubTitleForAI,
+    mp3File: data.data.page.mp3File,
+    slug: data.data.page.slug,
+    useCaseTitleForAI: data.data.page.useCaseTitleForAI,
+  };
 </script>
 
 <div class="flex max-w-full flex-col items-center justify-center">
@@ -15,7 +23,7 @@
       {#if props._type === 'industryUseCase.details'}
         <Details {props} />
       {:else if props._type === 'industryUseCase.hero'}
-        <Hero {props} {industryUseCases} />
+        <Hero {props} {industryUseCase} />
       {:else if props._type === 'industryUseCase.features'}
         <Features {props} />
       {:else if props._type === 'industryUseCase.stat'}
