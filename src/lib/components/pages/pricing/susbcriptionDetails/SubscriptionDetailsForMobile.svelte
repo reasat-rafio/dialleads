@@ -39,6 +39,8 @@
             <Tabs.Trigger
               class="w-full border-b border-transparent 
             bg-none text-black
+            text-lg
+            font-semibold
             data-[state=active]:border-b data-[state=active]:border-[#6D28D9]
             data-[state=active]:bg-transparent data-[state=active]:text-black data-[state=active]:shadow-none
             "
