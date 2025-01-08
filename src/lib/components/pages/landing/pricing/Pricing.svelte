@@ -29,11 +29,10 @@
   </div>
   <div class="relative mb-20">
     <div
-      
       class="
      bg-enterpricePlan-gradient-mobile
      md:bg-enterpricePlan-gradient-desktop
-    mx-auto h-[29.3125rem] w-[20.9375rem] overflow-hidden  rounded-[1.25rem] border border-[#E4E4E7] md:w-full lg:h-fit xl:w-[75rem]">
+    mx-auto h-[29.3125rem] w-[20.9375rem] overflow-hidden rounded-[1.25rem] border border-[#E4E4E7] md:w-full lg:h-fit xl:w-[75rem]">
       <SanityImage
         class="h-full w-full bg-cover bg-center bg-no-repeat object-cover "
         src={enterprisePlan?.banner}
