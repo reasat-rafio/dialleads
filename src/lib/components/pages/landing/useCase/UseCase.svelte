@@ -43,6 +43,11 @@
   let waveforms = [];
 
   function resolveMp3Url(ref: any) {
+    if (!ref) {
+      console.error('The mp3File reference is undefined or invalid.');
+      return '';
+    }
+
     return `https://cdn.sanity.io/files/ttleus4d/production/${ref
       .replace('file-', '')
       .replace('-', '.')}`;
