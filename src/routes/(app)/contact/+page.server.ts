@@ -20,16 +20,9 @@ const query = groq`
     }
 `;
 
-// contactForm {
-//   ...,
-//   ${asset('contactPageImage')},
-// }
-
 export const load = async ({ setHeaders }) => {
   const data: ContactPageProps = await sanityClient.fetch(query);
   setHeaders({ 'cache-control': 'public, max-age=3600' });
-
-  console.log('data 😭😭', data);
 
   if (!data) throw error(404, { message: 'Not found' });
 
