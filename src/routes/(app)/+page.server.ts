@@ -28,6 +28,7 @@ const query = groq`
         ...,
         hero{
         ...,
+        ${asset('sectionIcon')},
         ${asset('thumbnailForMobile')},
         ${asset('thumbnailForDesktop')},
         ${asset('videoPlayBtnIcon')},

@@ -80,6 +80,8 @@ export interface HeroProps {
   hero: Hero;
 }
 export interface Hero {
+  sectionIcon: SanityImageWithAlt;
+  sectionName: string;
   title: PortableTextBlock[];
   subtitle: string;
   video: HeroVideo;
