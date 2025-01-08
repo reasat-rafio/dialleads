@@ -55,7 +55,7 @@
 </script>
 
 <div
-  class="{className} ml-[1.06rem] mr-[1.13rem] mt-4
+  class="{className} px-20 xl:px-0 ml-[1.06rem] mr-[1.13rem] mt-4
   rounded-[1.875rem]
    bg-hero-gradient">
   <!-- max-h-[57.5rem]  h-[57.5rem] min-h-[57.5rem]-->
