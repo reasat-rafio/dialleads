@@ -42,7 +42,7 @@
         barGap: 4,
       });
 
-      waveSurferInstance.load(mp3FileUrl); // Load the single audio file
+      waveSurferInstance.load(mp3FileUrl); // Load the single audio file ..
     }
 
     return () => {
