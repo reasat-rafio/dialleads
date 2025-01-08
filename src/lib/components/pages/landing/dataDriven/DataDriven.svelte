@@ -21,7 +21,7 @@
     {dataDriven?.title}
   </h3>
   <p
-    class="mx-auto mt-[0.88rem] w-full lg:w-[56.6875rem]
+    class="mx-auto mt-[0.88rem] w-full lg:w-[56.688rem]
   text-center text-base lg:text-xl font-normal lg:leading-[1.875rem] text-[#212121]">
     {dataDriven?.description}
   </p>
