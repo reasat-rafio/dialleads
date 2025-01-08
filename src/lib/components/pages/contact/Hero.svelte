@@ -29,12 +29,14 @@
 
         {#if Array.isArray(props?.title[0]?.children) && Array.isArray(props?.title[1]?.children)}
           <h1
-            class=" text-[1.625rem] font-semibold leading-[1.95rem] lg:text-[3rem] lg:leading-[4.495rem]">
+            class=" text-[1.625rem] font-semibold leading-[1.95rem] lg:text-[3.875rem] lg:font-extrabold lg:leading-[4.495rem]">
             <!-- mb-[1.62rem] -->
             {props?.title[0]?.children[0]?.text}
 
             <span
-              class="bg-gradient-to-r from-[#731AFF] to-[#FCCEEE] bg-clip-text text-transparent">
+              class="bg-gradient-to-r from-[#A461FF] to-[#fca8e1] bg-clip-text text-transparent">
+              <!-- style="background: linear-gradient(to right, #731AFF 30%, #FCCEEE 70%); " -->
+              <!-- bg-gradient-to-r from-[#731AFF] to-[#FCCEEE] -->
               {props.title[1].children[0]?.text}
             </span>
           </h1>
