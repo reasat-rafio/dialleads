@@ -59,7 +59,7 @@
   <div class="hidden lg:block">
     {#if pathName == '/'}
       <DesktopNavbar
-        className="h-[63.5rem] max-h-[63.4rem] min-h-[63.5rem]"
+        className="h-[63.5rem] max-h-[63.5rem] min-h-[63.5rem]"
         {nav}
         {logo} />
     {:else}
