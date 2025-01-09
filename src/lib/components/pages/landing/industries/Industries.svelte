@@ -45,8 +45,6 @@
     class="bg-industry-gradient h-full w-full
     py-5 lg:py-0
     ">
-    <!-- style=" background: radial-gradient(113.28% 100% at 50% 0%, #000 0%, rgba(0, 0, 0, 0.00) 69.79%), linear-gradient(180deg, #000 0%, #5B21B6 46.13%, #7C3AED 73.54%, #A78BFA 100%);" -->
-    <!-- bg-real-world-gradient -->
     <img
       src="/grid.png"
       alt="grid overlay"
