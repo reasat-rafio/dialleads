@@ -7,13 +7,14 @@
 </script>
 
 <div
-  class="flex h-full w-full lg:h-[8.875rem] xl:w-[23.75rem]
-  items-center gap-[1.12rem] rounded-2xl
-  border p-4 lg:pb-[2.81rem] lg:pl-[1.88rem] xl:pr-[3.18rem] xl:pt-[2.03rem] shadow-md">
+  style="box-shadow: 0px 4px 12px -4px rgba(0, 0, 0, 0.07);"
+  class="flex h-full w-full items-center gap-[1.12rem]
+  rounded-2xl border p-4
+  lg:h-[8.875rem] lg:pb-[2.81rem] lg:pl-[1.88rem] xl:w-[23.75rem] xl:pr-[3.18rem] xl:pt-[2.03rem]">
   <div class="h-[3.375rem] w-[3.375rem]">
     <SanityImage
       lqip
-      class="w-full h-full"
+      class="h-full w-full"
       src={card?.cardIcon}
       sizes="100vw"
       imageUrlBuilder={imgBuilder}
