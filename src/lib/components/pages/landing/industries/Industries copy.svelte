@@ -42,11 +42,9 @@
 <svelte:window bind:innerWidth={windowWidth} />
 <div class="relative mb-0 w-full">
   <div
-    class="bg-industry-gradient h-full w-full
-    py-5 lg:py-0
+    class="h-full w-full bg-real-world-gradient py-5
+    lg:py-0
     ">
-    <!-- style=" background: radial-gradient(113.28% 100% at 50% 0%, #000 0%, rgba(0, 0, 0, 0.00) 69.79%), linear-gradient(180deg, #000 0%, #5B21B6 46.13%, #7C3AED 73.54%, #A78BFA 100%);" -->
-    <!-- bg-real-world-gradient -->
     <img
       src="/grid.png"
       alt="grid overlay"
@@ -57,7 +55,6 @@
       <div
         style="background: linear-gradient(242deg, rgba(255, 255, 255, 0.21) 0%, rgba(255, 255, 255, 0.08) 100%);"
         class="z-50 mb-[1.5rem] flex gap-x-[0.5rem] rounded-full px-[1.52rem] py-[0.52rem]">
-        <!--  -->
         <SanityImage
           class="h-[1.25rem]  w-[1.25rem] pt-1 "
           src={props?.sectionIcon}
@@ -79,13 +76,12 @@
       <Carousel.Root setApi={(emblaApi) => (api = emblaApi)} class="w-full  ">
         <Carousel.Content class="">
           {#each industries as industry}
-            <Carousel.Item
-              class="basis-full bg-transparent  md:basis-1/2 lg:basis-1/3">
+            <Carousel.Item class="basis-full  md:basis-1/2 lg:basis-1/3">
               <Card.Root
-                style="background: linear-gradient(217deg, rgba(255, 255, 255, 0.05) 100%, rgba(255, 255, 255, 0.08) 90%);"
-                class="rounded-[2rem]  border-[0.09rem] border-[#413e3e] border-b-[#4a4848] bg-transparent px-1 ">
+                style="background: linear-gradient(217deg, rgba(255, 255, 255, 0.05) 0%, rgba(255, 255, 255, 0.08) 100%);"
+                class="rounded-[2rem]  border border-[#413e3e] px-1 ">
                 <Card.Content
-                  class="m-1  flex flex-col items-center justify-center bg-transparent p-6">
+                  class="m-1  flex flex-col items-center justify-center p-6">
                   {#if !!industry.useCaseImage}
                     <SanityImage
                       class="mb-[1.25rem] h-[7.5rem] w-[7.5rem]"
