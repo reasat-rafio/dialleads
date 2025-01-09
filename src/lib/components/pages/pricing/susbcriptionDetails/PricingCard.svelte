@@ -13,7 +13,7 @@
   }: Props = $props();
 </script>
 
-<div>
+<div class="">
   <h4 class="text-center text-2xl font-semibold leading-[1.5rem] text-black">
     {plan?.planName?.name}
   </h4>
@@ -28,7 +28,8 @@
   </p>
   <div class="flex justify-center mt-4">
     <button
-      class="h-[2.5rem] w-[7.5rem] rounded-[0.75rem] 
+      class="w-[7.5rem] h-full rounded-[0.75rem]
+      py-[0.69rem] px-[1.38rem] 
   border border-[#E4E4E7] bg-white
   text-base font-medium text-[#495568] hover:bg-none">
       Subscribe

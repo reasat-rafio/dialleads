@@ -21,11 +21,11 @@
 </script>
 
 <div class="container mx-auto max-w-[75rem] px-5 pb-24 xl:px-0">
-  <div class=" overflow-hidden rounded-[1.26rem] border">
+  <div class="overflow-x-hidden rounded-[1.26rem] border">
     <Table.Root>
-      <Table.Header class="bg-[#F8FAFC]">
-        <Table.Row class="hover:bg-transparent">
-          <Table.Head class="border-r">
+      <Table.Header class="bg-[#F8FAFC] ">
+        <Table.Row class="sticky top-0 z-50 hover:bg-transparent">
+          <Table.Head class="border-r ">
             <div class="pb-[2rem] pt-[1.81rem]">
               <h4
                 class="text-center text-2xl font-semibold leading-[1.5rem] text-black">

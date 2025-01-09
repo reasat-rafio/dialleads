@@ -30,7 +30,7 @@
   let selectedSubscriptionType = $state('monthly');
 </script>
 
-<div class=" overflow-hidden rounded-[1.25rem] border pb-[1.875rem]">
+<div class="  rounded-[1.25rem] border pb-[1.875rem]">
   <Tabs.Root value={relatedPlanNames[0]} class="">
     <div class="flex w-full justify-center bg-[#F8FAFC] py-3">
       <Tabs.List class="bg-transparent ">
@@ -56,7 +56,7 @@
       <Tabs.Content value={planName}>
         {#each plans as plan}
           {#if plan?.planName?.name === planName}
-            <div class="mt-6 border-b pb-[2.13rem]">
+            <div class="mt-6 border-b pb-[2.13rem] sticky top-0 z-50 bg-white">
               <PricingCard {plan} bind:selectedSubscriptionType {saveUpTo} />
             </div>
           {/if}
@@ -133,23 +133,25 @@
             {/each}
             <div>
               {#if Array.isArray(feature.instructions)}
-                <div
-                  class="mt-5 flex w-[17.125rem] gap-1 pb-[0.44rem] pl-[1.6rem]">
-                  <p class="text-red-500">*</p>
-                  <h4
-                    class="text-nowrap text-[0.875rem] font-normal text-[#6D28D9]">
-                    {(Array.isArray(feature.instructions) &&
-                      (feature.instructions as any[])[0]?.instruction?.[0]
-                        ?.children?.[0]?.text) ??
-                      ''}
-                  </h4>
-                  <h4
-                    class="text-left text-[0.875rem] font-normal text-[#212121]">
-                    {(Array.isArray(feature.instructions) &&
-                      (feature.instructions as any[])[0]?.instruction?.[1]
-                        ?.children?.[0]?.text) ??
-                      ''}
-                  </h4>
+                <div class="mt-5 pl-[1.6rem] text-left">
+                  <div class="flex gap-1">
+                    <p class="text-red-500">*</p>
+                    <h4
+                      class="text-nowrap text-[0.875rem] font-normal text-[#6D28D9] hover:underline">
+                      {(Array.isArray(feature.instructions) &&
+                        (feature.instructions as any[])[0]?.instruction?.[0]
+                          ?.children?.[0]?.text) ??
+                        ''}
+                    </h4>
+                  </div>
+                  <div class="">
+                    <h4 class="text-[0.875rem] font-normal text-[#212121]">
+                      {(Array.isArray(feature.instructions) &&
+                        (feature.instructions as any[])[0]?.instruction?.[1]
+                          ?.children?.[0]?.text) ??
+                        ''}
+                    </h4>
+                  </div>
                 </div>
               {/if}
             </div>
