@@ -7,8 +7,8 @@
   let { saveUpTo, selectedSubscriptionType = $bindable() }: Props = $props();
 </script>
 
-<div class="flex flex-col md:flex-row justify-between items-center mt-10 px-2">
-  <div class="flex justify-between rounded-xl border px-2 py-1 w-full md:w-[24rem]">
+<div class="flex flex-col md:flex-row justify-between items-center mt-10 ">
+  <div class="flex justify-between rounded-xl border p-[0.375rem] w-full md:w-[24rem]">
     <button
       onclick={() => (selectedSubscriptionType = 'monthly')}
       class={selectedSubscriptionType === 'monthly'

@@ -86,8 +86,9 @@
         {#if windowWidth > 700}
           <SanityImage
             lqip
-            class="mx-auto  h-full w-full  rounded-tl-xl rounded-tr-xl bg-cover bg-no-repeat object-cover opacity-50"
+            class="mx-auto  h-full w-full  rounded-tl-xl rounded-tr-xl bg-cover bg-no-repeat object-cover "
             src={hero?.thumbnailForDesktop}
+            sizes="100vw"
             imageUrlBuilder={imgBuilder}
             alt="" />
         {:else}
