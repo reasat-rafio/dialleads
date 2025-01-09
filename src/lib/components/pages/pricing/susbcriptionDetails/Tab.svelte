@@ -8,24 +8,24 @@
 
 <div>
   <div
-    class="flex h-[2.375rem] w-full 
-    border border-[#E4E4E7]
-    justify-between rounded-xl bg-[#F5F5F5;] px-2 py-1 md:w-[24rem]">
+    class="flex h-[2.375rem] w-full
+    justify-between rounded-xl
+    border border-[#E4E4E7] bg-[#F5F5F5;] p-1">
     <button
       onclick={() => (selectedSubscriptionType = 'monthly')}
       class={selectedSubscriptionType === 'monthly'
-        ? 'rounded-lg bg-white  font-geist text-base font-semibold text-[#495568] transition-colors delay-75 md:px-9'
-        : ' font-geist text-base font-semibold text-[#495568] md:px-9'}>
+        ? 'flex h-full w-full items-center rounded-[0.75rem] bg-white py-[0.62rem] pl-[1.5rem] pr-[1.48rem] text-sm font-medium'
+        : 'flex h-full w-full items-center rounded-[0.75rem] py-[0.62rem] pl-[1.5rem] pr-[1.48rem] text-sm font-medium'}>
       Monthly
     </button>
     <button
       onclick={() => (selectedSubscriptionType = 'annual')}
       class={selectedSubscriptionType === 'annual'
-        ? 'rounded-lg bg-white  font-geist text-base font-semibold text-[#495568] transition-colors delay-75 md:px-7'
-        : ' font-geist text-base font-semibold text-[#495568] md:px-7'}>
+        ? 'flex h-full w-full items-center rounded-[0.75rem] bg-white py-[0.62rem] pl-[1.5rem] pr-[1.48rem] text-sm font-medium'
+        : 'flex h-full w-full items-center rounded-[0.75rem] py-[0.62rem]  pl-[1.5rem] pr-[1.48rem] text-sm font-medium'}>
       <p class="text-nowrap">
         Annual
-        <span class="text-sm font-semibold text-[#495568]">
+        <span class="text-sm font-normal text-[#495568]">
           (save up to {saveUpTo}%)
         </span>
       </p>

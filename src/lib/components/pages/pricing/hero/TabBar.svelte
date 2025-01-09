@@ -8,18 +8,18 @@
 
 <div class="mt-[1.63rem] flex justify-center">
   <div
-    class="flex w-full justify-between items-center rounded-xl border border-[#60527A] bg-[#2B194C] p-[0.5rem] md:w-[24rem]">
+    class="flex w-full h-full gap-2 items-center rounded-xl border border-[#60527A] bg-[#2B194C] p-[0.5rem] md:w-[24rem]">
     <button
       onclick={() => (selectedSubscriptionType = 'monthly')}
       class={selectedSubscriptionType === 'monthly'
-        ? 'w-full text-base font-medium text-white bg-[#5307CA] py-[0.88rem] px-5 rounded-[0.5rem] flex items-center justify-center'
-        : 'w-full text-base font-medium text-white  py-[0.88rem] px-5 rounded-[0.5rem] flex items-center justify-center'}>
+        ? 'w-full flex justify-center items-center text-base font-medium text-white bg-[#5307CA] py-[0.88rem] px-5 rounded-[0.5rem]'
+        : 'w-full  text-base font-medium text-white  py-[0.88rem] px-5 rounded-[0.5rem] flex items-center justify-center'}>
       Monthly
     </button>
     <button
       onclick={() => (selectedSubscriptionType = 'annual')}
       class={selectedSubscriptionType === 'annual'
-        ? 'w-full text-base font-medium text-white bg-[#5307CA] py-[0.88rem] px-5 rounded-[0.5rem] flex items-center justify-center'
+        ? 'w-full  text-base font-medium text-white bg-[#5307CA] py-[0.88rem] px-5 rounded-[0.5rem] flex items-center justify-center'
         : 'w-full text-base font-medium text-white  py-[0.88rem] px-5 rounded-[0.5rem] flex items-center justify-center'}>
       <p class="text-nowrap">
         Annual
