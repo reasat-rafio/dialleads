@@ -279,7 +279,7 @@
             </div>
 
             <Form.Button
-              class=" min-h-[3.5rem] min-w-[17rem]   rounded-[0.75rem]  bg-[#8B5CF6]  md:min-h-[3.75rem] md:px-[4.25rem]">
+              class="mx-[1.78rem] min-h-[3.5rem] min-w-[17.38rem]   rounded-[0.75rem]  bg-[#8B5CF6]  md:min-h-[3.75rem] md:px-[4.25rem]">
               Call me now
             </Form.Button>
           </form>

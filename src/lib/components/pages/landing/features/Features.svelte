@@ -46,7 +46,7 @@
     {#each props.features as feature}
       <Tabs.Content value={feature.featureGroupName}>
         <div
-          class=" m-5 grid max-w-[74.8125rem] grid-cols-1 gap-[1.88rem] sm:grid-cols-2 lg:grid-cols-3 xl:m-0">
+          class=" m-5 grid max-w-[74.8125rem] grid-cols-1 gap-[0.75rem] sm:grid-cols-2 md:gap-[1.88rem] lg:grid-cols-3 xl:m-0">
           {#each feature.features as features}
             <div
               class="col-span-1 rounded-[1rem] border bg-[#FFFFFF] p-7 shadow-sm sm:col-span-1 lg:col-span-1">
