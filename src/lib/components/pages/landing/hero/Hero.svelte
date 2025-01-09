@@ -14,7 +14,7 @@
 </script>
 
 <svelte:window bind:innerWidth={windowWidth} />
-<div class="absolute top-[5.41rem] px-16 lg:top-[11.49rem] xl:px-0">
+<div class="absolute top-[5.2rem] px-[0.94rem] lg:top-[11.49rem] xl:px-0">
   <div class="relative">
     <div
       style="background: linear-gradient(242deg, rgba(255, 255, 255, 0.21) 0%, rgba(255, 255, 255, 0.08) 100%);"
@@ -31,7 +31,7 @@
         alt="" />
       <p class="text-nowrap text-sm lg:text-lg font-medium text-white">{hero?.sectionName}</p>
     </div>
-    <div class="mx-auto w-full text-center  lg:h-[10.5rem] lg:w-[50.6875rem]">
+    <div class="mx-auto  w-full text-center  lg:h-[10.5rem] lg:w-[50.6875rem]">
       {#if Array.isArray(hero?.title[0]?.children) && Array.isArray(hero?.title[1]?.children)}
         <h2
           class="text-nowrap font-geist text-[1.875rem] font-bold text-[#FFF] lg:text-7xl">
@@ -50,7 +50,7 @@
          text-center text-base font-normal text-white lg:mt-[0.75rem] lg:w-[40.3125rem] lg:text-[1.25rem]">
       {hero?.subtitle}
     </p>
-    <div class=" mt-6 flex justify-center lg:mt-[1.88rem]">
+    <div class=" mt-6 mx-[0.94rem] flex justify-center lg:mt-[1.88rem]">
       <div
         class="inline-flex w-full max-w-[14.420rem]
       animate-shine items-center justify-center rounded-xl border-[1px]

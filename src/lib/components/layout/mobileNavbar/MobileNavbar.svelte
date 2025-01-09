@@ -60,7 +60,7 @@
   }
 </script>
 
-<div class="relative ">
+<div class="relative">
   <div
     class=" {className} relative
     mt-2
