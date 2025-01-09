@@ -6,25 +6,25 @@
   let { saveUpTo, selectedSubscriptionType = $bindable() }: Props = $props();
 </script>
 
-<div class="mt-[1.62rem] flex justify-center">
+<div class="mt-[1.63rem] flex justify-center">
   <div
-    class="flex w-full justify-between rounded-xl border border-[#60527A] bg-[#2B194C] px-2 pb-2 pt-1 lg:w-[22.4375rem]">
+    class="flex w-full justify-between items-center rounded-xl border border-[#60527A] bg-[#2B194C] p-[0.375rem] md:w-[24rem]">
     <button
       onclick={() => (selectedSubscriptionType = 'monthly')}
       class={selectedSubscriptionType === 'monthly'
-        ? 'rounded-lg bg-[#5307CA] px-6  pt-[0.7rem] pb-1 font-geist text-base font-semibold text-white transition-colors delay-75 md:px-9'
-        : 'px-6 pt-[0.7rem] pb-1  font-geist text-base font-semibold text-white md:px-9'}>
+        ? 'flex items-center justify-center  rounded-lg bg-[#5307CA] px-[0.62] py-[0.88rem] font-geist text-base font-bold text-white transition-colors delay-75 md:px-9'
+        : 'flex items-center justify-center px-[0.62] py-[0.88rem] font-geist text-base font-bold text-white md:px-9'}>
       Monthly
     </button>
     <button
       onclick={() => (selectedSubscriptionType = 'annual')}
       class={selectedSubscriptionType === 'annual'
-        ? 'rounded-lg bg-[#5307CA] px-6  pt-[0.7rem] pb-1  font-geist text-base font-semibold text-white transition-colors delay-75 md:px-9'
-        : 'px-6 pt-[0.7rem] pb-1  font-geist text-base font-semibold text-white md:px-9'}>
+        ? 'flex items-center justify-center rounded-lg bg-[#5307CA] px-[0.62] py-[0.88rem] font-geist text-base font-bold text-white transition-colors delay-75 md:px-7'
+        : 'flex items-center justify-center px-[0.62] py-[0.88rem] font-geist text-base font-bold text-white md:px-7'}>
       <p class="text-nowrap">
         Annual
-        <span class="text-violet-white text-sm font-semibold">
-          ( {saveUpTo}% OFF)
+        <span class="text-sm font-bold text-white">
+          (save up to {saveUpTo}%)
         </span>
       </p>
     </button>
