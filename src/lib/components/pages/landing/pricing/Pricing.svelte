@@ -27,7 +27,7 @@
       <PricingCard {plan} bind:selectedSubscriptionType {saveUpTo} />
     {/each}
   </div>
-  <div class="relative mb-21">
+  <div class="relative mb-20">
     <div
       class="
      bg-enterpricePlan-gradient-mobile
