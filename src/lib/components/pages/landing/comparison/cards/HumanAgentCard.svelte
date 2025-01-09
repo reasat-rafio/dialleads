@@ -20,12 +20,12 @@ border-slate-400 bg-slate-100 px-2 lg:h-[30.27rem] xl:w-[31.25rem] lg:pl-[4.38re
   </div>
   <div>
     <h3
-      class="mt-[5.5rem] w-full text-center font-geist
+      class="mt-[5.5rem]  w-[8.5625rem] md:w-full mx-auto  text-center font-geist
     text-xl font-bold leading-tight text-gray-800 lg:text-[2.375rem]">
       {card?.cardTitle}
     </h3>
     <div>
-      <div class="mb-[3.44rem] mt-[2.19rem] space-y-[1.125rem] lg:mt-[2.88rem]">
+      <div class="mb-[3.44rem] mt-[2.19rem] space-y-[1.125rem] lg:mt-[2.88rem] pl-[1.88rem] lg:pl-0">
         {#each card?.features as feature}
           <div class="flex items-center gap-3">
             <SanityImage
