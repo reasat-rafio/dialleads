@@ -130,7 +130,7 @@
           imageUrlBuilder={imgBuilder} />
       </div>
       <h2
-        class="z-50 mb-[0.75rem] max-w-[44rem] text-center text-[1.625rem] font-semibold text-white lg:mb-[0.88rem] lg:text-[3rem] lg:leading-[3.6rem]">
+        class="z-50 mb-[0.75rem] max-w-[20.93rem] text-center text-[1.625rem] font-semibold text-white lg:mb-[0.88rem] lg:max-w-[44rem] lg:text-[3rem] lg:leading-[3.6rem]">
         {props.title}
       </h2>
       <h3

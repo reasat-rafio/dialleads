@@ -37,10 +37,11 @@
         <Accordion.Item
           class="mb-[0.75rem]  rounded-[1rem]  bg-[#F9FAFB] px-[2rem] py-[1rem] lg:mb-[1rem] "
           value={faqItem._key}>
-          <Accordion.Trigger class="text-[1.125rem] hover:no-underline">
+          <Accordion.Trigger
+            class="text-left text-[1.125rem] hover:no-underline">
             {faqItem.question}
           </Accordion.Trigger>
-          <Accordion.Content class="text-[1rem] text-[#5B6779]">
+          <Accordion.Content class="text-left text-[1rem] text-[#5B6779]">
             {faqItem.answer}
           </Accordion.Content>
         </Accordion.Item>
