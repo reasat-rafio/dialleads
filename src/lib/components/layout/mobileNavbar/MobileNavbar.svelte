@@ -134,7 +134,7 @@
         {/if}
       </Button>
     </div>
-    <div class="relative mx-[2rem]">
+    <div class="relative z-50 mx-[2rem]">
       {#if isPopupVisible}
         <div
           class="absolute left-1/2 top-1/2 z-50 w-full -translate-x-1/2 transform rounded-lg bg-white p-6
@@ -149,20 +149,22 @@
                 onfocus={() => handleFocus(item?.link?.title)}
                 onblur={handleBlur}
                 class="flex items-center text-start">
-                <a
-                  href={item?.link?.type === 'internal'
-                    ? item?.link?.internalLink
-                    : item?.link?.externalLink}
-                  class="font-geist text-base font-normal text-black">
-                  {item?.link?.title}
-                </a>
                 {#if item?.moreLinks}
+                  <p>{item?.link?.title}</p>
                   <ChevronDown
                     class="font-geistfont-geist h-[1.25rem] w-[1.125rem] text-base font-normal text-black" />
+                {:else}
+                  <a
+                    href={item?.link?.type === 'internal'
+                      ? item?.link?.internalLink
+                      : item?.link?.externalLink}
+                    class="font-geist text-base font-normal text-black">
+                    {item?.link?.title}
+                  </a>
                 {/if}
                 {#if item?.moreLinks && activeDropdown === item?.link?.title}
                   <div
-                    class="absolute mt-24 w-fit rounded-md bg-white opacity-0 shadow-lg transition-opacity delay-150 duration-500 fade-in"
+                    class="absolute z-50 mt-24 w-fit rounded-md bg-white opacity-0 shadow-lg transition-opacity delay-150 duration-500 fade-in"
                     class:opacity-100={activeDropdown === item?.link?.title}>
                     {#each item?.moreLinks as link}
                       <a
