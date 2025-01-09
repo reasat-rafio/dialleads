@@ -60,7 +60,7 @@
   }
 </script>
 
-<div class="relative mx-[0.31rem]">
+<div class="relative ">
   <div
     class=" {className} relative
     mt-2
@@ -71,7 +71,7 @@
       alt="grid overlay"
       class="pointer-events-none absolute inset-0 h-full w-full opacity-100 mix-blend-overlay" />
 
-    <div class="relative mx-[0.94rem] flex justify-end pt-4">
+    <div class="relative  flex justify-end pt-4">
       <Button
         class="right-0 z-50 bg-transparent hover:bg-transparent"
         onclick={togglePopup}>
@@ -105,7 +105,7 @@
         {:else}
           <!-- Hamburger Icon -->
           <p class="flex items-center">
-            <img src="/humburgIcon.png" alt="Icon" />
+            <img src="/humburgIcon.png" alt="icon" />
           </p>
         {/if}
       </Button>
