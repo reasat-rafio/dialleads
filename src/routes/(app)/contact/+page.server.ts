@@ -11,6 +11,7 @@ const query = groq`
               hero{
               ...,
               ${asset('sectionIcon')},
+              ${asset('contactPageImage')},
               },
               contactForm{
                 ...,

@@ -48,5 +48,15 @@
         </h2>
       </div>
     </div>
+    <!-- // image section  -->
+    <div class="mx-2 mt-[3.13rem] block sm:hidden">
+      <div class="h-[26.25rem] w-full">
+        <SanityImage
+          class="h-[26.25rem] w-full "
+          src={props?.contactPageImage}
+          sizes="100vw"
+          imageUrlBuilder={imgBuilder} />
+      </div>
+    </div>
   </div>
 </div>

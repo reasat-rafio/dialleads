@@ -15,6 +15,7 @@ export interface HeroProps {
   sectionIcon: SanityImageWithAlt;
   title: PortableTextBlock[];
   description: string;
+  contactPageImage: SanityImageWithAlt;
 }
 
 export interface ContactFormProps {
