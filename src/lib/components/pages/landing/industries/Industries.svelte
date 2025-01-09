@@ -41,25 +41,14 @@
 
 <svelte:window bind:innerWidth={windowWidth} />
 <div class="relative mb-0 w-full">
-  <!-- <div class="absolute h-full w-full">
-    <SanityImage
-      lqip
-      innerClass="h-full  w-full object-cover"
-      class=" h-full w-full bg-black  object-cover"
-      src={props?.sectionImage}
-      sizes="100vw"
-      imageUrlBuilder={imgBuilder} />
-  </div> -->
-
   <div
-    class="h-full w-full bg-real-world-gradient pt-[2rem]
-    lg:pt-[5.13rem]
+    class="h-full w-full bg-real-world-gradient py-5
+    lg:py-0
     ">
-    <!-- rounded-[1.88rem] -->
     <img
       src="/grid.png"
       alt="grid overlay"
-      class="pointer-events-none absolute inset-0 h-full w-full opacity-100 mix-blend-overlay" />
+      class="pointer-events-none absolute inset-0 h-full w-full opacity-60 mix-blend-overlay lg:opacity-100" />
 
     <div
       class=" flex flex-col items-center justify-center pt-[2rem] lg:pt-[6rem]">
