@@ -108,7 +108,7 @@
     <img
       src="/grid.png"
       alt="grid overlay"
-      class="pointer-events-none absolute inset-0 h-full w-full opacity-100 mix-blend-overlay" />
+      class="pointer-events-none absolute inset-0 h-full w-full opacity-60 mix-blend-overlay lg:opacity-100" />
 
     <div class="z-50 flex flex-col items-center justify-center">
       <div
@@ -151,23 +151,23 @@
           <Carousel.Content>
             {#each industries as useCase, index}
               <Carousel.Item
-                class="w-full basis-full bg-transparent sm:basis-1/2 lg:basis-1/3">
+                class="w-full max-w-[23.625rem] basis-full bg-transparent sm:basis-1/2 lg:basis-1/3">
                 <Card.Root
                   style="background: linear-gradient(242deg, rgba(255, 255, 255, 0.21) 0%, rgba(255, 255, 255, 0.08) 100%);"
                   class="w-full rounded-[1.38rem] border-[0.342px] border-gray-400 bg-transparent p-[0.75rem]">
                   <div
-                    class="flex w-full flex-col rounded-[0.88rem] bg-white p-[0.55rem]">
+                    class="flex h-full w-full flex-col rounded-[0.88rem] bg-white p-[0.55rem]">
                     <SanityImage
-                      class="h-full w-full object-cover"
+                      class="h-full w-full border bg-cover bg-center object-cover"
                       src={useCase?.useCaseImageForAI}
-                      sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw"
                       imageUrlBuilder={imgBuilder} />
+                    <!-- sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw" -->
                     <h3
-                      class="mt-[1.38rem] text-center text-[1.375rem] font-semibold">
+                      class="mt-[1.38rem] text-center text-[1.125rem] font-semibold lg:text-[1.375rem]">
                       {useCase.useCaseTitleForAI}
                     </h3>
                     <h3
-                      class="mb-[1rem] text-center text-[1rem] font-normal text-[#5B6779]">
+                      class="mb-[1rem] text-center text-[0.875rem] font-normal text-[#5B6779] lg:text-[1rem]">
                       {useCase.useCaseSubTitleForAI}
                     </h3>
                     <hr />

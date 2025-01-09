@@ -12,6 +12,7 @@
   import WhyChooseUs from '$lib/components/pages/landing/whyChooseUs/WhyChooseUs.svelte';
   import Hero from '$lib/components/pages/landing/hero/Hero.svelte';
   import DataDriven from '$lib/components/pages/landing/dataDriven/DataDriven.svelte';
+  import { MetaTags } from 'svelte-meta-tags';
 
   let { data } = $props();
 
@@ -19,6 +20,10 @@
     page: { sections, pricing, industries },
   } = $derived(data);
 </script>
+
+<MetaTags
+  title="Dial Leads"
+  description="lorem Ipsum is simply dummy text of the printing and typesetting " />
 
 <div class="flex max-w-full flex-col items-center justify-center font-geist">
   {#if !!sections?.length}
