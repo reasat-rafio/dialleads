@@ -27,7 +27,7 @@
       <PricingCard {plan} bind:selectedSubscriptionType {saveUpTo} />
     {/each}
   </div>
-  <div class="relative mb-20">
+  <div class="relative mb-21">
     <div
       class="
      bg-enterpricePlan-gradient-mobile
@@ -39,7 +39,7 @@
         lqip
         class="h-full w-full bg-cover bg-center bg-no-repeat object-cover "
         src={enterprisePlan?.banner}
-        sizes="5vw"
+        sizes="100vw"
         imageUrlBuilder={imgBuilder}
         alt="SliderMainImage" />
     </div>
