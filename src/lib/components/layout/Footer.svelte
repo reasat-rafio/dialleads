@@ -119,7 +119,7 @@
           {#each footer?.subItems as subItem}
             <a
               href={subItem.internalLink}
-              class=" text-[0.875rem] font-normal text-white">
+              class=" text-[1rem] font-[300] text-white">
               {subItem?.title}
             </a>
           {/each}
@@ -133,11 +133,11 @@
           {footer?.copyRightText}
         </span>
         <div
-          class=" gap-x-auto mt-2 flex justify-between gap-y-[0.75rem] md:gap-x-[1.5rem]">
+          class=" gap-2 text-nowrap mt-2 flex justify-between gap-y-[0.75rem] md:gap-x-[1.5rem]">
           {#each footer?.subItems as subItem}
             <a
               href={subItem.internalLink}
-              class=" text-[0.875rem] font-normal text-white">
+              class=" text-[0.875rem] font-[300] text-white">
               {subItem?.title}
             </a>
           {/each}
