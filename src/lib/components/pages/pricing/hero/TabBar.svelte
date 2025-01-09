@@ -12,15 +12,15 @@
     <button
       onclick={() => (selectedSubscriptionType = 'monthly')}
       class={selectedSubscriptionType === 'monthly'
-        ? ' text-base font-medium text-white bg-[#5307CA] py-[0.88rem] px-5 rounded-[0.5rem] flex items-center justify-center'
-        : 'text-base font-medium text-white  py-[0.88rem] px-5 rounded-[0.5rem] flex items-center justify-center'}>
+        ? 'w-[12.9375rem] text-base font-medium text-white bg-[#5307CA] py-[0.88rem] px-5 rounded-[0.5rem] flex items-center justify-center'
+        : 'w-[12.9375rem] text-base font-medium text-white  py-[0.88rem] px-5 rounded-[0.5rem] flex items-center justify-center'}>
       Monthly
     </button>
     <button
       onclick={() => (selectedSubscriptionType = 'annual')}
       class={selectedSubscriptionType === 'annual'
-        ? 'text-base font-medium text-white bg-[#5307CA] py-[0.88rem] px-5 rounded-[0.5rem] flex items-center justify-center'
-        : ' text-base font-medium text-white  py-[0.88rem] px-5 rounded-[0.5rem] flex items-center justify-center'}>
+        ? 'w-[12.9375rem] text-base font-medium text-white bg-[#5307CA] py-[0.88rem] px-5 rounded-[0.5rem] flex items-center justify-center'
+        : 'w-[12.9375rem] text-base font-medium text-white  py-[0.88rem] px-5 rounded-[0.5rem] flex items-center justify-center'}>
       <p class="text-nowrap">
         Annual
         <span class="text-sm font-medium text-white">
