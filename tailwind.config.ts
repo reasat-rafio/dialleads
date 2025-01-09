@@ -29,6 +29,8 @@ const config: Config = {
 
         'footer-gradient':
           'linear-gradient(-363deg, #4C1D95 -51.52%, #5B21B6 -5.15%, #010101 100%)',
+        'footer-join-more-gradient':
+          'linear-gradient(-363deg, #4C1D95 -51.52%, #5B21B6 -5.15%, #010101 100%)',
         'enterpricePlan-gradient-mobile': `linear-gradient(343deg, #4C1D95 -39.19%, #5B21B6 11.56%, #212121 92.34%)`,
         'enterpricePlan-gradient-desktop': `linear-gradient(98deg, #200B46 0%, #1A0939 100%)`,
       },

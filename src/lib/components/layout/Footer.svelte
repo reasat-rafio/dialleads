@@ -133,7 +133,7 @@
           {footer?.copyRightText}
         </span>
         <div
-          class=" gap-2 text-nowrap mt-2 flex justify-between gap-y-[0.75rem] md:gap-x-[1.5rem]">
+          class=" mt-2 flex justify-between gap-2 gap-y-[0.75rem] text-nowrap md:gap-x-[1.5rem]">
           {#each footer?.subItems as subItem}
             <a
               href={subItem.internalLink}
@@ -152,11 +152,9 @@
     absolute
     -top-[16rem]
      left-1/2 mx-auto
-    w-[20rem] -translate-x-1/2 rounded-[1.875rem] bg-violet-900 bg-gradient-to-t
-    from-violet-500
-  to-violet-800
+    w-[20rem] -translate-x-1/2 rounded-[1.875rem] bg-gradient-to-b lg:bg-gradient-to-r from-black via-[#431A8C] to-[#4506b4]
  pb-[3.12rem] pt-5 lg:-top-[7rem] lg:h-[13.625rem]
-    lg:w-full lg:bg-footer-gradient lg:pb-0
+    lg:w-full lg:pb-0
    lg:pl-[6.44rem] lg:pr-[6.38rem]
    xl:w-fit
    xl:pt-[3.12rem]
