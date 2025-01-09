@@ -105,31 +105,7 @@
         {:else}
           <!-- Hamburger Icon -->
           <p class="flex items-center">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="100"
-              height="64"
-              viewBox="0 0 32 32"
-              fill="none">
-              <path
-                d="M28 8H4"
-                stroke="white"
-                stroke-width="2.66667"
-                stroke-linecap="round"
-                stroke-linejoin="round" />
-              <path
-                d="M28 16H12"
-                stroke="white"
-                stroke-width="2.66667"
-                stroke-linecap="round"
-                stroke-linejoin="round" />
-              <path
-                d="M27.9987 24H9.33203"
-                stroke="white"
-                stroke-width="2.66667"
-                stroke-linecap="round"
-                stroke-linejoin="round" />
-            </svg>
+            <img src="/humburgIcon.png" alt="Icon" />
           </p>
         {/if}
       </Button>
