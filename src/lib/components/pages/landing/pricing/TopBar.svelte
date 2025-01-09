@@ -19,8 +19,8 @@
     <button
       onclick={() => (selectedSubscriptionType = 'annual')}
       class={selectedSubscriptionType === 'annual'
-        ? 'rounded-lg bg-violet-100 px-2 md:px-9 py-2 transition-colors delay-75 text-base font-semibold text-black font-geist'
-        : 'px-2 md:px-9 py-2 text-base font-semibold text-black font-geist'}>
+        ? 'rounded-lg bg-violet-100 px-2 md:px-7 py-2 transition-colors delay-75 text-base font-semibold text-black font-geist'
+        : 'px-2 md:px-7 py-2 text-base font-semibold text-black font-geist'}>
       <p class="text-nowrap">
         Annual
         <span class="text-sm font-semibold text-violet-600">

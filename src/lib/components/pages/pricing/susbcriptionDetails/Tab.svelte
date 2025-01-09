@@ -21,8 +21,8 @@
     <button
       onclick={() => (selectedSubscriptionType = 'annual')}
       class={selectedSubscriptionType === 'annual'
-        ? 'rounded-lg bg-white  font-geist text-base font-semibold text-[#495568] transition-colors delay-75 md:px-9'
-        : ' font-geist text-base font-semibold text-[#495568] md:px-9'}>
+        ? 'rounded-lg bg-white  font-geist text-base font-semibold text-[#495568] transition-colors delay-75 md:px-7'
+        : ' font-geist text-base font-semibold text-[#495568] md:px-7'}>
       <p class="text-nowrap">
         Annual
         <span class="text-sm font-semibold text-[#495568]">

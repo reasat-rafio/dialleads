@@ -123,9 +123,12 @@
       <div class="z-50 bg-transparent">
         <Button
           variant="link"
-          class="h-[2.875rem] 
-          w-[8.625rem] rounded-[0.75rem] border border-violet-600 
-          bg-primary  bg-opacity-100 px-5 py-[.88rem] font-geist font-medium
+          class="
+          hover:no-underline
+          flex h-[2.875rem] w-[8.625rem]
+          items-center 
+          justify-center rounded-[0.75rem] border border-violet-600 
+          bg-primary px-5 py-[.88rem] font-geist font-medium
           text-white
           ">
           Get Started

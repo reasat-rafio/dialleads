@@ -15,7 +15,7 @@
 <div class="mx-auto max-w-[75rem] px-5 xl:px-0 mt-[2.5rem] lg:mt-[7.5rem]">
   <Section {sectionIcon} {sectionName} {sectionTitle} />
   <div
-    class="mb-[6.26rem] mt-[3.13rem] grid grid-cols-1 gap-[1.87rem] md:grid-cols-2 xl:grid-cols-3">
+    class="mb-[6.26rem] mt-[3.13rem] grid grid-cols-1 gap-[0.88rem] md:gap-[1.88rem] md:grid-cols-2 xl:grid-cols-3">
     {#each cards as card}
       <Card {card} />
     {/each}

@@ -22,7 +22,7 @@
 <div class="relative mx-auto max-w-[75rem] px-5 xl:px-0">
   <Section {props} />
   <TopBar {saveUpTo} bind:selectedSubscriptionType />
-  <div class="my-20 mt-7 grid grid-cols-1 gap-7 md:grid-cols-2 xl:grid-cols-3">
+  <div class="my-20 mt-7 grid grid-cols-1 gap-[0.75rem] lg:gap-[1.88rem] md:grid-cols-2 xl:grid-cols-3">
     {#each plans as plan}
       <PricingCard {plan} bind:selectedSubscriptionType {saveUpTo} />
     {/each}

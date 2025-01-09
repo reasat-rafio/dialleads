@@ -60,7 +60,7 @@
   }
 </script>
 
-<div class="relative mx-[0.31rem]">
+<div class="relative ">
   <div
     class=" {className} relative
     mt-2
@@ -71,7 +71,7 @@
       alt="grid overlay"
       class="pointer-events-none absolute inset-0 h-full w-full opacity-100 mix-blend-overlay" />
 
-    <div class="relative mx-[0.94rem] flex justify-end pt-4">
+    <div class="relative  flex justify-end pt-4">
       <Button
         class="right-0 z-50 bg-transparent hover:bg-transparent"
         onclick={togglePopup}>
@@ -105,31 +105,7 @@
         {:else}
           <!-- Hamburger Icon -->
           <p class="flex items-center">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="100"
-              height="64"
-              viewBox="0 0 32 32"
-              fill="none">
-              <path
-                d="M28 8H4"
-                stroke="white"
-                stroke-width="2.66667"
-                stroke-linecap="round"
-                stroke-linejoin="round" />
-              <path
-                d="M28 16H12"
-                stroke="white"
-                stroke-width="2.66667"
-                stroke-linecap="round"
-                stroke-linejoin="round" />
-              <path
-                d="M27.9987 24H9.33203"
-                stroke="white"
-                stroke-width="2.66667"
-                stroke-linecap="round"
-                stroke-linejoin="round" />
-            </svg>
+            <img src="/humburgIcon.png" alt="icon" />
           </p>
         {/if}
       </Button>
