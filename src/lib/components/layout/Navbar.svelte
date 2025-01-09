@@ -69,7 +69,7 @@
   <div class="lg:hidden">
     {#if pathName == '/'}
       <MobileNavbar className="h-[43.1rem]" {nav} {logo} />
-    {:else if pathName == '/industry-use-cases/real-estate'}
+    {:else if pathName == '/industry-use-cases/real-estate' || pathName == '/industry-use-cases/mortgage'}
       <MobileNavbar className="h-[53.1rem]" {nav} {logo} />
     {:else if pathName == '/pricing'}
       <MobileNavbar className="h-[43.1rem]" {nav} {logo} />

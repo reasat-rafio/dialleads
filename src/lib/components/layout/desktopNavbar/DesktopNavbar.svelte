@@ -120,7 +120,7 @@
         {/each}
       </div>
 
-      <div>
+      <div class="z-50 bg-transparent">
         <Button
           variant="link"
           class="

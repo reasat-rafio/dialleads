@@ -35,7 +35,7 @@
     <Accordion.Root type="single" class="w-full">
       {#each props.faq as faqItem}
         <Accordion.Item
-          class="mb-[1rem]  rounded-[1rem] bg-[#F9FAFB] px-[2rem] py-[1rem] "
+          class="mb-[0.75rem]  rounded-[1rem]  bg-[#F9FAFB] px-[2rem] py-[1rem] lg:mb-[1rem] "
           value={faqItem._key}>
           <Accordion.Trigger class="text-[1.125rem] hover:no-underline">
             {faqItem.question}
