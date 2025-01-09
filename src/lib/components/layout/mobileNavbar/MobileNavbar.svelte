@@ -5,6 +5,8 @@
   import { RiMenu3Fill } from 'react-icons/ri';
   import Button from '$lib/components/ui/button/button.svelte';
   import { ChevronDown, X } from 'lucide-svelte';
+  import SanityImage from '$lib/sanity/sanity-image/sanity-image.svelte';
+  import { imgBuilder } from '$lib/sanity/sanity-client';
 
   interface Props {
     nav: Nav;
@@ -71,7 +73,18 @@
       alt="grid overlay"
       class="pointer-events-none absolute inset-0 h-full w-full opacity-100 mix-blend-overlay" />
 
-    <div class="relative  flex justify-end pt-4">
+    <div class="relative flex justify-between  pt-4">
+      <a href="/" class="z-50 flex items-center gap-[0.49rem] pl-[0.88rem]">
+        <SanityImage
+          class="h-[2.63rem] w-[2.63rem]"
+          src={logo}
+          sizes="100vw"
+          imageUrlBuilder={imgBuilder}
+          alt={logo?.alt || 'logo'} />
+        <h5 class="font-geist text-[1.47656rem] font-semibold text-[#FFF]">
+          Dialleads
+        </h5>
+      </a>
       <Button
         class="right-0 z-50 bg-transparent hover:bg-transparent"
         onclick={togglePopup}>

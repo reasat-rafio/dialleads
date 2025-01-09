@@ -14,7 +14,7 @@
 </script>
 
 <svelte:window bind:innerWidth={windowWidth} />
-<div class="absolute top-[5.2rem] px-[0.94rem] lg:top-[11.49rem] xl:px-0">
+<div class="absolute top-[6.44rem] px-[0.94rem] lg:top-[11.49rem] xl:px-0">
   <div class="relative">
     <div
       style="background: linear-gradient(242deg, rgba(255, 255, 255, 0.21) 0%, rgba(255, 255, 255, 0.08) 100%);"
