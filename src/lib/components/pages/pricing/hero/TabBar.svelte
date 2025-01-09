@@ -8,22 +8,22 @@
 
 <div class="mt-[1.63rem] flex justify-center">
   <div
-    class="flex w-full justify-between items-center rounded-xl border border-[#60527A] bg-[#2B194C] p-[0.375rem] md:w-[24rem]">
+    class="flex w-full justify-between items-center rounded-xl border border-[#60527A] bg-[#2B194C] p-[0.5rem] md:w-[24rem]">
     <button
       onclick={() => (selectedSubscriptionType = 'monthly')}
       class={selectedSubscriptionType === 'monthly'
-        ? 'flex items-center justify-center  rounded-lg bg-[#5307CA] px-[0.62] py-[0.88rem] font-geist text-base font-bold text-white transition-colors delay-75 md:px-9'
-        : 'flex items-center justify-center px-[0.62] py-[0.88rem] font-geist text-base font-bold text-white md:px-9'}>
+        ? ' text-base font-medium text-white bg-[#5307CA] py-[0.88rem] px-5 rounded-[0.5rem] flex items-center justify-center'
+        : 'text-base font-medium text-white  py-[0.88rem] px-5 rounded-[0.5rem] flex items-center justify-center'}>
       Monthly
     </button>
     <button
       onclick={() => (selectedSubscriptionType = 'annual')}
       class={selectedSubscriptionType === 'annual'
-        ? 'flex items-center justify-center rounded-lg bg-[#5307CA] px-[0.62] py-[0.88rem] font-geist text-base font-bold text-white transition-colors delay-75 md:px-7'
-        : 'flex items-center justify-center px-[0.62] py-[0.88rem] font-geist text-base font-bold text-white md:px-7'}>
+        ? 'text-base font-medium text-white bg-[#5307CA] py-[0.88rem] px-5 rounded-[0.5rem] flex items-center justify-center'
+        : ' text-base font-medium text-white  py-[0.88rem] px-5 rounded-[0.5rem] flex items-center justify-center'}>
       <p class="text-nowrap">
         Annual
-        <span class="text-sm font-bold text-white">
+        <span class="text-sm font-medium text-white">
           (save up to {saveUpTo}%)
         </span>
       </p>
