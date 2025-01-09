@@ -105,6 +105,11 @@
     class="h-full w-full rounded-[1.88rem] bg-real-world-gradient pt-[2rem]
     lg:pt-[5.13rem]
     ">
+    <img
+      src="/grid.png"
+      alt="grid overlay"
+      class="pointer-events-none absolute inset-0 h-full w-full opacity-100 mix-blend-overlay" />
+
     <div class="z-50 flex flex-col items-center justify-center">
       <div
         style="background: linear-gradient(242deg, rgba(255, 255, 255, 0.21) 0%, rgba(255, 255, 255, 0.08) 100%);"

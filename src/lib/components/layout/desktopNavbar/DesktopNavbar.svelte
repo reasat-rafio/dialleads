@@ -55,18 +55,14 @@
 </script>
 
 <div
-  class="{className} px-16 xl:px-0 ml-[1.06rem] mr-[1.13rem] mt-4
+  class="{className} relative ml-[1.06rem] mr-[1.13rem] mt-4 overflow-hidden
   rounded-[1.875rem]
-  relative overflow-hidden
-   bg-hero-gradient">
- 
-
+  bg-hero-gradient px-16
+   xl:px-0">
   <img
     src="/grid.png"
     alt="grid overlay"
     class="pointer-events-none absolute inset-0 h-full w-full opacity-100 mix-blend-overlay" />
-
-
 
   <!-- max-h-[57.5rem]  h-[57.5rem] min-h-[57.5rem]-->
   <div class="mx-auto max-w-[75rem] pt-[1.81rem]">
@@ -87,7 +83,7 @@
           <div
             role="button"
             tabindex="0"
-            class="relative flex items-center z-50"
+            class="relative z-50 flex items-center"
             onmouseover={() => showDropdown(item?.link?.title)}
             onmouseout={hideDropdown}
             onfocus={() => handleFocus(item?.link?.title)}
@@ -124,12 +120,12 @@
         {/each}
       </div>
 
-      <div>
+      <div class="z-50 bg-transparent">
         <Button
           variant="link"
           class="h-[2.875rem] 
           w-[8.625rem] rounded-[0.75rem] border border-violet-600 
-          bg-primary px-5 py-[.88rem] font-geist font-medium
+          bg-primary  bg-opacity-100 px-5 py-[.88rem] font-geist font-medium
           text-white
           ">
           Get Started
