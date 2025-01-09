@@ -26,6 +26,9 @@ importers:
       formsnap:
         specifier: ^2.0.0
         version: 2.0.0(svelte@5.15.0)(sveltekit-superforms@2.22.1(@sveltejs/kit@2.14.0(@sveltejs/vite-plugin-svelte@4.0.4(svelte@5.15.0)(vite@5.4.11(@types/node@22.10.2)(terser@5.37.0)))(svelte@5.15.0)(vite@5.4.11(@types/node@22.10.2)(terser@5.37.0)))(@types/json-schema@7.0.15)(svelte@5.15.0)(typescript@5.7.2))
+      svelte-meta-tags:
+        specifier: ^4.1.0
+        version: 4.1.0(svelte@5.15.0)(typescript@5.7.2)
       sveltekit-superforms:
         specifier: ^2.22.1
         version: 2.22.1(@sveltejs/kit@2.14.0(@sveltejs/vite-plugin-svelte@4.0.4(svelte@5.15.0)(vite@5.4.11(@types/node@22.10.2)(terser@5.37.0)))(svelte@5.15.0)(vite@5.4.11(@types/node@22.10.2)(terser@5.37.0)))(@types/json-schema@7.0.15)(svelte@5.15.0)(typescript@5.7.2)
@@ -5006,6 +5009,11 @@ packages:
   scheduler@0.23.2:
     resolution: {integrity: sha512-UOShsPwz7NrMUqhR6t0hWjFduvOzbtv7toDH1/hIrfRNIDBnnBWd0CwJTGvTpngVlmwGCdP9/Zl/tVrDqcuYzQ==}
 
+  schema-dts@1.1.2:
+    resolution: {integrity: sha512-MpNwH0dZJHinVxk9bT8XUdjKTxMYrA5bLtrrGmFA6PTLwlOKnhi67XoRd6/ty+Djt6ZC0slR57qFhZDNMI6DhQ==}
+    peerDependencies:
+      typescript: '>=4.1.0'
+
   scroll-into-view-if-needed@3.1.0:
     resolution: {integrity: sha512-49oNpRjWRvnU8NyGVmUaYG4jtTkNonFZI86MmGRDqBphEK2EXT9gdEUoQPZhuBM8yWHxCWbobltqYO5M4XrUvQ==}
 
@@ -5305,6 +5313,11 @@ packages:
     peerDependenciesMeta:
       svelte:
         optional: true
+
+  svelte-meta-tags@4.1.0:
+    resolution: {integrity: sha512-XBG4L6wOEabMMNzKgYW5u5vsdkOKNbHqUY/UeAhSrsxNubCP5suh8yGCjtw7qx76kToQ4qDR6Z9VSN4Yuj2bMQ==}
+    peerDependencies:
+      svelte: ^5.0.0
 
   svelte-toolbelt@0.5.0:
     resolution: {integrity: sha512-t3tenZcnfQoIeRuQf/jBU7bvTeT3TGkcEE+1EUr5orp0lR7NEpprflpuie3x9Dn0W9nOKqs3HwKGJeeN5Ok1sQ==}
@@ -11577,6 +11590,10 @@ snapshots:
     dependencies:
       loose-envify: 1.4.0
 
+  schema-dts@1.1.2(typescript@5.7.2):
+    dependencies:
+      typescript: 5.7.2
+
   scroll-into-view-if-needed@3.1.0:
     dependencies:
       compute-scroll-into-view: 3.1.0
@@ -11928,6 +11945,13 @@ snapshots:
       postcss-scss: 4.0.9(postcss@8.4.49)
     optionalDependencies:
       svelte: 5.15.0
+
+  svelte-meta-tags@4.1.0(svelte@5.15.0)(typescript@5.7.2):
+    dependencies:
+      schema-dts: 1.1.2(typescript@5.7.2)
+      svelte: 5.15.0
+    transitivePeerDependencies:
+      - typescript
 
   svelte-toolbelt@0.5.0(svelte@5.15.0):
     dependencies:
