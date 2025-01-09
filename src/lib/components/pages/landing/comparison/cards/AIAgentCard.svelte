@@ -20,12 +20,12 @@
   </div>
   <div>
     <h3
-      class="font-geist mt-[5.5rem] text-center
-      text-[2.375rem] font-bold leading-tight text-white">
+      class="font-geist w-[8.5625rem] md:w-full mx-auto  mt-[5.5rem] text-center
+      text-xl md:text-[2.375rem] font-bold md:leading-tight text-white">
       {card?.cardTitle}
     </h3>
     <div>
-      <div class="mb-[3.44rem] mt-[2.19rem] lg:mt-[2.88rem] space-y-[1.12rem]">
+      <div class="mb-[3.44rem] mt-[2.19rem] lg:mt-[2.88rem] space-y-[1.12rem] pl-[1.88rem] lg:pl-0">
         {#each card?.features as feature}
           <div class="flex items-center gap-3">
             <SanityImage
