@@ -38,9 +38,9 @@
           {#each relatedPlanNames as planName}
             <Tabs.Trigger
               class="w-full border-b border-transparent 
-            bg-none text-black
-            text-lg
+            bg-none text-lg
             font-semibold
+            text-black
             data-[state=active]:border-b data-[state=active]:border-[#6D28D9]
             data-[state=active]:bg-transparent data-[state=active]:text-black data-[state=active]:shadow-none
             "
@@ -82,8 +82,14 @@
               : 'border-b border-dashed pb-6'}>
             {#each feature?.featureLists as list}
               <div class="mt-6 flex items-center justify-between px-[1.63rem]">
-                <p class="text-[0.875rem] font-normal">{list.featureName}</p>
-
+                <div>
+                  {#each list.featureName.split('*') as part, index}
+                    {part}
+                    {#if index < list.featureName.split('*').length - 1}
+                      <span class="text-red-500">*</span>
+                    {/if}
+                  {/each}
+                </div>
                 {#each list?.values.filter((value) => value.relatedPlan?.name === planName) as value}
                   <!-- Render only values related to the current tab (planName) -->
                   {#if value.type === 'text'}
