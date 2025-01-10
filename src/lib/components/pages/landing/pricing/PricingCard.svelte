@@ -20,7 +20,7 @@
   style="
 box-shadow: 0px 12px 38.4px 0px rgba(17, 3, 62, 0.08);
 "
-  class="h-full w-full rounded-xl border bg-white p-8 md:h-[35.8rem] lg:w-[23.8rem]">
+  class=" w-full h-full rounded-xl border bg-white p-8  ">
   <div class="space-y-2 text-center">
     <div class="flex justify-center">
       <div

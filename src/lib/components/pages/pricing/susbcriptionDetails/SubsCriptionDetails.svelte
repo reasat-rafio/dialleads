@@ -19,7 +19,7 @@
   <div class="hidden md:block">
     <SubscriptionDetailsForDesktop {props} {plans} {saveUpTo} />
   </div>
-  <div class="px-8 lg:hidden">
+  <div class="px-8 lg:hidden mt-0 pt-0 relative">
     <SubscriptionDetailsForMobile {props} {plans} {saveUpTo} />
   </div>
 </div>

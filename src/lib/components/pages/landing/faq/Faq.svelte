@@ -11,7 +11,7 @@
 </script>
 
 <div
-  class="mx-5 mt-[2.5rem] grid max-w-[74.8125rem] grid-cols-1 gap-x-[3rem] gap-y-[1.88rem] md:grid-cols-12 md:gap-y-[0rem] lg:mt-[5.94rem] xl:mx-0">
+  class="mx-5 mt-[2.5rem] mb-10 grid max-w-[74.8125rem] grid-cols-1 gap-x-[3rem] gap-y-[1.88rem] md:grid-cols-12 md:gap-y-[0rem] lg:mt-[5.94rem] xl:mx-0">
   <div class="col-span-1 md:col-span-5">
     <div class="flex flex-col items-center md:items-start">
       <div
