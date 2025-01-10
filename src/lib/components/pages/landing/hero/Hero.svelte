@@ -18,20 +18,22 @@
   <div class="relative">
     <div
       style="background: linear-gradient(242deg, rgba(255, 255, 255, 0.21) 0%, rgba(255, 255, 255, 0.08) 100%);"
-      class="hidden gap-[0.375rem] mx-auto mb-[2.12rem] 
-      rounded-[20rem]
-      py-2
+      class="mx-auto mb-[2.12rem] hidden h-10
+      items-center
+      justify-center
   
-      lg:flex h-10 lg:w-[26.625rem] items-center justify-center">
+      gap-[0.375rem] rounded-[20rem] py-2 lg:flex lg:w-[26.625rem]">
       <SanityImage
         class="h-4 w-4 lg:h-5 lg:w-5"
         src={hero?.sectionIcon}
         sizes="5vw"
         imageUrlBuilder={imgBuilder}
         alt="" />
-      <p class="text-nowrap text-sm lg:text-lg font-medium text-white">{hero?.sectionName}</p>
+      <p class="text-nowrap text-sm font-medium text-white lg:text-lg">
+        {hero?.sectionName}
+      </p>
     </div>
-    <div class="mx-auto  w-full text-center  lg:h-[10.5rem] lg:w-[50.6875rem]">
+    <div class="mx-auto w-full text-center lg:h-[10.5rem] lg:w-[50.6875rem]">
       {#if Array.isArray(hero?.title[0]?.children) && Array.isArray(hero?.title[1]?.children)}
         <h2
           class="text-nowrap font-geist text-[1.875rem] font-bold text-[#FFF] lg:text-7xl">
@@ -50,7 +52,7 @@
          text-center text-base font-normal text-white lg:mt-[0.75rem] lg:w-[40.3125rem] lg:text-[1.25rem]">
       {hero?.subtitle}
     </p>
-    <div class=" mt-6 mx-[0.94rem] flex justify-center lg:mt-[1.88rem]">
+    <div class=" mx-[0.94rem] mt-6 flex justify-center lg:mt-[1.88rem]">
       <div
         class="inline-flex w-full max-w-[14.420rem]
       animate-shine items-center justify-center rounded-xl border-[1px]
@@ -75,10 +77,13 @@
     </div>
 
     <div
+      style="
+      background: 
+      linear-gradient(0deg, rgba(75, 16, 168, 0.70) 0%, rgba(62, 33, 107, 0.25) 52.55%, rgba(223, 198, 255, 0.00) 100%)"
       class=" relative mx-auto mt-[4rem]
       flex h-[17.8rem] w-full
-      justify-center px-4 md:w-[40rem] md:px-0 lg:mt-[3.4rem] lg:h-[22.5rem] lg:w-[50rem] lg:px-0 xl:max-h-[17.8rem]
-      xl:w-[75rem]
+      justify-center px-4 opacity-70 md:w-[40rem] md:px-0 lg:mt-[3.4rem] lg:h-[22.5rem] lg:w-[50rem] lg:px-0
+      xl:max-h-[17.8rem] xl:w-[75rem]
       {windowWidth <= 320 ? 'mt-[5.95rem] h-full' : 'h-[17.8rem]'}
       ">
       <div
