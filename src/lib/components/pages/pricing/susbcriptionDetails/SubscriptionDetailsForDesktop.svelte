@@ -22,7 +22,7 @@
 
 <div class="container mx-auto max-w-[75rem] px-5 pb-24 xl:px-0">
   <div class="border rounded-[1.26rem] overflow-clip">
-    <div class="sticky top-0 z-50 ">
+    <div class="sticky top-[5.3rem] z-50 ">
       <Table.Root class=" ">
         <Table.Header class="bg-[#F8FAFC] ">
           <Table.Row class="relative hover:bg-transparent">

@@ -65,7 +65,7 @@
 </script>
 
 <div
-  class="{className}  relative ml-[1.06rem] mr-[1.13rem] mt-4 overflow-hidden
+  class="{className}  relative  mt-4 overflow-hidden
   rounded-[1.875rem]
   bg-hero-gradient px-16
    xl:px-0">
