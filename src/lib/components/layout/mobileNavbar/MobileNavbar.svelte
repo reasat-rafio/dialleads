@@ -96,10 +96,13 @@
           Dialleads
         </h5>
       </a>
-      <Button class="right-0 rounded px-4 py-2 bg-transparent" onclick={togglePopup}>
+      <Button
+        class="right-0 rounded bg-transparent px-4 py-2 hover:bg-transparent"
+        onclick={togglePopup}>
         {#if isPopupVisible}
           <!-- Close (X) Icon -->
-          <p class={`flex items-center gap-2 bg-transparent ${isScrolled ? 'filter-black' : 'filter-white'}`}>
+          <p
+            class={`flex items-center gap-2 bg-transparent ${isScrolled ? 'filter-black' : 'filter-white'}`}>
             <span class="h-4 w-4 text-base font-bold">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -135,11 +138,11 @@
         {/if}
       </Button>
     </div>
-    <div class="relative z-50 mx-[2rem]">
+    <div class={`  ${isScrolled ? "pop-up" : "relative z-50 mx-[1rem]"}`}>
       {#if isPopupVisible}
         <div
-          class="absolute left-1/2 top-1/2 z-50 w-full -translate-x-1/2 transform rounded-lg bg-white p-6
-            shadow-lg">
+          class={`${isScrolled ? "top-[4rem]" : "top-[5rem]"} absolute  left-1/2 z-50 w-full  -translate-x-1/2 transform rounded-lg bg-white p-6
+            shadow-lg`}>
           <div class="flex flex-col justify-start gap-5">
             {#each nav?.menu as item}
               <div
@@ -198,11 +201,13 @@
   .navbar {
     position: fixed;
     top: 0;
+    left: 0;
     z-index: 1000;
     width: 100%;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     transition: background-color 0.3s ease;
     background-color: transparent;
+    padding-bottom: 1rem;
   }
 
   .navbar.scrolled {
@@ -217,5 +222,13 @@
   /* Black icon filter when scrolled */
   .filter-black {
     filter: brightness(0%);
+  }
+  .pop-up {
+    z-index: 2000;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   }
 </style>

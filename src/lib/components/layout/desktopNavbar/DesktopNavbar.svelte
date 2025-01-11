@@ -19,6 +19,16 @@
   let expanded: { [key: string]: boolean } = $state({});
   let activeDropdown: string | null = $state(null);
   let timeout: any;
+  let isScrolled = $state(false);
+
+  function handleScroll() {
+    isScrolled = window.scrollY > 0;
+  }
+
+  $effect(() => {
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  });
 
   function toggleNavbar() {
     showMenu = !showMenu;
@@ -65,8 +75,9 @@
     class="pointer-events-none absolute inset-0 h-full w-full opacity-100 mix-blend-overlay" />
 
   <!-- max-h-[57.5rem]  h-[57.5rem] min-h-[57.5rem]-->
-  <div class="mx-auto max-w-[75rem] pt-[1.81rem]">
-    <div class="flex justify-between">
+  <div
+    class={` ${isScrolled ? 'scrolled navbar  pt-4' : ' pt-[1.81rem]'}`}>
+    <div class="flex justify-between mx-auto max-w-[75rem]">
       <a href="/" class="flex items-center gap-[0.49rem]">
         <SanityImage
           class="h-[2.63rem] w-[2.63rem]"
@@ -74,7 +85,7 @@
           sizes="100vw"
           imageUrlBuilder={imgBuilder}
           alt={logo?.alt || 'logo'} />
-        <h5 class="font-geist text-[1.47656rem] font-semibold text-[#FFF]">
+        <h5 class={`font-geist text-[1.47656rem] font-semibold  ${isScrolled ? "text-black" : "text-[#FFF]"}`}>
           Dialleads
         </h5>
       </a>
@@ -92,12 +103,12 @@
               href={item?.link?.type === 'internal'
                 ? item?.link?.internalLink
                 : item?.link?.externalLink}
-              class="font-geist text-base font-normal text-[#FFF] opacity-80">
+              class={`"font-geist text-base font-normal  opacity-80" ${isScrolled ? "text-black": "text-[#FFF]"}`}>
               {item?.link?.title}
             </a>
             {#if item?.moreLinks}
               <ChevronDown
-                class="h-[1.25rem] w-[1.125rem] font-geist text-base font-normal text-[#FFF] " />
+                class={`h-[1.25rem] w-[1.125rem] font-geist text-base font-normal ${isScrolled ? "text-black": "text-[#FFF] "}`} />
             {/if}
             {#if item?.moreLinks && activeDropdown === item?.link?.title}
               <div
@@ -137,3 +148,21 @@
     </div>
   </div>
 </div>
+
+<style>
+  .navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    width: 100%;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s ease;
+    background-color: transparent;
+    padding-bottom: 1rem;
+  }
+  .navbar.scrolled {
+    background-color: white;
+    color: black;
+  }
+</style>

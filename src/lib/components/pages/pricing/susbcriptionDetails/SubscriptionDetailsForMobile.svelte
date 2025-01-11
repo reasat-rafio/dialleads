@@ -58,7 +58,7 @@
           {#each plans as plan}
             {#if plan?.planName?.name === planName}
               <div
-                class="sticky top-0 z-50 mt-6 border-b bg-white pb-[2.13rem]">
+                class="sticky top-[5rem] py-5 z-50 mt-6 border-b bg-white pb-[2.13rem]">
                 <PricingCard {plan} bind:selectedSubscriptionType {saveUpTo} />
               </div>
             {/if}
