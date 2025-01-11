@@ -22,6 +22,16 @@
   let expanded: { [key: string]: boolean } = $state({});
   let activeDropdown: string | null = $state(null);
   let timeout: any;
+  let isScrolled = $state(false);
+
+  function handleScroll() {
+    isScrolled = window.scrollY > 0;
+  }
+
+  $effect(() => {
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  });
 
   function togglePopup() {
     console.log(isPopupVisible);
@@ -66,14 +76,14 @@
   <div
     class=" {className} relative
     mt-2
-    overflow-hidden
     rounded-[1.25rem] bg-hero-gradient lg:rounded-[1.875rem]">
     <img
       src="/grid.png"
       alt="grid overlay"
       class="pointer-events-none absolute inset-0 h-full w-full opacity-100 mix-blend-overlay" />
 
-    <div class="relative flex justify-between  pt-4">
+    <div
+      class={`navbar ${isScrolled ? 'scrolled' : ''} flex justify-between pt-4`}>
       <a href="/" class="z-50 flex items-center gap-[0.49rem] pl-[0.88rem]">
         <SanityImage
           class="h-[2.63rem] w-[2.63rem]"
@@ -81,16 +91,15 @@
           sizes="100vw"
           imageUrlBuilder={imgBuilder}
           alt={logo?.alt || 'logo'} />
-        <h5 class="font-geist text-[1.47656rem] font-semibold text-[#FFF]">
+        <h5
+          class={`font-geist text-[1.47656rem] font-semibold ${isScrolled ? 'text-black' : 'text-white'}`}>
           Dialleads
         </h5>
       </a>
-      <Button
-        class="right-0 z-50 bg-transparent hover:bg-transparent"
-        onclick={togglePopup}>
+      <Button class="right-0 rounded px-4 py-2 bg-transparent" onclick={togglePopup}>
         {#if isPopupVisible}
           <!-- Close (X) Icon -->
-          <p class="flex items-center gap-2">
+          <p class={`flex items-center gap-2 bg-transparent ${isScrolled ? 'filter-black' : 'filter-white'}`}>
             <span class="h-4 w-4 text-base font-bold">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -118,7 +127,10 @@
         {:else}
           <!-- Hamburger Icon -->
           <p class="flex items-center">
-            <img src="/humburgIcon.png" alt="icon" />
+            <img
+              class={`${isScrolled ? 'filter-black' : 'filter-white'}`}
+              src="/humburgIcon.png"
+              alt="icon" />
           </p>
         {/if}
       </Button>
@@ -181,3 +193,29 @@
     </div>
   </div>
 </div>
+
+<style>
+  .navbar {
+    position: fixed;
+    top: 0;
+    z-index: 1000;
+    width: 100%;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s ease;
+    background-color: transparent;
+  }
+
+  .navbar.scrolled {
+    background-color: white;
+    color: black;
+  }
+
+  .filter-white {
+    filter: brightness(100%);
+  }
+
+  /* Black icon filter when scrolled */
+  .filter-black {
+    filter: brightness(0%);
+  }
+</style>

@@ -37,7 +37,8 @@
     border-[#E4E4E7] md:w-full lg:h-fit xl:w-[75rem]">
       <SanityImage
         lqip
-        class="h-full w-full bg-cover bg-center bg-no-repeat object-cover "
+        innerClass="h-full w-full object-cover "
+        class="h-full w-full object-cover "
         src={enterprisePlan?.banner}
         sizes="100vw"
         imageUrlBuilder={imgBuilder}

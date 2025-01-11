@@ -21,32 +21,36 @@
 </script>
 
 <div class="container mx-auto max-w-[75rem] px-5 pb-24 xl:px-0">
-  <div class="overflow-x-hidden rounded-[1.26rem] border">
-    <Table.Root>
-      <Table.Header class="bg-[#F8FAFC] ">
-        <Table.Row class="sticky top-0 z-50 hover:bg-transparent">
-          <Table.Head class="border-r ">
-            <div class="pb-[2rem] pt-[1.81rem]">
-              <h4
-                class="text-center text-2xl font-semibold leading-[1.5rem] text-black">
-                Subscription Type
-              </h4>
-              <p
-                class="mt-[0.38rem] text-center text-xl font-normal leading-[1.25rem] text-[#495568]">
-                Save Money with an Annual plan
-              </p>
-              <div class="mt-[1.88rem] flex justify-center">
-                <Tab {saveUpTo} bind:selectedSubscriptionType />
+  <div class="border rounded-[1.26rem] overflow-clip">
+    <div class="sticky top-0 z-50 ">
+      <Table.Root class=" ">
+        <Table.Header class="bg-[#F8FAFC] ">
+          <Table.Row class="relative hover:bg-transparent">
+            <Table.Head class="border-r">
+              <div class=" pb-[2rem] pt-[1.81rem]">
+                <h4
+                  class="text-center text-2xl font-semibold leading-[1.5rem] text-black">
+                  Subscription Type
+                </h4>
+                <p
+                  class="mt-[0.38rem] text-center text-xl font-normal leading-[1.25rem] text-[#495568]">
+                  Save Money with an Annual plan
+                </p>
+                <div class="mt-[1.88rem] flex justify-center">
+                  <Tab {saveUpTo} bind:selectedSubscriptionType />
+                </div>
               </div>
-            </div>
-          </Table.Head>
-          {#each plans as plan, index}
-            <Table.Head class={index === plans.length - 1 ? '' : 'border-r'}>
-              <PricingCard {plan} bind:selectedSubscriptionType {saveUpTo} />
             </Table.Head>
-          {/each}
-        </Table.Row>
-      </Table.Header>
+            {#each plans as plan, index}
+              <Table.Head class={index === plans.length - 1 ? '' : 'border-r'}>
+                <PricingCard {plan} bind:selectedSubscriptionType {saveUpTo} />
+              </Table.Head>
+            {/each}
+          </Table.Row>
+        </Table.Header>
+      </Table.Root>
+    </div>
+    <Table.Root class="">
       <Table.Body>
         <!-- Iterate through features -->
         {#each features as feature}

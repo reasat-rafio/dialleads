@@ -13,7 +13,7 @@
   }: Props = $props();
 </script>
 
-<div class="">
+<div class="px-[2.63rem]">
   <h4 class="text-center text-2xl font-semibold leading-[1.5rem] text-black">
     {plan?.planName?.name}
   </h4>

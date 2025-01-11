@@ -55,7 +55,7 @@
 </script>
 
 <div
-  class="{className} relative ml-[1.06rem] mr-[1.13rem] mt-4 overflow-hidden
+  class="{className}  relative ml-[1.06rem] mr-[1.13rem] mt-4 overflow-hidden
   rounded-[1.875rem]
   bg-hero-gradient px-16
    xl:px-0">
@@ -124,12 +124,12 @@
         <Button
           variant="link"
           class="
+          flex
+          h-[2.875rem] w-[8.625rem] items-center
+          justify-center 
+          rounded-[0.75rem] border border-violet-600 bg-primary 
+          px-5 py-[.88rem] font-geist font-medium text-white
           hover:no-underline
-          flex h-[2.875rem] w-[8.625rem]
-          items-center 
-          justify-center rounded-[0.75rem] border border-violet-600 
-          bg-primary px-5 py-[.88rem] font-geist font-medium
-          text-white
           ">
           Get Started
         </Button>

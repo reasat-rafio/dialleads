@@ -38,7 +38,7 @@
           <div class="mx-auto flex w-full justify-between px-5">
             {#each relatedPlanNames as planName}
               <Tabs.Trigger
-                class="w-full border-b border-transparent 
+              class="w-full border-b border-transparent 
               bg-none text-lg
               font-semibold
               text-black
