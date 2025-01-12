@@ -45,7 +45,9 @@
       class="h-[1.25rem] w-[1.25rem] "
       src={props?.sectionIcon}
       sizes="05vw"
-      imageUrlBuilder={imgBuilder} />
+      imageUrlBuilder={imgBuilder}
+      alt={props?.sectionIcon?.alt || "icon"}
+       />
     <h3>{props.sectionTitle}</h3>
   </div>
 
@@ -69,7 +71,9 @@
                   class="h-[3rem] w-[3rem] overflow-hidden rounded-full"
                   src={testimonial?.reviewerImage}
                   sizes="05vw"
-                  imageUrlBuilder={imgBuilder} />
+                  imageUrlBuilder={imgBuilder}
+                  alt={testimonial?.reviewerImage?.alt || "image"}
+                   />
               </div>
               <div class="text-left">
                 <h2 class="font-semibold">{testimonial.name}</h2>
@@ -81,7 +85,9 @@
                         class="h-fit w-fit "
                         src={testimonial.companyLogo}
                         sizes="05vw"
-                        imageUrlBuilder={imgBuilder} />
+                        imageUrlBuilder={imgBuilder}
+                        alt= "logo"
+                         />
                     {/if}
                   </div>
 
@@ -136,7 +142,9 @@
                   class="h-[3rem] w-[3rem] overflow-hidden rounded-full"
                   src={testimonial?.reviewerImage}
                   sizes="05vw"
-                  imageUrlBuilder={imgBuilder} />
+                  imageUrlBuilder={imgBuilder}
+                  alt={testimonial?.reviewerImage?.alt || "image"}
+                   />
               </div>
               <div class="">
                 <h2 class="font-semibold">{testimonial.name}</h2>
@@ -148,7 +156,9 @@
                         class="h-fit w-fit "
                         src={testimonial.companyLogo}
                         sizes="05vw"
-                        imageUrlBuilder={imgBuilder} />
+                        imageUrlBuilder={imgBuilder}
+                        alt="logo"
+                         />
                     {/if}
                   </div>
 
@@ -203,7 +213,9 @@
               class="h-[3rem] w-[3rem] overflow-hidden rounded-full"
               src={testimonial?.reviewerImage}
               sizes="05vw"
-              imageUrlBuilder={imgBuilder} />
+              imageUrlBuilder={imgBuilder}
+              alt={testimonial?.reviewerImage?.alt || "image"}
+               />
           </div>
           <div class="text-left">
             <h2 class="font-semibold">{testimonial.name}</h2>
@@ -215,7 +227,9 @@
                     class="h-fit w-fit "
                     src={testimonial.companyLogo}
                     sizes="05vw"
-                    imageUrlBuilder={imgBuilder} />
+                    imageUrlBuilder={imgBuilder}
+                    alt="logo"
+                     />
                 {/if}
               </div>
 

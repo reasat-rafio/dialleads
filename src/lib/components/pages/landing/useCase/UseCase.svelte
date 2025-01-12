@@ -118,7 +118,9 @@
           class="z-50 h-[1.25rem] w-[1.25rem] pt-1 "
           src={props?.sectionIcon}
           sizes="05vw"
-          imageUrlBuilder={imgBuilder} />
+          imageUrlBuilder={imgBuilder}
+          alt={props?.sectionIcon?.alt || "icon"}
+           />
         <h3 class="z-50 text-white">{props.sectionTitle}</h3>
       </div>
 
@@ -127,7 +129,9 @@
           class=" z-50 h-auto lg:bottom-[10rem] lg:left-[26rem] lg:max-w-[10.0625rem] xl:bottom-[13rem] xl:left-[29rem]  xl:max-w-[14.0625rem]"
           src={props?.clickToPlayImage}
           sizes="90vw"
-          imageUrlBuilder={imgBuilder} />
+          imageUrlBuilder={imgBuilder}
+          alt={props?.clickToPlayImage?.alt || "icon"}
+           />
       </div>
       <h2
         class="z-50 mb-[0.75rem] max-w-[20.93rem] text-center text-[1.625rem] font-semibold text-white lg:mb-[0.88rem] lg:max-w-[44rem] lg:text-[3rem] lg:leading-[3.6rem]">
@@ -143,7 +147,9 @@
           class=" z-50  w-[6.688rem]  "
           src={props?.clickToPlayImage}
           sizes="70vw"
-          imageUrlBuilder={imgBuilder} />
+          imageUrlBuilder={imgBuilder}
+          alt={props?.clickToPlayImage?.alt || "icon"}
+           />
       </div>
 
       <div class="container mx-auto px-[1.5rem] lg:px-[7.5rem]">
@@ -160,7 +166,9 @@
                     <SanityImage
                       class="h-full w-full border bg-cover bg-center object-cover"
                       src={useCase?.useCaseImageForAI}
-                      imageUrlBuilder={imgBuilder} />
+                      imageUrlBuilder={imgBuilder}
+                      alt={useCase?.useCaseImageForAI?.alt || "image"}
+                       />
                     <!-- sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw" -->
                     <h3
                       class="mt-[1.38rem] text-center text-[1.125rem] font-semibold lg:text-[1.375rem]">

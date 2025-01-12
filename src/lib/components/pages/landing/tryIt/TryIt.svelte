@@ -83,7 +83,9 @@
       class="h-[1.25rem] w-[1.25rem] "
       src={props?.sectionIcon}
       sizes="05vw"
-      imageUrlBuilder={imgBuilder} />
+      imageUrlBuilder={imgBuilder}
+      alt={props?.sectionIcon?.alt || "icon"}
+       />
     <h3 class="text-[1rem] font-normal text-[#495568]">{props.sectionTitle}</h3>
   </div>
 
@@ -125,7 +127,9 @@
               class="z-50 h-full w-full  md:h-[4.375rem] md:w-[4.375rem] "
               src={props?.personImage}
               sizes="60vw"
-              imageUrlBuilder={imgBuilder} />
+              imageUrlBuilder={imgBuilder}
+              alt={props?.personImage?.alt || "image"}
+               />
           </div>
           <div class="">
             <h3
