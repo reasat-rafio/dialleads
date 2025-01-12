@@ -22,9 +22,9 @@
             src={props?.sectionIcon}
             sizes="05vw"
             imageUrlBuilder={imgBuilder} />
-          <h1 class="text-[1rem] font-normal text-white">
+          <h3 class="text-[1rem] font-normal text-white">
             {props.sectionTitle}
-          </h1>
+          </h3>
         </div>
 
         {#if Array.isArray(props?.title[0]?.children) && Array.isArray(props?.title[1]?.children)}

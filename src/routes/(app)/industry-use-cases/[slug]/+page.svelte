@@ -3,11 +3,18 @@
   import Features from '$lib/components/pages/industryUseCases/Features.svelte';
   import Hero from '$lib/components/pages/industryUseCases/Hero.svelte';
   import Stat from '$lib/components/pages/industryUseCases/Stat.svelte';
+  import Seo from '$lib/components/Seo.svelte';
 
   let data = $props();
 
-  let { sections } = $derived(data?.data?.page);
+  let {
+    page: { sections, seo },
+    site: {
+      logos: { ogImage },
+    },
+  } = $derived(data?.data);
 
+  
   const industryUseCase = {
     useCaseImageForAI: data.data.page.useCaseImageForAI,
     useCaseSubTitleForAI: data.data.page.useCaseSubTitleForAI,
@@ -16,6 +23,8 @@
     useCaseTitleForAI: data.data.page.useCaseTitleForAI,
   };
 </script>
+
+<Seo {seo} siteOgImg={ogImage} />
 
 <div class="flex max-w-full flex-col items-center justify-center">
   {#if !!sections?.length}

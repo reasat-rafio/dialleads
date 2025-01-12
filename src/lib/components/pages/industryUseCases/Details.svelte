@@ -10,12 +10,12 @@
   <div
     class=" mt-[2.74rem] flex w-full flex-col items-center justify-center text-center lg:mt-[6.25rem]">
     <div class="max-w-[44.5625rem]">
-      <h1 class="text-[1.625rem] font-semibold lg:text-[2.75rem]">
+      <h2 class="text-[1.625rem] font-semibold lg:text-[2.75rem]">
         {props?.title}
-      </h1>
-      <h1 class="mt-[0.62rem] text-[1rem] lg:mt-[1rem] lg:text-[1.125rem]">
+      </h2>
+      <h3 class="mt-[0.62rem] text-[1rem] lg:mt-[1rem] lg:text-[1.125rem]">
         {props.description}
-      </h1>
+      </h3>
     </div>
   </div>
 
@@ -24,12 +24,12 @@
     {#each props.subDetails as subDetail}
       <div
         class="col-span-2 w-full text-center lg:col-span-1 lg:max-w-[30.5rem]">
-        <h1 class=" text-[1rem] font-semibold lg:text-[1.875rem]">
+        <h2 class=" text-[1rem] font-semibold lg:text-[1.875rem]">
           {subDetail.title}
-        </h1>
-        <h1 class="mb-[2.5rem] mt-[1rem] text-[1rem] lg:text-[1.125rem]">
+        </h2>
+        <h3 class="mb-[2.5rem] mt-[1rem] text-[1rem] lg:text-[1.125rem]">
           {subDetail.description}
-        </h1>
+        </h3>
         <SanityImage
           class="w-auto"
           src={subDetail.detailsImage}

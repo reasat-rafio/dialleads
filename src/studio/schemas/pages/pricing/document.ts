@@ -7,6 +7,10 @@ const pricing = {
   icon: MdOutlinePriceCheck,
   fields: [
     {
+      name: 'seo',
+      type: 'seo',
+    },
+    {
       name: 'saveUpTo',
       title: 'Save Up To',
       type: 'number',

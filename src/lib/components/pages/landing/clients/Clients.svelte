@@ -15,14 +15,14 @@
 </script>
 
 <div class="mb-[2.5rem] mt-[1.88rem] lg:mb-[5.25rem] lg:mt-[4.94rem]">
-  <h1 class="mb-[2rem] text-center text-[1.125rem] font-semibold">
+  <h3 class="mb-[2rem] text-center text-[1.125rem] font-semibold">
     {#each props.title as title, i}
       {title.title}
       {#if i == 1}
         <span class="text-purple-600">{title.title}</span>
       {/if}
     {/each}
-  </h1>
+  </h3>
   <Carousel.Root
     opts={{
       align: 'start',

@@ -119,7 +119,7 @@
           src={props?.sectionIcon}
           sizes="05vw"
           imageUrlBuilder={imgBuilder} />
-        <h1 class="z-50 text-white">{props.sectionTitle}</h1>
+        <h3 class="z-50 text-white">{props.sectionTitle}</h3>
       </div>
 
       <div class="absolute hidden lg:flex">

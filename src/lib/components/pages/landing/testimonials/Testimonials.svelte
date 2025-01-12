@@ -46,7 +46,7 @@
       src={props?.sectionIcon}
       sizes="05vw"
       imageUrlBuilder={imgBuilder} />
-    <h1>{props.sectionTitle}</h1>
+    <h3>{props.sectionTitle}</h3>
   </div>
 
   <h2

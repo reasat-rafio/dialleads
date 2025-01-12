@@ -7,6 +7,13 @@ const industryUseCasePage = defineType({
   type: 'document',
   fields: [
     orderRankField({ type: 'industryUseCasePage' }),
+    
+     
+      defineField({
+        name: 'seo',
+        type: 'seo',
+      }),
+    
 
     defineField({
       name: 'title',
@@ -50,10 +57,6 @@ const industryUseCasePage = defineType({
 
     // TItle rakhte hobe .. slug generate korte hobe ..
 
-    defineField({
-      name: 'seo',
-      type: 'seo',
-    }),
 
     defineField({
       name: 'useCaseImageForAI',
