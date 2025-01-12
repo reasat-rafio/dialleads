@@ -14,8 +14,8 @@
 
   const HEIGHT = 630;
   const WIDTH = 1200;
-  let title = seo.title;
-  let description = seo.description;
+  let title = seo?.title;
+  let description = seo?.description;
   let ogImage = seo?.ogImage ?? siteOgImg;
 
   const makeOpenGraphImages = () => {
