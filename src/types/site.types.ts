@@ -44,9 +44,8 @@ export interface MoreLink{
 }
 
 export interface Footer {
-  backgroundOne: SanityImageWithAlt;
-  backgroundTwo: SanityImageWithAlt;
   joinMoreTitle: PortableTextBlock[];
+  joinMoreBanner: SanityImageWithAlt;
   title: string;
   getStartedbtnText: string;
   getStartedbtnLink: string;

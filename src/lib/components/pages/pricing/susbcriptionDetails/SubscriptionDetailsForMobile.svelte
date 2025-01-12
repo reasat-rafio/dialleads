@@ -19,7 +19,8 @@
   // Extract unique plan names from relatedPlan
   const relatedPlanNames = Array.from(
     new Set(
-      features?.flatMap((feature) =>
+      // svelte-ignore state_referenced_locally
+            features?.flatMap((feature) =>
         feature.featureLists.flatMap((list) =>
           list.values.map((value) => value.relatedPlan?.name),
         ),
@@ -38,7 +39,7 @@
           <div class="mx-auto flex w-full justify-between px-5">
             {#each relatedPlanNames as planName}
               <Tabs.Trigger
-              class="w-full border-b border-transparent 
+              class="w-full py-0 border-b border-transparent 
               bg-none text-lg
               font-semibold
               text-black

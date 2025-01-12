@@ -8,39 +8,7 @@ const footer = defineType({
   type: 'document',
   icon: MdOutlineCallToAction,
   fields: [
-    defineField({
-      name: 'backgroundOne',
-      type: 'image',
-      title: 'Background One',
-      // validation: (Rule) => Rule.required(),
-      options: { hotspot: true },
-      fields: [
-        {
-          name: 'alt',
-          title: 'Alternative Text',
-          description: 'Important for SEO and accessibility',
-          type: 'string',
-          // validation: (Rule) => Rule.required(),
-        },
-      ],
-    }),
-
-    defineField({
-      name: 'backgroundTwo',
-      type: 'image',
-      title: 'Background Two',
-      // validation: (Rule) => Rule.required(),
-      options: { hotspot: true },
-      fields: [
-        {
-          name: 'alt',
-          title: 'Alternative Text',
-          description: 'Important for SEO and accessibility',
-          type: 'string',
-          // validation: (Rule) => Rule.required(),
-        },
-      ],
-    }),
+   
 
     defineField({
       name: 'title',
@@ -52,6 +20,23 @@ const footer = defineType({
       type: 'array',
       validation: (Rule) => Rule.required(),
       of: [defineArrayMember({ type: 'block' })],
+    }),
+    defineField({
+      name: 'joinMoreBanner',
+      type: 'image',
+      description: 'Image for Join More Than',
+      options: {
+        hotspot: true,
+      },
+      fields: [
+        {
+          name: 'alt',
+          title: 'Alternative Text',
+          description: 'Important for SEO and accessibility',
+          type: 'string',
+          // validation: (Rule) => Rule.required(),
+        },
+      ],
     }),
     defineField({
       name: 'getStartedbtnText',
