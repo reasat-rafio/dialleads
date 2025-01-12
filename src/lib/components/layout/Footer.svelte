@@ -153,7 +153,7 @@
   
  ">
     <div class="">
-      <div class="h-[27.375rem] w-[20.9375rem] lg:h-[13.625rem] lg:w-[63rem] mx-auto xl:w-[75rem] ">
+      <div class="h-[27rem] w-[20.9375rem] lg:h-[13.625rem] lg:w-[63rem] mx-auto xl:w-[75rem] ">
         <SanityImage
           lqip
           innerClass="h-full w-full object-cover rounded-[1.875rem]"
