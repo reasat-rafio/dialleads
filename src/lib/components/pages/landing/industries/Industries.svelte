@@ -61,9 +61,9 @@
           src={props?.sectionIcon}
           sizes="05vw"
           imageUrlBuilder={imgBuilder} />
-        <h1 class="text-[1.125rem] font-medium text-white">
+        <h3 class="text-[1.125rem] font-medium text-white">
           {props.sectionTitle}
-        </h1>
+        </h3>
       </div>
 
       <h2

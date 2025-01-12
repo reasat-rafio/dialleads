@@ -84,7 +84,7 @@
       src={props?.sectionIcon}
       sizes="05vw"
       imageUrlBuilder={imgBuilder} />
-    <h1 class="text-[1rem] font-normal text-[#495568]">{props.sectionTitle}</h1>
+    <h3 class="text-[1rem] font-normal text-[#495568]">{props.sectionTitle}</h3>
   </div>
 
   <h2
@@ -128,10 +128,10 @@
               imageUrlBuilder={imgBuilder} />
           </div>
           <div class="">
-            <h1
+            <h3
               class=" z-50 mb-[0.62rem] text-[1rem] font-bold uppercase text-white md:text-[1.25rem]">
               {props.personName}
-            </h1>
+            </h3>
             <h2
               class="z-50 w-fit rounded-[3.13rem] bg-[#8B5CF6] px-[0.62rem] text-[0.75rem] font-bold text-white md:text-[0.875rem]">
               {props.status}

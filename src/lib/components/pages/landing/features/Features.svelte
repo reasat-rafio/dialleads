@@ -20,9 +20,9 @@
         sizes="05vw"
         imageUrlBuilder={imgBuilder} />
     {/if}
-    <h1 class="text-[1rem] font-medium text-[#495568] lg:text-[1.125rem]">
+    <h3 class="text-[1rem] font-medium text-[#495568] lg:text-[1.125rem]">
       {props.sectionTitle}
-    </h1>
+    </h3>
   </div>
 
   <h2

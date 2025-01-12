@@ -146,14 +146,15 @@
     </div>
   </div>
 
-  <!-- Join More  -->
+<!-- Join More  -->
   <div
     class="
-    absolute -top-[.5rem] lg:-top-[1rem] left-1/2 -translate-x-1/2 -translate-y-1/2
+    absolute -top-[.5rem] left-1/2 -translate-x-1/2 -translate-y-1/2 lg:-top-[1rem]
   
  ">
     <div class="">
-      <div class="h-[27.375rem] w-[20.9375rem] lg:h-[13.625rem] lg:w-[63rem] mx-auto xl:w-[75rem] ">
+      <div
+        class="mx-auto h-[27.375rem] w-[20.9375rem] lg:h-[13.625rem] lg:w-[63rem] xl:w-[75rem]">
         <SanityImage
           lqip
           innerClass="h-full w-full object-cover rounded-[1.875rem]"
