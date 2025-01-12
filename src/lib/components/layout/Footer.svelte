@@ -149,19 +149,22 @@
   <!-- Join More  -->
   <div
     class="
-    absolute left-1/2 -top-[1rem] -translate-x-1/2 -translate-y-1/2
+    absolute -top-[.5rem] lg:-top-[1rem] left-1/2 -translate-x-1/2 -translate-y-1/2
   
  ">
     <div class="">
-      <div class="h-[13.625rem] w-[75rem]">
+      <div class="h-[27.375rem] w-[20.9375rem] lg:h-[13.625rem] lg:w-[63rem] mx-auto xl:w-[75rem] ">
         <SanityImage
-          class="h-full w-full"
+          lqip
+          innerClass="h-full w-full object-cover rounded-[1.875rem]"
+          class="h-full w-full object-cover "
           src={footer?.joinMoreBanner}
           sizes="100vw"
           imageUrlBuilder={imgBuilder}
           alt={footer?.joinMoreBanner?.alt || 'logo'} />
       </div>
-      <div class="absolute top-1/2 -translate-y-1/2 left-1/2 -translate-x-1/2 flex flex-col items-center gap-[3.25rem] lg:flex-row">
+      <div
+        class="absolute left-1/2 top-1/2 flex -translate-x-1/2 -translate-y-1/2 flex-col items-center gap-[3.25rem] lg:flex-row">
         {#if Array.isArray(footer?.joinMoreTitle[0]?.children) && Array.isArray(footer?.joinMoreTitle[1]?.children) && Array.isArray(footer?.joinMoreTitle[2]?.children)}
           <h3
             class="
