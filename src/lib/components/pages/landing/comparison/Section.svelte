@@ -13,7 +13,7 @@
 
 <div class=" mt-[2.5rem] lg:mt-[7.5rem] px-2 lg:px-0">
   <div
-    class="mx-auto flex h-[2.5rem] w-full md:w-[21.125rem] 
+    class="mx-auto flex h-[2.4rem] w-full md:w-[21.125rem] 
     items-center justify-center gap-2 rounded-full border pb-[.67rem] md:pl-[1.31rem] md:pr-[1.13rem] pt-[.7rem]">
     <SanityImage
       class="h-[1.125rem] w-[1.125rem] "
