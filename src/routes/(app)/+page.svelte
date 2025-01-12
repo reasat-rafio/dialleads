@@ -13,17 +13,19 @@
   import Hero from '$lib/components/pages/landing/hero/Hero.svelte';
   import DataDriven from '$lib/components/pages/landing/dataDriven/DataDriven.svelte';
   import { MetaTags } from 'svelte-meta-tags';
+  import Seo from '$lib/components/Seo.svelte';
 
   let { data } = $props();
 
   let {
-    page: { sections, pricing, industries },
+    page: { sections, pricing, seo, industries },
+    site: {
+      logos: { ogImage },
+    },
   } = $derived(data);
 </script>
 
-<MetaTags
-  title="Dial Leads"
-  description="lorem Ipsum is simply dummy text of the printing and typesetting " />
+<Seo {seo} siteOgImg={ogImage} />
 
 <div class="flex max-w-full flex-col items-center justify-center font-geist">
   {#if !!sections?.length}
