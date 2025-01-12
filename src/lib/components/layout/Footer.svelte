@@ -43,7 +43,7 @@
             Subscribe
             <span>
               <svg
-                class="mt-1 w-[0.875rem]"
+                class=" w-[0.875rem]"
                 viewBox="0 0 15 13"
                 fill="none"
                 xmlns="http://www.w3.org/2000/svg">
