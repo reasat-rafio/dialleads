@@ -16,7 +16,7 @@
       src={card?.icon}
       sizes="5vw"
       imageUrlBuilder={imgBuilder}
-      alt={card?.icon?.alt} />
+      alt={card?.icon?.alt || "icon"} />
   </div>
   <div>
     <h3
@@ -33,7 +33,7 @@
               src={feature?.featureIcon}
               sizes="5vw"
               imageUrlBuilder={imgBuilder}
-              alt={feature?.featureIcon?.alt} />
+              alt={feature?.featureIcon?.alt || "icon"} />
 
             <p class="font-geist text-[0.875rem] lg:text-xl font-normal text-[#FFF]">
               {feature?.featureName}

@@ -72,7 +72,7 @@
                   class="h-5 w-5"
                   src={feature?.featureIcon}
                   imageUrlBuilder={imgBuilder}
-                  alt="featureTitleIcon" />
+                  alt={feature?.featureIcon?.alt || "icon"} />
               </div>
               <p class="text-base font-medium text-black">
                 {feature?.featureHeading}

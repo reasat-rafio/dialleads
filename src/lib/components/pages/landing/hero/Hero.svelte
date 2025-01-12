@@ -28,7 +28,7 @@
         src={hero?.sectionIcon}
         sizes="5vw"
         imageUrlBuilder={imgBuilder}
-        alt="" />
+        alt={hero?.sectionIcon?.alt || "icon"} />
       <p class="text-nowrap text-sm font-medium text-white lg:text-lg">
         {hero?.sectionName}
       </p>
@@ -69,7 +69,7 @@
             src={hero?.link?.icon}
             sizes="5vw"
             imageUrlBuilder={imgBuilder}
-            alt="" />
+            alt={hero?.link?.icon?.alt || "icon"} />
           <!-- Button Text {hero?.link?.title} -->
           <span>{hero?.link?.title}</span>
         </Button>
@@ -95,14 +95,14 @@
             src={hero?.thumbnailForDesktop}
             sizes="100vw"
             imageUrlBuilder={imgBuilder}
-            alt="" />
+            alt={hero?.thumbnailForDesktop?.alt || 'tuhumbnail'} />
         {:else}
           <SanityImage
             lqip
             class="mx-auto h-full w-full  rounded-tl-xl rounded-tr-xl bg-cover bg-no-repeat object-cover "
             src={hero?.thumbnailForMobile}
             imageUrlBuilder={imgBuilder}
-            alt="" />
+            alt={hero?.thumbnailForMobile?.alt || "thumbnail"} />
         {/if}
 
         <div
@@ -116,7 +116,7 @@
                   class="h-[1.6rem] w-[1.6rem]"
                   src={hero?.videoPlayBtnIcon}
                   imageUrlBuilder={imgBuilder}
-                  alt={hero?.videoPlayBtnIcon?.alt} />
+                  alt={hero?.videoPlayBtnIcon?.alt || "icon"} />
               </Button>
             </AlertDialog.Trigger>
             <AlertDialog.Content

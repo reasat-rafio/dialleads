@@ -42,7 +42,7 @@
         src={enterprisePlan?.banner}
         sizes="100vw"
         imageUrlBuilder={imgBuilder}
-        alt="SliderMainImage" />
+        alt={enterprisePlan?.banner?.alt || "bannerImg"} />
     </div>
     <div
       class="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 md:left-[22rem]">
@@ -82,7 +82,7 @@
             src={enterprisePlan?.cta?.icon}
             sizes="5vw"
             imageUrlBuilder={imgBuilder}
-            alt={enterprisePlan?.banner?.alt} />
+            alt={enterprisePlan?.banner?.alt || "icon"} />
         </button>
       </div>
     </div>

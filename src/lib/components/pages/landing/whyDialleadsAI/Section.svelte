@@ -19,7 +19,7 @@
       src={sectionIcon}
       sizes="5vw"
       imageUrlBuilder={imgBuilder}
-      alt="SliderMainImage" />
+      alt="icon" />
     <p class="font-geist text-lg font-semibold text-black">{sectionName}</p>
   </div>
   <h2

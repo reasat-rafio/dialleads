@@ -30,7 +30,7 @@ box-shadow: 0px 12px 38.4px 0px rgba(17, 3, 62, 0.08);
           src={plan?.icon}
           sizes="5vw"
           imageUrlBuilder={imgBuilder}
-          alt={plan?.icon?.alt} />
+          alt={plan?.icon?.alt || "icon"} />
       </div>
     </div>
     <p class="font-geist text-xl font-normal text-violet-600">

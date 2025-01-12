@@ -15,7 +15,7 @@
     src={card?.cardIcon}
     sizes="100vw"
     imageUrlBuilder={imgBuilder}
-    alt="SliderMainImage" />
+    alt={card?.cardIcon?.alt || "icon"} />
   <div class="mt-6 space-y-2">
     <h4
       class="font-geist  text-[1.124rem] font-semibold leading-tight text-black lg:text-[1.375rem] lg:text-nowrap lg:w-[18.6865rem] lg:h-[1.75rem]">

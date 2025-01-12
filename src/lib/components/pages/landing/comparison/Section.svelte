@@ -20,7 +20,7 @@
       src={sectionIcon}
       sizes="5vw"
       imageUrlBuilder={imgBuilder}
-      alt="SliderMainImage" />
+      alt={sectionIcon?.alt || 'sectionIcon'} />
     <p class="font-geist text-nowrap text-base lg:text-lg font-medium text-[#495568]">
       {sectionName}
     </p>

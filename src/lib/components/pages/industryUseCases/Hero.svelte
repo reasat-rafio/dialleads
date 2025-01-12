@@ -111,7 +111,7 @@
                     src={props?.link?.icon}
                     sizes="5vw"
                     imageUrlBuilder={imgBuilder}
-                    alt="" />
+                    alt={props?.link?.icon?.alt || "icon"} />
 
                   <span>{props?.link?.title}</span>
                 </Button>

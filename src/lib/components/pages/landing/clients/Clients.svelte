@@ -49,7 +49,7 @@
               src={client.clientImage}
               sizes={' (min-width:1024px) 14vw, 26vw'}
               imageUrlBuilder={imgBuilder}
-              alt="SliderMainImage" />
+              alt={client?.clientImage?.alt || 'clientImg'} />
           </div>
         </Carousel.Item>
       {/each}

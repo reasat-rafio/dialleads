@@ -17,7 +17,7 @@
               src={sectionIcon}
               sizes="5vw"
               imageUrlBuilder={imgBuilder}
-              alt="SliderMainImage" />
+              alt={sectionIcon?.alt || "icon"} />
         <p class="text-black text-lg font-semibold font-geist ">{sectionName}</p>
     </div>
     <h2 class="text-black text-[1.625rem] md:text-5xl font-semibold text-center mt-6 font-geist w-full">{sectionTitle}</h2>

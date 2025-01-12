@@ -16,7 +16,7 @@ border-slate-400 bg-slate-100 px-2 lg:h-[30.27rem] xl:w-[31.25rem] lg:pl-[4.38re
       src={card?.icon}
       sizes="5vw"
       imageUrlBuilder={imgBuilder}
-      alt={card?.icon?.alt} />
+      alt={card?.icon?.alt || "icon"} />
   </div>
   <div>
     <h3
@@ -33,7 +33,7 @@ border-slate-400 bg-slate-100 px-2 lg:h-[30.27rem] xl:w-[31.25rem] lg:pl-[4.38re
               src={feature?.featureIcon}
               sizes="5vw"
               imageUrlBuilder={imgBuilder}
-              alt={feature?.featureIcon?.alt} />
+              alt={feature?.featureIcon?.alt || "icon"} />
 
             <p
               class="font-geist text-[0.875rem] font-normal text-gray-800 lg:text-xl">
