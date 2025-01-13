@@ -228,7 +228,7 @@
                     src={testimonial.companyLogo}
                     sizes="05vw"
                     imageUrlBuilder={imgBuilder}
-                    alt="logo"
+                    alt={testimonial?.companyLogo?.alt || "logo"}
                      />
                 {/if}
               </div>

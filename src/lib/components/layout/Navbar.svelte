@@ -58,7 +58,7 @@
     <DesktopNavbar
       className={cn('h-fit w-full', {
         'max-h-[63.5rem] min-h-[63.5rem]': pathName === '/',
-        'h-[40.75rem] max-h-[57.5rem]':
+        'h-[43.5rem] max-h-[57.5rem]':
           pathName === '/industry-use-cases/real-estate' ||
           pathName === '/industry-use-cases/mortgage',
         'h-[38.75rem] max-h-[57.5rem]':
@@ -70,7 +70,6 @@
       {logo} />
   </div>
   <div class="lg:hidden">
-
     <MobileNavbar
       className={cn('w-full', {
         'min-h-[52.75rem] max-h-[52.75rem]': pathName === '/',

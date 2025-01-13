@@ -69,7 +69,7 @@
 </script>
 
 <svelte:window bind:innerWidth={windowWidth} />
-<div class="absolute top-[5.41rem] lg:top-[8.56rem] xl:px-0">
+<div class="absolute top-[5.41rem] lg:top-[11rem] xl:px-0">
   <div class="relative">
     <div
       class={cn(
