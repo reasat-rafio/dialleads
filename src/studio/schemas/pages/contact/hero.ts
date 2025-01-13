@@ -11,13 +11,11 @@ const hero = defineType({
       name: 'sectionTitle',
       type: 'string',
       title: 'Section Title',
-      // validation: (Rule) => Rule.required(),
     }),
     defineField({
       name: 'sectionIcon',
       type: 'image',
       title: 'Section Icon',
-      // validation: (Rule) => Rule.required(),
       options: { hotspot: true },
       fields: [
         {
@@ -25,7 +23,6 @@ const hero = defineType({
           title: 'Alternative Text',
           description: 'Important for SEO and accessibility',
           type: 'string',
-          // validation: (Rule) => Rule.required(),
         },
       ],
     }),
@@ -39,14 +36,11 @@ const hero = defineType({
       name: 'description',
       title: 'Description',
       type: 'string',
-      // validation: (Rule) => Rule.required(),
     }),
-
     defineField({
       name: 'contactPageImage',
       type: 'image',
       title: 'Contact Page Image',
-      // validation: (Rule) => Rule.required(),
       options: { hotspot: true },
       fields: [
         {
@@ -54,14 +48,23 @@ const hero = defineType({
           title: 'Alternative Text',
           description: 'Important for SEO and accessibility',
           type: 'string',
-          // validation: (Rule) => Rule.required(),
         },
       ],
     }),
   ],
   preview: {
     select: {
-      subtitle: 'sectionTitle',
+      title: 'sectionTitle', // Main section title
+      subtitle: 'title.0.children.0.text', // First block text from the title
+      media: 'sectionIcon', // Section icon as preview image
+      fallbackMedia: 'contactPageImage', // Fallback media if sectionIcon is unavailable
+    },
+    prepare({ title, subtitle, media, fallbackMedia }) {
+      return {
+        title: title || 'Hero Section', // Fallback if sectionTitle is not provided
+        subtitle: subtitle || 'No title provided', // Fallback for subtitle if no text is found in title
+        media: media || fallbackMedia || SiHomeadvisor, // Section icon or fallback to contact page image
+      };
     },
   },
 });

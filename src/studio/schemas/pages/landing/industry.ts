@@ -1,6 +1,5 @@
 import { SiHomeadvisor } from 'react-icons/si';
-import { defineArrayMember, defineField, defineType } from 'sanity';
-import { toPlainText } from '@portabletext/svelte';
+import { defineField, defineType } from 'sanity';
 
 const industry = defineType({
   title: 'Industry',
@@ -12,14 +11,11 @@ const industry = defineType({
       name: 'sectionTitle',
       type: 'string',
       title: 'Section Title',
-      // validation: (Rule) => Rule.required(),
     }),
-
     defineField({
       name: 'sectionIcon',
       type: 'image',
       title: 'Section Icon',
-      // validation: (Rule) => Rule.required(),
       options: { hotspot: true },
       fields: [
         {
@@ -27,16 +23,13 @@ const industry = defineType({
           title: 'Alternative Text',
           description: 'Important for SEO and accessibility',
           type: 'string',
-          // validation: (Rule) => Rule.required(),
         },
       ],
     }),
-
     defineField({
       name: 'sectionImage',
       type: 'image',
       title: 'Section Image',
-      // validation: (Rule) => Rule.required(),
       options: { hotspot: true },
       fields: [
         {
@@ -44,21 +37,28 @@ const industry = defineType({
           title: 'Alternative Text',
           description: 'Important for SEO and accessibility',
           type: 'string',
-          // validation: (Rule) => Rule.required(),
         },
       ],
     }),
-
     defineField({
       name: 'title',
       type: 'string',
       title: 'Title',
-      // validation: (Rule) => Rule.required(),
     }),
   ],
   preview: {
     select: {
-      title: 'sectionTitle',
+      title: 'sectionTitle', // Main section title
+      subtitle: 'title', // Additional title for context
+      media: 'sectionIcon', // Main media from section icon
+      fallbackMedia: 'sectionImage', // Fallback media if section icon is unavailable
+    },
+    prepare({ title, subtitle, media, fallbackMedia }) {
+      return {
+        title: title || 'Industry Section', // Fallback if no section title
+        subtitle: subtitle || 'No title provided', // Fallback if no subtitle
+        media: media || fallbackMedia || SiHomeadvisor, // Section icon or fallback to section image
+      };
     },
   },
 });

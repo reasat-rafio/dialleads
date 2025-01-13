@@ -1,6 +1,5 @@
 import { SiHomeadvisor } from 'react-icons/si';
 import { defineArrayMember, defineField, defineType } from 'sanity';
-import { toPlainText } from '@portabletext/svelte';
 
 const faq = defineType({
   title: 'Faq',
@@ -12,13 +11,11 @@ const faq = defineType({
       name: 'sectionTitle',
       type: 'string',
       title: 'Section Title',
-      // validation: (Rule) => Rule.required(),
     }),
     defineField({
       name: 'sectionIcon',
       type: 'image',
       title: 'Section Icon',
-      // validation: (Rule) => Rule.required(),
       options: { hotspot: true },
       fields: [
         {
@@ -26,7 +23,6 @@ const faq = defineType({
           title: 'Alternative Text',
           description: 'Important for SEO and accessibility',
           type: 'string',
-          // validation: (Rule) => Rule.required(),
         },
       ],
     }),
@@ -34,13 +30,11 @@ const faq = defineType({
       name: 'title',
       title: 'Title',
       type: 'string',
-      // validation: (Rule) => Rule.required(),
     }),
     defineField({
       name: 'description',
       title: 'Description',
       type: 'string',
-      // validation: (Rule) => Rule.required(),
     }),
     defineField({
       name: 'faq',
@@ -54,20 +48,16 @@ const faq = defineType({
               name: 'question',
               title: 'Question',
               type: 'string',
-              // validation: (Rule) => Rule.required(),
             }),
-
             defineField({
               name: 'answer',
               title: 'Answer',
               type: 'string',
-              // validation: (Rule) => Rule.required(),
             }),
           ],
           preview: {
             select: {
               title: 'question',
-              // subtitle: 'link',
             },
           },
         }),
@@ -76,7 +66,16 @@ const faq = defineType({
   ],
   preview: {
     select: {
-      title: 'sectionTitle',
+      title: 'sectionTitle', // Main section title
+      subtitle: 'title', // Additional title for context
+      media: 'sectionIcon', // Section icon as preview image
+    },
+    prepare({ title, subtitle, media }) {
+      return {
+        title: title || 'FAQ Section', // Fallback if sectionTitle is not provided
+        subtitle: subtitle || 'No title provided', // Fallback if title is not provided
+        media: media || SiHomeadvisor, // Fallback to the default icon
+      };
     },
   },
 });

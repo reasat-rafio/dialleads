@@ -1,6 +1,5 @@
 import { SiHomeadvisor } from 'react-icons/si';
 import { defineArrayMember, defineField, defineType } from 'sanity';
-import { toPlainText } from '@portabletext/svelte';
 
 const clients = defineType({
   title: 'Clients',
@@ -12,15 +11,8 @@ const clients = defineType({
       name: 'sectionName',
       type: 'string',
       title: 'Section Name',
-      // validation: (Rule) => Rule.required(),
     }),
 
-    // defineField({
-    //   name: 'title',
-    //   type: 'string',
-    //   title: 'Title',
-    //   // validation: (Rule) => Rule.required(),
-    // }),
     defineField({
       name: 'title',
       title: 'Title',
@@ -33,13 +25,11 @@ const clients = defineType({
               name: 'title',
               title: 'Title',
               type: 'string',
-              // validation: (Rule) => Rule.required(),
             }),
           ],
           preview: {
             select: {
               title: 'title',
-              // subtitle: 'link',
             },
           },
         }),
@@ -58,7 +48,6 @@ const clients = defineType({
               name: 'clientImage',
               type: 'image',
               title: 'Client Image',
-              // validation: (Rule) => Rule.required(),
               options: { hotspot: true },
               fields: [
                 {
@@ -66,7 +55,6 @@ const clients = defineType({
                   title: 'Alternative Text',
                   description: 'Important for SEO and accessibility',
                   type: 'string',
-                  // validation: (Rule) => Rule.required(),
                 },
               ],
             }),
@@ -74,13 +62,11 @@ const clients = defineType({
               name: 'clientTitle',
               title: 'Client Title',
               type: 'string',
-              // validation: (Rule) => Rule.required(),
             }),
           ],
           preview: {
             select: {
               title: 'clientTitle',
-              // subtitle: 'link',
             },
           },
         }),
@@ -90,6 +76,15 @@ const clients = defineType({
   preview: {
     select: {
       title: 'sectionName',
+      subtitle: 'title.0.title', // The first title in the array
+      media: 'clients.0.clientImage', // The first client image
+    },
+    prepare({ title, subtitle, media }) {
+      return {
+        title: title || 'Clients Section',
+        subtitle: subtitle || 'No title provided',
+        media: media || SiHomeadvisor, // Fallback to the icon if no image
+      };
     },
   },
 });

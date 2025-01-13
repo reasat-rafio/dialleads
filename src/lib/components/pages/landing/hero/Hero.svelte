@@ -34,16 +34,16 @@
       </p>
     </div>
     <div class="mx-auto w-[17rem] text-center lg:h-[10.5rem] lg:w-[50.6875rem]">
-      {#if Array.isArray(hero?.title[0]?.children) && Array.isArray(hero?.title[1]?.children)}
+      {#if Array.isArray(hero?.heroTitle[0]?.children) && Array.isArray(hero?.heroTitle[1]?.children)}
         <h1
           class=" font-geist text-[2.25rem] font-bold text-[#FFF] lg:text-7xl leading-[2.7rem]">
-          {hero?.title[0]?.children[0]?.text}
+          {hero?.heroTitle[0]?.children[0]?.text}
         </h1>
         <h1
           class="bg-gradient-to-r from-[#731AFF] via-[#731AFF] to-[#FCCEEE]
                 bg-clip-text font-geist text-[2.25rem] font-bold
                 text-transparent lg:text-7xl">
-          {hero?.title[1]?.children[0]?.text}
+          {hero?.heroTitle[1]?.children[0]?.text}
         </h1>
       {/if}
     </div>
