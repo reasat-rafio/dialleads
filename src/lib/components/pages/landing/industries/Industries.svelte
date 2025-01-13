@@ -42,13 +42,13 @@
 <svelte:window bind:innerWidth={windowWidth} />
 <div class="relative mb-0 w-full">
   <div
-    class="bg-industry-gradient h-full w-full
+    class="h-full w-full bg-industry-gradient
     py-5 lg:py-0
     ">
     <img
       src="/grid.png"
       alt="grid overlay"
-      class="pointer-events-none absolute inset-0 h-full w-full opacity-60 mix-blend-overlay lg:opacity-100 object-cover" />
+      class="pointer-events-none absolute inset-0 h-full w-full object-cover opacity-60 mix-blend-overlay lg:opacity-100" />
 
     <div
       class=" flex flex-col items-center justify-center pt-[2rem] lg:pt-[6rem]">
@@ -81,7 +81,7 @@
               class="basis-full bg-transparent  md:basis-1/2 lg:basis-1/3">
               <Card.Root
                 style="background: linear-gradient(217deg, rgba(255, 255, 255, 0.05) 100%, rgba(255, 255, 255, 0.08) 90%);"
-                class="rounded-[2rem]  border-[0.09rem] border-[#413e3e] border-b-[#4a4848] bg-transparent px-1 ">
+                class="rounded-[2rem] border-[0.09rem]   border-[#413e3e] border-b-[#4a4848]  bg-transparent px-1 shadow-lg backdrop-blur-sm ">
                 <Card.Content
                   class="m-1  flex flex-col items-center justify-center bg-transparent p-6">
                   {#if !!industry.useCaseImage}
