@@ -8,7 +8,7 @@
     $derived(hero);
 </script>
 
-<div class="container mt-24">
+<div class="container mt-[5.19rem]">
   <div
     class="mx-auto flex h-10 w-[7.125rem] items-center justify-center gap-2 rounded-[20rem]
        border px-3 py-2">
