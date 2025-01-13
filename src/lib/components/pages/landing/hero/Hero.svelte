@@ -81,7 +81,7 @@
       "
       class=" relative mx-auto mt-[3.89rem]
       flex h-[17.8rem]  w-full
-      justify-center px-4 opacity-70  md:px-0 lg:mt-[3.4rem] lg:h-[22.5rem]  lg:px-0
+      justify-center px-5 opacity-70  lg:mt-[3.4rem] lg:h-[22.5rem]  lg:px-0
       xl:max-h-[17.8rem]  max-w-[75rem]
       {windowWidth <= 320 ? 'mt-[5.95rem] h-full' : 'h-[20.875rem]'}
       ">
