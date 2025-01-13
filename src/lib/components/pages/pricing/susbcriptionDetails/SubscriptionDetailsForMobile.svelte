@@ -39,11 +39,11 @@
           <div class="mx-auto flex w-full  ">
             {#each relatedPlanNames as planName}
               <Tabs.Trigger
-              class="w-full py-4 rounded-none border-b border-transparent 
+              class="w-full py-[1.1rem] rounded-none border-b border-transparent 
               bg-none text-lg
               font-semibold
               text-black
-              data-[state=active]:border-b data-[state=active]:border-[#6D28D9]
+              data-[state=active]:border-b  data-[state=active]:border-[#6D28D9]
               data-[state=active]:bg-transparent data-[state=active]:text-black data-[state=active]:shadow-none
               "
                 value={planName}>
