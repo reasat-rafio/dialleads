@@ -83,7 +83,7 @@
       class="pointer-events-none absolute inset-0 h-full w-full opacity-100 mix-blend-overlay object-cover" />
 
     <div
-      class={`navbar px-5 ${isScrolled ? 'scrolled px-0' : ''} flex justify-between pt-[1.56rem]`}>
+      class={`navbar px-5 ${isScrolled ? 'scrolled px-1' : ''} flex justify-between pt-[1.56rem]`}>
       <a href="/" class="z-50 flex items-center gap-[0.49rem] pl-[0.88rem]">
         <SanityImage
           class="h-[2rem] w-[2rem]"
