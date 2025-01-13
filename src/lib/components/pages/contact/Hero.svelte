@@ -10,19 +10,19 @@
 </script>
 
 <svelte:window bind:innerWidth={windowWidth} />
-<div class="absolute top-[5.41rem] px-[0.94rem] lg:top-[13.75rem] xl:px-0">
+<div class="absolute top-[5.41rem] px-[0.94rem] lg:top-[9.83rem] xl:px-0">
   <div class="relative">
     <div
       class="container mx-auto w-full max-w-sm text-center text-white sm:max-w-xl md:max-w-3xl lg:h-[10.5rem] lg:max-w-5xl xl:max-w-7xl">
       <div class="z-50 flex flex-col items-center justify-center">
         <div
-          class="mb-[0.75rem] flex gap-x-[0.5rem] rounded-full border px-[1.52rem] py-[0.52rem] lg:mb-[1.5rem]">
+          class="mb-[0.75rem] flex gap-x-[0.5rem] rounded-full border px-[1rem] py-[0.50rem] lg:mb-[1.5rem]">
           <SanityImage
-            class=" h-[1.25rem] w-[1.25rem]  pt-[0.2rem] lg:pt-[0.1rem]"
+            class=" h-[1.25rem] w-[1.25rem]  pt-[0.2rem] lg:pt-[0.3rem]"
             src={props?.sectionIcon}
             sizes="05vw"
             imageUrlBuilder={imgBuilder} />
-          <h3 class="text-[1rem] font-normal text-white">
+          <h3 class="text-lg font-medium text-white">
             {props.sectionTitle}
           </h3>
         </div>

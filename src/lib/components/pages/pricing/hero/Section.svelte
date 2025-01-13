@@ -17,8 +17,8 @@
       src={sectionIcon}
       sizes="5vw"
       imageUrlBuilder={imgBuilder}
-      alt={sectionIcon?.alt || "icon"} />
-    <p class="font-geist text-lg font-bold text-white">{sectionName}</p>
+      alt={sectionIcon?.alt || 'icon'} />
+    <p class="font-geist text-lg font-medium text-white">{sectionName}</p>
   </div>
   <div class="mt-5 hidden items-center gap-5 text-center lg:flex">
     {#if Array.isArray(sectionTitle[0]?.children) && Array.isArray(sectionTitle[1]?.children)}
