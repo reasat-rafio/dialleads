@@ -75,8 +75,8 @@
 <div class="relative">
   <div
     class=" {className} relative
-    mt-2
-    rounded-[1.25rem] bg-hero-gradient w-full lg:rounded-[1.875rem] ">
+    
+     bg-hero-gradient w-full lg:rounded-[1.875rem] ">
     <img
       src="/grid.png"
       alt="grid overlay"

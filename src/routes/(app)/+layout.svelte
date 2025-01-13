@@ -26,7 +26,7 @@
 </svelte:head>
 
 <div class="relative">
-  <div class="px-2 lg:px-[.8rem]">
+  <div class="lg:px-[.8rem]">
     <Navbar pathName={page.url.pathname} {nav} {logo} />
   </div>
 
