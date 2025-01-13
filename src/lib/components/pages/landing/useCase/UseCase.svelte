@@ -126,7 +126,8 @@
 
       <div class="absolute hidden lg:flex">
         <SanityImage
-          class=" z-50 h-auto lg:bottom-[10rem] lg:left-[26rem] lg:max-w-[10.0625rem] xl:bottom-[13rem] xl:left-[29rem]  xl:max-w-[14.0625rem]"
+          class=" z-50 h-auto lg:bottom-[10rem] w-full  
+          lg:left-[26rem] lg:max-w-[10.0625rem] xl:bottom-[13rem] xl:left-[29rem]  xl:max-w-[14.0625rem]"
           src={props?.clickToPlayImage}
           sizes="90vw"
           imageUrlBuilder={imgBuilder}
