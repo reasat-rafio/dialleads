@@ -72,7 +72,7 @@
   <img
     src="/grid.png"
     alt="grid overlay"
-    class="pointer-events-none absolute inset-0 h-full w-fit opacity-100 mix-blend-overlay object-cover" />
+    class="pointer-events-none absolute inset-0 h-full w-full opacity-100 mix-blend-overlay object-cover" />
 
   <!-- max-h-[57.5rem]  h-[57.5rem] min-h-[57.5rem]-->
   <div
@@ -89,7 +89,7 @@
           Dialleads
         </h5>
       </a>
-      <div class="flex items-center gap-5">
+      <div class="flex items-center gap-10">
         {#each nav?.menu as item}
           <div
             role="button"

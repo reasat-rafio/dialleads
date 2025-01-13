@@ -16,7 +16,9 @@
   let windowWidth = $state(0);
 </script>
 <svelte:window bind:innerWidth={windowWidth} />
-<div class="max-w-[75rem] mx-auto">
+<div
+ style="background: linear-gradient(242deg, rgba(255, 255, 255, 0.21) 0%, rgba(255, 255, 255, 0.08) 100%);"
+ class="w-full">
   <div class="absolute left-1/2 top-[17rem] -translate-x-1/2 -translate-y-1/2">
     <Section {hero} />
     <TabBar bind:selectedSubscriptionType {saveUpTo} />
@@ -24,7 +26,7 @@
 
   <div
     class="
-    {windowWidth < 1024 ? 'container' : ''} 
+    {windowWidth < 1024 ? 'container' : 'max-w-[75rem] mx-auto'} 
       w-full h-full mx-auto 
     relative -top-[8rem] lg:-top-[6rem] grid grid-cols-1 gap-[1.88rem] md:grid-cols-2 xl:grid-cols-3 z-50">
     {#each plans as plan}
