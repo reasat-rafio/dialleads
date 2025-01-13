@@ -59,22 +59,22 @@
   <div class="hidden lg:block">
     {#if pathName == '/'}
       <DesktopNavbar
-        className="h-[63.5rem] max-h-[63.5rem] min-h-[63.5rem] "
+        className="h-fit max-h-[63.5rem] min-h-[63.5rem] w-full"
         {nav}
         {logo} />
     {:else}
-      <DesktopNavbar className="h-[38.75rem] max-h-[57.5rem]" {nav} {logo} />
+      <DesktopNavbar className="h-fit min-h-[38.75rem] max-h-[57.5rem] w-full" {nav} {logo} />
     {/if}
   </div>
   <div class="lg:hidden">
     {#if pathName == '/'}
-      <MobileNavbar className="h-[43.1rem]" {nav} {logo} />
+      <MobileNavbar className="min-h-[43.1rem] max-h-[43.1rem] w-full" {nav} {logo} />
     {:else if pathName == '/industry-use-cases/real-estate' || pathName == '/industry-use-cases/mortgage'}
-      <MobileNavbar className="h-[53.1rem]" {nav} {logo} />
+      <MobileNavbar className="min-h-[53.1rem]" {nav} {logo} />
     {:else if pathName == '/pricing'}
-      <MobileNavbar className="h-[43.1rem]" {nav} {logo} />
+      <MobileNavbar className="min-h-[43.1rem]" {nav} {logo} />
     {:else}
-      <MobileNavbar className="h-[25.625rem]" {nav} {logo} />
+      <MobileNavbar className="min-h-[25.625rem]" {nav} {logo} />
     {/if}
   </div>
 </div>

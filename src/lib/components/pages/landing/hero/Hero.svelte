@@ -14,7 +14,7 @@
 </script>
 
 <svelte:window bind:innerWidth={windowWidth} />
-<div class="absolute top-[6.44rem] px-[0.94rem] lg:top-[11.49rem] xl:px-0">
+<div class="absolute top-[5.15rem] px-[0.94rem] lg:top-[11.49rem] xl:px-0">
   <div class="relative">
     <div
       style="background: linear-gradient(242deg, rgba(255, 255, 255, 0.21) 0%, rgba(255, 255, 255, 0.08) 100%);"
@@ -78,20 +78,20 @@
 
     <div
       style="
-      background: 
-      linear-gradient(0deg, rgba(75, 16, 168, 0.70) 0%, rgba(62, 33, 107, 0.25) 52.55%, rgba(223, 198, 255, 0.00) 100%)"
+      "
       class=" relative mx-auto mt-[4rem]
-      flex h-[17.8rem] w-full
-      justify-center px-4 opacity-70 md:w-[40rem] md:px-0 lg:mt-[3.4rem] lg:h-[22.5rem] lg:w-[50rem] lg:px-0
-      xl:max-h-[17.8rem] xl:w-[75rem]
+      flex h-[17.8rem]  w-full
+      justify-center px-4 opacity-70  md:px-0 lg:mt-[3.4rem] lg:h-[22.5rem]  lg:px-0
+      xl:max-h-[17.8rem]  max-w-[75rem]
       {windowWidth <= 320 ? 'mt-[5.95rem] h-full' : 'h-[17.8rem]'}
       ">
       <div
-        class="rounded-tl-2xl rounded-tr-2xl bg-gradient-to-t from-violet-900 to-violet-100">
+        class="rounded-tl-2xl rounded-tr-2xl bg-gradient-to-t from-violet-900 to-violet-100 w-full">
         {#if windowWidth > 700}
           <SanityImage
             lqip
-            class="mx-auto  h-full w-full  rounded-tl-xl rounded-tr-xl bg-cover bg-no-repeat object-cover "
+            innerClass=" w-full  object-cover"
+            class="mx-auto  h-full w-full  rounded-tl-xl rounded-tr-xl  object-cover "
             src={hero?.thumbnailForDesktop}
             sizes="100vw"
             imageUrlBuilder={imgBuilder}
@@ -99,8 +99,9 @@
         {:else}
           <SanityImage
             lqip
-            class="mx-auto h-full w-full  rounded-tl-xl rounded-tr-xl bg-cover bg-no-repeat object-cover "
+            class="mx-auto h-full w-full  rounded-tl-xl rounded-tr-xl  object-contain"
             src={hero?.thumbnailForMobile}
+            sizes="100vw"
             imageUrlBuilder={imgBuilder}
             alt={hero?.thumbnailForMobile?.alt || "thumbnail"} />
         {/if}

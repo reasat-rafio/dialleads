@@ -76,11 +76,11 @@
   <div
     class=" {className} relative
     mt-2
-    rounded-[1.25rem] bg-hero-gradient lg:rounded-[1.875rem]">
+    rounded-[1.25rem] bg-hero-gradient w-full lg:rounded-[1.875rem]">
     <img
       src="/grid.png"
       alt="grid overlay"
-      class="pointer-events-none absolute inset-0 h-full w-full opacity-100 mix-blend-overlay" />
+      class="pointer-events-none absolute inset-0 h-full w-full opacity-100 mix-blend-overlay object-cover" />
 
     <div
       class={`navbar ${isScrolled ? 'scrolled' : ''} flex justify-between pt-4`}>

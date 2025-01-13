@@ -32,14 +32,14 @@
 </script>
 
 <div class="relative">
-  <div class="relative -top-[4.5rem]  rounded-[1.25rem] border pb-[1.875rem]">
+  <div class="relative -top-[4.5rem]  rounded-[1.25rem] border pb-[1.875rem] overflow-hidden">
     <Tabs.Root value={relatedPlanNames[0]} class="">
-      <div class="flex w-full justify-center bg-[#F8FAFC] py-3">
+      <div class="flex w-full  bg-[#F8FAFC] py-3">
         <Tabs.List class="bg-transparent ">
-          <div class="mx-auto flex w-full justify-between px-5">
+          <div class="mx-auto flex w-full  ">
             {#each relatedPlanNames as planName}
               <Tabs.Trigger
-              class="w-full py-0 border-b border-transparent 
+              class="w-full py-4 rounded-none border-b border-transparent 
               bg-none text-lg
               font-semibold
               text-black
