@@ -1,10 +1,7 @@
 <script lang="ts">
-  import { imgBuilder } from '$lib/sanity/sanity-client';
-  import SanityImage from '$lib/sanity/sanity-image/sanity-image.svelte';
-  import { ChevronDown } from 'lucide-svelte';
   import type { SanityImageWithAlt } from '../../../types/common.types';
   import type { Nav } from '../../../types/site.types';
-  import Button from '../ui/button/button.svelte';
+
   import DesktopNavbar from './desktopNavbar/DesktopNavbar.svelte';
   import MobileNavbar from './mobileNavbar/MobileNavbar.svelte';
   import { cn } from '$lib/utils';
