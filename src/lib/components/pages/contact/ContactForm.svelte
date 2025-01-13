@@ -14,6 +14,7 @@
   <div class=" hidden sm:col-span-1 sm:block">
     <div class="h-full w-fit">
       <SanityImage
+        lqip
         class="h-full w-full "
         src={props?.contactPageImage}
         sizes="100vw"
