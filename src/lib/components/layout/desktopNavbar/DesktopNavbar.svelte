@@ -65,7 +65,7 @@
 </script>
 
 <div
-  class="{className}  relative  mt-4 overflow-hidden
+  class="{className}  relative   overflow-hidden
   rounded-[1.875rem]
   bg-hero-gradient
    xl:px-0">
