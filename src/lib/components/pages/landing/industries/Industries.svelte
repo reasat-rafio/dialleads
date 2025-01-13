@@ -48,7 +48,7 @@
     <img
       src="/grid.png"
       alt="grid overlay"
-      class="pointer-events-none absolute inset-0 h-full w-full opacity-60 mix-blend-overlay lg:opacity-100" />
+      class="pointer-events-none absolute inset-0 h-full w-full opacity-60 mix-blend-overlay lg:opacity-100 object-cover" />
 
     <div
       class=" flex flex-col items-center justify-center pt-[2rem] lg:pt-[6rem]">
