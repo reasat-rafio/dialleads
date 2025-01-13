@@ -82,7 +82,7 @@ export interface HeroProps {
 export interface Hero {
   sectionIcon: SanityImageWithAlt;
   sectionName: string;
-  title: PortableTextBlock[];
+  heroTitle: PortableTextBlock[];
   subtitle: string;
   video: HeroVideo;
   thumbnailForMobile: SanityImageWithAlt;

@@ -1,6 +1,5 @@
 import { SiHomeadvisor } from 'react-icons/si';
 import { defineArrayMember, defineField, defineType } from 'sanity';
-import { toPlainText } from '@portabletext/svelte';
 
 const testCall = defineType({
   title: 'TestCall',
@@ -12,13 +11,11 @@ const testCall = defineType({
       name: 'sectionTitle',
       type: 'string',
       title: 'Section Title',
-      // validation: (Rule) => Rule.required(),
     }),
     defineField({
       name: 'sectionIcon',
       type: 'image',
       title: 'Section Icon',
-      // validation: (Rule) => Rule.required(),
       options: { hotspot: true },
       fields: [
         {
@@ -26,7 +23,6 @@ const testCall = defineType({
           title: 'Alternative Text',
           description: 'Important for SEO and accessibility',
           type: 'string',
-          // validation: (Rule) => Rule.required(),
         },
       ],
     }),
@@ -34,14 +30,11 @@ const testCall = defineType({
       name: 'title',
       title: 'Title',
       type: 'string',
-      // validation: (Rule) => Rule.required(),
     }),
-
     defineField({
       name: 'backgroundImage',
       type: 'image',
       title: 'Background Image',
-      // validation: (Rule) => Rule.required(),
       options: { hotspot: true },
       fields: [
         {
@@ -49,16 +42,13 @@ const testCall = defineType({
           title: 'Alternative Text',
           description: 'Important for SEO and accessibility',
           type: 'string',
-          // validation: (Rule) => Rule.required(),
         },
       ],
     }),
-
     defineField({
       name: 'personImage',
       type: 'image',
       title: 'Person Image',
-      // validation: (Rule) => Rule.required(),
       options: { hotspot: true },
       fields: [
         {
@@ -66,7 +56,6 @@ const testCall = defineType({
           title: 'Alternative Text',
           description: 'Important for SEO and accessibility',
           type: 'string',
-          // validation: (Rule) => Rule.required(),
         },
       ],
     }),
@@ -74,13 +63,11 @@ const testCall = defineType({
       name: 'personName',
       title: 'Person Name',
       type: 'string',
-      // validation: (Rule) => Rule.required(),
     }),
     defineField({
       name: 'status',
       title: 'Status',
       type: 'string',
-      // validation: (Rule) => Rule.required(),
     }),
     defineField({
       name: 'forms',
@@ -111,17 +98,25 @@ const testCall = defineType({
         }),
       ],
     }),
-
     defineField({
       name: 'ctaBtnText',
       title: 'CTA Button Text',
       type: 'string',
-      // validation: (Rule) => Rule.required(),
     }),
   ],
   preview: {
     select: {
-      title: 'sectionTitle',
+      title: 'sectionTitle', 
+      subtitle: 'title',
+      media: 'sectionIcon', 
+      fallbackMedia: 'backgroundImage', 
+    },
+    prepare({ title, subtitle, media, fallbackMedia }) {
+      return {
+        title: title || 'Test Call Section',
+        subtitle: subtitle || 'No title provided', 
+        media: media || fallbackMedia || SiHomeadvisor, 
+      };
     },
   },
 });

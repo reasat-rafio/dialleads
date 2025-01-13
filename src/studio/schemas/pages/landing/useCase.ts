@@ -1,6 +1,5 @@
 import { SiHomeadvisor } from 'react-icons/si';
-import { defineArrayMember, defineField, defineType } from 'sanity';
-import { toPlainText } from '@portabletext/svelte';
+import {  defineField, defineType } from 'sanity';
 
 const useCase = defineType({
   title: 'UseCase',
@@ -12,13 +11,11 @@ const useCase = defineType({
       name: 'sectionTitle',
       type: 'string',
       title: 'Section Title',
-      // validation: (Rule) => Rule.required(),
     }),
     defineField({
       name: 'sectionIcon',
       type: 'image',
       title: 'Section Icon',
-      // validation: (Rule) => Rule.required(),
       options: { hotspot: true },
       fields: [
         {
@@ -26,16 +23,13 @@ const useCase = defineType({
           title: 'Alternative Text',
           description: 'Important for SEO and accessibility',
           type: 'string',
-          // validation: (Rule) => Rule.required(),
         },
       ],
     }),
-
     defineField({
       name: 'useCaseSectionImage',
       type: 'image',
       title: 'Use Case Section Image',
-      // validation: (Rule) => Rule.required(),
       options: { hotspot: true },
       fields: [
         {
@@ -43,7 +37,6 @@ const useCase = defineType({
           title: 'Alternative Text',
           description: 'Important for SEO and accessibility',
           type: 'string',
-          // validation: (Rule) => Rule.required(),
         },
       ],
     }),
@@ -51,20 +44,16 @@ const useCase = defineType({
       name: 'title',
       title: 'Title',
       type: 'string',
-      // validation: (Rule) => Rule.required(),
     }),
     defineField({
       name: 'description',
       title: 'Description',
       type: 'string',
-      // validation: (Rule) => Rule.required(),
     }),
-
     defineField({
       name: 'clickToPlayImage',
       type: 'image',
       title: 'Click To Play Image',
-      // validation: (Rule) => Rule.required(),
       options: { hotspot: true },
       fields: [
         {
@@ -72,73 +61,23 @@ const useCase = defineType({
           title: 'Alternative Text',
           description: 'Important for SEO and accessibility',
           type: 'string',
-          // validation: (Rule) => Rule.required(),
         },
       ],
     }),
-
-    // defineField({
-    //   name: 'useCases',
-    //   title: 'Use Cases',
-    //   type: 'array',
-    //   of: [
-    //     defineArrayMember({
-    //       type: 'object',
-    //       fields: [
-    //         defineField({
-    //           name: 'useCaseImage',
-    //           type: 'image',
-    //           title: 'Use Case Image',
-    //           // validation: (Rule) => Rule.required(),
-    //           options: { hotspot: true },
-    //           fields: [
-    //             {
-    //               name: 'alt',
-    //               title: 'Alternative Text',
-    //               description: 'Important for SEO and accessibility',
-    //               type: 'string',
-    //               // validation: (Rule) => Rule.required(),
-    //             },
-    //           ],
-    //         }),
-    //         defineField({
-    //           name: 'useCaseTitle',
-    //           title: 'Use Case Title',
-    //           type: 'string',
-    //           // validation: (Rule) => Rule.required(),
-    //         }),
-
-    //         defineField({
-    //           name: 'useCaseSubTitle',
-    //           title: 'Use Case Sub Title',
-    //           type: 'string',
-    //           // validation: (Rule) => Rule.required(),
-    //         }),
-
-    //         defineField({
-    //           name: 'mp3File',
-    //           title: 'MP3 File',
-    //           type: 'file',
-    //           description: 'Upload an MP3 file',
-    //           options: {
-    //             accept: 'audio/mpeg',
-    //           },
-    //           // validation: (Rule) => Rule.required(),
-    //         }),
-    //       ],
-    //       preview: {
-    //         select: {
-    //           title: 'useCaseTitle',
-    //           // subtitle: 'link',
-    //         },
-    //       },
-    //     }),
-    //   ],
-    // }),
   ],
   preview: {
     select: {
-      title: 'sectionTitle',
+      title: 'sectionTitle', // Main section title
+      subtitle: 'title', // Additional title for context
+      media: 'sectionIcon', // Main media from section icon
+      fallbackMedia: 'useCaseSectionImage', // Fallback media if section icon is unavailable
+    },
+    prepare({ title, subtitle, media, fallbackMedia }) {
+      return {
+        title: title || 'Use Case Section', // Fallback for title
+        subtitle: subtitle || 'No title provided', // Fallback for subtitle
+        media: media || fallbackMedia || SiHomeadvisor, // Section icon or fallback to use case image
+      };
     },
   },
 });

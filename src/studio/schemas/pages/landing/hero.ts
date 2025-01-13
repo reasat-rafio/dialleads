@@ -27,7 +27,7 @@ const hero = defineType({
               type: 'string',
               description: 'Important for SEO and accessibility',
             },
-          ]
+          ],
         },
         {
           name: 'sectionName',
@@ -36,7 +36,8 @@ const hero = defineType({
           description: 'The name of the section',
         },
         defineField({
-          name: 'title',
+          name: 'heroTitle',
+          title: 'Hero Title',
           type: 'array',
           validation: (Rule) => Rule.required(),
           of: [defineArrayMember({ type: 'block' })],
@@ -127,11 +128,12 @@ const hero = defineType({
   ],
   preview: {
     select: {
+      title: 'hero.sectionName',
       subtitle: 'hero.subtitle',
     },
-    prepare({ subtitle }) {
+    prepare({ title, subtitle }) {
       return {
-        title: 'Hero',
+        title: title || 'Hero',
         subtitle: subtitle || '',
         media: SiHomeadvisor,
       };

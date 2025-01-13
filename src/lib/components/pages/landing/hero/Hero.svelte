@@ -14,7 +14,7 @@
 </script>
 
 <svelte:window bind:innerWidth={windowWidth} />
-<div class="absolute top-[5.15rem] px-[0.94rem] lg:top-[11.49rem] xl:px-0">
+<div class="absolute top-[7.31rem] px-[0.94rem] lg:top-[11.49rem] xl:px-0">
   <div class="relative">
     <div
       style="background: linear-gradient(242deg, rgba(255, 255, 255, 0.21) 0%, rgba(255, 255, 255, 0.08) 100%);"
@@ -33,26 +33,26 @@
         {hero?.sectionName}
       </p>
     </div>
-    <div class="mx-auto w-full text-center lg:h-[10.5rem] lg:w-[50.6875rem]">
-      {#if Array.isArray(hero?.title[0]?.children) && Array.isArray(hero?.title[1]?.children)}
-        <h2
-          class="text-nowrap font-geist text-[1.875rem] font-bold text-[#FFF] lg:text-7xl">
-          {hero?.title[0]?.children[0]?.text}
-        </h2>
-        <h3
+    <div class="mx-auto w-[17rem] text-center lg:h-[10.5rem] lg:w-[50.6875rem]">
+      {#if Array.isArray(hero?.heroTitle[0]?.children) && Array.isArray(hero?.heroTitle[1]?.children)}
+        <h1
+          class=" font-geist text-[2.25rem] font-bold text-[#FFF] lg:text-7xl leading-[2.7rem]">
+          {hero?.heroTitle[0]?.children[0]?.text}
+        </h1>
+        <h1
           class="bg-gradient-to-r from-[#731AFF] via-[#731AFF] to-[#FCCEEE]
-                bg-clip-text font-geist text-[1.875rem] font-bold
+                bg-clip-text font-geist text-[2.25rem] font-bold
                 text-transparent lg:text-7xl">
-          {hero?.title[1]?.children[0]?.text}
-        </h3>
+          {hero?.heroTitle[1]?.children[0]?.text}
+        </h1>
       {/if}
     </div>
     <p
-      class="mx-auto mt-[0.62rem] h-[3.75rem] w-full
+      class="mx-auto mt-[1.12rem] h-[3.75rem] w-[17.5625rem]
          text-center text-base font-normal text-white lg:mt-[0.75rem] lg:w-[40.3125rem] lg:text-[1.25rem]">
       {hero?.subtitle}
     </p>
-    <div class=" mx-[0.94rem] mt-6 flex justify-center lg:mt-[1.88rem]">
+    <div class=" mx-[0.94rem] mt-[3rem] flex justify-center lg:mt-[1.88rem]">
       <div
         class="inline-flex w-full max-w-[14.420rem]
       animate-shine items-center justify-center rounded-xl border-[1px]
@@ -79,11 +79,11 @@
     <div
       style="
       "
-      class=" relative mx-auto mt-[4rem]
+      class=" relative mx-auto mt-[3.89rem]
       flex h-[17.8rem]  w-full
-      justify-center px-4 opacity-70  md:px-0 lg:mt-[3.4rem] lg:h-[22.5rem]  lg:px-0
+      justify-center px-5 opacity-70  lg:mt-[3.4rem] lg:h-[22.5rem]  lg:px-0
       xl:max-h-[17.8rem]  max-w-[75rem]
-      {windowWidth <= 320 ? 'mt-[5.95rem] h-full' : 'h-[17.8rem]'}
+      {windowWidth <= 320 ? 'mt-[5.95rem] h-full' : 'h-[20.875rem]'}
       ">
       <div
         class="rounded-tl-2xl rounded-tr-2xl bg-gradient-to-t from-violet-900 to-violet-100 w-full">
@@ -99,7 +99,7 @@
         {:else}
           <SanityImage
             lqip
-            class="mx-auto h-full w-full  rounded-tl-xl rounded-tr-xl  object-contain"
+            class="mx-auto h-full w-full  rounded-tl-xl rounded-tr-xl  object-cover"
             src={hero?.thumbnailForMobile}
             sizes="100vw"
             imageUrlBuilder={imgBuilder}
@@ -107,8 +107,8 @@
         {/if}
 
         <div
-          class="absolute left-1/2 top-2/3 flex
-        h-[4.375rem] w-[4.375rem] -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full
+          class="absolute left-1/2 top-28 lg:top-2/3 flex
+        h-[4.375rem] w-[4.375rem] -translate-x-1/2 lg:-translate-y-1/2 items-center justify-center rounded-full
         border border-violet-600 bg-white shadow-xl">
           <AlertDialog.Root>
             <AlertDialog.Trigger>

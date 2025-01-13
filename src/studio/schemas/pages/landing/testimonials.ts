@@ -1,6 +1,5 @@
 import { SiHomeadvisor } from 'react-icons/si';
-import { defineArrayMember, defineField, defineType } from 'sanity';
-import { toPlainText } from '@portabletext/svelte';
+import { defineField, defineType } from 'sanity';
 
 const testimonials = defineType({
   title: 'Testimonials',
@@ -12,14 +11,11 @@ const testimonials = defineType({
       name: 'sectionTitle',
       type: 'string',
       title: 'Section Title',
-      // validation: (Rule) => Rule.required(),
     }),
-
     defineField({
       name: 'sectionIcon',
       type: 'image',
       title: 'Section Icon',
-      // validation: (Rule) => Rule.required(),
       options: { hotspot: true },
       fields: [
         {
@@ -27,18 +23,14 @@ const testimonials = defineType({
           title: 'Alternative Text',
           description: 'Important for SEO and accessibility',
           type: 'string',
-          // validation: (Rule) => Rule.required(),
         },
       ],
     }),
-
     defineField({
       name: 'title',
       type: 'string',
       title: 'Title',
-      // validation: (Rule) => Rule.required(),
     }),
-
     defineField({
       name: 'testimonials',
       title: 'Testimonials',
@@ -48,7 +40,16 @@ const testimonials = defineType({
   ],
   preview: {
     select: {
-      title: 'sectionTitle',
+      title: 'sectionTitle', // Main section title
+      subtitle: 'title', // Additional title for context
+      media: 'sectionIcon', // Section icon as preview image
+    },
+    prepare({ title, subtitle, media }) {
+      return {
+        title: title || 'Testimonials Section', // Fallback if sectionTitle is not provided
+        subtitle: subtitle || 'No title provided', // Fallback if title is not provided
+        media: media || SiHomeadvisor, // Fallback to the default icon
+      };
     },
   },
 });

@@ -11,14 +11,11 @@ const features = defineType({
       name: 'sectionTitle',
       type: 'string',
       title: 'Section Title',
-      // validation: (Rule) => Rule.required(),
     }),
-
     defineField({
       name: 'sectionIcon',
       type: 'image',
       title: 'Section Icon',
-      // validation: (Rule) => Rule.required(),
       options: { hotspot: true },
       fields: [
         {
@@ -26,18 +23,14 @@ const features = defineType({
           title: 'Alternative Text',
           description: 'Important for SEO and accessibility',
           type: 'string',
-          // validation: (Rule) => Rule.required(),
         },
       ],
     }),
-
     defineField({
       name: 'title',
       type: 'string',
       title: 'Title',
-      // validation: (Rule) => Rule.required(),
     }),
-
     defineField({
       name: 'features',
       title: 'Features',
@@ -50,9 +43,7 @@ const features = defineType({
               name: 'featureGroupName',
               title: 'Feature Group Name',
               type: 'string',
-              // validation: (Rule) => Rule.required(),
             }),
-
             defineField({
               name: 'features',
               title: 'Features',
@@ -65,7 +56,6 @@ const features = defineType({
                       name: 'featureIcon',
                       type: 'image',
                       title: 'Feature Icon',
-                      // validation: (Rule) => Rule.required(),
                       options: { hotspot: true },
                       fields: [
                         {
@@ -73,29 +63,23 @@ const features = defineType({
                           title: 'Alternative Text',
                           description: 'Important for SEO and accessibility',
                           type: 'string',
-                          // validation: (Rule) => Rule.required(),
                         },
                       ],
                     }),
-
                     defineField({
                       name: 'featureTitle',
                       title: 'Feature Title',
                       type: 'string',
-                      // validation: (Rule) => Rule.required(),
                     }),
-
                     defineField({
                       name: 'featureDescription',
                       title: 'Feature Description',
                       type: 'string',
-                      // validation: (Rule) => Rule.required(),
                     }),
                   ],
                   preview: {
                     select: {
                       title: 'featureTitle',
-                      // subtitle: 'link',
                     },
                   },
                 }),
@@ -105,7 +89,6 @@ const features = defineType({
           preview: {
             select: {
               title: 'featureGroupName',
-              // subtitle: 'link',
             },
           },
         }),
@@ -115,7 +98,16 @@ const features = defineType({
 
   preview: {
     select: {
-      title: 'sectionTitle',
+      title: 'sectionTitle', // Main section title
+      subtitle: 'title', // Additional title for context
+      media: 'sectionIcon', // Use the section icon as the preview image
+    },
+    prepare({ title, subtitle, media }) {
+      return {
+        title: title || 'Features Section', // Fallback for title
+        subtitle: subtitle || 'No title provided', // Fallback for subtitle
+        media: media || SiHomeadvisor, // Fallback to the default icon
+      };
     },
   },
 });
