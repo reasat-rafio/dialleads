@@ -63,7 +63,7 @@
         {nav}
         {logo} />
     {:else}
-      <DesktopNavbar className="h-fit min-h-[38.75rem] max-h-[57.5rem] w-full" {nav} {logo} />
+      <DesktopNavbar className="h-[38.75rem] max-h-[57.5rem] w-full" {nav} {logo} />
     {/if}
   </div>
   <div class="lg:hidden">
