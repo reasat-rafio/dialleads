@@ -73,7 +73,7 @@
 
     <MobileNavbar
       className={cn('w-full', {
-        'min-h-[52.75.1rem] max-h-[52.75rem]': pathName === '/',
+        'min-h-[52.75rem] max-h-[52.75rem]': pathName === '/',
         'min-h-[53.1rem]':
           pathName === '/industry-use-cases/real-estate' ||
           pathName === '/industry-use-cases/mortgage',
