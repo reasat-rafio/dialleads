@@ -15,7 +15,7 @@ const pages = [
   
 ];
 
-const query = groq`*[_type == "useCase"][]{
+const query = groq`*[_type == "industryUseCasePage"][]{
     name,
    "slug": slug.current,
    _updatedAt
@@ -58,7 +58,7 @@ const sitemap = (
       (useCase) =>
         `
   <url>
-    <loc>${site}/blogs/${useCase.slug}</loc>
+    <loc>${site}/useCases/${useCase.slug}</loc>
     <changefreq>weekly</changefreq>
     <lastmod>${useCase._updatedAt}</lastmod>
     <priority>0.3</priority>
