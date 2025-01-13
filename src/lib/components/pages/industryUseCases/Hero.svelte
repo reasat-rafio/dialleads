@@ -43,6 +43,11 @@
       });
 
       waveSurferInstance.load(mp3FileUrl); // Load the single audio file ..
+
+      // Listen for the finish event to reset the play button
+      waveSurferInstance.on('finish', () => {
+        showPlayIcon = false;
+      });
     }
 
     return () => {
@@ -68,7 +73,7 @@
   <div class="relative">
     <div
       class={cn(
-        'container mx-auto h-full w-full lg:h-[10.5rem]',
+        'container mx-auto h-full w-full  lg:mt-[1.7rem] lg:h-[10.5rem]',
         'sm:min-w-lg max-w-sm md:max-w-3xl lg:max-w-5xl xl:max-w-7xl',
         'flex  sm:flex-col ',
         'text-white',
@@ -111,7 +116,7 @@
                     src={props?.link?.icon}
                     sizes="5vw"
                     imageUrlBuilder={imgBuilder}
-                    alt={props?.link?.icon?.alt || "icon"} />
+                    alt={props?.link?.icon?.alt || 'icon'} />
 
                   <span>{props?.link?.title}</span>
                 </Button>

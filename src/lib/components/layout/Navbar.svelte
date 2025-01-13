@@ -62,13 +62,24 @@
         className="h-fit max-h-[63.5rem] min-h-[63.5rem] w-full"
         {nav}
         {logo} />
+    {:else if pathName == '/industry-use-cases/real-estate' || pathName == '/industry-use-cases/mortgage'}
+      <DesktopNavbar
+        className="h-[40.75rem] max-h-[57.5rem] w-full"
+        {nav}
+        {logo} />
     {:else}
-      <DesktopNavbar className="h-[38.75rem] max-h-[57.5rem] w-full" {nav} {logo} />
+      <DesktopNavbar
+        className="h-[38.75rem] max-h-[57.5rem] w-full"
+        {nav}
+        {logo} />
     {/if}
   </div>
   <div class="lg:hidden">
     {#if pathName == '/'}
-      <MobileNavbar className="min-h-[43.1rem] max-h-[43.1rem] w-full" {nav} {logo} />
+      <MobileNavbar
+        className="min-h-[43.1rem] max-h-[43.1rem] w-full"
+        {nav}
+        {logo} />
     {:else if pathName == '/industry-use-cases/real-estate' || pathName == '/industry-use-cases/mortgage'}
       <MobileNavbar className="min-h-[53.1rem]" {nav} {logo} />
     {:else if pathName == '/pricing'}
