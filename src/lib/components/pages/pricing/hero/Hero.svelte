@@ -27,7 +27,7 @@
   <div
     class="
     {windowWidth < 1024 ? 'container' : 'max-w-[75rem] mx-auto'} 
-      w-full h-full mx-auto 
+      w-full h-full mx-auto lg:px-8 xl:px-0 
     relative -top-[8rem] lg:-top-[6rem] grid grid-cols-1 gap-[1.88rem] md:grid-cols-2 xl:grid-cols-3 z-50">
     {#each plans as plan}
       <PricingCard {plan} bind:selectedSubscriptionType {saveUpTo} />

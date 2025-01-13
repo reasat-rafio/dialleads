@@ -32,7 +32,7 @@
 </script>
 
 <div class="relative">
-  <div class="relative -top-[4.5rem]  rounded-[1.25rem] border pb-[1.875rem] overflow-hidden">
+  <div class="relative -top-[4.5rem]  rounded-[1.25rem] border pb-[1.875rem] overflow-clip">
     <Tabs.Root value={relatedPlanNames[0]} class="">
       <div class="flex w-full  bg-[#F8FAFC] py-3">
         <Tabs.List class="bg-transparent ">
@@ -43,7 +43,7 @@
               bg-none text-lg
               font-semibold
               text-black
-              data-[state=active]:border-b  data-[state=active]:border-[#6D28D9]
+              data-[state=active]:border-b data-[state=active]:border-[#6D28D9]
               data-[state=active]:bg-transparent data-[state=active]:text-black data-[state=active]:shadow-none
               "
                 value={planName}>

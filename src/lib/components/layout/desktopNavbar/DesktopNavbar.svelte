@@ -77,7 +77,7 @@
   <!-- max-h-[57.5rem]  h-[57.5rem] min-h-[57.5rem]-->
   <div
     class={` ${isScrolled ? 'scrolled navbar  pt-4' : ' pt-[1.81rem]'}`}>
-    <div class="flex justify-between mx-auto max-w-[75rem]">
+    <div class="flex justify-between mx-auto xl:max-w-[75rem] lg:px-5 xl:px-0">
       <a href="/" class="flex items-center gap-[0.49rem]">
         <SanityImage
           class="h-[2.63rem] w-[2.63rem]"

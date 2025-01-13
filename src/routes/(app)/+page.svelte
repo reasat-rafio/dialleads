@@ -31,7 +31,7 @@
   {#if !!sections?.length}
     {#each sections as props}
       {#if props._type === 'landing.testimonials'}
-        <Testimonials {props} />
+        <!-- <Testimonials {props} /> -->
       {:else if props._type === 'landing.hero'}
         <Hero {props} />
       {:else if props._type === 'landing.features'}
