@@ -11,7 +11,7 @@
 <svelte:window bind:innerWidth={windowWidth} />
 <div class=" relative mt-48 w-full bg-footer-gradient lg:mt-[10.94rem]">
   <div
-    class="px-5  xl:container w-full pb-8 pt-[14.27rem] lg:flex-row lg:pt-[9.63rem] xl:px-[7.5rem]">
+    class="px-5  xl:container w-full pb-8 pt-[14.27rem] lg:flex-row lg:pt-[9.63rem] xl:px-[6.2rem]">
     <div class="flex flex-col justify-between lg:flex-row">
       <div>
         <div
