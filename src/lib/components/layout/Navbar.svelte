@@ -7,6 +7,7 @@
   import Button from '../ui/button/button.svelte';
   import DesktopNavbar from './desktopNavbar/DesktopNavbar.svelte';
   import MobileNavbar from './mobileNavbar/MobileNavbar.svelte';
+  import { cn } from '$lib/utils';
 
   interface Props {
     nav: Nav;
@@ -57,9 +58,23 @@
 
 <div class="">
   <div class="hidden lg:block">
-    {#if pathName == '/'}
+    <DesktopNavbar
+      className={cn('h-fit w-full', {
+        'max-h-[63.5rem] min-h-[63.5rem]': pathName === '/',
+        'h-[40.75rem] max-h-[57.5rem]':
+          pathName === '/industry-use-cases/real-estate' ||
+          pathName === '/industry-use-cases/mortgage',
+        'h-[38.75rem] max-h-[57.5rem]':
+          pathName !== '/' &&
+          pathName !== '/industry-use-cases/real-estate' &&
+          pathName !== '/industry-use-cases/mortgage',
+      })}
+      {nav}
+      {logo} />
+
+    <!-- {#if pathName == '/'}
       <DesktopNavbar
-        className="h-fit max-h-[63.5rem] min-h-[63.5rem] w-full"
+        className="h-fit w-full max-h-[63.5rem] min-h-[63.5rem]"
         {nav}
         {logo} />
     {:else if pathName == '/industry-use-cases/real-estate' || pathName == '/industry-use-cases/mortgage'}
@@ -72,10 +87,10 @@
         className="h-[38.75rem] max-h-[57.5rem] w-full"
         {nav}
         {logo} />
-    {/if}
+    {/if} -->
   </div>
   <div class="lg:hidden">
-    {#if pathName == '/'}
+    <!-- {#if pathName == '/'}
       <MobileNavbar
         className="min-h-[43.1rem] max-h-[43.1rem] w-full"
         {nav}
@@ -86,6 +101,22 @@
       <MobileNavbar className="min-h-[43.1rem]" {nav} {logo} />
     {:else}
       <MobileNavbar className="min-h-[25.625rem]" {nav} {logo} />
-    {/if}
+    {/if} -->
+
+    <MobileNavbar
+      className={cn('w-full', {
+        'min-h-[43.1rem] max-h-[43.1rem]': pathName === '/',
+        'min-h-[53.1rem]':
+          pathName === '/industry-use-cases/real-estate' ||
+          pathName === '/industry-use-cases/mortgage',
+        'min-h-[43.1rem]': pathName === '/pricing',
+        'min-h-[25.625rem]':
+          pathName !== '/' &&
+          pathName !== '/industry-use-cases/real-estate' &&
+          pathName !== '/industry-use-cases/mortgage' &&
+          pathName !== '/pricing',
+      })}
+      {nav}
+      {logo} />
   </div>
 </div>
