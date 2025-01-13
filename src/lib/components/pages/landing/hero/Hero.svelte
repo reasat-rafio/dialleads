@@ -78,16 +78,15 @@
 
     <div
       style="
-      background: 
-      linear-gradient(0deg, rgba(75, 16, 168, 0.70) 0%, rgba(62, 33, 107, 0.25) 52.55%, rgba(223, 198, 255, 0.00) 100%)"
+      "
       class=" relative mx-auto mt-[4rem]
-      flex h-[17.8rem] w-[20.9375rem] lg:w-full
+      flex h-[17.8rem]  w-full
       justify-center px-4 opacity-70  md:px-0 lg:mt-[3.4rem] lg:h-[22.5rem]  lg:px-0
       xl:max-h-[17.8rem]  max-w-[75rem]
       {windowWidth <= 320 ? 'mt-[5.95rem] h-full' : 'h-[17.8rem]'}
       ">
       <div
-        class="rounded-tl-2xl rounded-tr-2xl bg-gradient-to-t from-violet-900 to-violet-100">
+        class="rounded-tl-2xl rounded-tr-2xl bg-gradient-to-t from-violet-900 to-violet-100 w-full">
         {#if windowWidth > 700}
           <SanityImage
             lqip
@@ -100,7 +99,7 @@
         {:else}
           <SanityImage
             lqip
-            class="mx-auto h-full w-fit  rounded-tl-xl rounded-tr-xl  object-cover "
+            class="mx-auto h-full w-full  rounded-tl-xl rounded-tr-xl  object-contain"
             src={hero?.thumbnailForMobile}
             sizes="100vw"
             imageUrlBuilder={imgBuilder}
