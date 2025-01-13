@@ -67,12 +67,12 @@
 <div
   class="{className}  relative  mt-4 overflow-hidden
   rounded-[1.875rem]
-  bg-hero-gradient px-16
+  bg-hero-gradient
    xl:px-0">
   <img
     src="/grid.png"
     alt="grid overlay"
-    class="pointer-events-none absolute inset-0 h-full w-full opacity-100 mix-blend-overlay" />
+    class="pointer-events-none absolute inset-0 h-full w-fit opacity-100 mix-blend-overlay object-cover" />
 
   <!-- max-h-[57.5rem]  h-[57.5rem] min-h-[57.5rem]-->
   <div
