@@ -75,6 +75,11 @@
 
       // Initialize play state for each player
       playStates[i] = false;
+
+      // Listen for the finish event to reset the play button
+      waveSurfer.on('finish', () => {
+        playStates[i] = false;
+      });
     });
 
     return () => {
@@ -119,20 +124,18 @@
           src={props?.sectionIcon}
           sizes="05vw"
           imageUrlBuilder={imgBuilder}
-          alt={props?.sectionIcon?.alt || "icon"}
-           />
+          alt={props?.sectionIcon?.alt || 'icon'} />
         <h3 class="z-50 text-white">{props.sectionTitle}</h3>
       </div>
 
       <div class="absolute hidden lg:flex">
         <SanityImage
-          class=" z-50 h-auto lg:bottom-[10rem] w-full  
+          class=" z-50 h-auto w-full lg:bottom-[10rem]  
           lg:left-[26rem] lg:max-w-[10.0625rem] xl:bottom-[13rem] xl:left-[29rem]  xl:max-w-[14.0625rem]"
           src={props?.clickToPlayImage}
           sizes="90vw"
           imageUrlBuilder={imgBuilder}
-          alt={props?.clickToPlayImage?.alt || "icon"}
-           />
+          alt={props?.clickToPlayImage?.alt || 'icon'} />
       </div>
       <h2
         class="z-50 mb-[0.75rem] max-w-[20.93rem] text-center text-[1.625rem] font-semibold text-white lg:mb-[0.88rem] lg:max-w-[44rem] lg:text-[3rem] lg:leading-[3.6rem]">
@@ -149,8 +152,7 @@
           src={props?.clickToPlayImage}
           sizes="70vw"
           imageUrlBuilder={imgBuilder}
-          alt={props?.clickToPlayImage?.alt || "icon"}
-           />
+          alt={props?.clickToPlayImage?.alt || 'icon'} />
       </div>
 
       <div class="container mx-auto px-[1.5rem] lg:px-[7.5rem]">
@@ -158,7 +160,7 @@
           <Carousel.Content>
             {#each industries as useCase, index}
               <Carousel.Item
-                class="w-full max-w-[23.625rem] basis-full bg-transparent sm:basis-1/2 lg:basis-1/3">
+                class="w-full max-w-[23.625rem] basis-full bg-transparent sm:basis-1/2 lg:max-w-[24.625rem] lg:basis-1/3">
                 <Card.Root
                   style="background: linear-gradient(242deg, rgba(255, 255, 255, 0.21) 0%, rgba(255, 255, 255, 0.08) 100%);"
                   class="w-full rounded-[1.38rem] border-[0.342px] border-gray-400 bg-transparent p-[0.75rem]">
@@ -168,8 +170,7 @@
                       class="h-full w-full border bg-cover bg-center object-cover"
                       src={useCase?.useCaseImageForAI}
                       imageUrlBuilder={imgBuilder}
-                      alt={useCase?.useCaseImageForAI?.alt || "image"}
-                       />
+                      alt={useCase?.useCaseImageForAI?.alt || 'image'} />
                     <!-- sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw" -->
                     <h3
                       class="mt-[1.38rem] text-center text-[1.125rem] font-semibold lg:text-[1.375rem]">
