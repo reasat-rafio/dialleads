@@ -2,6 +2,7 @@
   import Button from '$lib/components/ui/button/button.svelte';
   import { imgBuilder } from '$lib/sanity/sanity-client';
   import SanityImage from '$lib/sanity/sanity-image/sanity-image.svelte';
+  import { cn } from '$lib/utils';
   import type { SiteDataProps } from '../../../types/site.types';
 
   let { footer }: { footer: SiteDataProps['footer'] } = $props();
@@ -11,7 +12,7 @@
 <svelte:window bind:innerWidth={windowWidth} />
 <div class=" relative mt-48 w-full bg-footer-gradient lg:mt-[10.94rem]">
   <div
-    class="px-5  xl:container w-full pb-8 pt-[14.27rem] lg:flex-row lg:pt-[9.63rem] xl:px-[6.2rem]">
+    class="w-full px-5 pb-8 pt-[14.27rem] xl:container lg:flex-row lg:pt-[9.63rem] xl:px-[6.2rem]">
     <div class="flex flex-col justify-between lg:flex-row">
       <div>
         <div
@@ -29,7 +30,11 @@
           class="mb-[1.5rem] mt-[1.13rem] text-[0.875rem] font-medium text-white opacity-80">
           {footer?.newsLetterText}
         </h5>
-        <div class="{windowWidth > 320 ? 'flex-row' : 'flex-col'} flex gap-2">
+        <div
+          class={cn('flex gap-2', {
+            'flex-col': windowWidth < 375,
+            'flex-row': windowWidth >= 375,
+          })}>
           <input
             type="text"
             placeholder="Enter your email"
@@ -146,7 +151,7 @@
     </div>
   </div>
 
-<!-- Join More  -->
+  <!-- Join More  -->
   <div
     class="
     absolute -top-[.5rem] left-1/2 -translate-x-1/2 -translate-y-1/2 lg:-top-[1rem]

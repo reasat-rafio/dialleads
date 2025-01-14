@@ -79,7 +79,7 @@
     <div
       style="
       "
-      class=" relative mx-auto mt-[3.89rem]
+      class=" relative mx-auto mt-[3.4rem]
       flex h-[17.8rem]  w-full
       justify-center lg:px-5  opacity-70  lg:mt-[4rem] lg:h-[22.5rem]  xl:px-0
       xl:max-h-[17.8rem]  max-w-[75rem]
@@ -99,7 +99,7 @@
         {:else}
           <SanityImage
             lqip
-            class="mx-auto h-full w-full  rounded-tl-xl rounded-tr-xl  object-cover"
+            class="mx-auto h-full w-full  rounded-tl-xl rounded-tr-xl  object-cover "
             src={hero?.thumbnailForMobile}
             sizes="100vw"
             imageUrlBuilder={imgBuilder}
