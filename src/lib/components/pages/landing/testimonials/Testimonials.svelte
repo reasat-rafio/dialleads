@@ -46,8 +46,7 @@
       src={props?.sectionIcon}
       sizes="05vw"
       imageUrlBuilder={imgBuilder}
-      alt={props?.sectionIcon?.alt || "icon"}
-       />
+      alt={props?.sectionIcon?.alt || 'icon'} />
     <h3>{props.sectionTitle}</h3>
   </div>
 
@@ -72,8 +71,7 @@
                   src={testimonial?.reviewerImage}
                   sizes="05vw"
                   imageUrlBuilder={imgBuilder}
-                  alt={testimonial?.reviewerImage?.alt || "image"}
-                   />
+                  alt={testimonial?.reviewerImage?.alt || 'image'} />
               </div>
               <div class="text-left">
                 <h2 class="font-semibold">{testimonial.name}</h2>
@@ -86,8 +84,7 @@
                         src={testimonial.companyLogo}
                         sizes="05vw"
                         imageUrlBuilder={imgBuilder}
-                        alt= "logo"
-                         />
+                        alt="logo" />
                     {/if}
                   </div>
 
@@ -112,7 +109,7 @@
                     <HoverCard.Root>
                       <HoverCard.Trigger>
                         <h2
-                          class="max-w-[90px] truncate text-[#5B6779] lg:max-w-[110px]">
+                          class="max-w-[90px] truncate text-[#5B6779] lg:max-w-[90px] xl:max-w-[110px]">
                           {testimonial.position}
                         </h2>
                       </HoverCard.Trigger>
@@ -143,8 +140,7 @@
                   src={testimonial?.reviewerImage}
                   sizes="05vw"
                   imageUrlBuilder={imgBuilder}
-                  alt={testimonial?.reviewerImage?.alt || "image"}
-                   />
+                  alt={testimonial?.reviewerImage?.alt || 'image'} />
               </div>
               <div class="">
                 <h2 class="font-semibold">{testimonial.name}</h2>
@@ -157,8 +153,7 @@
                         src={testimonial.companyLogo}
                         sizes="05vw"
                         imageUrlBuilder={imgBuilder}
-                        alt="logo"
-                         />
+                        alt="logo" />
                     {/if}
                   </div>
 
@@ -214,8 +209,7 @@
               src={testimonial?.reviewerImage}
               sizes="05vw"
               imageUrlBuilder={imgBuilder}
-              alt={testimonial?.reviewerImage?.alt || "image"}
-               />
+              alt={testimonial?.reviewerImage?.alt || 'image'} />
           </div>
           <div class="text-left">
             <h2 class="font-semibold">{testimonial.name}</h2>
@@ -228,8 +222,7 @@
                     src={testimonial.companyLogo}
                     sizes="05vw"
                     imageUrlBuilder={imgBuilder}
-                    alt={testimonial?.companyLogo?.alt || "logo"}
-                     />
+                    alt={testimonial?.companyLogo?.alt || 'logo'} />
                 {/if}
               </div>
 

@@ -21,7 +21,7 @@ type Section =
   | FeatureProps
   | WhyDialleadsAIProps
   | WhyChooseUsProps
-  | DataDrivenProps
+  | DataDrivenProps;
 
 export interface UseCaseProps {
   _type: 'landing.useCase';
@@ -135,7 +135,7 @@ export interface Testimonial {
   name: string;
   position: string;
   companyName: string;
-  companyLogo: string;
+  companyLogo: SanityImageWithAlt;
 }
 
 export interface PricingProps {
@@ -261,19 +261,19 @@ export interface WhyChooseUsCard {
   cardDescriptionFor: string;
 }
 
-export interface DataDrivenProps{
+export interface DataDrivenProps {
   _key: string;
   _type: 'landing.dataDriven';
   dataDriven: DataDriven;
 }
-export interface DataDriven{
+export interface DataDriven {
   title: string;
   description: string;
   cta: CTA;
   text: string;
   sectionDetails: SectionDetails;
 }
-export interface SectionDetails{
+export interface SectionDetails {
   sectionName: string;
   sectionIcon: SanityImageWithAlt;
 }
