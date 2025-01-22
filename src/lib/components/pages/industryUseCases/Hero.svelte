@@ -69,20 +69,20 @@
 </script>
 
 <svelte:window bind:innerWidth={windowWidth} />
-<div class="absolute top-[5.41rem] lg:top-[11rem] xl:px-0">
+<div
+  class="bg-hero-gradient lg:mx-[0.63rem] lg:mt-[0.63rem] lg:rounded-[1.875rem] relative">
+  <img
+    src="/grid.png"
+    alt="grid overlay"
+    class="pointer-events-none absolute inset-0 h-full w-full object-cover opacity-100 mix-blend-overlay" />
   <div class="relative">
     <div
-      class={cn(
-        'container mx-auto h-full w-full  lg:mt-[1.7rem] lg:h-[10.5rem]',
-        'sm:min-w-lg max-w-sm md:max-w-3xl lg:max-w-5xl xl:max-w-7xl',
-        'flex  sm:flex-col ',
-        'text-white',
-      )}>
+      class="container mx-auto pb-[4.22rem] pt-[8.47rem] text-white lg:px-24">
       <div
         class="grid w-full grid-cols-12 gap-y-[2.52rem] lg:gap-x-[110px] xl:gap-x-[100px]">
         <div class="col-span-12 w-full lg:col-span-6 lg:w-full xl:col-span-8">
           <div
-            class="flex w-[19.0625rem] flex-col text-center lg:w-[38.4rem] lg:text-left">
+            class="flex w-full flex-col text-center lg:w-[38.4rem] lg:text-left">
             {#if Array.isArray(props?.title[0]?.children) && Array.isArray(props?.title[1]?.children)}
               <h1
                 class="mb-[1.62rem] w-fit text-center text-[1.625rem] font-semibold lg:max-w-[40.18rem] lg:text-left lg:text-[3rem]">

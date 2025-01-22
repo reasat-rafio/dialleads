@@ -14,7 +14,12 @@
 </script>
 
 <svelte:window bind:innerWidth={windowWidth} />
-<div class=" bg-hero-gradient pt-[7.31rem] lg:pt-[11rem] lg:mx-[0.63rem] lg:mt-[0.63rem] rounded-[1.875rem]">
+<div
+  class=" bg-hero-gradient pt-[7.31rem] lg:mx-[0.63rem] lg:mt-[0.63rem] lg:rounded-[1.875rem] lg:pt-[11rem] relative">
+  <img
+    src="/grid.png"
+    alt="grid overlay"
+    class="pointer-events-none absolute inset-0 h-full w-full object-cover opacity-100 mix-blend-overlay" />
   <div
     style="background: linear-gradient(242deg, rgba(255, 255, 255, 0.21) 0%, rgba(255, 255, 255, 0.08) 100%);"
     class="mx-auto mb-[2.12rem] hidden h-10
@@ -52,7 +57,7 @@
   </p>
   <div class=" mx-[0.94rem] mt-[3rem] flex justify-center lg:mt-[1.88rem]">
     <div
-      class="inline-flex w-full max-w-[14.420rem]
+      class="z-50 bg-transparent inline-flex w-full max-w-[14.420rem]
     animate-shine items-center justify-center rounded-xl border-[1px]
     border-l border-t border-white/30 border-b-white/15 border-r-white/15 bg-[linear-gradient(110deg,#2e1065,50%,#7C3AED,55%,#2e1065)]
     bg-[length:200%_100%] px-2 py-2 text-sm shadow-xl transition-colors">
@@ -78,7 +83,7 @@
   "
     class=" relative mx-auto mt-[3.4rem]
   flex h-[17.8rem] w-full
-  max-w-[75rem] justify-center opacity-70 lg:h-full px-5 lg:px-0
+  max-w-[75rem] justify-center px-5 opacity-70 lg:h-full lg:px-0
   {windowWidth <= 320 ? 'mt-[5.95rem] h-full' : 'h-[20.875rem]'}
   ">
     <div
@@ -105,7 +110,7 @@
       <div
         class="absolute left-1/2 top-28 flex h-[4.375rem]
     w-[4.375rem] -translate-x-1/2 items-center justify-center rounded-full border border-violet-600
-    bg-white shadow-xl lg:top-2/3 lg:-translate-y-1/2">
+    bg-white shadow-xl lg:top-1/2 lg:-translate-y-1/2">
         <AlertDialog.Root>
           <AlertDialog.Trigger>
             <Button class="bg-white hover:bg-white">

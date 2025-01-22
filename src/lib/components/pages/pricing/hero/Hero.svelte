@@ -15,24 +15,26 @@
   let selectedSubscriptionType = $state('monthly');
   let windowWidth = $state(0);
 </script>
+
 <svelte:window bind:innerWidth={windowWidth} />
 <div
-class="bg-hero-gradient lg:mx-[0.63rem] lg:mt-[0.63rem] lg:rounded-[1.875rem]"
->
+  class="bg-hero-gradient lg:mx-[0.63rem] lg:mt-[0.63rem] lg:rounded-[1.875rem] relative">
+  <img
+    src="/grid.png"
+    alt="grid overlay"
+    class="pointer-events-none absolute inset-0 h-full w-full object-cover opacity-100 mix-blend-overlay" />
   <div class="">
     <Section {hero} />
     <TabBar bind:selectedSubscriptionType {saveUpTo} />
   </div>
-
-  
 </div>
 
 <div
-    class="
-    {windowWidth < 1024 ? 'container px-5' : 'max-w-[75rem] mx-auto'} 
-      w-full h-full mx-auto lg:px-8 xl:px-0 
-    relative -top-20 grid grid-cols-1 gap-[1.88rem] md:grid-cols-2 xl:grid-cols-3 z-50">
-    {#each plans as plan}
-      <PricingCard {plan} bind:selectedSubscriptionType {saveUpTo} />
-    {/each}
-  </div>
+  class="
+    {windowWidth < 1024 ? 'container px-5' : 'mx-auto max-w-[75rem]'} 
+      relative -top-20 z-50 mx-auto grid
+    h-full w-full grid-cols-1 gap-[1.88rem] md:grid-cols-2 lg:px-8 xl:grid-cols-3 xl:px-0">
+  {#each plans as plan}
+    <PricingCard {plan} bind:selectedSubscriptionType {saveUpTo} />
+  {/each}
+</div>
