@@ -1,4 +1,3 @@
-// +page.server.ts
 import { sanityClient } from '$lib/sanity/sanity-client';
 import groq from 'groq';
 import type { PageServerLoad } from './$types';
