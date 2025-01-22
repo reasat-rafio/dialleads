@@ -32,7 +32,7 @@
 <div
   class="
     {windowWidth < 1024 ? 'container px-5' : 'mx-auto max-w-[75rem]'} 
-      relative -top-20 z-50 mx-auto grid
+      relative -top-24 z-50 mx-auto grid
     h-full w-full grid-cols-1 gap-[1.88rem] md:grid-cols-2 lg:px-8 xl:grid-cols-3 xl:px-0">
   {#each plans as plan}
     <PricingCard {plan} bind:selectedSubscriptionType {saveUpTo} />
