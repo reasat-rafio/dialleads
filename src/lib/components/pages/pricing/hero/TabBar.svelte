@@ -6,21 +6,21 @@
   let { saveUpTo, selectedSubscriptionType = $bindable() }: Props = $props();
 </script>
 
-<div class="mt-[1.63rem] flex justify-center">
+<div class="mt-[1.63rem] flex justify-center px-5 pb-[11.19rem] lg:px-0">
   <div
-    class="flex w-full h-full gap-2 items-center rounded-xl border border-[#60527A] bg-[#2B194C] p-[0.5rem] md:w-[24rem]">
+    class="flex h-full w-full items-center gap-2 rounded-xl border border-[#60527A] bg-[#2B194C] p-[0.5rem] md:w-[24rem]">
     <button
       onclick={() => (selectedSubscriptionType = 'monthly')}
       class={selectedSubscriptionType === 'monthly'
-        ? 'w-full flex justify-center items-center text-base font-medium text-white bg-[#5307CA] py-[0.88rem] px-5 rounded-[0.5rem]'
-        : 'w-full  text-base font-medium text-white  py-[0.88rem] px-5 rounded-[0.5rem] flex items-center justify-center'}>
+        ? 'flex w-full items-center justify-center rounded-[0.5rem] bg-[#5307CA] px-5 py-[0.88rem] text-base font-medium text-white'
+        : 'flex  w-full items-center justify-center  rounded-[0.5rem] px-5 py-[0.88rem] text-base font-medium text-white'}>
       Monthly
     </button>
     <button
       onclick={() => (selectedSubscriptionType = 'annual')}
       class={selectedSubscriptionType === 'annual'
-        ? 'w-full  text-base font-medium text-white bg-[#5307CA] py-[0.88rem] px-5 rounded-[0.5rem] flex items-center justify-center'
-        : 'w-full text-base font-medium text-white  py-[0.88rem] px-5 rounded-[0.5rem] flex items-center justify-center'}>
+        ? 'flex  w-full items-center justify-center rounded-[0.5rem] bg-[#5307CA] px-5 py-[0.88rem] text-base font-medium text-white'
+        : 'flex w-full items-center justify-center  rounded-[0.5rem] px-5 py-[0.88rem] text-base font-medium text-white'}>
       <p class="text-nowrap">
         Annual
         <span class="text-sm font-medium text-white">

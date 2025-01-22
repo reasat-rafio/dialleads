@@ -9,10 +9,9 @@
   interface Props {
     nav: Nav;
     logo: SanityImageWithAlt;
-    className: string;
   }
 
-  let { nav, logo, className }: Props = $props();
+  let { nav, logo}: Props = $props();
 
   let dialogOpen = $state(false);
   let showMenu = $state(false);
@@ -65,18 +64,12 @@
 </script>
 
 <div
-  class="{className}  relative   overflow-hidden
+  class="  relative  
   rounded-[1.875rem]
-  bg-hero-gradient
    xl:px-0">
-  <img
-    src="/grid.png"
-    alt="grid overlay"
-    class="pointer-events-none absolute inset-0 h-full w-full opacity-100 mix-blend-overlay object-cover" />
-
   <!-- max-h-[57.5rem]  h-[57.5rem] min-h-[57.5rem]-->
   <div
-    class={` ${isScrolled ? 'scrolled navbar  pt-4' : ' pt-[1.81rem]'}`}>
+    class={` ${isScrolled ? 'scrolled navbar  pt-4' : ' absolute inset-0 z-50 mt-[2.2rem]'}`}>
     <div class="flex justify-between mx-auto xl:max-w-[75rem] lg:px-5 xl:px-0">
       <a href="/" class="flex items-center gap-[0.49rem]">
         <SanityImage

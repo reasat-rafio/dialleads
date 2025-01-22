@@ -56,33 +56,11 @@
 <div class="">
   <div class="hidden lg:block">
     <DesktopNavbar
-      className={cn('h-fit w-full', {
-        'max-h-[63.5rem] min-h-[63.5rem]': pathName === '/',
-        'h-[43.5rem] max-h-[57.5rem]':
-          pathName === '/industry-use-cases/real-estate' ||
-          pathName === '/industry-use-cases/mortgage',
-        'h-[38.75rem] max-h-[57.5rem]':
-          pathName !== '/' &&
-          pathName !== '/industry-use-cases/real-estate' &&
-          pathName !== '/industry-use-cases/mortgage',
-      })}
       {nav}
       {logo} />
   </div>
   <div class="lg:hidden">
     <MobileNavbar
-      className={cn('w-full', {
-        'min-h-[52.75rem] max-h-[52.75rem]': pathName === '/',
-        'min-h-[53.1rem]':
-          pathName === '/industry-use-cases/real-estate' ||
-          pathName === '/industry-use-cases/mortgage',
-        'min-h-[43.1rem]': pathName === '/pricing',
-        'min-h-[25.625rem]':
-          pathName !== '/' &&
-          pathName !== '/industry-use-cases/real-estate' &&
-          pathName !== '/industry-use-cases/mortgage' &&
-          pathName !== '/pricing',
-      })}
       {nav}
       {logo} />
   </div>
