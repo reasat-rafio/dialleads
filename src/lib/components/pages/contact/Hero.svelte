@@ -11,14 +11,14 @@
 
 <svelte:window bind:innerWidth={windowWidth} />
 <div
-  class="bg-hero-gradient pb-[11.19rem] pt-[9.19rem] lg:mx-[0.63rem] lg:mt-[0.63rem] lg:rounded-[1.875rem] relative">
+  class="bg-hero-gradient  pt-[9.19rem] lg:mx-[0.63rem] lg:mt-[0.63rem] lg:rounded-[1.875rem] relative">
   <img
     src="/grid.png"
     alt="grid overlay"
     class="pointer-events-none absolute inset-0 h-full w-full object-cover opacity-100 mix-blend-overlay" />
-  <div class="relative">
+  <div class="relative pb-[20rem]">
     <div
-      class="container mx-auto w-full max-w-sm text-center text-white sm:max-w-xl md:max-w-3xl lg:h-[10.5rem] lg:max-w-5xl xl:max-w-7xl">
+      class="container  mx-auto w-full max-w-sm text-center text-white sm:max-w-xl md:max-w-3xl lg:h-[10.5rem] lg:max-w-5xl xl:max-w-7xl">
       <div class="z-50 flex flex-col items-center justify-center">
         <div
           class="mb-[0.75rem] flex gap-x-[0.5rem] rounded-full border px-[1rem] py-[0.50rem] lg:mb-[1.5rem]">
