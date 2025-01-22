@@ -23,7 +23,7 @@
     src="/grid.png"
     alt="grid overlay"
     class="pointer-events-none absolute inset-0 h-full w-full object-cover opacity-100 mix-blend-overlay" />
-  <div class="">
+  <div class="pb-[11.19rem]">
     <Section {hero} />
     <TabBar bind:selectedSubscriptionType {saveUpTo} />
   </div>

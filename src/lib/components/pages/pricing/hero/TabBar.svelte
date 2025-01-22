@@ -6,7 +6,7 @@
   let { saveUpTo, selectedSubscriptionType = $bindable() }: Props = $props();
 </script>
 
-<div class="mt-[1.63rem] flex justify-center px-5 pb-[11.19rem] lg:px-0">
+<div class="mt-[1.63rem] flex justify-center px-5  lg:px-0">
   <div
     class="flex h-full w-full items-center gap-2 rounded-xl border border-[#60527A] bg-[#2B194C] p-[0.5rem] md:w-[24rem]">
     <button
