@@ -100,6 +100,7 @@
             onfocus={() => handleFocus(item?.link?.title)}
             onblur={handleBlur}>
             <a
+		data-sveltekit-preload-data="off"
               href={item?.link?.type === 'internal'
                 ? item?.link?.internalLink
                 : item?.link?.externalLink}
@@ -118,6 +119,7 @@
                 class:opacity-100={activeDropdown === item?.link?.title}>
                 {#each item?.moreLinks as link}
                   <a
+		data-sveltekit-preload-data="off"
                     href={link?.type === 'internal'
                       ? link?.internalLink
                       : link?.externalLink}

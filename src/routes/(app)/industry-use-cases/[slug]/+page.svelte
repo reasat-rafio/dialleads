@@ -8,13 +8,14 @@
   let data = $props();
 
   let {
-    page: { sections, seo },
-    site: {
-      logos: { ogImage },
+    data: {
+      page: { sections, seo },
+      site: {
+        logos: { ogImage },
+      },
     },
-  } = $derived(data?.data);
+  } = $derived(data);
 
-  
   const industryUseCase = {
     useCaseImageForAI: data.data.page.useCaseImageForAI,
     useCaseSubTitleForAI: data.data.page.useCaseSubTitleForAI,
