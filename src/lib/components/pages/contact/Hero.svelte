@@ -10,7 +10,7 @@
 </script>
 
 <svelte:window bind:innerWidth={windowWidth} />
-<div class="absolute top-[5.41rem] px-[0.94rem] lg:top-[9.83rem] xl:px-0">
+<div class="bg-hero-gradient pt-[9.19rem] pb-[11.19rem] lg:mx-[0.63rem] lg:mt-[0.63rem] lg:rounded-[1.875rem]">
   <div class="relative">
     <div
       class="container mx-auto w-full max-w-sm text-center text-white sm:max-w-xl md:max-w-3xl lg:h-[10.5rem] lg:max-w-5xl xl:max-w-7xl">
@@ -46,14 +46,17 @@
       </div>
     </div>
     <!-- // image section  -->
-    <div class="mx-2 mt-[3.13rem] block sm:hidden">
-      <div class="h-[26.25rem] w-full">
-        <SanityImage
-          class="h-[26.25rem] w-full "
-          src={props?.contactPageImage}
-          sizes="100vw"
-          imageUrlBuilder={imgBuilder} />
-      </div>
-    </div>
+    
+  </div>
+</div>
+
+
+<div class="mx-5 absolute top-[25rem] sm:hidden">
+  <div class="h-[26.25rem] w-full">
+    <SanityImage
+      class="h-[26.25rem] w-full "
+      src={props?.contactPageImage}
+      sizes="100vw"
+      imageUrlBuilder={imgBuilder} />
   </div>
 </div>
