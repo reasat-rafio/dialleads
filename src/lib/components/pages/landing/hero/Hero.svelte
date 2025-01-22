@@ -83,7 +83,7 @@
   "
     class=" relative mx-auto mt-[3.4rem]
   flex h-[17.8rem] w-full
-  max-w-[75rem] justify-center px-5 opacity-70 lg:h-full lg:px-0
+  max-w-[75rem] justify-center px-5 opacity-70 lg:h-full xl:px-0
   {windowWidth <= 320 ? 'mt-[5.95rem] h-full' : 'h-[20.875rem]'}
   ">
     <div

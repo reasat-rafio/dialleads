@@ -55,13 +55,9 @@
 
 <div class="">
   <div class="hidden lg:block">
-    <DesktopNavbar
-      {nav}
-      {logo} />
+    <DesktopNavbar {nav} {logo} />
   </div>
   <div class="lg:hidden">
-    <MobileNavbar
-      {nav}
-      {logo} />
+    <MobileNavbar {nav} {logo} />
   </div>
 </div>

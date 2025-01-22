@@ -65,7 +65,7 @@
 
 <div
   class="  relative  
-  rounded-[1.875rem]
+  rounded-[1.875rem] mx-5 xl:mx-0
    xl:px-0">
   <!-- max-h-[57.5rem]  h-[57.5rem] min-h-[57.5rem]-->
   <div
