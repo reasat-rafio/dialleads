@@ -16,7 +16,7 @@
 <Seo {seo} siteOgImg={ogImage} />
 
 
-<div class="flex max-w-full flex-col items-center justify-center font-geist">
+<div class="">
   {#if !!sections?.length}
     {#each sections as props}
       {#if props._type === 'contact.hero'}

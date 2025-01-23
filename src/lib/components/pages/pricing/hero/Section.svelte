@@ -8,7 +8,7 @@
     $derived(hero);
 </script>
 
-<div class="container mt-[5.19rem]">
+<div class="container pt-[9.19rem]">
   <div
     class="mx-auto flex h-10 w-[7.125rem] items-center justify-center gap-2 rounded-[20rem]
        border px-3 py-2">
@@ -20,7 +20,7 @@
       alt={sectionIcon?.alt || 'icon'} />
     <p class="font-geist text-lg font-medium text-white">{sectionName}</p>
   </div>
-  <div class="mt-5 hidden items-center gap-5 text-center lg:flex">
+  <div class="mt-5 hidden items-center gap-5 text-center lg:flex justify-center">
     {#if Array.isArray(sectionTitle[0]?.children) && Array.isArray(sectionTitle[1]?.children)}
       <h1
         class="font-geist text-[1.625rem] font-bold text-[#FFF] lg:text-nowrap lg:text-[3.875rem] lg:leading-[4.495rem]">

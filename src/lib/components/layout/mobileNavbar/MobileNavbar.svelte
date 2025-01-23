@@ -11,10 +11,9 @@
   interface Props {
     nav: Nav;
     logo: SanityImageWithAlt;
-    className: string;
   }
 
-  let { nav, logo, className }: Props = $props();
+  let { nav, logo }: Props = $props();
 
   let isPopupVisible = $state(false);
   let dialogOpen = $state(false);
@@ -74,7 +73,7 @@
 
 <div class="relative">
   <div
-    class=" {className} relative
+    class=" relative
     
      bg-hero-gradient w-full lg:rounded-[1.875rem] ">
     <img
