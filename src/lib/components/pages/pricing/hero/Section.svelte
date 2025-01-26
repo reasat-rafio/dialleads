@@ -3,6 +3,7 @@
   import SanityImage from '$lib/sanity/sanity-image/sanity-image.svelte';
   import { PortableText } from '@portabletext/svelte';
   import type { Hero } from '../../../../../types/pricing.types';
+  import VioletGradient from './VioletGradient.svelte';
 
   let { hero }: { hero: Hero } = $props();
   let { sectionIcon, sectionName, sectionTitle, sectionDescription } =
@@ -22,14 +23,14 @@
     <p class="font-geist text-lg font-medium text-white">{sectionName}</p>
   </div>
   <div
-    class="mt-5 flex gap-2 mx-auto mb-3 w-fit text-nowrap text-center font-geist text-[1.875rem] font-bold text-[#FFF] lg:text-7xl">
-    <!-- <PortableText
+    class="mt-5 flex flex-col lg:flex-row leading-tight gap-2 mx-auto mb-3 w-fit text-nowrap text-center font-geist text-[1.875rem] font-bold text-[#FFF] lg:text-7xl">
+    <PortableText
       value={sectionTitle}
       components={{
         marks: {
           violetGradient: VioletGradient,
         },
-      }} /> -->
+      }} />
   </div>
   <p
     class="mx-auto mt-4 w-full text-center text-xl font-medium leading-[1.875rem] text-white lg:w-[40.3125rem]">
