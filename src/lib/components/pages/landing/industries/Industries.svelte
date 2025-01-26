@@ -54,7 +54,7 @@
     <div class="pb-[1.88rem] md:pb-[2.25rem] pt-8 md:pt-24">
       <SectionIconAndName
         bgColor="background: linear-gradient(242deg, rgba(255, 255, 255, 0.21) 0%, rgba(255, 255, 255, 0.08) 100%);"
-        wrapperClass="mt-0 border-none "
+        wrapperClass="mt-0 lg:mt-0 border-none "
         sectionNameClass="text-white"
         sectionTitleClass="text-white   mb-[0.88rem] leading-tight"
         sectionIcon={props?.sectionIcon}
