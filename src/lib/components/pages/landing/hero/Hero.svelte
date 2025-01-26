@@ -22,15 +22,15 @@
     alt="grid overlay"
     class="pointer-events-none absolute inset-0 h-full w-full object-cover opacity-100 mix-blend-overlay" />
   <div
-    class="w-fit mx-auto mb-[1.62rem] rounded-[20rem]"
+    class="mx-auto mb-[1.62rem] w-fit rounded-[20rem] hidden lg:block"
     style="background: linear-gradient(242deg, rgba(255, 255, 255, 0.21) 0%, rgba(255, 255, 255, 0.08) 100%);">
     <SectionIconAndName
-      className="border-none text-white
+      className="border-none text-white text-nowrap
       "
       sectionName={hero?.sectionName}
       sectionIcon={hero?.sectionIcon} />
   </div>
-  <div class="mx-auto w-[17rem] text-center lg:h-[10.5rem] lg:w-[50.6875rem]">
+  <div class=" mx-auto w-fit text-center mb-3">
     {#if Array.isArray(hero?.heroTitle[0]?.children) && Array.isArray(hero?.heroTitle[1]?.children)}
       <h1
         class=" font-geist text-[2.25rem] font-bold leading-[2.7rem] text-[#FFF] lg:text-7xl">
@@ -45,7 +45,7 @@
     {/if}
   </div>
   <p
-    class="mx-auto mt-[1.12rem] h-[3.75rem] w-[17.5625rem]
+    class="mx-auto mt-[1.12rem]  w-[17.5625rem]
      text-center text-base font-normal text-white lg:mt-[0.75rem] lg:w-[40.3125rem] lg:text-[1.25rem]">
     {hero?.subtitle}
   </p>
@@ -76,9 +76,9 @@
     style="
   "
     class=" relative mx-auto mt-[3.4rem]
-  flex h-[17.8rem] w-full
+  flex h-fit w-full
   max-w-[75rem] justify-center px-5 opacity-70 lg:h-full xl:px-0
-  {windowWidth <= 320 ? 'mt-[5.95rem] h-full' : 'h-[20.875rem]'}
+  {windowWidth <= 320 ? 'mt-[5.95rem] h-fit' : 'h-fit'}
   ">
     <div
       class="w-full rounded-tl-2xl rounded-tr-2xl bg-gradient-to-t from-violet-900 to-violet-100">

@@ -10,7 +10,7 @@
 </script>
 
 <svelte:window bind:innerWidth={windowWidth} />
-<div class=" relative mt-48 w-full bg-footer-gradient lg:mt-[10.94rem]">
+<div class=" relative mt-64 w-full bg-footer-gradient lg:mt-[10.94rem]">
   <div
     class="w-full px-5 pb-8 pt-[14.27rem] xl:container lg:flex-row lg:pt-[9.63rem] xl:px-[6.2rem]">
     <div class="flex flex-col justify-between lg:flex-row">
@@ -155,6 +155,7 @@
   <div
     class="
     absolute -top-[.5rem] left-1/2 -translate-x-1/2 -translate-y-1/2 lg:-top-[1rem]
+    
   
  ">
     <div class="">

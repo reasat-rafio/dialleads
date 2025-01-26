@@ -13,13 +13,13 @@
 
 
   <div
-  class={`w-fit mx-auto flex items-center justify-center gap-2 rounded-full border px-3 py-2 mt-24 ${className}`}>
+  class={`w-fit mx-auto flex items-center justify-center gap-2 rounded-full border px-3 py-2 mt-24  ${className}`}>
     <SanityImage
       class="h-5 w-6 ${className}"
       src={sectionIcon}
       sizes="5vw"
       imageUrlBuilder={imgBuilder}
       alt="sectionIcon" />
-    <p class="font-geist text-lg font-medium text-[#495568] ${className}">{sectionName}</p>
+    <p class="font-geist text-lg font-medium text-[#495568] text-nowrap ${className}">{sectionName}</p>
   </div>
 
