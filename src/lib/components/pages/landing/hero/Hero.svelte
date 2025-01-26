@@ -7,6 +7,8 @@
   import * as AlertDialog from '$lib/components/ui/alert-dialog/index.js';
   import { X } from 'lucide-svelte';
   import SectionIconAndName from '$lib/components/common/sectionIconAndName.svelte';
+  import { PortableText } from '@portabletext/svelte';
+  import VioletGradient from './VioletGradient.svelte';
 
   let { props }: { props: HeroProps } = $props();
   let { hero }: { hero: Hero } = $derived(props);
@@ -22,7 +24,7 @@
     alt="grid overlay"
     class="pointer-events-none absolute inset-0 h-full w-full object-cover opacity-100 mix-blend-overlay" />
   <div
-    class="mx-auto mb-[1.62rem] w-fit rounded-[20rem] hidden lg:block"
+    class="mx-auto mb-[1.62rem] hidden w-fit rounded-[20rem] lg:block"
     style="background: linear-gradient(242deg, rgba(255, 255, 255, 0.21) 0%, rgba(255, 255, 255, 0.08) 100%);">
     <SectionIconAndName
       className="border-none text-white text-nowrap
@@ -30,22 +32,19 @@
       sectionName={hero?.sectionName}
       sectionIcon={hero?.sectionIcon} />
   </div>
-  <div class=" mx-auto w-fit text-center mb-3">
-    {#if Array.isArray(hero?.heroTitle[0]?.children) && Array.isArray(hero?.heroTitle[1]?.children)}
-      <h1
-        class=" font-geist text-[2.25rem] font-bold leading-[2.7rem] text-[#FFF] lg:text-7xl">
-        {hero?.heroTitle[0]?.children[0]?.text}
-      </h1>
-      <h1
-        class="bg-gradient-to-r from-[#731AFF] via-[#731AFF] to-[#FCCEEE]
-              bg-clip-text font-geist text-[2.25rem] font-bold
-              text-transparent lg:text-7xl">
-        {hero?.heroTitle[1]?.children[0]?.text}
-      </h1>
-    {/if}
+  <div
+    class=" mx-auto mb-3 w-fit
+    text-nowrap text-center font-geist text-[1.875rem] font-bold text-[#FFF] lg:text-7xl">
+    <PortableText
+      value={hero?.heroTitle}
+      components={{
+        marks: {
+          violetGradient: VioletGradient,
+        },
+      }} />
   </div>
   <p
-    class="mx-auto mt-[1.12rem]  w-[17.5625rem]
+    class="mx-auto mt-[1.12rem] w-[17.5625rem]
      text-center text-base font-normal text-white lg:mt-[0.75rem] lg:w-[40.3125rem] lg:text-[1.25rem]">
     {hero?.subtitle}
   </p>
