@@ -11,7 +11,9 @@
 </script>
 
 <div class="mx-auto max-w-[75rem] px-5 xl:px-0">
-  <SectionIconAndName {sectionIcon} {sectionName} />
+  <div class="mt-24 flex items-center justify-center">
+    <SectionIconAndName {sectionIcon} {sectionName} />
+  </div>
   <h2
     class="mx-auto mt-6 h-[4.25rem] w-full
   text-center font-geist text-base font-normal
