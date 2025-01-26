@@ -1,5 +1,5 @@
 import { SiHomeadvisor } from 'react-icons/si';
-import { defineField, defineType } from 'sanity';
+import { defineArrayMember, defineField, defineType } from 'sanity';
 
 const industry = defineType({
   title: 'Industry',
@@ -44,6 +44,53 @@ const industry = defineType({
       name: 'title',
       type: 'string',
       title: 'Title',
+    }),
+
+    defineField({
+      name: 'industries',
+      title: 'Industries',
+      type: 'array',
+      of: [
+        defineArrayMember({
+          type: 'object',
+          fields: [
+            defineField({
+              name: 'title',
+              type: 'string',
+              title: 'Title',
+              validation: (Rule) => Rule.required(),
+            }),
+            defineField({
+              name: 'description',
+              type: 'string',
+              title: 'Description',
+              validation: (Rule) => Rule.required(),
+            }),
+
+            defineField({
+              name: 'useCaseImage',
+              type: 'image',
+              title: 'Use Case Image',
+              // validation: (Rule) => Rule.required(),
+              options: { hotspot: true },
+              fields: [
+                {
+                  name: 'alt',
+                  title: 'Alternative Text',
+                  description: 'Important for SEO and accessibility',
+                  type: 'string',
+                  // validation: (Rule) => Rule.required(),
+                },
+              ],
+            }),
+          ],
+          preview: {
+            select: {
+              title: 'title',
+            },
+          },
+        }),
+      ],
     }),
   ],
   preview: {

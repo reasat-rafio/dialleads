@@ -63,8 +63,15 @@ export interface Industries {
 export interface IndustriesProps {
   _type: 'landing.industry';
   _id: string;
-  description: string;
+  sectionTitle: string;
+  sectionIcon: SanityImageWithAlt;
+  sectionImage: SanityImageWithAlt;
   title: string;
+  industries: {
+    description: string;
+    title: string;
+    useCaseImage: SanityImageWithAlt;
+  }[];
 }
 export interface ClientProps {
   _type: 'landing.clients';
