@@ -21,13 +21,10 @@
     <div
       class="container mx-auto w-full max-w-sm text-center text-white sm:max-w-xl md:max-w-3xl lg:h-[10.5rem] lg:max-w-5xl xl:max-w-7xl">
       <div class="z-50 flex flex-col items-center justify-center">
-        <div
-          class="mb-[0.75rem] flex items-center justify-center lg:mb-[1.5rem]">
-          <SectionIconAndName
-            className="text-white"
-            sectionIcon={props?.sectionIcon}
-            sectionName={props?.sectionTitle} />
-        </div>
+        <SectionIconAndName
+          wrapperClass="mt-0  md:mt-[.4rem]"
+          sectionIcon={props?.sectionIcon}
+          sectionName={props?.sectionTitle} />
 
         {#if Array.isArray(props?.title[0]?.children) && Array.isArray(props?.title[1]?.children)}
           <h1
