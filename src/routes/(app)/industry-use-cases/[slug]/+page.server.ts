@@ -12,17 +12,17 @@ const query = groq`
     title,
     description,
     ${asset('useCaseImage')},
-    
+
     ${asset('useCaseImageForAI')},
     slug,
     useCaseTitleForAI,
     useCaseSubTitleForAI,
     mp3File,
-    
+
     sections[]{
       ...,
     },
-    
+
   }
 
 `;
@@ -31,7 +31,7 @@ export const load: PageServerLoad = async ({ params, setHeaders }) => {
   const { slug } = params;
 
   const data: IndustryUseCasesProps = await sanityClient.fetch(query, { slug });
-  setHeaders({ 'cache-control': 'public, max-age=3600' });
+  setHeaders({ 'cache-control': 'public, max-age=120' });
   if (!data) error(404, { message: 'Page not found' });
 
   return {

@@ -23,7 +23,7 @@ const query = groq`
 
 export const load = async ({ setHeaders }) => {
   const data: ContactPageProps = await sanityClient.fetch(query);
-  setHeaders({ 'cache-control': 'public, max-age=3600' });
+  setHeaders({ 'cache-control': 'public, max-age=120' });
 
   if (!data) throw error(404, { message: 'Not found' });
 
