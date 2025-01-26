@@ -24,7 +24,7 @@
     alt="grid overlay"
     class="pointer-events-none absolute inset-0 h-full w-full object-cover opacity-100 mix-blend-overlay" />
   <div
-    class="mx-auto mb-[1.62rem] hidden w-fit rounded-[20rem] lg:block"
+    class="z-50 mx-auto mb-[1.62rem] hidden w-fit rounded-[20rem] lg:block"
     style="background: linear-gradient(242deg, rgba(255, 255, 255, 0.21) 0%, rgba(255, 255, 255, 0.08) 100%);">
     <SectionIconAndName
       className="border-none text-white text-nowrap
@@ -32,9 +32,7 @@
       sectionName={hero?.sectionName}
       sectionIcon={hero?.sectionIcon} />
   </div>
-  <div
-    class=" mx-auto mb-3 w-fit
-    text-nowrap text-center font-geist text-[1.875rem] font-bold text-[#FFF] lg:text-7xl">
+  <div class=" mx-auto mb-3 w-fit text-center z-50 font-geist text-[2.25rem] font-bold leading-[2.7rem] text-[#FFF] lg:text-7xl">
     <PortableText
       value={hero?.heroTitle}
       components={{

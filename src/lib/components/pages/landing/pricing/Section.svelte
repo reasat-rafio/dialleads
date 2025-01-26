@@ -9,6 +9,5 @@
 </script>
 
 <div>
-    <SectionIconAndName {sectionIcon} {sectionName }/>
-    <h2 class="text-black text-[1.625rem] md:text-5xl font-semibold text-center mt-6 font-geist w-full">{sectionTitle}</h2>
+    <SectionIconAndName sectionTitleClass="leading-tight" {sectionIcon} {sectionName } {sectionTitle}/>
 </div>

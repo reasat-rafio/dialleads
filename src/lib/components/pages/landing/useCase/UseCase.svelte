@@ -7,6 +7,8 @@
   import { imgBuilder } from '$lib/sanity/sanity-client';
   import type { UseCaseProps } from '../../../../../types/landing.types';
   import { onMount } from 'svelte';
+  import SectionIconAndName from '$lib/components/common/sectionIconAndName.svelte';
+  import { SectionIcon } from 'lucide-svelte';
 
   interface Props {
     props: UseCaseProps;
@@ -116,17 +118,14 @@
       class="pointer-events-none absolute inset-0 h-full w-full object-cover opacity-60 mix-blend-overlay lg:opacity-100" />
 
     <div class="z-50 flex flex-col items-center justify-center">
-      <div
-        style="background: linear-gradient(242deg, rgba(255, 255, 255, 0.21) 0%, rgba(255, 255, 255, 0.08) 100%);"
-        class="z-50 mb-[0.75rem] flex gap-x-[0.5rem] rounded-full px-[1.52rem] py-[0.52rem] lg:mb-[1.5rem]">
-        <SanityImage
-          class="z-50 h-[1.25rem] w-[1.25rem] pt-1 "
-          src={props?.sectionIcon}
-          sizes="05vw"
-          imageUrlBuilder={imgBuilder}
-          alt={props?.sectionIcon?.alt || 'icon'} />
-        <h3 class="z-50 text-white">{props.sectionTitle}</h3>
-      </div>
+      <SectionIconAndName
+        bgColor="background: linear-gradient(242deg, rgba(255, 255, 255, 0.21) 0%, rgba(255, 255, 255, 0.08) 100%);"
+        wrapperClass="mt-0 border-none w-fit h-full"
+        sectionNameClass="text-white"
+        sectionTitleClass="text-white max-w-[44.5625rem] mb-[0.88rem] leading-tight"
+        sectionIcon={props?.sectionIcon}
+        sectionName={props?.sectionTitle}
+        sectionTitle={props?.title} />
 
       <div class="absolute hidden lg:flex">
         <SanityImage
@@ -137,10 +136,7 @@
           imageUrlBuilder={imgBuilder}
           alt={props?.clickToPlayImage?.alt || 'icon'} />
       </div>
-      <h2
-        class="z-50 mb-[0.75rem] max-w-[20.93rem] text-center text-[1.625rem] font-semibold text-white lg:mb-[0.88rem] lg:max-w-[44rem] lg:text-[3rem] lg:leading-[3.6rem]">
-        {props.title}
-      </h2>
+
       <h3
         class="z-50 mb-[0.88rem] max-w-[44rem] px-10 text-center text-[1rem] font-normal text-white lg:mb-[3.13rem] lg:px-0 lg:text-[1.125rem]">
         {props.description}

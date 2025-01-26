@@ -11,6 +11,7 @@
   import SanityImage from '$lib/sanity/sanity-image/sanity-image.svelte';
   import { imgBuilder } from '$lib/sanity/sanity-client';
   import type { IndustriesProps } from '../../../../../types/landing.types';
+  import SectionIconAndName from '$lib/components/common/sectionIconAndName.svelte';
 
   let api = $state<CarouselAPI>();
 
@@ -50,26 +51,15 @@
       alt="grid overlay"
       class="pointer-events-none absolute inset-0 h-full w-full object-cover opacity-60 mix-blend-overlay lg:opacity-100" />
 
-    <div
-      class=" flex flex-col items-center justify-center pt-[2rem] lg:pt-[6rem]">
-      <div
-        style="background: linear-gradient(242deg, rgba(255, 255, 255, 0.21) 0%, rgba(255, 255, 255, 0.08) 100%);"
-        class="z-50 mb-[1.5rem] flex gap-x-[0.5rem] rounded-full px-[1.52rem] py-[0.52rem]">
-        <!--  -->
-        <SanityImage
-          class="h-[1.25rem]  w-[1.25rem] pt-1 "
-          src={props?.sectionIcon}
-          sizes="05vw"
-          imageUrlBuilder={imgBuilder} />
-        <h3 class="text-[1.125rem] font-medium text-white">
-          {props.sectionTitle}
-        </h3>
-      </div>
-
-      <h2
-        class="z-50 mb-[1.88rem] px-5 text-center text-[1.625rem] font-semibold text-white lg:mb-[3.12rem] lg:text-[3rem]">
-        {props.title}
-      </h2>
+    <div class="pb-[1.88rem] md:pb-[2.25rem] pt-8 md:pt-24">
+      <SectionIconAndName
+        bgColor="background: linear-gradient(242deg, rgba(255, 255, 255, 0.21) 0%, rgba(255, 255, 255, 0.08) 100%);"
+        wrapperClass="mt-0 border-none "
+        sectionNameClass="text-white"
+        sectionTitleClass="text-white   mb-[0.88rem] leading-tight"
+        sectionIcon={props?.sectionIcon}
+        sectionName={props?.sectionTitle}
+        sectionTitle={props?.title} />
     </div>
 
     <div

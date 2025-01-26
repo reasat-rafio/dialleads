@@ -5,6 +5,7 @@
   import { Dot } from 'lucide-svelte';
   import * as Dialog from '$lib/components/ui/dialog/index.js';
   import type { TestimonialsProps } from '../../../../../types/landing.types';
+  import SectionIconAndName from '$lib/components/common/sectionIconAndName.svelte';
   interface Props {
     props: TestimonialsProps;
   }
@@ -38,24 +39,7 @@
 </script>
 
 <svelte:window bind:innerWidth={windowWidth} />
-<div class="mt-[2.5rem] flex flex-col items-center justify-center lg:mt-[5rem]">
-  <div
-    class="mb-[1rem] flex gap-x-[0.5rem] rounded-full border px-[1.52rem] py-[0.52rem] lg:mb-[1.5rem]">
-    <SanityImage
-      class="h-[1.25rem] w-[1.25rem] "
-      src={props?.sectionIcon}
-      sizes="05vw"
-      imageUrlBuilder={imgBuilder}
-      alt={props?.sectionIcon?.alt || 'icon'} />
-    <h3>{props.sectionTitle}</h3>
-  </div>
-
-  <h2
-    class="mb-[1.625rem] text-center text-[1.625rem] font-semibold md:text-[3rem] lg:mb-[3.12rem]">
-    {props.title}
-  </h2>
-</div>
-
+<SectionIconAndName sectionTitleClass="mb-[1.88rem] md:mb-[3.12rem] leading-tight" sectionIcon={props?.sectionIcon} sectionName={props?.sectionTitle} sectionTitle={props?.title} />
 <div
   class="m-5 grid max-w-[74.8125rem] grid-cols-1 gap-[0.75rem] sm:grid-cols-2 md:gap-[1.88rem] lg:grid-cols-3 xl:m-0">
   {#each testimonials as testimonial, i}
