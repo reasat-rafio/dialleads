@@ -13,14 +13,11 @@
 </script>
 
 <div class="px-5 xl:px-0">
-  <div class="mt-24 flex items-center justify-center">
-    <SectionIconAndName {sectionName} {sectionIcon} />
-  </div>
-  <h3
-    class="mx-auto mt-4 w-full text-center
-  text-xl font-semibold text-[#212121] lg:w-[56.6875rem] lg:text-5xl lg:leading-[3.6rem]">
-    {dataDriven?.title}
-  </h3>
+  <SectionIconAndName
+    sectionTitleClass="max-w-[56.6875rem] mx-auto"
+    {sectionName}
+    {sectionIcon}
+    sectionTitle={dataDriven?.title} />
   <p
     class="mx-auto mt-[0.88rem] w-full text-center
   text-base font-normal text-[#212121] lg:w-[56.688rem] lg:text-xl lg:leading-[1.875rem]">

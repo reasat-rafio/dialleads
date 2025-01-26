@@ -12,6 +12,9 @@
   import { zodClient } from 'sveltekit-superforms/adapters';
   import type { TestCallProps } from '../../../../../types/landing.types';
   import * as Select from '$lib/components/ui/select/index.js';
+  import SectionIconAndName from '$lib/components/common/sectionIconAndName.svelte';
+  import { SectionIcon } from 'lucide-svelte';
+  import { Title } from '$lib/components/ui/alert-dialog';
 
   interface Props {
     props: TestCallProps;
@@ -76,25 +79,12 @@
   });
 </script>
 
-<div class="flex flex-col items-center justify-center">
-  <div
-    class="mb-[0.75rem] flex gap-x-[0.5rem] rounded-full border px-[1.52rem] py-[0.52rem] lg:mb-[1.5rem]">
-    <SanityImage
-      class="h-[1.25rem] w-[1.25rem] "
-      src={props?.sectionIcon}
-      sizes="05vw"
-      imageUrlBuilder={imgBuilder}
-      alt={props?.sectionIcon?.alt || "icon"}
-       />
-    <h3 class="text-[1rem] font-normal text-[#495568]">{props.sectionTitle}</h3>
-  </div>
-
-  <h2
-    class="mb-[1.38rem] text-[1.625rem] font-semibold text-black lg:text-[3rem]">
-    {props.title}
-  </h2>
+<div class="mb-[1.38rem] md:mb-[1.88rem]">
+  <SectionIconAndName
+    sectionIcon={props?.sectionIcon}
+    sectionName={props?.sectionTitle}
+    sectionTitle={props?.title} />
 </div>
-
 <div class="relative">
   <div
     class="
@@ -128,8 +118,7 @@
               src={props?.personImage}
               sizes="60vw"
               imageUrlBuilder={imgBuilder}
-              alt={props?.personImage?.alt || "image"}
-               />
+              alt={props?.personImage?.alt || 'image'} />
           </div>
           <div class="">
             <h3

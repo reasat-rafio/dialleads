@@ -1,8 +1,10 @@
 <script lang="ts">
+	import { SectionIcon } from 'lucide-svelte';
   import { imgBuilder } from '$lib/sanity/sanity-client';
   import SanityImage from '$lib/sanity/sanity-image/sanity-image.svelte';
   import * as Tabs from '$lib/components/ui/tabs/index.js';
   import type { FeatureProps } from '../../../../../types/landing.types';
+  import SectionIconAndName from '$lib/components/common/sectionIconAndName.svelte';
   interface Props {
     props: FeatureProps;
   }
@@ -10,25 +12,8 @@
   let { props }: Props = $props();
 </script>
 
-<div class="mt-[2.4rem] flex flex-col items-center justify-center lg:mt-[5rem]">
-  <div
-    class="mb-[1rem] flex gap-x-[0.5rem] rounded-full border px-[1.52rem] py-[0.52rem] lg:mb-[1.5rem]">
-    {#if !!props?.sectionIcon}
-      <SanityImage
-        class="h-[1.25rem] w-[1.25rem] pt-1"
-        src={props?.sectionIcon}
-        sizes="05vw"
-        imageUrlBuilder={imgBuilder} />
-    {/if}
-    <h3 class="text-[1rem] font-medium text-[#495568] lg:text-[1.125rem]">
-      {props.sectionTitle}
-    </h3>
-  </div>
-
-  <h2
-    class="mb-[1.25rem] w-[20.5625rem] text-center text-[1.625rem] font-semibold lg:mb-[1.3rem] lg:w-full lg:text-[3rem]">
-    {props.title}
-  </h2>
+<div class="mt-[2.4rem] lg:mt-[5rem] mb-5 md:mb-10 leading-tight px-5 md:px-0">
+  <SectionIconAndName sectionIcon={props?.sectionIcon} sectionName={props?.sectionTitle} sectionTitle={props?.title} />
 </div>
 
 <div class="flex items-center justify-center">

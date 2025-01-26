@@ -148,7 +148,7 @@
 
               <div
                 class="mt-[1rem] flex h-[2.4375rem] items-center gap-x-[0.5rem] overflow-hidden">
-                <button
+                <Button
                   class="flex min-h-[2.124rem] min-w-[2.124rem] items-center justify-center rounded-full border border-[#6d28d9] bg-[#EDE9FE] text-white"
                   onclick={playPauseAudio}>
                   {#if showPlayIcon}
@@ -181,7 +181,7 @@
                       </g>
                     </svg>
                   {/if}
-                </button>
+                </Button>
                 <div
                   id={`waveform`}
                   class="w-full max-w-[90%] overflow-hidden rounded-lg">

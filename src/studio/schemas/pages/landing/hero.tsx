@@ -1,5 +1,8 @@
 import { SiHomeadvisor } from 'react-icons/si';
 import { defineArrayMember, defineField, defineType } from 'sanity';
+import { FaPenFancy } from 'react-icons/fa';
+
+import React from 'react';
 
 const hero = defineType({
   title: 'Hero',
@@ -40,7 +43,28 @@ const hero = defineType({
           title: 'Hero Title',
           type: 'array',
           validation: (Rule) => Rule.required(),
-          of: [defineArrayMember({ type: 'block' })],
+          of: [
+            defineArrayMember({
+              type: 'block',
+              styles: [],
+              lists: [],
+              marks: {
+                decorators: [
+                  {
+                    title: 'Violet Gradient',
+                    value: 'violetGradient',
+                    // @ts-expect-error i don't know how to fix this
+                    blockEditor: {
+                      icon: () => <FaPenFancy />,
+                      render: ({ children }: { children: React.ReactNode }) => (
+                        <span className="violet-gradient">{children}</span>
+                      ),
+                    },
+                  },
+                ],
+              },
+            }),
+          ],
         }),
         defineField({
           name: 'subtitle',

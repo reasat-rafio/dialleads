@@ -11,15 +11,9 @@
 </script>
 
 <div class="mx-auto max-w-[75rem] px-5 xl:px-0">
-  <div class="mt-24 flex items-center justify-center">
-    <SectionIconAndName {sectionIcon} {sectionName} />
-  </div>
-  <h2
-    class="mx-auto mt-6 h-[4.25rem] w-full
-  text-center font-geist text-base font-normal
-  text-[#212121] lg:w-[43.125rem] lg:text-xl">
-    {sectionTitle}
-  </h2>
+  <SectionIconAndName
+  sectionTitleClass="text-base lg:text-[1.25rem] font-normal max-w-[43.125rem] mx-auto mb-[3.24rem]"
+   {sectionIcon} {sectionName} {sectionTitle} />
   <div
     class="mt-24 flex flex-col-reverse
   gap-20 px-2 md:mt-[4.26rem]

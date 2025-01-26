@@ -1,5 +1,6 @@
+import { FaPenFancy } from 'react-icons/fa';
 import { defineArrayMember, defineType } from 'sanity';
-
+import React from 'react';
 const hero = defineType({
   title: 'Hero',
   name: 'pricing.hero',
@@ -38,7 +39,28 @@ const hero = defineType({
           title: 'Section Title',
           type: 'array',
           validation: (Rule) => Rule.required(),
-          of: [defineArrayMember({ type: 'block' })],
+          of: [
+            defineArrayMember({
+              type: 'block',
+              styles: [],
+              lists: [],
+              marks: {
+                decorators: [
+                  {
+                    title: 'Violet Gradient',
+                    value: 'violetGradient',
+                    // @ts-expect-error i don't know how to fix this
+                    blockEditor: {
+                      icon: () => <FaPenFancy />,
+                      render: ({ children }: { children: React.ReactNode }) => (
+                        <span className="violet-gradient">{children}</span>
+                      ),
+                    },
+                  },
+                ],
+              },
+            }),
+          ],
           description: 'The title for the section',
         },
         {
