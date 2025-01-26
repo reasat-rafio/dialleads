@@ -41,7 +41,10 @@
 <svelte:window bind:innerWidth={windowWidth} />
 
 <div class="max-w-[74.8125rem] mx-auto">
-  <SectionIconAndName sectionTitleClass="mb-[1.88rem] md:mb-[3.12rem] leading-tight" sectionIcon={props?.sectionIcon} sectionName={props?.sectionTitle} sectionTitle={props?.title} />
+  <SectionIconAndName 
+  wrapperClass="mt-[2.5rem] lg:mt-[5.06rem]"
+  sectionTitleClass="mb-[1.88rem] md:mb-[3.12rem] leading-tight" 
+  sectionIcon={props?.sectionIcon} sectionName={props?.sectionTitle} sectionTitle={props?.title} />
 <div
   class="m-5 grid  grid-cols-1 gap-[0.75rem] sm:grid-cols-2 md:gap-[1.88rem] lg:grid-cols-3 xl:m-0">
   {#each testimonials as testimonial, i}

@@ -29,7 +29,7 @@
   <div
   style={bgColor}
     class={cn(
-      'mx-auto flex w-fit items-center justify-center gap-2 rounded-full border px-3 py-2 mt-24',
+      'mx-auto flex w-fit items-center justify-center gap-2 rounded-full border px-3 py-2 mt-10 md:mt-24',
       wrapperClass
     )}
   >

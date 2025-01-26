@@ -81,6 +81,7 @@
 
 <div class="mb-[1.38rem] md:mb-[1.88rem]">
   <SectionIconAndName
+  
     sectionIcon={props?.sectionIcon}
     sectionName={props?.sectionTitle}
     sectionTitle={props?.title} />
@@ -97,15 +98,6 @@
  lg:bg-footer-gradient lg:pb-0
  xl:w-fit
  ">
-    <!-- pb-[3.12rem]
- pt-[3.12rem] -->
-
-    <!-- bg-violet-900 bg-gradient-to-t from-violet-500
-  to-violet-800 -->
-    <!-- w-[20rem] -->
-    <!-- pl-[6.44rem] pr-[6.38rem] -->
-    <!-- absolute
-    -top-[14rem] -translate-x-1/2 left-1/2 -->
 
     <div
       class=" z-50 flex h-full w-full flex-col items-center justify-center py-[1.13rem] md:py-[3.13rem]">

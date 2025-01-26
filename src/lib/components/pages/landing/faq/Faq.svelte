@@ -13,8 +13,8 @@
 
 <div class="max-w-[74.8125rem] mx-auto">
   <div
-    class="  mb-10 mt-[2.5rem] grid
-   grid-cols-1 justify-center gap-x-[3rem] gap-y-[1.88rem] md:grid-cols-12 md:gap-y-[0rem] lg:mt-[5.94rem] xl:mx-0">
+    class="  mb-10  grid
+   grid-cols-1 mx-5 justify-center gap-x-[3rem] gap-y-[1.88rem] md:grid-cols-12 md:gap-y-[0rem] lg:mt-[5.94rem] xl:mx-0">
     <div class="col-span-1 md:col-span-5">
       <div class="flex flex-col items-center md:items-start">
         <div>
