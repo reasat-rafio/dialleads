@@ -6,14 +6,14 @@
   interface Props {
     sectionName: string;
     sectionIcon: SanityImageObject;
-    sectionTitle: string;
+    className?: string;
   }
-  let { sectionName, sectionIcon, sectionTitle }: Props = $props();
+  let { sectionName, sectionIcon, className}: Props = $props();
 </script>
 
 <div>
   <div
-    class="mx-auto flex h-10 w-32 items-center justify-center gap-2 rounded-full border px-3 py-2">
+  class={`w-fit mx-auto flex items-center justify-center gap-2 rounded-full border px-3 py-2 mt-24 ${className}`}>
     <SanityImage
       class="h-5 w-6"
       src={sectionIcon}
@@ -22,7 +22,4 @@
       alt="sectionIcon" />
     <p class="font-geist text-lg font-medium text-[#495568]">{sectionName}</p>
   </div>
-  <h2 class="font-geist mt-6 text-center text-[1.625rem] lg:text-5xl font-semibold text-black">
-    {sectionTitle}
-  </h2>
 </div>

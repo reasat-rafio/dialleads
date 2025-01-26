@@ -1,8 +1,8 @@
 <script lang="ts">
+  import SectionIconAndName from '$lib/components/common/sectionIconAndName.svelte';
   import type { ComparisonProps } from '../../../../../types/landing.types';
   import AiAgentCard from './cards/AIAgentCard.svelte';
   import HumanAgentCard from './cards/HumanAgentCard.svelte';
-  import Section from './Section.svelte';
 
   let { props }: { props: ComparisonProps } = $props();
   let { comparison } = $derived(props);
@@ -11,10 +11,17 @@
 </script>
 
 <div class="mx-auto max-w-[75rem] px-5 xl:px-0">
-  <Section {sectionName} {sectionIcon} {sectionTitle} />
-  <div class="lg:mx-auto mt-24 md:mt-[4.26rem]   
-  lg:max-w-[65rem] flex flex-col-reverse 
-  lg:flex-row gap-20 lg:gap-10 px-2 xl:px-0">
+  <SectionIconAndName {sectionIcon} {sectionName} />
+  <h2
+    class="mx-auto mt-6 h-[4.25rem] w-full
+  text-center font-geist text-base font-normal
+  text-[#212121] lg:w-[43.125rem] lg:text-xl">
+    {sectionTitle}
+  </h2>
+  <div
+    class="mt-24 flex flex-col-reverse
+  gap-20 px-2 md:mt-[4.26rem]
+  lg:mx-auto lg:max-w-[65rem] lg:flex-row lg:gap-10 xl:px-0">
     {#each comparisonCards as card}
       {#if card.cardType === 'AI Phone Agent'}
         <AiAgentCard {card} />

@@ -1,9 +1,9 @@
 <script lang="ts">
+  import SectionIconAndName from '$lib/components/common/sectionIconAndName.svelte';
   import Button from '$lib/components/ui/button/button.svelte';
   import { imgBuilder } from '$lib/sanity/sanity-client';
   import SanityImage from '$lib/sanity/sanity-image/sanity-image.svelte';
   import type { DataDrivenProps } from '../../../../../types/landing.types';
-  import Section from './Section.svelte';
 
   let { props }: { props: DataDrivenProps } = $props();
   let { dataDriven } = $derived(props);
@@ -13,7 +13,7 @@
 </script>
 
 <div class="px-5 xl:px-0">
-  <Section {sectionName} {sectionIcon} />
+  <SectionIconAndName {sectionName} {sectionIcon} />
   <h3
     class="mx-auto mt-4 w-full text-center
   text-xl font-semibold text-[#212121] lg:w-[56.6875rem] lg:text-5xl lg:leading-[3.6rem]">

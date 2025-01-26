@@ -6,6 +6,7 @@
   import Video from './Video.svelte';
   import * as AlertDialog from '$lib/components/ui/alert-dialog/index.js';
   import { X } from 'lucide-svelte';
+  import SectionIconAndName from '$lib/components/common/sectionIconAndName.svelte';
 
   let { props }: { props: HeroProps } = $props();
   let { hero }: { hero: Hero } = $derived(props);
@@ -15,27 +16,15 @@
 
 <svelte:window bind:innerWidth={windowWidth} />
 <div
-  class=" bg-hero-gradient pt-[7.31rem] lg:mx-[0.63rem] lg:mt-[0.63rem] lg:rounded-[1.875rem] lg:pt-[11rem] relative">
+  class=" relative bg-hero-gradient pt-[7.31rem] lg:mx-[0.63rem] lg:mt-[0.63rem] lg:rounded-[1.875rem] lg:pt-[11rem]">
   <img
     src="/grid.png"
     alt="grid overlay"
     class="pointer-events-none absolute inset-0 h-full w-full object-cover opacity-100 mix-blend-overlay" />
-  <div
-    style="background: linear-gradient(242deg, rgba(255, 255, 255, 0.21) 0%, rgba(255, 255, 255, 0.08) 100%);"
-    class="mx-auto mb-[2.12rem] hidden h-10
-      items-center
-      justify-center
-      gap-[0.375rem] rounded-[20rem] py-2 lg:flex lg:w-[26.625rem]">
-    <SanityImage
-      class="h-4 w-4 lg:h-5 lg:w-5"
-      src={hero?.sectionIcon}
-      sizes="5vw"
-      imageUrlBuilder={imgBuilder}
-      alt={hero?.sectionIcon?.alt || 'icon'} />
-    <p class="text-nowrap text-sm font-medium text-white lg:text-lg">
-      {hero?.sectionName}
-    </p>
-  </div>
+    <SectionIconAndName
+    className="border-none"
+      sectionName={hero?.sectionName}
+      sectionIcon={hero?.sectionIcon} />
   <div class="mx-auto w-[17rem] text-center lg:h-[10.5rem] lg:w-[50.6875rem]">
     {#if Array.isArray(hero?.heroTitle[0]?.children) && Array.isArray(hero?.heroTitle[1]?.children)}
       <h1
@@ -57,9 +46,9 @@
   </p>
   <div class=" mx-[0.94rem] mt-[3rem] flex justify-center lg:mt-[1.88rem]">
     <div
-      class="z-50 bg-transparent inline-flex w-full max-w-[14.420rem]
-    animate-shine items-center justify-center rounded-xl border-[1px]
-    border-l border-t border-white/30 border-b-white/15 border-r-white/15 bg-[linear-gradient(110deg,#2e1065,50%,#7C3AED,55%,#2e1065)]
+      class="z-50 inline-flex w-full max-w-[14.420rem] animate-shine
+    items-center justify-center rounded-xl border-[1px] border-l
+    border-t border-white/30 border-b-white/15 border-r-white/15 bg-transparent bg-[linear-gradient(110deg,#2e1065,50%,#7C3AED,55%,#2e1065)]
     bg-[length:200%_100%] px-2 py-2 text-sm shadow-xl transition-colors">
       <Button
         class="flex h-[3.5rem]  w-[13.5rem] 
