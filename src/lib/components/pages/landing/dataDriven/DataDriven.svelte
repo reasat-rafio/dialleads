@@ -13,7 +13,9 @@
 </script>
 
 <div class="px-5 xl:px-0">
-  <SectionIconAndName {sectionName} {sectionIcon} />
+  <div class="mt-24 flex items-center justify-center">
+    <SectionIconAndName {sectionName} {sectionIcon} />
+  </div>
   <h3
     class="mx-auto mt-4 w-full text-center
   text-xl font-semibold text-[#212121] lg:w-[56.6875rem] lg:text-5xl lg:leading-[3.6rem]">

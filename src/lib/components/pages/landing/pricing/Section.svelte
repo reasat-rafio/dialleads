@@ -1,14 +1,18 @@
 <script lang="ts">
-  import SectionIconAndName from "$lib/components/common/sectionIconAndName.svelte";
-  import type { PricingProps } from "../../../../../types/landing.types";
+  import SectionIconAndName from '$lib/components/common/sectionIconAndName.svelte';
+  import type { PricingProps } from '../../../../../types/landing.types';
 
-    
-    let {props} = $props();
-    let {pricing}: {pricing: PricingProps} = $derived(props);
-    let {sectionIcon, sectionName, sectionTitle} = $derived(pricing);
+  let { props } = $props();
+  let { pricing }: { pricing: PricingProps } = $derived(props);
+  let { sectionIcon, sectionName, sectionTitle } = $derived(pricing);
 </script>
 
 <div>
-    <SectionIconAndName {sectionIcon} {sectionName }/>
-    <h2 class="text-black text-[1.625rem] md:text-5xl font-semibold text-center mt-6 font-geist w-full">{sectionTitle}</h2>
+  <div class="mt-24 flex items-center justify-center">
+    <SectionIconAndName {sectionIcon} {sectionName} />
+  </div>
+  <h2
+    class="mt-6 w-full text-center font-geist text-[1.625rem] font-semibold text-black md:text-5xl">
+    {sectionTitle}
+  </h2>
 </div>

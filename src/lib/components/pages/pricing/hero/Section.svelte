@@ -1,4 +1,5 @@
 <script lang="ts">
+  import SectionIconAndName from '$lib/components/common/sectionIconAndName.svelte';
   import { imgBuilder } from '$lib/sanity/sanity-client';
   import SanityImage from '$lib/sanity/sanity-image/sanity-image.svelte';
   import type { Hero } from '../../../../../types/pricing.types';
@@ -9,18 +10,11 @@
 </script>
 
 <div class="container pt-[9.19rem]">
-  <div
-    class="mx-auto flex h-10 w-[7.125rem] items-center justify-center gap-2 rounded-[20rem]
-       border px-3 py-2">
-    <SanityImage
-      class="mt-1 h-5 w-[1.3125rem]"
-      src={sectionIcon}
-      sizes="5vw"
-      imageUrlBuilder={imgBuilder}
-      alt={sectionIcon?.alt || 'icon'} />
-    <p class="font-geist text-lg font-medium text-white">{sectionName}</p>
+  <div class="mx-auto flex items-center justify-center">
+    <SectionIconAndName className="text-white" {sectionIcon} {sectionName} />
   </div>
-  <div class="mt-5 hidden items-center gap-5 text-center lg:flex justify-center">
+  <div
+    class="mt-5 hidden items-center justify-center gap-5 text-center lg:flex">
     {#if Array.isArray(sectionTitle[0]?.children) && Array.isArray(sectionTitle[1]?.children)}
       <h1
         class="font-geist text-[1.625rem] font-bold text-[#FFF] lg:text-nowrap lg:text-[3.875rem] lg:leading-[4.495rem]">

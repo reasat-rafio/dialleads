@@ -12,14 +12,16 @@
 </script>
 
 <div
-  class={`mx-auto mt-24 flex w-fit items-center justify-center gap-2 rounded-full border px-3 py-2 ${className}`}>
+  class={`flex w-fit items-center justify-center gap-2 rounded-full border px-3 py-2 ${className}`}>
+  <!--mx-auto mt-24 items-center -->
   <SanityImage
     class="h-5 w-6 ${className}"
     src={sectionIcon}
     sizes="5vw"
     imageUrlBuilder={imgBuilder}
     alt="sectionIcon" />
-  <p class="font-geist text-lg font-medium text-[#495568] ${className}">
+  <p class="font-geist text-lg font-medium ${className}">
+    <!-- text-[#495568] -->
     {sectionName}
   </p>
 </div>
