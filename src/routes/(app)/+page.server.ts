@@ -16,13 +16,23 @@ const query = groq`
             ...,
             ${asset('sectionImage')},
             ${asset('useCaseSectionImage')},
+           
+            industries{
+              ...,
+              ${asset('useCaseImage')},
+            },
+
+            useCases{
+              ...,
+              ${asset('useCaseImage')},
+            },
 
               testimonials[]-> {
-        ...,
-        ${asset('companyLogo')},
-        ${asset('reviewerImage')},
+              ...,
+              ${asset('companyLogo')},
+              ${asset('reviewerImage')},
 
-      },
+            },
 
 
         ...,
@@ -100,15 +110,7 @@ const query = groq`
         },
         },
 
-        "industries": *[_type == "industryUseCasePage"]{
-
-
-          ...,
-          _type,
-
-          ${asset('useCaseImage')},
-          ${asset('useCaseImageForAI')},
-        },
+        
         "pricing": *[_type == "pricing"][0]{
             saveUpTo,
             plans[]{

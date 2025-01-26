@@ -12,9 +12,8 @@
 
   interface Props {
     props: UseCaseProps;
-    industries: any;
   }
-  let { props, industries }: Props = $props();
+  let { props }: Props = $props();
 
   let api = $state<CarouselAPI>();
 
@@ -59,7 +58,7 @@
 
   // Initialize WaveSurfer instances on mount
   onMount(() => {
-    industries.forEach((useCase: any, i: any) => {
+    props.useCases.forEach((useCase: any, i: any) => {
       const waveformElement: any = document.getElementById(`waveform-${i}`);
       const mp3FileUrl = resolveMp3Url(useCase.mp3File.asset._ref); // Resolve URL
 
@@ -154,27 +153,31 @@
       <div class="container mx-auto px-[1.5rem] lg:px-[7.5rem]">
         <Carousel.Root setApi={(emblaApi) => (api = emblaApi)} class="w-full">
           <Carousel.Content>
-            {#each industries as useCase, index}
+            {#each props.useCases as useCase, index}
               <Carousel.Item
-                class="w-full max-w-[23.625rem] basis-full bg-transparent sm:basis-1/2 lg:max-w-[24.625rem] lg:basis-1/3">
+                class="w-full max-w-[23.625rem] basis-full bg-transparent sm:basis-1/2 lg:max-w-[24.625rem] xl:basis-1/3">
                 <Card.Root
                   style="background: linear-gradient(242deg, rgba(255, 255, 255, 0.21) 0%, rgba(255, 255, 255, 0.08) 100%);"
                   class="w-full rounded-[1.38rem] border-[0.342px] border-gray-400 bg-transparent p-[0.75rem]">
                   <div
-                    class="flex h-full w-full flex-col rounded-[0.88rem] bg-white p-[0.55rem]">
-                    <SanityImage
-                      class="h-full w-full border bg-cover bg-center object-cover"
-                      src={useCase?.useCaseImageForAI}
-                      imageUrlBuilder={imgBuilder}
-                      alt={useCase?.useCaseImageForAI?.alt || 'image'} />
-                    <!-- sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw" -->
+                    class="flex h-[24rem] w-full flex-col rounded-[0.88rem] border bg-white p-[0.55rem] xl:h-[26rem]">
+                    <div
+                      class="max-h-[215px] min-h-[215px] overflow-hidden rounded-[0.88rem] bg-cover object-cover xl:max-h-[243px] xl:min-h-[243px]">
+                      <SanityImage
+                        lqip
+                        class="h-full w-full rounded-[0.88rem]  bg-cover object-cover"
+                        src={useCase?.useCaseImage}
+                        imageUrlBuilder={imgBuilder}
+                        alt={useCase?.useCaseImage?.alt || 'image'} />
+                    </div>
+
                     <h3
                       class="mt-[1.38rem] text-center text-[1.125rem] font-semibold lg:text-[1.375rem]">
-                      {useCase.useCaseTitleForAI}
+                      {useCase.useCaseTitle}
                     </h3>
                     <h3
                       class="mb-[1rem] text-center text-[0.875rem] font-normal text-[#5B6779] lg:text-[1rem]">
-                      {useCase.useCaseSubTitleForAI}
+                      {useCase.useCaseSubTitle}
                     </h3>
                     <hr />
 
