@@ -22,7 +22,7 @@
     alt="grid overlay"
     class="pointer-events-none absolute inset-0 h-full w-full object-cover opacity-100 mix-blend-overlay" />
     <SectionIconAndName
-    className="border-none"
+      className="border-none text-white"
       sectionName={hero?.sectionName}
       sectionIcon={hero?.sectionIcon} />
   <div class="mx-auto w-[17rem] text-center lg:h-[10.5rem] lg:w-[50.6875rem]">
