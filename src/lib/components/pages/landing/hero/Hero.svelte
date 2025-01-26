@@ -16,15 +16,20 @@
 
 <svelte:window bind:innerWidth={windowWidth} />
 <div
-  class=" relative bg-hero-gradient pt-[7.31rem] lg:mx-[0.63rem] lg:mt-[0.63rem] lg:rounded-[1.875rem] lg:pt-[11rem]">
+  class=" relative bg-hero-gradient pt-[7.31rem] lg:mx-[0.63rem] lg:mt-[0.63rem] lg:rounded-[1.875rem] lg:pt-[6.62rem]">
   <img
     src="/grid.png"
     alt="grid overlay"
     class="pointer-events-none absolute inset-0 h-full w-full object-cover opacity-100 mix-blend-overlay" />
+  <div
+    class="w-fit mx-auto mb-[1.62rem] rounded-[20rem]"
+    style="background: linear-gradient(242deg, rgba(255, 255, 255, 0.21) 0%, rgba(255, 255, 255, 0.08) 100%);">
     <SectionIconAndName
-      className="border-none text-white"
+      className="border-none text-white
+      "
       sectionName={hero?.sectionName}
       sectionIcon={hero?.sectionIcon} />
+  </div>
   <div class="mx-auto w-[17rem] text-center lg:h-[10.5rem] lg:w-[50.6875rem]">
     {#if Array.isArray(hero?.heroTitle[0]?.children) && Array.isArray(hero?.heroTitle[1]?.children)}
       <h1
