@@ -1,5 +1,5 @@
 import { SiHomeadvisor } from 'react-icons/si';
-import {  defineField, defineType } from 'sanity';
+import { defineArrayMember, defineField, defineType } from 'sanity';
 
 const useCase = defineType({
   title: 'UseCase',
@@ -62,6 +62,65 @@ const useCase = defineType({
           description: 'Important for SEO and accessibility',
           type: 'string',
         },
+      ],
+    }),
+
+    defineField({
+      name: 'useCases',
+      title: 'UseCases',
+      type: 'array',
+      of: [
+        defineArrayMember({
+          type: 'object',
+          fields: [
+            defineField({
+              name: 'useCaseImage',
+              type: 'image',
+              title: 'Use Case Image',
+              // validation: (Rule) => Rule.required(),
+              options: { hotspot: true },
+              fields: [
+                {
+                  name: 'alt',
+                  title: 'Alternative Text',
+                  description: 'Important for SEO and accessibility',
+                  type: 'string',
+                  validation: (Rule) => Rule.required(),
+                },
+              ],
+            }),
+
+            defineField({
+              name: 'useCaseTitle',
+              title: 'Use Case Title',
+              type: 'string',
+              validation: (Rule) => Rule.required(),
+            }),
+
+            defineField({
+              name: 'useCaseSubTitle',
+              title: 'Use Case Sub Title',
+              type: 'string',
+              validation: (Rule) => Rule.required(),
+            }),
+
+            defineField({
+              name: 'mp3File',
+              title: 'MP3 File',
+              type: 'file',
+              description: 'Upload an MP3 file',
+              options: {
+                accept: 'audio/mpeg',
+              },
+              validation: (Rule) => Rule.required(),
+            }),
+          ],
+          preview: {
+            select: {
+              title: 'useCaseTitle',
+            },
+          },
+        }),
       ],
     }),
   ],

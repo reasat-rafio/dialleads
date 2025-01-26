@@ -1,9 +1,8 @@
 <script lang="ts">
   interface Props {
     props: IndustriesProps;
-    industries: any;
   }
-  let { props, industries }: any = $props();
+  let { props }: Props = $props(); // industries
 
   import * as Card from '$lib/components/ui/card/index.js';
   import * as Carousel from '$lib/components/ui/carousel/index.js';
@@ -55,7 +54,6 @@
       <div
         style="background: linear-gradient(242deg, rgba(255, 255, 255, 0.21) 0%, rgba(255, 255, 255, 0.08) 100%);"
         class="z-50 mb-[1.5rem] flex gap-x-[0.5rem] rounded-full px-[1.52rem] py-[0.52rem]">
-        <!--  -->
         <SanityImage
           class="h-[1.25rem]  w-[1.25rem] pt-1 "
           src={props?.sectionIcon}
@@ -76,7 +74,7 @@
       class="container z-50 mx-auto px-[1.5rem] pb-[0rem] md:pb-[4.21rem] lg:px-[7.5rem]">
       <Carousel.Root setApi={(emblaApi) => (api = emblaApi)} class="w-full  ">
         <Carousel.Content class="">
-          {#each industries as industry}
+          {#each props.industries as industry}
             <Carousel.Item
               class="basis-full bg-transparent  md:basis-1/2 lg:basis-1/3">
               <Card.Root

@@ -18,7 +18,7 @@
   let { data } = $props();
 
   let {
-    page: { sections, pricing, seo, industries },
+    page: { sections, pricing, seo },
     site: {
       logos: { ogImage },
     },
@@ -37,9 +37,9 @@
       {:else if props._type === 'landing.features'}
         <Features {props} />
       {:else if props._type === 'landing.useCase'}
-        <UseCase {props} {industries} />
+        <UseCase {props} />
       {:else if props._type === 'landing.industry'}
-        <Industries {props} {industries} />
+        <Industries {props} />
       {:else if props._type === 'landing.clients'}
         <Clients {props} />
       {:else if props._type === 'landing.testCall'}
