@@ -23,8 +23,6 @@
       logos: { ogImage },
     },
   } = $derived(data);
-
-  $inspect(sections);
 </script>
 
 <Seo {seo} siteOgImg={ogImage} />

@@ -15,7 +15,9 @@
   let {
     props,
     industryUseCase,
-  }: { props: HeroProps; industryUseCase: IndustryUseCaseProps } = $props();
+  }: { props: HeroProps; industryUseCase: IndustryUseCaseProps } = $props(); ///IndustryUseCaseProps
+
+  // $inspect(industryUseCase);
 
   let windowWidth = $state(0);
 
@@ -80,8 +82,8 @@
     <div
       class="container mx-auto pb-[4.22rem] pt-[8.47rem] text-white lg:px-24">
       <div
-        class="grid w-full grid-cols-12 gap-y-[2.52rem] lg:gap-x-[110px] xl:gap-x-[100px]">
-        <div class="col-span-12 w-full lg:col-span-4 xl:col-span-8">
+        class="grid w-full grid-cols-12 gap-y-[2.52rem] lg:gap-x-[6rem] xl:gap-x-[100px]">
+        <div class="col-span-12 w-full lg:col-span-5 xl:col-span-8">
           <div
             class="flex w-full flex-col items-center text-center lg:items-start lg:text-left xl:w-[38.4rem]">
             <h1
@@ -125,7 +127,7 @@
           </div>
         </div>
         <div
-          class="col-span-12 mx-auto lg:col-span-8 xl:col-span-4 xl:ml-[2rem] xl:mr-0">
+          class="col-span-12 mx-auto lg:col-span-7 xl:col-span-4 xl:ml-[2rem] xl:mr-0">
           <!-- ml-0 mr-5 w-fit max-w-[19.75rem]  lg:mr-[19rem]-->
           <div
             style="background: linear-gradient(242deg, rgba(255, 255, 255, 0.21) 0%, rgba(255, 255, 255, 0.08) 100%);"

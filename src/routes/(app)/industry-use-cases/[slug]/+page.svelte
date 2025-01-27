@@ -4,6 +4,7 @@
   import Hero from '$lib/components/pages/industryUseCases/Hero.svelte';
   import Stat from '$lib/components/pages/industryUseCases/Stat.svelte';
   import Seo from '$lib/components/Seo.svelte';
+  import type { IndustryUseCaseProps } from '../../../../types/industryUseCases.types';
 
   let data = $props();
 
@@ -16,19 +17,20 @@
     },
   } = $derived(data);
 
-  const industryUseCase = {
-    useCaseImageForAI: data.data.page.useCaseImageForAI,
-    useCaseSubTitleForAI: data.data.page.useCaseSubTitleForAI,
-    mp3File: data.data.page.mp3File,
-    slug: data.data.page.slug,
-    useCaseTitleForAI: data.data.page.useCaseTitleForAI,
-  };
+  const industryUseCase = $derived.by(() => {
+    return {
+      useCaseImageForAI: data.data.page.useCaseImageForAI,
+      useCaseSubTitleForAI: data.data.page.useCaseSubTitleForAI,
+      mp3File: data.data.page.mp3File,
+      slug: data.data.page.slug,
+      useCaseTitleForAI: data.data.page.useCaseTitleForAI,
+    };
+  });
 </script>
 
 <Seo {seo} siteOgImg={ogImage} />
 
 <div class="">
-  <!-- flex flex-col items-center justify-center -->
   {#if !!sections?.length}
     {#each sections as props}
       {#if props._type === 'industryUseCase.details'}
