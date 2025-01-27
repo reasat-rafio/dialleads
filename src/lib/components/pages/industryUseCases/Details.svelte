@@ -40,8 +40,10 @@
   </div>
 </div>
 
-<Button
-  href={props.link.internalLink}
-  class="mt-8 hidden h-[3.5rem] rounded-[0.75rem] bg-[#8B5CF6] px-[2.25rem]   py-[1.19rem] text-[1.125rem] font-medium lg:flex">
-  {props.link.title}
-</Button>
+<div class="flex justify-center">
+  <Button
+    href={props.link.internalLink}
+    class="mt-8 hidden h-[3.5rem] w-fit rounded-[0.75rem] bg-[#8B5CF6] px-[2.25rem]   py-[1.19rem] text-[1.125rem] font-medium lg:flex">
+    {props.link.title}
+  </Button>
+</div>
