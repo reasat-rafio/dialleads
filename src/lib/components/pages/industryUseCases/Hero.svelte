@@ -53,7 +53,6 @@
     }
 
     return () => {
-      // Cleanup WaveSurfer instance on unmount
       if (waveSurferInstance) {
         waveSurferInstance.destroy();
       }
