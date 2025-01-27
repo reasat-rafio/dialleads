@@ -28,6 +28,7 @@
 <Seo {seo} siteOgImg={ogImage} />
 
 <div class="">
+  <!-- flex flex-col items-center justify-center -->
   {#if !!sections?.length}
     {#each sections as props}
       {#if props._type === 'industryUseCase.details'}
