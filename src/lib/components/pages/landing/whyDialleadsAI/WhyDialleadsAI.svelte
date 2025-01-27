@@ -12,7 +12,7 @@
     $derived(whyDialleadsAI);
 </script>
 
-<div class="mx-auto mt-[2.5rem] max-w-[75rem] px-5 lg:mt-[7.5rem] xl:px-0">
+<div class="mx-auto max-w-[75rem] px-5  xl:px-0">
   <SectionIconAndName
    {sectionIcon} {sectionName} {sectionTitle} />
   <div
