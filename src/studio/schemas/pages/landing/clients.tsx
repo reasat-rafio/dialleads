@@ -1,5 +1,7 @@
 import { SiHomeadvisor } from 'react-icons/si';
 import { defineArrayMember, defineField, defineType } from 'sanity';
+import { FaPenFancy } from 'react-icons/fa';
+import React from 'react';
 
 const clients = defineType({
   title: 'Clients',
@@ -17,20 +19,26 @@ const clients = defineType({
       name: 'title',
       title: 'Title',
       type: 'array',
+      validation: (Rule) => Rule.required(),
       of: [
         defineArrayMember({
-          type: 'object',
-          fields: [
-            defineField({
-              name: 'title',
-              title: 'Title',
-              type: 'string',
-            }),
-          ],
-          preview: {
-            select: {
-              title: 'title',
-            },
+          type: 'block',
+          styles: [],
+          lists: [],
+          marks: {
+            decorators: [
+              {
+                title: 'Violate Gradient',
+                value: 'violateGradient',
+                // @ts-expect-error i don't know how to fix this
+                blockEditor: {
+                  icon: () => <FaPenFancy />,
+                  render: ({ children }: { children: React.ReactNode }) => (
+                    <span className="violate-gradient">{children}</span>
+                  ),
+                },
+              },
+            ],
           },
         }),
       ],

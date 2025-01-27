@@ -1,6 +1,8 @@
 import { FcBusinessContact } from 'react-icons/fc';
 import { defineArrayMember, defineField, defineType } from 'sanity';
 import { MdOutlineCallToAction } from 'react-icons/md';
+import { FaPenFancy } from 'react-icons/fa';
+import React from 'react';
 
 const footer = defineType({
   title: 'Footer',
@@ -8,19 +10,41 @@ const footer = defineType({
   type: 'document',
   icon: MdOutlineCallToAction,
   fields: [
-   
-
     defineField({
       name: 'title',
       type: 'string',
       validation: (Rule) => Rule.required(),
     }),
+
     defineField({
       name: 'joinMoreTitle',
+      title: 'Join More Title',
       type: 'array',
       validation: (Rule) => Rule.required(),
-      of: [defineArrayMember({ type: 'block' })],
+      of: [
+        defineArrayMember({
+          type: 'block',
+          styles: [],
+          lists: [],
+          marks: {
+            decorators: [
+              {
+                title: 'Violet Gradient',
+                value: 'violetGradient',
+                // @ts-expect-error i don't know how to fix this
+                blockEditor: {
+                  icon: () => <FaPenFancy />,
+                  render: ({ children }: { children: React.ReactNode }) => (
+                    <span className="violet-gradient">{children}</span>
+                  ),
+                },
+              },
+            ],
+          },
+        }),
+      ],
     }),
+
     defineField({
       name: 'joinMoreBanner',
       type: 'image',
