@@ -2,9 +2,7 @@
   import { imgBuilder } from '$lib/sanity/sanity-client';
   import SanityImage from '$lib/sanity/sanity-image/sanity-image.svelte';
   import type { ContactFormProps } from '../../../../types/contact.types';
-
   let { props }: { props: ContactFormProps } = $props();
-
   let windowWidth = $state(0);
 </script>
 
@@ -38,8 +36,3 @@
     contact form
   </div>
 </div>
-
-<!-- 
-windowWidth >= 440
-          ? 'mt-[41rem]'
-          : windowWidth >= 450 -->

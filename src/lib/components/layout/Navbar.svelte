@@ -1,7 +1,6 @@
 <script lang="ts">
   import type { SanityImageWithAlt } from '../../../types/common.types';
   import type { Nav } from '../../../types/site.types';
-
   import DesktopNavbar from './desktopNavbar/DesktopNavbar.svelte';
   import MobileNavbar from './mobileNavbar/MobileNavbar.svelte';
   import { cn } from '$lib/utils';

@@ -12,7 +12,7 @@
   import WhyChooseUs from '$lib/components/pages/landing/whyChooseUs/WhyChooseUs.svelte';
   import Hero from '$lib/components/pages/landing/hero/Hero.svelte';
   import DataDriven from '$lib/components/pages/landing/dataDriven/DataDriven.svelte';
-  import { MetaTags } from 'svelte-meta-tags';
+
   import Seo from '$lib/components/Seo.svelte';
 
   let { data } = $props();
