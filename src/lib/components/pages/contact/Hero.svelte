@@ -4,6 +4,8 @@
   import { imgBuilder } from '$lib/sanity/sanity-client';
   import SanityImage from '$lib/sanity/sanity-image/sanity-image.svelte';
   import type { HeroProps } from '../../../../types/contact.types';
+  import { PortableText } from '@portabletext/svelte';
+  import ViolateGradientV2 from './ViolateGradientV2.svelte';
 
   let { props }: { props: HeroProps } = $props();
 
@@ -26,17 +28,16 @@
           sectionIcon={props?.sectionIcon}
           sectionName={props?.sectionTitle} />
 
-        {#if Array.isArray(props?.title[0]?.children) && Array.isArray(props?.title[1]?.children)}
-          <h1
-            class=" text-[1.625rem] font-semibold leading-[1.95rem] lg:text-[3.875rem] lg:font-extrabold lg:leading-[4.495rem]">
-            {props?.title[0]?.children[0]?.text}
-
-            <span
-              class="bg-gradient-to-r from-[#A461FF] to-[#fca8e1] bg-clip-text text-transparent">
-              {props.title[1].children[0]?.text}
-            </span>
-          </h1>
-        {/if}
+        <h1
+          class="text-[1.625rem] font-semibold leading-[1.95rem] lg:text-[3.875rem] lg:font-extrabold lg:leading-[4.495rem]">
+          <PortableText
+            value={props?.title}
+            components={{
+              marks: {
+                violetGradientV2: ViolateGradientV2,
+              },
+            }} />
+        </h1>
 
         <h2
           class="mt-[0.62rem] max-w-[41.1875rem] text-[1rem] font-normal leading-[1.5rem] text-white lg:mt-[1.25rem] lg:text-[1.25rem] lg:leading-[1.875rem]">

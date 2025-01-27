@@ -5,6 +5,8 @@
   import { imgBuilder } from '$lib/sanity/sanity-client';
   import Autoplay from 'embla-carousel-autoplay';
   import type { ClientProps } from '../../../../../types/landing.types';
+  import { PortableText } from '@portabletext/svelte';
+  import ViolateGradient from './ViolateGradient.svelte';
 
   interface Props {
     props: ClientProps;
@@ -16,13 +18,15 @@
 
 <div class="mb-[2.5rem] mt-[1.88rem] lg:mb-[5.25rem] lg:mt-[4.94rem]">
   <h3 class="mb-[2rem] text-center text-[1.125rem] font-semibold">
-    {#each props.title as title, i}
-      {title.title}
-      {#if i == 1}
-        <span class="text-purple-600">{title.title}</span>
-      {/if}
-    {/each}
+    <PortableText
+      value={props?.title}
+      components={{
+        marks: {
+          violateGradient: ViolateGradient,
+        },
+      }} />
   </h3>
+
   <Carousel.Root
     opts={{
       align: 'start',
