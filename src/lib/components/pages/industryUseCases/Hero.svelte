@@ -3,6 +3,8 @@
   import { imgBuilder } from '$lib/sanity/sanity-client';
   import SanityImage from '$lib/sanity/sanity-image/sanity-image.svelte';
   import { onMount } from 'svelte';
+  import { PortableText } from '@portabletext/svelte';
+  import ViolateGradient from './ViolateGradient.svelte';
 
   import type {
     HeroProps,
@@ -70,7 +72,7 @@
 
 <svelte:window bind:innerWidth={windowWidth} />
 <div
-  class="bg-hero-gradient lg:mx-[0.63rem] lg:mt-[0.63rem] lg:rounded-[1.875rem] relative">
+  class="relative bg-hero-gradient lg:mx-[0.63rem] lg:mt-[0.63rem] lg:rounded-[1.875rem]">
   <img
     src="/grid.png"
     alt="grid overlay"
@@ -83,17 +85,16 @@
         <div class="col-span-12 w-full lg:col-span-6 lg:w-full xl:col-span-8">
           <div
             class="flex w-full flex-col text-center lg:w-[38.4rem] lg:text-left">
-            {#if Array.isArray(props?.title[0]?.children) && Array.isArray(props?.title[1]?.children)}
-              <h1
-                class="mb-[1.62rem] w-fit text-center text-[1.625rem] font-semibold lg:max-w-[40.18rem] lg:text-left lg:text-[3rem]">
-                {props?.title[0]?.children[0]?.text}
-
-                <span
-                  class="bg-gradient-to-r from-[#731AFF] to-[#FCCEEE] bg-clip-text text-transparent">
-                  {props.title[1].children[0]?.text}
-                </span>
-              </h1>
-            {/if}
+            <h1
+              class="mb-[1.62rem] w-fit text-center text-[1.625rem] font-semibold lg:max-w-[40.18rem] lg:text-left lg:text-[3rem]">
+              <PortableText
+                value={props?.title}
+                components={{
+                  marks: {
+                    violetGradient: ViolateGradient,
+                  },
+                }} />
+            </h1>
 
             <h2 class="text-[1.25rem] font-medium text-white lg:pr-5">
               {props.description}
