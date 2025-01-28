@@ -1,9 +1,8 @@
 <script lang="ts">
   interface Props {
     props: IndustriesProps;
-    industries: any;
   }
-  let { props, industries }: any = $props();
+  let { props }: any = $props();
 
   import * as Card from '$lib/components/ui/card/index.js';
   import * as Carousel from '$lib/components/ui/carousel/index.js';
@@ -51,7 +50,7 @@
       alt="grid overlay"
       class="pointer-events-none absolute inset-0 h-full w-full object-cover opacity-60 mix-blend-overlay lg:opacity-100" />
 
-    <div class="pb-[1.88rem] md:pb-[2.25rem] pt-8 md:pt-24">
+    <div class="pb-[1.88rem] pt-8 md:pb-[2.25rem] md:pt-24">
       <SectionIconAndName
         bgColor="background: linear-gradient(242deg, rgba(255, 255, 255, 0.21) 0%, rgba(255, 255, 255, 0.08) 100%);"
         wrapperClass="mt-0 lg:mt-0 border-none "
@@ -66,7 +65,7 @@
       class="container z-50 mx-auto px-[1.5rem] pb-[0rem] md:pb-[4.21rem] lg:px-[7.5rem]">
       <Carousel.Root setApi={(emblaApi) => (api = emblaApi)} class="w-full  ">
         <Carousel.Content class="">
-          {#each industries as industry}
+          {#each props?.industries as industry}
             <Carousel.Item
               class="basis-full bg-transparent  md:basis-1/2 lg:basis-1/3">
               <Card.Root

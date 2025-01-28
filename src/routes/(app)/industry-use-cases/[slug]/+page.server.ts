@@ -12,7 +12,6 @@ const query = groq`
     title,
     description,
     ${asset('useCaseImage')},
-
     ${asset('useCaseImageForAI')},
     slug,
     useCaseTitleForAI,

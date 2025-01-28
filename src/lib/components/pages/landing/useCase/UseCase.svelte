@@ -160,12 +160,12 @@
                   style="background: linear-gradient(242deg, rgba(255, 255, 255, 0.21) 0%, rgba(255, 255, 255, 0.08) 100%);"
                   class="w-full rounded-[1.38rem] border-[0.342px] border-gray-400 bg-transparent p-[0.75rem]">
                   <div
-                    class="flex h-[24rem] w-full flex-col rounded-[0.88rem] border bg-white p-[0.55rem] xl:h-[26rem]">
+                    class="flex h-[24rem] w-full flex-col rounded-[0.88rem] border bg-white p-[0.55rem] sm:h-[22.4rem] md:h-[24.4rem] lg:h-[24.8rem] xl:h-[25rem]">
                     <div
-                      class="max-h-[215px] min-h-[215px] overflow-hidden rounded-[0.88rem] bg-cover object-cover xl:max-h-[243px] xl:min-h-[243px]">
+                      class=" h-[13.438rem] w-full overflow-hidden rounded-[0.88rem] sm:h-[11.438rem] md:h-[13.438rem] lg:h-[13.438rem] xl:h-[14.188rem]">
                       <SanityImage
                         lqip
-                        class="h-full w-full rounded-[0.88rem]  bg-cover object-cover"
+                        class="h-[13.438rem] w-full rounded-[0.88rem] object-cover sm:h-[11.438rem] md:h-[13.438rem] lg:h-[13.438rem] xl:h-[14.188rem]"
                         src={useCase?.useCaseImage}
                         imageUrlBuilder={imgBuilder}
                         alt={useCase?.useCaseImage?.alt || 'image'} />

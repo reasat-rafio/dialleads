@@ -3,17 +3,19 @@
   import { imgBuilder } from '$lib/sanity/sanity-client';
   import SanityImage from '$lib/sanity/sanity-image/sanity-image.svelte';
   import { onMount } from 'svelte';
+  import { PortableText } from '@portabletext/svelte';
+  import ViolateGradient from './ViolateGradient.svelte';
 
   import type {
     HeroProps,
     IndustryUseCaseProps,
   } from '../../../../types/industryUseCases.types';
   import WaveSurfer from 'wavesurfer.js';
-  import { cn } from '$lib/utils';
+
   let {
     props,
     industryUseCase,
-  }: { props: HeroProps; industryUseCase: IndustryUseCaseProps } = $props();
+  }: { props: HeroProps; industryUseCase: IndustryUseCaseProps } = $props(); ///IndustryUseCaseProps
 
   let windowWidth = $state(0);
 
@@ -51,7 +53,6 @@
     }
 
     return () => {
-      // Cleanup WaveSurfer instance on unmount
       if (waveSurferInstance) {
         waveSurferInstance.destroy();
       }
@@ -70,7 +71,7 @@
 
 <svelte:window bind:innerWidth={windowWidth} />
 <div
-  class="bg-hero-gradient lg:mx-[0.63rem] lg:mt-[0.63rem] lg:rounded-[1.875rem] relative">
+  class="relative bg-hero-gradient lg:mx-[0.63rem] lg:mt-[0.63rem] lg:rounded-[1.875rem]">
   <img
     src="/grid.png"
     alt="grid overlay"
@@ -79,21 +80,20 @@
     <div
       class="container mx-auto pb-[4.22rem] pt-[8.47rem] text-white lg:px-24">
       <div
-        class="grid w-full grid-cols-12 gap-y-[2.52rem] lg:gap-x-[110px] xl:gap-x-[100px]">
-        <div class="col-span-12 w-full lg:col-span-6 lg:w-full xl:col-span-8">
+        class="grid w-full grid-cols-12 gap-y-[2.52rem] lg:gap-x-[6rem] xl:gap-x-[100px]">
+        <div class="col-span-12 w-full lg:col-span-5 xl:col-span-8">
           <div
-            class="flex w-full flex-col text-center lg:w-[38.4rem] lg:text-left">
-            {#if Array.isArray(props?.title[0]?.children) && Array.isArray(props?.title[1]?.children)}
-              <h1
-                class="mb-[1.62rem] w-fit text-center text-[1.625rem] font-semibold lg:max-w-[40.18rem] lg:text-left lg:text-[3rem]">
-                {props?.title[0]?.children[0]?.text}
-
-                <span
-                  class="bg-gradient-to-r from-[#731AFF] to-[#FCCEEE] bg-clip-text text-transparent">
-                  {props.title[1].children[0]?.text}
-                </span>
-              </h1>
-            {/if}
+            class="flex w-full flex-col items-center text-center lg:items-start lg:text-left xl:w-[38.4rem]">
+            <h1
+              class="mb-[1.62rem] w-fit text-center text-[1.625rem] font-semibold lg:max-w-[40.18rem] lg:text-left lg:text-[3rem]">
+              <PortableText
+                value={props?.title}
+                components={{
+                  marks: {
+                    violetGradient: ViolateGradient,
+                  },
+                }} />
+            </h1>
 
             <h2 class="text-[1.25rem] font-medium text-white lg:pr-5">
               {props.description}
@@ -125,17 +125,21 @@
           </div>
         </div>
         <div
-          class="col-span-12 ml-0 mr-5 w-fit max-w-[19.75rem] lg:col-span-6 xl:col-span-4 xl:ml-[2rem]">
+          class="col-span-12 mx-auto lg:col-span-7 xl:col-span-4 xl:ml-[2rem] xl:mr-0">
+          <!-- ml-0 mr-5 w-fit max-w-[19.75rem]  lg:mr-[19rem]-->
           <div
             style="background: linear-gradient(242deg, rgba(255, 255, 255, 0.21) 0%, rgba(255, 255, 255, 0.08) 100%);"
             class="w-[19rem] rounded-[1.38rem] border-[0.342px] border-gray-400 bg-transparent p-[0.63rem]">
             <div
               class="flex w-full flex-col rounded-[0.88rem] bg-white p-[0.55rem]">
-              <SanityImage
-                class="h-full w-full object-cover"
-                src={industryUseCase?.useCaseImageForAI}
-                sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw"
-                imageUrlBuilder={imgBuilder} />
+              <div
+                class="max-h-[215px] min-h-full overflow-hidden rounded-[0.88rem]">
+                <SanityImage
+                  class="h-full w-full object-cover"
+                  src={industryUseCase?.useCaseImageForAI}
+                  sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw"
+                  imageUrlBuilder={imgBuilder} />
+              </div>
               <h3
                 class="mt-[1.38rem] text-center text-[1.375rem] font-semibold text-black">
                 {industryUseCase.useCaseTitleForAI}

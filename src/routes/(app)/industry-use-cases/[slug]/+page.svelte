@@ -16,13 +16,17 @@
     },
   } = $derived(data);
 
-  const industryUseCase = {
-    useCaseImageForAI: data.data.page.useCaseImageForAI,
-    useCaseSubTitleForAI: data.data.page.useCaseSubTitleForAI,
-    mp3File: data.data.page.mp3File,
-    slug: data.data.page.slug,
-    useCaseTitleForAI: data.data.page.useCaseTitleForAI,
-  };
+  $inspect(data.data.page);
+
+  const industryUseCase = $derived.by(() => {
+    return {
+      useCaseImageForAI: data.data.page.useCaseImageForAI,
+      useCaseSubTitleForAI: data.data.page.useCaseSubTitleForAI,
+      mp3File: data.data.page.mp3File,
+      slug: data.data.page.slug,
+      useCaseTitleForAI: data.data.page.useCaseTitleForAI,
+    };
+  });
 </script>
 
 <Seo {seo} siteOgImg={ogImage} />

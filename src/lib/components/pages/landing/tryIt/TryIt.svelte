@@ -81,7 +81,6 @@
 
 <div class="mb-[1.38rem] md:mb-[1.88rem]">
   <SectionIconAndName
-  
     sectionIcon={props?.sectionIcon}
     sectionName={props?.sectionTitle}
     sectionTitle={props?.title} />
@@ -98,7 +97,6 @@
  lg:bg-footer-gradient lg:pb-0
  xl:w-fit
  ">
-
     <div
       class=" z-50 flex h-full w-full flex-col items-center justify-center py-[1.13rem] md:py-[3.13rem]">
       <div class="z-50 flex h-full flex-col justify-center py-0">
@@ -139,7 +137,7 @@
                           {...props}
                           bind:value={$formData.name}
                           placeholder="Your name"
-                          class=" min-h-[3.5rem] max-w-[17.375rem] rounded-[0.75rem] pl-8 text-[1.25rem] md:min-h-[3.75rem] " />
+                          class=" min-h-[3.5rem] max-w-[17.375rem] rounded-[0.75rem] pl-[2.3rem] text-[1.25rem]  md:min-h-[3.75rem] md:pl-[2.6rem] " />
                         <div class="absolute bottom-5 left-2">
                           <svg
                             class="size-[1.125rem] md:size-[1.375rem]"
@@ -172,7 +170,7 @@
                           {...props}
                           bind:value={$formData.email}
                           placeholder="Your email"
-                          class=" min-h-[3.5rem] max-w-[17.375rem] rounded-[0.75rem] pl-9 text-[1.25rem] md:min-h-[3.75rem]" />
+                          class=" min-h-[3.5rem] max-w-[17.375rem] rounded-[0.75rem] pl-[2.3rem]  text-[1.25rem] md:min-h-[3.75rem] md:pl-[2.6rem]" />
 
                         <div class="absolute bottom-5 left-2">
                           <svg
