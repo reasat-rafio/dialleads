@@ -12,6 +12,7 @@
       logos: { favicon, logo },
       footer,
     },
+    industries,
   } = $derived(data);
 
   let faviconImage = $derived.by(() => {
@@ -27,7 +28,8 @@
 
 <div class="relative">
   <div class="">
-    <Navbar pathName={page.url.pathname} {nav} {logo} />
+    <!-- // ensure industries is array -->
+    <Navbar {industries} pathName={page.url.pathname} {nav} {logo} />
   </div>
 
   {@render children()}
