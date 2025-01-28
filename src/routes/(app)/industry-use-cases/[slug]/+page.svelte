@@ -4,7 +4,6 @@
   import Hero from '$lib/components/pages/industryUseCases/Hero.svelte';
   import Stat from '$lib/components/pages/industryUseCases/Stat.svelte';
   import Seo from '$lib/components/Seo.svelte';
-  import type { IndustryUseCaseProps } from '../../../../types/industryUseCases.types';
 
   let data = $props();
 
