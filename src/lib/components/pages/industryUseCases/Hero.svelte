@@ -2,7 +2,6 @@
   import Button from '$lib/components/ui/button/button.svelte';
   import { imgBuilder } from '$lib/sanity/sanity-client';
   import SanityImage from '$lib/sanity/sanity-image/sanity-image.svelte';
-  import { onMount } from 'svelte';
   import { PortableText } from '@portabletext/svelte';
   import ViolateGradient from './ViolateGradient.svelte';
 
@@ -25,8 +24,6 @@
       .replace('-', '.')}`;
   }
 
-  // const mp3FileUrl = resolveMp3Url(industryUseCase?.mp3File.asset._ref);
-
   // Derived value for `mp3FileUrl`
   const mp3FileUrl = $derived.by(() => {
     const ref = industryUseCase?.mp3File?.asset?._ref;
@@ -38,33 +35,6 @@
   });
 
   let waveSurferInstance: WaveSurfer | null = null;
-
-  // onMount(() => {
-  //   const waveformElement = document.getElementById('waveform');
-  //   if (waveformElement) {
-  //     waveSurferInstance = WaveSurfer.create({
-  //       container: waveformElement,
-  //       waveColor: '#d1d5db',
-  //       progressColor: '#6d28d9',
-  //       height: 80,
-  //       barWidth: 4,
-  //       barRadius: 2,
-  //       barGap: 4,
-  //     });
-
-  //     waveSurferInstance.load(mp3FileUrl);
-
-  //     waveSurferInstance.on('finish', () => {
-  //       showPlayIcon = false;
-  //     });
-  //   }
-
-  //   return () => {
-  //     if (waveSurferInstance) {
-  //       waveSurferInstance.destroy();
-  //     }
-  //   };
-  // });
 
   $effect(() => {
     const waveformElement = document.getElementById('waveform');
@@ -160,7 +130,6 @@
         </div>
         <div
           class="col-span-12 mx-auto lg:col-span-7 xl:col-span-4 xl:ml-[2rem] xl:mr-0">
-          <!-- ml-0 mr-5 w-fit max-w-[19.75rem]  lg:mr-[19rem]-->
           <div
             style="background: linear-gradient(242deg, rgba(255, 255, 255, 0.21) 0%, rgba(255, 255, 255, 0.08) 100%);"
             class="w-[19rem] rounded-[1.38rem] border-[0.342px] border-gray-400 bg-transparent p-[0.63rem]">
