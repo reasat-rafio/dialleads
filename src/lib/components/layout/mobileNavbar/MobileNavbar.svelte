@@ -1,8 +1,6 @@
 <script lang="ts">
   import type { SanityImageWithAlt } from '../../../../types/common.types';
   import type { Nav } from '../../../../types/site.types';
-  import * as Dialog from '$lib/components/ui/dialog/index.js';
-  import { RiMenu3Fill } from 'react-icons/ri';
   import Button from '$lib/components/ui/button/button.svelte';
   import { ChevronDown, X } from 'lucide-svelte';
   import SanityImage from '$lib/sanity/sanity-image/sanity-image.svelte';
@@ -11,9 +9,16 @@
   interface Props {
     nav: Nav;
     logo: SanityImageWithAlt;
+    industries: {
+      title: string;
+      slug: {
+        current: string;
+        _type: string;
+      };
+    }[];
   }
 
-  let { nav, logo }: Props = $props();
+  let { nav, logo, industries }: Props = $props();
 
   let isPopupVisible = $state(false);
   let dialogOpen = $state(false);
@@ -75,14 +80,16 @@
   <div
     class=" relative
     
-     bg-hero-gradient w-full lg:rounded-[1.875rem] ">
+     w-full bg-hero-gradient lg:rounded-[1.875rem]">
     <img
       src="/grid.png"
       alt="grid overlay"
-      class="pointer-events-none absolute inset-0 h-full w-full opacity-100 mix-blend-overlay object-cover" />
+      class="pointer-events-none absolute inset-0 h-full w-full object-cover opacity-100 mix-blend-overlay" />
 
     <div
-      class={`navbar  ${isScrolled ? 'scrolled px-0' : ''} flex justify-between pt-[1.56rem]`}>
+      class="navbar {isScrolled
+        ? 'scrolled px-0'
+        : ''} flex justify-between pt-[1.56rem]">
       <a href="/" class="z-50 flex items-center gap-[0.49rem] pl-[0.88rem]">
         <SanityImage
           class="h-[2rem] w-[2rem]"
@@ -91,7 +98,9 @@
           imageUrlBuilder={imgBuilder}
           alt={logo?.alt || 'logo'} />
         <h5
-          class={`font-geist text-base font-semibold ${isScrolled ? 'text-black' : 'text-white'}`}>
+          class="font-geist text-base font-semibold {isScrolled
+            ? 'text-black'
+            : 'text-white'}">
           Dialleads
         </h5>
       </a>
@@ -101,7 +110,9 @@
         {#if isPopupVisible}
           <!-- Close (X) Icon -->
           <p
-            class={`flex items-center gap-2 bg-transparent ${isScrolled ? 'filter-black' : 'filter-white'}`}>
+            class="flex items-center gap-2 bg-transparent {isScrolled
+              ? 'filter-black'
+              : 'filter-white'}">
             <span class="h-4 w-4 text-base font-bold">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -130,18 +141,20 @@
           <!-- Hamburger Icon -->
           <p class="flex items-center">
             <img
-              class={`${isScrolled ? 'filter-black' : 'filter-white'}`}
+              class={isScrolled ? 'filter-black' : 'filter-white'}
               src="/humburgIcon.png"
               alt="icon" />
           </p>
         {/if}
       </Button>
     </div>
-    <div class={`  ${isScrolled ? "pop-up" : "relative z-50 mx-[1rem]"}`}>
+    <div class={isScrolled ? 'pop-up' : 'relative z-50 mx-[1rem]'}>
       {#if isPopupVisible}
         <div
-          class={`${isScrolled ? "top-[4rem]" : "top-[5rem]"} absolute  left-1/2 z-50 w-full  -translate-x-1/2 transform rounded-lg bg-white p-6
-            shadow-lg`}>
+          class="{isScrolled
+            ? 'top-[4rem]'
+            : 'top-[5rem]'} absolute left-1/2 z-50 w-full -translate-x-1/2 transform rounded-lg bg-white p-6
+            shadow-lg">
           <div class="flex flex-col justify-start gap-5">
             {#each nav?.menu as item}
               <div
@@ -152,7 +165,7 @@
                 onfocus={() => handleFocus(item?.link?.title)}
                 onblur={handleBlur}
                 class="flex items-center text-start">
-                {#if item?.moreLinks}
+                {#if item?.isIndustryPage}
                   <p>{item?.link?.title}</p>
                   <ChevronDown
                     class="font-geistfont-geist h-[1.25rem] w-[1.125rem] text-base font-normal text-black" />
@@ -165,15 +178,13 @@
                     {item?.link?.title}
                   </a>
                 {/if}
-                {#if item?.moreLinks && activeDropdown === item?.link?.title}
+                {#if item?.isIndustryPage && activeDropdown === item?.link?.title}
                   <div
                     class="absolute z-50 mt-24 w-fit rounded-md bg-white opacity-0 shadow-lg transition-opacity delay-150 duration-500 fade-in"
                     class:opacity-100={activeDropdown === item?.link?.title}>
-                    {#each item?.moreLinks as link}
+                    {#each industries as link}
                       <a
-                        href={link?.type === 'internal'
-                          ? link?.internalLink
-                          : link?.externalLink}
+                        href="/industry-use-cases/{link?.slug?.current}"
                         class="block px-4 py-2 text-sm text-gray-700">
                         {link?.title}
                       </a>
