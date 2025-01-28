@@ -65,6 +65,6 @@
     <DesktopNavbar {industries} {nav} {logo} />
   </div>
   <div class="lg:hidden">
-    <MobileNavbar {nav} {logo} />
+    <MobileNavbar {industries} {nav} {logo} />
   </div>
 </div>
