@@ -27,12 +27,6 @@ const siteNavigation = {
               title: 'Is Industry Page',
               type: 'boolean',
             },
-            // {
-            //   name: 'moreLinks',
-            //   title: 'More Links',
-            //   type: 'array',
-            //   of: [{ type: 'link' }],
-            // },
           ],
         },
       ],

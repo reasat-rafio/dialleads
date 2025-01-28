@@ -26,7 +26,7 @@ export interface Nav {
 export interface LinkMenu {
   _type: 'link';
   link: LinkItem;
-  // moreLinks: MoreLink[];
+
   isIndustryPage: boolean;
 }
 export interface LinkItem {

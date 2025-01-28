@@ -75,8 +75,3 @@ export interface StatProps {
     title: string;
   }[];
 }
-// export interface OfferProps {}
-// export interface CustomersProps {}
-// export interface TryItProps {}
-// export interface FeaturesV2Props {}
-// export interface ReviewProps {}
