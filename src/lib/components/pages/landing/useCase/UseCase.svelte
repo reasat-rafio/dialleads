@@ -162,7 +162,6 @@
                   <div
                     class="flex h-[24rem] w-full flex-col rounded-[0.88rem] border bg-white p-[0.55rem] sm:h-[22.4rem] md:h-[24.4rem] lg:h-[24.8rem] xl:h-[25rem]">
                     <div class=" w-full overflow-hidden rounded-[0.88rem]">
-                      <!-- h-[13.438rem] sm:h-[11.438rem] md:h-[13.438rem] lg:h-[13.438rem] xl:h-[14.188rem] -->
                       <SanityImage
                         innerClass="h-full w-full object-cover"
                         lqip

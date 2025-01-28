@@ -137,14 +137,12 @@
               class="flex w-full flex-col rounded-[0.88rem] bg-white p-[0.55rem]">
               {#key industryUseCase}
                 <div class=" overflow-hidden rounded-[0.88rem]">
-                  <!-- max-h-[215px] min-h-full -->
                   <SanityImage
                     innerClass="h-full w-full object-cover"
                     class="h-[215px] w-full object-cover"
                     src={industryUseCase?.useCaseImageForAI}
                     sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw"
                     imageUrlBuilder={imgBuilder} />
-                  <!-- h-full max- -->
                 </div>
               {/key}
               <h3
