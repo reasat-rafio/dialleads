@@ -18,7 +18,7 @@
 
 <svelte:window bind:innerWidth={windowWidth} />
 <div
-  class=" relative bg-hero-gradient pt-[7.31rem] lg:mx-[0.63rem] lg:mt-[0.63rem] lg:rounded-[1.875rem] lg:pt-[6.62rem]">
+  class=" relative bg-hero-gradient pt-[7.31rem] lg:mx-[0.63rem] lg:mt-[0.63rem] lg:rounded-[1.875rem] lg:pt-[5.7rem]">
   <img
     src="/grid.png"
     alt="grid overlay"
@@ -32,7 +32,7 @@
     sectionName={hero?.sectionName} />
   <h1
     class=" z-50 mx-auto mb-3
-  w-fit text-center font-geist text-[2.25rem] font-bold leading-[2.7rem] text-[#FFF] lg:text-7xl">
+  w-fit text-center font-geist text-[2.25rem] font-bold leading-[2.7rem] text-[#FFF] lg:text-7xl px-12 md:px-0">
     <PortableText
       value={hero?.heroTitle}
       components={{
