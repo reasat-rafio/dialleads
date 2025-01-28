@@ -81,6 +81,7 @@
 
 <div class="mb-[1.38rem] md:mb-[1.88rem]">
   <SectionIconAndName
+    wrapperClass="md:mt-[5rem]"
     sectionIcon={props?.sectionIcon}
     sectionName={props?.sectionTitle}
     sectionTitle={props?.title} />

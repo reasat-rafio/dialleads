@@ -18,7 +18,7 @@
 
 <svelte:window bind:innerWidth={windowWidth} />
 <div
-  class=" relative bg-hero-gradient pt-[7.31rem] lg:mx-[0.63rem] lg:mt-[0.63rem] lg:rounded-[1.875rem] lg:pt-[6.62rem]">
+  class=" relative bg-hero-gradient pt-[7.31rem] lg:mx-[0.63rem] lg:mt-[0.63rem] lg:rounded-[1.875rem] lg:pt-[5.7rem]">
   <img
     src="/grid.png"
     alt="grid overlay"
@@ -32,7 +32,7 @@
     sectionName={hero?.sectionName} />
   <h1
     class=" z-50 mx-auto mb-3
-  w-fit text-center font-geist text-[2.25rem] font-bold leading-[2.7rem] text-[#FFF] lg:text-7xl">
+  w-fit px-12 text-center font-geist text-[2.25rem] font-bold leading-[2.7rem] text-[#FFF] md:px-0 lg:text-7xl">
     <PortableText
       value={hero?.heroTitle}
       components={{
@@ -78,12 +78,12 @@
   {windowWidth <= 320 ? 'mt-[5.95rem] h-fit' : 'h-fit'}
   ">
     <div
-      class="w-full rounded-tl-2xl rounded-tr-2xl bg-gradient-to-t from-violet-900 to-violet-100">
+      class="w-full rounded-tl-full rounded-tr-full bg-gradient-to-t from-violet-900 to-violet-100">
       {#if windowWidth > 700}
         <SanityImage
           lqip
           innerClass=" w-full  object-cover"
-          class="mx-auto  h-full w-full  rounded-tl-xl rounded-tr-xl  object-cover "
+          class="mx-auto  h-full w-full rounded-tl-full rounded-tr-full object-cover "
           src={hero?.thumbnailForDesktop}
           sizes="100vw"
           imageUrlBuilder={imgBuilder}
@@ -91,7 +91,7 @@
       {:else}
         <SanityImage
           lqip
-          class="mx-auto h-full w-full  rounded-tl-xl rounded-tr-xl  object-cover "
+          class="mx-auto h-full w-full  rounded-tl-full rounded-tr-full  object-cover "
           src={hero?.thumbnailForMobile}
           sizes="100vw"
           imageUrlBuilder={imgBuilder}

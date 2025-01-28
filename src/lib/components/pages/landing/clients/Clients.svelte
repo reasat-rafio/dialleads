@@ -16,8 +16,8 @@
   let api = $state<CarouselAPI>();
 </script>
 
-<div class="mb-[2.5rem] mt-[1.88rem] lg:mb-[5.25rem] lg:mt-[4.94rem]">
-  <h3 class="mb-[2rem] text-center text-[1.125rem] font-semibold">
+<div class="mb-[2.5rem] mt-[1.88rem] lg:mt-[2.8rem]">
+  <h3 class="mb-4 text-center text-[1.125rem] font-semibold md:mb-8">
     <PortableText
       value={props?.title}
       components={{
