@@ -85,7 +85,7 @@
           imageUrlBuilder={imgBuilder}
           alt={logo?.alt || 'logo'} />
         <h5
-          class="{`font-geist text-[1.47656rem] font-semibold ${isScrolled ? 'text-black' : 'text-[#FFF]'}`}}">
+          class={`font-geist text-[1.47656rem] font-semibold ${isScrolled ? 'text-black' : 'text-white'}`}>
           Dialleads
         </h5>
       </a>
