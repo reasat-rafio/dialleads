@@ -80,12 +80,12 @@
     <div
       class="container mx-auto pb-[4.22rem] pt-[8.47rem] text-white lg:px-24">
       <div
-        class="grid w-full grid-cols-12 gap-y-[2.52rem] lg:gap-x-[6rem] xl:gap-x-[100px]">
+        class="grid w-full grid-cols-12 gap-y-[2.52rem] lg:gap-x-[6rem] lg:pb-[1.93rem] lg:pt-[4.7rem] xl:gap-x-[100px]">
         <div class="col-span-12 w-full lg:col-span-5 xl:col-span-8">
           <div
             class="flex w-full flex-col items-center text-center lg:items-start lg:text-left xl:w-[38.4rem]">
             <h1
-              class="mb-[1.62rem] leading-tight w-fit text-center text-[1.625rem] font-semibold lg:max-w-[40.18rem] lg:text-left lg:text-[3rem]">
+              class="mb-[1.62rem] w-fit text-center text-[1.625rem] font-semibold leading-tight lg:max-w-[40.18rem] lg:text-left lg:text-[3rem]">
               <PortableText
                 value={props?.title}
                 components={{
