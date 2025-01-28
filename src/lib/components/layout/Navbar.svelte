@@ -16,11 +16,9 @@
         current: string;
         _type: string;
       };
-    };
+    }[];
   }
   let { nav, logo, pathName, industries }: Props = $props();
-
-  $inspect(industries);
 
   let dialogOpen = $state(false);
   let showMenu = $state(false);
@@ -67,6 +65,6 @@
     <DesktopNavbar {industries} {nav} {logo} />
   </div>
   <div class="lg:hidden">
-    <MobileNavbar {nav} {industries} {logo} />
+    <MobileNavbar {nav} {logo} />
   </div>
 </div>

@@ -26,17 +26,18 @@ export interface Nav {
 export interface LinkMenu {
   _type: 'link';
   link: LinkItem;
-  moreLinks: MoreLink[];
+  // moreLinks: MoreLink[];
+  isIndustryPage: boolean;
 }
-export interface LinkItem{
-  _type: 'link',
+export interface LinkItem {
+  _type: 'link';
   title: string;
   type: 'internal' | 'external';
   internalLink?: string;
   externalLink?: string;
 }
-export interface MoreLink{
-  _type: 'link',
+export interface MoreLink {
+  _type: 'link';
   title: string;
   type: 'internal' | 'external';
   internalLink?: string;
