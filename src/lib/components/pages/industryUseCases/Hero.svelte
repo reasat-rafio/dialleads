@@ -11,13 +11,11 @@
     IndustryUseCaseProps,
   } from '../../../../types/industryUseCases.types';
   import WaveSurfer from 'wavesurfer.js';
-  import { cn } from '$lib/utils';
+
   let {
     props,
     industryUseCase,
   }: { props: HeroProps; industryUseCase: IndustryUseCaseProps } = $props(); ///IndustryUseCaseProps
-
-  // $inspect(industryUseCase);
 
   let windowWidth = $state(0);
 
