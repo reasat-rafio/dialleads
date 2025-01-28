@@ -85,7 +85,7 @@
           <div
             class="flex w-full flex-col items-center text-center lg:items-start lg:text-left xl:w-[38.4rem]">
             <h1
-              class="mb-[1.62rem] w-fit text-center text-[1.625rem] font-semibold lg:max-w-[40.18rem] lg:text-left lg:text-[3rem]">
+              class="mb-[1.62rem] leading-tight w-fit text-center text-[1.625rem] font-semibold lg:max-w-[40.18rem] lg:text-left lg:text-[3rem]">
               <PortableText
                 value={props?.title}
                 components={{
