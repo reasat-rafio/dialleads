@@ -25,13 +25,48 @@
       .replace('-', '.')}`;
   }
 
-  const mp3FileUrl = resolveMp3Url(industryUseCase?.mp3File.asset._ref);
+  // const mp3FileUrl = resolveMp3Url(industryUseCase?.mp3File.asset._ref);
+
+  // Derived value for `mp3FileUrl`
+  const mp3FileUrl = $derived.by(() => {
+    const ref = industryUseCase?.mp3File?.asset?._ref;
+    return ref
+      ? `https://cdn.sanity.io/files/ttleus4d/production/${ref
+          .replace('file-', '')
+          .replace('-', '.')}`
+      : '';
+  });
 
   let waveSurferInstance: WaveSurfer | null = null;
 
-  // Initialize WaveSurfer instances on mount
+  // onMount(() => {
+  //   const waveformElement = document.getElementById('waveform');
+  //   if (waveformElement) {
+  //     waveSurferInstance = WaveSurfer.create({
+  //       container: waveformElement,
+  //       waveColor: '#d1d5db',
+  //       progressColor: '#6d28d9',
+  //       height: 80,
+  //       barWidth: 4,
+  //       barRadius: 2,
+  //       barGap: 4,
+  //     });
 
-  onMount(() => {
+  //     waveSurferInstance.load(mp3FileUrl);
+
+  //     waveSurferInstance.on('finish', () => {
+  //       showPlayIcon = false;
+  //     });
+  //   }
+
+  //   return () => {
+  //     if (waveSurferInstance) {
+  //       waveSurferInstance.destroy();
+  //     }
+  //   };
+  // });
+
+  $effect(() => {
     const waveformElement = document.getElementById('waveform');
     if (waveformElement) {
       waveSurferInstance = WaveSurfer.create({
@@ -44,9 +79,8 @@
         barGap: 4,
       });
 
-      waveSurferInstance.load(mp3FileUrl); // Load the single audio file ..
+      waveSurferInstance.load(mp3FileUrl);
 
-      // Listen for the finish event to reset the play button
       waveSurferInstance.on('finish', () => {
         showPlayIcon = false;
       });
@@ -132,14 +166,16 @@
             class="w-[19rem] rounded-[1.38rem] border-[0.342px] border-gray-400 bg-transparent p-[0.63rem]">
             <div
               class="flex w-full flex-col rounded-[0.88rem] bg-white p-[0.55rem]">
-              <div
-                class="max-h-[215px] min-h-full overflow-hidden rounded-[0.88rem]">
-                <SanityImage
-                  class="h-full w-full object-cover"
-                  src={industryUseCase?.useCaseImageForAI}
-                  sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw"
-                  imageUrlBuilder={imgBuilder} />
-              </div>
+              {#key industryUseCase}
+                <div
+                  class="max-h-[215px] min-h-full overflow-hidden rounded-[0.88rem]">
+                  <SanityImage
+                    class="h-full w-full object-cover"
+                    src={industryUseCase?.useCaseImageForAI}
+                    sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw"
+                    imageUrlBuilder={imgBuilder} />
+                </div>
+              {/key}
               <h3
                 class="mt-[1.38rem] text-center text-[1.375rem] font-semibold text-black">
                 {industryUseCase.useCaseTitleForAI}
@@ -151,45 +187,49 @@
               <hr />
 
               <div
-                class="mt-[1rem] flex h-[2.4375rem] items-center gap-x-[0.5rem] overflow-hidden">
-                <Button
-                  class="flex min-h-[2.124rem] min-w-[2.124rem] items-center justify-center rounded-full border border-[#6d28d9] bg-[#EDE9FE] text-white"
-                  onclick={playPauseAudio}>
-                  {#if showPlayIcon}
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      width="24"
-                      height="24"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      stroke="currentColor"
-                      stroke-width="2"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      class="lucide lucide-pause text-[#8B5CF6]">
-                      <rect x="14" y="4" width="4" height="16" rx="1" />
-                      <rect x="6" y="4" width="4" height="16" rx="1" />
-                    </svg>
-                  {:else}
-                    <svg
-                      width="14"
-                      height="14"
-                      viewBox="0 0 14 14"
-                      fill="none"
-                      xmlns="http://www.w3.org/2000/svg">
-                      <g id="SVG">
-                        <path
-                          id="Vector"
-                          d="M12.7019 6.26776L4.17882 1.22898C3.48632 0.819773 2.42578 1.21687 2.42578 2.22899V12.3041C2.42578 13.2121 3.41126 13.7594 4.17882 13.3041L12.7019 8.26778C13.4622 7.81984 13.4646 6.71571 12.7019 6.26776Z"
-                          fill="#8B5CF6" />
-                      </g>
-                    </svg>
-                  {/if}
-                </Button>
-                <div
-                  id={`waveform`}
-                  class="w-full max-w-[90%] overflow-hidden rounded-lg">
-                </div>
+                class="mt-[1rem] flex h-[2.6375rem] items-center gap-x-[0.5rem] overflow-hidden">
+                {#key industryUseCase}
+                  <Button
+                    class="flex min-h-[2.124rem] min-w-[2.124rem] items-center justify-center rounded-full border border-[#6d28d9] bg-[#EDE9FE] text-white"
+                    onclick={playPauseAudio}>
+                    {#if showPlayIcon}
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="24"
+                        height="24"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        class="lucide lucide-pause text-[#8B5CF6]">
+                        <rect x="14" y="4" width="4" height="16" rx="1" />
+                        <rect x="6" y="4" width="4" height="16" rx="1" />
+                      </svg>
+                    {:else}
+                      <svg
+                        width="14"
+                        height="14"
+                        viewBox="0 0 14 14"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <g id="SVG">
+                          <path
+                            id="Vector"
+                            d="M12.7019 6.26776L4.17882 1.22898C3.48632 0.819773 2.42578 1.21687 2.42578 2.22899V12.3041C2.42578 13.2121 3.41126 13.7594 4.17882 13.3041L12.7019 8.26778C13.4622 7.81984 13.4646 6.71571 12.7019 6.26776Z"
+                            fill="#8B5CF6" />
+                        </g>
+                      </svg>
+                    {/if}
+                  </Button>
+                {/key}
+                {#key industryUseCase}
+                  <div
+                    id={`waveform`}
+                    class="w-full max-w-[90%] overflow-hidden rounded-lg">
+                  </div>
+                {/key}
               </div>
             </div>
           </div>

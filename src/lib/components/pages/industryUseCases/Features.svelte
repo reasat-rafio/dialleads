@@ -7,7 +7,8 @@
 </script>
 
 <div
-  class="container mx-[1.25rem] mt-[2.5rem] lg:mx-auto lg:mt-[7.5rem] xl:max-w-7xl">
+  class="container mx-auto mt-[2.5rem] lg:mx-auto lg:mt-[7.5rem] xl:max-w-7xl">
+  <!-- mx-[1.25rem] -->
   <div class="grid grid-cols-5 gap-x-[0rem] gap-y-[2rem] lg:gap-x-[5.81rem]">
     <div class="col-span-5 w-full lg:col-span-2">
       {#if Array.isArray(props?.title[0]?.children) && Array.isArray(props?.title[1]?.children)}

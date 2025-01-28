@@ -16,8 +16,6 @@
     },
   } = $derived(data);
 
-  $inspect(data.data.page);
-
   const industryUseCase = $derived.by(() => {
     return {
       useCaseImageForAI: data.data.page.useCaseImageForAI,
