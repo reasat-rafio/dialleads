@@ -34,6 +34,7 @@ export interface IndustryUseCaseProps {
   mp3File: any;
 }
 export interface HeroProps {
+  _type: 'industryUseCase.hero';
   sectionName: string;
   title: PortableTextBlock[];
   description: string;
@@ -43,6 +44,7 @@ export interface HeroProps {
 }
 
 export interface DetailsProps {
+  _type: 'industryUseCase.details';
   sectionName: string;
   title: string;
   description: string;
@@ -54,6 +56,7 @@ export interface DetailsProps {
   link: Link;
 }
 export interface FeaturesProps {
+  _type: 'industryUseCase.features';
   sectionName: string;
   title: PortableTextBlock[];
   description: string;
@@ -63,6 +66,7 @@ export interface FeaturesProps {
   }[];
 }
 export interface StatProps {
+  _type: 'industryUseCase.stat';
   tagline: string;
   title: PortableTextBlock[];
   description: string;
