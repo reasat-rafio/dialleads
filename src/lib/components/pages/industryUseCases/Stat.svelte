@@ -1,5 +1,9 @@
 <script lang="ts">
   import type { StatProps } from '../../../../types/industryUseCases.types';
+
+  import { PortableText } from '@portabletext/svelte';
+  import ViolateGradient from './ViolateGradient.svelte';
+
   let { props }: { props: StatProps } = $props();
 </script>
 
@@ -11,14 +15,18 @@
         class="mb-[0.63rem] text-[1rem] font-semibold leading-[1.6875rem] text-[#6D28D9] lg:text-[1.125rem]">
         {props.tagline}
       </h3>
-      {#if Array.isArray(props?.title[0]?.children) && Array.isArray(props?.title[1]?.children) && Array.isArray(props?.title[2]?.children)}
-        <h2
-          class="text-[1.625rem] font-semibold leading-[1.95rem] lg:text-[3rem] lg:leading-[3.6rem]">
-          {props?.title[0]?.children[0]?.text}
-          <span class="text-[#6D28D9]">{props.title[1].children[0]?.text}</span>
-          {props.title[2].children[0]?.text}
-        </h2>
-      {/if}
+
+      <h2
+        class="text-[1.625rem] font-semibold leading-[1.95rem] lg:text-[3rem] lg:leading-[3.6rem]">
+        <PortableText
+          value={props?.title}
+          components={{
+            marks: {
+              violetGradient: ViolateGradient,
+            },
+          }} />
+      </h2>
+
       <p
         class="mt-[0.62rem] text-[1rem] font-normal leading-[1.875rem] lg:text-[1.25rem]">
         {props.description}

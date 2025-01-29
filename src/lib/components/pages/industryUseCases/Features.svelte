@@ -2,24 +2,27 @@
   import { imgBuilder } from '$lib/sanity/sanity-client';
   import SanityImage from '$lib/sanity/sanity-image/sanity-image.svelte';
   import type { FeaturesProps } from '../../../../types/industryUseCases.types';
+  import { PortableText } from '@portabletext/svelte';
+  import ViolateGradient from './ViolateGradient.svelte';
 
   let { props }: { props: FeaturesProps } = $props();
 </script>
 
 <div
   class="container mx-auto mt-[2.5rem] lg:mx-auto lg:mt-[7.5rem] xl:max-w-7xl">
-  <!-- mx-[1.25rem] -->
   <div class="grid grid-cols-5 gap-x-[0rem] gap-y-[2rem] lg:gap-x-[5.81rem]">
     <div class="col-span-5 w-full lg:col-span-2">
-      {#if Array.isArray(props?.title[0]?.children) && Array.isArray(props?.title[1]?.children)}
-        <h2
-          class=" text-center text-[1.625rem] font-semibold leading-[1.95rem] lg:text-left lg:text-[3rem] lg:leading-[3.6rem]">
-          <span class="text-[#6D28D9]">
-            {props?.title[0]?.children[0]?.text}
-          </span>
-          {props.title[1].children[0]?.text}
-        </h2>
-      {/if}
+      <h2
+        class=" text-center text-[1.625rem] font-semibold leading-[1.95rem] lg:text-left lg:text-[3rem] lg:leading-[3.6rem]">
+        <PortableText
+          value={props?.title}
+          components={{
+            marks: {
+              violetGradient: ViolateGradient,
+            },
+          }} />
+      </h2>
+
       <p
         class="mt-[0.62rem] w-full text-center text-[1rem] font-normal leading-[1.875rem] lg:text-left lg:text-[1.25rem]">
         {props.description}

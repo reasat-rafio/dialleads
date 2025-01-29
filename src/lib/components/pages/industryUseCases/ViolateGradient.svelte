@@ -1,5 +1,4 @@
-<span
-  class="bg-gradient-to-r from-[#731AFF] to-[#FCCEEE] bg-clip-text text-transparent">
+<span class="text-[#6D28D9]">
   {' '}
   <slot />
 </span>
