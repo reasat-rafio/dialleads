@@ -13,7 +13,10 @@
 </script>
 
 <div class="mt-[2.4rem] lg:mt-[5rem] mb-5 md:mb-10 leading-tight px-5 md:px-0">
-  <SectionIconAndName sectionIcon={props?.sectionIcon} sectionName={props?.sectionTitle} sectionTitle={props?.title} />
+  <SectionIconAndName 
+  sectionNameClass="text-[#495568]"
+  sectionTitleClass="max-w-[40rem] mx-auto"
+  sectionIcon={props?.sectionIcon} sectionName={props?.sectionTitle} sectionTitle={props?.title} />
 </div>
 
 <div class="flex items-center justify-center">
@@ -34,7 +37,8 @@
           class=" m-5 grid max-w-[74.8125rem] grid-cols-1 gap-[0.75rem] sm:grid-cols-2 md:gap-[1.88rem] lg:grid-cols-3 xl:m-0">
           {#each feature.features as features}
             <div
-              class="col-span-1 rounded-[1rem] border bg-[#FFFFFF] p-7 shadow-sm sm:col-span-1 lg:col-span-1">
+            style="box-shadow: 0px 4px 12px -4px rgba(0, 0, 0, 0.07)"
+              class="col-span-1 rounded-[1rem] border bg-[#FFFFFF] p-7  sm:col-span-1 lg:col-span-1">
               {#if !!features?.featureIcon}
                 <SanityImage
                   class="h-[2.5rem] w-[2.5rem] overflow-hidden object-contain"
@@ -45,7 +49,7 @@
               <h2 class="mb-2 mt-[1.5rem] text-[22px] font-semibold">
                 {features.featureTitle}
               </h2>
-              <h3 class="text-[16px] font-normal text-[#5B6779]">
+              <h3 class="text-base font-normal text-[#5B6779]">
                 {features.featureDescription}
               </h3>
             </div>

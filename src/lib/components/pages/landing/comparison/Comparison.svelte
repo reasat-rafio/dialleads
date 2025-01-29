@@ -12,13 +12,15 @@
 
 <div class="mx-auto max-w-[75rem] px-5 xl:px-0">
   <SectionIconAndName
-    sectionTitleClass="text-base lg:text-[1.25rem] font-normal max-w-[43.125rem] mx-auto mb-[3.24rem]"
+  sectionNameClass="text-[#495568]"
+    sectionTitleClass="text-base lg:text-[1.25rem] font-normal 
+    max-w-[43.125rem] mx-auto mb-[3.24rem] text-[#212121]"
     {sectionIcon}
     {sectionName}
     {sectionTitle} />
   <div
     class=" flex flex-col-reverse
-  gap-20 px-2 md:mt-[4.26rem]
+  gap-20 px-2 md:mt-[5.85rem]
   lg:mx-auto lg:max-w-[65rem] lg:flex-row lg:gap-10 xl:px-0">
     {#each comparisonCards as card}
       {#if card.cardType === 'AI Phone Agent'}

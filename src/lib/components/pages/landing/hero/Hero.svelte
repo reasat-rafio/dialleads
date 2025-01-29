@@ -25,7 +25,7 @@
     class="pointer-events-none absolute inset-0 h-full w-full object-cover mix-blend-overlay z-0" />
   <SectionIconAndName
     bgColor="background: linear-gradient(242deg, rgba(255, 255, 255, 0.21) 0%, rgba(255, 255, 255, 0.08) 100%);"
-    wrapperClass=" border-none  hidden lg:flex"
+    wrapperClass=" border-none  hidden lg:flex z-10 bg-transparent relative"
     sectionNameClass="text-white"
     sectionTitleClass="text-white   mb-[0.88rem] leading-tight"
     sectionIcon={hero?.sectionIcon}

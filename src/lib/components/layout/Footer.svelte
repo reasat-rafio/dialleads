@@ -78,7 +78,7 @@
           {#each footer?.browse as link}
             <a
               href={link.internalLink}
-              class=" text-[0.875rem] font-normal text-white opacity-80">
+              class=" text-[0.875rem] font-normal text-white opacity-80 uppercase">
               {link?.title}
             </a>
           {/each}
@@ -94,7 +94,7 @@
           {#each footer?.about as link}
             <a
               href={link.internalLink}
-              class=" text-[0.875rem] font-normal text-white opacity-80">
+              class=" text-[0.875rem] font-normal text-white opacity-80 uppercase">
               {link?.title}
             </a>
           {/each}
@@ -109,7 +109,7 @@
           {#each footer?.legal as link}
             <a
               href={link.internalLink}
-              class=" text-[0.875rem] font-normal text-white opacity-80">
+              class=" text-[0.875rem] font-normal text-white opacity-80 uppercase">
               {link?.title}
             </a>
           {/each}
@@ -157,7 +157,9 @@
   <!-- Join More  -->
   <div
     class="
+    
     absolute -top-[.5rem] left-1/2 -translate-x-1/2 -translate-y-1/2 lg:-top-[1rem]
+    
     
   
  ">
@@ -175,16 +177,18 @@
       </div>
       <div
         class="absolute left-1/2 top-1/2 
-        flex -translate-x-1/2 -translate-y-1/2 flex-col items-center gap-[3.25rem] lg:flex-row  pt-[3.12rem] lg:pt-0">
+        flex -translate-x-1/2 -translate-y-1/2 
+        flex-col items-center gap-[3.25rem] lg:gap-2  xl:gap-[3.25rem] lg:flex-row  ">
         <h3
           class="
-         h-[11.25rem]
+          
           text-center
           font-geist
           text-[1.675rem]
           font-semibold
           lg:leading-[3.675rem]
           text-[#FFF] lg:h-fit
+          w-[13rem]
            lg:w-[47.9375rem] lg:text-left lg:text-[2.625rem]">
           <PortableText
             value={footer?.joinMoreTitle}

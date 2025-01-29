@@ -29,7 +29,7 @@
   <div
   style={bgColor}
     class={cn(
-      'mx-auto flex w-fit items-center justify-center gap-2 rounded-full border px-3 py-2 mt-10 md:mt-24',
+      'mx-auto flex w-fit items-center justify-center gap-2 rounded-full border px-[0.89rem] py-2 mt-10 md:mt-24',
       wrapperClass
     )}
   >
@@ -40,7 +40,7 @@
       imageUrlBuilder={imgBuilder}
       alt="sectionIcon"
     />
-    <p class={cn('text-nowrap font-geist text-lg font-medium', sectionNameClass)}>
+    <p class={cn('text-nowrap font-geist text-base md:text-lg font-medium', sectionNameClass)}>
       {sectionName}
     </p>
   </div>
