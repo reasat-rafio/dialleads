@@ -22,8 +22,8 @@
   <img
     src="/grid.png"
     alt="grid overlay"
-    class="pointer-events-none absolute inset-0 h-full w-full object-cover opacity-100 mix-blend-overlay" />
-  <div class="pb-[11.19rem]">
+    class="pointer-events-none absolute inset-0 h-full w-full object-cover opacity-100 mix-blend-overlay z-0" />
+  <div class="pb-[11.19rem] relative">
     <Section {hero} />
     <TabBar bind:selectedSubscriptionType {saveUpTo} />
   </div>

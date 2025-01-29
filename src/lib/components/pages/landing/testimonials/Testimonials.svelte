@@ -43,6 +43,7 @@
 <div class="max-w-[74.8125rem] mx-auto">
   <SectionIconAndName 
   wrapperClass="mt-[2.5rem] lg:mt-[5.06rem]"
+  sectionNameClass="text-[#495568]"
   sectionTitleClass="mb-[1.88rem] md:mb-[3.12rem] leading-tight" 
   sectionIcon={props?.sectionIcon} sectionName={props?.sectionTitle} sectionTitle={props?.title} />
 <div

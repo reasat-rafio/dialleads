@@ -14,7 +14,8 @@
 
 <div class="px-5 xl:px-0">
   <SectionIconAndName
-    sectionTitleClass="max-w-[56.6875rem] mx-auto"
+  sectionNameClass="text-[#495568]"
+    sectionTitleClass="max-w-[56.6875rem] mx-auto "
     {sectionName}
     {sectionIcon}
     sectionTitle={dataDriven?.title} />

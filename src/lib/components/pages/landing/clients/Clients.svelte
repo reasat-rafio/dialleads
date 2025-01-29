@@ -17,7 +17,7 @@
 </script>
 
 <div class="mb-[2.5rem] mt-[1.88rem] lg:mt-[2.8rem]">
-  <h3 class="mb-4 text-center text-[1.125rem] font-semibold md:mb-8">
+  <h3 class="mb-4 text-center text-sm md:text-xl font-semibold md:mb-8 text-slate-800">
     <PortableText
       value={props?.title}
       components={{

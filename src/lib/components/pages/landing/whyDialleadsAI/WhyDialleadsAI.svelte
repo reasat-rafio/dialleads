@@ -14,6 +14,7 @@
 
 <div class="mx-auto max-w-[75rem] px-5  xl:px-0">
   <SectionIconAndName
+  sectionNameClass="text-[#495568]"
    {sectionIcon} {sectionName} {sectionTitle} />
   <div
 

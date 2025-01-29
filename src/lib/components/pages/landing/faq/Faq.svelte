@@ -19,6 +19,7 @@
       <div class="flex flex-col items-center md:items-start">
         <div>
           <SectionIconAndName
+          sectionNameClass="text-[#495568]"
             wrapperClass="md:mt-0 "
             sectionTitleClass="mb-[1.5rem]"
             sectionIcon={props?.sectionIcon}
