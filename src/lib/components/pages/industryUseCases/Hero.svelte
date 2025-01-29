@@ -159,7 +159,7 @@
                 class="mt-[1rem] flex h-[2.6375rem] items-center gap-x-[0.5rem] overflow-hidden">
                 {#key industryUseCase}
                   <Button
-                    class="flex min-h-[2.124rem] min-w-[2.124rem] items-center justify-center rounded-full border border-[#6d28d9] bg-[#EDE9FE] text-white"
+                    class="flex h-[2.124rem] w-[2.124rem] items-center justify-center rounded-full border border-[#6d28d9] bg-[#EDE9FE] text-white"
                     onclick={playPauseAudio}>
                     {#if showPlayIcon}
                       <svg

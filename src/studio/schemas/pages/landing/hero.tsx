@@ -1,7 +1,6 @@
 import { SiHomeadvisor } from 'react-icons/si';
 import { defineArrayMember, defineField, defineType } from 'sanity';
 import { FaPenFancy } from 'react-icons/fa';
-
 import React from 'react';
 
 const hero = defineType({
