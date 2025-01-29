@@ -1,7 +1,5 @@
 <span
-  class="bg-gradient-to-r from-[#731AFF] via-[#731AFF] to-[#FCCEEE]
-                bg-clip-text font-geist text-[2.25rem] font-bold
-                text-transparent lg:text-7xl w-full">
+class="bg-[linear-gradient(75deg,_#731AFF_31%,_#FCCEEE_170%)] bg-clip-text text-transparent font-geist text-[2.25rem] font-bold lg:text-7xl w-full">
   {' '}
   <slot />
 </span>

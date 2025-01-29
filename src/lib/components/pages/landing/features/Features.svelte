@@ -15,7 +15,7 @@
 <div class="mt-[2.4rem] lg:mt-[5rem] mb-5 md:mb-10 leading-tight px-5 md:px-0">
   <SectionIconAndName 
   sectionNameClass="text-[#495568]"
-  sectionTitleClass="max-w-[40rem] mx-auto"
+  sectionTitleClass=""
   sectionIcon={props?.sectionIcon} sectionName={props?.sectionTitle} sectionTitle={props?.title} />
 </div>
 

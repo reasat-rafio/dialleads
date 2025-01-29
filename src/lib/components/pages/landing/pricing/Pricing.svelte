@@ -45,8 +45,8 @@
         alt={enterprisePlan?.banner?.alt || "bannerImg"} />
     </div>
     <div
-      class="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 md:left-[22rem]">
-      <div class="flex justify-center lg:justify-normal">
+      class="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 md:left-[22rem] lg:pl-5">
+      <div class="flex justify-center lg:justify-normal ">
         <div
           class="flex w-36 items-center gap-2
         rounded-full bg-[#FFFFFF33] px-3
