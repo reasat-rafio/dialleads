@@ -84,7 +84,6 @@
     });
 
     return () => {
-      // Cleanup WaveSurfer instances on unmount
       waveSurferInstances.forEach((waveSurfer) => waveSurfer.destroy());
     };
   });
