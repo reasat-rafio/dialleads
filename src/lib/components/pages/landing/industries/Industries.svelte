@@ -64,10 +64,10 @@
     <div
       class="container z-50 mx-auto px-[1.5rem] pb-[0rem] md:pb-[4.21rem] lg:px-[7.5rem]">
       <Carousel.Root setApi={(emblaApi) => (api = emblaApi)} class="w-full  ">
-        <Carousel.Content class="">
+        <Carousel.Content class="lg:-ml-1">
           {#each props?.industries as industry}
             <Carousel.Item
-              class="basis-full bg-transparent  md:basis-1/2 lg:basis-1/3">
+              class="basis-full bg-transparent pl-4 md:basis-1/2  lg:basis-1/3 lg:pl-7">
               <Card.Root
                 style="background: linear-gradient(217deg, rgba(255, 255, 255, 0.05) 100%, rgba(255, 255, 255, 0.08) 90%);"
                 class="rounded-[2rem] border-[0.09rem]   border-[#413e3e] border-b-[#4a4848]  bg-transparent px-1 shadow-lg backdrop-blur-sm ">
