@@ -22,7 +22,7 @@
   <img
     src="/grid.png"
     alt="grid overlay"
-    class="pointer-events-none absolute inset-0 h-full w-full object-cover opacity-100 mix-blend-overlay" />
+    class="pointer-events-none absolute inset-0 h-full w-full object-cover mix-blend-overlay z-0" />
   <SectionIconAndName
     bgColor="background: linear-gradient(242deg, rgba(255, 255, 255, 0.21) 0%, rgba(255, 255, 255, 0.08) 100%);"
     wrapperClass=" border-none  hidden lg:flex"
@@ -30,17 +30,19 @@
     sectionTitleClass="text-white   mb-[0.88rem] leading-tight"
     sectionIcon={hero?.sectionIcon}
     sectionName={hero?.sectionName} />
-  <h1
-    class=" z-50 mx-auto mb-3
+  <div class="z-10 bg-transparent relative">
+    <h1
+      class=" mx-auto mb-3
   w-fit px-12 text-center font-geist text-[2.25rem] font-bold leading-[2.7rem] text-[#FFF] md:px-0 lg:text-7xl">
-    <PortableText
-      value={hero?.heroTitle}
-      components={{
-        marks: {
-          violetGradient: VioletGradient,
-        },
-      }} />
-  </h1>
+      <PortableText
+        value={hero?.heroTitle}
+        components={{
+          marks: {
+            violetGradient: VioletGradient,
+          },
+        }} />
+    </h1>
+  </div>
   <p
     class="mx-auto mt-[1.12rem] w-[17.5625rem]
      text-center text-base font-normal text-white lg:mt-[0.75rem] lg:w-[40.3125rem] lg:text-[1.25rem]">
