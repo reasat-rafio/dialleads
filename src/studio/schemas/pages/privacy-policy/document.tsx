@@ -44,12 +44,19 @@ const privacyPolicy = defineType({
       ],
     }),
     defineField({
+      name: 'description',
+      title: 'Description',
+      type: 'array',
+      of: [{ type: 'block' }],
+      validation: (Rule) => Rule.required(),
+    }),
+    defineField({
       name: 'sections',
       title: 'Sections',
       type: 'array',
       of: [
         defineField({
-            name:'sections',
+          name: 'sections',
           type: 'object',
           fields: [
             defineField({

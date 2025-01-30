@@ -29,10 +29,10 @@
 <div class="relative">
   <div class="">
     <!-- // ensure industries is array -->
-    <!-- <Navbar {industries} pathName={page.url.pathname} {nav} {logo} /> -->
+    <Navbar {industries} pathName={page.url.pathname} {nav} {logo} />
   </div>
 
   {@render children()}
 
-  <!-- <Footer {footer} /> -->
+  <Footer {footer} />
 </div>

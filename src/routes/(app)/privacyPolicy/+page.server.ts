@@ -9,6 +9,7 @@ const query = groq`
   ...,
     seo,
     title,
+    description,
     sections[]{
       sectionTitle,
       content

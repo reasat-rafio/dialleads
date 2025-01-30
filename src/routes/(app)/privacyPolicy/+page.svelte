@@ -5,9 +5,8 @@
 
 
   let { data } = $props();
-  $inspect(data)
   let {
-    page: { sections, seo, title, _updatedAt},
+    page: { sections, seo, title, _updatedAt, description},
     site: {
       logos: { ogImage },
     },
@@ -19,5 +18,5 @@
 {/if}
 
 <div>
-  <h1>Somel</h1>
+ <PrivacyAndPolicy {sections} {title} {_updatedAt} {description} />
 </div>
