@@ -83,6 +83,12 @@ export const AppStructure: StructureResolver = (S, context: ConfigContext) =>
                 title: 'Contact',
                 icon: MdOutlinePriceCheck,
               }),
+              pageItem(S, {
+                schemaType: 'privacyAndPolicyPage',
+                id: 'privacyAndPolicyPage',
+                title: 'Privacy And Policy',
+                icon: MdOutlinePriceCheck,
+              }),
             ]),
         ),
       S.divider(),
