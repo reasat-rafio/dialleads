@@ -8,7 +8,6 @@
   import { cn } from '$lib/utils';
   import CustomParagraph from '$lib/components/rich-text/CustomParagraph.svelte';
   import CustomHeading6 from '$lib/components/rich-text/CustomHeading6.svelte';
-  import OrderedListWrapper from '$lib/components/rich-text/OrderedListWrapper.svelte';
 
   interface Props {
     sections: Section[];
@@ -29,9 +28,10 @@
   $inspect(sections[0]);
 </script>
 
-<div class="container mx-auto">
+<div class="container mx-auto px-5 xl:px-28">
   <div>
-    <h1 class="mt-[5.25rem] text-center text-[3.875rem] font-bold text-black">
+    <h1
+      class=" mt-[7.25rem] text-center text-[1.625rem] font-bold text-black lg:mt-[5.25rem] lg:text-[3.875rem]">
       <PortableText
         value={title}
         components={{
@@ -40,7 +40,8 @@
           },
         }} />
     </h1>
-    <h3 class="mb-4 mt-[5.38rem] text-[1.5625rem] font-bold text-black">
+    <h3
+      class="mb-4 mt-[2rem] text-[1.5625rem] font-bold text-black lg:mt-[5.38rem]">
       Last Updated: {formattedDate}
     </h3>
     <p class="text-xl font-medium text-[#525252]">
