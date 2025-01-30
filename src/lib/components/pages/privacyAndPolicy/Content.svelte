@@ -7,6 +7,8 @@
   import UnorderedListWrapper from '$lib/components/rich-text/UnorderedListWrapper.svelte';
   import { cn } from '$lib/utils';
   import CustomParagraph from '$lib/components/rich-text/CustomParagraph.svelte';
+  import CustomHeading6 from '$lib/components/rich-text/CustomHeading6.svelte';
+  import OrderedListWrapper from '$lib/components/rich-text/OrderedListWrapper.svelte';
 
   interface Props {
     sections: Section[];
@@ -52,7 +54,7 @@
       </h3>
       <div class="mt-4 space-y-4">
         {#each section?.content as item}
-          <div class={cn('prose-ul:list-disc', '')}>
+          <div class={cn('', '')}>
             <PortableText
               value={item}
               components={{
@@ -61,9 +63,11 @@
                 },
                 listItem: {
                   bullet: ListItem,
+                  number: ListItem,
                 },
                 block: {
-                  p: CustomParagraph,
+                  normal: CustomParagraph,
+                  h6: CustomHeading6,
                 },
               }} />
           </div>

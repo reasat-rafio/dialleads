@@ -1,12 +1,10 @@
 <script lang="ts">
-  import PrivacyAndPolicy from '$lib/components/pages/privacyAndPolicy/PrivacyAndPolicy.svelte';
+  import Content from '$lib/components/pages/privacyAndPolicy/Content.svelte';
   import Seo from '$lib/components/Seo.svelte';
-
-
 
   let { data } = $props();
   let {
-    page: { sections, seo, title, _updatedAt, description},
+    page: { sections, seo, title, _updatedAt, description },
     site: {
       logos: { ogImage },
     },
@@ -18,5 +16,5 @@
 {/if}
 
 <div>
- <PrivacyAndPolicy {sections} {title} {_updatedAt} {description} />
+  <Content {sections} {title} {_updatedAt} {description} />
 </div>
