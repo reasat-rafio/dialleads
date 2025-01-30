@@ -6,17 +6,17 @@
 
   let { data } = $props();
   $inspect(data)
-  // let {
-  //   page: { privacyPolicy, seo },
-  //   site: {
-  //     logos: { ogImage },
-  //   },
-  // } = $derived(data);
+  let {
+    page: { sections, seo, title, _updatedAt},
+    site: {
+      logos: { ogImage },
+    },
+  } = $derived(data);
 </script>
 
-<!-- {#if seo}
+{#if seo}
   <Seo {seo} siteOgImg={ogImage} />
-{/if} -->
+{/if}
 
 <div>
   <h1>Somel</h1>

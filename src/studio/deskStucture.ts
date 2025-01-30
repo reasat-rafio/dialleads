@@ -6,7 +6,7 @@ import type { IconType } from 'react-icons';
 import type { StructureBuilder, StructureResolver } from 'sanity/structure';
 import { orderableDocumentListDeskItem } from '@sanity/orderable-document-list';
 import type { ConfigContext } from 'sanity';
-import { MdOutlinePriceCheck } from 'react-icons/md';
+import { MdOutlinePriceCheck, MdOutlinePrivacyTip } from 'react-icons/md';
 
 interface ListItem {
   title: string;
@@ -84,10 +84,10 @@ export const AppStructure: StructureResolver = (S, context: ConfigContext) =>
                 icon: MdOutlinePriceCheck,
               }),
               pageItem(S, {
-                schemaType: 'privacyAndPolicyPage',
-                id: 'privacyAndPolicyPage',
+                schemaType: 'privacyPolicy',
+                id: 'privacyPolicy',
                 title: 'Privacy And Policy',
-                icon: MdOutlinePriceCheck,
+                icon: MdOutlinePrivacyTip,
               }),
             ]),
         ),

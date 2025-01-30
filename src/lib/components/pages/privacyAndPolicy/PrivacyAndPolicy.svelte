@@ -1,9 +1,1 @@
-<script lang="ts">
-  import type { PrivacyAndPolicyProps } from '../../../../types/privacyAndPolicy.types';
-    let {privacyPolicy}: {privacyPolicy: PrivacyAndPolicyProps} = $props();
-    $inspect(privacyPolicy)
-</script>
-
-<div>
-  <h1 class="text-red-500">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Error ab accusantium quo maiores consectetur odio unde temporibus voluptatum voluptas voluptatem reprehenderit, deserunt assumenda officia eaque placeat dolorum hic ut libero voluptate eveniet quidem obcaecati. Nam doloribus repellendus velit distinctio modi? Sequi, culpa mollitia earum facilis deleniti rem voluptates totam aspernatur fugiat, cumque neque, corporis harum assumenda. Quaerat expedita iure voluptatem dignissimos hic accusamus perspiciatis molestias maiores blanditiis harum ipsum rerum, non exercitationem dolorum nihil quae id ducimus repellendus veritatis. Error rerum, veritatis fuga labore sequi dicta vel consequuntur nulla accusantium perferendis laudantium pariatur sint facere mollitia aliquam alias, quam, ea deleniti sunt voluptatem. Nesciunt eius fugit praesentium. Minus cum est velit, maxime tempora consectetur inventore veniam sint quae quia exercitationem nesciunt harum maiores facere ipsum assumenda doloribus natus, nobis impedit incidunt aut recusandae unde? Reprehenderit nisi soluta aliquam tenetur corrupti amet a incidunt nemo voluptas error! Soluta iste eaque odit voluptatibus earum aliquam obcaecati repellat voluptate a itaque aliquid, debitis fugiat eius culpa ullam fugit nisi accusamus labore voluptates inventore! Minima quos voluptatem praesentium voluptates dolores, asperiores quidem sint aspernatur dolor fugiat repudiandae explicabo quibusdam deleniti officia voluptatum ipsam tempora vel rerum nihil ut. Eos enim atque ut similique ea.</h1>
-</div>
+<h1>Somel</h1>

@@ -1,16 +1,11 @@
 import type { PortableTextBlock } from 'sanity';
 import type { SeoProps } from './common.types';
 
-export interface PrivacyAndPolicyPageProps {
+export interface PrivacyPolicyPageProps {
   seo?: SeoProps;
-  privacyPolicy: PrivacyAndPolicyProps;
-}
-
-export interface PrivacyAndPolicyProps {
-  _type: 'privacyAndPolicyPage.privacyAndPolicy';
   title: string;
-  lastUpdated: string;
   sections: Section[];
+  _updatedAt: string;
 }
 
 export interface Section {
