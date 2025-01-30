@@ -15,7 +15,7 @@ export default defineType({
     defineField({
       name: 'lastUpdated',
       title: 'Last Updated',
-      type: 'date',
+      type: 'string',
       description: 'Date when the privacy policy was last updated',
     //   validation: (Rule) => Rule.required(),
     }),
