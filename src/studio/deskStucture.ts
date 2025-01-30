@@ -89,6 +89,12 @@ export const AppStructure: StructureResolver = (S, context: ConfigContext) =>
                 title: 'Privacy And Policy',
                 icon: MdOutlinePrivacyTip,
               }),
+              pageItem(S, {
+                schemaType: 'termsAndCondition',
+                id: 'termsAndCondition',
+                title: 'Terms And Condition',
+                icon: MdOutlinePrivacyTip,
+              }),
             ]),
         ),
       S.divider(),

@@ -60,3 +60,15 @@ export const flyAndScale = (
     easing: cubicOut,
   };
 };
+
+export function slugify(text: string): string {
+  return text
+    .toString() // Convert to string
+    .replace(/^\d+/, '') // Remove leading numbers
+    .toLowerCase() // Convert to lowercase
+    .trim() // Remove leading and trailing whitespace
+    .replace(/[\s\W-]+/g, '-') // Replace spaces and non-word characters with hyphens
+    .replace(/--+/g, '-') // Replace multiple hyphens with a single hyphen
+    .replace(/^-+/, '') // Remove leading hyphen
+    .replace(/-+$/, ''); // Remove trailing hyphen
+}
