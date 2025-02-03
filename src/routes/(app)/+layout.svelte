@@ -1,7 +1,7 @@
 <script lang="ts">
   import { page } from '$app/state';
-  import Footer from '$lib/components/layout/Footer.svelte';
-  import Navbar from '$lib/components/layout/Navbar.svelte';
+  import Footer from '$lib/components/layout/footer/Footer.svelte';
+  import Navbar from '$lib/components/layout/navbar/Navbar.svelte';
   import { urlFor } from '$lib/sanity/sanity-client';
 
   let { data, children } = $props();

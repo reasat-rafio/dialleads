@@ -1,7 +1,7 @@
 <script lang="ts">
   import { PortableText } from '@portabletext/svelte';
-  import type { Section } from '../../../../types/privacyAndPolicy.types';
-  import VioletGradient from './VioletGradient.svelte';
+  import type { Section } from '../../../types/privacyAndPolicy.types';
+  import VioletGradient from '../pages/privacyAndPolicy/VioletGradient.svelte';
   import type { PortableTextBlock } from 'sanity';
   import ListItem from '$lib/components/rich-text/ListItem.svelte';
   import UnorderedListWrapper from '$lib/components/rich-text/UnorderedListWrapper.svelte';
