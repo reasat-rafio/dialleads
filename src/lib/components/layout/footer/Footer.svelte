@@ -3,9 +3,9 @@
   import { imgBuilder } from '$lib/sanity/sanity-client';
   import SanityImage from '$lib/sanity/sanity-image/sanity-image.svelte';
   import { cn } from '$lib/utils';
-  import type { SiteDataProps } from '../../../types/site.types';
 
   import { PortableText } from '@portabletext/svelte';
+  import type { SiteDataProps } from '../../../../types/site.types';
   import ViolateGradient from './ViolateGradient.svelte';
 
   let { footer }: { footer: SiteDataProps['footer'] } = $props();

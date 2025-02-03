@@ -1,6 +1,6 @@
 import { BsLink45Deg } from 'react-icons/bs';
 import { defineField, defineType } from 'sanity';
-import { pages } from '$lib/constant';
+
 
 const link = defineType({
   name: 'link',

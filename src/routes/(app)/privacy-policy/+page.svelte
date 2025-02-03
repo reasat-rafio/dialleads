@@ -1,5 +1,5 @@
 <script lang="ts">
-  import Content from '$lib/components/pages/privacyAndPolicy/Content.svelte';
+  import Content from '$lib/components/common/Content.svelte';
   import Seo from '$lib/components/Seo.svelte';
 
   let { data } = $props();

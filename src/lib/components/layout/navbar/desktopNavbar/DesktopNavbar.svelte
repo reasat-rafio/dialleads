@@ -3,8 +3,11 @@
   import { imgBuilder } from '$lib/sanity/sanity-client';
   import SanityImage from '$lib/sanity/sanity-image/sanity-image.svelte';
   import { ChevronDown } from 'lucide-svelte';
-  import type { Nav } from '../../../../types/site.types';
-  import type { SanityImageWithAlt } from '../../../../types/common.types';
+  import type { Nav } from '../../../../../types/site.types';
+  import type { SanityImageWithAlt } from '../../../../../types/common.types';
+  import { page } from '$app/state';
+
+
 
   interface Props {
     nav: Nav;
@@ -68,6 +71,13 @@
   function handleBlur() {
     hideDropdown();
   }
+
+  const isPolicyPage = $derived.by(()=> {
+    return (
+      ['/privacy-policy', '/terms-condition'].includes(page.url.pathname)
+    )
+  })
+
 </script>
 
 <div
@@ -75,7 +85,7 @@
   mx-5 rounded-[1.875rem] xl:mx-0
    xl:px-0">
   <div
-    class={` ${isScrolled ? 'scrolled navbar  pt-4' : ' absolute inset-0 z-50 mt-[2.2rem]'}`}>
+    class={` ${isScrolled ? 'scrolled navbar  pt-4' : 'fixed  inset-0 z-50 pt-[2.2rem]'}`}>
     <div class="mx-auto flex justify-between lg:px-5 xl:max-w-[75rem] xl:px-0">
       <a href="/" class="flex items-center gap-[0.49rem]">
         <SanityImage
@@ -85,7 +95,7 @@
           imageUrlBuilder={imgBuilder}
           alt={logo?.alt || 'logo'} />
         <h5
-          class={`font-geist text-[1.47656rem] font-semibold ${isScrolled ? 'text-black' : 'text-white'}`}>
+          class={`font-geist text-[1.47656rem] font-semibold ${isScrolled || isPolicyPage? 'text-black' : 'text-white'}`}>
           Dialleads
         </h5>
       </a>
@@ -103,14 +113,14 @@
               href={item?.link?.type === 'internal'
                 ? item?.link?.internalLink
                 : item?.link?.externalLink}
-              class=" font-geist text-base font-normal opacity-80 {isScrolled
+              class=" font-geist text-base font-normal opacity-80 {isScrolled || isPolicyPage
                 ? 'text-black'
                 : 'text-white'}">
               {item?.link?.title}
             </a>
             {#if item?.isIndustryPage}
               <ChevronDown
-                class={`h-[1.25rem] w-[1.125rem] font-geist text-base font-normal ${isScrolled ? 'text-black' : 'text-[#FFF] '}`} />
+                class={`h-[1.25rem] w-[1.125rem] font-geist text-base font-normal ${isScrolled || isPolicyPage ? 'text-black' : 'text-[#FFF] '}`} />
             {/if}
 
             {#if item?.isIndustryPage && activeDropdown === item?.link?.title}

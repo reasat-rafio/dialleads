@@ -1,11 +1,10 @@
 <script lang="ts">
-  import type { SanityImageWithAlt } from '../../../types/common.types';
-  import type { Nav } from '../../../types/site.types';
+  import type { SanityImageWithAlt } from "../../../../types/common.types";
+  import type { Nav } from "../../../../types/site.types";
+  import DesktopNavbar from "./desktopNavbar/DesktopNavbar.svelte";
+  import MobileNavbar from "./mobileNavbar/MobileNavbar.svelte";
 
-  import { cn } from '$lib/utils';
-  import DesktopNavbar from './desktopNavbar/DesktopNavbar.svelte';
-  import MobileNavbar from './mobileNavbar/MobileNavbar.svelte';
-
+ 
   interface Props {
     nav: Nav;
     logo: SanityImageWithAlt;
