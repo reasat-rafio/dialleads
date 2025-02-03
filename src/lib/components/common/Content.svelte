@@ -61,7 +61,7 @@
       <h3 class="mt-[2.63rem] text-[2rem] font-bold text-black leading-tight">
         {section?.sectionTitle}
       </h3>
-      <div class="mt-4 space-y-4">
+      <div class="mt-8 space-y-4">
         {#each section?.content as item}
           <div class={cn('', '')}>
             <p class="text-[#525252] font-medium text-xl">
