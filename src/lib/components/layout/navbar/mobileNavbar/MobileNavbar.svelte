@@ -1,10 +1,13 @@
 <script lang="ts">
-  import type { SanityImageWithAlt } from '../../../../types/common.types';
-  import type { Nav } from '../../../../types/site.types';
+ 
   import Button from '$lib/components/ui/button/button.svelte';
   import { ChevronDown, X } from 'lucide-svelte';
   import SanityImage from '$lib/sanity/sanity-image/sanity-image.svelte';
   import { imgBuilder } from '$lib/sanity/sanity-client';
+  import { page } from '$app/state';
+  import type { Nav } from '../../../../../types/site.types';
+  import type { SanityImageWithAlt } from '../../../../../types/common.types';
+
 
   interface Props {
     nav: Nav;
@@ -74,6 +77,13 @@
   function handleBlur() {
     hideDropdown();
   }
+
+  const isPolicyPage = $derived.by(()=> {
+    return (
+      ['/privacy-policy', '/terms-condition'].includes(page.url.pathname)
+    )
+  })
+
 </script>
 
 <div class="relative">
@@ -98,7 +108,7 @@
           imageUrlBuilder={imgBuilder}
           alt={logo?.alt || 'logo'} />
         <h5
-          class="font-geist text-base font-semibold {isScrolled
+          class="font-geist text-base font-semibold {isScrolled || isPolicyPage
             ? 'text-black'
             : 'text-white'}">
           Dialleads
@@ -141,7 +151,7 @@
           <!-- Hamburger Icon -->
           <p class="flex items-center">
             <img
-              class={isScrolled ? 'filter-black' : 'filter-white'}
+              class={isScrolled || isPolicyPage ? 'filter-black' : 'filter-white'}
               src="/humburgIcon.png"
               alt="icon" />
           </p>

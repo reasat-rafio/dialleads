@@ -5,6 +5,8 @@
   import { ChevronDown } from 'lucide-svelte';
   import type { Nav } from '../../../../../types/site.types';
   import type { SanityImageWithAlt } from '../../../../../types/common.types';
+  import { page } from '$app/state';
+
 
 
   interface Props {
@@ -69,6 +71,13 @@
   function handleBlur() {
     hideDropdown();
   }
+
+  const isPolicyPage = $derived.by(()=> {
+    return (
+      ['/privacy-policy', '/terms-condition'].includes(page.url.pathname)
+    )
+  })
+
 </script>
 
 <div
@@ -86,7 +95,7 @@
           imageUrlBuilder={imgBuilder}
           alt={logo?.alt || 'logo'} />
         <h5
-          class={`font-geist text-[1.47656rem] font-semibold ${isScrolled ? 'text-black' : 'text-white'}`}>
+          class={`font-geist text-[1.47656rem] font-semibold ${isScrolled || isPolicyPage? 'text-black' : 'text-white'}`}>
           Dialleads
         </h5>
       </a>
@@ -104,14 +113,14 @@
               href={item?.link?.type === 'internal'
                 ? item?.link?.internalLink
                 : item?.link?.externalLink}
-              class=" font-geist text-base font-normal opacity-80 {isScrolled
+              class=" font-geist text-base font-normal opacity-80 {isScrolled || isPolicyPage
                 ? 'text-black'
                 : 'text-white'}">
               {item?.link?.title}
             </a>
             {#if item?.isIndustryPage}
               <ChevronDown
-                class={`h-[1.25rem] w-[1.125rem] font-geist text-base font-normal ${isScrolled ? 'text-black' : 'text-[#FFF] '}`} />
+                class={`h-[1.25rem] w-[1.125rem] font-geist text-base font-normal ${isScrolled || isPolicyPage ? 'text-black' : 'text-[#FFF] '}`} />
             {/if}
 
             {#if item?.isIndustryPage && activeDropdown === item?.link?.title}
