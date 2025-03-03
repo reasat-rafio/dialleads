@@ -3,7 +3,7 @@ import imageUrlBuilder from '@sanity/image-url';
 import type { SanityImageSource } from '@sanity/image-url/lib/types/types';
 
 export const sanityClient = createClient({
-  projectId: process.env.PUBLIC_SANITY_PROJECT_ID,
+  projectId: 'zhic6sia',
   dataset: 'production',
   apiVersion: '2025-02-26',
   useCdn: process.env.NODE_ENV === 'production',

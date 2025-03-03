@@ -15,6 +15,25 @@ const config: Config = {
 			}
 		},
 		extend: {
+			backgroundImage: {
+				'hero-gradient':
+					'radial-gradient(113.28% 100% at 50% 0%, #000 0%, rgba(0, 0, 0, 0.00) 69.79%), linear-gradient(180deg, #000 0%, #5B21B6 100%, #7C3AED 100%, #A78BFA 100%)',
+				'real-world-gradient': `
+				  radial-gradient(113.28% 100% at 50% 0%, #000 0%, rgba(0, 0, 0, 0.00) 69.79%), 
+				  linear-gradient(180deg, #000 0%, #5B21B6 100%, #7C3AED 100%, #A78BFA 100%)
+				`,
+				'industry-gradient': `
+				  radial-gradient(113.28% 100% at 50% 0%, #000 0%, rgba(0, 0, 0, 0.00) 69.79%), 
+				  linear-gradient(180deg, #000 20%, #4C1D95 100%)  
+				`,
+
+				'footer-gradient':
+					'linear-gradient(-363deg, #4C1D95 -51.52%, #5B21B6 -5.15%, #010101 100%)',
+				'footer-join-more-gradient':
+					'linear-gradient(-363deg, #4C1D95 -51.52%, #5B21B6 -5.15%, #010101 100%)',
+				'enterpricePlan-gradient-mobile': `linear-gradient(343deg, #4C1D95 -39.19%, #5B21B6 11.56%, #212121 92.34%)`,
+				'enterpricePlan-gradient-desktop': `linear-gradient(98deg, #200B46 0%, #1A0939 100%)`,
+			},
 			borderColor: {
 				border: "hsl(var(--border) / <alpha-value>)",
 			},
