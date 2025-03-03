@@ -18,7 +18,7 @@
 
 <svelte:window bind:innerWidth={windowWidth} />
 <div
-	class=" bg-hero-gradient relative pt-[7.31rem] lg:mx-[0.63rem] lg:mt-[0.63rem] lg:rounded-[1.875rem] lg:pt-[5.7rem]"
+	class="bg-hero-gradient relative pt-[7.31rem] lg:mx-[0.63rem] lg:mt-[0.63rem] lg:rounded-[1.875rem] lg:pt-[5.7rem]"
 >
 	<img
 		src="/grid.png"
