@@ -24,9 +24,10 @@ interface IndustriesProps {
 export const load = async () => {
   const data: SiteDataProps = await sanityClient.fetch(siteQuery);
 
-  const industries: IndustriesProps[] = await sanityClient.fetch(query);
+  // const industries: IndustriesProps[] = await sanityClient.fetch(query);
 
   if (!data) throw error(404, { message: 'Not found' });
 
-  return { site: data, industries };
+  return { site: data };
+  // return { site: data, industries };
 };

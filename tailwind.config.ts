@@ -15,13 +15,21 @@ const config: Config = {
 			}
 		},
 		extend: {
+			
+			// background: #8202DC;
+			// background: radial - gradient(at center, #8202DC, #020103);
 			backgroundImage: {
+				'primary-gradient': 'linear-gradient(to right, rgba(113,48,214,1.0) 0%, rgba(177,136,240,1.0) 100%)',
 				'hero-gradient':
-					'radial-gradient(113.28% 100% at 50% 0%, #000 0%, rgba(0, 0, 0, 0.00) 69.79%), linear-gradient(180deg, #000 0%, #5B21B6 100%, #7C3AED 100%, #A78BFA 100%)',
-				'real-world-gradient': `
-				  radial-gradient(113.28% 100% at 50% 0%, #000 0%, rgba(0, 0, 0, 0.00) 69.79%), 
+					'radial-gradient(ellipse 55% 56% at center 95%, rgba(177,136,240,1.0), rgba(113, 48, 214, 0.9) 30%, rgba(24, 59, 241, 0.3) 60%, #070313 100%), radial-gradient(ellipse 85% 60% at center 95%, rgba(76, 29, 149, 0.7) 0%, rgba(71, 6, 209, 0.7) 30%, rgba(7, 3, 19, 1.0) 100%)',
+				'hero-gradient-mobile': `
+				  radial-gradient(113.28% 100% at 50% 100%, rgba(24, 59, 241, 0.3) 0%, #070313 68.79%), 
 				  linear-gradient(180deg, #000 0%, #5B21B6 100%, #7C3AED 100%, #A78BFA 100%)
 				`,
+				'real-world-gradient': `
+                  radial-gradient(113.28% 100% at 50% 0%, #000 0%, rgba(0, 0, 0, 0.00) 69.79%), 
+                  linear-gradient(180deg, #000 0%, #5B21B6 100%, #7C3AED 100%, #A78BFA 100%)
+                `,
 				'industry-gradient': `
 				  radial-gradient(113.28% 100% at 50% 0%, #000 0%, rgba(0, 0, 0, 0.00) 69.79%), 
 				  linear-gradient(180deg, #000 20%, #4C1D95 100%)  
@@ -38,14 +46,28 @@ const config: Config = {
 				border: "hsl(var(--border) / <alpha-value>)",
 			},
 			colors: {
+				primary: "#7C3AED",
+				black: "#1A1A1A",
+				gray: {
+					50: '#f1f5f9',
+					100: '#f3f4f6',
+					200: '#e2e8f0',
+					300: '#cbd5e1',
+					400: '#94a3b8',
+					500: '#64748b',
+					600: '#475569',
+					700: '#334155',
+					800: '#1e293b',
+					900: '#111827',
+				},
 				input: "hsl(var(--input) / <alpha-value>)",
 				ring: "hsl(var(--ring) / <alpha-value>)",
 				background: "hsl(var(--background) / <alpha-value>)",
 				foreground: "hsl(var(--foreground) / <alpha-value>)",
-				primary: {
-					DEFAULT: "hsl(var(--primary) / <alpha-value>)",
-					foreground: "hsl(var(--primary-foreground) / <alpha-value>)"
-				},
+				// primary: {
+				// 	DEFAULT: "hsl(var(--primary) / <alpha-value>)",
+				// 	foreground: "hsl(var(--primary-foreground) / <alpha-value>)"
+				// },
 				secondary: {
 					DEFAULT: "hsl(var(--secondary) / <alpha-value>)",
 					foreground: "hsl(var(--secondary-foreground) / <alpha-value>)"
@@ -79,7 +101,7 @@ const config: Config = {
 					"accent-foreground": "hsl(var(--sidebar-accent-foreground))",
 					border: "hsl(var(--sidebar-border))",
 					ring: "hsl(var(--sidebar-ring))",
-        		},
+				},
 			},
 			borderRadius: {
 				xl: "calc(var(--radius) + 4px)",
@@ -88,7 +110,7 @@ const config: Config = {
 				sm: "calc(var(--radius) - 4px)"
 			},
 			fontFamily: {
-				sans: [...fontFamily.sans]
+				geist: ['"Geist Sans"', ...fontFamily.sans],
 			},
 			keyframes: {
 				"accordion-down": {
@@ -103,12 +125,17 @@ const config: Config = {
 					"0%,70%,100%": { opacity: "1" },
 					"20%,50%": { opacity: "0" },
 				},
+				"shine": {
+					from: { backgroundPosition: '0 0' },
+					to: { backgroundPosition: '-200% 0' },
+				},
 			},
 			animation: {
-        		"accordion-down": "accordion-down 0.2s ease-out",
-        		"accordion-up": "accordion-up 0.2s ease-out",
-       			"caret-blink": "caret-blink 1.25s ease-out infinite",
-      		},
+				"accordion-down": "accordion-down 0.2s ease-out",
+				"accordion-up": "accordion-up 0.2s ease-out",
+				"caret-blink": "caret-blink 1.25s ease-out infinite",
+				"shine": "shine 2s linear infinite",
+			},
 		},
 	},
 	plugins: [tailwindcssAnimate],

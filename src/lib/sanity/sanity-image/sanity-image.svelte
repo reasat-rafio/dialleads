@@ -130,7 +130,7 @@
     position: absolute;
     inset: 0;
     opacity: 0;
-    background-color: white;
+    background-color: transparent;
   }
   .blurred-img.loaded::before {
     animation: none;

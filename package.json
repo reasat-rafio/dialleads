@@ -47,6 +47,7 @@
 		"styled-components": "^6.1.8",
 		"svelte": "^5.0.0",
 		"svelte-check": "^4.0.0",
+		"svelte-motion": "^0.12.2",
 		"tailwind-merge": "^3.0.2",
 		"tailwind-variants": "^0.3.1",
 		"tailwindcss": "^3.4.17",

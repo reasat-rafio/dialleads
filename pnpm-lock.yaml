@@ -126,6 +126,9 @@ importers:
       svelte-check:
         specifier: ^4.0.0
         version: 4.1.4(picomatch@4.0.2)(svelte@5.20.4)(typescript@5.7.3)
+      svelte-motion:
+        specifier: ^0.12.2
+        version: 0.12.2(svelte@5.20.4)
       tailwind-merge:
         specifier: ^3.0.2
         version: 3.0.2
@@ -3477,6 +3480,9 @@ packages:
       react-dom:
         optional: true
 
+  framesync@6.1.2:
+    resolution: {integrity: sha512-jBTqhX6KaQVDyus8muwZbBeGGP0XgujBRbQ7gM7BRdS3CadCZIHiawyzYLnafYcvZIh5j8WE7cxZKFn7dXhu9g==}
+
   from2@2.3.0:
     resolution: {integrity: sha512-OMcX/4IC/uqEPVgGeyfN22LJk6AZrMkRZHxcHBMBvHScDGgwTm2GT2Wkgtocyd3JfZffjj2kYUDXXII0Fk9W0g==}
 
@@ -3681,6 +3687,9 @@ packages:
   he@1.2.0:
     resolution: {integrity: sha512-F/1DnUGPopORZi0ni+CvrCgHQ5FyEAHRLSApuYWMmrbSwoN2Mn/7k+Gl38gJnR7yyDZk6WLXwiGod1JOWNDKGw==}
     hasBin: true
+
+  hey-listen@1.0.8:
+    resolution: {integrity: sha512-COpmrF2NOg4TBWUJ5UVyaCU2A88wEMkUPK4hNqyCkqHbxT92BbvfjoSozkAIIm6XhicGlJHhFdullInrdhwU8Q==}
 
   history@5.3.0:
     resolution: {integrity: sha512-ZqaKwjjrAYUYfLG+htGaIIZ4nioX2L70ZUMIFysS3xvBsSG4x/n1V6TXV3N8ZYNuFGlDirFg32T7B6WOUPDYcQ==}
@@ -4758,6 +4767,9 @@ packages:
     resolution: {integrity: sha512-OBatVyC/N7SCW/FaDHrSd+vn0o5cS855TOmYi4OkdWUMSJCET/xip//ch8xGUvtr3i44X9LVyWwQlRMTN3pwSA==}
     engines: {node: '>=10'}
 
+  popmotion@11.0.5:
+    resolution: {integrity: sha512-la8gPM1WYeFznb/JqF4GiTkRRPZsfaj2+kCxqQgr2MJylMmIKUwBfWW8Wa5fml/8gmtlD5yI01MP1QCZPWmppA==}
+
   possible-typed-array-names@1.1.0:
     resolution: {integrity: sha512-/+5VFTchJDoVj3bhoqi6UeymcD00DAwb1nJwamzPvHEszJ4FpF6SNNbUbOS8yI56qHzdV8eK0qEfOSiodkTdxg==}
     engines: {node: '>= 0.4'}
@@ -5561,6 +5573,9 @@ packages:
   style-to-object@1.0.8:
     resolution: {integrity: sha512-xT47I/Eo0rwJmaXC4oilDGDWLohVhR6o/xAQcPQN8q6QBuZVL8qMYL85kLmST5cPjAorwvqIA4qXTRQoYHaL6g==}
 
+  style-value-types@5.1.2:
+    resolution: {integrity: sha512-Vs9fNreYF9j6W2VvuDTP7kepALi7sk0xtk2Tu8Yxi9UoajJdEVpNpCov0HsLTqXvNGKX+Uv09pkozVITi1jf3Q==}
+
   styled-components@6.1.15:
     resolution: {integrity: sha512-PpOTEztW87Ua2xbmLa7yssjNyUF9vE7wdldRfn1I2E6RTkqknkBYpj771OxM/xrvRGinLy2oysa7GOd7NcZZIA==}
     engines: {node: '>= 16'}
@@ -5622,6 +5637,11 @@ packages:
     resolution: {integrity: sha512-7FaGUy4PuTvUpHZ43K9qtetc/MTIVMduFH5PMs7NMtwNVlICDk903CQEpJDJgYXlRNgo7a/EHg6dAFqA5usF9A==}
     peerDependencies:
       svelte: ^5.0.0
+
+  svelte-motion@0.12.2:
+    resolution: {integrity: sha512-7RrdRz9iVP55B9HT/C0hYW3pyrKlF61kAby/AkDtOAP0uHFQDrfd0qQetDC81cEsK9b40jt+jfcqSAXcA7LPEw==}
+    peerDependencies:
+      svelte: '>=3.35.0 || ^4.0.0 || ^5.0.0 || ^5.0.0-next.0'
 
   svelte-toolbelt@0.7.1:
     resolution: {integrity: sha512-HcBOcR17Vx9bjaOceUvxkY3nGmbBmCBBbuWLLEWO6jtmWH8f/QoWmbyUfQZrpDINH39en1b8mptfPQT9VKQ1xQ==}
@@ -10166,6 +10186,10 @@ snapshots:
       react: 18.3.1
       react-dom: 18.3.1(react@18.3.1)
 
+  framesync@6.1.2:
+    dependencies:
+      tslib: 2.4.0
+
   from2@2.3.0:
     dependencies:
       inherits: 2.0.4
@@ -10414,6 +10438,8 @@ snapshots:
       space-separated-tokens: 1.1.5
 
   he@1.2.0: {}
+
+  hey-listen@1.0.8: {}
 
   history@5.3.0:
     dependencies:
@@ -11430,6 +11456,13 @@ snapshots:
     dependencies:
       '@babel/runtime': 7.26.9
 
+  popmotion@11.0.5:
+    dependencies:
+      framesync: 6.1.2
+      hey-listen: 1.0.8
+      style-value-types: 5.1.2
+      tslib: 2.4.0
+
   possible-typed-array-names@1.1.0: {}
 
   postcss-import@15.1.0(postcss@8.5.3):
@@ -12411,6 +12444,11 @@ snapshots:
     dependencies:
       inline-style-parser: 0.2.4
 
+  style-value-types@5.1.2:
+    dependencies:
+      hey-listen: 1.0.8
+      tslib: 2.4.0
+
   styled-components@6.1.15(react-dom@18.3.1(react@18.3.1))(react@18.3.1):
     dependencies:
       '@emotion/is-prop-valid': 1.2.2
@@ -12484,6 +12522,15 @@ snapshots:
     dependencies:
       schema-dts: 1.1.5
       svelte: 5.20.4
+
+  svelte-motion@0.12.2(svelte@5.20.4):
+    dependencies:
+      '@types/react': 18.3.18
+      framesync: 6.1.2
+      popmotion: 11.0.5
+      style-value-types: 5.1.2
+      svelte: 5.20.4
+      tslib: 2.8.1
 
   svelte-toolbelt@0.7.1(svelte@5.20.4):
     dependencies:
@@ -12724,8 +12771,7 @@ snapshots:
       minimist: 1.2.8
       strip-bom: 3.0.0
 
-  tslib@2.4.0:
-    optional: true
+  tslib@2.4.0: {}
 
   tslib@2.6.2: {}
 

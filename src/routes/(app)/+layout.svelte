@@ -12,7 +12,7 @@
       logos: { favicon, logo },
       footer,
     },
-    industries,
+    // industries,
   } = $derived(data);
 
   let faviconImage = $derived.by(() => {

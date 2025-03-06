@@ -32,6 +32,7 @@
     --sidebar-accent-foreground: 240 5.9% 10%;
     --sidebar-border: 220 13% 91%;
     --sidebar-ring: 217.2 91.2% 59.8%;
+
   }
 
   .dark {
@@ -72,5 +73,50 @@
 
   body {
     @apply bg-background text-foreground;
+  }
+}
+
+@layer utilities {
+  .app-h1 {
+    @apply font-geist text-[68px] leading-[82px] tracking-[-1.4px] font-bold
+  }
+  .app-h2 {
+    @apply font-geist text-[60px] leading-[122%] tracking-[-1%] font-extrabold
+  }
+  .app-h3 {
+    @apply font-geist text-[48px] leading-[115%] tracking-[-1px] font-semibold
+  }
+  .app-h4 {
+    @apply font-geist text-[26px] leading-[38px] tracking-[-1%] font-semibold
+  }
+
+  .app-title-1 {
+    @apply font-geist text-[36px] tracking-[0%] font-semibold
+  }
+  .app-title-2 {
+    @apply font-geist text-[24px] tracking-[-0.7px] font-semibold
+  }
+  .app-title-3 {
+    @apply font-geist text-[18px] leading-[24px] tracking-[0%] font-semibold
+  }
+  .app-title-4 {
+    @apply font-geist text-[22px] leading-[140%] tracking-[-0.7px] font-semibold
+  }
+
+  .app-body-1 {
+    @apply font-geist text-[24px] leading-[150%] tracking-[0%] font-normal
+  }
+  .app-body-2 {
+    @apply font-geist text-[20px] leading-[150%] tracking-[0%] font-normal
+  }
+  .app-body-3 {
+    @apply font-geist text-[18px] leading-[150%] tracking-[0%] font-normal
+  }
+  .app-body-4 {
+    @apply font-geist text-[16px] leading-[150%] tracking-[0%] font-normal
+  }
+
+  .app-subtitle-1 {
+    @apply font-geist text-[18px] leading-[28px] tracking-[0%] font-normal
   }
 }
