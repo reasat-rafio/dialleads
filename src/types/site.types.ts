@@ -1,6 +1,6 @@
 import type { SanityDocument } from '@sanity/client';
 import type { Link, SanityImageWithAlt } from './common.types';
-import type { PortableTextBlock } from 'sanity';
+// import type { PortableTextBlock } from 'sanity';
 
 export interface SiteDataProps {
   logos: {
@@ -45,21 +45,13 @@ export interface MoreLink {
 }
 
 export interface Footer {
-  joinMoreTitle: PortableTextBlock[];
-  joinMoreBanner: SanityImageWithAlt;
-  title: string;
-  getStartedbtnText: string;
-  getStartedbtnLink: string;
-  sideText: string;
   companyLogo: SanityImageWithAlt;
   companyName: string;
-  newsLetterText: string;
-  newsLetter2ndText: string;
+  supportingText: string;
   browse: Link[];
-  about: Link[];
-  legal: Link[];
   subItems: Link[];
   copyRightText: string;
+  socials: Link[];
 }
 
 export interface SocialProps {

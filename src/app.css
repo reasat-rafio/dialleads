@@ -115,6 +115,12 @@
   .app-body-4 {
     @apply font-geist text-[16px] leading-[150%] tracking-[0%] font-normal
   }
+  .app-body-5 {
+    @apply font-geist text-[22px] leading-[140%] tracking-[0%] font-normal
+  }
+  .app-body-6 {
+    @apply font-geist text-[14px] leading-[150%] tracking-[0%] font-normal
+  }
 
   .app-subtitle-1 {
     @apply font-geist text-[18px] leading-[28px] tracking-[0%] font-normal
