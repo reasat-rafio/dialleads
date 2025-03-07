@@ -160,7 +160,7 @@
 			<Motion initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} let:motion>
 				<div
 					use:motion
-					class="fixed inset-0 z-[100] flex items-center justify-center bg-black/50 backdrop-blur-md"
+					class="fixed inset-0 z-[100] flex items-center justify-center bg-black/50 backdrop-blur-sm"
 				>
 					<!-- Modal Content -->
 					<Motion
@@ -174,12 +174,12 @@
 							<Motion let:motion whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.95 }}>
 								<button
 									use:motion
-									class="absolute -top-16 right-0 rounded-full bg-neutral-900/50 p-2 text-xl text-white ring-1 backdrop-blur-md"
+									class="absolute z-[110] -top-3 -right-3 rounded-full bg-neutral-900/90 p-2 text-xl text-white ring-1 ring-violet-600 backdrop-blur-md"
 									onclick={closeVideo}
 									onmouseenter={() => isCloseHovered.set(true)}
 									onmouseleave={() => isCloseHovered.set(false)}
 								>
-									<X class="size-5" />
+									<X class="size-4" />
 								</button>
 							</Motion>
 							<Motion
@@ -189,7 +189,7 @@
 							>
 								<div
 									use:motion
-									class="relative z-[100] size-full overflow-hidden rounded-2xl border-2 border-white lg:max-w-screen-2xl"
+									class="relative z-[100] flex w-full h-auto overflow-hidden rounded-2xl border-2 border-white"
 								>
 									<Video {isIntersecting} mov={hero?.video?.mov} webm={hero?.video?.webm} />
 								</div>
