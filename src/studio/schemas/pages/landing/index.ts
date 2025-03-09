@@ -16,18 +16,18 @@ import whyChooseUs from './whyChooseUs';
 import dataDriven from './dataDriven';
 
 export default [
-  landingPage,
-  hero,
-  testimonials,
-  faq,
-  pricing,
-  comparison,
-  useCase,
-  clients,
-  testCall,
-  industry,
-  features,
-  whyDialleadsAI,
-  whyChooseUs,
-  dataDriven
+	landingPage,
+	hero,
+	testimonials,
+	faq,
+	pricing,
+	comparison,
+	useCase,
+	clients,
+	testCall,
+	industry,
+	features,
+	whyDialleadsAI,
+	whyChooseUs,
+	dataDriven
 ];

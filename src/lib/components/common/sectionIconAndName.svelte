@@ -13,6 +13,7 @@
 		sectionNameClass?: string;
 		sectionTitleClass?: string;
 		bgColor?: string;
+		iconsizes?: string;
 	}
 
 	let {
@@ -23,23 +24,29 @@
 		sectionTitle,
 		sectionTitleClass,
 		sectionNameClass,
-		bgColor
+		bgColor,
+		iconsizes,
 	}: Props = $props();
 </script>
 
 <div>
-	<div class={cn('mx-auto mt-10 md:mt-24 flex w-fit h-fit bg-primary-gradient bg-clip-padding p-px rounded-full', borderClass)}>
+	<div
+		class={cn(
+			'mx-auto mt-10 flex h-fit w-fit rounded-full p-px md:mt-24',
+			borderClass
+		)}
+	>
 		<div
-			style={bgColor}
+			style={bgColor ?? `background-color: transparent;`}
 			class={cn(
-				'flex w-fit items-center justify-center gap-2 rounded-full px-[0.89rem] py-2',
+				'flex w-fit items-center gap-2 rounded-full px-4 py-2',
 				wrapperClass
 			)}
 		>
 			<SanityImage
 				class="h-[1.125rem] w-[1.125rem]"
 				src={sectionIcon || ''}
-				sizes="5vw"
+				sizes={iconsizes || "5vw"}
 				imageUrlBuilder={imgBuilder}
 				alt="sectionIcon"
 			/>

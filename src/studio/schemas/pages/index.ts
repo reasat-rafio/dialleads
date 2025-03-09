@@ -6,10 +6,10 @@ import privacyPolicy from './privacy-policy/document';
 import termsAndCondition from './terms-and-condition/document';
 
 export default [
-  ...landing,
-  ...pricing,
-  ...industryUseCases,
-  ...contact,
-  privacyPolicy,
-  termsAndCondition,
+	...landing,
+	...pricing,
+	...industryUseCases,
+	...contact,
+	privacyPolicy,
+	termsAndCondition
 ];

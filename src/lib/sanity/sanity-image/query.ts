@@ -20,9 +20,7 @@ import groq from 'groq';
  * @param opts.as what the attribute should be named in our output object
  * @returns enhanced groq fragment
  */
-export const asset = (attr: string, opts?: { as: string }) => groq`'${
-  opts?.as ?? attr
-}': ${attr} {
+export const asset = (attr: string, opts?: { as: string }) => groq`'${opts?.as ?? attr}': ${attr} {
   ...,
   asset->{
     ...,

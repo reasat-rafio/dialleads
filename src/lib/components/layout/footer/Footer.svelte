@@ -40,10 +40,8 @@
 		</div>
 	</div>
 
-	<div
-		class="flex w-full max-w-7xl px-5"
-	>
-		<div class="w-full h-px bg-gray-200"></div>
+	<div class="flex w-full max-w-7xl px-5">
+		<div class="h-px w-full bg-gray-200"></div>
 	</div>
 
 	<div

@@ -14,20 +14,20 @@ const query = groq`
 `;
 
 interface IndustriesProps {
-  title: string;
-  slug: {
-    current: string;
-    _type: string;
-  };
-};
+	title: string;
+	slug: {
+		current: string;
+		_type: string;
+	};
+}
 
 export const load = async () => {
-  const data: SiteDataProps = await sanityClient.fetch(siteQuery);
+	const data: SiteDataProps = await sanityClient.fetch(siteQuery);
 
-  // const industries: IndustriesProps[] = await sanityClient.fetch(query);
+	// const industries: IndustriesProps[] = await sanityClient.fetch(query);
 
-  if (!data) throw error(404, { message: 'Not found' });
+	if (!data) throw error(404, { message: 'Not found' });
 
-  return { site: data };
-  // return { site: data, industries };
+	return { site: data };
+	// return { site: data, industries };
 };

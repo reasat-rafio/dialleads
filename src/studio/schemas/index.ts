@@ -7,13 +7,4 @@ import testimonials from './testimonials';
 import banner from './banner';
 import video from './video';
 
-export const schemaTypes = [
-  social,
-  seo,
-  link,
-  testimonials,
-  video,
-  banner,
-  ...site,
-  ...pages,
-];
+export const schemaTypes = [social, seo, link, testimonials, video, banner, ...site, ...pages];
