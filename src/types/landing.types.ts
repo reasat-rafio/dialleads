@@ -25,13 +25,11 @@ type Section =
 
 export interface UseCaseProps {
 	_type: 'landing.useCase';
-	useCaseSectionImage: SanityImageWithAlt;
 	sectionIcon: SanityImageWithAlt;
 	sectionTitle: string;
 	title: string;
 	description: string;
 	useCases: UseCases[];
-	clickToPlayImage: SanityImageWithAlt;
 }
 
 export interface UseCases {

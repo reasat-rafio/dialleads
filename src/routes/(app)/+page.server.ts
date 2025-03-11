@@ -24,7 +24,22 @@ const query = groq`
               "mov": video_hevc.asset->url,
             }
           },
-
+          useCases[]{
+            ...,
+            ${asset('useCaseImage')},
+          },
+          comparison{
+            ...,
+            ${asset('sectionIcon')},
+            comparisonCards[]{
+              ...,
+              ${asset('icon')},
+              features[]{
+              ...,
+              ${asset('featureIcon')},
+              },
+            }
+          },
         },
       }
 `;

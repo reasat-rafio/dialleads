@@ -12,6 +12,7 @@ const useCase = defineType({
 			type: 'string',
 			title: 'Section Title'
 		}),
+
 		defineField({
 			name: 'sectionIcon',
 			type: 'image',
@@ -26,43 +27,17 @@ const useCase = defineType({
 				}
 			]
 		}),
-		defineField({
-			name: 'useCaseSectionImage',
-			type: 'image',
-			title: 'Use Case Section Image',
-			options: { hotspot: true },
-			fields: [
-				{
-					name: 'alt',
-					title: 'Alternative Text',
-					description: 'Important for SEO and accessibility',
-					type: 'string'
-				}
-			]
-		}),
+		
 		defineField({
 			name: 'title',
 			title: 'Title',
 			type: 'string'
 		}),
+
 		defineField({
 			name: 'description',
 			title: 'Description',
 			type: 'string'
-		}),
-		defineField({
-			name: 'clickToPlayImage',
-			type: 'image',
-			title: 'Click To Play Image',
-			options: { hotspot: true },
-			fields: [
-				{
-					name: 'alt',
-					title: 'Alternative Text',
-					description: 'Important for SEO and accessibility',
-					type: 'string'
-				}
-			]
 		}),
 
 		defineField({
@@ -129,13 +104,12 @@ const useCase = defineType({
 			title: 'sectionTitle', // Main section title
 			subtitle: 'title', // Additional title for context
 			media: 'sectionIcon', // Main media from section icon
-			fallbackMedia: 'useCaseSectionImage' // Fallback media if section icon is unavailable
 		},
-		prepare({ title, subtitle, media, fallbackMedia }) {
+		prepare({ title, subtitle, media }) {
 			return {
 				title: title || 'Use Case Section', // Fallback for title
 				subtitle: subtitle || 'No title provided', // Fallback for subtitle
-				media: media || fallbackMedia || SiHomeadvisor // Section icon or fallback to use case image
+				media: media || SiHomeadvisor // Section icon or fallback to use case image
 			};
 		}
 	}
