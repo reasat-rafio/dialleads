@@ -236,13 +236,13 @@
 					</Carousel.Content>
 				</Carousel.Root>
 
-				<div class="z-50 flex justify-center gap-x-2 py-[3.12rem]">
+				<div class="z-50 flex justify-center gap-x-1.5 py-[3.12rem]">
 					{#each Array(count) as _, i}
 						{#if i === current - 1}
 							<div class="z-50 h-3 w-12 rounded-full bg-[#8B5CF6]"></div>
 						{/if}
 						{#if i < count - 1}
-							<div class="z-50 h-3 w-3 rounded-full bg-[#ad90f0]"></div>
+							<div class="z-50 h-3 w-3 rounded-full bg-violet-200"></div>
 						{/if}
 					{/each}
 				</div>
