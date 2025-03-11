@@ -19,7 +19,7 @@
 		{sectionTitle}
 	/>
 	<div
-		class="flex w-full flex-col-reverse items-center justify-center gap-20 md:mt-[5.85rem] lg:mx-auto lg:flex-row lg:gap-10"
+		class="flex w-full flex-col items-center justify-center gap-20 mt-[82px] lg:mt-[114px] lg:mx-auto lg:flex-row lg:gap-10"
 	>
 		{#each comparisonCards as card}
 			{#if card.cardType === 'AI Phone Agent'}

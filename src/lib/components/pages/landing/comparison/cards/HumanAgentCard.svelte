@@ -29,12 +29,13 @@ bg-slate-100 sm:max-w-[473px] lg:h-[484px]"
 		</h3>
 		<div>
 			<div
-				class="mb-[26px] mt-[2.19rem] space-y-[1.125rem] pl-8 pr-2 lg:mb-[71px] lg:mt-[2.88rem] lg:pl-[2.75rem]"
+				class="mb-[26px] mt-[2.19rem] space-y-[1.125rem] pl-7 pr-2 lg:mb-[71px] lg:mt-[2.88rem] lg:pl-[2.75rem]"
 			>
 				{#each card?.features as feature}
 					<div class="flex items-center gap-3">
 						<SanityImage
-							class="h-8 w-[2.0625rem] text-red-50"
+							innerClass="h-6 lg:h-8 w-auto"
+							class="h-fit w-auto"
 							src={feature?.featureIcon}
 							sizes="5vw"
 							imageUrlBuilder={imgBuilder}
@@ -42,7 +43,7 @@ bg-slate-100 sm:max-w-[473px] lg:h-[484px]"
 						/>
 
 						<p
-							class="font-geist text-[18px] font-normal leading-[28px] text-gray-800 lg:text-[20px] lg:leading-[150%]"
+							class="text-[18px] font-normal leading-[28px] text-gray-800 lg:text-[20px] lg:leading-[150%]"
 						>
 							{feature?.featureName}
 						</p>
