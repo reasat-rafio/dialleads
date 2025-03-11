@@ -21,6 +21,7 @@ type Section =
 	| FeatureProps
 	| WhyDialleadsAIProps
 	| HowtoGetStartedProps
+	| IntegrationsProps
 	| WhyChooseUsProps
 	| DataDrivenProps;
 
@@ -267,6 +268,26 @@ export interface GetStartedCard {
 	cardDescription: string;
 	ctaBtnText: string;
 	ctaBtnIcon: SanityImageWithAlt;
+}
+
+export interface IntegrationsProps {
+	_key: string;
+	_type: 'landing.integrations';
+	integrations: Integrations;
+}
+
+export interface Integrations {
+	sectionName: string;
+	sectionIcon: SanityImageWithAlt;
+	sectionTitle: string;
+	description: string;
+	ctaBtnText: string;
+	ctaBtnIcon: SanityImageWithAlt;
+	brands: IntegrationBrand[];
+}
+
+export interface IntegrationBrand {
+	brandImage: SanityImageWithAlt;
 }
 
 export interface WhyChooseUsProps {

@@ -11,6 +11,7 @@
 	// import Features from '$lib/components/pages/landing/features/Features.svelte';
 	import WhyChooseUs from '$lib/components/pages/landing/whyChooseUs/WhyChooseUs.svelte';
 	import HowToGetStarted from '$lib/components/pages/landing/getStarted/HowToGetStarted.svelte';
+	import Integrations from '$lib/components/pages/landing/integrations/Integrations.svelte';
 	import Hero from '$lib/components/pages/landing/hero/Hero.svelte';
 	// import DataDriven from '$lib/components/pages/landing/dataDriven/DataDriven.svelte';
 
@@ -53,7 +54,9 @@
 				<WhyChooseUs {props} />
 			{:else if props._type === 'landing.getStarted'}
 				<HowToGetStarted {props} />
-			<!--{:else if props._type === 'landing.faq'}
+			{:else if props._type === 'landing.integrations'}
+				<Integrations {props} />
+				<!--{:else if props._type === 'landing.faq'}
 				<Faq {props} />
 			{:else if props._type === 'landing.pricing'}
 				<Pricing {props} {pricing} />

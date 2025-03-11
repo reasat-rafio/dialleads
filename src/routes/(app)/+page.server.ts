@@ -40,6 +40,13 @@ const query = groq`
               },
             }
           },
+          integrations{
+            ...,
+            brands[]{
+              ...,
+              ${asset('brandImage')},
+            },
+          },
         },
       }
 `;

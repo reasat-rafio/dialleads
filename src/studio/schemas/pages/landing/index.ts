@@ -14,6 +14,7 @@ import industry from './industry';
 import whyDialleadsAI from './whyDialleadsAI';
 import whyChooseUs from './whyChooseUs';
 import getStarted from './getstarted';
+import integrations from './integrations';
 import dataDriven from './dataDriven';
 
 export default [
@@ -31,5 +32,6 @@ export default [
 	whyDialleadsAI,
 	whyChooseUs,
 	getStarted,
+	integrations,
 	dataDriven
 ];

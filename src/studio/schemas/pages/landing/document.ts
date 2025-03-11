@@ -25,6 +25,7 @@ const landingPage = defineType({
 				{ type: 'landing.testCall' },
 				{ type: 'landing.industry' },
 				{ type: 'landing.getStarted' },
+				{ type: 'landing.integrations' },
 				{ type: 'landing.whyDialleadsAI' },
 				{ type: 'landing.whyChooseUs' },
 				{ type: 'landing.dataDriven' }
