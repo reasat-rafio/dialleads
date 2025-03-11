@@ -10,6 +10,7 @@
 	import UseCase from '$lib/components/pages/landing/useCase/UseCase.svelte';
 	// import Features from '$lib/components/pages/landing/features/Features.svelte';
 	import WhyChooseUs from '$lib/components/pages/landing/whyChooseUs/WhyChooseUs.svelte';
+	import HowToGetStarted from '$lib/components/pages/landing/getStarted/HowToGetStarted.svelte';
 	import Hero from '$lib/components/pages/landing/hero/Hero.svelte';
 	// import DataDriven from '$lib/components/pages/landing/dataDriven/DataDriven.svelte';
 
@@ -50,7 +51,9 @@
 				<Comparison {props} />
 			{:else if props._type === 'landing.whyChooseUs'}
 				<WhyChooseUs {props} />
-				<!--{:else if props._type === 'landing.faq'}
+			{:else if props._type === 'landing.getStarted'}
+				<HowToGetStarted {props} />
+			<!--{:else if props._type === 'landing.faq'}
 				<Faq {props} />
 			{:else if props._type === 'landing.pricing'}
 				<Pricing {props} {pricing} />

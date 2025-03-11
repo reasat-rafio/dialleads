@@ -20,6 +20,7 @@ type Section =
 	| UseCaseProps
 	| FeatureProps
 	| WhyDialleadsAIProps
+	| HowtoGetStartedProps
 	| WhyChooseUsProps
 	| DataDrivenProps;
 
@@ -245,6 +246,27 @@ export interface Card {
 	cardTitle: string;
 	cardIcon: SanityImageWithAlt;
 	cardDescription: string;
+}
+
+export interface HowtoGetStartedProps {
+	_key: string;
+	_type: 'landing.getStarted';
+	getStarted: GetStarted;
+}
+
+export interface GetStarted {
+	sectionName: string;
+	sectionIcon: SanityImageWithAlt;
+	sectionTitle: string;
+	cards: GetStartedCard[];
+}
+
+export interface GetStartedCard {
+	stepText: string;
+	cardTitle: string;
+	cardDescription: string;
+	ctaBtnText: string;
+	ctaBtnIcon: SanityImageWithAlt;
 }
 
 export interface WhyChooseUsProps {
