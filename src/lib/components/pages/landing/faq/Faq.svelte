@@ -13,7 +13,7 @@
 
 <div class="mx-auto max-w-7xl px-5 2xl:px-0">
 	<div
-		class="mx-5 mb-10
+		class="mb-10
    grid grid-cols-1 justify-center gap-x-[3rem] gap-y-[1.88rem] md:grid-cols-12 md:gap-y-[0rem] mt-[60px] lg:mt-[5.94rem] xl:mx-0"
 	>
 		<div class="col-span-1 md:col-span-5">
