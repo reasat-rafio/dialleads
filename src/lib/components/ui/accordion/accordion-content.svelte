@@ -6,8 +6,9 @@
 		ref = $bindable(null),
 		class: className,
 		children,
+		innerclass,
 		...restProps
-	}: WithoutChild<AccordionPrimitive.ContentProps> = $props();
+	}: WithoutChild<AccordionPrimitive.ContentProps> & { innerclass?: string; } = $props();
 </script>
 
 <AccordionPrimitive.Content
@@ -18,7 +19,7 @@
 	)}
 	{...restProps}
 >
-	<div class="pb-4 pt-0">
+	<div class={cn("pb-4 pt-0", innerclass)}>
 		{@render children?.()}
 	</div>
 </AccordionPrimitive.Content>

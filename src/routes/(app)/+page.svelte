@@ -1,5 +1,4 @@
 <script lang="ts">
-	// import Testimonials from '$lib/components/pages/landing/testimonials/Testimonials.svelte';
 	// import Pricing from '$lib/components/pages/landing/pricing/Pricing.svelte';
 	// import Industries from '$lib/components/pages/landing/industries/Industries.svelte';
 	import Comparison from '$lib/components/pages/landing/comparison/Comparison.svelte';
@@ -12,6 +11,7 @@
 	import HowToGetStarted from '$lib/components/pages/landing/getStarted/HowToGetStarted.svelte';
 	import Integrations from '$lib/components/pages/landing/integrations/Integrations.svelte';
 	import Hero from '$lib/components/pages/landing/hero/Hero.svelte';
+	import Testimonials from '$lib/components/pages/landing/testimonials/Testimonials.svelte';
 	import Faq from '$lib/components/pages/landing/faq/Faq.svelte';
 	// import DataDriven from '$lib/components/pages/landing/dataDriven/DataDriven.svelte';
 
@@ -32,8 +32,6 @@
 <div class="">
 	{#if !!sections?.length}
 		{#each sections as props}
-			<!-- {#if props._type === 'landing.testimonials'}
-				<Testimonials {props} /> -->
 			{#if props._type === 'landing.hero'}
 				<Hero {props} />
 				<!-- {:else if props._type === 'landing.features'}
@@ -56,9 +54,11 @@
 				<HowToGetStarted {props} />
 			{:else if props._type === 'landing.integrations'}
 				<Integrations {props} />
+			{:else if props._type === 'landing.testimonials'}
+				<Testimonials {props} />
 			{:else if props._type === 'landing.faq'}
 				<Faq {props} />
-			<!--{:else if props._type === 'landing.pricing'}
+				<!--{:else if props._type === 'landing.pricing'}
 				<Pricing {props} {pricing} />
 			{:else if props._type === 'landing.dataDriven'}
 				<DataDriven {props} /> -->
