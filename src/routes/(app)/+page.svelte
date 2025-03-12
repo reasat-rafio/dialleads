@@ -1,5 +1,4 @@
 <script lang="ts">
-	// import Faq from '$lib/components/pages/landing/faq/Faq.svelte';
 	// import Testimonials from '$lib/components/pages/landing/testimonials/Testimonials.svelte';
 	// import Pricing from '$lib/components/pages/landing/pricing/Pricing.svelte';
 	// import Industries from '$lib/components/pages/landing/industries/Industries.svelte';
@@ -13,6 +12,7 @@
 	import HowToGetStarted from '$lib/components/pages/landing/getStarted/HowToGetStarted.svelte';
 	import Integrations from '$lib/components/pages/landing/integrations/Integrations.svelte';
 	import Hero from '$lib/components/pages/landing/hero/Hero.svelte';
+	import Faq from '$lib/components/pages/landing/faq/Faq.svelte';
 	// import DataDriven from '$lib/components/pages/landing/dataDriven/DataDriven.svelte';
 
 	import Seo from '$lib/components/Seo.svelte';
@@ -56,9 +56,9 @@
 				<HowToGetStarted {props} />
 			{:else if props._type === 'landing.integrations'}
 				<Integrations {props} />
-				<!--{:else if props._type === 'landing.faq'}
+			{:else if props._type === 'landing.faq'}
 				<Faq {props} />
-			{:else if props._type === 'landing.pricing'}
+			<!--{:else if props._type === 'landing.pricing'}
 				<Pricing {props} {pricing} />
 			{:else if props._type === 'landing.dataDriven'}
 				<DataDriven {props} /> -->
