@@ -1,7 +1,6 @@
 <script lang="ts">
 	import Button from '$lib/components/ui/button/button.svelte';
 	import { AnimatePresence, Motion } from 'svelte-motion';
-	// import * as AlertDialog from '$lib/components/ui/alert-dialog/index.js';
 	import { imgBuilder } from '$lib/sanity/sanity-client';
 	import SanityImage from '$lib/sanity/sanity-image/sanity-image.svelte';
 	import type { Hero, HeroProps } from '../../../../../types/landing.types';
@@ -52,9 +51,8 @@
 	<SectionIconAndName
 		bgColor="background: linear-gradient(120deg, rgba(32, 30, 44, 1.0) 0%, rgba(53, 50, 63, 1.0) 100%);"
 		wrapperClass="relative"
-		borderClass="z-10 relative"
+		borderClass="z-10 relative bg-primary-gradient"
 		sectionNameClass="text-white app-title-3 !font-[500]"
-		sectionTitleClass="text-white mb-[0.88rem] leading-tight"
 		sectionIcon={hero?.sectionIcon}
 		sectionName={hero?.sectionName}
 	/>

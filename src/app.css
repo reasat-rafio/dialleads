@@ -79,12 +79,15 @@
 	.app-h1 {
 		@apply font-geist text-[68px] font-bold leading-[82px] tracking-[-1.4px];
 	}
+
 	.app-h2 {
 		@apply font-geist text-[60px] font-extrabold leading-[122%] tracking-[-1%];
 	}
+
 	.app-h3 {
 		@apply font-geist text-[48px] font-semibold leading-[115%] tracking-[-1px];
 	}
+
 	.app-h4 {
 		@apply font-geist text-[26px] font-semibold leading-[38px] tracking-[-1%];
 	}
@@ -92,12 +95,15 @@
 	.app-title-1 {
 		@apply font-geist text-[36px] font-semibold tracking-[0%];
 	}
+
 	.app-title-2 {
 		@apply font-geist text-[24px] font-semibold tracking-[-0.7px];
 	}
+
 	.app-title-3 {
 		@apply font-geist text-[18px] font-semibold leading-[24px] tracking-[0%];
 	}
+
 	.app-title-4 {
 		@apply font-geist text-[22px] font-semibold leading-[140%] tracking-[-0.7px];
 	}
@@ -105,23 +111,33 @@
 	.app-body-1 {
 		@apply font-geist text-[24px] font-normal leading-[150%] tracking-[0%];
 	}
+
 	.app-body-2 {
 		@apply font-geist text-[20px] font-normal leading-[150%] tracking-[0%];
 	}
+
 	.app-body-3 {
 		@apply font-geist text-[18px] font-normal leading-[150%] tracking-[0%];
 	}
+
 	.app-body-4 {
 		@apply font-geist text-[16px] font-normal leading-[150%] tracking-[0%];
 	}
+
 	.app-body-5 {
 		@apply font-geist text-[22px] font-normal leading-[140%] tracking-[0%];
 	}
+
 	.app-body-6 {
 		@apply font-geist text-[14px] font-normal leading-[150%] tracking-[0%];
 	}
 
 	.app-subtitle-1 {
 		@apply font-geist text-[18px] font-normal leading-[28px] tracking-[0%];
+	}
+
+	.mask-fade {
+		-webkit-mask-image: linear-gradient(to bottom, black 70%, transparent 100%);
+		mask-image: linear-gradient(to bottom, black 70%, transparent 100%);
 	}
 }
