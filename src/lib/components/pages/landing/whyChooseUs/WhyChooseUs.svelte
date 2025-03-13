@@ -1,10 +1,10 @@
 <script lang="ts">
 	import SectionIconAndName from '$lib/components/common/sectionIconAndName.svelte';
-	import type { WhyChooseUsProps } from '../../../../../types/landing.types';
+	import type { WhyChooseUsProps, WhyChooseUs } from '../../../../../types/landing.types';
 	import Card from './Card.svelte';
 
 	let { props }: { props: WhyChooseUsProps } = $props();
-	let { whyChooseUs } = $derived(props);
+	let { whyChooseUs }: { whyChooseUs: WhyChooseUs } = $derived(props);
 	let { sectionIcon, sectionName, sectionTitle, cards } = $derived(whyChooseUs);
 </script>
 

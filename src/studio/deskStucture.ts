@@ -1,4 +1,4 @@
-import { TbHome } from 'react-icons/tb';
+import { TbHome, TbBalloonFilled } from 'react-icons/tb';
 import { GrEdit } from 'react-icons/gr';
 import { FaSitemap } from 'react-icons/fa';
 import { SiCloudflarepages } from 'react-icons/si';
@@ -93,19 +93,21 @@ export const AppStructure: StructureResolver = (S, context: ConfigContext) =>
 				),
 			S.divider(),
 			orderableDocumentListDeskItem({
-				type: 'industryUseCasePage',
+				type: 'industries',
 				S,
 				context,
-				title: 'IndustryPage',
+				title: 'Industries',
 				icon: TbHome
 			}),
+			S.divider(),
 			orderableDocumentListDeskItem({
 				type: 'testimonials',
 				S,
 				context,
 				title: 'Testimonials',
-				icon: TbHome
+				icon: TbBalloonFilled
 			}),
+			
 
 			// orderableDocumentListDeskItem({
 			//   type: 'industryUseCases',
@@ -115,10 +117,10 @@ export const AppStructure: StructureResolver = (S, context: ConfigContext) =>
 			//   icon: TbHome,
 			// }),
 
-			pageItem(S, {
-				schemaType: 'pricing',
-				id: 'pricing',
-				title: 'Pricing',
-				icon: MdOutlinePriceCheck
-			})
+			// pageItem(S, {
+			// 	schemaType: 'pricing',
+			// 	id: 'pricing',
+			// 	title: 'Pricing',
+			// 	icon: MdOutlinePriceCheck
+			// })
 		]);

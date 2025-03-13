@@ -23,7 +23,8 @@ type Section =
 	| HowtoGetStartedProps
 	| IntegrationsProps
 	| WhyChooseUsProps
-	| DataDrivenProps;
+	| DataDrivenProps
+	| BannerProps;
 
 export interface UseCaseProps {
 	_type: 'landing.useCase';
@@ -65,14 +66,21 @@ export interface IndustriesProps {
 	_id: string;
 	sectionTitle: string;
 	sectionIcon: SanityImageWithAlt;
-	sectionImage: SanityImageWithAlt;
 	title: string;
+	useCaseIcon: SanityImageWithAlt;
 	industries: {
-		description: string;
 		title: string;
+		description: string;
 		useCaseImage: SanityImageWithAlt;
+		useCases: IndustryUseCase[];
 	}[];
 }
+
+export interface IndustryUseCase {
+	title: string;
+	description: string;
+}
+
 export interface ClientProps {
 	_type: 'landing.clients';
 	title: PortableTextBlock[];
@@ -322,4 +330,15 @@ export interface DataDriven {
 export interface SectionDetails {
 	sectionName: string;
 	sectionIcon: SanityImageWithAlt;
+}
+
+
+export interface BannerProps {
+	_key: string;
+	_type: 'landing.banner';
+	banner: Banner;
+}
+export interface Banner {
+	title: PortableTextBlock[];
+	cta: CTA;
 }

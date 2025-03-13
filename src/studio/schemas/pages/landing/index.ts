@@ -10,6 +10,7 @@ import useCase from './useCase';
 import clients from './clients';
 import testCall from './testCall';
 import industry from './industry';
+import banner from './banner';
 
 import whyDialleadsAI from './whyDialleadsAI';
 import whyChooseUs from './whyChooseUs';
@@ -33,5 +34,6 @@ export default [
 	whyChooseUs,
 	getStarted,
 	integrations,
-	dataDriven
+	dataDriven,
+	banner,
 ];
