@@ -69,6 +69,8 @@ export interface IndustriesProps {
 	title: string;
 	useCaseIcon: SanityImageWithAlt;
 	industries: {
+		buttonIcon: SanityImageWithAlt;
+		buttonIcon2: SanityImageWithAlt;
 		title: string;
 		description: string;
 		useCaseImage: SanityImageWithAlt;
@@ -327,17 +329,18 @@ export interface DataDriven {
 	text: string;
 	sectionDetails: SectionDetails;
 }
+
 export interface SectionDetails {
 	sectionName: string;
 	sectionIcon: SanityImageWithAlt;
 }
-
 
 export interface BannerProps {
 	_key: string;
 	_type: 'landing.banner';
 	banner: Banner;
 }
+
 export interface Banner {
 	title: PortableTextBlock[];
 	cta: CTA;

@@ -52,6 +52,12 @@ const query = groq`
             ${asset('companyLogo')},
             ${asset('reviewerImage')},
           },
+          industries[]-> {
+            ...,
+            ${asset('buttonIcon')},
+            ${asset('buttonIcon2')},
+            ${asset('useCaseImage')},
+          },
         },
       }
 `;

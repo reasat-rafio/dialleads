@@ -34,16 +34,16 @@ const siteNavigation = {
 	],
 	preview: {
 		select: {
-			menu: 'menu'
+			title: 'menu'
 		},
-		prepare({ menu }: { menu: { link?: { title?: string } }[] }) {
-			if (!menu || menu.length === 0) {
+		prepare({ title }: { title: { link?: { title?: string } }[] }) {
+			if (!title || title.length === 0) {
 				return {
 					title: 'No Menu Items'
 				};
 			}
 
-			const titles = menu.map((item) => item?.link?.title || 'Untitled Link').join(', ');
+			const titles = title.map((item) => item?.link?.title || 'Untitled Link').join(', ');
 
 			return {
 				title: `Menu: ${titles}`

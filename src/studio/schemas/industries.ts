@@ -13,7 +13,22 @@ const industries = {
 			type: 'seo'
 			// validation: (Rule: Rule) => Rule.required(),
 		},
-
+		defineField({
+			name: 'buttonIcon',
+			type: 'image',
+			title: 'Button Icon',
+			description: 'This will be shown when this case is not selected',
+			// validation: (Rule) => Rule.required(),
+			options: { hotspot: true },
+		}),
+		defineField({
+			name: 'buttonIcon2',
+			type: 'image',
+			title: 'Button Icon 2',
+			// validation: (Rule) => Rule.required(),
+			description: 'This will be shown when this case is selected',
+			options: { hotspot: true },
+		}),
 		defineField({
 			name: 'title',
 			type: 'string',

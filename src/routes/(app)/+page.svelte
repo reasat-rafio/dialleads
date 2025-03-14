@@ -13,7 +13,7 @@
 	import Testimonials from '$lib/components/pages/landing/testimonials/Testimonials.svelte';
 	import Faq from '$lib/components/pages/landing/faq/Faq.svelte';
 	import Banner from '$lib/components/pages/landing/banner/Banner.svelte';
-	// import Industries from '$lib/components/pages/landing/industries/Industries.svelte';
+	import Industries from '$lib/components/pages/landing/industry/Industries.svelte';
 
 	import Seo from '$lib/components/Seo.svelte';
 
@@ -34,8 +34,8 @@
 		{#each sections as props}
 			{#if props._type === 'landing.hero'}
 				<Hero {props} />
-				<!--{:else if props._type === 'landing.industry'}
-				<Industries {props} /> -->
+			{:else if props._type === 'landing.industry'}
+				<Industries {props} />
 			{:else if props._type === 'landing.clients'}
 				<Clients {props} />
 			{:else if props._type === 'landing.testCall'}

@@ -150,10 +150,10 @@
 
 			<div class="mx-auto w-full">
 				<Carousel.Root setApi={(emblaApi) => (api = emblaApi)} class="w-full max-w-none">
-					<Carousel.Content class="-ml-4 w-full lg:-ml-5">
+					<Carousel.Content class="-ml-2 w-full lg:-ml-3">
 						{#each props.useCases as useCase, index}
 							<Carousel.Item
-								class="w-full basis-full bg-transparent pl-4 max-lg:max-w-[305px] sm:basis-1/2 md:basis-1/3 lg:pl-5 xl:basis-1/4"
+								class="flex justify-center w-full basis-auto bg-transparent pl-4 max-lg:max-w-[305px] lg:basis-1/3 lg:pl-5 xl:basis-1/4"
 							>
 								<Card.Root
 									style="background: linear-gradient(242deg, rgba(255, 255, 255, 0.21) 0%, rgba(255, 255, 255, 0.10) 100%);"
