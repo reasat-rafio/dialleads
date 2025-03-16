@@ -78,45 +78,45 @@
 
 @layer utilities {
   .app-h1 {
-    @apply font-geist text-[68px] leading-[82px] tracking-[-1.4px] font-bold
+    @apply font-geist text-[4.25rem] leading-[5.125rem] tracking-[-0.088rem] font-bold
   }
   .app-h2 {
-    @apply font-geist text-[60px] leading-[122%] tracking-[-1%] font-extrabold
+    @apply font-geist text-[3.75rem] leading-[122%] tracking-[-1%] font-extrabold
   }
   .app-h3 {
-    @apply font-geist text-[48px] leading-[115%] tracking-[-1px] font-semibold
+    @apply font-geist text-[3rem] leading-[115%] tracking-[-0.063rem] font-semibold
   }
   .app-h4 {
-    @apply font-geist text-[26px] leading-[38px] tracking-[-1%] font-semibold
+    @apply font-geist text-[1.625rem] leading-[2.375rem] tracking-[-1%] font-semibold
   }
 
   .app-title-1 {
-    @apply font-geist text-[36px] tracking-[0%] font-semibold
+    @apply font-geist text-[2.25rem] tracking-[0%] font-semibold
   }
   .app-title-2 {
-    @apply font-geist text-[24px] tracking-[-0.7px] font-semibold
+    @apply font-geist text-[1.5rem] tracking-[-0.044rem] font-semibold
   }
   .app-title-3 {
-    @apply font-geist text-[18px] leading-[24px] tracking-[0%] font-semibold
+    @apply font-geist text-[1.125rem] leading-[1.5rem] tracking-[0%] font-semibold
   }
   .app-title-4 {
-    @apply font-geist text-[22px] leading-[140%] tracking-[-0.7px] font-semibold
+    @apply font-geist text-[1.375rem] leading-[140%] tracking-[-0.044rem] font-semibold
   }
 
   .app-body-1 {
-    @apply font-geist text-[24px] leading-[150%] tracking-[0%] font-normal
+    @apply font-geist text-[1.5rem] leading-[150%] tracking-[0%] font-normal
   }
   .app-body-2 {
-    @apply font-geist text-[20px] leading-[150%] tracking-[0%] font-normal
+    @apply font-geist text-[1.25rem] leading-[150%] tracking-[0%] font-normal
   }
   .app-body-3 {
-    @apply font-geist text-[18px] leading-[150%] tracking-[0%] font-normal
+    @apply font-geist text-[1.125rem] leading-[150%] tracking-[0%] font-normal
   }
   .app-body-4 {
-    @apply font-geist text-[16px] leading-[150%] tracking-[0%] font-normal
+    @apply font-geist text-[1rem] leading-[150%] tracking-[0%] font-normal
   }
 
   .app-subtitle-1 {
-    @apply font-geist text-[18px] leading-[28px] tracking-[0%] font-normal
+    @apply font-geist text-[1.125rem] leading-[1.75rem] tracking-[0%] font-normal
   }
 }
