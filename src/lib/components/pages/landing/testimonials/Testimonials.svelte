@@ -6,11 +6,15 @@
 	import * as Dialog from '$lib/components/ui/dialog/index.js';
 	import type { TestimonialsProps } from '../../../../../types/landing.types';
 	import SectionIconAndName from '$lib/components/common/sectionIconAndName.svelte';
+	import { innerWidth } from 'svelte/reactivity/window';
+	import Masonry from '$lib/components/common/masonry.svelte';
+
 	interface Props {
 		props: TestimonialsProps;
 	}
 	let windowWidth = $state(0);
 	let showDialog = $state(false);
+	let gridGap = $state('0.75rem');
 	let testimonials: TestimonialsProps['testimonials'] = $state([]);
 
 	let { props }: Props = $props();
@@ -22,6 +26,20 @@
 		}
 		return text;
 	}
+
+	$effect(() => {
+		if (innerWidth.current) {
+			windowWidth = innerWidth.current;
+		}
+	});
+
+	$effect(() => {
+		if (windowWidth >= 768) {
+			gridGap = '1.25rem';
+		} else {
+			gridGap = '0.75rem';
+		}
+	});
 
 	$effect(() => {
 		if (windowWidth < 640) {
@@ -37,8 +55,6 @@
 	});
 </script>
 
-<svelte:window bind:innerWidth={windowWidth} />
-
 <div class="mx-auto max-w-7xl px-5 2xl:px-0">
 	<SectionIconAndName
 		sectionNameClass="text-[#495568]"
@@ -48,17 +64,21 @@
 		sectionName={props?.sectionTitle}
 		sectionTitle={props?.title}
 	/>
-	<div class="mt-8 md:mt-[50px] w-full h-fit max-h-[856px] md:max-h-[798px] overflow-clip mask-fade">
-		<div
-			class="w-full columns-1 gap-[0.75rem] md:columns-2 md:gap-[1.88rem] lg:columns-3"
+	<div
+		class="mask-fade mt-8 h-fit max-h-[856px] w-full overflow-clip md:mt-[50px] md:max-h-[798px]"
+	>
+		<Masonry
+			items={testimonials}
+			bind:gridGap
+			colWidth={`minmax(Min(20.938em, 100%), 1fr)`}
+			stretchFirst={false}
+			reset
 		>
-			{#each testimonials as testimonial, i}
+			{#each testimonials as testimonial}
 				{#if showDialog}
 					<Dialog.Root>
 						<Dialog.Trigger>
-							<div
-								class="mb-3 break-inside-avoid rounded-[1rem] border bg-[#F9F9F9] p-4 md:mb-[1.88rem]"
-							>
+							<div class="break-inside-avoid rounded-[1rem] border bg-[#F9F9F9] p-4">
 								<div class="flex gap-x-[0.5rem]">
 									<div class="h-[3rem] w-[3rem] rounded-full">
 										<SanityImage
@@ -70,7 +90,7 @@
 										/>
 									</div>
 									<div class="text-left">
-										<h2 class="font-semibold text-[16px] leading-[120%]">{testimonial.name}</h2>
+										<h2 class="text-[16px] font-semibold leading-[120%]">{testimonial.name}</h2>
 
 										<div class="flex items-center">
 											<div class="pr-[0.38rem]">
@@ -88,16 +108,22 @@
 											{#if testimonial.companyName.length > 12}
 												<HoverCard.Root>
 													<HoverCard.Trigger>
-														<h2 class="max-w-[130px] truncate text-[#737275] text-[14px] leading-[120%] font-light">
+														<h2
+															class="max-w-[130px] truncate text-[14px] font-light leading-[120%] text-[#737275]"
+														>
 															{testimonial.companyName}
 														</h2>
 													</HoverCard.Trigger>
 													<HoverCard.Content class="rounded-lg bg-white p-4 shadow-lg">
-														<p class="text-[#737275] text-[14px] leading-[120%] font-light">{testimonial.companyName}</p>
+														<p class="text-[14px] font-light leading-[120%] text-[#737275]">
+															{testimonial.companyName}
+														</p>
 													</HoverCard.Content>
 												</HoverCard.Root>
 											{:else}
-												<h2 class="text-[#737275] text-[14px] leading-[120%] font-light">{testimonial.companyName}</h2>
+												<h2 class="text-[14px] font-light leading-[120%] text-[#737275]">
+													{testimonial.companyName}
+												</h2>
 											{/if}
 											<Dot class="text-[#737275]" />
 
@@ -105,22 +131,28 @@
 												<HoverCard.Root>
 													<HoverCard.Trigger>
 														<h2
-															class="max-w-[90px] truncate text-[#737275] text-[14px] leading-[120%] font-light lg:max-w-[90px] xl:max-w-[110px]"
+															class="max-w-[90px] truncate text-[14px] font-light leading-[120%] text-[#737275] lg:max-w-[90px] xl:max-w-[110px]"
 														>
 															{testimonial.position}
 														</h2>
 													</HoverCard.Trigger>
 													<HoverCard.Content class="rounded-lg  bg-white p-4 shadow-lg">
-														<p class="text-[#737275] text-[14px] leading-[120%] font-light">{testimonial.position}</p>
+														<p class="text-[14px] font-light leading-[120%] text-[#737275]">
+															{testimonial.position}
+														</p>
 													</HoverCard.Content>
 												</HoverCard.Root>
 											{:else}
-												<h2 class="text-[#737275] text-[14px] leading-[120%] font-light">{testimonial.position}</h2>
+												<h2 class="text-[14px] font-light leading-[120%] text-[#737275]">
+													{testimonial.position}
+												</h2>
 											{/if}
 										</div>
 									</div>
 								</div>
-								<div class="pt-[1.25rem] text-left text-[#737275] text-[14px] md:text-[16px] leading-[150%] font-normal">
+								<div
+									class="pt-[1.25rem] text-left text-[14px] font-normal leading-[150%] text-[#737275] md:text-[16px]"
+								>
 									<p>{testimonial.review}</p>
 								</div>
 							</div>
@@ -194,9 +226,7 @@
 						</Dialog.Content>
 					</Dialog.Root>
 				{:else}
-					<div
-						class="relative mb-3 rounded-[1rem] border border-b-0 bg-[#F9F9F9] p-4 md:mb-[1.88rem]"
-					>
+					<div class="relative rounded-[1rem] border border-b-0 bg-[#F9F9F9] p-4">
 						<div class="flex gap-x-[0.5rem]">
 							<div class="h-[3rem] w-[3rem] rounded-full">
 								<SanityImage
@@ -208,7 +238,7 @@
 								/>
 							</div>
 							<div class="text-left">
-								<h2 class="font-semibold text-[16px] leading-[120%]">{testimonial.name}</h2>
+								<h2 class="text-[16px] font-semibold leading-[120%]">{testimonial.name}</h2>
 
 								<div class="flex items-center">
 									<div class="pr-[0.38rem]">
@@ -226,43 +256,57 @@
 									{#if testimonial.companyName.length > 12}
 										<HoverCard.Root>
 											<HoverCard.Trigger>
-												<h2 class="max-w-[80px] truncate text-[#737275] sm:max-w-[120px] text-[14px] leading-[120%] font-light">
+												<h2
+													class="max-w-[80px] truncate text-[14px] font-light leading-[120%] text-[#737275] sm:max-w-[120px]"
+												>
 													{testimonial.companyName}
 												</h2>
 											</HoverCard.Trigger>
 											<HoverCard.Content class="rounded-lg  bg-white p-4 shadow-lg">
-												<p class="text-[#737275] text-[14px] leading-[120%] font-light">{testimonial.companyName}</p>
+												<p class="text-[14px] font-light leading-[120%] text-[#737275]">
+													{testimonial.companyName}
+												</p>
 											</HoverCard.Content>
 										</HoverCard.Root>
 									{:else}
-										<h2 class="text-[#737275] text-[14px] leading-[120%] font-light">{testimonial.companyName}</h2>
+										<h2 class="text-[14px] font-light leading-[120%] text-[#737275]">
+											{testimonial.companyName}
+										</h2>
 									{/if}
 									<Dot class="text-[#737275]" />
 
 									{#if testimonial.position.length > 12}
 										<HoverCard.Root>
 											<HoverCard.Trigger>
-												<h2 class="max-w-[90px] truncate text-[#737275] lg:max-w-[110px] text-[14px] leading-[120%] font-light">
+												<h2
+													class="max-w-[90px] truncate text-[14px] font-light leading-[120%] text-[#737275] lg:max-w-[110px]"
+												>
 													{testimonial.position}
 												</h2>
 											</HoverCard.Trigger>
 											<HoverCard.Content class="rounded-lg  bg-white p-4 shadow-lg">
-												<p class="text-[#737275] text-[14px] leading-[120%] font-light">{testimonial.position}</p>
+												<p class="text-[14px] font-light leading-[120%] text-[#737275]">
+													{testimonial.position}
+												</p>
 											</HoverCard.Content>
 										</HoverCard.Root>
 									{:else}
-										<h2 class="text-[#737275] text-[14px] leading-[120%] font-light">{testimonial.position}</h2>
+										<h2 class="text-[14px] font-light leading-[120%] text-[#737275]">
+											{testimonial.position}
+										</h2>
 									{/if}
 								</div>
 							</div>
 						</div>
 
-						<div class="pt-[1.25rem] text-left text-[#737275] text-[14px] md:text-[16px] leading-[150%] font-normal">
-							<p>{truncateText(testimonial.review, 200)}</p>
+						<div
+							class="pt-[1.25rem] text-left text-[14px] font-normal leading-[150%] text-[#737275] md:text-[16px]"
+						>
+							<p>{testimonial.review}</p>
 						</div>
 					</div>
 				{/if}
 			{/each}
-		</div>
+		</Masonry>
 	</div>
 </div>
