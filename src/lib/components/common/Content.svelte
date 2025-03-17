@@ -1,4 +1,4 @@
-<script lang="ts">
+<!-- <script lang="ts">
 	import { PortableText } from '@portabletext/svelte';
 	import type { Section } from '../../../types/privacyAndPolicy.types';
 	import VioletGradient from '../pages/privacyAndPolicy/VioletGradient.svelte';
@@ -91,4 +91,4 @@
 			</div>
 		{/each}
 	</div>
-</div>
+</div> -->
