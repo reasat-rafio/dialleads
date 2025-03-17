@@ -1,31 +1,32 @@
 <script lang="ts">
-	import Button from '$lib/components/ui/button/button.svelte';
 	import { AnimatePresence, Motion } from 'svelte-motion';
-	import { imgBuilder } from '$lib/sanity/sanity-client';
+	import { innerWidth } from 'svelte/reactivity/window';
 	import SanityImage from '$lib/sanity/sanity-image/sanity-image.svelte';
-	import type { Hero, HeroProps } from '../../../../../types/landing.types';
+	import Button from '$lib/components/ui/button/button.svelte';
+	import { imgBuilder } from '$lib/sanity/sanity-client';
+	import SectionIconAndName from '$lib/components/common/sectionIconAndName.svelte';
 	import Video from './Video.svelte';
 	import { X } from 'lucide-svelte';
-	import SectionIconAndName from '$lib/components/common/sectionIconAndName.svelte';
 	import { PortableText } from '@portabletext/svelte';
 	import VioletGradient from './VioletGradient.svelte';
-	import { writable } from 'svelte/store';
+	import type { Hero, HeroProps } from '../../../../../types/landing.types';
+	import { cn } from '$lib/utils';
 
 	let { props }: { props: HeroProps } = $props();
 	let { hero }: { hero: Hero } = $derived(props);
 	let isIntersecting = true;
 	let windowWidth = $state(0);
 
-	const isVideoOpen = writable(false);
-	const isCloseHovered = writable(false);
-	const isPlayHovered = writable(false);
+	let isVideoOpen = $state(false);
+	let isCloseHovered = $state(false);
+	let isPlayHovered = $state(false);
 
 	function openVideo() {
-		isVideoOpen.set(true);
+		isVideoOpen = true;
 	}
 
 	function closeVideo() {
-		isVideoOpen.set(false);
+		isVideoOpen = false;
 	}
 
 	let animationVariants = {
@@ -37,9 +38,14 @@
 	};
 
 	let selectedAnimation = animationVariants['from-right'];
+
+	$effect(() => {
+		if (innerWidth.current) {
+			windowWidth = innerWidth.current;
+		}
+	});
 </script>
 
-<svelte:window bind:innerWidth={windowWidth} />
 <div
 	class="relative bg-hero-gradient-mobile pt-[7.31rem] lg:mx-[0.63rem] lg:mt-[0.63rem] lg:rounded-[1.875rem] lg:bg-hero-gradient lg:pt-[5.7rem]"
 >
@@ -51,15 +57,16 @@
 	<SectionIconAndName
 		bgColor="background: linear-gradient(120deg, rgba(32, 30, 44, 1.0) 0%, rgba(53, 50, 63, 1.0) 100%);"
 		wrapperClass="relative"
-		borderClass="z-10 relative bg-primary-gradient"
+		borderClass="z-10 relative"
 		sectionNameClass="text-white app-title-3 !font-[500]"
+		sectionTitleClass="text-white mb-[0.88rem] leading-tight"
 		sectionIcon={hero?.sectionIcon}
 		sectionName={hero?.sectionName}
 	/>
 	<div class="relative z-10 bg-transparent">
 		<h1
-			class="mx-auto mb-3 w-fit px-4 text-center font-geist text-[48px] font-semibold leading-[115%] tracking-[-1px] text-white
-	        md:px-0 lg:text-[68px] lg:font-bold lg:leading-[82px] lg:tracking-[-1.4px]"
+			class="mx-auto mb-3 w-fit px-4 text-center font-geist text-[3rem] font-semibold leading-[115%] tracking-[-1px] text-white
+	        md:px-0 lg:text-[4.25rem] lg:font-bold lg:leading-[5.125rem] lg:tracking-[-1.4px]"
 		>
 			<PortableText
 				value={hero?.heroTitle}
@@ -72,7 +79,7 @@
 		</h1>
 	</div>
 	<p
-		class="app-body-4 mx-auto mt-4 w-full max-w-[335px] text-center font-normal text-[#DCDAE0] lg:mt-[0.75rem] lg:max-w-[627px] lg:px-12 lg:text-[20px] lg:leading-[150%] lg:tracking-[0%]"
+		class="app-body-4 mx-auto mt-4 w-full max-w-[20.938rem] text-center font-normal text-[#DCDAE0] lg:mt-[0.75rem] lg:max-w-[39.188rem] lg:px-12 lg:text-[1.25rem] lg:leading-[150%] lg:tracking-[0%]"
 	>
 		{hero?.subtitle}
 	</p>
@@ -105,9 +112,10 @@
 	</div>
 
 	<div
-		style=""
-		class="relative mx-auto mt-[3.4rem] flex h-fit w-full max-w-[75rem] justify-center px-5 opacity-70 lg:h-full xl:px-0
-		{windowWidth <= 320 ? 'mt-[5.95rem] h-fit' : 'h-fit'}"
+		class={cn(
+			'relative mx-auto mt-[3.4rem] flex h-fit w-full max-w-[75rem] justify-center px-5 opacity-70 lg:h-full xl:px-0',
+			windowWidth <= 320 ? 'mt-[5.95rem] h-fit' : 'h-fit'
+		)}
 	>
 		<div class="relative w-full rounded-t-full">
 			{#if windowWidth > 700}
@@ -137,8 +145,8 @@
 			>
 				<Button
 					class="bg-transparent hover:bg-transparent"
-					onmouseenter={() => isPlayHovered.set(true)}
-					onmouseleave={() => isPlayHovered.set(false)}
+					onmouseenter={() => (isPlayHovered = true)}
+					onmouseleave={() => (isPlayHovered = false)}
 					onclick={openVideo}
 				>
 					<SanityImage
@@ -146,14 +154,14 @@
 						src={hero?.videoPlayBtnIcon}
 						imageUrlBuilder={imgBuilder}
 						alt={hero?.videoPlayBtnIcon?.alt || 'icon'}
-						style="transform: scale({$isPlayHovered ? 1.1 : 1}); transition: transform 0.3s ease;"
+						style="transform: scale({isPlayHovered ? 1.1 : 1}); transition: transform 0.3s ease;"
 					/>
 				</Button>
 			</div>
 		</div>
 	</div>
 
-	<AnimatePresence let:item list={[{ key: $isVideoOpen }]}>
+	<AnimatePresence let:item list={[{ key: isVideoOpen }]}>
 		{#if item.key}
 			<Motion initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} let:motion>
 				<div
@@ -172,22 +180,22 @@
 							<Motion let:motion whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.95 }}>
 								<button
 									use:motion
-									class="absolute z-[110] -top-3 -right-3 rounded-full bg-neutral-900/90 p-2 text-xl text-white ring-1 ring-violet-600 backdrop-blur-md"
+									class="absolute -right-3 -top-3 z-[110] rounded-full bg-neutral-900/90 p-2 text-xl text-white ring-1 ring-violet-600 backdrop-blur-md"
 									onclick={closeVideo}
-									onmouseenter={() => isCloseHovered.set(true)}
-									onmouseleave={() => isCloseHovered.set(false)}
+									onmouseenter={() => (isCloseHovered = true)}
+									onmouseleave={() => (isCloseHovered = false)}
 								>
 									<X class="size-4" />
 								</button>
 							</Motion>
 							<Motion
-								animate={{ scale: $isCloseHovered ? 0.98 : 1 }}
+								animate={{ scale: isCloseHovered ? 0.98 : 1 }}
 								transition={{ duration: 0.2 }}
 								let:motion
 							>
 								<div
 									use:motion
-									class="relative z-[100] flex w-full h-auto overflow-hidden rounded-2xl border-2 border-white"
+									class="relative z-[100] flex h-auto w-full overflow-hidden rounded-2xl border-2 border-white"
 								>
 									<Video {isIntersecting} mov={hero?.video?.mov} webm={hero?.video?.webm} />
 								</div>

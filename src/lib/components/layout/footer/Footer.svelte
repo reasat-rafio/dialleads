@@ -1,14 +1,10 @@
 <script lang="ts">
 	import { imgBuilder } from '$lib/sanity/sanity-client';
 	import SanityImage from '$lib/sanity/sanity-image/sanity-image.svelte';
-
 	import type { SiteDataProps } from '../../../../types/site.types';
 
 	let { footer }: { footer: SiteDataProps['footer'] } = $props();
-	let windowWidth = $state(0);
 </script>
-
-<svelte:window bind:innerWidth={windowWidth} />
 
 <div class="relative flex w-full flex-col items-center pt-[56px] lg:pt-[120px]">
 	<div
