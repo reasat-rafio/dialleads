@@ -19,15 +19,16 @@ export interface Nav {
 	_rev: string;
 	_type: string;
 	_id: string;
+	companyName: string;
+	menuIcon: SanityImageWithAlt;
 	menu: LinkMenu[];
+	cta: LinkItem;
 	_updatedAt: Date;
 	_createdAt: Date;
 }
 export interface LinkMenu {
 	_type: 'link';
 	link: LinkItem;
-
-	isIndustryPage: boolean;
 }
 export interface LinkItem {
 	_type: 'link';

@@ -1,7 +1,7 @@
 <script lang="ts">
 	import { page } from '$app/state';
 	import Footer from '$lib/components/layout/footer/Footer.svelte';
-	// import Navbar from '$lib/components/layout/navbar/Navbar.svelte';
+	import Navbar from '$lib/components/layout/navbar/Navbar.svelte';
 	import { urlFor } from '$lib/sanity/sanity-client';
 
 	let { data, children } = $props();
@@ -12,7 +12,6 @@
 			logos: { favicon, logo },
 			footer
 		}
-		// industries,
 	} = $derived(data);
 
 	let faviconImage = $derived.by(() => {
@@ -26,8 +25,7 @@
 
 <div class="relative">
 	<div class="">
-		<!-- // ensure industries is array -->
-		<!-- <Navbar {industries} pathName={page.url.pathname} {nav} {logo} /> -->
+		<Navbar {nav} {logo} pathName={page.url.pathname} />
 	</div>
 
 	{@render children()}

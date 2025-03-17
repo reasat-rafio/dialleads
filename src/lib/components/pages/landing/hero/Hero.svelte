@@ -57,8 +57,8 @@
 	<SectionIconAndName
 		bgColor="background: linear-gradient(120deg, rgba(32, 30, 44, 1.0) 0%, rgba(53, 50, 63, 1.0) 100%);"
 		wrapperClass="relative"
-		borderClass="z-10 relative"
-		sectionNameClass="text-white app-title-3 !font-[500]"
+		borderClass="z-10 relative bg-primary-gradient bg-clip-padding"
+		sectionNameClass="text-white text-[1.125rem] leading-[1.5rem] tracking-[0%] font-semibold"
 		sectionTitleClass="text-white mb-[0.88rem] leading-tight"
 		sectionIcon={hero?.sectionIcon}
 		sectionName={hero?.sectionName}
