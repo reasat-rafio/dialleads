@@ -134,10 +134,10 @@
 							</div>
 						{/each}
 					</div>
-					<div class="mt-[1.75rem] mb-[1rem] w-fit">
+					<div class="mt-[1.25rem] my-[1rem] w-fit">
 						<a
 							href={cta.type === 'internal' ? cta.internalLink : cta.externalLink}
-							class="rounded-[0.75rem] bg-primary-gradient px-5 py-[0.875rem] font-geist text-white box-border"
+							class="block rounded-[0.75rem] bg-primary-gradient px-5 py-[0.875rem] font-geist text-white box-border"
 						>
 							{cta.title}
 						</a>
