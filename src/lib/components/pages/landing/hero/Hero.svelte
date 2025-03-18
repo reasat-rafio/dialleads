@@ -14,8 +14,8 @@
 
 	let { props }: { props: HeroProps } = $props();
 	let { hero }: { hero: Hero } = $derived(props);
+	
 	let isIntersecting = true;
-	let windowWidth = $state(0);
 
 	let isVideoOpen = $state(false);
 	let isCloseHovered = $state(false);
@@ -39,11 +39,6 @@
 
 	let selectedAnimation = animationVariants['from-right'];
 
-	$effect(() => {
-		if (innerWidth.current) {
-			windowWidth = innerWidth.current;
-		}
-	});
 </script>
 
 <div
@@ -114,11 +109,11 @@
 	<div
 		class={cn(
 			'relative mx-auto mt-[3.4rem] flex h-fit w-full max-w-[75rem] justify-center px-5 opacity-70 lg:h-full xl:px-0',
-			windowWidth <= 320 ? 'mt-[5.95rem] h-fit' : 'h-fit'
+			(innerWidth.current && innerWidth.current <= 320) ? 'mt-[5.95rem] h-fit' : 'h-fit'
 		)}
 	>
 		<div class="relative w-full rounded-t-full">
-			{#if windowWidth > 700}
+			{#if innerWidth.current && innerWidth.current > 700}
 				<SanityImage
 					lqip
 					innerClass="w-full object-cover"

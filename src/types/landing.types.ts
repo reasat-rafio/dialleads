@@ -278,6 +278,7 @@ export interface GetStartedCard {
 	cardDescription: string;
 	ctaBtnText: string;
 	ctaBtnIcon: SanityImageWithAlt;
+	ctaBtnURL: string;
 }
 
 export interface IntegrationsProps {

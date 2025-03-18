@@ -13,10 +13,8 @@
 	let { banner }: { banner: Banner } = $derived(props);
 	let { title: bannertitle, cta } = $derived(banner);
 
-	let windowWidth = $state(0);
 </script>
 
-<svelte:window bind:innerWidth={windowWidth} />
 
 <div class="relative mx-auto mt-[2.5rem] w-full max-w-7xl px-5 lg:mt-[5rem] 2xl:px-0">
 	<div

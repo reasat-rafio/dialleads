@@ -63,9 +63,14 @@ const getStarted = defineType({
                                 }),
                                 defineField({
                                     name: 'ctaBtnIcon',
-                                    type: 'image',
                                     title: 'CTA Button Icon',
+                                    type: 'image',
                                     options: { hotspot: true },
+                                }),
+                                defineField({
+                                    name: 'ctaBtnURL',
+                                    type: 'string',
+                                    title: 'CTA Button URL',
                                 }),
                             ]
                         }

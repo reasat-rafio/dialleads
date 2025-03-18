@@ -59,7 +59,7 @@
 				</h5>
 			</a>
 			<Button
-				class="right-0 rounded bg-transparent px-4 py-2 hover:bg-transparent"
+				class="right-0 rounded bg-transparent px-4 py-2 shadow-none hover:bg-transparent"
 				onclick={togglePopup}
 			>
 				{#if isPopupVisible}
@@ -97,7 +97,7 @@
 					</p>
 				{:else}
 					<!-- Hamburger Icon -->
-					<div class="flex items-center">
+					<div class="flex items-center {isScrolled ? 'brightness-0' : 'brightness-100'}">
 						<SanityImage
 							class="h-[2rem] w-[2rem]"
 							src={menuIcon}
@@ -122,7 +122,11 @@
 				>
 					<div class="relative flex flex-col justify-start gap-3">
 						{#each nav?.menu as item}
-							<div role="button" tabindex="0" class="flex items-center text-start hover:bg-violet-600/5 rounded py-1 transition-colors duration-300 ease-linear">
+							<div
+								role="button"
+								tabindex="0"
+								class="flex items-center rounded py-1 text-start transition-colors duration-300 ease-linear hover:bg-violet-600/5"
+							>
 								<a
 									href={item?.link?.type === 'internal'
 										? item?.link?.internalLink
@@ -134,10 +138,10 @@
 							</div>
 						{/each}
 					</div>
-					<div class="mt-[1.25rem] my-[1rem] w-fit">
+					<div class="my-[1rem] mt-[1.25rem] w-fit">
 						<a
 							href={cta.type === 'internal' ? cta.internalLink : cta.externalLink}
-							class="block rounded-[0.75rem] bg-primary-gradient px-5 py-[0.875rem] font-geist text-white box-border"
+							class="box-border block rounded-[0.75rem] bg-primary-gradient px-5 py-[0.875rem] font-geist text-white"
 						>
 							{cta.title}
 						</a>
