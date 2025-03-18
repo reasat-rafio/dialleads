@@ -60,8 +60,7 @@
 	/>
 	<div class="relative z-10 bg-transparent">
 		<h1
-			class="mx-auto mb-3 w-fit px-4 text-center font-geist text-[3rem] font-semibold leading-[115%] tracking-[-1px] text-white
-	        md:px-0 lg:text-[4.25rem] lg:font-bold lg:leading-[5.125rem] lg:tracking-[-1.4px]"
+			class="mx-auto mb-3 w-fit px-4 text-center font-geist text-[3rem] font-semibold leading-[115%] tracking-[-1px] text-white md:px-0 lg:text-[4.25rem] lg:font-bold lg:leading-[5.125rem] lg:tracking-[-1.4px]"
 		>
 			<PortableText
 				value={hero?.heroTitle}
@@ -88,8 +87,8 @@
       px-2 py-2 text-sm shadow-xl backdrop-blur-[1px] transition-colors"
 		>
 			<Button
-				class="flex h-[3.5rem] w-[13.5rem] 
-          items-center rounded-lg bg-primary-gradient px-6 
+				class="flex h-[3.5rem] w-[13.5rem]
+          items-center rounded-lg bg-primary-gradient px-6
           py-3 font-geist text-lg font-semibold text-white shadow-xl hover:shadow-xl focus:outline-none"
 			>
 				<!-- Icon (SanityImage) -->

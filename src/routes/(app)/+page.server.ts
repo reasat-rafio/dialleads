@@ -66,7 +66,7 @@ export const load: PageServerLoad = async ({ setHeaders }) => {
 	const data: LandingPageProps = await sanityClient.fetch(query);
 	setHeaders({ 'cache-control': 'public, max-age=120' });
 
-	if (!data) throw error(404, { message: 'Not found' });
+	if (!data) error(404, { message: 'Not found' });
 
 	return { page: data, testCallForm: await superValidate(zod(formSchema)) };
 };

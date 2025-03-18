@@ -1,4 +1,6 @@
 import type { SanityAsset, SanityImageObject } from '@sanity/image-url/lib/types/types';
+import type { PortableTextBlock } from 'sanity';
+import type { CTA } from './landing.types';
 
 export interface SeoProps {
 	_type: 'seo';
@@ -24,4 +26,15 @@ export type SanityImageWithAlt = SanityImageObject & {
 export interface Video {
 	mov: string;
 	webm: string;
+}
+
+export interface Banner {
+	title: PortableTextBlock[];
+	cta: CTA;
+}
+
+export interface BannerProps {
+	_key?: string;
+	_type: 'common.banner';
+	banner: Banner;
 }

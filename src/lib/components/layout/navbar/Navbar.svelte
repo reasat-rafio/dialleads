@@ -12,7 +12,7 @@
 	let { nav, logo }: Props = $props();
 </script>
 
-<div class="">
+<div>
 	<div class="hidden lg:block">
 		<DesktopNavbar {nav} {logo} />
 	</div>

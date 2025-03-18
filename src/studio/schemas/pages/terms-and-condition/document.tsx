@@ -34,7 +34,9 @@ const termsAndCondition = defineType({
 								blockEditor: {
 									icon: () => <FaPenFancy />,
 									render: ({ children }: { children: React.ReactNode }) => (
-										<span className="violet-gradient">{children}</span>
+										<span className="bg-[linear-gradient(75deg,_#731AFF_31%,_#FCCEEE_170%)] bg-clip-text font-semibold text-white/15">
+											{children}
+										</span>
 									)
 								}
 							}
@@ -44,40 +46,15 @@ const termsAndCondition = defineType({
 			]
 		}),
 		defineField({
-			name: 'description',
-			title: 'Description',
+			name: 'body',
+			title: 'Body',
 			type: 'array',
 			of: [{ type: 'block' }],
 			validation: (Rule) => Rule.required()
 		}),
 		defineField({
-			name: 'sections',
-			title: 'Sections',
-			type: 'array',
-			of: [
-				defineField({
-					name: 'sections',
-					type: 'object',
-					fields: [
-						defineField({
-							name: 'sectionTitle',
-							title: 'Section Title',
-							type: 'string',
-							validation: (Rule) => Rule.required()
-						}),
-						defineField({
-							name: 'content',
-							title: 'Content',
-							type: 'array',
-							of: [{ type: 'block' }], // Rich text support
-							validation: (Rule) => Rule.required()
-						})
-					],
-					preview: {
-						select: { title: 'sectionTitle' }
-					}
-				})
-			]
+			name: 'banner',
+			type: 'common.banner'
 		})
 	],
 	preview: {
