@@ -34,7 +34,7 @@ export interface Banner {
 }
 
 export interface BannerProps {
-	_key: string;
+	_key?: string;
 	_type: 'common.banner';
 	banner: Banner;
 }

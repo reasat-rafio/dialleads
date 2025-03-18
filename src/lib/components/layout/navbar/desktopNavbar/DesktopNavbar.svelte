@@ -47,9 +47,9 @@
 <div class="relative mx-5 rounded-[1.875rem] xl:mx-0 xl:px-0">
 	<div
 		class={cn(
-			'fixed left-0 top-0 z-50 w-full pb-4 pt-4 text-black transition-[transform,background-color] duration-200 ease-linear [box-shadow:_0_4px_6px_rgba(0,_0,_0,_0.1)]',
+			'transition-ALL fixed left-0 top-0 z-50 w-full pb-4 pt-4 text-black duration-200 ease-linear ',
 			!visible ? '-translate-y-full' : 'translate-y-0',
-			isScrolled && 'bg-white'
+			isScrolled && 'bg-white [box-shadow:_0_4px_6px_rgba(0,_0,_0,_0.1)]'
 		)}
 	>
 		<div class="mx-auto flex max-w-7xl justify-between lg:px-5 2xl:px-0">

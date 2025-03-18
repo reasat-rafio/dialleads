@@ -51,6 +51,10 @@ const privacyPolicy = defineType({
 			type: 'array',
 			of: [{ type: 'block' }],
 			validation: (Rule) => Rule.required()
+		}),
+		defineField({
+			name: 'banner',
+			type: 'common.banner'
 		})
 	],
 	preview: {
