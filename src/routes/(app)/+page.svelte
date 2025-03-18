@@ -1,18 +1,17 @@
 <script lang="ts">
-	import Comparison from '$lib/components/pages/landing/comparison/Comparison.svelte';
+	import Banner from '$lib/components/pages/landing/banner/Banner.svelte';
 	import Clients from '$lib/components/pages/landing/clients/Clients.svelte';
-	import TryIt from '$lib/components/pages/landing/tryIt/TryIt.svelte';
+	import Comparison from '$lib/components/pages/landing/comparison/Comparison.svelte';
+	import Faq from '$lib/components/pages/landing/faq/Faq.svelte';
 	import WhyDialleadsAi from '$lib/components/pages/landing/features/WhyDialleadsAI.svelte';
+	import HowToGetStarted from '$lib/components/pages/landing/getStarted/HowToGetStarted.svelte';
+	import Hero from '$lib/components/pages/landing/hero/Hero.svelte';
+	import Industries from '$lib/components/pages/landing/industry/Industries.svelte';
+	import Integrations from '$lib/components/pages/landing/integrations/Integrations.svelte';
+	import Testimonials from '$lib/components/pages/landing/testimonials/Testimonials.svelte';
+	import TryIt from '$lib/components/pages/landing/tryIt/TryIt.svelte';
 	import UseCase from '$lib/components/pages/landing/useCase/UseCase.svelte';
 	import WhyChooseUs from '$lib/components/pages/landing/whyChooseUs/WhyChooseUs.svelte';
-	import HowToGetStarted from '$lib/components/pages/landing/getStarted/HowToGetStarted.svelte';
-	import Integrations from '$lib/components/pages/landing/integrations/Integrations.svelte';
-	import Hero from '$lib/components/pages/landing/hero/Hero.svelte';
-	import Testimonials from '$lib/components/pages/landing/testimonials/Testimonials.svelte';
-	import Faq from '$lib/components/pages/landing/faq/Faq.svelte';
-	import Banner from '$lib/components/pages/landing/banner/Banner.svelte';
-	import Industries from '$lib/components/pages/landing/industry/Industries.svelte';
-
 	import Seo from '$lib/components/Seo.svelte';
 
 	let { data } = $props();
@@ -23,11 +22,13 @@
 			logos: { ogImage }
 		}
 	} = $derived(data);
+
+	$inspect(sections);
 </script>
 
 <Seo {seo} siteOgImg={ogImage} />
 
-<div class="">
+<div>
 	{#if !!sections?.length}
 		{#each sections as props}
 			{#if props._type === 'landing.hero'}
@@ -54,12 +55,8 @@
 				<Testimonials {props} />
 			{:else if props._type === 'landing.faq'}
 				<Faq {props} />
-			{:else if props._type === 'landing.banner'}
+			{:else if props._type === 'common.banner'}
 				<Banner {props} />
-				<!--{:else if props._type === 'landing.pricing'}
-				<Pricing {props} {pricing} />
-			{:else if props._type === 'landing.dataDriven'}
-				<DataDriven {props} /> -->
 			{/if}
 		{/each}
 	{/if}

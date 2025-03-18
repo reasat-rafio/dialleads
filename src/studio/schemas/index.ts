@@ -5,7 +5,17 @@ import pages from './pages';
 import site from './site';
 import testimonials from './testimonials';
 import industries from './industries';
-import banner from './banner';
 import video from './video';
+import common from './common';
 
-export const schemaTypes = [social, seo, link, testimonials, industries, video, banner, ...site, ...pages];
+export const schemaTypes = [
+	social,
+	seo,
+	link,
+	testimonials,
+	industries,
+	video,
+	...common,
+	...site,
+	...pages
+];

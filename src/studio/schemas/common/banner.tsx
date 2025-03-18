@@ -5,7 +5,7 @@ import React from 'react';
 
 const banner = defineType({
 	title: 'Banner',
-	name: 'landing.banner',
+	name: 'common.banner',
 	type: 'object',
 	icon: BsImage,
 	fields: [
@@ -48,18 +48,18 @@ const banner = defineType({
 					title: 'Call to Action Button',
 					type: 'link',
 					description: 'Add a call to action for the banner.'
-				}),
+				})
 			]
-		},
+		}
 	],
 	preview: {
 		select: {
-			title: 'banner.cta.title',
+			title: 'banner.cta.title'
 		},
 		prepare({ title }) {
 			return {
 				title: title || 'Untitled Banner',
-				subtitle: 'Banner',
+				subtitle: 'Banner'
 			};
 		}
 	}

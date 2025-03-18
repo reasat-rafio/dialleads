@@ -1,4 +1,4 @@
-import type { Link, SanityImageWithAlt, SeoProps } from './common.types';
+import type { BannerProps, Link, SanityImageWithAlt, SeoProps } from './common.types';
 import type { PortableTextBlock } from '@portabletext/types';
 
 export interface LandingPageProps {
@@ -333,15 +333,4 @@ export interface DataDriven {
 export interface SectionDetails {
 	sectionName: string;
 	sectionIcon: SanityImageWithAlt;
-}
-
-export interface BannerProps {
-	_key: string;
-	_type: 'landing.banner';
-	banner: Banner;
-}
-
-export interface Banner {
-	title: PortableTextBlock[];
-	cta: CTA;
 }

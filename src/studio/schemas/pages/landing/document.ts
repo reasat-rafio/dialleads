@@ -9,6 +9,7 @@ const landingPage = defineType({
 			name: 'seo',
 			type: 'seo'
 		}),
+
 		defineField({
 			name: 'sections',
 			type: 'array',
@@ -17,7 +18,6 @@ const landingPage = defineType({
 				{ type: 'landing.hero' },
 				{ type: 'landing.testimonials' },
 				{ type: 'landing.faq' },
-				{ type: 'landing.pricing' },
 				{ type: 'landing.features' },
 				{ type: 'landing.comparison' },
 				{ type: 'landing.useCase' },
@@ -28,7 +28,7 @@ const landingPage = defineType({
 				{ type: 'landing.integrations' },
 				{ type: 'landing.whyDialleadsAI' },
 				{ type: 'landing.whyChooseUs' },
-				{ type: 'landing.banner' },
+				// { type: 'common.banner' },
 				{ type: 'landing.dataDriven' }
 			]
 		})
