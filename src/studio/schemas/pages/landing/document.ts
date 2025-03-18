@@ -1,41 +1,44 @@
 import { defineField, defineType } from 'sanity';
 
 const landingPage = defineType({
-  name: 'landingPage',
-  title: 'Landing Page',
-  type: 'document',
-  fields: [
-    defineField({
-      name: 'seo',
-      type: 'seo',
-    }),
-    defineField({
-      name: 'sections',
-      type: 'array',
-      validation: (Rule) => Rule.required().min(1),
-      of: [
-        { type: 'landing.hero' },
-        { type: 'landing.testimonials' },
-        { type: 'landing.faq' },
-        { type: 'landing.pricing' },
-        { type: 'landing.features' },
-        { type: 'landing.comparison' },
-        { type: 'landing.useCase' },
-        { type: 'landing.clients' },
-        { type: 'landing.testCall' },
-        { type: 'landing.industry' },
-        { type: 'landing.whyDialleadsAI' },
-        { type: 'landing.whyChooseUs' },
-        { type: 'landing.dataDriven' },
-      ],
-    }),
-  ],
-  preview: {
-    select: {
-      title: 'seo.title',
-      subtitle: 'seo.description',
-    },
-  },
+	name: 'landingPage',
+	title: 'Landing Page',
+	type: 'document',
+	fields: [
+		defineField({
+			name: 'seo',
+			type: 'seo'
+		}),
+		defineField({
+			name: 'sections',
+			type: 'array',
+			validation: (Rule) => Rule.required().min(1),
+			of: [
+				{ type: 'landing.hero' },
+				{ type: 'landing.testimonials' },
+				{ type: 'landing.faq' },
+				{ type: 'landing.pricing' },
+				{ type: 'landing.features' },
+				{ type: 'landing.comparison' },
+				{ type: 'landing.useCase' },
+				{ type: 'landing.clients' },
+				{ type: 'landing.testCall' },
+				{ type: 'landing.industry' },
+				{ type: 'landing.getStarted' },
+				{ type: 'landing.integrations' },
+				{ type: 'landing.whyDialleadsAI' },
+				{ type: 'landing.whyChooseUs' },
+				{ type: 'landing.banner' },
+				{ type: 'landing.dataDriven' }
+			]
+		})
+	],
+	preview: {
+		select: {
+			title: 'seo.title',
+			subtitle: 'seo.description'
+		}
+	}
 });
 
 export default landingPage;

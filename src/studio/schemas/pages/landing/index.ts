@@ -10,24 +10,30 @@ import useCase from './useCase';
 import clients from './clients';
 import testCall from './testCall';
 import industry from './industry';
+import banner from './banner';
 
 import whyDialleadsAI from './whyDialleadsAI';
 import whyChooseUs from './whyChooseUs';
+import getStarted from './getstarted';
+import integrations from './integrations';
 import dataDriven from './dataDriven';
 
 export default [
-  landingPage,
-  hero,
-  testimonials,
-  faq,
-  pricing,
-  comparison,
-  useCase,
-  clients,
-  testCall,
-  industry,
-  features,
-  whyDialleadsAI,
-  whyChooseUs,
-  dataDriven
+	landingPage,
+	hero,
+	testimonials,
+	faq,
+	pricing,
+	comparison,
+	useCase,
+	clients,
+	testCall,
+	industry,
+	features,
+	whyDialleadsAI,
+	whyChooseUs,
+	getStarted,
+	integrations,
+	dataDriven,
+	banner,
 ];
