@@ -1,5 +1,5 @@
 <script lang="ts">
-	import Banner from '$lib/components/pages/landing/banner/Banner.svelte';
+	import Banner from '$lib/components/common/banner/Banner.svelte';
 	import Clients from '$lib/components/pages/landing/clients/Clients.svelte';
 	import Comparison from '$lib/components/pages/landing/comparison/Comparison.svelte';
 	import Faq from '$lib/components/pages/landing/faq/Faq.svelte';
@@ -22,8 +22,6 @@
 			logos: { ogImage }
 		}
 	} = $derived(data);
-
-	$inspect(sections);
 </script>
 
 <Seo {seo} siteOgImg={ogImage} />
