@@ -1,6 +1,4 @@
 <script lang="ts">
-	// import Pricing from '$lib/components/pages/landing/pricing/Pricing.svelte';
-	// import DataDriven from '$lib/components/pages/landing/dataDriven/DataDriven.svelte';
 	import Comparison from '$lib/components/pages/landing/comparison/Comparison.svelte';
 	import Clients from '$lib/components/pages/landing/clients/Clients.svelte';
 	import TryIt from '$lib/components/pages/landing/tryIt/TryIt.svelte';

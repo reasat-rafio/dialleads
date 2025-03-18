@@ -127,7 +127,7 @@
 		/>
 
 		<div
-			class="relative z-50 mx-auto flex w-full max-w-7xl flex-col items-center justify-center px-5"
+			class="relative z-30 mx-auto flex w-full max-w-7xl flex-col items-center justify-center px-5"
 		>
 			<div class="relative">
 				<SectionIconAndName
@@ -153,7 +153,7 @@
 					<Carousel.Content class="-ml-2 w-full lg:-ml-3">
 						{#each props.useCases as useCase, index}
 							<Carousel.Item
-								class="flex justify-center w-full basis-auto bg-transparent pl-4 max-lg:max-w-[305px] lg:basis-1/3 lg:pl-5 xl:basis-1/4"
+								class="flex w-full basis-auto justify-center bg-transparent pl-4 max-lg:max-w-[305px] lg:basis-1/3 lg:pl-5 xl:basis-1/4"
 							>
 								<Card.Root
 									style="background: linear-gradient(242deg, rgba(255, 255, 255, 0.21) 0%, rgba(255, 255, 255, 0.10) 100%);"
@@ -236,13 +236,13 @@
 					</Carousel.Content>
 				</Carousel.Root>
 
-				<div class="z-50 flex justify-center gap-x-2 py-[3.12rem]">
+				<div class="z-30 flex justify-center gap-x-2 py-[3.12rem]">
 					{#each Array(count) as _, i}
 						{#if i === current - 1}
-							<div class="z-50 h-3 w-12 rounded-full bg-[#8B5CF6]"></div>
+							<div class="z-30 h-3 w-12 rounded-full bg-[#8B5CF6]"></div>
 						{/if}
 						{#if i < count - 1}
-							<div class="z-50 h-3 w-3 rounded-full bg-[#ad90f0]"></div>
+							<div class="z-30 h-3 w-3 rounded-full bg-[#ad90f0]"></div>
 						{/if}
 					{/each}
 				</div>

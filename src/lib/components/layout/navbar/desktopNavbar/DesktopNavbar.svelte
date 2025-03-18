@@ -4,6 +4,8 @@
 	import type { SanityImageWithAlt } from '../../../../../types/common.types';
 	import type { Nav } from '../../../../../types/site.types';
 	import { page } from '$app/state';
+	import { cn } from '$lib/utils';
+	import { scrollY } from 'svelte/reactivity/window';
 
 	interface Props {
 		nav: Nav;
@@ -13,13 +15,26 @@
 	let { nav, logo }: Props = $props();
 	let { companyName, cta } = $derived(nav);
 
-	let isScrolled = $state(false);
-
-	function handleScroll() {
-		isScrolled = window.scrollY > 0;
-	}
+	let visible = $state(true);
+	let lastScrollTop = $state(0);
+	let isScrolled = $derived((scrollY.current ?? 0) > 0);
 
 	$effect(() => {
+		const handleScroll = () => {
+			const currentScrollTop = window.scrollY || document.documentElement.scrollTop;
+
+			if (currentScrollTop < 700) {
+				visible = true;
+				console.log('visible', visible, currentScrollTop);
+			} else if (currentScrollTop < lastScrollTop) {
+				visible = false;
+			} else {
+				visible = true;
+			}
+
+			lastScrollTop = currentScrollTop <= 0 ? 0 : currentScrollTop;
+		};
+
 		window.addEventListener('scroll', handleScroll);
 		return () => window.removeEventListener('scroll', handleScroll);
 	});
@@ -31,7 +46,11 @@
 
 <div class="relative mx-5 rounded-[1.875rem] xl:mx-0 xl:px-0">
 	<div
-		class={`${isScrolled ? 'fixed left-0 top-0 z-[1000] w-full bg-white pb-4 pt-4 text-black transition-[background-color] duration-300 ease-linear [box-shadow:_0_4px_6px_rgba(0,_0,_0,_0.1)]' : 'fixed inset-0 z-[300] pt-[2.2rem]'}`}
+		class={cn(
+			'fixed left-0 top-0 z-50 w-full pb-4 pt-4 text-black transition-[transform,background-color] duration-200 ease-linear [box-shadow:_0_4px_6px_rgba(0,_0,_0,_0.1)]',
+			!visible ? '-translate-y-full' : 'translate-y-0',
+			isScrolled && 'bg-white'
+		)}
 	>
 		<div class="mx-auto flex max-w-7xl justify-between lg:px-5 2xl:px-0">
 			<a href="/" class="flex items-center gap-[0.49rem]">
@@ -43,7 +62,10 @@
 					alt={logo?.alt || 'logo'}
 				/>
 				<h5
-					class={`font-geist text-[1.154rem] font-normal ${isScrolled || isPolicyPage ? 'text-black' : 'text-white'}`}
+					class={cn(
+						'font-geist text-[1.154rem] font-normal',
+						isScrolled || isPolicyPage ? 'text-black' : 'text-white'
+					)}
 				>
 					{companyName}
 				</h5>

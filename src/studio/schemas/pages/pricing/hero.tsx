@@ -53,7 +53,9 @@ const hero = defineType({
 										blockEditor: {
 											icon: () => <FaPenFancy />,
 											render: ({ children }: { children: React.ReactNode }) => (
-												<span className="violet-gradient">{children}</span>
+												<span className="bg-[linear-gradient(75deg,_#731AFF_31%,_#FCCEEE_170%)] bg-clip-text font-semibold text-white/15">
+													{children}
+												</span>
 											)
 										}
 									}
