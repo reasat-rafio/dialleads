@@ -1,6 +1,7 @@
 import { fontFamily } from 'tailwindcss/defaultTheme';
 import type { Config } from 'tailwindcss';
 import tailwindcssAnimate from 'tailwindcss-animate';
+import tailwindcssTypography from '@tailwindcss/typography';
 
 const config: Config = {
 	darkMode: ['class'],
@@ -23,16 +24,16 @@ const config: Config = {
 				'hero-gradient':
 					'radial-gradient(ellipse 55% 56% at center 95%, rgba(177,136,240,1.0), rgba(113, 48, 214, 0.9) 30%, rgba(24, 59, 241, 0.3) 60%, #070313 100%), radial-gradient(ellipse 85% 60% at center 95%, rgba(76, 29, 149, 0.7) 0%, rgba(71, 6, 209, 0.7) 30%, rgba(7, 3, 19, 1.0) 100%)',
 				'hero-gradient-mobile': `
-				  radial-gradient(113.28% 100% at 50% 100%, rgba(24, 59, 241, 0.3) 0%, #070313 68.79%), 
+				  radial-gradient(113.28% 100% at 50% 100%, rgba(24, 59, 241, 0.3) 0%, #070313 68.79%),
 				  linear-gradient(180deg, #000 0%, #5B21B6 100%, #7C3AED 100%, #A78BFA 100%)
 				`,
 				'real-world-gradient': `
-                  radial-gradient(113.28% 100% at 50% 0%, #000 0%, rgba(0, 0, 0, 0.00) 69.79%), 
+                  radial-gradient(113.28% 100% at 50% 0%, #000 0%, rgba(0, 0, 0, 0.00) 69.79%),
                   linear-gradient(180deg, #000 0%, #5B21B6 100%, #7C3AED 100%, #A78BFA 100%)
                 `,
 				'industry-gradient': `
-				  radial-gradient(113.28% 100% at 50% 0%, #000 0%, rgba(0, 0, 0, 0.00) 69.79%), 
-				  linear-gradient(180deg, #000 20%, #4C1D95 100%)  
+				  radial-gradient(113.28% 100% at 50% 0%, #000 0%, rgba(0, 0, 0, 0.00) 69.79%),
+				  linear-gradient(180deg, #000 20%, #4C1D95 100%)
 				`,
 
 				'footer-gradient':
@@ -138,7 +139,7 @@ const config: Config = {
 			}
 		}
 	},
-	plugins: [tailwindcssAnimate]
+	plugins: [tailwindcssAnimate, tailwindcssTypography]
 };
 
 export default config;

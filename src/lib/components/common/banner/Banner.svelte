@@ -1,22 +1,18 @@
 <script lang="ts">
 	import SanityImage from '$lib/sanity/sanity-image/sanity-image.svelte';
 	import { imgBuilder } from '$lib/sanity/sanity-client';
-	import type { BannerProps, Banner } from '../../../../../types/landing.types';
 	import { PortableText } from '@portabletext/svelte';
 	import VioletGradient from './VioletGradient.svelte';
+	import type { BannerProps } from '../../../../types/common.types';
 
 	interface Props {
 		props: BannerProps;
 	}
 
 	let { props }: Props = $props();
-	let { banner }: { banner: Banner } = $derived(props);
+	let { banner } = $derived(props);
 	let { title: bannertitle, cta } = $derived(banner);
-
-	let windowWidth = $state(0);
 </script>
-
-<svelte:window bind:innerWidth={windowWidth} />
 
 <div class="relative mx-auto mt-[2.5rem] w-full max-w-7xl px-5 lg:mt-[5rem] 2xl:px-0">
 	<div
