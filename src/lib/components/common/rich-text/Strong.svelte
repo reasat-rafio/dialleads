@@ -1,6 +1,7 @@
 <script lang="ts">
-	// export let children;
-	let { children }: { children: any } = $props();
+	import type { Snippet } from 'svelte';
+
+	let { children }: { children: Snippet } = $props();
 </script>
 
 <div class="inline text-2xl font-bold text-black">

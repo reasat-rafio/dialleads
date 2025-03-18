@@ -1,15 +1,20 @@
 <script lang="ts">
 	import Button from '$lib/components/ui/button/button.svelte';
+	import { goto } from '$app/navigation';
 	import { imgBuilder } from '$lib/sanity/sanity-client';
 	import SanityImage from '$lib/sanity/sanity-image/sanity-image.svelte';
 	import type { GetStartedCard } from '../../../../../types/landing.types';
 
 	let { card, index }: { card: GetStartedCard; index: number } = $props();
+
+	const handleCTAClick = () => {
+		goto(card?.ctaBtnURL ?? '/');
+	};
 </script>
 
-<div class="flex w-full flex-col rounded-[16px] border border-gray-200 p-[30px] sm:max-w-[304px]">
+<div class="flex h-full w-full flex-col rounded-[16px] border border-gray-200 p-[30px]">
 	<div
-		class="h-fit w-fit rounded-[6px] border border-violet-600 bg-violet-600/10 px-[14px] py-2 font-geist text-[20px] font-semibold leading-[100%] text-violet-600 tracking-[-0.7px]"
+		class="h-fit w-fit rounded-[6px] border border-violet-600 bg-violet-600/5 px-[14px] py-2 font-geist text-[20px] font-semibold leading-[100%] tracking-[-0.7px] text-primary"
 	>
 		{card?.stepText}
 	</div>
@@ -28,6 +33,7 @@
 	</div>
 
 	<Button
+		onclick={handleCTAClick}
 		class={`mt-[30px] flex h-[52px] w-full items-center gap-3 rounded-[0.75rem] ${index === 0 ? 'bg-primary-gradient text-white' : 'border border-violet-600 bg-transparent text-violet-600 hover:bg-transparent'} px-7 py-4`}
 	>
 		<SanityImage

@@ -8,7 +8,7 @@
 	import type { UseCaseProps } from '../../../../../types/landing.types';
 	import { onMount } from 'svelte';
 	import SectionIconAndName from '$lib/components/common/sectionIconAndName.svelte';
-	import { SectionIcon } from 'lucide-svelte';
+	import { innerWidth } from 'svelte/reactivity/window';
 
 	interface Props {
 		props: UseCaseProps;
@@ -17,13 +17,12 @@
 
 	let api = $state<CarouselAPI>();
 
-	let windowWidth = $state(0);
 	let count = $derived.by(() => {
-		if (windowWidth < 640) {
+		if (innerWidth.current && innerWidth.current < 640) {
 			return api ? api.scrollSnapList().length : 0;
-		} else if (windowWidth < 1024) {
+		} else if (innerWidth.current && innerWidth.current < 1024) {
 			return api ? api.scrollSnapList().length : 0;
-		} else if (windowWidth > 1024) {
+		} else if (innerWidth.current && innerWidth.current > 1024) {
 			return api ? api.scrollSnapList().length : 0;
 		}
 		return api ? api.scrollSnapList().length : 0;
@@ -116,7 +115,6 @@
 	}
 </script>
 
-<svelte:window bind:innerWidth={windowWidth} />
 
 <div class="relative mt-[2.5rem] h-full w-full px-[0.31rem] md:px-5 lg:mt-[5.06rem]">
 	<div class="h-full w-full rounded-[1.88rem] bg-real-world-gradient pt-[3rem] lg:pt-[5.13rem]">

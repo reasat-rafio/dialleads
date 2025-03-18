@@ -12,29 +12,22 @@
 	interface Props {
 		props: TestimonialsProps;
 	}
-	let windowWidth = $state(0);
 	let showDialog = $state(false);
 	let gridGap = $state('0.75rem');
 	let testimonials: TestimonialsProps['testimonials'] = $state([]);
 
 	let { props }: Props = $props();
 
-	function truncateText(text: string, maxWords: number) {
-		const words = text.split(' ');
-		if (words.length > maxWords) {
-			return words.slice(0, maxWords).join(' ') + '...';
-		}
-		return text;
-	}
+	// function truncateText(text: string, maxWords: number) {
+	// 	const words = text.split(' ');
+	// 	if (words.length > maxWords) {
+	// 		return words.slice(0, maxWords).join(' ') + '...';
+	// 	}
+	// 	return text;
+	// }
 
 	$effect(() => {
-		if (innerWidth.current) {
-			windowWidth = innerWidth.current;
-		}
-	});
-
-	$effect(() => {
-		if (windowWidth >= 768) {
+		if (innerWidth.current && innerWidth.current >= 768) {
 			gridGap = '1.25rem';
 		} else {
 			gridGap = '0.75rem';
@@ -42,13 +35,13 @@
 	});
 
 	$effect(() => {
-		if (windowWidth < 640) {
-			testimonials = props.testimonials.slice(0, 4);
+		if (innerWidth.current && innerWidth.current < 640) {
+			testimonials = props.testimonials.slice(0, 6);
 			showDialog = false;
-		} else if (windowWidth < 1024) {
+		} else if (innerWidth.current && innerWidth.current < 1024) {
 			testimonials = props.testimonials.slice(0, 12);
 			showDialog = true;
-		} else if (windowWidth >= 1024) {
+		} else if (innerWidth.current && innerWidth.current >= 1024) {
 			testimonials = props.testimonials.slice(0, 12);
 			showDialog = true;
 		}
@@ -65,7 +58,7 @@
 		sectionTitle={props?.title}
 	/>
 	<div
-		class="mask-fade mt-8 h-fit max-h-[856px] w-full overflow-clip md:mt-[50px] md:max-h-[798px]"
+		class="mt-8 h-fit w-full md:mt-[3.125rem]"
 	>
 		<Masonry
 			items={testimonials}

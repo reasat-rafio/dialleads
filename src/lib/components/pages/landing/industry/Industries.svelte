@@ -109,7 +109,7 @@
 				<div class="mt-8 flex justify-center gap-[3.125rem] lg:mt-0 xl:gap-[4.375rem]">
 					<div class="flex w-full max-w-[32rem] flex-col">
 						<h4
-							class="w-full text-[1.125rem] leading-7 text-black lg:text-[1.25rem] lg:leading-[150%]"
+							class="w-full text-[1.125rem] leading-7 text-black lg:text-[1.25rem] lg:leading-[150%] opacity-85"
 						>
 							{industry.description}
 						</h4>
