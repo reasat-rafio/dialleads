@@ -13,7 +13,7 @@ const contactPage = defineType({
 			name: 'sections',
 			type: 'array',
 			validation: (Rule) => Rule.required().min(1),
-			of: [{ type: 'contact.hero' }, { type: 'contact.contactForm' }]
+			of: [{ type: 'contact.hero' }, { type: 'contact.contactForm' }, { type: 'common.banner' }]
 		})
 	],
 	preview: {

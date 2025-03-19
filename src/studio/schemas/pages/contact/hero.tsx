@@ -2,6 +2,7 @@ import { SiHomeadvisor } from 'react-icons/si';
 import { defineArrayMember, defineField, defineType } from 'sanity';
 import { FaPenFancy } from 'react-icons/fa';
 import React from 'react';
+import { alt } from '$studio/lib/alt';
 
 const hero = defineType({
 	title: 'Hero',
@@ -19,14 +20,7 @@ const hero = defineType({
 			type: 'image',
 			title: 'Section Icon',
 			options: { hotspot: true },
-			fields: [
-				{
-					name: 'alt',
-					title: 'Alternative Text',
-					description: 'Important for SEO and accessibility',
-					type: 'string'
-				}
-			]
+			fields: [alt()]
 		}),
 
 		defineField({
@@ -62,35 +56,21 @@ const hero = defineType({
 		defineField({
 			name: 'description',
 			title: 'Description',
-			type: 'string'
-		}),
-		defineField({
-			name: 'contactPageImage',
-			type: 'image',
-			title: 'Contact Page Image',
-			options: { hotspot: true },
-			fields: [
-				{
-					name: 'alt',
-					title: 'Alternative Text',
-					description: 'Important for SEO and accessibility',
-					type: 'string'
-				}
-			]
+			type: 'text'
 		})
 	],
 	preview: {
 		select: {
-			title: 'sectionTitle', // Main section title
-			subtitle: 'title.0.children.0.text', // First block text from the title
-			media: 'sectionIcon', // Section icon as preview image
-			fallbackMedia: 'contactPageImage' // Fallback media if sectionIcon is unavailable
+			title: 'sectionTitle',
+			subtitle: 'title.0.children.0.text',
+			media: 'sectionIcon',
+			fallbackMedia: 'contactPageImage'
 		},
 		prepare({ title, subtitle, media, fallbackMedia }) {
 			return {
-				title: title || 'Hero Section', // Fallback if sectionTitle is not provided
-				subtitle: subtitle || 'No title provided', // Fallback for subtitle if no text is found in title
-				media: media || fallbackMedia || SiHomeadvisor // Section icon or fallback to contact page image
+				title: title || 'Hero Section',
+				subtitle: subtitle || 'No title provided',
+				media: media || fallbackMedia || SiHomeadvisor
 			};
 		}
 	}

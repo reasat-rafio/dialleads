@@ -3,9 +3,22 @@ import { error } from '@sveltejs/kit';
 import type { PageServerLoad } from './$types';
 import groq from 'groq';
 import type { PrivacyPolicy } from '../../../types/privacy-policy.types';
+import { asset } from '$lib/sanity/sanity-image';
 
 const query = groq`
-    *[_id == "termsAndCondition"][0]
+    *[_id == "termsAndCondition"][0]{
+		...,
+		banner {
+			...,
+			banner {
+				...,
+				cta {
+					...,
+					${asset('icon')},
+				}
+			}
+		}
+	}
 `;
 
 export const load: PageServerLoad = async ({ setHeaders }) => {
