@@ -1,4 +1,4 @@
-import { TbHome, TbBalloonFilled } from 'react-icons/tb';
+import { TbHome, TbBalloonFilled, TbBuilding } from 'react-icons/tb';
 import { GrEdit } from 'react-icons/gr';
 import { FaSitemap } from 'react-icons/fa';
 import { SiCloudflarepages } from 'react-icons/si';
@@ -70,6 +70,12 @@ export const AppStructure: StructureResolver = (S, context: ConfigContext) =>
 								id: 'landingPage',
 								title: 'Landing',
 								icon: TbHome
+							}),
+							pageItem(S, {
+								schemaType: 'industriesPage',
+								id: 'industriesPage',
+								title: 'Industries',
+								icon: TbBuilding
 							}),
 							pageItem(S, {
 								schemaType: 'contactPage',

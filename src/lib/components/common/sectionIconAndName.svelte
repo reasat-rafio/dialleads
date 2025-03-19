@@ -50,7 +50,7 @@
 				imageUrlBuilder={imgBuilder}
 				alt="sectionIcon"
 			/>
-			<p class={cn('max-w-[269px] truncate text-nowrap sm:max-w-none', sectionNameClass)}>
+			<p class={cn('max-w-[16.8125rem] truncate text-nowrap sm:max-w-none', sectionNameClass)}>
 				{sectionName}
 			</p>
 		</div>

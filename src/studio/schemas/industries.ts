@@ -44,6 +44,15 @@ const industries = {
 		}),
 
 		defineField({
+			name: 'slug',
+			type: 'slug',
+			title: 'Slug',
+			options: {
+				source: 'title',
+			}
+		}),
+
+		defineField({
 			name: 'useCases',
 			title: 'Use Cases',
 			type: 'array',

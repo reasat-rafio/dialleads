@@ -1,7 +1,6 @@
 import landingPage from './document';
 import comparison from './comparison';
 import hero from './hero';
-import features from './features';
 import testimonials from './testimonials';
 import faq from './faq';
 
@@ -26,7 +25,6 @@ export default [
 	clients,
 	testCall,
 	industry,
-	features,
 	whyDialleadsAI,
 	whyChooseUs,
 	getStarted,

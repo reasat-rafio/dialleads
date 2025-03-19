@@ -23,6 +23,8 @@ const config: Config = {
 					'linear-gradient(to right, rgba(113,48,214,1.0) 0%, rgba(177,136,240,1.0) 100%)',
 				'hero-gradient':
 					'radial-gradient(ellipse 55% 56% at center 95%, rgba(177,136,240,1.0), rgba(113, 48, 214, 0.9) 30%, rgba(24, 59, 241, 0.3) 60%, #070313 100%), radial-gradient(ellipse 85% 60% at center 95%, rgba(76, 29, 149, 0.7) 0%, rgba(71, 6, 209, 0.7) 30%, rgba(7, 3, 19, 1.0) 100%)',
+				'hero-gradient-2':
+					'radial-gradient(ellipse 55% 56% at center 95%, rgba(24, 59, 241, 0.2) 0%, #070313 100%), radial-gradient(ellipse 85% 60% at center 95%, rgba(76, 29, 149, 0.8) 0%, rgba(7, 3, 19, 1.0) 100%)',
 				'hero-gradient-mobile': `
 				  radial-gradient(113.28% 100% at 50% 100%, rgba(24, 59, 241, 0.3) 0%, #070313 68.79%),
 				  linear-gradient(180deg, #000 0%, #5B21B6 100%, #7C3AED 100%, #A78BFA 100%)

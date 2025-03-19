@@ -16,20 +16,18 @@ const landingPage = defineType({
 			validation: (Rule) => Rule.required().min(1),
 			of: [
 				{ type: 'landing.hero' },
-				{ type: 'landing.testimonials' },
-				{ type: 'landing.faq' },
-				{ type: 'landing.features' },
-				{ type: 'landing.comparison' },
-				{ type: 'landing.useCase' },
 				{ type: 'landing.clients' },
 				{ type: 'landing.testCall' },
-				{ type: 'landing.industry' },
-				{ type: 'landing.getStarted' },
-				{ type: 'landing.integrations' },
 				{ type: 'landing.whyDialleadsAI' },
+				{ type: 'landing.industry' },
+				{ type: 'landing.useCase' },
+				{ type: 'landing.getStarted' },
+				{ type: 'landing.comparison' },
+				{ type: 'landing.integrations' },
 				{ type: 'landing.whyChooseUs' },
+				{ type: 'landing.testimonials' },
+				{ type: 'landing.faq' },
 				{ type: 'common.banner' },
-				{ type: 'landing.dataDriven' }
 			]
 		})
 	],
