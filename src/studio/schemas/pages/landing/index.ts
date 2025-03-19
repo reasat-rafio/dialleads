@@ -1,6 +1,5 @@
 import landingPage from './document';
 import comparison from './comparison';
-import pricing from './pricing';
 import hero from './hero';
 import features from './features';
 import testimonials from './testimonials';
@@ -13,21 +12,24 @@ import industry from './industry';
 
 import whyDialleadsAI from './whyDialleadsAI';
 import whyChooseUs from './whyChooseUs';
+import getStarted from './getstarted';
+import integrations from './integrations';
 import dataDriven from './dataDriven';
 
 export default [
-  landingPage,
-  hero,
-  testimonials,
-  faq,
-  pricing,
-  comparison,
-  useCase,
-  clients,
-  testCall,
-  industry,
-  features,
-  whyDialleadsAI,
-  whyChooseUs,
-  dataDriven
+	landingPage,
+	hero,
+	testimonials,
+	faq,
+	comparison,
+	useCase,
+	clients,
+	testCall,
+	industry,
+	features,
+	whyDialleadsAI,
+	whyChooseUs,
+	getStarted,
+	integrations,
+	dataDriven
 ];

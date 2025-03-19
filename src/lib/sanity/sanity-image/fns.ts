@@ -1,9 +1,5 @@
 import type { SanityImageSource } from '@sanity/image-url/lib/types/types';
-import type {
-  AutoWidths,
-  SanityDimensionedImage,
-  SanityImageWithLqip,
-} from './types';
+import type { AutoWidths, SanityDimensionedImage, SanityImageWithLqip } from './types';
 
 /**
  * Perform a shallow (non-recursive) merge of multiple objects
@@ -13,13 +9,13 @@ import type {
  */
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 export function shallowMerge<T extends Record<string, any>>(...items: T[]): T {
-  const merged = {} as T;
-  items.forEach((item) => {
-    Object.entries(item).forEach(([k, v]) => {
-      merged[k as keyof T] = v;
-    });
-  });
-  return merged;
+	const merged = {} as T;
+	items.forEach((item) => {
+		Object.entries(item).forEach(([k, v]) => {
+			merged[k as keyof T] = v;
+		});
+	});
+	return merged;
 }
 
 /**
@@ -28,19 +24,15 @@ export function shallowMerge<T extends Record<string, any>>(...items: T[]): T {
  * @returns merged object
  */
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
-export function mergeSingleRecursive<T extends Record<string, any>>(
-  ...items: T[]
-): T {
-  const merged = {} as T;
-  items.forEach((item) => {
-    Object.entries(item).forEach(([k, v]) => {
-      merged[k as keyof T] =
-        merged[k] && v && typeof v === 'object'
-          ? shallowMerge(merged[k], v)
-          : v;
-    });
-  });
-  return merged;
+export function mergeSingleRecursive<T extends Record<string, any>>(...items: T[]): T {
+	const merged = {} as T;
+	items.forEach((item) => {
+		Object.entries(item).forEach(([k, v]) => {
+			merged[k as keyof T] =
+				merged[k] && v && typeof v === 'object' ? shallowMerge(merged[k], v) : v;
+		});
+	});
+	return merged;
 }
 
 /**
@@ -48,29 +40,27 @@ export function mergeSingleRecursive<T extends Record<string, any>>(
  * @param image
  */
 export function isSanityDimensionedImage(
-  image: SanityImageSource,
+	image: SanityImageSource
 ): image is SanityDimensionedImage {
-  return (
-    typeof image == 'object' &&
-    'asset' in image &&
-    'metadata' in image.asset &&
-    'dimensions' in image.asset.metadata
-  );
+	return (
+		typeof image == 'object' &&
+		'asset' in image &&
+		'metadata' in image.asset &&
+		'dimensions' in image.asset.metadata
+	);
 }
 
 /**
  * Guard whether our provided image has an lqip
  * @param image
  */
-export function isSanityImageWithLqip(
-  image: SanityImageSource,
-): image is SanityImageWithLqip {
-  return (
-    typeof image == 'object' &&
-    'asset' in image &&
-    'metadata' in image.asset &&
-    'lqip' in image.asset.metadata
-  );
+export function isSanityImageWithLqip(image: SanityImageSource): image is SanityImageWithLqip {
+	return (
+		typeof image == 'object' &&
+		'asset' in image &&
+		'metadata' in image.asset &&
+		'lqip' in image.asset.metadata
+	);
 }
 
 /**
@@ -81,15 +71,12 @@ export function isSanityImageWithLqip(
  * @param image image to calculate off of
  * @returns array of widths
  */
-export function generateWidths(
-  autoWidths: AutoWidths,
-  image: SanityImageSource,
-): number[] {
-  const maxWidth = isSanityDimensionedImage(image)
-    ? image.asset.metadata.dimensions.width
-    : autoWidths.maxWidth;
-  const divisions = Math.ceil(maxWidth / autoWidths.step);
-  return Array.from({ length: divisions }, (_, i) =>
-    Math.min(Math.floor(autoWidths.step * (i + 1)), maxWidth),
-  );
+export function generateWidths(autoWidths: AutoWidths, image: SanityImageSource): number[] {
+	const maxWidth = isSanityDimensionedImage(image)
+		? image.asset.metadata.dimensions.width
+		: autoWidths.maxWidth;
+	const divisions = Math.ceil(maxWidth / autoWidths.step);
+	return Array.from({ length: divisions }, (_, i) =>
+		Math.min(Math.floor(autoWidths.step * (i + 1)), maxWidth)
+	);
 }

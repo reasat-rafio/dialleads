@@ -1,9 +1,9 @@
 import { PUBLIC_SANITY_PROJECT_ID } from '$env/static/public';
 import { defineConfig } from 'sanity';
+import { structureTool } from 'sanity/structure';
 import { visionTool } from '@sanity/vision';
 import { schemaTypes } from './schemas/index';
 import { AppStructure } from './deskStucture';
-import { structureTool } from 'sanity/structure';
 
 export default defineConfig([
 	{

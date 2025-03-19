@@ -4,16 +4,18 @@ import social from './social';
 import pages from './pages';
 import site from './site';
 import testimonials from './testimonials';
-import banner from './banner';
+import industries from './industries';
 import video from './video';
+import common from './common';
 
 export const schemaTypes = [
-  social,
-  seo,
-  link,
-  testimonials,
-  video,
-  banner,
-  ...site,
-  ...pages,
+	social,
+	seo,
+	link,
+	testimonials,
+	industries,
+	video,
+	...common,
+	...site,
+	...pages
 ];

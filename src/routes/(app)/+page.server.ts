@@ -1,5 +1,5 @@
-import { asset } from '$lib/sanity/sanity-image';
 import groq from 'groq';
+import { asset } from '$lib/sanity/sanity-image';
 import type { PageServerLoad } from './$types';
 import { sanityClient } from '$lib/sanity/sanity-client';
 import type { LandingPageProps } from '../../types/landing.types';
@@ -12,62 +12,23 @@ const query = groq`
     *[_id == "landingPage"][0]{
         ...,
         sections[]{
-
-            ...,
-            ${asset('sectionImage')},
-            ${asset('useCaseSectionImage')},
-           
-            industries{
-              ...,
-              ${asset('useCaseImage')},
-            },
-
-            useCases{
-              ...,
-              ${asset('useCaseImage')},
-            },
-
-              testimonials[]-> {
-              ...,
-              ${asset('companyLogo')},
-              ${asset('reviewerImage')},
-
-            },
-
-
-        ...,
-        hero{
-        ...,
-        ${asset('sectionIcon')},
-        ${asset('thumbnailForMobile')},
-        ${asset('thumbnailForDesktop')},
-        ${asset('videoPlayBtnIcon')},
-         video{
-         "webm": video_webm.asset->url,
-         "mov": video_hevc.asset->url,
-         }
-        },
-        pricing{
-
-                sectionName,
-                ${asset('sectionIcon')},
-                sectionTitle,
-            },
-        features[]{
+          ...,
+          hero{
             ...,
             ${asset('sectionIcon')},
-            features[] {
-            ...,
-            ${asset('featureIcon')}
+            ${asset('thumbnailForMobile')},
+            ${asset('thumbnailForDesktop')},
+            ${asset('videoPlayBtnIcon')},
+            video{
+              "webm": video_webm.asset->url,
+              "mov": video_hevc.asset->url,
             }
-        },
-        testimonials[]-> {
-        ...,
-        ${asset('companyLogo')},
-        ${asset('reviewerImage')},
-
-      },
-      comparison{
+          },
+          useCases[]{
+            ...,
+            ${asset('useCaseImage')},
+          },
+          comparison{
             ...,
             ${asset('sectionIcon')},
             comparisonCards[]{
@@ -78,99 +39,48 @@ const query = groq`
               ${asset('featureIcon')},
               },
             }
-        },
-        dataDriven{
-        ...,
-        sectionDetails{
-        ...,
-        ${asset('sectionIcon')},
-        }
-        },
-        whyDialleadsAI{
-        ...,
-        ${asset('sectionIcon')},
-        cards[]{
-        ...,
-        card{
-        ...,
-        ${asset('cardIcon')},
-        },
-        },
-        },
-        whyChooseUs{
-        ...,
-        ${asset('sectionIcon')},
-        cards[]{
-        ...,
-        card{
-        ...,
-        ${asset('cardIcon')},
-        },
-        },
-        },
-        },
-
-        
-        "pricing": *[_type == "pricing"][0]{
-            saveUpTo,
-            plans[]{
-                ${asset('icon')},
-                planName->{
-                name
-                },
-                price,
-                features[]{
-                    featureName
-                },
-                cta{
-                    title,
-                    ${asset('icon')},
-                    type,
-                    internalLink,
-                    externalLink
-                }
+          },
+          integrations{
+            ...,
+            brands[]{
+              ...,
+              ${asset('brandImage')},
             },
-            enterprisePlan{
-                ${asset('sectionOptionIcon')},
-                sectionOption,
-                title,
-                description,
-                cta{
-                    title,
-                    ${asset('icon')},
-                    type,
-                    internalLink,
-                    externalLink
-                },
-                ${asset('banner')},
-            }
-        }
-
-    }
+          },
+          testimonials[]-> {
+            ...,
+            ${asset('companyLogo')},
+            ${asset('reviewerImage')},
+          },
+          industries[]-> {
+            ...,
+            ${asset('buttonIcon')},
+            ${asset('buttonIcon2')},
+            ${asset('useCaseImage')},
+          },
+        },
+      }
 `;
 
 export const load: PageServerLoad = async ({ setHeaders }) => {
-  const data: LandingPageProps = await sanityClient.fetch(query);
-  setHeaders({ 'cache-control': 'public, max-age=120' });
+	const data: LandingPageProps = await sanityClient.fetch(query);
+	setHeaders({ 'cache-control': 'public, max-age=120' });
 
-  if (!data) throw error(404, { message: 'Not found' });
+	if (!data) error(404, { message: 'Not found' });
 
-  return { page: data, testCallForm: await superValidate(zod(formSchema)) };
+	return { page: data, testCallForm: await superValidate(zod(formSchema)) };
 };
 
 export const actions = {
-  create: async ({ request }) => {
-    const form = await superValidate(request, zod(formSchema));
+	create: async ({ request }) => {
+		const form = await superValidate(request, zod(formSchema));
 
-    if (!form.valid) {
-      return message(form, 'something went wrong +page.server.ts', {
-        status: 400,
-      });
-    }
+		if (!form.valid) {
+			return message(form, 'something went wrong +page.server.ts', {
+				status: 400
+			});
+		}
 
-    return message(
-      form,
-      'validation passed successfully .. form submitted .. 🟢 +page.server.ts',
-    );
-  },
+		return message(form, 'validation passed successfully .. form submitted .. 🟢 +page.server.ts');
+	}
 };
