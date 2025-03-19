@@ -38,8 +38,8 @@
 <div class="relative">
 	<div class="relative w-full bg-hero-gradient lg:rounded-[1.875rem]">
 		<div
-			class="fixed left-0 top-0 z-[1000] w-full pb-4 transition-[background-color] duration-300 ease-linear [box-shadow:_0_4px_6px_rgba(0,_0,_0,_0.1)] {isScrolled
-				? 'bg-white px-0 text-black'
+			class="fixed left-0 top-0 z-[1000] w-full pb-4 transition-[background-color] duration-300 ease-linear {isScrolled
+				? 'bg-white px-0 text-black [box-shadow:_0_4px_6px_rgba(0,_0,_0,_0.1)]'
 				: ''} flex justify-between pt-[1.56rem]"
 		>
 			<a href="/" class="z-50 flex items-center gap-[0.49rem] pl-[0.88rem]">
