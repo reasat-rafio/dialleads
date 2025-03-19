@@ -1,5 +1,6 @@
+import { alt } from '$studio/lib/alt';
 import { SiHomeadvisor } from 'react-icons/si';
-import { defineArrayMember, defineField, defineType } from 'sanity';
+import { defineField, defineType } from 'sanity';
 
 const contactForm = defineType({
 	title: 'ContactForm',
@@ -8,31 +9,29 @@ const contactForm = defineType({
 	icon: SiHomeadvisor,
 	fields: [
 		defineField({
-			name: 'sectionTitle',
+			name: 'title',
 			type: 'string',
-			title: 'Section Title'
-			// validation: (Rule) => Rule.required(),
+			validation: (Rule) => Rule.required()
+		}),
+		defineField({
+			name: 'description',
+			type: 'text',
+			validation: (Rule) => Rule.required()
 		}),
 		defineField({
 			name: 'contactPageImage',
 			type: 'image',
 			title: 'Contact Page Image',
-			// validation: (Rule) => Rule.required(),
+			validation: (Rule) => Rule.required(),
 			options: { hotspot: true },
-			fields: [
-				{
-					name: 'alt',
-					title: 'Alternative Text',
-					description: 'Important for SEO and accessibility',
-					type: 'string'
-					// validation: (Rule) => Rule.required(),
-				}
-			]
+			fields: [alt()]
 		})
 	],
 	preview: {
 		select: {
-			subtitle: 'sectionTitle'
+			title: 'title',
+			subtitle: 'description',
+			media: 'contactPageImage'
 		}
 	}
 });

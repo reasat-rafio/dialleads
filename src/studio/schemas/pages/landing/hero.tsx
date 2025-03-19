@@ -2,6 +2,7 @@ import { SiHomeadvisor } from 'react-icons/si';
 import { defineArrayMember, defineField, defineType } from 'sanity';
 import { FaPenFancy } from 'react-icons/fa';
 import React from 'react';
+import { alt } from '$studio/lib/alt';
 
 const hero = defineType({
 	title: 'Hero',
@@ -22,14 +23,7 @@ const hero = defineType({
 					options: {
 						hotspot: true
 					},
-					fields: [
-						{
-							name: 'alt',
-							title: 'Alt Text',
-							type: 'string',
-							description: 'Important for SEO and accessibility'
-						}
-					]
+					fields: [alt()]
 				},
 				{
 					name: 'sectionName',
