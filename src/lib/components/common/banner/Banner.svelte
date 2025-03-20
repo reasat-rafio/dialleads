@@ -24,7 +24,7 @@
 			class="pointer-events-none absolute inset-0 z-0 h-full w-full object-cover opacity-60 mix-blend-overlay lg:opacity-100"
 		/>
 
-		<div class="relative z-50 flex w-full flex-col items-center justify-center">
+		<div class="relative z-[10] flex w-full flex-col items-center justify-center">
 			<div class="relative">
 				<h1
 					class="mx-auto w-fit text-center text-[36px] font-semibold leading-tight tracking-[0%] text-white

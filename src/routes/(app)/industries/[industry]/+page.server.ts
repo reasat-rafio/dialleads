@@ -1,14 +1,15 @@
 import groq from 'groq';
 import { asset } from '$lib/sanity/sanity-image';
-import type { PageServerLoad } from '../$types';
+import type { PageServerLoad } from './$types';
 import { sanityClient } from '$lib/sanity/sanity-client';
 import type { IndustriesPageProps } from '../../../../types/industries.types';
 import { error } from '@sveltejs/kit';
 
-const query = groq`
-    *[_id == "industriesPage"][0]{
-        ...,
-        sections[]{
+const dynamicQuery = (param: string) => {
+  return groq`
+  *[_type == "industries" && slug.current == "${param}"][0]{
+        seo,
+        'sections': industrySections.sections[]{
           ...,
           hero{
             ...,
@@ -19,13 +20,18 @@ const query = groq`
           },
         },
       }
-`;
+    `;
+};
 
-export const load: PageServerLoad = async ({ setHeaders }) => {
-    const data: IndustriesPageProps = await sanityClient.fetch(query);
-    setHeaders({ 'cache-control': 'public, max-age=120' });
+export const load: PageServerLoad = async ({ setHeaders, params }) => {
+  const { industry } = params;
 
-    if (!data) error(404, { message: 'Not found' });
+  const query = dynamicQuery(industry);
+  
+  const data: IndustriesPageProps = await sanityClient.fetch(query);
+  setHeaders({ 'cache-control': 'public, max-age=120' });
 
-    return { page: data };
+  if (!data) error(404, { message: 'Not found' });
+
+  return { page: data };
 };

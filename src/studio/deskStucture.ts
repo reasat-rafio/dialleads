@@ -72,12 +72,6 @@ export const AppStructure: StructureResolver = (S, context: ConfigContext) =>
 								icon: TbHome
 							}),
 							pageItem(S, {
-								schemaType: 'industriesPage',
-								id: 'industriesPage',
-								title: 'Industries',
-								icon: TbBuilding
-							}),
-							pageItem(S, {
 								schemaType: 'contactPage',
 								id: 'contactPage',
 								title: 'Contact',
@@ -103,7 +97,7 @@ export const AppStructure: StructureResolver = (S, context: ConfigContext) =>
 				S,
 				context,
 				title: 'Industries',
-				icon: TbHome
+				icon: TbBuilding
 			}),
 			S.divider(),
 			orderableDocumentListDeskItem({
@@ -113,7 +107,7 @@ export const AppStructure: StructureResolver = (S, context: ConfigContext) =>
 				title: 'Testimonials',
 				icon: TbBalloonFilled
 			}),
-			
+
 
 			// orderableDocumentListDeskItem({
 			//   type: 'industryUseCases',

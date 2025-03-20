@@ -99,6 +99,11 @@ const industries = {
 				}
 			]
 		}),
+
+		defineField({
+			name: 'industrySections',
+			type: 'industriesPage',
+		})
 	],
 	preview: {
 		select: {

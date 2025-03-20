@@ -3,13 +3,8 @@ import { defineField, defineType } from 'sanity';
 const industriesPage = defineType({
     name: 'industriesPage',
     title: 'Industries Page',
-    type: 'document',
+    type: 'object',
     fields: [
-        defineField({
-            name: 'seo',
-            type: 'seo'
-        }),
-
         defineField({
             name: 'sections',
             type: 'array',
@@ -17,16 +12,11 @@ const industriesPage = defineType({
             of: [
                 { type: 'industries.hero' },
                 { type: 'industries.whyDialleadsAI' },
+                { type: 'industries.securedAndEfficient' },
                 { type: 'common.banner' },
             ]
         })
     ],
-    preview: {
-        select: {
-            title: 'seo.title',
-            subtitle: 'seo.description'
-        }
-    }
 });
 
 export default industriesPage;

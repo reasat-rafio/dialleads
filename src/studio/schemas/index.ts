@@ -7,6 +7,7 @@ import testimonials from './testimonials';
 import industries from './industries';
 import video from './video';
 import common from './common';
+import industriesPage from './industriesSections';
 
 export const schemaTypes = [
 	social,
@@ -15,6 +16,7 @@ export const schemaTypes = [
 	testimonials,
 	industries,
 	video,
+	...industriesPage,
 	...common,
 	...site,
 	...pages

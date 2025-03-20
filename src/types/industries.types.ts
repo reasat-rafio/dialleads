@@ -4,23 +4,15 @@ import type { PortableTextBlock } from '@portabletext/types';
 export interface IndustriesPageProps {
 	seo: SeoProps;
 	sections: Section[];
-	industries: Industries[];
 }
 
 type Section =
 	| HeroProps
 	| IndustriesProps
 	| WhyDialleadsAIProps
+	| SecuredAndEfficientProps
 	| BannerProps;
 
-
-export interface Industries {
-	_type: string;
-	slug: object;
-	_id: string;
-	description: string;
-	title: string;
-}
 
 export interface IndustriesProps {
 	_type: 'industries.industry';
@@ -37,6 +29,7 @@ export interface IndustriesProps {
 		description: string;
 		useCaseImage: SanityImageWithAlt;
 		useCases: IndustryUseCase[];
+		stats: Stats[];
 	}[];
 }
 
@@ -72,6 +65,24 @@ export interface CTA {
 	type: 'internal' | 'external';
 	internalLink?: string;
 	externalLink?: string;
+}
+
+export interface SecuredAndEfficientProps {
+	_type: 'industries.securedAndEfficient';
+	securedAndEfficient: SecuredAndEfficient;
+}
+
+export interface SecuredAndEfficient {
+	sectionName: string;
+	sectionIcon: SanityImageWithAlt;
+	sectionTitle: PortableTextBlock[];
+	description: string;
+	stats: Stats[];
+}
+
+export interface Stats {
+	value: string;
+	description: string;
 }
 
 export interface WhyDialleadsAIProps {
