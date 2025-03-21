@@ -18,6 +18,13 @@ const dynamicQuery = (param: string) => {
               ${asset('cardImage')},
             },
           },
+          whyUs{
+            ...,
+            card{
+              ...,
+              ${asset('cardImage')},
+            },
+          },
         },
       }
     `;

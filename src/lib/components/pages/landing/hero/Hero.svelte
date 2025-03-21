@@ -89,7 +89,7 @@
 				<Button
 					class="flex h-[3.5rem] w-[13.5rem]
           items-center rounded-lg bg-primary-gradient px-6
-          py-3 font-geist text-lg font-semibold text-white shadow-xl hover:shadow-xl focus:outline-none"
+          py-3 font-geist text-lg font-semibold text-white shadow-xl hover:shadow-xl focus:outline-none hover:brightness-90 transition-all duration-200 ease-linear"
 				>
 					<!-- Icon (SanityImage) -->
 					<SanityImage

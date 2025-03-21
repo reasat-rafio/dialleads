@@ -8,35 +8,10 @@ export interface IndustriesPageProps {
 
 type Section =
 	| HeroProps
-	| IndustriesProps
+	| WhyUsProps
 	| WhyDialleadsAIProps
 	| SecuredAndEfficientProps
 	| BannerProps;
-
-
-export interface IndustriesProps {
-	_type: 'industries.industry';
-	_id: string;
-	slug: object;
-	sectionTitle: string;
-	sectionIcon: SanityImageWithAlt;
-	title: string;
-	useCaseIcon: SanityImageWithAlt;
-	industries: {
-		buttonIcon: SanityImageWithAlt;
-		buttonIcon2: SanityImageWithAlt;
-		title: string;
-		description: string;
-		useCaseImage: SanityImageWithAlt;
-		useCases: IndustryUseCase[];
-		stats: Stats[];
-	}[];
-}
-
-export interface IndustryUseCase {
-	title: string;
-	description: string;
-}
 
 
 export interface HeroProps {
@@ -57,14 +32,6 @@ export interface HeroAgentCard {
 	cardSubTitle: string;
 	// eslint-disable-next-line @typescript-eslint/no-explicit-any
 	mp3File: any;
-}
-
-export interface CTA {
-	title: string;
-	icon: SanityImageWithAlt;
-	type: 'internal' | 'external';
-	internalLink?: string;
-	externalLink?: string;
 }
 
 export interface SecuredAndEfficientProps {
@@ -102,4 +69,25 @@ export interface WhyDialleadsCard {
 	cardTitle: string;
 	cardIcon: SanityImageWithAlt;
 	cardDescription: string;
+}
+
+export interface WhyUsProps {
+	_key: string;
+	_type: 'industries.whyUs';
+	whyUs: WhyUs;
+}
+
+export interface WhyUs {
+	sectionName: string;
+	sectionIcon: SanityImageWithAlt;
+	sectionTitle: PortableTextBlock[];
+	description: string;
+	cards: WhyUsCard[];
+}
+
+export interface WhyUsCard {
+	cardImage: SanityImageWithAlt;
+	cardTitle: string;
+	cardDescription: string;
+	cta: Link;
 }
