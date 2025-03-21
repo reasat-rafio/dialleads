@@ -1,6 +1,6 @@
 <script lang="ts">
 	import SectionIconAndName from '$lib/components/common/sectionIconAndName.svelte';
-	import type { WhyDialleadsAI, WhyDialleadsAIProps } from '../../../../../types/landing.types';
+	import type { WhyDialleadsAI, WhyDialleadsAIProps } from '../../../../../types/industries.types';
 	import Card from './Card.svelte';
 
 	let { props }: { props: WhyDialleadsAIProps } = $props();

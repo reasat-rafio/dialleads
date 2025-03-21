@@ -18,7 +18,6 @@ type Section =
 	| ClientProps
 	| TestCallProps
 	| UseCaseProps
-	| FeatureProps
 	| WhyDialleadsAIProps
 	| HowtoGetStartedProps
 	| IntegrationsProps
@@ -64,6 +63,7 @@ export interface Industries {
 export interface IndustriesProps {
 	_type: 'landing.industry';
 	_id: string;
+	slug: object;
 	sectionTitle: string;
 	sectionIcon: SanityImageWithAlt;
 	title: string;
@@ -199,21 +199,6 @@ export interface CTA {
 	externalLink?: string;
 }
 
-export interface FeatureProps {
-	_type: 'landing.features';
-	sectionTitle: string;
-	sectionIcon: SanityImageWithAlt;
-	title: string;
-	features: FeatureGroup[];
-}
-export interface FeatureGroup {
-	featureGroupName: string;
-	features: {
-		featureIcon: SanityImageWithAlt;
-		featureTitle: string;
-		featureDescription: string;
-	}[];
-}
 export interface ComparisonProps {
 	_key: string;
 	_type: 'landing.comparison';

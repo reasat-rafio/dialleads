@@ -24,7 +24,7 @@
 			class="pointer-events-none absolute inset-0 z-0 h-full w-full object-cover opacity-60 mix-blend-overlay lg:opacity-100"
 		/>
 
-		<div class="relative z-50 flex w-full flex-col items-center justify-center">
+		<div class="relative z-[10] flex w-full flex-col items-center justify-center">
 			<div class="relative">
 				<h1
 					class="mx-auto w-fit text-center text-[36px] font-semibold leading-tight tracking-[0%] text-white
@@ -43,7 +43,7 @@
 
 			<a
 				href={cta.type === 'internal' ? cta.internalLink : cta.externalLink}
-				class={`mt-8 flex h-[3.25rem] w-full max-w-[14.563rem] items-center justify-center gap-3 rounded-[0.5rem] bg-primary-gradient px-7 py-4 text-white`}
+				class={`mt-8 flex h-[3.25rem] w-full max-w-[14.563rem] items-center justify-center gap-3 rounded-[0.5rem] bg-primary-gradient px-7 py-4 text-white hover:brightness-90 transition-all duration-200 ease-linear`}
 			>
 				<SanityImage
 					class="h-fit w-fit"

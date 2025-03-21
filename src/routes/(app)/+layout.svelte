@@ -15,7 +15,7 @@
 	} = $derived(data);
 
 	let faviconImage = $derived.by(() => {
-		return favicon ? urlFor(favicon).size(256, 256).ignoreImageParams().url() : null;
+		return favicon ? urlFor(favicon).size(256, 256).format('png').ignoreImageParams().url() : null;
 	});
 </script>
 
