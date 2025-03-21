@@ -7,7 +7,7 @@
 </script>
 
 <div
-	class="h-full w-full max-w-none rounded-2xl border px-5 py-5 p-[25px]"
+	class="h-full w-full max-w-none rounded-2xl border p-[1.563rem]"
 >
 	<SanityImage
 		lqip
