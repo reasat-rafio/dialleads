@@ -1,4 +1,4 @@
-import { TbHome, TbBalloonFilled } from 'react-icons/tb';
+import { TbHome, TbBalloonFilled, TbBuilding } from 'react-icons/tb';
 import { GrEdit } from 'react-icons/gr';
 import { FaSitemap } from 'react-icons/fa';
 import { SiCloudflarepages } from 'react-icons/si';
@@ -97,7 +97,7 @@ export const AppStructure: StructureResolver = (S, context: ConfigContext) =>
 				S,
 				context,
 				title: 'Industries',
-				icon: TbHome
+				icon: TbBuilding
 			}),
 			S.divider(),
 			orderableDocumentListDeskItem({
@@ -107,7 +107,7 @@ export const AppStructure: StructureResolver = (S, context: ConfigContext) =>
 				title: 'Testimonials',
 				icon: TbBalloonFilled
 			}),
-			
+
 
 			// orderableDocumentListDeskItem({
 			//   type: 'industryUseCases',
