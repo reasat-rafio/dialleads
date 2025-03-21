@@ -6,7 +6,7 @@ import type { IndustriesPageProps } from '../../../../types/industries.types';
 import { error } from '@sveltejs/kit';
 
 const dynamicQuery = (param: string) => {
-  return groq`
+	return groq`
   *[_type == "industries" && slug.current == "${param}"][0]{
         seo,
         'sections': industrySections.sections[]{
@@ -16,6 +16,10 @@ const dynamicQuery = (param: string) => {
             agentCard{
               ...,
               ${asset('cardImage')},
+              mp3File {
+                ...,
+                asset->
+              }
             },
           },
           whyUs{
@@ -31,14 +35,14 @@ const dynamicQuery = (param: string) => {
 };
 
 export const load: PageServerLoad = async ({ setHeaders, params }) => {
-  const { industry } = params;
+	const { industry } = params;
 
-  const query = dynamicQuery(industry);
-  
-  const data: IndustriesPageProps = await sanityClient.fetch(query);
-  setHeaders({ 'cache-control': 'public, max-age=120' });
+	const query = dynamicQuery(industry);
 
-  if (!data) error(404, { message: 'Not found' });
+	const data: IndustriesPageProps = await sanityClient.fetch(query);
+	setHeaders({ 'cache-control': 'public, max-age=120' });
 
-  return { page: data };
+	if (!data) error(404, { message: 'Not found' });
+
+	return { page: data };
 };

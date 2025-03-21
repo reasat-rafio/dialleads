@@ -13,7 +13,6 @@ type Section =
 	| SecuredAndEfficientProps
 	| BannerProps;
 
-
 export interface HeroProps {
 	_type: 'industries.hero';
 	hero: Hero;
@@ -30,8 +29,29 @@ export interface HeroAgentCard {
 	cardImage: SanityImageWithAlt;
 	cardTitle: string;
 	cardSubTitle: string;
-	// eslint-disable-next-line @typescript-eslint/no-explicit-any
-	mp3File: any;
+	mp3File: Mp3File;
+}
+
+export interface Mp3File {
+	_type: string;
+	asset: Asset;
+}
+
+export interface Asset {
+	sha1hash: string;
+	url: string;
+	assetId: string;
+	_updatedAt: Date;
+	extension: string;
+	_type: string;
+	path: string;
+	size: number;
+	_createdAt: Date;
+	_id: string;
+	originalFilename: string;
+	uploadId: string;
+	_rev: string;
+	mimeType: string;
 }
 
 export interface SecuredAndEfficientProps {

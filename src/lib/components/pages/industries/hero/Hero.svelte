@@ -15,17 +15,6 @@
 
 	let playState = $state<boolean>(false);
 
-	function resolveMp3Url(ref: any) {
-		if (!ref) {
-			console.error('The mp3File reference is undefined or invalid.');
-			return '';
-		}
-
-		return `https://cdn.sanity.io/files/zhic6sia/production/${ref
-			.replace('file-', '')
-			.replace('-', '.')}`;
-	}
-
 	let waveSurferInstance: WaveSurfer; // Store WaveSurfer instance here
 
 	// Initialize WaveSurfer instances on mount
@@ -44,8 +33,8 @@
 		gradient.addColorStop(0.3, '#8d78df');
 		gradient.addColorStop(1, 'white');
 
-		const waveformElement: any = document.getElementById(`waveform-herocard`);
-		const mp3FileUrl = resolveMp3Url(agentCard.mp3File.asset._ref); // Resolve URL
+		const waveformElement = document.getElementById(`waveform-herocard`) as HTMLElement;
+		const mp3FileUrl = hero.agentCard.mp3File.asset.url;
 
 		const waveSurfer = WaveSurfer.create({
 			container: waveformElement,
@@ -80,7 +69,7 @@
 
 <div class="relative mt-[0.3125rem] w-full px-[0.3125rem] lg:mt-[0.625rem] lg:px-[0.625rem]">
 	<div
-		class="lg:bg-hero-gradient-2 relative rounded-[0.75rem] bg-hero-gradient-mobile lg:rounded-b-[1.5rem] lg:rounded-t-[1rem]"
+		class="relative rounded-[0.75rem] bg-hero-gradient-mobile lg:rounded-b-[1.5rem] lg:rounded-t-[1rem] lg:bg-hero-gradient-2"
 	>
 		<img
 			src="/grid.png"
@@ -123,7 +112,7 @@
 						<Button
 							class="flex h-[3.5rem] w-[13.5rem]
           				items-center rounded-lg bg-primary-gradient px-6
-          				py-3 font-geist text-lg font-semibold text-white shadow-xl hover:shadow-xl focus:outline-none hover:brightness-90 transition-all duration-200 ease-linear"
+          				py-3 font-geist text-lg font-semibold text-white shadow-xl transition-all duration-200 ease-linear hover:shadow-xl hover:brightness-90 focus:outline-none"
 						>
 							<!-- Icon (SanityImage) -->
 							<SanityImage
