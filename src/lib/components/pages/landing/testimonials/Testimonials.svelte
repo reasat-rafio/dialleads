@@ -77,13 +77,13 @@
 										<SanityImage
 											class="h-[3rem] w-[3rem] overflow-hidden rounded-full"
 											src={testimonial?.reviewerImage}
-											sizes="05vw"
+											sizes="5vw"
 											imageUrlBuilder={imgBuilder}
 											alt={testimonial?.reviewerImage?.alt || 'image'}
 										/>
 									</div>
 									<div class="text-left">
-										<h2 class="text-[16px] font-semibold leading-[120%]">{testimonial.name}</h2>
+										<h3 class="text-[16px] font-semibold leading-[120%]">{testimonial.name}</h3>
 
 										<div class="flex items-center">
 											<div class="pr-[0.38rem]">
@@ -91,7 +91,7 @@
 													<SanityImage
 														class="h-fit w-fit "
 														src={testimonial.companyLogo}
-														sizes="05vw"
+														sizes="5vw"
 														imageUrlBuilder={imgBuilder}
 														alt="logo"
 													/>
@@ -101,11 +101,11 @@
 											{#if testimonial.companyName.length > 12}
 												<HoverCard.Root>
 													<HoverCard.Trigger>
-														<h2
+														<h3
 															class="max-w-[130px] truncate text-[14px] font-light leading-[120%] text-[#737275]"
 														>
 															{testimonial.companyName}
-														</h2>
+														</h3>
 													</HoverCard.Trigger>
 													<HoverCard.Content class="rounded-lg bg-white p-4 shadow-lg">
 														<p class="text-[14px] font-light leading-[120%] text-[#737275]">
@@ -114,20 +114,20 @@
 													</HoverCard.Content>
 												</HoverCard.Root>
 											{:else}
-												<h2 class="text-[14px] font-light leading-[120%] text-[#737275]">
+												<h3 class="text-[14px] font-light leading-[120%] text-[#737275]">
 													{testimonial.companyName}
-												</h2>
+												</h3>
 											{/if}
 											<Dot class="text-[#737275]" />
 
 											{#if testimonial.position.length > 12}
 												<HoverCard.Root>
 													<HoverCard.Trigger>
-														<h2
+														<h3
 															class="max-w-[90px] truncate text-[14px] font-light leading-[120%] text-[#737275] lg:max-w-[90px] xl:max-w-[110px]"
 														>
 															{testimonial.position}
-														</h2>
+														</h3>
 													</HoverCard.Trigger>
 													<HoverCard.Content class="rounded-lg  bg-white p-4 shadow-lg">
 														<p class="text-[14px] font-light leading-[120%] text-[#737275]">
@@ -136,9 +136,9 @@
 													</HoverCard.Content>
 												</HoverCard.Root>
 											{:else}
-												<h2 class="text-[14px] font-light leading-[120%] text-[#737275]">
+												<h3 class="text-[14px] font-light leading-[120%] text-[#737275]">
 													{testimonial.position}
-												</h2>
+												</h3>
 											{/if}
 										</div>
 									</div>
@@ -158,13 +158,13 @@
 										<SanityImage
 											class="h-[3rem] w-[3rem] overflow-hidden rounded-full"
 											src={testimonial?.reviewerImage}
-											sizes="05vw"
+											sizes="5vw"
 											imageUrlBuilder={imgBuilder}
 											alt={testimonial?.reviewerImage?.alt || 'image'}
 										/>
 									</div>
 									<div class="">
-										<h2 class="font-semibold">{testimonial.name}</h2>
+										<h3 class="font-semibold">{testimonial.name}</h3>
 
 										<div class="flex items-center">
 											<div class="pr-[0.38rem]">
@@ -172,7 +172,7 @@
 													<SanityImage
 														class="h-fit w-fit "
 														src={testimonial.companyLogo}
-														sizes="05vw"
+														sizes="5vw"
 														imageUrlBuilder={imgBuilder}
 														alt="logo"
 													/>
@@ -182,38 +182,38 @@
 											{#if testimonial.companyName.length > 12}
 												<HoverCard.Root>
 													<HoverCard.Trigger>
-														<h2 class="max-w-[130px] truncate text-[#737275]">
+														<h3 class="max-w-[130px] truncate text-[#737275]">
 															{testimonial.companyName}
-														</h2>
+														</h3>
 													</HoverCard.Trigger>
 													<HoverCard.Content class="rounded-lg bg-white p-4 shadow-lg">
 														<p>{testimonial.companyName}</p>
 													</HoverCard.Content>
 												</HoverCard.Root>
 											{:else}
-												<h2 class="text-[#737275]">{testimonial.companyName}</h2>
+												<h3 class="text-[#737275]">{testimonial.companyName}</h3>
 											{/if}
 											<Dot class="text-[#737275]" />
 
 											{#if testimonial.position.length > 12}
 												<HoverCard.Root>
 													<HoverCard.Trigger>
-														<h2 class="max-w-[90px] truncate text-[#737275] lg:max-w-[110px]">
+														<h3 class="max-w-[90px] truncate text-[#737275] lg:max-w-[110px]">
 															{testimonial.position}
-														</h2>
+														</h3>
 													</HoverCard.Trigger>
 													<HoverCard.Content class="rounded-lg bg-white p-4 shadow-lg">
 														<p>{testimonial.position}</p>
 													</HoverCard.Content>
 												</HoverCard.Root>
 											{:else}
-												<h2 class="text-[#737275]">{testimonial.position}</h2>
+												<h3 class="text-[#737275]">{testimonial.position}</h3>
 											{/if}
 										</div>
 									</div>
 								</div>
 								<div class="pt-[1.25rem] text-[#737275]">
-									<h3>{testimonial.review}</h3>
+									<p>{testimonial.review}</p>
 								</div>
 							</div>
 						</Dialog.Content>
@@ -225,13 +225,13 @@
 								<SanityImage
 									class="h-[3rem] w-[3rem] overflow-hidden rounded-full"
 									src={testimonial?.reviewerImage}
-									sizes="05vw"
+									sizes="5vw"
 									imageUrlBuilder={imgBuilder}
 									alt={testimonial?.reviewerImage?.alt || 'image'}
 								/>
 							</div>
 							<div class="text-left">
-								<h2 class="text-[16px] font-semibold leading-[120%]">{testimonial.name}</h2>
+								<h3 class="text-[16px] font-semibold leading-[120%]">{testimonial.name}</h3>
 
 								<div class="flex items-center">
 									<div class="pr-[0.38rem]">
@@ -239,7 +239,7 @@
 											<SanityImage
 												class="h-fit w-fit "
 												src={testimonial.companyLogo}
-												sizes="05vw"
+												sizes="5vw"
 												imageUrlBuilder={imgBuilder}
 												alt={testimonial?.companyLogo?.alt || 'logo'}
 											/>
@@ -249,11 +249,11 @@
 									{#if testimonial.companyName.length > 12}
 										<HoverCard.Root>
 											<HoverCard.Trigger>
-												<h2
+												<h3
 													class="max-w-[80px] truncate text-[14px] font-light leading-[120%] text-[#737275] sm:max-w-[120px]"
 												>
 													{testimonial.companyName}
-												</h2>
+												</h3>
 											</HoverCard.Trigger>
 											<HoverCard.Content class="rounded-lg  bg-white p-4 shadow-lg">
 												<p class="text-[14px] font-light leading-[120%] text-[#737275]">
@@ -262,20 +262,20 @@
 											</HoverCard.Content>
 										</HoverCard.Root>
 									{:else}
-										<h2 class="text-[14px] font-light leading-[120%] text-[#737275]">
+										<h3 class="text-[14px] font-light leading-[120%] text-[#737275]">
 											{testimonial.companyName}
-										</h2>
+										</h3>
 									{/if}
 									<Dot class="text-[#737275]" />
 
 									{#if testimonial.position.length > 12}
 										<HoverCard.Root>
 											<HoverCard.Trigger>
-												<h2
+												<h3
 													class="max-w-[90px] truncate text-[14px] font-light leading-[120%] text-[#737275] lg:max-w-[110px]"
 												>
 													{testimonial.position}
-												</h2>
+												</h3>
 											</HoverCard.Trigger>
 											<HoverCard.Content class="rounded-lg  bg-white p-4 shadow-lg">
 												<p class="text-[14px] font-light leading-[120%] text-[#737275]">
@@ -284,9 +284,9 @@
 											</HoverCard.Content>
 										</HoverCard.Root>
 									{:else}
-										<h2 class="text-[14px] font-light leading-[120%] text-[#737275]">
+										<h3 class="text-[14px] font-light leading-[120%] text-[#737275]">
 											{testimonial.position}
-										</h2>
+										</h3>
 									{/if}
 								</div>
 							</div>

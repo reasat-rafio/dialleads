@@ -14,7 +14,7 @@
 		<SanityImage
 			class="h-[9.3125rem] w-[9.317rem]"
 			src={card?.icon}
-			sizes="5vw"
+			sizes="50vw"
 			imageUrlBuilder={imgBuilder}
 			alt={card?.icon?.alt || 'icon'}
 		/>

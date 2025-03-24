@@ -21,9 +21,9 @@
       alt={card?.cardIcon?.alt || "icon"} />
   </div>
   <div class="h-full w-full lg:h-[4.6875rem] lg:w-[13.5625rem]">
-    <h5 class="font-geist text-xl font-normal text-black">
+    <h3 class="font-geist text-xl font-normal text-black">
       {card?.cardDescription}
       <span class="font-geist text-[#5B6779]">{card?.cardDescriptionFor}</span>
-    </h5>
+    </h3>
   </div>
 </div>

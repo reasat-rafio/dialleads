@@ -167,6 +167,7 @@
 												lqip
 												src={useCase?.useCaseImage}
 												imageUrlBuilder={imgBuilder}
+												sizes="100vw"
 												alt={useCase?.useCaseImage?.alt || 'image'}
 											/>
 										</div>

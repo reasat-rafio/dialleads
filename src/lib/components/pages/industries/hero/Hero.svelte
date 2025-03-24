@@ -145,15 +145,15 @@
 								lqip
 								src={agentCard?.cardImage}
 								imageUrlBuilder={imgBuilder}
-								alt={agentCard?.cardImage?.alt || 'image'}
+								alt={agentCard?.cardImage?.alt || 'agent image'}
 							/>
 						</div>
 
-						<h3
+						<h2
 							class="mt-[1.38rem] text-center text-[1.125rem] font-semibold text-white lg:text-[1.375rem]"
 						>
 							{agentCard.cardTitle}
-						</h3>
+						</h2>
 						<h3 class="text-center text-[0.875rem] font-[300] text-white lg:text-[1rem]">
 							{agentCard.cardSubTitle}
 						</h3>

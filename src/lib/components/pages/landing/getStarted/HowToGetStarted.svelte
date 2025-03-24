@@ -20,8 +20,8 @@
 	<div
 		class="mt-8 grid grid-cols-1 justify-items-center gap-[1.25rem] md:grid-cols-2 xl:grid-cols-4"
 	>
-		{#each cards as card, idx}
-			<Card {card} index={idx} />
+		{#each cards as card}
+			<Card {card} />
 		{/each}
 	</div>
 </div>

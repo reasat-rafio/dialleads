@@ -18,18 +18,18 @@
 					sizes="46px"
 					imageUrlBuilder={imgBuilder}
 				/>
-				<h4 class="font-geist text-[30px] font-medium leading-[1] tracking-tight text-black">
+				<h1 class="font-geist text-[30px] font-medium leading-[1] tracking-tight text-black">
 					{footer?.companyName}
-				</h4>
+				</h1>
 			</div>
-			<h5 class="app-body-4 mb-[1.5rem] mt-[12px] text-gray-600/70">
+			<p class="app-body-4 mb-[1.5rem] mt-[12px] text-gray-600/70">
 				{footer?.supportingText}
-			</h5>
+			</p>
 		</div>
 
 		<div class="flex w-fit flex-col gap-x-10 gap-y-2.5 lg:flex-row lg:flex-wrap xl:gap-x-[71px]">
 			{#each footer?.browse as link}
-				<a href={link.internalLink} class="app-title-3 text-nowrap text-black">
+				<a href={link.internalLink} class="app-title-3 text-nowrap text-black hover:text-primary transition-colors duration-200 ease-linear">
 					{link?.title}
 				</a>
 			{/each}
@@ -63,13 +63,15 @@
 
 			<!-- socials -->
 			<div class="flex w-fit items-center gap-x-3">
-				{#each footer?.socials as social}
+				{#each footer?.socials as social, idx}
 					<a href={social.externalLink} class="h-fit w-fit p-1">
 						<SanityImage
 							class="flex h-5 w-5 items-center justify-center"
 							src={social.icon}
 							sizes="20px"
 							imageUrlBuilder={imgBuilder}
+							alt={`social icon ${idx}`}
+							lqip
 						/>
 					</a>
 				{/each}

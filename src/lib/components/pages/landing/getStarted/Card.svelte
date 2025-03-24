@@ -5,7 +5,7 @@
 	import SanityImage from '$lib/sanity/sanity-image/sanity-image.svelte';
 	import type { GetStartedCard } from '../../../../../types/landing.types';
 
-	let { card, index }: { card: GetStartedCard; index: number } = $props();
+	let { card }: { card: GetStartedCard; } = $props();
 
 	const handleCTAClick = () => {
 		goto(card?.ctaBtnURL ?? '/');
@@ -20,11 +20,11 @@
 	</div>
 
 	<div class="mt-9 h-full w-full space-y-2.5">
-		<h4
+		<h3
 			class="w-full font-geist text-[22px] font-semibold leading-[38px] tracking-[-1%] text-black lg:text-[24px] lg:leading-[auto]"
 		>
 			{card?.cardTitle}
-		</h4>
+		</h3>
 		<p
 			class="w-full font-geist text-[16px] font-normal leading-[150%] tracking-[0%] text-[#5B6779]/80"
 		>
@@ -34,11 +34,11 @@
 
 	<Button
 		onclick={handleCTAClick}
-		class={`mt-[30px] flex h-[52px] w-full items-center gap-3 rounded-[0.75rem] ${index === 0 ? 'bg-primary-gradient text-white' : 'border border-violet-600 bg-transparent text-violet-600 hover:bg-transparent'} px-7 py-4`}
+		class={`mt-[30px] flex h-[52px] w-full items-center gap-3 rounded-[0.75rem] border border-violet-600 bg-transparent text-violet-600 transition-colors duration-0 hover:bg-primary-gradient hover:text-white group px-7 py-4`}
 	>
 		<SanityImage
 			class="h-fit w-fit"
-			innerClass="object-contain w-6 h-6"
+			innerClass="object-contain w-6 h-6 group-hover:brightness-[100]"
 			src={card?.ctaBtnIcon}
 			sizes="5vw"
 			imageUrlBuilder={imgBuilder}
