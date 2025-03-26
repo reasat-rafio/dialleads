@@ -57,9 +57,7 @@
 		sectionName={props?.sectionTitle}
 		sectionTitle={props?.title}
 	/>
-	<div
-		class="mt-8 h-fit w-full md:mt-[3.125rem]"
-	>
+	<div class="mt-8 h-fit w-full md:mt-[3.125rem]">
 		<Masonry
 			items={testimonials}
 			bind:gridGap
@@ -82,22 +80,12 @@
 											alt={testimonial?.reviewerImage?.alt || 'image'}
 										/>
 									</div>
-									<div class="text-left">
-										<h3 class="text-[16px] font-semibold leading-[120%]">{testimonial.name}</h3>
+									<div class="w-full text-left">
+										<h3 class="w-full truncate text-[16px] font-semibold leading-[120%]">
+											{testimonial.name}
+										</h3>
 
-										<div class="flex items-center">
-											<div class="pr-[0.38rem]">
-												{#if !!testimonial.companyLogo}
-													<SanityImage
-														class="h-fit w-fit "
-														src={testimonial.companyLogo}
-														sizes="5vw"
-														imageUrlBuilder={imgBuilder}
-														alt="logo"
-													/>
-												{/if}
-											</div>
-
+										<div class="flex w-full items-center">
 											{#if testimonial.companyName.length > 12}
 												<HoverCard.Root>
 													<HoverCard.Trigger>
@@ -107,7 +95,7 @@
 															{testimonial.companyName}
 														</h3>
 													</HoverCard.Trigger>
-													<HoverCard.Content class="rounded-lg bg-white p-4 shadow-lg">
+													<HoverCard.Content class="rounded-lg bg-white px-4 py-2.5 shadow-lg">
 														<p class="text-[14px] font-light leading-[120%] text-[#737275]">
 															{testimonial.companyName}
 														</p>
@@ -124,12 +112,12 @@
 												<HoverCard.Root>
 													<HoverCard.Trigger>
 														<h3
-															class="max-w-[90px] truncate text-[14px] font-light leading-[120%] text-[#737275] lg:max-w-[90px] xl:max-w-[110px]"
+															class="w-full truncate text-[14px] font-light leading-[120%] text-[#737275]"
 														>
 															{testimonial.position}
 														</h3>
 													</HoverCard.Trigger>
-													<HoverCard.Content class="rounded-lg  bg-white p-4 shadow-lg">
+													<HoverCard.Content class="rounded-lg  bg-white px-4 py-2.5 shadow-lg">
 														<p class="text-[14px] font-light leading-[120%] text-[#737275]">
 															{testimonial.position}
 														</p>
@@ -163,22 +151,12 @@
 											alt={testimonial?.reviewerImage?.alt || 'image'}
 										/>
 									</div>
-									<div class="">
-										<h3 class="font-semibold">{testimonial.name}</h3>
+									<div class="w-full text-left">
+										<h3 class="w-full truncate text-[16px] font-semibold leading-[120%]">
+											{testimonial.name}
+										</h3>
 
-										<div class="flex items-center">
-											<div class="pr-[0.38rem]">
-												{#if !!testimonial.companyLogo}
-													<SanityImage
-														class="h-fit w-fit "
-														src={testimonial.companyLogo}
-														sizes="5vw"
-														imageUrlBuilder={imgBuilder}
-														alt="logo"
-													/>
-												{/if}
-											</div>
-
+										<div class="flex w-full items-center">
 											{#if testimonial.companyName.length > 12}
 												<HoverCard.Root>
 													<HoverCard.Trigger>
@@ -186,7 +164,7 @@
 															{testimonial.companyName}
 														</h3>
 													</HoverCard.Trigger>
-													<HoverCard.Content class="rounded-lg bg-white p-4 shadow-lg">
+													<HoverCard.Content class="rounded-lg bg-white px-4 py-2.5 shadow-lg">
 														<p>{testimonial.companyName}</p>
 													</HoverCard.Content>
 												</HoverCard.Root>
@@ -198,12 +176,16 @@
 											{#if testimonial.position.length > 12}
 												<HoverCard.Root>
 													<HoverCard.Trigger>
-														<h3 class="max-w-[90px] truncate text-[#737275] lg:max-w-[110px]">
+														<h3
+															class="w-full truncate text-[14px] font-light leading-[120%] text-[#737275]"
+														>
 															{testimonial.position}
 														</h3>
 													</HoverCard.Trigger>
-													<HoverCard.Content class="rounded-lg bg-white p-4 shadow-lg">
-														<p>{testimonial.position}</p>
+													<HoverCard.Content class="rounded-lg bg-white px-4 py-2.5 shadow-lg">
+														<p class="text-[14px] font-light leading-[120%] text-[#737275]">
+															{testimonial.position}
+														</p>
 													</HoverCard.Content>
 												</HoverCard.Root>
 											{:else}
@@ -230,22 +212,12 @@
 									alt={testimonial?.reviewerImage?.alt || 'image'}
 								/>
 							</div>
-							<div class="text-left">
-								<h3 class="text-[16px] font-semibold leading-[120%]">{testimonial.name}</h3>
+							<div class="w-full text-left">
+								<h3 class="w-full truncate text-[16px] font-semibold leading-[120%]">
+									{testimonial.name}
+								</h3>
 
-								<div class="flex items-center">
-									<div class="pr-[0.38rem]">
-										{#if !!testimonial.companyLogo}
-											<SanityImage
-												class="h-fit w-fit "
-												src={testimonial.companyLogo}
-												sizes="5vw"
-												imageUrlBuilder={imgBuilder}
-												alt={testimonial?.companyLogo?.alt || 'logo'}
-											/>
-										{/if}
-									</div>
-
+								<div class="flex w-full items-center">
 									{#if testimonial.companyName.length > 12}
 										<HoverCard.Root>
 											<HoverCard.Trigger>
@@ -255,7 +227,7 @@
 													{testimonial.companyName}
 												</h3>
 											</HoverCard.Trigger>
-											<HoverCard.Content class="rounded-lg  bg-white p-4 shadow-lg">
+											<HoverCard.Content class="rounded-lg  bg-white px-4 py-2.5 shadow-lg">
 												<p class="text-[14px] font-light leading-[120%] text-[#737275]">
 													{testimonial.companyName}
 												</p>
@@ -272,12 +244,12 @@
 										<HoverCard.Root>
 											<HoverCard.Trigger>
 												<h3
-													class="max-w-[90px] truncate text-[14px] font-light leading-[120%] text-[#737275] lg:max-w-[110px]"
+													class="w-full truncate bg-red-400 text-[14px] font-light leading-[120%] text-[#737275]"
 												>
 													{testimonial.position}
 												</h3>
 											</HoverCard.Trigger>
-											<HoverCard.Content class="rounded-lg  bg-white p-4 shadow-lg">
+											<HoverCard.Content class="rounded-lg  bg-white px-4 py-2.5 shadow-lg">
 												<p class="text-[14px] font-light leading-[120%] text-[#737275]">
 													{testimonial.position}
 												</p>

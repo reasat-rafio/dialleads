@@ -127,11 +127,11 @@
 									/>
 
 									<div class="flex w-full flex-col gap-2">
-										<h4
+										<p
 											class="text-[1.125rem] font-semibold leading-6 text-black lg:text-[1.5rem] lg:tracking-[-0.7px]"
 										>
 											{iuseCase.title}
-										</h4>
+										</p>
 										<p
 											class="text-[1rem] leading-[150%] text-[#737275] lg:text-[1.125rem] lg:leading-7"
 										>
@@ -143,10 +143,10 @@
 						</div>
 					</div>
 
-					<div class="hidden h-fit max-h-[25rem] w-[23.25rem] lg:block">
+					<div class="hidden h-full max-h-[25rem] w-[23.25rem] lg:block">
 						<SanityImage
-							class="h-fit w-full"
-							innerClass="object-cover w-full h-auto"
+							class="h-full w-full rounded-[1.25rem] overflow-hidden"
+							innerClass="object-cover object-center w-full h-full"
 							src={industry.useCaseImage}
 							sizes={'(min-width:1024px) 12vw, 20vw'}
 							imageUrlBuilder={imgBuilder}

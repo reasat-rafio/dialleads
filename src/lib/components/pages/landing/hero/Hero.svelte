@@ -87,18 +87,21 @@
       					px-2 py-2 text-sm shadow-xl backdrop-blur-[1px] transition-colors"
 			>
 				<Button
+					href={hero.link.type === 'internal' ? hero.link.internalLink : hero.link.externalLink}
 					class="flex h-[3.5rem] w-[13.5rem] items-center rounded-lg bg-primary-gradient px-6
           					py-3 font-geist text-lg font-semibold text-white shadow-xl 
 							transition-all duration-200 ease-linear hover:shadow-xl hover:brightness-90 focus:outline-none"
 				>
 					<!-- Icon (SanityImage) -->
-					<SanityImage
-						class="h-5 w-5"
-						src={hero?.link?.icon}
-						sizes="5vw"
-						imageUrlBuilder={imgBuilder}
-						alt={hero?.link?.icon?.alt || 'icon'}
-					/>
+					{#if hero?.link?.icon}
+						<SanityImage
+							class="h-5 w-5"
+							src={hero.link.icon}
+							sizes="5vw"
+							imageUrlBuilder={imgBuilder}
+							alt={hero.link.icon.alt || 'icon'}
+						/>
+					{/if}
 					<!-- Button Text {hero?.link?.title} -->
 					<span>{hero?.link?.title}</span>
 				</Button>
@@ -126,7 +129,7 @@
 					<SanityImage
 						lqip
 						innerClass="w-full object-cover"
-						class="before:[blurred-img] mx-auto h-full w-full rounded-t-full object-cover"
+						class="mx-auto h-full w-full rounded-t-full object-cover"
 						src={hero?.thumbnailForMobile}
 						sizes="100vw"
 						imageUrlBuilder={imgBuilder}
@@ -142,6 +145,7 @@
 						onmouseenter={() => (isPlayHovered = true)}
 						onmouseleave={() => (isPlayHovered = false)}
 						onclick={openVideo}
+						aria-label="video play button"
 					>
 						<SanityImage
 							class="h-[1.6rem] w-[1.6rem]"

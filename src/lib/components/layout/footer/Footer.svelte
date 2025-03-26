@@ -17,6 +17,8 @@
 					src={footer?.companyLogo}
 					sizes="46px"
 					imageUrlBuilder={imgBuilder}
+					lqip
+					alt={footer?.companyLogo?.alt || 'logo'}
 				/>
 				<h1 class="font-geist text-[30px] font-medium leading-[1] tracking-tight text-black">
 					{footer?.companyName}

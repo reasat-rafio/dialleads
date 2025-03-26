@@ -1,16 +1,11 @@
 <script lang="ts">
-	import { goto } from '$app/navigation';
-	import Button, { buttonVariants } from '$lib/components/ui/button/button.svelte';
+	import { buttonVariants } from '$lib/components/ui/button/button.svelte';
 	import { imgBuilder } from '$lib/sanity/sanity-client';
 	import SanityImage from '$lib/sanity/sanity-image/sanity-image.svelte';
 	import type { WhyUsCard } from '../../../../../types/industries.types';
 
 	let { card }: { card: WhyUsCard } = $props();
 	let { cardImage, cardTitle, cardDescription, cta } = $derived(card);
-
-	const handleCTAClick = () => {
-		goto((cta.type === 'internal' ? cta.internalLink : cta.externalLink) ?? '/');
-	};
 </script>
 
 <div class="flex h-full w-full flex-col rounded-[1rem] border border-[#e4e3e9] p-4 lg:p-[1.875rem]">
@@ -39,11 +34,10 @@
 		</p>
 	</div>
 
-	<Button
-		onclick={handleCTAClick}
+	<a
+		href={cta.type === 'internal' ? cta.internalLink : cta.externalLink}
 		class={buttonVariants({
-			className:
-				'mt-8 flex h-[52px] w-full items-center gap-3 rounded-[0.75rem] border border-[#9F9FA3] bg-transparent px-7 py-4 text-black transition-colors duration-0 hover:bg-primary-gradient hover:text-white group'
+			className: `group relative mt-8 flex h-[52px] w-full items-center gap-3 overflow-clip rounded-[0.75rem] border border-[#9F9FA3] bg-transparent px-7 py-4 text-black transition-all duration-200 ease-linear after:absolute after:inset-y-0 after:right-[100%] after:z-[-1] after:w-[150%] after:transition-all after:duration-300 after:ease-linear after:content-[''] after:[background-image:_linear-gradient(to_right,_rgba(113,48,214,1.0)_0%,_rgba(177,136,240,1.0)_70%,_rgba(177,136,240,0.0)_100%)] hover:bg-transparent hover:text-white hover:after:right-[-40%]`
 		})}
 	>
 		<SanityImage
@@ -57,5 +51,5 @@
 		<span class="font-geist text-[18px] font-normal leading-[18px] tracking-normal">
 			{cta.title}
 		</span>
-	</Button>
+	</a>
 </div>

@@ -150,7 +150,6 @@ export interface Testimonial {
 	name: string;
 	position: string;
 	companyName: string;
-	companyLogo: SanityImageWithAlt;
 }
 
 export interface PricingProps {

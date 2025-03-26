@@ -1,6 +1,6 @@
 import { orderRankField } from '@sanity/orderable-document-list';
 import { FcNews } from 'react-icons/fc';
-import { defineArrayMember, defineField, type Rule, type SlugSourceContext } from 'sanity';
+import { defineField } from 'sanity';
 
 const testimonials = {
 	name: 'testimonials',
@@ -54,23 +54,6 @@ const testimonials = {
 			title: 'Company Name',
 			type: 'string'
 			// validation: (Rule) => Rule.required(),
-		}),
-
-		defineField({
-			name: 'companyLogo',
-			type: 'image',
-			title: 'Company Logo',
-			// validation: (Rule) => Rule.required(),
-			options: { hotspot: true },
-			fields: [
-				{
-					name: 'alt',
-					title: 'Alternative Text',
-					description: 'Important for SEO and accessibility',
-					type: 'string'
-					// validation: (Rule) => Rule.required(),
-				}
-			]
 		}),
 
 		defineField({

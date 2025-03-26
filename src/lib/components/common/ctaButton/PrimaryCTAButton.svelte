@@ -9,7 +9,7 @@
 		buttonText: string;
 		buttonIcon: SanityImageWithAlt;
 		iconPosition: 'before' | 'after';
-		as: 'button' | 'a';
+		as: 'a';
 		href: string;
 		type: 'button' | 'submit' | 'reset';
 		disabled: boolean;
@@ -24,7 +24,7 @@
 		buttonText,
 		buttonIcon,
 		iconPosition = 'before',
-		as = 'button',
+		as = 'a',
 		href = '/',
 		type = 'button',
 		disabled = false,
@@ -32,7 +32,6 @@
 		iconInnerClass = '',
 		WrapperClass = '',
 		children,
-        onClickHandler = $bindable(),
 	}: ButtonProps = $props();
 
 	const Component = $derived.by(() => (as === 'a' ? 'a' : 'button'));
@@ -40,7 +39,7 @@
 
 <svelte:element
 	this={Component}
-	{...as === 'a' ? { href } : { type }}
+	{...as === 'a' ? { href } : {}}
 	{disabled}
     
 	class={cn(
