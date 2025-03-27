@@ -86,7 +86,7 @@
 										</h3>
 
 										<div class="flex w-full items-center">
-											{#if testimonial.companyName.length > 12}
+											{#if testimonial.companyName.length > 24}
 												<HoverCard.Root>
 													<HoverCard.Trigger>
 														<h3
@@ -108,7 +108,7 @@
 											{/if}
 											<Dot class="text-[#737275]" />
 
-											{#if testimonial.position.length > 12}
+											{#if testimonial.position.length > 24}
 												<HoverCard.Root>
 													<HoverCard.Trigger>
 														<h3
@@ -157,7 +157,7 @@
 										</h3>
 
 										<div class="flex w-full items-center">
-											{#if testimonial.companyName.length > 12}
+											{#if testimonial.companyName.length > 24}
 												<HoverCard.Root>
 													<HoverCard.Trigger>
 														<h3 class="max-w-[130px] truncate text-[#737275]">
@@ -173,7 +173,7 @@
 											{/if}
 											<Dot class="text-[#737275]" />
 
-											{#if testimonial.position.length > 12}
+											{#if testimonial.position.length > 24}
 												<HoverCard.Root>
 													<HoverCard.Trigger>
 														<h3
@@ -218,7 +218,7 @@
 								</h3>
 
 								<div class="flex w-full items-center">
-									{#if testimonial.companyName.length > 12}
+									{#if testimonial.companyName.length > 16}
 										<HoverCard.Root>
 											<HoverCard.Trigger>
 												<h3
@@ -234,17 +234,17 @@
 											</HoverCard.Content>
 										</HoverCard.Root>
 									{:else}
-										<h3 class="text-[14px] font-light leading-[120%] text-[#737275]">
+										<h3 class="text-[14px] font-light leading-[120%] text-[#737275] text-nowrap">
 											{testimonial.companyName}
 										</h3>
 									{/if}
 									<Dot class="text-[#737275]" />
 
-									{#if testimonial.position.length > 12}
+									{#if testimonial.position.length > 16}
 										<HoverCard.Root>
 											<HoverCard.Trigger>
 												<h3
-													class="w-full truncate bg-red-400 text-[14px] font-light leading-[120%] text-[#737275]"
+													class="w-full truncate text-[14px] font-light leading-[120%] text-[#737275]"
 												>
 													{testimonial.position}
 												</h3>
@@ -256,7 +256,7 @@
 											</HoverCard.Content>
 										</HoverCard.Root>
 									{:else}
-										<h3 class="text-[14px] font-light leading-[120%] text-[#737275]">
+										<h3 class="text-[14px] font-light leading-[120%] text-[#737275] text-nowrap">
 											{testimonial.position}
 										</h3>
 									{/if}

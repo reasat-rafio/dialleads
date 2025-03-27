@@ -4,16 +4,27 @@
 	import type { WhyDialleadsAI, WhyDialleadsAIProps } from '../../../../../types/industries.types';
 	import Card from './Card.svelte';
 	import { inview } from 'svelte-inview';
-	import { fly } from 'svelte/transition';
+	import { onMount } from 'svelte';
+	import { page } from '$app/state';
 
 	let { props }: { props: WhyDialleadsAIProps } = $props();
 	let { whyDialleadsAI }: { whyDialleadsAI: WhyDialleadsAI } = $derived(props);
 	let { sectionIcon, sectionName, sectionTitle, cards } = $derived(whyDialleadsAI);
 
+	let prevIndustry: string | undefined = $state(undefined);
 	let visible: boolean[] = $state([]);
 
-	$effect(() => {
+	onMount(() => {
 		visible = Array(cards.length).fill(false);
+	});
+
+	$effect(() => {
+		const currentIndustry = page.params.industry;
+		// if the industry param changes, reset elementvisible
+		if (currentIndustry !== prevIndustry) {
+			visible = Array(cards.length).fill(false);
+			prevIndustry = currentIndustry;
+		}
 	});
 </script>
 
@@ -29,9 +40,9 @@
 	<div
 		class="mb-[2.5rem] mt-8 grid grid-cols-1 justify-items-center gap-5 md:grid-cols-2 lg:mb-[6.26rem] lg:mt-16 xl:grid-cols-4"
 	>
-		{#each cards as card, idx}
+		{#each cards as card, idx (card)}
 			<div
-				use:inview={{ threshold: 0.2, unobserveOnEnter: true, rootMargin: '80px 0px -100px 0px' }}
+				use:inview={{ threshold: 0, unobserveOnEnter: false, rootMargin: '80px 0px -100px 0px' }}
 				oninview_enter={() => {
 					visible[idx] = true;
 				}}

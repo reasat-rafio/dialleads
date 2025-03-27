@@ -7,7 +7,6 @@
 	import { PortableText } from '@portabletext/svelte';
 	import VioletGradient from './VioletGradient.svelte';
 	import type { Hero, HeroProps } from '../../../../../types/industries.types';
-	import { onMount } from 'svelte';
 
 	let { props }: { props: HeroProps } = $props();
 	let { hero }: { hero: Hero } = $derived(props);
@@ -18,9 +17,9 @@
 	let waveSurferInstance: WaveSurfer; // Store WaveSurfer instance here
 
 	// Initialize WaveSurfer instances on mount
-	onMount(() => {
+	$effect(() => {
 		const canvas = document.createElement('canvas');
-		canvas.width = 100;
+		canvas.width = 175;
 		canvas.height = 1; // Minimal height is enough
 		const ctx = canvas.getContext('2d');
 		if (!ctx) {
@@ -75,6 +74,7 @@
 			src="/grid.png"
 			alt="grid overlay"
 			class="pointer-events-none absolute inset-0 z-0 h-full w-full object-cover mix-blend-overlay"
+			draggable="false"
 		/>
 
 		<div
@@ -141,16 +141,18 @@
 					class="h-fit w-full rounded-[1.38rem] border-[0.342px] border-violet-600 px-4 pb-6 pt-4 backdrop-blur-sm"
 				>
 					<div class="flex h-[22.25rem] w-full flex-col rounded-[0.88rem] md:h-[22.75rem]">
-						<div class="h-[14.188rem] w-full overflow-hidden rounded-[0.88rem]">
-							<SanityImage
-								class="h-full w-full rounded-[0.88rem]"
-								innerClass="h-full w-full object-cover"
-								lqip
-								src={agentCard?.cardImage}
-								imageUrlBuilder={imgBuilder}
-								alt={agentCard?.cardImage?.alt || 'agent image'}
-							/>
-						</div>
+						{#key agentCard?.cardImage}
+							<div class="h-[14.188rem] w-full overflow-hidden rounded-[0.88rem]">
+								<SanityImage
+									class="h-full w-full rounded-[0.88rem]"
+									innerClass="h-full w-full object-cover"
+									lqip
+									src={agentCard?.cardImage}
+									imageUrlBuilder={imgBuilder}
+									alt={agentCard?.cardImage?.alt || 'agent image'}
+								/>
+							</div>
+						{/key}
 
 						<h2
 							class="mt-[1.38rem] text-center text-[1.125rem] font-semibold text-white lg:text-[1.375rem]"

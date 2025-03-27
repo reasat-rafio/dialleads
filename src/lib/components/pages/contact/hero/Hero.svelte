@@ -14,6 +14,7 @@
 		src="/grid.png"
 		alt="grid overlay"
 		class="pointer-events-none absolute inset-0 z-0 h-full w-full object-cover mix-blend-overlay"
+		draggable="false"
 	/>
 
 	<SectionIconAndName
