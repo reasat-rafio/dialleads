@@ -82,23 +82,26 @@
 		<div class="mx-[0.94rem] mt-[3rem] flex justify-center lg:mt-[1.88rem]">
 			<div
 				class="relative z-[10] inline-flex w-full max-w-[14.420rem] animate-shine
-      items-center justify-center rounded-xl border-[1px] border-l
-      border-t border-white/30 border-b-white/15 border-r-white/15 bg-transparent bg-[linear-gradient(110deg,rgba(46,16,101,0.8)_50%,rgba(124,58,237,0.8)_55%,rgba(46,16,101,0.8))] bg-[length:200%_100%]
-      px-2 py-2 text-sm shadow-xl backdrop-blur-[1px] transition-colors"
+      					items-center justify-center rounded-xl border-[1px] border-l
+      					border-t border-white/30 border-b-white/15 border-r-white/15 bg-transparent bg-[linear-gradient(110deg,rgba(46,16,101,0.8)_50%,rgba(124,58,237,0.8)_55%,rgba(46,16,101,0.8))] bg-[length:200%_100%]
+      					px-2 py-2 text-sm shadow-xl backdrop-blur-[1px] transition-colors"
 			>
 				<Button
-					class="flex h-[3.5rem] w-[13.5rem]
-          items-center rounded-lg bg-primary-gradient px-6
-          py-3 font-geist text-lg font-semibold text-white shadow-xl hover:shadow-xl focus:outline-none hover:brightness-90 transition-all duration-200 ease-linear"
+					href={hero.link.type === 'internal' ? hero.link.internalLink : hero.link.externalLink}
+					class="flex h-[3.5rem] w-[13.5rem] items-center rounded-lg bg-primary-gradient px-6
+          					py-3 font-geist text-lg font-semibold text-white shadow-xl 
+							transition-all duration-200 ease-linear hover:shadow-xl hover:brightness-90 focus:outline-none"
 				>
 					<!-- Icon (SanityImage) -->
-					<SanityImage
-						class="h-5 w-5"
-						src={hero?.link?.icon}
-						sizes="5vw"
-						imageUrlBuilder={imgBuilder}
-						alt={hero?.link?.icon?.alt || 'icon'}
-					/>
+					{#if hero?.link?.icon}
+						<SanityImage
+							class="h-5 w-5"
+							src={hero.link.icon}
+							sizes="5vw"
+							imageUrlBuilder={imgBuilder}
+							alt={hero.link.icon.alt || 'icon'}
+						/>
+					{/if}
 					<!-- Button Text {hero?.link?.title} -->
 					<span>{hero?.link?.title}</span>
 				</Button>
@@ -126,7 +129,7 @@
 					<SanityImage
 						lqip
 						innerClass="w-full object-cover"
-						class="before:[blurred-img] mx-auto h-full w-full rounded-t-full object-cover"
+						class="mx-auto h-full w-full rounded-t-full object-cover"
 						src={hero?.thumbnailForMobile}
 						sizes="100vw"
 						imageUrlBuilder={imgBuilder}
@@ -142,12 +145,14 @@
 						onmouseenter={() => (isPlayHovered = true)}
 						onmouseleave={() => (isPlayHovered = false)}
 						onclick={openVideo}
+						aria-label="video play button"
 					>
 						<SanityImage
 							class="h-[1.6rem] w-[1.6rem]"
 							src={hero?.videoPlayBtnIcon}
 							imageUrlBuilder={imgBuilder}
 							alt={hero?.videoPlayBtnIcon?.alt || 'icon'}
+							sizes="10vw"
 							style="transform: scale({isPlayHovered ? 1.1 : 1}); transition: transform 0.3s ease;"
 						/>
 					</Button>

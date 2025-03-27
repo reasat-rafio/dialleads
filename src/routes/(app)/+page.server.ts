@@ -49,7 +49,6 @@ const query = groq`
           },
           testimonials[]-> {
             ...,
-            ${asset('companyLogo')},
             ${asset('reviewerImage')},
           },
           industries[]-> {

@@ -17,7 +17,7 @@
 </script>
 
 <div class="mb-[2.5rem] mt-[1.88rem] px-5 lg:mt-[2.8rem]">
-	<h3
+	<h2
 		class="mb-8 text-center font-geist text-[18px] font-semibold leading-[24px] tracking-[0%] text-black md:text-[24px] md:tracking-[-0.7px]"
 	>
 		<PortableText
@@ -28,7 +28,7 @@
 				}
 			}}
 		/>
-	</h3>
+	</h2>
 
 	<Carousel.Root
 		opts={{

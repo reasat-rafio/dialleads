@@ -18,11 +18,11 @@
 		alt={card?.cardIcon?.alt || 'icon'}
 	/>
 	<div class="mt-6 w-full space-y-2.5">
-		<h4
+		<h3
 			class="w-full text-black font-geist text-[22px] leading-[38px] lg:text-[26px] font-semibold tracking-[-1%]"
 		>
 			{card?.cardTitle}
-		</h4>
+		</h3>
 		<p
 			class="w-full font-geist text-[#5B6779]/80 text-[18px] font-normal leading-[28px] tracking-[0%]"
 		>

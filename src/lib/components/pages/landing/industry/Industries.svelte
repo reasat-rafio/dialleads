@@ -94,11 +94,11 @@
 							/>
 						{/if}
 
-						<p
+						<h3
 							class={`text-[1.25rem] font-medium leading-[100%] ${currentIndustry === idx ? 'text-white' : 'text-primary'}`}
 						>
 							{industry.title}
-						</p>
+						</h3>
 					</button>
 				{/each}
 			</div>
@@ -108,11 +108,11 @@
 			{#if currentIndustry === idx}
 				<div class="mt-8 flex justify-center gap-[3.125rem] lg:mt-0 xl:gap-[4.375rem]">
 					<div class="flex w-full max-w-[32rem] flex-col">
-						<h4
+						<p
 							class="w-full text-[1.125rem] leading-7 text-black lg:text-[1.25rem] lg:leading-[150%] opacity-85"
 						>
 							{industry.description}
-						</h4>
+						</p>
 
 						<div class="mt-6 flex w-full flex-col gap-y-5 lg:mt-[2.625rem]">
 							{#each industry.useCases as iuseCase}
@@ -127,11 +127,11 @@
 									/>
 
 									<div class="flex w-full flex-col gap-2">
-										<h3
+										<p
 											class="text-[1.125rem] font-semibold leading-6 text-black lg:text-[1.5rem] lg:tracking-[-0.7px]"
 										>
 											{iuseCase.title}
-										</h3>
+										</p>
 										<p
 											class="text-[1rem] leading-[150%] text-[#737275] lg:text-[1.125rem] lg:leading-7"
 										>
@@ -143,14 +143,15 @@
 						</div>
 					</div>
 
-					<div class="hidden h-fit max-h-[25rem] w-[23.25rem] lg:block">
+					<div class="hidden h-full max-h-[25rem] w-[23.25rem] lg:block">
 						<SanityImage
-							class="h-fit w-full"
-							innerClass="object-cover w-full h-auto"
+							class="h-full w-full rounded-[1.25rem] overflow-hidden"
+							innerClass="object-cover object-center w-full h-full"
 							src={industry.useCaseImage}
 							sizes={'(min-width:1024px) 12vw, 20vw'}
 							imageUrlBuilder={imgBuilder}
 							alt={'usecase image'}
+							lqip
 						/>
 					</div>
 				</div>

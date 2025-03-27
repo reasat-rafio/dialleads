@@ -16,7 +16,7 @@ bg-slate-100 sm:max-w-[29.5625rem] lg:h-full"
 		<SanityImage
 			class="h-[4.25rem] w-[4.25rem]"
 			src={card?.icon}
-			sizes="5vw"
+			sizes="50vw"
 			imageUrlBuilder={imgBuilder}
 			alt={card?.icon?.alt || 'icon'}
 		/>

@@ -74,7 +74,7 @@
 					</p>
 				</div>
 
-				<h3
+				<h2
 					class="mt-3 font-geist text-[48px] font-semibold leading-[115%] tracking-[-1px] text-white"
 				>
 					<PortableText
@@ -85,7 +85,7 @@
 							}
 						}}
 					/>
-				</h3>
+				</h2>
 
 				<p
 					class="mt-[6px] font-geist text-[16px] font-normal leading-[150%] tracking-[0%] text-gray-50"
@@ -105,7 +105,7 @@
 											{...props}
 											bind:value={$formData.name}
 											placeholder="Your name"
-											class="min-h-[3.5rem] w-full rounded-[0.75rem] bg-white pl-[2.3rem] text-[1.125rem] md:min-h-[3.75rem] md:pl-[2.6rem] max-sm:placeholder:text-[1.125rem]"
+											class="min-h-[3.5rem] w-full rounded-[0.75rem] bg-white pl-[2.3rem] text-[1.125rem] max-sm:placeholder:text-[1.125rem] md:min-h-[3.75rem] md:pl-[2.6rem]"
 										/>
 										<div class="absolute bottom-5 left-4">
 											<svg
@@ -143,7 +143,7 @@
 											{...props}
 											bind:value={$formData.email}
 											placeholder="Your email"
-											class="min-h-[3.5rem] w-full rounded-[0.75rem] bg-white pl-[2.4rem] text-[1.125rem] md:min-h-[3.75rem] md:pl-[2.7rem] max-sm:placeholder:text-[1.125rem]"
+											class="min-h-[3.5rem] w-full rounded-[0.75rem] bg-white pl-[2.4rem] text-[1.125rem] max-sm:placeholder:text-[1.125rem] md:min-h-[3.75rem] md:pl-[2.7rem]"
 										/>
 
 										<div class="absolute bottom-4 left-4">
@@ -228,8 +228,8 @@
 												{...props}
 												bind:value={$formData.phoneNumber}
 												placeholder="Phone number"
-												class="w-full rounded-md bg-transparent px-3 py-[0.2rem] text-[1.125rem] text-black file:bg-transparent file:text-sm file:font-medium max-sm:placeholder:text-[1.125rem]
-												focus-visible:outline-none focus-visible:ring-0"
+												class="w-full rounded-md bg-transparent px-3 py-[0.2rem] text-[1.125rem] text-black file:bg-transparent file:text-sm file:font-medium focus-visible:outline-none
+												focus-visible:ring-0 max-sm:placeholder:text-[1.125rem]"
 											/>
 										</div>
 									{/snippet}
@@ -239,8 +239,8 @@
 					</div>
 
 					<Form.Button
-						class="flex h-fit min-h-[3.5rem] w-full min-w-[10rem] items-center justify-center gap-3 rounded-[0.75rem] bg-primary-gradient px-8 py-4 font-geist text-[1.125rem]
-                               font-normal leading-[1.125rem] tracking-normal text-white md:min-h-[3.75rem]"
+						class="flex h-fit min-h-[3.5rem] w-full min-w-[10rem] items-center justify-center gap-3 rounded-[0.75rem] bg-primary-gradient px-8 py-4 font-geist text-[1.125rem] font-normal leading-[1.125rem] tracking-normal text-white
+                               transition-all duration-100 ease-linear hover:brightness-90 md:min-h-[3.75rem]"
 					>
 						<SanityImage
 							class="h-5 w-5"
@@ -256,4 +256,3 @@
 		</div>
 	</div>
 </div>
-
