@@ -43,7 +43,7 @@
 
 			<a
 				href={cta.type === 'internal' ? cta.internalLink : cta.externalLink}
-				class={`mt-8 flex h-[3.25rem] w-full max-w-[14.563rem] items-center justify-center gap-3 rounded-[0.5rem] bg-primary-gradient px-7 py-4 text-white hover:brightness-90 transition-all duration-200 ease-linear`}
+				class={`mt-8 flex h-[3.25rem] w-full max-w-[14.563rem] items-center justify-center gap-3 rounded-[0.5rem] bg-primary-gradient px-7 py-4 text-white transition-all duration-200 ease-linear hover:brightness-90 hover:saturate-[1.25]`}
 			>
 				<SanityImage
 					class="h-fit w-fit"
@@ -53,7 +53,7 @@
 					imageUrlBuilder={imgBuilder}
 					alt={'icon'}
 				/>
-				<span class="text-[18px] font-normal leading-[18px] tracking-normal lg:leading-[24px]">
+				<span class="text-[18px] font-normal leading-[18px] tracking-normal">
 					{cta.title}
 				</span>
 			</a>

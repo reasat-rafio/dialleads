@@ -5,15 +5,29 @@
 	import type { SecuredAndEfficientProps } from '../../../../../types/industries.types';
 	import { PortableText } from '@portabletext/svelte';
 	import VioletGradient from './VioletGradient.svelte';
-	import { Button } from '$lib/components/ui/button';
+	import AnimatedCounter from '$lib/components/common/AnimatedCounter.svelte';
+	import { inview } from 'svelte-inview';
 
 	let { props }: { props: SecuredAndEfficientProps } = $props();
 	let { securedAndEfficient } = $derived(props);
 	let { sectionIcon, sectionName, sectionTitle, description, stats } =
 		$derived(securedAndEfficient);
+
+	const separateValue = (input: string) => {
+		const match = input.match(/^(\d+(?:\.\d+)?)(.*)$/);
+		if (match) {
+			return {
+				numeric: match[1],
+				nonNumeric: match[2].trim()
+			};
+		}
+		return { numeric: '', nonNumeric: '' };
+	};
+
+	let elementvisible: boolean = $state(false);
 </script>
 
-<div class="mx-auto max-w-7xl px-5 2xl:px-0 mb-[3.75rem]">
+<div class="mx-auto mb-[3.75rem] max-w-7xl px-5 2xl:px-0">
 	<div
 		class={cn(
 			'mt-10 flex h-fit w-fit rounded-full',
@@ -40,7 +54,7 @@
 		<div class="w-full max-w-[32.625rem]">
 			<h2
 				class={cn(
-					'w-full flex-shrink-0 font-geist text-black max-lg:text-center relative z-[0]',
+					'relative z-[0] w-full flex-shrink-0 font-geist text-black max-lg:text-center',
 					'text-[2.25rem] font-semibold leading-[2.625rem] tracking-[-1%]',
 					'lg:text-[3rem] lg:leading-[115%] lg:tracking-[-1px]'
 				)}
@@ -62,13 +76,29 @@
 			</div>
 		</div>
 
-		<div class="flex w-full flex-col gap-[2.25rem] max-lg:mt-8 max-md:items-center md:flex-row md:justify-center">
+		<div
+			use:inview={{ threshold: 0.2, unobserveOnEnter: true, rootMargin: '80px 0px -80px 0px' }}
+			oninview_enter={() => {
+				elementvisible = true;
+			}}
+			class="flex w-full flex-col gap-[2.25rem] max-lg:mt-8 max-md:items-center md:flex-row md:justify-center"
+		>
 			{#each stats as stat, idx (`stat_${idx}`)}
+				{@const valueWithText = separateValue(stat.value)}
 				<div class="flex w-full max-w-[14.188rem] flex-col items-center gap-y-3">
 					<h3
-						class="text-center font-geist text-[3rem] font-semibold leading-[115%] tracking-[-0.063rem] text-black"
+						class="flex items-center justify-center font-geist text-[3rem] font-semibold leading-[115%] tracking-[-0.063rem] text-black"
 					>
-						{stat.value}
+						<AnimatedCounter
+							values={Array.from({ length: parseFloat(valueWithText.numeric) + 1 }, (_, i) =>
+								new String(i).padStart(valueWithText.numeric.length, '0')
+							)}
+							direction="up"
+							ease="cubic-bezier(0.3, 1, 0.5, 1)"
+							duration={1800}
+							bind:startCounting={elementvisible}
+						/>
+						<span>{valueWithText.nonNumeric}</span>
 					</h3>
 					<p
 						class="text-center font-geist text-[1.375rem] font-semibold leading-[140%] tracking-[-0.044rem] text-black"

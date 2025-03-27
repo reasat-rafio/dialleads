@@ -115,7 +115,6 @@
 	}
 </script>
 
-
 <div class="relative mt-[2.5rem] h-full w-full px-[0.31rem] md:px-5 lg:mt-[5.06rem]">
 	<div class="h-full w-full rounded-[1.88rem] bg-real-world-gradient pt-[3rem] lg:pt-[5.13rem]">
 		<img
@@ -167,6 +166,7 @@
 												lqip
 												src={useCase?.useCaseImage}
 												imageUrlBuilder={imgBuilder}
+												sizes="100vw"
 												alt={useCase?.useCaseImage?.alt || 'image'}
 											/>
 										</div>
@@ -185,8 +185,10 @@
 											class="mt-[1.5rem] flex h-[2.4375rem] items-center gap-x-[0.5rem] overflow-hidden px-4"
 										>
 											<button
+												type="button"
 												class="flex min-h-[2.124rem] min-w-[2.124rem] items-center justify-center rounded-full border border-[#6d28d9] bg-[#EDE9FE] text-white"
 												onclick={() => togglePlay(index)}
+												aria-label="play-pause button"
 											>
 												{#if playStates[index]}
 													<svg

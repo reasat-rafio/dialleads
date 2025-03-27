@@ -78,7 +78,7 @@
 		/>
 
 		<div
-			class="mx-auto flex min-h-[49.375rem] w-full max-w-7xl flex-col gap-x-5 px-3 pb-[1.875rem] pt-[5.0625rem] sm:pt-[12.875rem] lg:flex-row lg:items-center lg:justify-between lg:px-5 2xl:px-0"
+			class="mx-auto flex min-h-[49.375rem] w-full max-w-7xl flex-col gap-x-5 px-3 pb-[6.25rem] pt-[5.0625rem] sm:pt-[12.875rem] lg:flex-row lg:items-center lg:justify-between lg:px-5 2xl:px-0"
 		>
 			<div class="relative w-full max-w-[40.625rem] max-lg:mx-auto">
 				<div class="relative z-10 w-full bg-transparent">
@@ -110,18 +110,21 @@
       				px-2 py-2 text-sm shadow-xl backdrop-blur-[1px] transition-colors"
 					>
 						<Button
-							class="flex h-[3.5rem] w-[13.5rem]
-          				items-center rounded-lg bg-primary-gradient px-6
-          				py-3 font-geist text-lg font-semibold text-white shadow-xl transition-all duration-200 ease-linear hover:shadow-xl hover:brightness-90 focus:outline-none"
+							href={hero.link.type === 'internal' ? hero.link.internalLink : hero.link.externalLink}
+							class="flex h-[3.5rem] w-[13.5rem] items-center rounded-lg bg-primary-gradient px-6
+          							py-3 font-geist text-lg font-semibold text-white shadow-xl transition-all duration-200 ease-linear 
+									hover:shadow-xl hover:brightness-90 focus:outline-none"
 						>
 							<!-- Icon (SanityImage) -->
-							<SanityImage
-								class="h-5 w-5"
-								src={hero?.link?.icon}
-								sizes="5vw"
-								imageUrlBuilder={imgBuilder}
-								alt={hero?.link?.icon?.alt || 'icon'}
-							/>
+							{#if hero?.link?.icon}
+								<SanityImage
+									class="h-5 w-5"
+									src={hero.link.icon}
+									sizes="5vw"
+									imageUrlBuilder={imgBuilder}
+									alt={hero.link.icon.alt || 'icon'}
+								/>
+							{/if}
 							<!-- Button Text {hero?.link?.title} -->
 							<span>{hero?.link?.title}</span>
 						</Button>
@@ -145,15 +148,15 @@
 								lqip
 								src={agentCard?.cardImage}
 								imageUrlBuilder={imgBuilder}
-								alt={agentCard?.cardImage?.alt || 'image'}
+								alt={agentCard?.cardImage?.alt || 'agent image'}
 							/>
 						</div>
 
-						<h3
+						<h2
 							class="mt-[1.38rem] text-center text-[1.125rem] font-semibold text-white lg:text-[1.375rem]"
 						>
 							{agentCard.cardTitle}
-						</h3>
+						</h2>
 						<h3 class="text-center text-[0.875rem] font-[300] text-white lg:text-[1rem]">
 							{agentCard.cardSubTitle}
 						</h3>
@@ -163,8 +166,10 @@
 							class="mt-[1.5rem] flex h-[2.4375rem] items-center gap-x-[0.5rem] overflow-hidden px-4"
 						>
 							<button
+								type="button"
 								class="flex min-h-[2.124rem] min-w-[2.124rem] items-center justify-center rounded-full border border-[#6d28d9] bg-[#EDE9FE] text-white"
 								onclick={togglePlay}
+								aria-label="play-pause button"
 							>
 								{#if playState}
 									<svg

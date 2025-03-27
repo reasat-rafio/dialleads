@@ -53,7 +53,7 @@
 			</div>
 
 			<Button
-				class={`flex h-[52px] w-fit items-center gap-3 rounded-[0.5rem] bg-primary-gradient px-8 py-4 text-white`}
+				class={`flex h-[3.25rem] w-fit items-center gap-3 rounded-[0.5rem] bg-primary-gradient px-8 py-4 text-white`}
 			>
 				<span class="font-geist text-[18px] font-normal leading-[18px] tracking-normal">
 					{ctaBtnText}

@@ -6,10 +6,19 @@
 	import type { WhyUsProps } from '../../../../../types/industries.types';
 	import Card from './Card.svelte';
 	import { cn } from '$lib/utils';
+	import { inview } from 'svelte-inview';
+	import { fly } from 'svelte/transition';
+	import { Motion } from 'svelte-motion';
 
 	let { props }: { props: WhyUsProps } = $props();
 	let { whyUs } = $derived(props);
 	let { sectionIcon, sectionName, sectionTitle, description, cards } = $derived(whyUs);
+
+	let visible: boolean[] = $state([]);
+
+	$effect(() => {
+		visible = Array(cards.length).fill(false);
+	});
 </script>
 
 <div class="mx-auto max-w-7xl px-5 2xl:px-0">
@@ -51,16 +60,40 @@
 		</h2>
 
 		<div
-			class="mx-auto mt-4 max-w-[43.313rem] text-center text-balance font-geist text-[1.125rem] font-normal leading-7 tracking-[0%] text-gray-600/80 lg:text-[1.25rem] lg:leading-[150%]"
+			class="mx-auto mt-4 max-w-[43.313rem] text-balance text-center font-geist text-[1.125rem] font-normal leading-7 tracking-[0%] text-gray-600/80 lg:text-[1.25rem] lg:leading-[150%]"
 		>
 			{description}
 		</div>
 	</div>
-	<div
-		class="mt-8 grid grid-cols-1 justify-items-center gap-[1.25rem] md:grid-cols-2 lg:mt-16"
-	>
-		{#each cards as card}
-			<Card {card} />
+	<div class="mt-8 grid grid-cols-1 justify-items-center gap-[1.25rem] md:grid-cols-2 lg:mt-16">
+		{#each cards as card, idx}
+			<div
+				use:inview={{ threshold: 0.2, unobserveOnEnter: true, rootMargin: '50px 0px -50px 0px' }}
+				oninview_enter={() => {
+					visible[idx] = true;
+				}}
+				class="h-full w-full"
+			>
+				<Motion
+					initial={{ opacity: 0, y: 36 }}
+					animate={{ opacity: visible[idx] ? 1 : 0, y: visible[idx] ? 0 : 36 }}
+					transition={{
+						type: 'tween',
+						damping: 30,
+						stiffness: 250,
+						duration: 0.4,
+						delay: idx * 0.15
+					}}
+					let:motion
+				>
+					<div
+						use:motion
+						class="h-full w-full"
+					>
+						<Card {card} />
+					</div>
+				</Motion>
+			</div>
 		{/each}
 	</div>
 </div>

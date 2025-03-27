@@ -133,7 +133,7 @@
 					<div class="my-[1rem] mt-[1.25rem] w-fit">
 						<a
 							href={cta.type === 'internal' ? cta.internalLink : cta.externalLink}
-							class="box-border block rounded-[0.75rem] bg-primary-gradient px-5 py-[0.875rem] font-geist text-white"
+							class="box-border block rounded-[0.75rem] bg-primary-gradient px-5 py-[0.75rem] font-geist text-white"
 						>
 							{cta.title}
 						</a>
