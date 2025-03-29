@@ -121,6 +121,7 @@
 			src="/grid.png"
 			alt="grid overlay"
 			class="pointer-events-none absolute inset-0 z-0 h-full w-full object-cover opacity-60 mix-blend-overlay lg:opacity-100"
+			draggable="false"
 		/>
 
 		<div
