@@ -10,15 +10,17 @@
 
 <div class="flex h-full w-full flex-col rounded-[1rem] border border-[#e4e3e9] p-4 lg:p-[1.875rem]">
 	<div class="h-[16rem] w-full flex-none overflow-hidden rounded-[0.875rem]">
-		<SanityImage
-			class="h-full w-full rounded-[0.875rem]"
-			innerClass="h-full w-full object-cover"
-			lqip
-			src={cardImage}
-			imageUrlBuilder={imgBuilder}
-			sizes="100vw"
-			alt={cardImage?.alt || 'image'}
-		/>
+		{#key cardImage}
+			<SanityImage
+				class="h-full w-full rounded-[0.875rem]"
+				innerClass="h-full w-full object-cover"
+				lqip
+				src={cardImage}
+				imageUrlBuilder={imgBuilder}
+				sizes="100vw"
+				alt={cardImage?.alt || 'image'}
+			/>
+		{/key}
 	</div>
 
 	<div class="mt-[1.875rem] h-full w-full space-y-4">

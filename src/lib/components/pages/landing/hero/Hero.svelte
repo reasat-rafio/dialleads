@@ -48,6 +48,7 @@
 			src="/grid.png"
 			alt="grid overlay"
 			class="pointer-events-none absolute inset-0 z-0 h-full w-full object-cover mix-blend-overlay"
+			draggable="false"
 		/>
 		<SectionIconAndName
 			bgColor="background: linear-gradient(120deg, rgba(32, 30, 44, 1.0) 0%, rgba(53, 50, 63, 1.0) 100%);"

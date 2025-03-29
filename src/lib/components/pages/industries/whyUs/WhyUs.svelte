@@ -7,17 +7,28 @@
 	import Card from './Card.svelte';
 	import { cn } from '$lib/utils';
 	import { inview } from 'svelte-inview';
-	import { fly } from 'svelte/transition';
 	import { Motion } from 'svelte-motion';
+	import { onMount } from 'svelte';
+	import { page } from '$app/state';
 
 	let { props }: { props: WhyUsProps } = $props();
 	let { whyUs } = $derived(props);
 	let { sectionIcon, sectionName, sectionTitle, description, cards } = $derived(whyUs);
 
+	let prevIndustry: string | undefined = $state(undefined);
 	let visible: boolean[] = $state([]);
 
-	$effect(() => {
+	onMount(() => {
 		visible = Array(cards.length).fill(false);
+	});
+
+	$effect(() => {
+		const currentIndustry = page.params.industry;
+		// if the industry param changes, reset elementvisible
+		if (currentIndustry !== prevIndustry) {
+			visible = Array(cards.length).fill(false);
+			prevIndustry = currentIndustry;
+		}
 	});
 </script>
 
@@ -60,15 +71,16 @@
 		</h2>
 
 		<div
-			class="mx-auto mt-4 max-w-[43.313rem] text-balance text-center font-geist text-[1.125rem] font-normal leading-7 tracking-[0%] text-gray-600/80 lg:text-[1.25rem] lg:leading-[150%]"
+			class="mx-auto mt-4 max-w-[43.313rem] text-center font-geist text-[1.125rem] font-normal leading-7 tracking-[0%] text-gray-600/80 lg:text-[1.25rem] lg:leading-[150%]"
 		>
 			{description}
 		</div>
 	</div>
+	
 	<div class="mt-8 grid grid-cols-1 justify-items-center gap-[1.25rem] md:grid-cols-2 lg:mt-16">
-		{#each cards as card, idx}
+		{#each cards as card, idx (card)}
 			<div
-				use:inview={{ threshold: 0.2, unobserveOnEnter: true, rootMargin: '50px 0px -50px 0px' }}
+				use:inview={{ threshold: 0.1, unobserveOnEnter: false, rootMargin: '50px 0px -50px 0px' }}
 				oninview_enter={() => {
 					visible[idx] = true;
 				}}
