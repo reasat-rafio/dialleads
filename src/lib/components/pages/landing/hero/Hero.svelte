@@ -9,11 +9,11 @@
 	import { X } from 'lucide-svelte';
 	import { PortableText } from '@portabletext/svelte';
 	import VioletGradient from './VioletGradient.svelte';
-	import type { Hero, HeroProps } from '../../../../../types/landing.types';
+	import type { HeroProps } from '../../../../../types/landing.types';
 	import { cn } from '$lib/utils';
 
 	let { props }: { props: HeroProps } = $props();
-	let { hero }: { hero: Hero } = $derived(props);
+	let { hero } = $derived(props);
 
 	let isIntersecting = true;
 
@@ -90,7 +90,7 @@
 				<Button
 					href={hero.link.type === 'internal' ? hero.link.internalLink : hero.link.externalLink}
 					class="flex h-[3.5rem] w-[13.5rem] items-center rounded-lg bg-primary-gradient px-6
-          					py-3 font-geist text-lg font-semibold text-white shadow-xl 
+          					py-3 font-geist text-lg font-semibold text-white shadow-xl
 							transition-all duration-200 ease-linear hover:shadow-xl hover:brightness-90 focus:outline-none"
 				>
 					<!-- Icon (SanityImage) -->
@@ -109,7 +109,7 @@
 			</div>
 		</div>
 
-		<div
+		<!-- <div
 			class={cn(
 				'relative mx-auto mt-[3.4rem] flex h-fit w-full max-w-7xl justify-center px-5 opacity-70 lg:h-full 2xl:px-0',
 				innerWidth.current && innerWidth.current <= 320 ? 'mt-[5.95rem] h-fit' : 'h-fit'
@@ -168,7 +168,6 @@
 						use:motion
 						class="fixed inset-0 z-[100] flex items-center justify-center bg-black/50 backdrop-blur-sm"
 					>
-						<!-- Modal Content -->
 						<Motion
 							initial={selectedAnimation.initial}
 							animate={selectedAnimation.animate}
@@ -205,6 +204,6 @@
 					</div>
 				</Motion>
 			{/if}
-		</AnimatePresence>
+		</AnimatePresence> -->
 	</div>
 </div>

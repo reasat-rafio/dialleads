@@ -66,73 +66,66 @@ const hero = defineType({
 					type: 'string',
 					description: 'The subtitle of the hero section'
 				}),
-				defineField({
-					name: 'video',
-					type: 'object',
-					fields: [
-						{
-							name: 'video_webm',
-							type: 'file',
-							title: 'WebM',
-							options: {
-								accept: 'video/webm,video/x-matroska'
-							}
-						},
-						{
-							name: 'video_hevc',
-							type: 'file',
-							title: 'MOV - HEVC',
-							options: {
-								accept: 'video/quicktime,video/mp4'
-							}
-						}
-					],
-					validation: (Rule) =>
-						Rule.custom((video) => {
-							if (!video?.video_webm && !video?.video_hevc) {
-								return 'Both WebM and MOV - HEVC videos are required';
-							}
-							return true;
-						})
-				}),
 
 				defineField({
-					name: 'thumbnailForMobile',
-					type: 'image',
-					title: 'Video Thumbnail',
-					description: 'Image to be displayed as the video thumbnail for mobile screen',
-					options: {
-						hotspot: true
-					},
-					validation: (Rule) => Rule.required().error('A thumbnail image is required.')
+					name: 'useCases',
+					title: 'UseCases',
+					type: 'array',
+					of: [
+						defineArrayMember({
+							type: 'object',
+							fields: [
+								defineField({
+									name: 'useCaseImage',
+									type: 'image',
+									title: 'Use Case Image',
+									// validation: (Rule) => Rule.required(),
+									options: { hotspot: true },
+									fields: [
+										{
+											name: 'alt',
+											title: 'Alternative Text',
+											description: 'Important for SEO and accessibility',
+											type: 'string',
+											validation: (Rule) => Rule.required()
+										}
+									]
+								}),
+
+								defineField({
+									name: 'useCaseTitle',
+									title: 'Use Case Title',
+									type: 'string',
+									validation: (Rule) => Rule.required()
+								}),
+
+								defineField({
+									name: 'useCaseSubTitle',
+									title: 'Use Case Sub Title',
+									type: 'string',
+									validation: (Rule) => Rule.required()
+								}),
+
+								defineField({
+									name: 'mp3File',
+									title: 'MP3 File',
+									type: 'file',
+									description: 'Upload an MP3 file',
+									options: {
+										accept: 'audio/mpeg'
+									},
+									validation: (Rule) => Rule.required()
+								})
+							],
+							preview: {
+								select: {
+									title: 'useCaseTitle'
+								}
+							}
+						})
+					]
 				}),
-				defineField({
-					name: 'thumbnailForDesktop',
-					type: 'image',
-					title: 'Video Thumbnail',
-					description: 'Image to be displayed as the video thumbnail for desktop screen',
-					options: {
-						hotspot: true
-					},
-					validation: (Rule) => Rule.required().error('A thumbnail image is required.')
-				}),
-				defineField({
-					name: 'videoPlayBtnIcon',
-					type: 'image',
-					title: 'Video Play Button Icon',
-					description: 'Play Button Icon',
-					options: {
-						hotspot: true
-					},
-					fields: [
-						{
-							name: 'alt',
-							title: 'Alternative Text',
-							type: 'string'
-						}
-					],
-					validation: (Rule) => Rule.required().error('A Video Play Icon is required.')
-				}),
+
 				defineField({
 					name: 'link',
 					type: 'link'

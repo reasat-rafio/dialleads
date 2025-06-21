@@ -1,5 +1,6 @@
 <script lang="ts">
 	import Banner from '$lib/components/common/banner/Banner.svelte';
+	import Video from '$lib/components/common/video/Video.svelte';
 	import Clients from '$lib/components/pages/landing/clients/Clients.svelte';
 	import Comparison from '$lib/components/pages/landing/comparison/Comparison.svelte';
 	import Faq from '$lib/components/pages/landing/faq/Faq.svelte';
@@ -15,9 +16,8 @@
 	import Seo from '$lib/components/Seo.svelte';
 
 	let { data } = $props();
-
 	let {
-		page: { sections, pricing, seo },
+		page: { sections, seo },
 		site: {
 			logos: { ogImage }
 		}
@@ -37,10 +37,12 @@
 				<Clients {props} />
 			{:else if props._type === 'landing.testCall'}
 				<TryIt {props} form={data.testCallForm} />
+			{:else if props._type === 'common.video'}
+				<Video {props} />
 			{:else if props._type === 'landing.whyDialleadsAI'}
 				<WhyDialleadsAi {props} />
-			{:else if props._type === 'landing.useCase'}
-				<UseCase {props} />
+				<!-- {:else if props._type === 'landing.useCase'}
+				<UseCase {props} /> -->
 			{:else if props._type === 'landing.comparison'}
 				<Comparison {props} />
 			{:else if props._type === 'landing.whyChooseUs'}

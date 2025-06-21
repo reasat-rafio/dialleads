@@ -13,20 +13,19 @@ const query = groq`
         ...,
         sections[]{
           ...,
+          ${asset('thumbnail')},
+          "webm": video_webm.asset->url,
+          "mov": video_hevc.asset->url,
           hero{
             ...,
+            useCases[]{
+              ...,
+              ${asset('useCaseImage')},
+            },
             ${asset('sectionIcon')},
             ${asset('thumbnailForMobile')},
             ${asset('thumbnailForDesktop')},
-            ${asset('videoPlayBtnIcon')},
-            video{
-              "webm": video_webm.asset->url,
-              "mov": video_hevc.asset->url,
-            }
-          },
-          useCases[]{
-            ...,
-            ${asset('useCaseImage')},
+            ${asset('videoPlayBtnIcon')}
           },
           comparison{
             ...,
@@ -63,6 +62,7 @@ const query = groq`
 
 export const load: PageServerLoad = async ({ setHeaders }) => {
 	const data: LandingPageProps = await sanityClient.fetch(query);
+
 	setHeaders({ 'cache-control': 'public, max-age=120' });
 
 	if (!data) error(404, { message: 'Not found' });

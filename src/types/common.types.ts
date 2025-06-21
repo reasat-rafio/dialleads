@@ -38,3 +38,11 @@ export interface BannerProps {
 	_type: 'common.banner';
 	banner: Banner;
 }
+
+export interface VideoProps {
+	_key?: string;
+	_type: 'common.video';
+	thumbnail: SanityImageWithAlt;
+	mov: string;
+	webm: string;
+}

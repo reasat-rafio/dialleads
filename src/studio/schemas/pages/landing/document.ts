@@ -19,15 +19,15 @@ const landingPage = defineType({
 				{ type: 'landing.clients' },
 				{ type: 'landing.testCall' },
 				{ type: 'landing.whyDialleadsAI' },
+				{ type: 'common.video' },
 				{ type: 'landing.industry' },
-				{ type: 'landing.useCase' },
 				{ type: 'landing.getStarted' },
 				{ type: 'landing.comparison' },
 				{ type: 'landing.integrations' },
 				{ type: 'landing.whyChooseUs' },
 				{ type: 'landing.testimonials' },
 				{ type: 'landing.faq' },
-				{ type: 'common.banner' },
+				{ type: 'common.banner' }
 			]
 		})
 	],

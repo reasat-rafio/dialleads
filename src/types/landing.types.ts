@@ -1,4 +1,4 @@
-import type { BannerProps, Link, SanityImageWithAlt, SeoProps } from './common.types';
+import type { BannerProps, Link, SanityImageWithAlt, SeoProps, VideoProps } from './common.types';
 import type { PortableTextBlock } from '@portabletext/types';
 
 export interface LandingPageProps {
@@ -13,11 +13,12 @@ type Section =
 	| FaqProps
 	| TestimonialsProps
 	| PricingProps
+	| VideoProps
 	| ComparisonProps
 	| IndustriesProps
 	| ClientProps
 	| TestCallProps
-	| UseCaseProps
+	// | UseCaseProps
 	| WhyDialleadsAIProps
 	| HowtoGetStartedProps
 	| IntegrationsProps
@@ -100,10 +101,8 @@ export interface Hero {
 	heroTitle: PortableTextBlock[];
 	subtitle: string;
 	video: HeroVideo;
-	thumbnailForMobile: SanityImageWithAlt;
-	thumbnailForDesktop: SanityImageWithAlt;
 	link: Link;
-	videoPlayBtnIcon: SanityImageWithAlt;
+	useCases: UseCases[];
 }
 export interface HeroVideo {
 	mov: string;
