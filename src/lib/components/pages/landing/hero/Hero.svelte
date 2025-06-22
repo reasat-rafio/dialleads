@@ -2,7 +2,7 @@
 	import { AnimatePresence, Motion } from 'svelte-motion';
 	import { innerWidth } from 'svelte/reactivity/window';
 	import SanityImage from '$lib/sanity/sanity-image/sanity-image.svelte';
-	import Button from '$lib/components/ui/button/button.svelte';
+	import { Button } from '$lib/components/ui/button';
 	import { imgBuilder } from '$lib/sanity/sanity-client';
 	import SectionIconAndName from '$lib/components/common/sectionIconAndName.svelte';
 	import Video from './Video.svelte';
@@ -11,6 +11,8 @@
 	import VioletGradient from './VioletGradient.svelte';
 	import type { HeroProps } from '../../../../../types/landing.types';
 	import { cn } from '$lib/utils';
+	import HeroCard from './HeroCard.svelte';
+	import HeroCardsCarousel from './HeroCardsCarousel.svelte';
 
 	let { props }: { props: HeroProps } = $props();
 	let { hero } = $derived(props);
@@ -109,7 +111,8 @@
 			</div>
 		</div>
 
-		<!-- <div
+		<!-- 
+		<div
 			class={cn(
 				'relative mx-auto mt-[3.4rem] flex h-fit w-full max-w-7xl justify-center px-5 opacity-70 lg:h-full 2xl:px-0',
 				innerWidth.current && innerWidth.current <= 320 ? 'mt-[5.95rem] h-fit' : 'h-fit'
@@ -160,7 +163,6 @@
 				</div>
 			</div>
 		</div>
-
 		<AnimatePresence let:item list={[{ key: isVideoOpen }]}>
 			{#if item.key}
 				<Motion initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} let:motion>
@@ -205,5 +207,22 @@
 				</Motion>
 			{/if}
 		</AnimatePresence> -->
+
+		<!-- cards -->
+		<div class="relative z-10 mx-auto mt-12 w-full max-w-7xl px-5 pb-10 2xl:px-0">
+			{#if hero?.useCases?.length}
+				<!-- Carousel for small devices -->
+				<div class="block md:hidden">
+					<HeroCardsCarousel useCases={hero.useCases} />
+				</div>
+
+				<!-- Grid for larger devices -->
+				<div class="hidden md:grid md:grid-cols-2 md:gap-6 lg:grid-cols-4">
+					{#each hero.useCases as useCase}
+						<HeroCard {useCase} />
+					{/each}
+				</div>
+			{/if}
+		</div>
 	</div>
 </div>
