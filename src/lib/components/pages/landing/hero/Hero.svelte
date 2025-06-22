@@ -12,7 +12,7 @@
 	import type { HeroProps } from '../../../../../types/landing.types';
 	import { cn } from '$lib/utils';
 	import HeroCard from './HeroCard.svelte';
-	import HeroCardsCarousel from './HeroCardsCarousel.svelte';
+	import HeroCardsCarousel2 from './HeroCardsCarousel2.svelte';
 
 	let { props }: { props: HeroProps } = $props();
 	let { hero } = $derived(props);
@@ -213,7 +213,7 @@
 			{#if hero?.useCases?.length}
 				<!-- Carousel for small devices -->
 				<div class="block md:hidden">
-					<HeroCardsCarousel useCases={hero.useCases} />
+					<HeroCardsCarousel2 useCases={hero.useCases} />
 				</div>
 
 				<!-- Grid for larger devices -->

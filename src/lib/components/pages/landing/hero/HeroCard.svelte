@@ -1,66 +1,73 @@
 <script lang="ts">
-	import { Pause, Play } from 'lucide-svelte';
-	import { Howl } from 'howler';
 	import { onMount } from 'svelte';
+	import { Pause, Play } from 'lucide-svelte';
+	import WaveSurfer from 'wavesurfer.js';
 	import type { UseCases } from '../../../../../types/landing.types';
 	import SanityImage from '$lib/sanity/sanity-image/sanity-image.svelte';
 	import { imgBuilder } from '$lib/sanity/sanity-client';
 
 	let { useCase }: { useCase: UseCases } = $props();
-	let { useCaseImage, useCaseTitle, useCaseSubTitle, mp3File } = $derived(useCase);
+	let { useCaseImage, useCaseTitle, useCaseSubTitle } = $derived(useCase);
 
-	let sound: Howl;
 	let isPlaying: boolean = $state(false);
-	let duration: number = $state(0);
-	let progress: number = $state(0);
+	let waveSurfer: WaveSurfer;
+	let waveformElement: HTMLDivElement;
+
+	// Generate mp3 URL from Sanity asset ref
+	function resolveMp3Url(ref: string) {
+		return `https://cdn.sanity.io/files/zhic6sia/production/${ref.replace('file-', '').replace('-', '.')}`;
+	}
 
 	onMount(() => {
-		if (!mp3File?.url) return;
+		const ref = useCase.mp3File?.asset?._ref;
+		if (!ref || !waveformElement) return;
 
-		sound = new Howl({
-			src: [mp3File.url],
-			html5: true,
-			onload: () => {
-				duration = sound.duration();
-			}
+		// gradient for waveform
+		const canvas = document.createElement('canvas');
+		canvas.width = 100;
+		canvas.height = 1;
+		const ctx = canvas.getContext('2d');
+		if (!ctx) return;
+
+		const gradient = ctx.createLinearGradient(0, 0, canvas.width, 0);
+		gradient.addColorStop(0, '#6d28d9');
+		gradient.addColorStop(0.3, '#8d78df');
+		gradient.addColorStop(1, 'white');
+
+		//  WaveSurfer instance
+		waveSurfer = WaveSurfer.create({
+			container: waveformElement,
+			waveColor: gradient,
+			progressColor: '#1d1869',
+			height: 40,
+			barWidth: 4,
+			barRadius: 4,
+			barGap: 4,
 		});
 
-		const updateProgress = () => {
-			if (sound.playing()) {
-				progress = sound.seek() as number;
-				requestAnimationFrame(updateProgress);
-			}
-		};
+		waveSurfer.load(resolveMp3Url(ref));
 
-		sound.on('play', () => {
-			isPlaying = true;
-			requestAnimationFrame(updateProgress);
-		});
-
-		sound.on('pause', () => (isPlaying = false));
-		sound.on('end', () => {
-			isPlaying = false;
-			progress = 0;
-		});
+		waveSurfer.on('play', () => (isPlaying = true));
+		waveSurfer.on('pause', () => (isPlaying = false));
+		waveSurfer.on('finish', () => (isPlaying = false));
 
 		return () => {
-			sound?.unload();
+			waveSurfer?.destroy();
 		};
 	});
 
-	const togglePlay = () => {
-		if (!sound) return;
-		isPlaying ? sound.pause() : sound.play();
-	};
+	function togglePlay() {
+		waveSurfer?.playPause();
+	}
 </script>
 
-<!-- Cards -->
-
+<!-- Card Body -->
 <div class="h-[414px] w-[305px]">
 	<div
 		class="h-fit w-full rounded-[1.38rem] border-[0.342px] border-violet-600 bg-[linear-gradient(242deg,_rgba(255,_255,_255,_0.21)_0%,_rgba(255,_255,_255,_0.10)_100%)] px-4 pb-6 pt-4 backdrop-blur-sm"
 	>
 		<div class="flex h-full w-full flex-col">
+			<!-- Card Image -->
 			<div class="h-[14.188rem] w-full overflow-hidden rounded-[0.88rem]">
 				<SanityImage
 					class="h-full w-full rounded-[0.88rem]"
@@ -72,6 +79,7 @@
 				/>
 			</div>
 
+			<!-- Card Title & Subtitle -->
 			<h2
 				class="font-Geist mt-[1.38rem] text-center text-[1.125rem] font-semibold text-white lg:text-[1.375rem]"
 			>
@@ -81,11 +89,13 @@
 				{useCaseSubTitle}
 			</h3>
 
-			<div class="mt-4 flex w-full items-center justify-center gap-3">
-				<!-- Play/Pause Button -->
+			<!--Play/Pause -->
+
+			<div class="mt-4 flex w-full items-center justify-center gap-3 px-2">
+
 				<button
 					onclick={togglePlay}
-					class="flex h-9 w-9 cursor-pointer items-center justify-center rounded-full border border-violet-600 bg-violet-50 text-violet-600 outline outline-[0.75px] outline-offset-[-0.75px] transition-colors duration-200 focus:outline-none"
+					class="flex h-9 w-9 items-center justify-center rounded-full border border-violet-600 bg-violet-50 text-violet-600"
 				>
 					{#if isPlaying}
 						<Pause class="h-4 w-4" />
@@ -94,12 +104,8 @@
 					{/if}
 				</button>
 
-				<div class="relative h-4 w-32 overflow-hidden rounded bg-white/10">
-					<div
-						class="absolute left-0 top-0 h-full bg-white transition-all duration-100"
-						style="width: {duration > 0 ? (progress / duration) * 100 : 0}%"
-					></div>
-				</div>
+				<!-- Waveform -->
+				<div bind:this={waveformElement} class="w-[80%] max-w-[200px] overflow-hidden rounded-lg"></div>
 			</div>
 		</div>
 	</div>
