@@ -112,7 +112,7 @@
 		{#each useCases as useCase, index}
 			<Carousel.Item class="max-w-[420px] flex-shrink-0 flex-grow-0 basis-[85%] md:basis-[60%]">
 				<div class="flex justify-center">
-					<HeroCard {useCase} id={useCase._id ?? String(index)} />
+					<HeroCard {useCase} id={String(index)} />
 				</div>
 			</Carousel.Item>
 		{/each}

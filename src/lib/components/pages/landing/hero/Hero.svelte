@@ -12,7 +12,7 @@
 	import type { HeroProps } from '../../../../../types/landing.types';
 	import { cn } from '$lib/utils';
 	import HeroCard from './HeroCard.svelte';
-	import HeroCardsCarousel2 from './HeroCardsCarousel2.svelte';
+	import HeroCardsCarousel from './HeroCardsCarousel.svelte';
 
 	let { props }: { props: HeroProps } = $props();
 	let { hero } = $derived(props);
@@ -105,121 +105,24 @@
 							alt={hero.link.icon.alt || 'icon'}
 						/>
 					{/if}
-					<!-- Button Text {hero?.link?.title} -->
+					<!-- Button Text -->
 					<span>{hero?.link?.title}</span>
 				</Button>
 			</div>
 		</div>
-
-		<!-- 
-		<div
-			class={cn(
-				'relative mx-auto mt-[3.4rem] flex h-fit w-full max-w-7xl justify-center px-5 opacity-70 lg:h-full 2xl:px-0',
-				innerWidth.current && innerWidth.current <= 320 ? 'mt-[5.95rem] h-fit' : 'h-fit'
-			)}
-		>
-			<div class="relative w-full rounded-t-full">
-				{#if innerWidth.current && innerWidth.current > 700}
-					<SanityImage
-						lqip
-						innerClass="w-full object-cover"
-						class="mx-auto h-full w-full rounded-t-full object-cover"
-						src={hero?.thumbnailForDesktop}
-						sizes="100vw"
-						imageUrlBuilder={imgBuilder}
-						alt={hero?.thumbnailForDesktop?.alt || 'tuhumbnail'}
-					/>
-				{:else}
-					<SanityImage
-						lqip
-						innerClass="w-full object-cover"
-						class="mx-auto h-full w-full rounded-t-full object-cover"
-						src={hero?.thumbnailForMobile}
-						sizes="100vw"
-						imageUrlBuilder={imgBuilder}
-						alt={hero?.thumbnailForMobile?.alt || 'thumbnail'}
-					/>
-				{/if}
-
-				<div
-					class="absolute left-1/2 top-28 z-10 flex h-[4.375rem] w-[4.375rem] -translate-x-1/2 items-center justify-center rounded-full border border-violet-600 bg-white shadow-xl lg:top-1/2 lg:-translate-y-1/2"
-				>
-					<Button
-						class="bg-transparent hover:bg-transparent"
-						onmouseenter={() => (isPlayHovered = true)}
-						onmouseleave={() => (isPlayHovered = false)}
-						onclick={openVideo}
-						aria-label="video play button"
-					>
-						<SanityImage
-							class="h-[1.6rem] w-[1.6rem]"
-							src={hero?.videoPlayBtnIcon}
-							imageUrlBuilder={imgBuilder}
-							alt={hero?.videoPlayBtnIcon?.alt || 'icon'}
-							sizes="10vw"
-							style="transform: scale({isPlayHovered ? 1.1 : 1}); transition: transform 0.3s ease;"
-						/>
-					</Button>
-				</div>
-			</div>
-		</div>
-		<AnimatePresence let:item list={[{ key: isVideoOpen }]}>
-			{#if item.key}
-				<Motion initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} let:motion>
-					<div
-						use:motion
-						class="fixed inset-0 z-[100] flex items-center justify-center bg-black/50 backdrop-blur-sm"
-					>
-						<Motion
-							initial={selectedAnimation.initial}
-							animate={selectedAnimation.animate}
-							exit={selectedAnimation.exit}
-							transition={{ type: 'spring', damping: 30, stiffness: 300 }}
-							let:motion
-						>
-							<div use:motion class="relative mx-4 aspect-video w-full max-w-4xl md:mx-0">
-								<Motion let:motion whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.95 }}>
-									<button
-										use:motion
-										class="absolute -right-3 -top-3 z-[110] rounded-full bg-neutral-900/90 p-2 text-xl text-white ring-1 ring-violet-600 backdrop-blur-md"
-										onclick={closeVideo}
-										onmouseenter={() => (isCloseHovered = true)}
-										onmouseleave={() => (isCloseHovered = false)}
-									>
-										<X class="size-4" />
-									</button>
-								</Motion>
-								<Motion
-									animate={{ scale: isCloseHovered ? 0.98 : 1 }}
-									transition={{ duration: 0.2 }}
-									let:motion
-								>
-									<div
-										use:motion
-										class="relative z-[100] flex h-auto w-full overflow-hidden rounded-2xl border-2 border-white"
-									>
-										<Video {isIntersecting} mov={hero?.video?.mov} webm={hero?.video?.webm} />
-									</div>
-								</Motion>
-							</div>
-						</Motion>
-					</div>
-				</Motion>
-			{/if}
-		</AnimatePresence> -->
 
 		<!-- cards -->
 		<div class="relative z-10 mx-auto mt-12 w-full max-w-7xl px-5 pb-10 2xl:px-0">
 			{#if hero?.useCases?.length}
 				<!-- Carousel for small devices -->
 				<div class="block md:hidden">
-					<HeroCardsCarousel2 useCases={hero.useCases} />
+					<HeroCardsCarousel useCases={hero.useCases} />
 				</div>
 
 				<!-- Grid for larger devices -->
 				<div class="hidden md:grid md:grid-cols-2 md:gap-6 lg:grid-cols-4">
-					{#each hero.useCases as useCase}
-						<HeroCard {useCase} />
+					{#each hero.useCases as useCase, index}
+						<HeroCard {useCase} id={String(index)} />
 					{/each}
 				</div>
 			{/if}

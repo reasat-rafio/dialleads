@@ -1,3 +1,4 @@
+
 <script lang="ts">
 	import { onMount } from 'svelte';
 	import { Pause, Play } from 'lucide-svelte';
@@ -128,3 +129,4 @@
 		</div>
 	</div>
 </div>
+
