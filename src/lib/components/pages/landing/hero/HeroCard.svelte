@@ -5,8 +5,12 @@
 	import type { UseCases } from '../../../../../types/landing.types';
 	import SanityImage from '$lib/sanity/sanity-image/sanity-image.svelte';
 	import { imgBuilder } from '$lib/sanity/sanity-client';
+	import { writable } from 'svelte/store';
 
-	let { useCase }: { useCase: UseCases } = $props();
+	// Global store to track which card is playing
+	export const currentlyPlayingId = writable<string | null>(null);
+
+	let { useCase, id }: { useCase: UseCases; id: string } = $props();
 	let { useCaseImage, useCaseTitle, useCaseSubTitle } = $derived(useCase);
 
 	let isPlaying: boolean = $state(false);
@@ -42,7 +46,7 @@
 			height: 40,
 			barWidth: 4,
 			barRadius: 4,
-			barGap: 4,
+			barGap: 4
 		});
 
 		waveSurfer.load(resolveMp3Url(ref));
@@ -56,7 +60,19 @@
 		};
 	});
 
+	$effect(() => {
+		const unsubscribe = currentlyPlayingId.subscribe((playingId) => {
+			if (playingId !== id && isPlaying && waveSurfer) {
+				waveSurfer.pause();
+			}
+		});
+		return unsubscribe;
+	});
+
 	function togglePlay() {
+		if (!isPlaying) {
+			currentlyPlayingId.set(id);
+		}
 		waveSurfer?.playPause();
 	}
 </script>
@@ -92,7 +108,6 @@
 			<!--Play/Pause -->
 
 			<div class="mt-4 flex w-full items-center justify-center gap-3 px-2">
-
 				<button
 					onclick={togglePlay}
 					class="flex h-9 w-9 items-center justify-center rounded-full border border-violet-600 bg-violet-50 text-violet-600"
@@ -105,7 +120,10 @@
 				</button>
 
 				<!-- Waveform -->
-				<div bind:this={waveformElement} class="w-[80%] max-w-[200px] overflow-hidden rounded-lg"></div>
+				<div
+					bind:this={waveformElement}
+					class="w-[80%] max-w-[200px] overflow-hidden rounded-lg"
+				></div>
 			</div>
 		</div>
 	</div>

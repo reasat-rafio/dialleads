@@ -8,6 +8,7 @@
 	import type { UseCases } from '../../../../../types/landing.types';
 	import SanityImage from '$lib/sanity/sanity-image/sanity-image.svelte';
 	import { imgBuilder } from '$lib/sanity/sanity-client';
+	import HeroCard from './HeroCard.svelte';
 
 	let { useCases }: { useCases: UseCases[] } = $props();
 	const plugin = Autoplay({ delay: 2000, stopOnInteraction: true });
@@ -92,59 +93,26 @@
 </script>
 
 <Carousel.Root
-	bind:selectedIndex={currentActiveIndex}
 	plugins={[plugin]}
 	class="relative mx-auto w-full max-w-[420px] overflow-visible px-0 md:max-w-[600px]"
 	onmouseenter={plugin.stop}
 	onmouseleave={plugin.reset}
-	setApi={(api) => (carouselApi = api)}
+	setApi={(api) => {
+		carouselApi = api;
+		if (carouselApi) {
+			currentActiveIndex = carouselApi.selectedScrollSnap();
+			carouselApi.on('select', () => {
+				currentActiveIndex = carouselApi.selectedScrollSnap();
+			});
+		}
+	}}
 	opts={{ loop: true }}
 >
 	<Carousel.Content class="flex overflow-visible">
 		{#each useCases as useCase, index}
 			<Carousel.Item class="max-w-[420px] flex-shrink-0 flex-grow-0 basis-[85%] md:basis-[60%]">
 				<div class="flex justify-center">
-					<div class="w-full rounded-[1.38rem] border border-violet-600 bg-[linear-gradient(242deg,_rgba(255,_255,_255,_0.21)_0%,_rgba(255,_255,_255,_0.10)_100%)] p-1 px-4 pb-6 pt-4 shadow-lg backdrop-blur-sm">
-						<div class="flex flex-col h-full w-full">
-							<!-- Card Image -->
-							<div class="h-[14.188rem] w-full overflow-hidden rounded-[0.88rem]">
-								<SanityImage
-									class="h-full w-full rounded-[0.88rem]"
-									innerClass="h-full w-full object-cover"
-									lqip
-									src={useCase.useCaseImage}
-									imageUrlBuilder={imgBuilder}
-									alt={useCase.useCaseImage?.alt || 'agent image'}
-								/>
-							</div>
-
-							<!-- Titles -->
-							<h2 class="font-Geist mt-[1.38rem] text-center text-[1.125rem] font-semibold text-white lg:text-[1.375rem]">
-								{useCase.useCaseTitle}
-							</h2>
-							<h3 class="font-Geist text-center text-[0.875rem] font-light text-white lg:text-[1rem]">
-								{useCase.useCaseSubTitle}
-							</h3>
-
-							<!-- Waveform and Play Button -->
-							<div class="mt-4 flex w-full items-center justify-center gap-3 px-2">
-								<!-- Play/Pause Button -->
-								<button
-									onclick={() => togglePlay(index)}
-									class="flex h-9 w-9 items-center justify-center rounded-full border border-violet-600 bg-violet-50 text-violet-600"
-								>
-									{#if $playStates[index]}
-										<Pause class="h-4 w-4" />
-									{:else}
-										<Play class="h-4 w-4" />
-									{/if}
-								</button>
-
-								<!-- Waveform Container -->
-								<div id={`waveform-${index}`} class="w-[80%] max-w-[200px] overflow-hidden rounded-lg"></div>
-							</div>
-						</div>
-					</div>
+					<HeroCard {useCase} id={useCase._id ?? String(index)} />
 				</div>
 			</Carousel.Item>
 		{/each}
