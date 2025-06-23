@@ -1,4 +1,3 @@
-
 <script lang="ts">
 	import { onMount } from 'svelte';
 	import { Pause, Play } from 'lucide-svelte';
@@ -79,7 +78,7 @@
 </script>
 
 <!-- Card Body -->
-<div class="h-[414px] w-[305px]">
+<div class="h-[414px] w-[280px]">
 	<div
 		class="h-fit w-full rounded-[1.38rem] border-[0.342px] border-violet-600 bg-[linear-gradient(242deg,_rgba(255,_255,_255,_0.21)_0%,_rgba(255,_255,_255,_0.10)_100%)] px-4 pb-6 pt-4 backdrop-blur-sm"
 	>
@@ -89,7 +88,7 @@
 				<SanityImage
 					class="h-full w-full rounded-[0.88rem]"
 					innerClass="h-full w-full object-cover"
-					lqip
+					sizes="9vw"
 					src={useCaseImage}
 					imageUrlBuilder={imgBuilder}
 					alt={useCaseImage?.alt || 'agent image'}
@@ -129,4 +128,3 @@
 		</div>
 	</div>
 </div>
-

@@ -1,45 +1,17 @@
+
 <script lang="ts">
-	import { AnimatePresence, Motion } from 'svelte-motion';
-	import { innerWidth } from 'svelte/reactivity/window';
 	import SanityImage from '$lib/sanity/sanity-image/sanity-image.svelte';
 	import { Button } from '$lib/components/ui/button';
 	import { imgBuilder } from '$lib/sanity/sanity-client';
 	import SectionIconAndName from '$lib/components/common/sectionIconAndName.svelte';
-	import Video from './Video.svelte';
-	import { X } from 'lucide-svelte';
 	import { PortableText } from '@portabletext/svelte';
 	import VioletGradient from './VioletGradient.svelte';
 	import type { HeroProps } from '../../../../../types/landing.types';
-	import { cn } from '$lib/utils';
-	import HeroCard from './HeroCard.svelte';
 	import HeroCardsCarousel from './HeroCardsCarousel.svelte';
 
 	let { props }: { props: HeroProps } = $props();
 	let { hero } = $derived(props);
 
-	let isIntersecting = true;
-
-	let isVideoOpen = $state(false);
-	let isCloseHovered = $state(false);
-	let isPlayHovered = $state(false);
-
-	function openVideo() {
-		isVideoOpen = true;
-	}
-
-	function closeVideo() {
-		isVideoOpen = false;
-	}
-
-	let animationVariants = {
-		'from-right': {
-			initial: { x: 100, opacity: 0 },
-			animate: { x: 0, opacity: 1 },
-			exit: { x: 100, opacity: 0 }
-		}
-	};
-
-	let selectedAnimation = animationVariants['from-right'];
 </script>
 
 <div class="relative mt-[0.3125rem] w-full px-[0.3125rem] lg:mt-[0.625rem] lg:px-[0.625rem]">
@@ -96,6 +68,7 @@
 							transition-all duration-200 ease-linear hover:shadow-xl hover:brightness-90 focus:outline-none"
 				>
 					<!-- Icon (SanityImage) -->
+
 					{#if hero?.link?.icon}
 						<SanityImage
 							class="h-5 w-5"
@@ -105,6 +78,7 @@
 							alt={hero.link.icon.alt || 'icon'}
 						/>
 					{/if}
+
 					<!-- Button Text -->
 					<span>{hero?.link?.title}</span>
 				</Button>
@@ -112,20 +86,11 @@
 		</div>
 
 		<!-- cards -->
-		<div class="relative z-10 mx-auto mt-12 w-full max-w-7xl px-5 pb-10 2xl:px-0">
-			{#if hero?.useCases?.length}
-				<!-- Carousel for small devices -->
-				<div class="block md:hidden">
-					<HeroCardsCarousel useCases={hero.useCases} />
-				</div>
+<div class="relative z-10 mx-auto mt-12 w-full max-w-7xl px-5 pb-10 2xl:px-0">
+	{#if hero?.useCases?.length}
+		<HeroCardsCarousel useCases={hero.useCases} />
+	{/if}
+</div>
 
-				<!-- Grid for larger devices -->
-				<div class="hidden md:grid md:grid-cols-2 md:gap-6 lg:grid-cols-4">
-					{#each hero.useCases as useCase, index}
-						<HeroCard {useCase} id={String(index)} />
-					{/each}
-				</div>
-			{/if}
-		</div>
 	</div>
 </div>
