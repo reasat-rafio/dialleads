@@ -1,12 +1,12 @@
-import groq from 'groq';
-import { asset } from '$lib/sanity/sanity-image';
-import type { PageServerLoad } from './$types';
-import { sanityClient } from '$lib/sanity/sanity-client';
-import type { LandingPageProps } from '../../types/landing.types';
-import { error } from '@sveltejs/kit';
 import { formSchema } from '$lib/formValidation';
-import { zod } from 'sveltekit-superforms/adapters';
+import { sanityClient } from '$lib/sanity/sanity-client';
+import { asset } from '$lib/sanity/sanity-image';
+import { error } from '@sveltejs/kit';
+import groq from 'groq';
 import { message, superValidate } from 'sveltekit-superforms';
+import { zod } from 'sveltekit-superforms/adapters';
+import type { LandingPageProps } from '../../types/landing.types';
+import type { PageServerLoad } from './$types';
 
 const query = groq`
     *[_id == "landingPage"][0]{
