@@ -1,3 +1,4 @@
+
 <script lang="ts">
 	import SanityImage from '$lib/sanity/sanity-image/sanity-image.svelte';
 	import { imgBuilder } from '$lib/sanity/sanity-client';
@@ -17,9 +18,9 @@
 	}
 </script>
 
-<div class="flex w-full justify-center px-4 sm:px-6 lg:px-8">
+<div class="flex w-full justify-center px-4 sm:px-6 lg:px-8 mb-8">
 	<div
-		class="relative aspect-[1281/732] w-full max-w-[1281px] overflow-hidden rounded-[20px] sm:rounded-[30px] lg:rounded-[45px]"
+		class="relative aspect-[1281/732] w-full max-w-7xl overflow-hidden rounded-[20px] sm:rounded-[30px] lg:rounded-[45px]"
 	>
 		{#if !isPlaying}
 			<button
@@ -32,7 +33,7 @@
 					imageUrlBuilder={imgBuilder}
 					alt={thumbnail.alt || 'video thumbnail'}
 					class="h-full w-full object-cover"
-					lqip
+					sizes="9vw"
 				/>
 				<div class="absolute inset-0 flex items-center justify-center">
 					<div
