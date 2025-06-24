@@ -1,4 +1,3 @@
-
 <script lang="ts">
 	import SanityImage from '$lib/sanity/sanity-image/sanity-image.svelte';
 	import { Button } from '$lib/components/ui/button';
@@ -11,7 +10,6 @@
 
 	let { props }: { props: HeroProps } = $props();
 	let { hero } = $derived(props);
-
 </script>
 
 <div class="relative mt-[0.3125rem] w-full px-[0.3125rem] lg:mt-[0.625rem] lg:px-[0.625rem]">
@@ -86,11 +84,10 @@
 		</div>
 
 		<!-- cards -->
-<div class="relative z-10 mx-auto mt-12 w-full max-w-7xl px-5 pb-10 2xl:px-0">
-	{#if hero?.useCases?.length}
-		<HeroCardsCarousel useCases={hero.useCases} />
-	{/if}
-</div>
-
+		<div class="relative z-10 mx-auto mt-12 w-full max-w-7xl px-5 pb-10 2xl:px-0">
+			{#if hero?.useCases?.length}
+				<HeroCardsCarousel useCases={hero.useCases} />
+			{/if}
+		</div>
 	</div>
 </div>
