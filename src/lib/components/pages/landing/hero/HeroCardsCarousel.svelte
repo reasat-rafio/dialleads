@@ -6,7 +6,7 @@
 	import SanityImage from '$lib/sanity/sanity-image/sanity-image.svelte';
 	import { imgBuilder } from '$lib/sanity/sanity-client';
 	import type { UseCaseProps } from '../../../../../types/landing.types';
-	import { onMount } from 'svelte';
+	import { onMount, tick } from 'svelte';
 	import { innerWidth } from 'svelte/reactivity/window';
 	import { PortableText } from '@portabletext/svelte';
 
@@ -53,49 +53,51 @@
 
 	let waveSurferInstances: WaveSurfer[] = []; // Store WaveSurfer instances here
 
-	// Initialize WaveSurfer instances on mount
 	onMount(() => {
-		const canvas = document.createElement('canvas');
-		canvas.width = 100;
-		canvas.height = 1; // Minimal height is enough
-		const ctx = canvas.getContext('2d');
-		if (!ctx) {
-			console.error('Unable to get 2D context for gradient.');
-			return;
-		}
+		(async () => {
+			await tick();
+			const canvas = document.createElement('canvas');
+			canvas.width = 100;
+			canvas.height = 1;
+			const ctx = canvas.getContext('2d');
+			if (!ctx) {
+				console.error('Unable to get 2D context for gradient.');
+				return;
+			}
 
-		const gradient = ctx.createLinearGradient(0, 0, canvas.width, 0);
-		gradient.addColorStop(0, '#6d28d9');
-		gradient.addColorStop(0.3, '#8d78df');
-		gradient.addColorStop(1, 'white');
+			const gradient = ctx.createLinearGradient(0, 0, canvas.width, 0);
+			gradient.addColorStop(0, '#6d28d9');
+			gradient.addColorStop(0.3, '#8d78df');
+			gradient.addColorStop(1, 'white');
 
-		props.useCases.forEach((useCase: any, i: any) => {
-			const waveformElement: any = document.getElementById(`waveform-${i}`);
-			const mp3FileUrl = resolveMp3Url(useCase.mp3File.asset._ref); // Resolve URL
+			props.useCases.forEach((useCase: any, i: any) => {
+				const waveformElement: any = document.getElementById(`waveform-${i}`);
+				const mp3FileUrl = resolveMp3Url(useCase.mp3File.asset._ref); // Resolve URL
 
-			const waveSurfer = WaveSurfer.create({
-				container: waveformElement,
-				waveColor: gradient,
-				progressColor: '#1d1869',
-				height: 40,
-				barWidth: 4,
-				barRadius: 4,
-				barGap: 4
-			});
+				const waveSurfer = WaveSurfer.create({
+					container: waveformElement,
+					waveColor: gradient,
+					progressColor: '#1d1869',
+					height: 40,
+					barWidth: 4,
+					barRadius: 4,
+					barGap: 4
+				});
 
-			waveSurfer.load(mp3FileUrl); // Dynamically load the audio file
+				waveSurfer.load(mp3FileUrl); // Dynamically load the audio file
 
-			waveSurferInstances[i] = waveSurfer; // Store the instance
+				waveSurferInstances[i] = waveSurfer; // Store the instance
 
-			// Initialize play state for each player
-			playStates[i] = false;
-
-			// Listen for the finish event to reset the play button
-
-			waveSurfer.on('finish', () => {
+				// Initialize play state for each player
 				playStates[i] = false;
+
+				// Listen for the finish event to reset the play button
+
+				waveSurfer.on('finish', () => {
+					playStates[i] = false;
+				});
 			});
-		});
+		})();
 
 		return () => {
 			waveSurferInstances.forEach((waveSurfer) => waveSurfer.destroy());
@@ -185,7 +187,6 @@
 											{useCase.useCaseSubTitle}
 										</h3>
 
-										<!-- WaveSurfer Audio Player -->
 										<div
 											class="mt-[1.5rem] flex h-[2.4375rem] items-center gap-x-[0.5rem] overflow-hidden px-4"
 										>
