@@ -56,9 +56,9 @@
 										alt={'icon'}
 									/>
 								{/if}
-								
+
 								<p
-									class={`text-nowrap text-[1.25rem] font-medium leading-[100%] ${currentIndustry === idx ? 'text-white' : 'text-primary'}`}
+									class={`text-nowrap font-geist text-[1.25rem] font-medium leading-[100%] ${currentIndustry === idx ? 'text-white' : 'text-primary'}`}
 								>
 									{industry.title}
 								</p>
@@ -95,7 +95,7 @@
 						{/if}
 
 						<h3
-							class={`text-[1.25rem] font-medium leading-[100%] ${currentIndustry === idx ? 'text-white' : 'text-primary'}`}
+							class={`font-geist text-[1.25rem] font-medium leading-[100%] ${currentIndustry === idx ? 'text-white' : 'text-primary'}`}
 						>
 							{industry.title}
 						</h3>
@@ -109,7 +109,7 @@
 				<div class="mt-8 flex justify-center gap-[3.125rem] lg:mt-0 xl:gap-[4.375rem]">
 					<div class="flex w-full max-w-[32rem] flex-col">
 						<p
-							class="w-full text-[1.125rem] leading-7 text-black lg:text-[1.25rem] lg:leading-[150%] opacity-85"
+							class="w-full text-[1.125rem] leading-7 text-black opacity-85 lg:text-[1.25rem] lg:leading-[150%]"
 						>
 							{industry.description}
 						</p>
@@ -128,7 +128,7 @@
 
 									<div class="flex w-full flex-col gap-2">
 										<p
-											class="text-[1.125rem] font-semibold leading-6 text-black lg:text-[1.5rem] lg:tracking-[-0.7px]"
+											class="font-geist text-[1.125rem] font-semibold leading-6 text-black lg:text-[1.5rem] lg:tracking-[-0.7px]"
 										>
 											{iuseCase.title}
 										</p>
@@ -145,7 +145,7 @@
 
 					<div class="hidden h-full max-h-[25rem] w-[23.25rem] lg:block">
 						<SanityImage
-							class="h-full w-full rounded-[1.25rem] overflow-hidden"
+							class="h-full w-full overflow-hidden rounded-[1.25rem]"
 							innerClass="object-cover object-center w-full h-full"
 							src={industry.useCaseImage}
 							sizes={'(min-width:1024px) 12vw, 20vw'}

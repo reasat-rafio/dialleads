@@ -61,7 +61,7 @@ const query = groq`
           label,
           url,
           openInNewTab
-  }
+        },
       }
 `;
 

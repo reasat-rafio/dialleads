@@ -1,4 +1,3 @@
-// /schemas/bookCallButton.ts
 
 import { defineType, defineField } from 'sanity';
 

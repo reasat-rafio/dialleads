@@ -69,7 +69,7 @@
 				{#if showDialog}
 					<Dialog.Root>
 						<Dialog.Trigger>
-							<div class="break-inside-avoid rounded-[1rem] border bg-[#F9F9F9] p-4">
+							<div class="break-inside-avoid rounded-[1rem] border bg-[#F9F9F9] p-4 font-geist">
 								<div class="flex gap-x-[0.5rem]">
 									<div class="h-[3rem] w-[3rem] rounded-full">
 										<SanityImage
@@ -81,7 +81,7 @@
 										/>
 									</div>
 									<div class="w-full text-left">
-										<h3 class="w-full truncate text-[16px] font-semibold leading-[120%]">
+										<h3 class="w-full truncate font-geist text-[16px] font-semibold leading-[120%]">
 											{testimonial.name}
 										</h3>
 
@@ -90,19 +90,21 @@
 												<HoverCard.Root>
 													<HoverCard.Trigger>
 														<h3
-															class="max-w-[130px] truncate text-[14px] font-light leading-[120%] text-[#737275]"
+															class="max-w-[130px] truncate font-geist text-[14px] font-light leading-[120%] text-[#737275]"
 														>
 															{testimonial.companyName}
 														</h3>
 													</HoverCard.Trigger>
 													<HoverCard.Content class="rounded-lg bg-white px-4 py-2.5 shadow-lg">
-														<p class="text-[14px] font-light leading-[120%] text-[#737275]">
+														<p
+															class="font-geist text-[14px] font-light leading-[120%] text-[#737275]"
+														>
 															{testimonial.companyName}
 														</p>
 													</HoverCard.Content>
 												</HoverCard.Root>
 											{:else}
-												<h3 class="text-[14px] font-light leading-[120%] text-[#737275]">
+												<h3 class="font-geist text-[14px] font-light leading-[120%] text-[#737275]">
 													{testimonial.companyName}
 												</h3>
 											{/if}
@@ -112,19 +114,21 @@
 												<HoverCard.Root>
 													<HoverCard.Trigger>
 														<h3
-															class="w-full truncate text-[14px] font-light leading-[120%] text-[#737275]"
+															class="w-full truncate font-geist text-[14px] font-light leading-[120%] text-[#737275]"
 														>
 															{testimonial.position}
 														</h3>
 													</HoverCard.Trigger>
 													<HoverCard.Content class="rounded-lg  bg-white px-4 py-2.5 shadow-lg">
-														<p class="text-[14px] font-light leading-[120%] text-[#737275]">
+														<p
+															class="font-geist text-[14px] font-light leading-[120%] text-[#737275]"
+														>
 															{testimonial.position}
 														</p>
 													</HoverCard.Content>
 												</HoverCard.Root>
 											{:else}
-												<h3 class="text-[14px] font-light leading-[120%] text-[#737275]">
+												<h3 class="font-geist text-[14px] font-light leading-[120%] text-[#737275]">
 													{testimonial.position}
 												</h3>
 											{/if}
@@ -132,7 +136,7 @@
 									</div>
 								</div>
 								<div
-									class="pt-[1.25rem] text-left text-[14px] font-normal leading-[150%] text-[#737275] md:text-[16px]"
+									class="pt-[1.25rem] text-left font-geist text-[14px] font-normal leading-[150%] text-[#737275] md:text-[16px]"
 								>
 									<p>{testimonial.review}</p>
 								</div>
@@ -140,7 +144,7 @@
 						</Dialog.Trigger>
 						<Dialog.Content class="p-0">
 							<!-- class="sm:max-w-[425px]" -->
-							<div class="rounded-[1rem] border bg-[#F9F9F9] p-4 md:p-5">
+							<div class="rounded-[1rem] border bg-[#F9F9F9] p-4 font-geist md:p-5">
 								<div class="flex gap-x-[0.5rem]">
 									<div class="h-[3rem] w-[3rem] rounded-full">
 										<SanityImage
@@ -152,7 +156,7 @@
 										/>
 									</div>
 									<div class="w-full text-left">
-										<h3 class="w-full truncate text-[16px] font-semibold leading-[120%]">
+										<h3 class="w-full truncate font-geist text-[16px] font-semibold leading-[120%]">
 											{testimonial.name}
 										</h3>
 
@@ -160,7 +164,7 @@
 											{#if testimonial.companyName.length > 24}
 												<HoverCard.Root>
 													<HoverCard.Trigger>
-														<h3 class="max-w-[130px] truncate text-[#737275]">
+														<h3 class="max-w-[130px] truncate font-geist text-[#737275]">
 															{testimonial.companyName}
 														</h3>
 													</HoverCard.Trigger>
@@ -169,7 +173,7 @@
 													</HoverCard.Content>
 												</HoverCard.Root>
 											{:else}
-												<h3 class="text-[#737275]">{testimonial.companyName}</h3>
+												<h3 class="font-geist text-[#737275]">{testimonial.companyName}</h3>
 											{/if}
 											<Dot class="text-[#737275]" />
 
@@ -177,31 +181,33 @@
 												<HoverCard.Root>
 													<HoverCard.Trigger>
 														<h3
-															class="w-full truncate text-[14px] font-light leading-[120%] text-[#737275]"
+															class="w-full truncate font-geist text-[14px] font-light leading-[120%] text-[#737275]"
 														>
 															{testimonial.position}
 														</h3>
 													</HoverCard.Trigger>
 													<HoverCard.Content class="rounded-lg bg-white px-4 py-2.5 shadow-lg">
-														<p class="text-[14px] font-light leading-[120%] text-[#737275]">
+														<p
+															class="font-geist text-[14px] font-light leading-[120%] text-[#737275]"
+														>
 															{testimonial.position}
 														</p>
 													</HoverCard.Content>
 												</HoverCard.Root>
 											{:else}
-												<h3 class="text-[#737275]">{testimonial.position}</h3>
+												<h3 class="font-geist text-[#737275]">{testimonial.position}</h3>
 											{/if}
 										</div>
 									</div>
 								</div>
-								<div class="pt-[1.25rem] text-[#737275]">
+								<div class="pt-[1.25rem] font-geist text-[#737275]">
 									<p>{testimonial.review}</p>
 								</div>
 							</div>
 						</Dialog.Content>
 					</Dialog.Root>
 				{:else}
-					<div class="relative rounded-[1rem] border border-b-0 bg-[#F9F9F9] p-4">
+					<div class="relative rounded-[1rem] border border-b-0 bg-[#F9F9F9] p-4 font-geist">
 						<div class="flex gap-x-[0.5rem]">
 							<div class="h-[3rem] w-[3rem] rounded-full">
 								<SanityImage
@@ -213,7 +219,7 @@
 								/>
 							</div>
 							<div class="w-full text-left">
-								<h3 class="w-full truncate text-[16px] font-semibold leading-[120%]">
+								<h3 class="w-full truncate font-geist text-[16px] font-semibold leading-[120%]">
 									{testimonial.name}
 								</h3>
 
@@ -222,19 +228,21 @@
 										<HoverCard.Root>
 											<HoverCard.Trigger>
 												<h3
-													class="max-w-[80px] truncate text-[14px] font-light leading-[120%] text-[#737275] sm:max-w-[120px]"
+													class="max-w-[80px] truncate font-geist text-[14px] font-light leading-[120%] text-[#737275] sm:max-w-[120px]"
 												>
 													{testimonial.companyName}
 												</h3>
 											</HoverCard.Trigger>
 											<HoverCard.Content class="rounded-lg  bg-white px-4 py-2.5 shadow-lg">
-												<p class="text-[14px] font-light leading-[120%] text-[#737275]">
+												<p class="font-geist text-[14px] font-light leading-[120%] text-[#737275]">
 													{testimonial.companyName}
 												</p>
 											</HoverCard.Content>
 										</HoverCard.Root>
 									{:else}
-										<h3 class="text-[14px] font-light leading-[120%] text-[#737275] text-nowrap">
+										<h3
+											class="text-nowrap font-geist text-[14px] font-light leading-[120%] text-[#737275]"
+										>
 											{testimonial.companyName}
 										</h3>
 									{/if}
@@ -244,19 +252,21 @@
 										<HoverCard.Root>
 											<HoverCard.Trigger>
 												<h3
-													class="w-full truncate text-[14px] font-light leading-[120%] text-[#737275]"
+													class="w-full truncate font-geist text-[14px] font-light leading-[120%] text-[#737275]"
 												>
 													{testimonial.position}
 												</h3>
 											</HoverCard.Trigger>
 											<HoverCard.Content class="rounded-lg  bg-white px-4 py-2.5 shadow-lg">
-												<p class="text-[14px] font-light leading-[120%] text-[#737275]">
+												<p class="font-geist text-[14px] font-light leading-[120%] text-[#737275]">
 													{testimonial.position}
 												</p>
 											</HoverCard.Content>
 										</HoverCard.Root>
 									{:else}
-										<h3 class="text-[14px] font-light leading-[120%] text-[#737275] text-nowrap">
+										<h3
+											class="text-nowrap font-geist text-[14px] font-light leading-[120%] text-[#737275]"
+										>
 											{testimonial.position}
 										</h3>
 									{/if}
@@ -265,7 +275,7 @@
 						</div>
 
 						<div
-							class="pt-[1.25rem] text-left text-[14px] font-normal leading-[150%] text-[#737275] md:text-[16px]"
+							class="pt-[1.25rem] text-left font-geist text-[14px] font-normal leading-[150%] text-[#737275] md:text-[16px]"
 						>
 							<p>{testimonial.review}</p>
 						</div>
