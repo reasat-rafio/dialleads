@@ -1,5 +1,5 @@
-import type { BannerProps, Link, SanityImageWithAlt, SeoProps, VideoProps } from './common.types';
 import type { PortableTextBlock } from '@portabletext/types';
+import type { BannerProps, Link, SanityImageWithAlt, SeoProps, VideoProps } from './common.types';
 
 export interface LandingPageProps {
 	seo: SeoProps;
@@ -30,7 +30,7 @@ export interface UseCaseProps {
 	_type: 'landing.useCase';
 	sectionIcon: SanityImageWithAlt;
 	sectionTitle: string;
-	title: string;
+	title: PortableTextBlock[];
 	description: string;
 	useCases: UseCases[];
 }

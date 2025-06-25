@@ -14,6 +14,7 @@
 		orientation = 'horizontal',
 		class: className,
 		children,
+		selectedIndex = $bindable(0),
 		...restProps
 	}: CarouselProps = $props();
 
@@ -29,7 +30,6 @@
 		plugins,
 		onInit,
 		scrollSnaps: [],
-		selectedIndex: 0,
 		scrollTo
 	});
 
@@ -49,7 +49,9 @@
 		if (!api) return;
 		carouselState.canScrollPrev = api.canScrollPrev();
 		carouselState.canScrollNext = api.canScrollNext();
-		carouselState.selectedIndex = api.selectedScrollSnap();
+		const idx = api.selectedScrollSnap();
+		carouselState.selectedIndex = idx;
+		selectedIndex = idx;
 	}
 
 	$effect(() => {
