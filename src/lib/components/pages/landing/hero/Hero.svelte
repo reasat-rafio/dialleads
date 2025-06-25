@@ -86,7 +86,15 @@
 		<!-- cards -->
 		<div class="relative z-10 mx-auto mt-12 w-full max-w-7xl px-5 pb-10 2xl:px-0">
 			{#if hero?.useCases?.length}
-				<HeroCardsCarousel useCases={hero.useCases} />
+				<HeroCardsCarousel
+					props={{
+						useCases: hero.useCases,
+						sectionIcon: hero.sectionIcon,
+						sectionTitle: hero.sectionName,
+						title: hero.heroTitle,
+						description: hero.subtitle
+					}}
+				/>
 			{/if}
 		</div>
 	</div>
