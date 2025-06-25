@@ -6,6 +6,7 @@ export interface LandingPageProps {
 	sections: Section[];
 	pricing: Pricing;
 	industries: Industries[];
+
 }
 
 type Section =
@@ -53,6 +54,7 @@ export interface TestCallProps {
 	backgroundImage: SanityImageWithAlt;
 	title: PortableTextBlock[];
 }
+
 export interface Industries {
 	_type: string;
 	slug: object;
