@@ -7,7 +7,6 @@
 	import { imgBuilder } from '$lib/sanity/sanity-client';
 	import type { UseCaseProps } from '../../../../../types/landing.types';
 	import { onMount } from 'svelte';
-	import SectionIconAndName from '$lib/components/common/sectionIconAndName.svelte';
 	import { innerWidth } from 'svelte/reactivity/window';
 	import { PortableText } from '@portabletext/svelte';
 
@@ -40,8 +39,6 @@
 	});
 
 	let playStates = $state<boolean[]>([]);
-
-	let waveforms = [];
 
 	function resolveMp3Url(ref: any) {
 		if (!ref) {
@@ -118,6 +115,32 @@
 			}
 		});
 	}
+
+	function getWordCount(title: any): number {
+		if (!title) return 0;
+		if (Array.isArray(title)) {
+			// PortableText: join all text blocks
+			return title
+				.map((block) =>
+					typeof block.children !== 'undefined' ? block.children.map((c) => c.text).join(' ') : ''
+				)
+				.join(' ')
+				.trim()
+				.split(/\s+/).length;
+		}
+		if (typeof title === 'string') {
+			return title.trim().split(/\s+/).length;
+		}
+		return 0;
+	}
+
+	function getTitleClass(title: any): string {
+		const wordCount = getWordCount(title);
+		if (wordCount > 2) {
+			return 'mt-[1.38rem] text-center text-[1rem] font-semibold text-white lg:text-[1.235rem]';
+		}
+		return 'mt-[1.38rem] text-center text-[1.125rem] font-semibold text-white lg:text-[1.375rem]';
+	}
 </script>
 
 <div class="relative mt-[2.5rem] h-full w-full px-[0.31rem] md:px-5 lg:mt-[5.06rem]">
@@ -151,9 +174,7 @@
 											/>
 										</div>
 
-										<h3
-											class="mt-[1.38rem] text-center text-[1.125rem] font-semibold text-white lg:text-[1.375rem]"
-										>
+										<h3 class={getTitleClass(useCase.useCaseTitle)}>
 											{#if Array.isArray(useCase.useCaseTitle)}
 												<PortableText value={useCase.useCaseTitle} />
 											{:else}
