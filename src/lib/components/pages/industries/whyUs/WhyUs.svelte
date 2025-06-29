@@ -13,7 +13,7 @@
 
 	let { props }: { props: WhyUsProps } = $props();
 	let { whyUs } = $derived(props);
-	let { sectionIcon, sectionName, sectionTitle, description, cards } = $derived(whyUs);
+	let { sectionIcon, sectionName, sectionTitle, description, cta, cards } = $derived(whyUs);
 
 	let prevIndustry: string | undefined = $state(undefined);
 	let visible: boolean[] = $state([]);
@@ -76,7 +76,7 @@
 			{description}
 		</div>
 	</div>
-	
+
 	<div class="mt-8 grid grid-cols-1 justify-items-center gap-[1.25rem] md:grid-cols-2 lg:mt-16">
 		{#each cards as card, idx (card)}
 			<div
@@ -98,11 +98,8 @@
 					}}
 					let:motion
 				>
-					<div
-						use:motion
-						class="h-full w-full"
-					>
-						<Card {card} />
+					<div use:motion class="h-full w-full">
+						<Card {card} {cta} />
 					</div>
 				</Motion>
 			</div>

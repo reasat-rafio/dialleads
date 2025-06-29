@@ -26,7 +26,7 @@
 				imageUrlBuilder={imgBuilder}
 				alt="sectionIcon"
 			/>
-			<p class={cn('max-w-[269px] truncate text-nowrap text-[#495568]')}>
+			<p class={cn('max-w-[269px] truncate text-nowrap text-[#495568]', 'font-geist')}>
 				{sectionName}
 			</p>
 		</div>

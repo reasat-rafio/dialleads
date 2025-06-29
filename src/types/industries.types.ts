@@ -1,5 +1,5 @@
-import type { BannerProps, Link, SanityImageWithAlt, SeoProps } from './common.types';
 import type { PortableTextBlock } from '@portabletext/types';
+import type { BannerProps, Link, SanityImageWithAlt, SeoProps } from './common.types';
 
 export interface IndustriesPageProps {
 	seo: SeoProps;
@@ -102,6 +102,7 @@ export interface WhyUs {
 	sectionIcon: SanityImageWithAlt;
 	sectionTitle: PortableTextBlock[];
 	description: string;
+	cta: Link;
 	cards: WhyUsCard[];
 }
 
@@ -109,5 +110,4 @@ export interface WhyUsCard {
 	cardImage: SanityImageWithAlt;
 	cardTitle: string;
 	cardDescription: string;
-	cta: Link;
 }

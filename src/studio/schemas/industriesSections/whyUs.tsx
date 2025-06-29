@@ -59,7 +59,12 @@ const whyUs = defineType({
 				{
 					name: 'description',
 					title: 'Description',
-					type: 'string',
+					type: 'string'
+				},
+				{
+					name: 'cta',
+					title: 'CTA Button',
+					type: 'link'
 				},
 				{
 					name: 'cards',
@@ -97,11 +102,6 @@ const whyUs = defineType({
 									title: 'Card Description',
 									type: 'text',
 									description: 'The description for the card'
-								},
-								{
-									name: 'cta',
-									title: 'CTA Button',
-									type: 'link'
 								}
 							]
 						}
