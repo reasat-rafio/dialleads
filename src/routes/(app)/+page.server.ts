@@ -57,11 +57,6 @@ const query = groq`
             ${asset('useCaseImage')},
           },
         },
-        "bookCallButton": *[_type == "bookCallButton"][0] {
-          label,
-          url,
-          openInNewTab
-        },
       }
 `;
 

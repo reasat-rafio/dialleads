@@ -3,9 +3,10 @@
 	import { imgBuilder } from '$lib/sanity/sanity-client';
 	import SanityImage from '$lib/sanity/sanity-image/sanity-image.svelte';
 	import type { WhyUsCard } from '../../../../../types/industries.types';
+	import type { Link } from '../../../../../types/common.types';
 
-	let { card }: { card: WhyUsCard } = $props();
-	let { cardImage, cardTitle, cardDescription, cta } = $derived(card);
+	let { card, cta }: { card: WhyUsCard; cta: Link } = $props();
+	let { cardImage, cardTitle, cardDescription } = $derived(card);
 </script>
 
 <div class="flex h-full w-full flex-col rounded-[1rem] border border-[#e4e3e9] p-4 lg:p-[1.875rem]">

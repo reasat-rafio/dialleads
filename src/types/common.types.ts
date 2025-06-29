@@ -46,11 +46,3 @@ export interface VideoProps {
 	mov: string;
 	webm: string;
 }
-
-
-export interface BookCallButton {
-	label: string;
-	url: string;
-	openInNewTab: boolean;
-  }
-  
