@@ -103,11 +103,6 @@ const whyUs = defineType({
 									type: 'text',
 									description: 'The description for the card'
 								}
-								// {
-								// 	name: 'cta',
-								// 	title: 'CTA Button',
-								// 	type: 'link'
-								// }
 							]
 						}
 					],
