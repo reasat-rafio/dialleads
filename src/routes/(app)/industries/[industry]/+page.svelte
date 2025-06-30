@@ -23,9 +23,9 @@
 		{#each sections as props}
 			{#if props._type === 'industries.hero'}
 				<Hero {props} />
-			<!-- {#if props._type === 'industries.whyUs'}
+				<!-- {#if props._type === 'industries.whyUs'}
 				<WhyUs {props} /> -->
-				{:else if props._type === 'industries.whyUs'}
+			{:else if props._type === 'industries.whyUs'}
 				<WhyUs {props} />
 			{:else if props._type === 'industries.whyDialleadsAI'}
 				<WhyDialleadsAi {props} />
