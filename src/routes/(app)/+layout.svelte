@@ -23,7 +23,7 @@
 	<link rel="icon" type="image/png" href={faviconImage} />
 </svelte:head>
 
-<div class="relative">
+<div class="relative font-geist">
 	<div>
 		<Navbar {nav} {logo} pathName={page.url.pathname} />
 	</div>

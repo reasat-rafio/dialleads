@@ -1,9 +1,9 @@
-import groq from 'groq';
-import { asset } from '$lib/sanity/sanity-image';
-import type { PageServerLoad } from './$types';
 import { sanityClient } from '$lib/sanity/sanity-client';
-import type { IndustriesPageProps } from '../../../../types/industries.types';
+import { asset } from '$lib/sanity/sanity-image';
 import { error } from '@sveltejs/kit';
+import groq from 'groq';
+import type { IndustriesPageProps } from '../../../../types/industries.types';
+import type { PageServerLoad } from './$types';
 
 const dynamicQuery = (param: string) => {
 	return groq`

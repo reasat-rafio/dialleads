@@ -64,7 +64,8 @@ const whyUs = defineType({
 				{
 					name: 'cta',
 					title: 'CTA Button',
-					type: 'link'
+					type: 'link',
+					validation: (Rule) => Rule.required()
 				},
 				{
 					name: 'cards',

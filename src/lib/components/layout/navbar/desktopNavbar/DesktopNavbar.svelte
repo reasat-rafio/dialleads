@@ -84,6 +84,8 @@
 							isPolicyPage
 								? 'text-black'
 								: 'text-white'}"
+							class:active={item?.link?.type === 'internal' &&
+								page.url.pathname === item?.link?.internalLink}
 						>
 							{item?.link?.title}
 						</a>
@@ -103,3 +105,4 @@
 		</div>
 	</div>
 </div>
+

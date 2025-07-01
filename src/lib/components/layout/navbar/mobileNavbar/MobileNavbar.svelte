@@ -124,6 +124,8 @@
 										? item?.link?.internalLink
 										: item?.link?.externalLink}
 									class="font-geist text-base font-normal text-black"
+									class:active={item?.link?.type === 'internal' &&
+										page.url.pathname === item?.link?.internalLink}
 								>
 									{item?.link?.title}
 								</a>
