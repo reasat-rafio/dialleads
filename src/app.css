@@ -1,5 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600;700&display=swap');
-
+@import '@fontsource/geist-sans';
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -74,7 +73,6 @@
 
 	body {
 		@apply bg-background text-foreground;
-		font-family: 'Geist', 'Geist Sans', sans-serif;
 	}
 }
 
