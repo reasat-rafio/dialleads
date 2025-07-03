@@ -4,6 +4,7 @@
 	import { imgBuilder } from '$lib/sanity/sanity-client';
 	import type { IndustriesProps } from '../../../../../types/landing.types';
 	import * as Carousel from '$lib/components/ui/carousel/index.js';
+	import { fly } from 'svelte/transition';
 
 	let { props }: { props: IndustriesProps } = $props();
 	let { useCaseIcon, industries } = $derived(props);
@@ -104,7 +105,7 @@
 			</div>
 		</div>
 
-		{#each industries as industry, idx (`industry${idx}`)}
+		<!-- {#each industries as industry, idx (`industry${idx}`)}
 			{#if currentIndustry === idx}
 				<div class="mt-8 flex justify-center gap-[3.125rem] lg:mt-0 xl:gap-[4.375rem]">
 					<div class="flex w-full max-w-[32rem] flex-col">
@@ -151,6 +152,65 @@
 							sizes={'(min-width:1024px) 12vw, 20vw'}
 							imageUrlBuilder={imgBuilder}
 							alt={'usecase image'}
+							lqip
+						/>
+					</div>
+				</div>
+			{/if}
+		{/each} -->
+
+		{#each industries as industry, idx (`industry${idx}`)}
+			{#if currentIndustry === idx}
+				<div class="mt-8 flex justify-center gap-[3.125rem] lg:mt-0 xl:gap-[4.375rem]">
+					<!-- TEXT SECTION -->
+					<div class="flex w-full max-w-[32rem] flex-col" in:fly={{ x: -100, duration: 600 }}>
+						<p
+							class="w-full text-[1.125rem] leading-7 text-black opacity-85 lg:text-[1.25rem] lg:leading-[150%]"
+						>
+							{industry.description}
+						</p>
+
+						<div class="mt-6 flex w-full flex-col gap-y-5 lg:mt-[2.625rem]">
+							{#each industry.useCases as iuseCase}
+								<div class="flex w-full gap-4">
+									<SanityImage
+										class="h-fit w-fit flex-none"
+										innerClass="object-contain w-8 h-8"
+										src={useCaseIcon}
+										sizes="30vw"
+										imageUrlBuilder={imgBuilder}
+										alt="icon"
+									/>
+
+									<div class="flex w-full flex-col gap-2">
+										<p
+											class="font-geist text-[1.125rem] font-semibold leading-6 text-black lg:text-[1.5rem] lg:tracking-[-0.7px]"
+										>
+											{iuseCase.title}
+										</p>
+										<p
+											class="text-[1rem] leading-[150%] text-[#737275] lg:text-[1.125rem] lg:leading-7"
+										>
+											{iuseCase.description}
+										</p>
+									</div>
+								</div>
+							{/each}
+						</div>
+					</div>
+
+					<!-- IMAGE SECTION -->
+					<div
+						class="hidden h-full max-h-[25rem] w-[23.25rem] lg:block"
+						in:fly={{ x: 100, duration: 600 }}
+					>
+						<SanityImage
+							class="h-full w-full overflow-hidden rounded-[1.25rem]"
+							innerClass="object-cover object-center w-full h-full"
+							src={industry.useCaseImage}
+							sizes="(min-width:1024px) 12vw, 20vw"
+							imageUrlBuilder={imgBuilder}
+							alt="usecase image"
 							lqip
 						/>
 					</div>

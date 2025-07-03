@@ -19,7 +19,7 @@
 
 <div class="flex w-full justify-center px-4 sm:px-6 lg:px-8">
 	<div
-		class="relative aspect-[1281/732] w-full max-w-7xl overflow-hidden rounded-[20px] sm:rounded-[30px] lg:rounded-[45px]"
+		class="relative aspect-[1281/732] w-full max-w-7xl overflow-hidden rounded-[16px] sm:rounded-[30px] lg:rounded-[24px]"
 	>
 		{#if !isPlaying}
 			<button
