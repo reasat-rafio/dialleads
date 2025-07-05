@@ -69,7 +69,7 @@
 				{#if showDialog}
 					<Dialog.Root>
 						<Dialog.Trigger>
-							<div class="break-inside-avoid rounded-[1rem] border bg-[#F9F9F9] p-4 font-geist">
+							<div class="break-inside-avoid rounded-[1rem] border hover:border-violet-700 bg-[#F9F9F9] p-4 font-geist">
 								<div class="flex gap-x-[0.5rem]">
 									<div class="h-[3rem] w-[3rem] rounded-full">
 										<SanityImage
@@ -109,7 +109,6 @@
 												</h3>
 											{/if}
 											<Dot class="text-[#737275]" />
-
 											{#if testimonial.position.length > 24}
 												<HoverCard.Root>
 													<HoverCard.Trigger>
@@ -136,7 +135,7 @@
 									</div>
 								</div>
 								<div
-									class="pt-[1.25rem] text-left font-geist text-[14px] font-normal leading-[150%] text-[#737275] md:text-[16px]"
+									class="pt-[1.25rem] text-left  font-geist text-[14px] font-normal leading-[150%] text-[#737275] hover:text-[#141313]  md:text-[16px]"
 								>
 									<p>{testimonial.review}</p>
 								</div>

@@ -45,7 +45,7 @@
 	>
 		<SanityImage
 			class="h-fit w-fit"
-			innerClass="object-contain w-5 h-5 group-hover:brightness-[100]"
+			innerClass="object-contain w-5 h-5 transition-all duration-300 group-hover:brightness-0 group-hover:invert"
 			src={cta.icon}
 			sizes="5vw"
 			imageUrlBuilder={imgBuilder}

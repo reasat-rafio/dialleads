@@ -124,6 +124,8 @@
 										? item?.link?.internalLink
 										: item?.link?.externalLink}
 									class="font-geist text-base font-normal text-black"
+									
+									onclick={() => (isPopupVisible = false)} 
 								>
 									{item?.link?.title}
 								</a>
