@@ -26,7 +26,7 @@
 
 	<div class="mt-[1.875rem] h-full w-full space-y-4">
 		<h3
-			class="w-full font-geist text-[22px] font-semibold leading-[38px] tracking-[-1%] text-black lg:text-[24px] lg:leading-[auto]"
+		 class="w-full font-geist text-[22px] font-semibold leading-[38px] tracking-[-1%] text-black lg:text-[24px] lg:leading-[auto]"
 		>
 			{cardTitle}
 		</h3>

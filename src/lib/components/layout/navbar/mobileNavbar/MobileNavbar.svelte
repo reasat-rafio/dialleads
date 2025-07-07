@@ -1,11 +1,11 @@
 <script lang="ts">
-	import Button from '$lib/components/ui/button/button.svelte';
-	import SanityImage from '$lib/sanity/sanity-image/sanity-image.svelte';
-	import { imgBuilder } from '$lib/sanity/sanity-client';
 	import { page } from '$app/state';
-	import type { Nav } from '../../../../../types/site.types';
-	import type { SanityImageWithAlt } from '../../../../../types/common.types';
+	import Button from '$lib/components/ui/button/button.svelte';
+	import { imgBuilder } from '$lib/sanity/sanity-client';
+	import SanityImage from '$lib/sanity/sanity-image/sanity-image.svelte';
 	import { scrollY } from 'svelte/reactivity/window';
+	import type { SanityImageWithAlt } from '../../../../../types/common.types';
+	import type { Nav } from '../../../../../types/site.types';
 
 	interface Props {
 		nav: Nav;
@@ -124,8 +124,7 @@
 										? item?.link?.internalLink
 										: item?.link?.externalLink}
 									class="font-geist text-base font-normal text-black"
-									
-									onclick={() => (isPopupVisible = false)} 
+									onclick={() => (isPopupVisible = false)}
 								>
 									{item?.link?.title}
 								</a>
@@ -136,6 +135,7 @@
 						<a
 							href={cta.type === 'internal' ? cta.internalLink : cta.externalLink}
 							class="box-border block rounded-[0.75rem] bg-primary-gradient px-5 py-[0.75rem] font-geist text-white"
+							onclick={() => (isPopupVisible = false)}
 						>
 							{cta.title}
 						</a>

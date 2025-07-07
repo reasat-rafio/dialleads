@@ -69,7 +69,9 @@
 				{#if showDialog}
 					<Dialog.Root>
 						<Dialog.Trigger>
-							<div class="break-inside-avoid rounded-[1rem] border hover:border-violet-700 bg-[#F9F9F9] p-4 font-geist">
+							<div
+								class="group break-inside-avoid rounded-[1rem] border bg-[#F9F9F9] p-4 font-geist hover:border-violet-700"
+							>
 								<div class="flex gap-x-[0.5rem]">
 									<div class="h-[3rem] w-[3rem] rounded-full">
 										<SanityImage
@@ -135,7 +137,7 @@
 									</div>
 								</div>
 								<div
-									class="pt-[1.25rem] text-left  font-geist text-[14px] font-normal leading-[150%] text-[#737275] hover:text-[#141313]  md:text-[16px]"
+									class="pt-[1.25rem] text-left font-geist text-[14px] font-normal leading-[150%] text-[#737275] transition-colors duration-300 group-hover:text-[#141313] md:text-[16px]"
 								>
 									<p>{testimonial.review}</p>
 								</div>
@@ -143,7 +145,7 @@
 						</Dialog.Trigger>
 						<Dialog.Content class="p-0">
 							<!-- class="sm:max-w-[425px]" -->
-							<div class="rounded-[1rem] border bg-[#F9F9F9] p-4 font-geist md:p-5">
+							<div class="group relative rounded-[1rem] border bg-[#F9F9F9] p-4 font-geist md:p-5">
 								<div class="flex gap-x-[0.5rem]">
 									<div class="h-[3rem] w-[3rem] rounded-full">
 										<SanityImage
@@ -199,7 +201,9 @@
 										</div>
 									</div>
 								</div>
-								<div class="pt-[1.25rem] font-geist text-[#737275]">
+								<div
+									class="pt-[1.25rem] text-left font-geist text-[14px] font-normal leading-[150%] text-[#737275] transition-colors duration-300 group-hover:text-[#141313] md:text-[16px]"
+								>
 									<p>{testimonial.review}</p>
 								</div>
 							</div>
