@@ -119,13 +119,15 @@
 								tabindex="0"
 								class="flex items-center rounded py-1 text-start transition-colors duration-300 ease-linear hover:bg-violet-600/5"
 							>
+
 								<a
 									href={item?.link?.type === 'internal'
 										? item?.link?.internalLink
 										: item?.link?.externalLink}
 									class="font-geist text-base font-normal text-black"
-									
-									onclick={() => (isPopupVisible = false)} 
+									class:active={item?.link?.type === 'internal' &&
+										page.url.pathname === item?.link?.internalLink}
+									onclick={() => (isPopupVisible = false)}
 								>
 									{item?.link?.title}
 								</a>
@@ -136,6 +138,7 @@
 						<a
 							href={cta.type === 'internal' ? cta.internalLink : cta.externalLink}
 							class="box-border block rounded-[0.75rem] bg-primary-gradient px-5 py-[0.75rem] font-geist text-white"
+							onclick={() => (isPopupVisible = false)}
 						>
 							{cta.title}
 						</a>
