@@ -1,94 +1,89 @@
 <script lang="ts">
-	import {
-		type CarouselAPI,
-		type CarouselProps,
-		type EmblaContext,
-		setEmblaContext
-	} from './context.js';
-	import { cn } from '$lib/utils.js';
+  import { type CarouselAPI, type CarouselProps, type EmblaContext, setEmblaContext } from "./context.js";
+  import { cn } from "$lib/utils.js";
 
-	let {
-		opts = {},
-		plugins = [],
-		setApi = () => {},
-		orientation = 'horizontal',
-		class: className,
-		children,
-		selectedIndex = $bindable(0),
-		...restProps
-	}: CarouselProps = $props();
+  let {
+    opts = {},
+    plugins = [],
+    setApi = () => {},
+    orientation = "horizontal",
+    class: className,
+    children,
+    selectedIndex = $bindable(0),
+    ...restProps
+  }: CarouselProps = $props();
 
-	let carouselState = $state<EmblaContext>({
-		api: undefined,
-		scrollPrev,
-		scrollNext,
-		orientation,
-		canScrollNext: false,
-		canScrollPrev: false,
-		handleKeyDown,
-		options: opts,
-		plugins,
-		onInit,
-		scrollSnaps: [],
-		scrollTo
-	});
+  let carouselState = $state<EmblaContext>({
+    api: undefined,
+    scrollPrev,
+    scrollNext,
+    orientation,
+    canScrollNext: false,
+    canScrollPrev: false,
+    handleKeyDown,
+    options: opts,
+    plugins,
+    onInit,
+    scrollSnaps: [],
+    scrollTo,
+  });
 
-	setEmblaContext(carouselState);
+  setEmblaContext(carouselState);
 
-	function scrollPrev() {
-		carouselState.api?.scrollPrev();
-	}
-	function scrollNext() {
-		carouselState.api?.scrollNext();
-	}
-	function scrollTo(index: number, jump?: boolean) {
-		carouselState.api?.scrollTo(index, jump);
-	}
+  function scrollPrev() {
+    carouselState.api?.scrollPrev();
+  }
+  function scrollNext() {
+    carouselState.api?.scrollNext();
+  }
+  function scrollTo(index: number, jump?: boolean) {
+    carouselState.api?.scrollTo(index, jump);
+  }
 
-	function onSelect(api: CarouselAPI) {
-		if (!api) return;
-		carouselState.canScrollPrev = api.canScrollPrev();
-		carouselState.canScrollNext = api.canScrollNext();
-		const idx = api.selectedScrollSnap();
-		carouselState.selectedIndex = idx;
-		selectedIndex = idx;
-	}
+  function onSelect(api: CarouselAPI) {
+    if (!api) return;
+    carouselState.canScrollPrev = api.canScrollPrev();
+    carouselState.canScrollNext = api.canScrollNext();
+    const idx = api.selectedScrollSnap();
+    carouselState.selectedIndex = idx;
+    selectedIndex = idx;
+  }
 
-	$effect(() => {
-		if (carouselState.api) {
-			onSelect(carouselState.api);
-			carouselState.api.on('select', onSelect);
-			carouselState.api.on('reInit', onSelect);
-		}
-	});
+  $effect(() => {
+    if (carouselState.api) {
+      onSelect(carouselState.api);
+      carouselState.api.on("select", onSelect);
+      carouselState.api.on("reInit", onSelect);
+    }
+  });
 
-	function handleKeyDown(e: KeyboardEvent) {
-		if (e.key === 'ArrowLeft') {
-			e.preventDefault();
-			scrollPrev();
-		} else if (e.key === 'ArrowRight') {
-			e.preventDefault();
-			scrollNext();
-		}
-	}
+  function handleKeyDown(e: KeyboardEvent) {
+    if (e.key === "ArrowLeft") {
+      e.preventDefault();
+      scrollPrev();
+    } else if (e.key === "ArrowRight") {
+      e.preventDefault();
+      scrollNext();
+    }
+  }
 
-	$effect(() => {
-		setApi(carouselState.api);
-	});
+  $effect(() => {
+    setApi(carouselState.api);
+  });
 
-	function onInit(event: CustomEvent<CarouselAPI>) {
-		carouselState.api = event.detail;
+  function onInit(event: CustomEvent<CarouselAPI>) {
+    carouselState.api = event.detail;
 
-		carouselState.scrollSnaps = carouselState.api.scrollSnapList();
-	}
+    carouselState.scrollSnaps = carouselState.api.scrollSnapList();
+  }
 
-	$effect(() => {
-		return () => {
-			carouselState.api?.off('select', onSelect);
-		};
-	});
+  $effect(() => {
+    return () => {
+      carouselState.api?.off("select", onSelect);
+    };
+  });
 </script>
 
-<div class={cn('relative', className)} role="region" aria-roledescription="carousel" {...restProps}>
-	{@render children?.()}
+<div class={cn("relative", className)} role="region" aria-roledescription="carousel" {...restProps}>
+  {@render children?.()}
 </div>

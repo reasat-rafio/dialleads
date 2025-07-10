@@ -1,7 +1,7 @@
 <script lang="ts">
-  import { imgBuilder } from '$lib/sanity/sanity-client';
-  import SanityImage from '$lib/sanity/sanity-image/sanity-image.svelte';
-  import type { WhyChooseUsCard } from '../../../../../types/landing.types';
+  import { imgBuilder } from "$lib/sanity/sanity-client";
+  import SanityImage from "$lib/sanity/sanity-image/sanity-image.svelte";
+  import type { WhyChooseUsCard } from "../../../../../types/landing.types";
 
   let { card }: { card: WhyChooseUsCard } = $props();
 </script>

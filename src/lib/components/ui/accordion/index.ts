@@ -6,15 +6,15 @@ import FAQTrigger from "./accordion-trigger-faq.svelte";
 
 const Root = AccordionPrimitive.Root;
 export {
-	Root,
-	Content,
-	Item,
-	Trigger,
-	FAQTrigger,
-	//
-	Root as Accordion,
-	Content as AccordionContent,
-	Item as AccordionItem,
-	Trigger as AccordionTrigger,
-	FAQTrigger as AccordionFAQTrigger,
+  Root,
+  Content,
+  Item,
+  Trigger,
+  FAQTrigger,
+  //
+  Root as Accordion,
+  Content as AccordionContent,
+  Item as AccordionItem,
+  Trigger as AccordionTrigger,
+  FAQTrigger as AccordionFAQTrigger,
 };

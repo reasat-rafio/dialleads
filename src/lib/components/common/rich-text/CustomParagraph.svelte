@@ -1,7 +1,7 @@
 <script>
-	export let children;
+  export let children;
 </script>
 
 <ul class="text-xl font-medium text-[#525252]">
-	<slot />
+  <slot />
 </ul>

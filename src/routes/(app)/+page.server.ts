@@ -1,41 +1,41 @@
-import { formSchema } from '$lib/formValidation';
-import { sanityClient } from '$lib/sanity/sanity-client';
-import { asset } from '$lib/sanity/sanity-image';
-import { error } from '@sveltejs/kit';
-import groq from 'groq';
-import { message, superValidate } from 'sveltekit-superforms';
-import { zod } from 'sveltekit-superforms/adapters';
-import type { LandingPageProps } from '../../types/landing.types';
-import type { PageServerLoad } from './$types';
+import { formSchema } from "$lib/formValidation";
+import { sanityClient } from "$lib/sanity/sanity-client";
+import { asset } from "$lib/sanity/sanity-image";
+import { error } from "@sveltejs/kit";
+import groq from "groq";
+import { message, superValidate } from "sveltekit-superforms";
+import { zod } from "sveltekit-superforms/adapters";
+import type { LandingPageProps } from "../../types/landing.types";
+import type { PageServerLoad } from "./$types";
 
 const query = groq`
     *[_id == "landingPage"][0]{
         ...,
         sections[]{
           ...,
-          ${asset('thumbnail')},
+          ${asset("thumbnail")},
           "webm": video_webm.asset->url,
           "mov": video_hevc.asset->url,
           hero{
             ...,
             useCases[]{
               ...,
-              ${asset('useCaseImage')},
+              ${asset("useCaseImage")},
             },
-            ${asset('sectionIcon')},
-            ${asset('thumbnailForMobile')},
-            ${asset('thumbnailForDesktop')},
-            ${asset('videoPlayBtnIcon')}
+            ${asset("sectionIcon")},
+            ${asset("thumbnailForMobile")},
+            ${asset("thumbnailForDesktop")},
+            ${asset("videoPlayBtnIcon")}
           },
           comparison{
             ...,
-            ${asset('sectionIcon')},
+            ${asset("sectionIcon")},
             comparisonCards[]{
               ...,
-              ${asset('icon')},
+              ${asset("icon")},
               features[]{
               ...,
-              ${asset('featureIcon')},
+              ${asset("featureIcon")},
               },
             }
           },
@@ -43,43 +43,43 @@ const query = groq`
             ...,
             brands[]{
               ...,
-              ${asset('brandImage')},
+              ${asset("brandImage")},
             },
           },
           testimonials[]-> {
             ...,
-            ${asset('reviewerImage')},
+            ${asset("reviewerImage")},
           },
           industries[]-> {
             ...,
-            ${asset('buttonIcon')},
-            ${asset('buttonIcon2')},
-            ${asset('useCaseImage')},
+            ${asset("buttonIcon")},
+            ${asset("buttonIcon2")},
+            ${asset("useCaseImage")},
           },
         },
       }
 `;
 
 export const load: PageServerLoad = async ({ setHeaders }) => {
-	const data: LandingPageProps = await sanityClient.fetch(query);
+  const data: LandingPageProps = await sanityClient.fetch(query);
 
-	setHeaders({ 'cache-control': 'public, max-age=120' });
+  setHeaders({ "cache-control": "public, max-age=120" });
 
-	if (!data) error(404, { message: 'Not found' });
+  if (!data) error(404, { message: "Not found" });
 
-	return { page: data, testCallForm: await superValidate(zod(formSchema)) };
+  return { page: data, testCallForm: await superValidate(zod(formSchema)) };
 };
 
 export const actions = {
-	create: async ({ request }) => {
-		const form = await superValidate(request, zod(formSchema));
+  create: async ({ request }) => {
+    const form = await superValidate(request, zod(formSchema));
 
-		if (!form.valid) {
-			return message(form, 'something went wrong +page.server.ts', {
-				status: 400
-			});
-		}
+    if (!form.valid) {
+      return message(form, "something went wrong +page.server.ts", {
+        status: 400,
+      });
+    }
 
-		return message(form, 'validation passed successfully .. form submitted .. 🟢 +page.server.ts');
-	}
+    return message(form, "validation passed successfully .. form submitted .. 🟢 +page.server.ts");
+  },
 };

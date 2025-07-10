@@ -1,6 +1,6 @@
-import contactPage from './document';
+import contactPage from "./document";
 
-import contactForm from './contactForm';
-import hero from './hero';
+import contactForm from "./contactForm";
+import hero from "./hero";
 
 export default [contactPage, contactForm, hero];

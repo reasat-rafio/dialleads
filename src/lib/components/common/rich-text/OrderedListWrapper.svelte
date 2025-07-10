@@ -1,9 +1,9 @@
 <script lang="ts">
-	import type { Snippet } from 'svelte';
+  import type { Snippet } from "svelte";
 
-	let { children }: { children: Snippet } = $props();
+  let { children }: { children: Snippet } = $props();
 </script>
 
 <ol class="ml-10 list-decimal space-y-2">
-	{@render children()}
+  {@render children()}
 </ol>

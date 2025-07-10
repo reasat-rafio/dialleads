@@ -1,4 +1,3 @@
-
 <script lang="ts">
   export let label: string;
   export let url: string;
@@ -7,9 +6,8 @@
 
 <a
   href={url}
-  target={openInNewTab ? '_blank' : '_self'}
-  rel={openInNewTab ? 'noopener noreferrer' : undefined}
-  class="inline-block px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700 transition"
->
+  target={openInNewTab ? "_blank" : "_self"}
+  rel={openInNewTab ? "noopener noreferrer" : undefined}
+  class="inline-block rounded bg-blue-600 px-4 py-2 text-white transition hover:bg-blue-700">
   {label}
 </a>

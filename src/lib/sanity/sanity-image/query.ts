@@ -1,4 +1,4 @@
-import groq from 'groq';
+import groq from "groq";
 
 /**
  * Use in your groq queries to ensure images have all the necessary metadata to be useful in image tags
