@@ -37,6 +37,8 @@
 		</p>
 	</div>
 
+	
+	<!-- Just for ensure there is no missing item on the backend -->
 	{#if cta && cta.icon && cta.title}
 		<a
 			href={cta.type === 'internal' ? cta.internalLink : cta.externalLink}
@@ -56,10 +58,5 @@
 				{cta.title}
 			</span>
 		</a>
-	{:else}
-		
-		<div class="mt-8 text-sm italic text-gray-400">
-			Missing CTA information — please check CMS data.
-		</div>
 	{/if}
 </div>
