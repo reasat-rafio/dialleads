@@ -36,7 +36,6 @@
 			{cardDescription}
 		</p>
 	</div>
-
 	
 	<!-- Just for ensure there is no missing item on the backend -->
 	{#if cta && cta.icon && cta.title}

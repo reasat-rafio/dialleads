@@ -7,7 +7,7 @@
 </script>
 
 <div
-	class="h-full w-full max-w-none rounded-2xl border p-[1.563rem]"
+	class="h-full w-full max-w-none rounded-2xl border hover:border-violet-700 p-[1.563rem]"
 >
 	<SanityImage
 		lqip
@@ -24,7 +24,7 @@
 			{card?.cardTitle}
 		</h3>
 		<p
-			class="w-full font-geist text-[#5B6779]/80 text-[18px] font-normal leading-[28px] tracking-[0%]"
+			class="w-full font-geist text-[#5B6779]/80 hover:text-[#16181c] text-[18px] font-normal leading-[28px] tracking-[0%]"
 		>
 			{card?.cardDescription}
 		</p>
