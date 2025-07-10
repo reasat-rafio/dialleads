@@ -36,23 +36,26 @@
 			{cardDescription}
 		</p>
 	</div>
-
-	<a
-		href={cta.type === 'internal' ? cta.internalLink : cta.externalLink}
-		class={buttonVariants({
-			className: `group relative mt-8 flex h-[52px] w-full items-center gap-3 overflow-clip rounded-[0.75rem] border border-[#9F9FA3] bg-transparent px-7 py-4 text-black transition-all duration-200 ease-linear after:absolute after:inset-y-0 after:right-[100%] after:z-[-1] after:w-[150%] after:transition-all after:duration-300 after:ease-linear after:content-[''] after:[background-image:_linear-gradient(to_right,_rgba(113,48,214,1.0)_0%,_rgba(177,136,240,1.0)_70%,_rgba(177,136,240,0.0)_100%)] hover:bg-transparent hover:text-white hover:after:right-[-40%]`
-		})}
-	>
-		<SanityImage
-			class="h-fit w-fit"
-			innerClass="object-contain w-5 h-5 transition-all duration-300 group-hover:brightness-0 group-hover:invert"
-			src={cta.icon}
-			sizes="5vw"
-			imageUrlBuilder={imgBuilder}
-			alt={'icon'}
-		/>
-		<span class="font-geist text-[18px] font-normal leading-[18px] tracking-normal">
-			{cta.title}
-		</span>
-	</a>
+	
+	<!-- Just for ensure there is no missing item on the backend -->
+	{#if cta && cta.icon && cta.title}
+		<a
+			href={cta.type === 'internal' ? cta.internalLink : cta.externalLink}
+			class={buttonVariants({
+				className: `group relative mt-8 flex h-[52px] w-full items-center gap-3 overflow-clip rounded-[0.75rem] border border-[#9F9FA3] bg-transparent px-7 py-4 text-black transition-all duration-200 ease-linear after:absolute after:inset-y-0 after:right-[100%] after:z-[-1] after:w-[150%] after:transition-all after:duration-300 after:ease-linear after:content-[''] after:[background-image:_linear-gradient(to_right,_rgba(113,48,214,1.0)_0%,_rgba(177,136,240,1.0)_70%,_rgba(177,136,240,0.0)_100%)] hover:bg-transparent hover:text-white hover:after:right-[-40%]`
+			})}
+		>
+			<SanityImage
+				class="h-fit w-fit"
+				innerClass="object-contain w-5 h-5 group-hover:brightness-[100]"
+				src={cta.icon}
+				sizes="5vw"
+				imageUrlBuilder={imgBuilder}
+				alt={'icon'}
+			/>
+			<span class="font-geist text-[18px] font-normal leading-[18px] tracking-normal">
+				{cta.title}
+			</span>
+		</a>
+	{/if}
 </div>
