@@ -88,12 +88,13 @@
             <h3
               class="flex items-center justify-center font-geist text-[3rem] font-semibold leading-[115%] tracking-[-0.063rem] text-black">
               <AnimatedCounter
+
                 values={Array.from({ length: parseFloat(valueWithText.numeric) + 1 }, (_, i) =>
                   new String(i).padStart(valueWithText.numeric.length, "0"),
                 )}
                 direction="up"
                 ease="cubic-bezier(0.83, 0.4, 0.04, 1)"
-                duration={1800}
+                duration={4800}
                 bind:startCounting={elementvisible} />
               <span>{valueWithText.nonNumeric}</span>
             </h3>
@@ -107,3 +108,10 @@
     {/key}
   </div>
 </div>
+
+
+<!-- Increase step by 5 -->
+<!-- values={Array.from(
+  { length: Math.ceil(parseFloat(valueWithText.numeric) / 5) + 1 },
+  (_, i) => String(i * 5).padStart(valueWithText.numeric.length, "0")
+)} -->

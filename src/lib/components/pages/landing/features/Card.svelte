@@ -6,7 +6,7 @@
   let { card }: { card: Card } = $props();
 </script>
 
-<div class="h-full w-full max-w-none rounded-2xl border p-[1.563rem] hover:border-violet-700">
+<div class="group  h-full w-full max-w-none rounded-2xl border p-[1.563rem] hover:border-primary">
   <SanityImage
     lqip
     class="h-12 w-12"
@@ -19,7 +19,7 @@
       {card?.cardTitle}
     </h3>
     <p
-      class="w-full font-geist text-[18px] font-normal leading-[28px] tracking-[0%] text-[#5B6779]/80 hover:text-[#16181c]">
+      class="w-full text-[18px] font-normal leading-[28px] tracking-[0%] text-[#5B6779]/80 group-hover:text-[#16181c] transition-colors duration-200">
       {card?.cardDescription}
     </p>
   </div>

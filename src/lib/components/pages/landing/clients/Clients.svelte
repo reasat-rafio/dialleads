@@ -18,7 +18,7 @@
 
 <div class="mb-[2.5rem] mt-[1.88rem] px-5 lg:mt-[2.8rem]">
   <h2
-    class="mb-8 text-center font-geist text-[18px] font-semibold leading-[24px] tracking-[0%] text-black md:text-[24px] md:tracking-[-0.7px]">
+    class="mb-8 text-center font-geist text-[1.125rem] font-semibold leading-[1.5rem] tracking-[0%] text-black md:text-[1.5rem] md:tracking-[-0.044rem]">
     <PortableText
       value={props?.title}
       components={{
@@ -43,15 +43,15 @@
     ]}
     setApi={(emblaApi) => (api = emblaApi)}
     class="container w-full max-w-7xl px-0">
-    <Carousel.Content class="-ml-8 xl:-ml-[76px]">
+    <Carousel.Content class="-ml-8 xl:-ml-[4.75rem]">
       {#each props.clients as client}
-        <Carousel.Item class="flex basis-1/3 items-center justify-center pl-8 md:basis-1/4 xl:basis-1/4 xl:pl-[76px]">
+        <Carousel.Item class="flex basis-1/3 items-center justify-center pl-8 md:basis-1/4 xl:basis-1/4 xl:pl-[4.75rem]">
           <div class="relative flex h-[2.5rem] w-auto py-1">
             <SanityImage
               class="h-full w-auto"
               innerClass="object-contain w-auto h-full"
               src={client.clientImage}
-              sizes="(min-width:1024px) 12vw, 20vw"
+              sizes="(min-width:64rem) 12vw, 20vw"
               imageUrlBuilder={imgBuilder}
               alt={client?.clientImage?.alt || "clientImg"} />
           </div>

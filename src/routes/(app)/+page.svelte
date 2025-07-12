@@ -35,7 +35,7 @@
       {:else if props._type === "landing.clients"}
         <Clients {props} />
       {:else if props._type === "landing.testCall"}
-        <TryIt {props} form={data.testCallForm} />
+        <TryIt {props}  />
       {:else if props._type === "common.video"}
         <Video {props} />
       {:else if props._type === "landing.whyDialleadsAI"}

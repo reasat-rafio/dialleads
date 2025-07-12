@@ -24,30 +24,30 @@
         sizes="5vw"
         imageUrlBuilder={imgBuilder}
         alt="sectionIcon" />
-      <p class={cn("max-w-[269px] truncate text-nowrap text-[#495568]", "font-geist")}>
+      <p class={cn("max-w-[16.8125rem] truncate text-nowrap text-[#495568]", "font-geist")}>
         {sectionName}
       </p>
     </div>
   </div>
 
-  <div class="mt-6 flex flex-col justify-between gap-x-[30px] gap-y-7 lg:flex-row lg:justify-center">
+  <div class="mt-6 flex flex-col justify-between gap-x-[1.875rem] gap-y-7 lg:flex-row lg:justify-center">
     <h2
       class={cn(
         "w-full flex-shrink-0 font-geist text-[1.625rem] font-semibold text-black",
-        "font-geist text-[36px] font-semibold leading-[42px] tracking-[-1%]",
-        "lg:max-w-[523px] lg:text-[48px] lg:leading-[115%] lg:tracking-[-1px]",
+        "font-geist text-[2.25rem] font-semibold leading-[2.625rem] tracking-[-1%]",
+        "lg:max-w-[32.6875rem] lg:text-[3rem] lg:leading-[115%] lg:tracking-[-0.063rem]",
       )}>
       {sectionTitle}
     </h2>
 
     <div class={cn("flex flex-col gap-6")}>
-      <div class="font-geist text-[18px] font-normal leading-[150%] tracking-[0%] text-gray-600/80 lg:text-[24px]">
+      <div class="font-geist text-[1.125rem] font-normal leading-[150%] tracking-[0%] text-gray-600/80 lg:text-[1.5rem]">
         {description}
       </div>
 
       <Button
         class={`flex h-[3.25rem] w-fit items-center gap-3 rounded-[0.5rem] bg-primary-gradient px-8 py-4 text-white`}>
-        <span class="font-geist text-[18px] font-normal leading-[18px] tracking-normal">
+        <span class="font-geist text-[1.125rem] font-normal leading-[1.125rem] tracking-normal">
           {ctaBtnText}
         </span>
         <SanityImage
@@ -61,7 +61,7 @@
     </div>
   </div>
 
-  <div class="mt-[52px] lg:mt-14">
+  <div class="mt-[3.25rem] lg:mt-14">
     <Carousel.Root
       opts={{
         align: "start",
@@ -77,16 +77,16 @@
       ]}
       setApi={(emblaApi) => (api = emblaApi)}
       class="container w-full max-w-7xl px-0">
-      <Carousel.Content class="-ml-[43px] xl:-ml-[56px]">
+      <Carousel.Content class="-ml-[2.6875rem] xl:-ml-[3.5rem]">
         {#each brands as brand}
           <Carousel.Item
-            class="flex basis-1/2 items-center justify-center pl-[43px] sm:basis-1/3 md:basis-1/4 xl:basis-1/6 xl:pl-[56px]">
+            class="flex basis-1/2 items-center justify-center pl-[2.6875rem] sm:basis-1/3 md:basis-1/4 xl:basis-1/6 xl:pl-[3.5rem]">
             <div class="relative flex h-[2.5rem] w-auto">
               <SanityImage
                 class="h-full w-auto"
                 innerClass="object-contain w-auto h-full"
                 src={brand.brandImage}
-                sizes={"(min-width:1024px) 12vw, 20vw"}
+                sizes={"(min-width:64rem) 12vw, 20vw"}
                 imageUrlBuilder={imgBuilder}
                 alt={brand?.brandImage.alt || "brandlogo"} />
             </div>

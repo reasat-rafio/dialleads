@@ -7,6 +7,8 @@
   import { PortableText } from "@portabletext/svelte";
   import VioletGradient from "./VioletGradient.svelte";
   import type { Hero, HeroProps } from "../../../../../types/industries.types";
+  import HeroSvg from "./HeroSvg.svelte";
+
 
   let { props }: { props: HeroProps } = $props();
   let { hero }: { hero: Hero } = $derived(props);
@@ -14,13 +16,13 @@
 
   let playState = $state<boolean>(false);
 
-  let waveSurferInstance: WaveSurfer; // Store WaveSurfer instance here
+  let waveSurferInstance: WaveSurfer; 
 
-  // Initialize WaveSurfer instances on mount
+ 
   $effect(() => {
     const canvas = document.createElement("canvas");
     canvas.width = 175;
-    canvas.height = 1; // Minimal height is enough
+    canvas.height = 1; 
     const ctx = canvas.getContext("2d");
     if (!ctx) {
       console.error("Unable to get 2D context for gradient.");
@@ -44,13 +46,13 @@
       barRadius: 4,
       barGap: 4,
     });
-    waveSurfer.load(mp3FileUrl); // load the audio file
-    waveSurferInstance = waveSurfer; // store the instance
+    waveSurfer.load(mp3FileUrl); 
+    waveSurferInstance = waveSurfer; 
 
-    // Initialize play state for the player
+   
     playState = false;
 
-    // Listen for the finish event to reset the play button
+    
     waveSurfer.on("finish", () => {
       playState = false;
     });
@@ -95,7 +97,7 @@
           {hero?.subtitle}
         </p>
 
-        <!-- contact sales button -->
+
         <div class="mt-[1.88rem] flex max-lg:justify-center">
           <div
             class="relative z-[10] inline-flex h-fit w-full max-w-[14.420rem] animate-shine
@@ -107,7 +109,7 @@
               class="flex h-[3.5rem] w-[13.5rem] items-center rounded-lg bg-primary-gradient px-6
           							py-3 font-geist text-lg font-semibold text-white shadow-xl transition-all duration-200 ease-linear 
 									hover:shadow-xl hover:brightness-90 focus:outline-none">
-              <!-- Icon (SanityImage) -->
+          
               {#if hero?.link?.icon}
                 <SanityImage
                   class="h-5 w-5"
@@ -116,14 +118,13 @@
                   imageUrlBuilder={imgBuilder}
                   alt={hero.link.icon.alt || "icon"} />
               {/if}
-              <!-- Button Text {hero?.link?.title} -->
+        
               <span>{hero?.link?.title}</span>
             </Button>
           </div>
         </div>
       </div>
 
-      <!-- card -->
       <div class="flex w-full max-w-[20.3125rem] justify-center max-lg:mx-auto max-lg:mt-[1.875rem]">
         <Card.Root
           style="background: linear-gradient(242deg, rgba(255, 255, 255, 0.21) 0%, rgba(255, 255, 255, 0.10) 100%);"
@@ -156,29 +157,11 @@
                 onclick={togglePlay}
                 aria-label="play-pause button">
                 {#if playState}
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="24"
-                    height="24"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                    stroke-width="2"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    class="lucide lucide-pause text-[#8B5CF6]">
-                    <rect x="14" y="4" width="4" height="16" rx="1" />
-                    <rect x="6" y="4" width="4" height="16" rx="1" />
-                  </svg>
+                  <HeroSvg type="pause" />
+
                 {:else}
-                  <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <g id="SVG">
-                      <path
-                        id="Vector"
-                        d="M12.7019 6.26776L4.17882 1.22898C3.48632 0.819773 2.42578 1.21687 2.42578 2.22899V12.3041C2.42578 13.2121 3.41126 13.7594 4.17882 13.3041L12.7019 8.26778C13.4622 7.81984 13.4646 6.71571 12.7019 6.26776Z"
-                        fill="#8B5CF6" />
-                    </g>
-                  </svg>
+                 <HeroSvg type="play" />
+
                 {/if}
               </button>
               <div id={`waveform-herocard`} class="w-full max-w-[90%] overflow-hidden rounded-lg"></div>

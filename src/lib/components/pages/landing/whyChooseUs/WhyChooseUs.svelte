@@ -13,10 +13,10 @@
   }: { whyChooseUs: WhyChooseUs } = $derived(props);
 </script>
 
-<div class="mx-auto max-w-7xl px-5 xl:px-0">
+<div class="mx-auto max-w-7xl px-[1.25rem] xl:px-0">
   <SectionIconAndName
     sectionNameClass="text-[#495568]"
-    sectionTitleClass="font-geist text-[36px] leading-[42px] font-semibold tracking-[-1%] lg:text-[48px] lg:leading-[115%] lg:tracking-[-1px]"
+    sectionTitleClass="font-geist text-[2.25rem] leading-[2.625rem] font-semibold tracking-[-1%] lg:text-[3rem] lg:leading-[115%] lg:tracking-[-1px]"
     borderClass="border border-gray-200"
     {sectionIcon}
     {sectionName}

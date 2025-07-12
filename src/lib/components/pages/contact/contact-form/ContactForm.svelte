@@ -2,6 +2,8 @@
   import { imgBuilder } from "$lib/sanity/sanity-client";
   import SanityImage from "$lib/sanity/sanity-image/sanity-image.svelte";
   import type { ContactFormProps } from "../../../../../types/contact.types";
+  import ContactFormSvg from "./ContactFormSvg.svelte";
+
 
   let { contactPageImage, description, title }: ContactFormProps = $props();
 
@@ -13,21 +15,33 @@
 </svelte:head>
 
 <section class="relative mx-auto mt-[2.5rem] w-full max-w-7xl px-5 lg:mt-[5rem] 2xl:px-0">
-  <div class="grid grid-cols-2 md:gap-x-[1.875rem]">
-    <SanityImage
-      class="mt-16 hidden overflow-hidden rounded-2xl md:block"
-      lqip
-      sizes="50vw"
-      imageUrlBuilder={imgBuilder}
-      src={contactPageImage}
-      alt={contactPageImage.alt} />
 
-    <div class="col-span-2 space-y-1 md:col-span-1">
+  <div class="grid min-h-[46.875rem] grid-cols-1 gap-x-[1.875rem] md:grid-cols-2">
+    <div><!-- Empty cell to align with title/desc --></div>
+    <div class="flex flex-col justify-center space-y-1">
       <h2 class="app-title-1">{title}</h2>
       <p class="app-body-3">{description}</p>
-      <div class="relative mx-auto mt-6 w-full overflow-hidden">
+    </div>
+
+    <div class="flex items-center justify-center">
+      <SanityImage
+        class=" hidden md:block max-h-[46.875rem] max-w-full rounded-2xl object-contain"
+        lqip
+        sizes="50vw"
+        imageUrlBuilder={imgBuilder}
+        src={contactPageImage}
+        alt={contactPageImage.alt} />
+    </div>
+
+    <div>
+      <div class="relative mt-4 w-full overflow-hidden">
         {#if isFormLoading}
-          <div>Loading...</div>
+          <div class="absolute inset-0 z-10 flex items-center justify-center bg-white/70">
+            <div class="flex flex-col items-center space-y-2">
+              <ContactFormSvg type="loader" />
+              <p class="text-sm text-gray-800">Almost there…</p>
+            </div>
+          </div>
         {/if}
 
         <iframe
@@ -35,7 +49,7 @@
             isFormLoading = false;
           }}
           src="https://api.leadconnectorhq.com/widget/booking/ApgFKhpDXGU0goWaQFMp"
-          class="h-full w-full"
+          class="h-[46.875rem] w-full"
           style="border:none;overflow: hidden;"
           scrolling="no"
           id="ApgFKhpDXGU0goWaQFMp_1751900196727"
@@ -44,4 +58,5 @@
       </div>
     </div>
   </div>
+  
 </section>

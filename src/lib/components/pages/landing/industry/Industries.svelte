@@ -20,7 +20,7 @@
 <div class="mx-auto max-w-7xl px-5 2xl:px-0">
   <SectionIconAndName
     sectionNameClass="text-[#495568]"
-    sectionTitleClass="font-geist text-[36px] leading-[42px] font-semibold tracking-[-1%] lg:text-[48px] lg:leading-[115%] lg:tracking-[-1px]"
+    sectionTitleClass="font-geist text-[2.25rem] leading-[2.625rem] font-semibold tracking-[-1%] lg:text-[3rem] lg:leading-[115%] lg:tracking-[-0.063rem]"
     borderClass="border border-gray-200"
     sectionIcon={props.sectionIcon}
     sectionName={props.sectionTitle}
@@ -91,7 +91,7 @@
     {#each industries as industry, idx (`industry${idx}`)}
       {#if currentIndustry === idx}
         <div class="mt-8 flex justify-center gap-[3.125rem] lg:mt-0 xl:gap-[4.375rem]">
-          <!-- TEXT SECTION -->
+      
           <div class="flex w-full max-w-[32rem] flex-col" in:fly={{ x: -100, duration: 600 }}>
             <p class="w-full text-[1.125rem] leading-7 text-black opacity-85 lg:text-[1.25rem] lg:leading-[150%]">
               {industry.description}
@@ -110,7 +110,7 @@
 
                   <div class="flex w-full flex-col gap-2">
                     <p
-                      class="font-geist text-[1.125rem] font-semibold leading-6 text-black lg:text-[1.5rem] lg:tracking-[-0.7px]">
+                      class="font-geist text-[1.125rem] font-semibold leading-6 text-black lg:text-[1.5rem] lg:tracking-[-0.044rem]">
                       {iuseCase.title}
                     </p>
                     <p class="text-[1rem] leading-[150%] text-[#737275] lg:text-[1.125rem] lg:leading-7">
@@ -128,7 +128,7 @@
               class="h-full w-full overflow-hidden rounded-[1.25rem]"
               innerClass="object-cover object-center w-full h-full"
               src={industry.useCaseImage}
-              sizes="(min-width:1024px) 12vw, 20vw"
+              sizes="(min-width:64rem) 12vw, 20vw"
               imageUrlBuilder={imgBuilder}
               alt="usecase image"
               lqip />

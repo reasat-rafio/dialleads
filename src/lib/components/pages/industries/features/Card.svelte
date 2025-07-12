@@ -6,7 +6,7 @@
   let { card }: { card: WhyDialleadsCard } = $props();
 </script>
 
-<div class="h-full w-full max-w-none rounded-2xl border p-[1.563rem]">
+<div class="group h-full w-full max-w-none rounded-2xl border p-[1.563rem] hover:border-primary hover:cursor-pointer">
   <SanityImage
     lqip
     class="h-12 w-12"
@@ -18,7 +18,7 @@
     <h3 class="w-full font-geist text-[22px] font-semibold leading-[38px] tracking-[-1%] text-black lg:text-[26px]">
       {card?.cardTitle}
     </h3>
-    <p class="w-full font-geist text-[18px] font-normal leading-[28px] tracking-[0%] text-[#5B6779]/80">
+    <p class="w-full font-geist text-[18px] font-normal leading-[28px] tracking-[0%] text-[#5B6779]/80 group-hover:text-[#16181c] transition-colors duration-200">
       {card?.cardDescription}
     </p>
   </div>

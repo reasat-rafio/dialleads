@@ -25,8 +25,8 @@
     <div class="relative z-[10] flex w-full flex-col items-center justify-center">
       <div class="relative">
         <h1
-          class="mx-auto w-fit text-center text-[36px] font-semibold leading-tight tracking-[0%] text-white
-				    lg:font-geist lg:text-[60px] lg:font-bold lg:leading-[122%] lg:tracking-[-1%]">
+          class="mx-auto w-fit text-center text-[2.25rem] font-semibold leading-tight tracking-[0%] text-white
+				    lg:font-geist lg:text-[3.75rem] lg:font-bold lg:leading-[122%] lg:tracking-[-1%]">
           <PortableText
             value={bannertitle}
             components={{
@@ -47,7 +47,7 @@
           sizes="5vw"
           imageUrlBuilder={imgBuilder}
           alt={"icon"} />
-        <span class="text-[18px] font-normal leading-[18px] tracking-normal">
+        <span class="text-[1.125rem] font-normal leading-[1.125rem] tracking-normal">
           {cta.title}
         </span>
       </a>

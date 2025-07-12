@@ -19,7 +19,7 @@
 
 <div class="flex w-full justify-center px-4 sm:px-6 lg:px-8">
   <div
-    class="relative aspect-[1281/732] w-full max-w-7xl overflow-hidden rounded-[16px] sm:rounded-[30px] lg:rounded-[24px]">
+    class="relative aspect-[1281/732] w-full max-w-7xl overflow-hidden rounded-[1rem] sm:rounded-[1.875rem] lg:rounded-[1.5rem]">
     {#if !isPlaying}
       <button onclick={playVideo} class="group relative block h-full w-full" aria-label="Play video">
         <SanityImage
