@@ -25,7 +25,7 @@
 
     <div class="flex items-center justify-center">
       <SanityImage
-        class=" hidden md:block max-h-[46.875rem] max-w-full rounded-2xl object-contain"
+        class=" hidden md:block mt-7 max-w-full rounded-2xl object-contain"
         lqip
         sizes="50vw"
         imageUrlBuilder={imgBuilder}
@@ -38,7 +38,7 @@
         {#if isFormLoading}
           <div class="absolute inset-0 z-10 flex items-center justify-center bg-white/70">
             <div class="flex flex-col items-center space-y-2">
-              <ContactFormSvg type="loader" />
+              <ContactFormSvg/>
               <p class="text-sm text-gray-800">Almost there…</p>
             </div>
           </div>
