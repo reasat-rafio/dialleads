@@ -3,9 +3,20 @@ import type { PageServerLoad } from "./$types";
 import { sanityClient } from "$lib/sanity/sanity-client";
 import { error } from "@sveltejs/kit";
 import type { ContactPage } from "../../../types/contact.types";
+import { asset } from "$lib/sanity/sanity-image";
 
 const query = groq`
-    *[_id == "contactPage"][0]
+  *[_id == "contactPage"][0]{
+    ...,
+    ${asset("contactPageImage")},
+    sections[]{
+      ...,
+      _type == "contact.contactForm" => {
+        ...,
+        ${asset("contactPageImage")}
+      }
+    }
+  }
 `;
 
 export const load: PageServerLoad = async ({ setHeaders }) => {

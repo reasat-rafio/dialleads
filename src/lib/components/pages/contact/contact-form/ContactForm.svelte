@@ -23,13 +23,15 @@
       <p class="app-body-3">{description}</p>
     </div>
 
-    <div class="flex items-center justify-center">
+    <div >
       <SanityImage
-        class=" hidden md:block mt-7 max-w-full rounded-2xl object-contain"
+        class="hidden md:block mt-4 w-full h-auto rounded-[3.33rem]"
         lqip
+        fadeInAnimation
         sizes="50vw"
         imageUrlBuilder={imgBuilder}
         src={contactPageImage}
+        innerClass="w-full h-auto object-cover"
         alt={contactPageImage.alt} />
     </div>
 
