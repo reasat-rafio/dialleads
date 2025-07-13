@@ -51,7 +51,7 @@
          
           <p class="flex items-center gap-2 bg-transparent {isScrolled ? 'brightness-0' : 'brightness-100'}">
             <span class="h-4 w-4 text-base font-bold">
-             <MobileNavbarSvg type="close" />
+             <MobileNavbarSvg />
             </span>
           </p>
         {:else}

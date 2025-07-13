@@ -1,5 +1,5 @@
 <script lang="ts">
-  export let type: "play" | "pause";
+ let { type }: { type: "play" | "pause" } = $props();
 </script>
 
 {#if type === "pause"}

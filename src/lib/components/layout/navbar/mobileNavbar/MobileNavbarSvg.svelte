@@ -1,9 +1,4 @@
-<script lang="ts">
-  export let type: "close" | "menu";
-</script>
 
-{#if type === "close"}
-  <!-- Close (X) Icon -->
   <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
     <g clip-path="url(#clip0_233_2172)">
       <path
@@ -19,4 +14,4 @@
       </clipPath>
     </defs>
   </svg>
-{/if}
+
