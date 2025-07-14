@@ -22,7 +22,7 @@
 
 <div class="relative mb-20 mt-[73px] px-5">
   <div
-    class="relative mx-auto h-fit w-full max-w-7xl overflow-hidden rounded-[1.25rem] bg-enterpricePlan-gradient-mobile md:bg-enterpricePlan-gradient-desktop">
+    class="relative mx-auto h-fit w-full max-w-7xl overflow-visible rounded-[1.25rem] bg-enterpricePlan-gradient-mobile md:bg-enterpricePlan-gradient-desktop">
     <SanityImage
       lqip
       innerClass="h-full w-full object-cover"
@@ -70,7 +70,7 @@
 
           <iframe
             src="https://api.leadconnectorhq.com/widget/form/XiXpRE3Bt1hP4bAk6BHf"
-            style="width:100%;height:28.25rem;border:none;border-radius:12px"
+            style="width:100%; !height: auto; min-height: 300px;border:none;border-radius:12px"
             id="inline-XiXpRE3Bt1hP4bAk6BHf"
             data-trigger-type="alwaysShow"
             data-trigger-value=""
