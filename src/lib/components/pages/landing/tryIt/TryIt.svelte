@@ -17,12 +17,14 @@
 </script>
 
 <svelte:head>
-  <script src="https://link.msgsndr.com/js/form_embed.js"></script>
+  <script src="https://link.msgsndr.com/js/form_embed.js" type="text/javascript"></script>
 </svelte:head>
 
 <div class="relative mb-20 mt-[73px] px-5">
   <div
     class="relative mx-auto h-fit w-full max-w-7xl overflow-visible rounded-[1.25rem] bg-enterpricePlan-gradient-mobile md:bg-enterpricePlan-gradient-desktop">
+    
+    <!-- Background Image -->
     <SanityImage
       lqip
       innerClass="h-full w-full object-cover"
@@ -34,6 +36,7 @@
 
     <div class="relative z-10 h-fit w-full px-5 pb-6 pt-[52px] lg:px-[50px] lg:py-[40px]">
       <div class="flex w-full flex-col">
+        <!-- Section Icon and Title -->
         <div
           class="flex w-fit items-center gap-2 rounded-full border border-violet-400 bg-[#FFFFFF33] px-3 py-2 pr-4 text-white">
           <SanityImage
@@ -47,6 +50,7 @@
           </p>
         </div>
 
+        <!-- Section Heading -->
         <h2 class="mt-3 font-geist text-[48px] font-semibold leading-[115%] tracking-[-1px] text-white">
           <PortableText
             value={props?.title}
@@ -57,34 +61,27 @@
             }} />
         </h2>
 
+        <!-- Supporting Text -->
         <p class="mt-[6px] font-geist text-[16px] font-normal leading-[150%] tracking-[0%] text-gray-50">
           {props.supportingText}
         </p>
       </div>
 
+      <!-- Iframe Block -->
       <div class="mt-6 grid w-full grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
         <div class="relative col-span-full">
           {#if !$iframeLoaded}
-            <Skeleton class="h-[8.25rem] w-full rounded-[12px]" />
+            <Skeleton class="h-[46.875rem] w-full rounded-[12px]" />
           {/if}
 
           <iframe
-            src="https://api.leadconnectorhq.com/widget/form/XiXpRE3Bt1hP4bAk6BHf"
-            style="width:100%; !height: auto; min-height: 300px;border:none;border-radius:12px"
-            id="inline-XiXpRE3Bt1hP4bAk6BHf"
-            data-trigger-type="alwaysShow"
-            data-trigger-value=""
-            data-activation-type="alwaysActivated"
-            data-activation-value=""
-            data-deactivation-type="neverDeactivate"
-            data-deactivation-value=""
-            data-form-name="Try A Free Test Call"
-            data-height="452"
-            data-layout-iframe-id="inline-XiXpRE3Bt1hP4bAk6BHf"
-            data-form-id="XiXpRE3Bt1hP4bAk6BHf"
-            title="Try A Free Test Call"
-            class={!$iframeLoaded ? "hidden" : "block"}
-            onload={() => iframeLoaded.set(true)}>
+            onload={() => iframeLoaded.set(true)}
+            src="https://api.leadconnectorhq.com/widget/booking/ApgFKhpDXGU0goWaQFMp"
+            class={!$iframeLoaded ? "hidden" : "block h-[46.875rem] w-full"}
+            style="border:none;overflow: hidden;"
+            scrolling="no"
+            id="ApgFKhpDXGU0goWaQFMp_1751900196727"
+            title="Book a call">
           </iframe>
         </div>
       </div>

@@ -56,7 +56,7 @@
             <Dialog.Trigger>
               <div
                 class="group break-inside-avoid rounded-[1rem] border border-gray-200 bg-[#F9F9F9] p-4 transition-colors hover:border-primary">
-                <div class="flex gap-x-[0.0312rem]">
+                <div class="flex gap-x-4 items-center justify-center">
                   <div class="h-[3rem] w-[3rem] rounded-full">
                     <SanityImage
                       class="h-[3rem] w-[3rem] overflow-hidden rounded-full"
@@ -94,8 +94,7 @@
                       {#if testimonial.position.length > 24}
                         <HoverCard.Root>
                           <HoverCard.Trigger>
-                            <h3
-                              class="w-full truncate text-[0.875rem] font-light leading-[120%] text-[#737275]">
+                            <h3 class="w-full truncate text-[0.875rem] font-light leading-[120%] text-[#737275]">
                               {testimonial.position}
                             </h3>
                           </HoverCard.Trigger>
@@ -121,7 +120,7 @@
             </Dialog.Trigger>
             <Dialog.Content class="p-0">
               <div class="rounded-[1rem] border bg-[#F9F9F9] p-4 md:p-5">
-                <div class="flex gap-x-[0.0312rem]">
+                <div class="flex gap-x-4">
                   <div class="h-[3rem] w-[3rem] rounded-full">
                     <SanityImage
                       class="h-[3rem] w-[3rem] overflow-hidden rounded-full"
@@ -155,8 +154,7 @@
                       {#if testimonial.position.length > 24}
                         <HoverCard.Root>
                           <HoverCard.Trigger>
-                            <h3
-                              class="w-full truncate text-[0.875rem] font-light leading-[120%] text-[#737275]">
+                            <h3 class="w-full truncate text-[0.875rem] font-light leading-[120%] text-[#737275]">
                               {testimonial.position}
                             </h3>
                           </HoverCard.Trigger>
@@ -181,59 +179,47 @@
         {:else}
           <div
             class="group relative rounded-[1rem] border border-gray-200 bg-[#F9F9F9] p-4 transition-colors hover:border-primary">
-            <div class="flex gap-x-[0.0312rem]">
-              <div class="h-[3rem] w-[3rem] rounded-full">
+            <div class="flex items-center gap-4">
+              <div class="h-[3rem] w-[3rem] shrink-0">
                 <SanityImage
-                  class="h-[3rem] w-[3rem] overflow-hidden rounded-full"
+                  class="h-[3rem] w-[3rem] rounded-full object-cover"
                   src={testimonial?.reviewerImage}
                   sizes="5vw"
                   imageUrlBuilder={imgBuilder}
                   alt={testimonial?.reviewerImage?.alt || "image"} />
               </div>
-              <div class="w-full text-left">
-                <h3 class="w-full truncate text-[1rem] font-semibold leading-[120%]">
+              <div class="flex flex-col justify-center text-left">
+                <h3 class="text-[1rem] font-semibold leading-[120%]">
                   {testimonial.name}
                 </h3>
-
-                <div class="flex w-full items-center">
-                  {#if testimonial.companyName.length > 16}
+                <div
+                  class="flex flex-wrap items-center gap-x-2 text-[0.875rem] font-light leading-[120%] text-[#737275]">
+                  {#if testimonial.companyName.length > 24}
                     <HoverCard.Root>
                       <HoverCard.Trigger>
-                        <h3
-                          class="max-w-[5rem] truncate text-[0.875rem] font-light leading-[120%] text-[#737275] sm:max-w-[7.5rem]">
-                          {testimonial.companyName}
-                        </h3>
+                        <span class="max-w-[8rem] truncate">{testimonial.companyName}</span>
                       </HoverCard.Trigger>
-                      <HoverCard.Content class="rounded-lg  bg-white px-4 py-2.5 shadow-lg">
-                        <p class="text-[0.875rem] font-light leading-[120%] text-[#737275]">
-                          {testimonial.companyName}
-                        </p>
+                      <HoverCard.Content class="rounded-lg bg-white px-4 py-2.5 shadow-lg">
+                        <p>{testimonial.companyName}</p>
                       </HoverCard.Content>
                     </HoverCard.Root>
                   {:else}
-                    <h3 class="text-nowrap text-[0.875rem] font-light leading-[120%] text-[#737275]">
-                      {testimonial.companyName}
-                    </h3>
+                    <span>{testimonial.companyName}</span>
                   {/if}
+
                   <Dot class="text-[#737275]" />
 
-                  {#if testimonial.position.length > 16}
+                  {#if testimonial.position.length > 24}
                     <HoverCard.Root>
                       <HoverCard.Trigger>
-                        <h3 class="w-full truncate text-[0.875rem] font-light leading-[120%] text-[#737275]">
-                          {testimonial.position}
-                        </h3>
+                        <span class="max-w-[8rem] truncate">{testimonial.position}</span>
                       </HoverCard.Trigger>
-                      <HoverCard.Content class="rounded-lg  bg-white px-4 py-2.5 shadow-lg">
-                        <p class="text-[0.875rem] font-light leading-[120%] text-[#737275]">
-                          {testimonial.position}
-                        </p>
+                      <HoverCard.Content class="rounded-lg bg-white px-4 py-2.5 shadow-lg">
+                        <p>{testimonial.position}</p>
                       </HoverCard.Content>
                     </HoverCard.Root>
                   {:else}
-                    <h3 class="text-nowrap text-[0.875rem] font-light leading-[120%] text-[#737275]">
-                      {testimonial.position}
-                    </h3>
+                    <span>{testimonial.position}</span>
                   {/if}
                 </div>
               </div>

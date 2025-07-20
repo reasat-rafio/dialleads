@@ -17,7 +17,9 @@
   };
 </script>
 
+
 <div class="mx-auto max-w-7xl px-5 2xl:px-0">
+
   <SectionIconAndName
     sectionNameClass="text-[#495568]"
     sectionTitleClass="font-geist text-[2.25rem] leading-[2.625rem] font-semibold tracking-[-1%] lg:text-[3rem] lg:leading-[115%] lg:tracking-[-0.063rem]"
@@ -122,7 +124,6 @@
             </div>
           </div>
 
-          <!-- IMAGE SECTION -->
           <div class="hidden h-full max-h-[25rem] w-[23.25rem] lg:block" in:fly={{ x: 100, duration: 600 }}>
             <SanityImage
               class="h-full w-full overflow-hidden rounded-[1.25rem]"
@@ -137,4 +138,5 @@
       {/if}
     {/each}
   </div>
+  
 </div>
