@@ -123,7 +123,7 @@
                 <div class="flex gap-x-4">
                   <div class="h-[3rem] w-[3rem] rounded-full">
                     <SanityImage
-                      class="h-[3rem] w-[3rem] overflow-hidden rounded-full"
+                      class="h-[3rem] w-[3rem] rounded-full overflow-hidden "
                       src={testimonial?.reviewerImage}
                       sizes="5vw"
                       imageUrlBuilder={imgBuilder}
