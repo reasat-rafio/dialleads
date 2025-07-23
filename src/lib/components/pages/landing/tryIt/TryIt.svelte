@@ -27,7 +27,7 @@
     <!-- Background Image -->
     <SanityImage
       lqip
-      innerClass="h-full w-full object-cover"
+      innerClass="h-full w-full rounded-[1.25rem]  object-cover"
       class="absolute inset-0 h-full w-full object-cover"
       src={props.backgroundImage}
       sizes="100vw"

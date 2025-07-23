@@ -16,7 +16,6 @@
     currentIndustry = industryNumber;
   };
 
-
 </script>
 
 <div class="mx-auto max-w-7xl px-5 2xl:px-0">
