@@ -60,6 +60,7 @@
                   <div class="h-[3rem] w-[3rem] rounded-full">
                     <SanityImage
                       class="h-[3rem] w-[3rem] overflow-hidden rounded-full"
+                      innerClass="object-cover w-full h-full rounded-full"
                       src={testimonial?.reviewerImage}
                       sizes="5vw"
                       imageUrlBuilder={imgBuilder}
@@ -124,6 +125,7 @@
                   <div class="h-[3rem] w-[3rem] rounded-full">
                     <SanityImage
                       class="h-[3rem] w-[3rem] rounded-full overflow-hidden "
+                      innerClass="object-cover w-full h-full rounded-full"
                       src={testimonial?.reviewerImage}
                       sizes="5vw"
                       imageUrlBuilder={imgBuilder}
@@ -183,6 +185,7 @@
               <div class="h-[3rem] w-[3rem] shrink-0">
                 <SanityImage
                   class="h-[3rem] w-[3rem] rounded-full object-cover"
+                  innerClass="object-cover w-full h-full rounded-full"
                   src={testimonial?.reviewerImage}
                   sizes="5vw"
                   imageUrlBuilder={imgBuilder}
