@@ -27,15 +27,15 @@
     sectionTitle={props.title} />
 
   <div class="mt-8 flex w-full flex-col justify-between lg:mt-16 lg:flex-row lg:gap-[3.125rem] xl:gap-[4.375rem]">
-    <!-- Left: Button List -->
+    
     <div class="flex w-full lg:w-fit">
-      <!-- Mobile Carousel -->
+     
       <Carousel.Root class="w-full lg:hidden">
         <Carousel.Content class="-ml-4 w-full">
           {#each industries as industry, idx}
             <Carousel.Item class="flex basis-auto items-center pl-4">
               <button
-                on:click={() => handleButtonClick(idx)}
+                onclick={() => handleButtonClick(idx)}
                 class={`relative flex h-[3rem] w-[13.625rem] flex-none items-center gap-4 rounded-[4.125rem] border border-primary p-2 pr-8 transition-colors duration-100 ${
                   currentIndustry === idx ? "bg-primary" : "bg-transparent"
                 }`}>
@@ -70,11 +70,11 @@
         </Carousel.Content>
       </Carousel.Root>
 
-      <!-- Desktop Button List -->
+    
       <div class="hidden w-fit flex-col gap-5 lg:flex">
         {#each industries as industry, idx}
           <button
-            on:click={() => handleButtonClick(idx)}
+            onclick={() => handleButtonClick(idx)}
             class={`relative flex h-[3rem] w-[13.625rem] items-center gap-4 rounded-[4.125rem] border border-primary p-2 transition-colors duration-100 ${
               currentIndustry === idx ? "bg-primary" : "bg-transparent"
             }`}>
@@ -107,12 +107,10 @@
       </div>
     </div>
 
-    <!-- Right: Industry Description + Image -->
     <div class="w-full overflow-x-hidden">
       {#each industries as industry, idx (`industry${idx}`)}
         {#if currentIndustry === idx}
           <div class="mt-8 flex justify-center gap-[3.125rem] lg:mt-0 xl:gap-[4.375rem]">
-            <!-- Text Column -->
             <div class="flex w-full max-w-[32rem] flex-col" in:fly={{ x: -100, duration: 600 }}>
               <p class="w-full text-[1.125rem] leading-7 text-black opacity-85 lg:text-[1.25rem] lg:leading-[150%]">
                 {industry.description}
@@ -143,7 +141,7 @@
               </div>
             </div>
 
-            <!-- Fixed Size Image Column -->
+         
             <div class="hidden h-[25rem] w-[23.25rem] overflow-hidden lg:block" in:fly={{ x: 100, duration: 600 }}>
               <SanityImage
                 class="h-full w-full overflow-hidden rounded-[1.25rem]"
